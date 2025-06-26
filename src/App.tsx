@@ -9,7 +9,6 @@ import { WorkExperience } from './components/WorkExperience';
 import { HR } from './components/ui/HR';
 import { resumeSchema } from './lib/schema';
 import {
-	FaBriefcase,
 	FaGraduationCap,
 	FaBrain,
 	FaDiagramProject,

@@ -1,6 +1,5 @@
 import { Basics } from '@/lib/schema';
 import {
-	FaExternalLinkAlt,
 	FaLinkedinIn,
 	FaMapPin
 } from 'react-icons/fa';

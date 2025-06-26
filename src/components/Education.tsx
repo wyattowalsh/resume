@@ -44,9 +44,9 @@ export function Education({ education }: EducationProps) {
 							</div>
 						</div>
 						{(edu.area || edu.score) && (
-							<div className="space-y-0.5 mt-1">
+							<div className="space-y-0.5">
 								{edu.area && (
-									<p className="text-xs text-muted-foreground mt-0 pt-0">
+									<p className="text-xs text-muted-foreground mt-0 pt-0 italic">
 										in {edu.area}
 									</p>
 								)}

@@ -51,7 +51,7 @@ export function Projects({ projects }: ProjectsProps) {
 								</div>
 							</div>
 						</div>
-						<p className="font-semibold text-muted-foreground">
+						<p className="font-semibold text-muted-foreground italic">
 							{project.description}
 						</p>
 						{Array.isArray(project.highlights) && (

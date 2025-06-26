@@ -45,7 +45,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 						</div>
 						<div className="">
 							{job.summary && (
-								<p className="font-semibold text-muted-foreground">
+								<p className="font-semibold text-muted-foreground italic">
 									{job.summary}
 								</p>
 							)}
