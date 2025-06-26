@@ -21,20 +21,20 @@ function App() {
 	const resume = resumeSchema.parse(resumeData);
 
 	return (
-		<main className="container mx-auto my-8 max-w-4xl rounded-xl p-0 print:my-0 print:max-w-full print:border-none print:shadow-none">
+		<main className="container mx-auto my-4 max-w-4xl rounded-xl p-0 print:my-0 print:max-w-full print:border-none print:shadow-none">
 			<Header basics={resume.basics} />
-			<HR icon={<FaBriefcase />} />
+			<HR />
 			<WorkExperience work={resume.work} />
-			<HR icon={<FaGraduationCap />} />
-			<Education education={resume.education} />
-			<HR icon={<FaDiagramProject />} />
-			<Projects projects={resume.projects} />
 			{resume.skills && resume.skills.length > 0 && (
 				<>
 					<HR icon={<FaBrain />} />
 					<Skills skills={resume.skills} />
 				</>
 			)}
+			<HR icon={<FaGraduationCap />} className="print:hidden" />
+			<Education education={resume.education} />
+			<HR icon={<FaDiagramProject />} />
+			<Projects projects={resume.projects} />
 			<div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
 				<section>
 					<HR icon={<FaCertificate />} />

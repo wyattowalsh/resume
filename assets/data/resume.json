@@ -30,13 +30,12 @@
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
       "location": "New York, NY",
-      "summary": "Built enterprise-grade data pipelines and analytics solutions across Python, KDB+, SQL, and AWS for trading, quantitative research, and risk groups, and was among the first 500 engineers to trial LLM-powered development tools, providing feedback that informed bank-wide adoption.",
+      "summary": "Engineered enterprise-grade data pipelines, data integrations, and analytics solutions for trading, quantitative research, and risk groups within the credit division of the investment bank and fostered improved AI development tool usage across the firm",
       "highlights": [
-        "Pioneered AI-Powered Software Development: Selected as an early adopter to integrate generative AI tools (LLMs, Copilot) into the SDLC, shaping firm-wide deployment strategy and significantly enhancing developer velocity.",
-        "Mitigated Financial Risk with Machine Learning: Deployed an ML-driven anomaly detection framework that reduced false positives and minimized manual review time, enabling the risk management team to focus on high-priority alerts.",
-        "Architected Enterprise Data Platforms: Designed and delivered a resilient, enterprise-grade Python interface for the KDB+ database, democratizing data access for over 5,000 users and automating critical workflows to save 10+ hours of manual work weekly.",
-        "Optimized Cloud & Database Performance: Engineered scalable AWS solutions and optimized query performance across SQL, NoSQL, and Time-series databases, improving the processing speed and reliability of mission-critical financial data pipelines.",
-        "Championed Engineering Excellence: Drove best-in-class SDLC practices, including rigorous automated testing and object-oriented design, to ensure maximum uptime and reliability for systems handling critical market intelligence for the Commercial & Investment Bank."
+        "Pioneered firm-wide rollout of generative AI development tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, delivering feedback that shaped secure, scalable deployment and leading internal workshops to boost productivity for technical and non-technical teams",
+        "Devised ML-driven anomaly detection framework for data health monitoring, reducing false positives by 25% and cutting manual review time, empowering risk teams to focus on critical alerts",
+        "Developed resilient Python wrapper for KDB+, democratizing data access for 5,000+ users with CI-style tests and optimized Q functions, reducing manual processing by over 10 hours per week",
+        "Engineered a cloud-function–driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard"
       ]
     },
     {
@@ -45,23 +44,23 @@
       "startDate": "2022-03-01",
       "endDate": "2022-07-01",
       "location": "Remote",
-      "summary": "Led front-end engineering for a decentralized finance (DeFi) platform facilitating NFT-collateralized loans. I was responsible for architecting a high-performance, intuitive user interface to handle complex blockchain transactions securely and efficiently.",
+      "summary": "Delivered an advanced DeFi DApp as the founding engineer — integrating ethers.js for gas-optimized web3 smart contract interactions, implementing CI/CD and TDD pipelines to boost development efficiency, and partnering with founders to translate Figma designs into pixel-perfect interfaces",
       "highlights": [
-        "Led Full-Stack DeFi Development: Architected and built a scalable, secure DeFi lending application using React, Next.js, and TypeScript, integrating directly with on-chain smart contracts via ethers.js to facilitate NFT-collateralized transactions.",
-        "Established a Rigorous TDD Workflow: Drove code quality and reliability by implementing a comprehensive Test-Driven Development (TDD) environment with Cypress and Jest, significantly mitigating regressions in production.",
-        "Accelerated Team Velocity: Implemented Agile methodologies (Jira, Storybook) and mentored junior developers in advanced front-end practices, improving overall code quality and decreasing the team's time-to-market for new features."
+        "Architected a scalable NFT-collateralized lending DApp using React, Next.js, TypeScript, MobX, and ethers.js, enabling secure, performant on-chain loans",
+        "Implemented end-to-end CI/CD with GitHub Actions, Husky, Cypress, and Jest to halve release cycles and raise test coverage to 90%, while mentoring a front-end intern to build key UI components",
+        "Optimized front-end performance through code splitting, lazy loading, and asset caching, reducing initial load times by 40% and JavaScript bundle size by 30%"
       ]
     },
     {
       "name": "SandLabs",
-      "position": "Chief Technology Officer",
+      "position": "Founder, Chief Technology Officer",
       "startDate": "2021-06-01",
       "endDate": "2022-03-01",
       "location": "Remote",
-      "summary": "As a founding CTO, I defined and executed the technical vision for a Web3 enterprise focused on decentralized data solutions. I led the end-to-end product development lifecycle, from concept to deployment, bridging conventional content ecosystems with novel blockchain architectures.",
+      "summary": "Enabled better data-driven decision making for Web3 stakeholders by tokenizing a 1M+ post/comment, Web3-related Reddit dataset onto a decentralized data marketplace after creating a public-facing web app and securing grant funding to enable the project.",
       "highlights": [
-        "Secured $75K in Grant Funding: Led the full-stack development (Next.js, TypeScript, Solidity, Python) of a decentralized data platform, a success enabled by forging strategic alliances that culminated in a highly competitive, DAO-voted grant.",
-        "Directed End-to-End Technical Vision: Oversaw the entire technology lifecycle, from scraping millions of data points with Python to deploying a token-gated data portal with a React/TypeScript front-end and Solidity smart contracts."
+        "Engineered and launched a Next.js/TailwindCSS marketing site with top-tier Lighthouse scores and secured $75K in OCEAN tokens via a competitive DAO grant",
+        "Engineered Python pipelines to extract and normalize a 1M+ Web3-related Reddit posts & comments dataset and published the data on Ocean Protocol’s Data Marketplace"
       ]
     },
     {
@@ -70,35 +69,35 @@
       "url": "https://www.gapinc.com/",
       "startDate": "2020-01-01",
       "endDate": "2020-05-01",
-      "location": "San Francisco, CA, USA",
-      "summary": "As a data analyst on the demand forecasting team, I applied advanced statistical and machine learning techniques to enhance demand prediction accuracy, directly optimizing inventory planning and supply chain efficiency for multiple retail divisions.",
+      "location": "San Francisco, CA",
+      "summary": "Engineered predictive demand forecasting models, improving forecast accuracy by 5–25% to optimize inventory planning and reduce stockouts across multiple retail divisions",
       "highlights": [
-        "Optimized Enterprise-Wide Demand Forecasting: Delivered a 5-25% improvement in forecast accuracy by developing predictive models and a novel bias correction system that was adopted enterprise-wide, directly reducing inventory costs and stockouts.",
-        "Engineered Foundational Data Infrastructure: Built and scaled a data processing pipeline using MySQL and Apache Spark to analyze 5+ years of historical data, creating the core dataset for all forecasting initiatives and fostering cross-functional data alignment."
+        "Applied time-series decomposition and bias correction techniques to demand forecasts, boosting accuracy by up to 25% and minimizing surplus inventory costs",
+        "Architected scalable data infrastructure using MySQL and Apache Spark to process 5+ years of sales data, improving data processing throughput by 95% and standardizing insights across forecasting teams"
       ]
     },
     {
       "name": "University of California, Berkeley",
-      "position": "Course Staff – Data 8: Foundations of Data Science",
+      "position": "Course Staff – Data 8: Foundations of Data Science",
       "url": "https://data.berkeley.edu/education/courses/data-8",
       "startDate": "2019-01-01",
       "endDate": "2019-12-01",
-      "location": "Berkeley, CA, USA",
-      "summary": "Provided expert instruction and operational leadership for Berkeley's flagship introductory data science course (Data 8), mentoring over 1,600 undergraduate students in foundational statistics, Python programming, and data analysis principles.",
+      "location": "Berkeley, CA",
+      "summary": "Delivered and scaled Berkeley’s flagship Data 8 course—mentoring 1,600+ students in Python, statistics, and data analysis to drive practical data literacy and student success",  
       "highlights": [
-        "Delivered Large-Scale Data Science Instruction: Empowered over 1,600 students in Berkeley's flagship data science course (Data 8) by designing and delivering 75+ lectures and labs on Python, statistics, and data visualization.",
-        "Provided Operational & Pedagogical Leadership: Managed all course operations, including examinations and grading, and earned consistent recognition for teaching excellence, reflecting a commitment to high-quality, impactful instruction."
+        "Designed and led 75+ interactive lectures and labs, empowering students to apply data science methods to real-world problems",
+        "Proctored exams, graded assignments, and hosted weekly office hours to reinforce learning and uphold academic standards"
       ]
     }
   ],
   "education": [
     {
-      "institution": "University of California, Berkeley, College of Engineering",
+      "institution": "University of California, Berkeley – College of Engineering",
       "url": "https://ieor.berkeley.edu/academics/bs-ieor/",
       "studyType": "Bachelor of Science",
       "area": "Industrial Engineering & Operations Research",
       "startDate": "2014-08-01",
-      "endDate": "2021-12-01"
+      "endDate": "2020-12-01"
     },
     {
       "institution": "The Hotchkiss School",
@@ -144,153 +143,146 @@
   ],
   "skills": [
     {
-      "name": "Full-Stack Development",
-      "level": "Master",
+      "name": "Programming & Scripting Languages",
       "keywords": [
         "Python",
+        "SQL",
         "TypeScript",
-        "JavaScript (ES6+)",
-        "Node.js",
-        "React",
-        "Next.js",
-        "FastAPI",
-        "Flask",
-        "Django REST Framework",
-        "SQLAlchemy",
+        "JavaScript",
+        "Go",
+        "Rust",
+        "Java",
+        "C++",
+        "Q",
+        "R",
+        "SPARQL",
+        "MATLAB",
+        "Swift",
+        "Bash",
         "HTML5",
         "CSS3",
-        "SCSS",
-        "Tailwind CSS",
-        "Shadcn/UI",
-        "Material-UI",
-        "Framer Motion",
-        "MDX",
-        "API Development",
-        "REST APIs",
-        "GraphQL",
+        "Markdown",
+        "LaTeX"
+      ]
+    },
+    {
+      "name": "Front-End & API Tooling",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Vite",
+        "Hugo",
+        "Node.js",
+        "Express.js",
+        "FastAPI",
+        "Django",
+        "Flask",
+        "gRPC",
+        "GraphQL (Apollo)",
         "WebSockets",
-        "Jamstack"
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Material UI",
+        "Ant Design",
+        "Chakra UI",
+        "Redux",
+        "MobX",
+        "Vitest",
+        "Cypress",
+        "Puppeteer"
       ]
     },
     {
-      "name": "AI, Machine Learning & Data Science",
-      "level": "Master",
+      "name": "Data Engineering and Analytics",
       "keywords": [
-        "Machine Learning (ML)",
-        "Deep Learning (DL)",
-        "Natural Language Processing (NLP)",
-        "Large Language Models (LLMs)",
-        "Generative AI & RAG",
-        "MLOps",
-        "Time-Series Forecasting",
-        "Predictive Analytics",
-        "Anomaly Detection",
-        "Sentiment Analysis",
-        "Feature Engineering",
-        "Ensemble Methods"
-      ]
-    },
-    {
-      "name": "Data Engineering & Databases",
-      "level": "Master",
-      "keywords": [
-        "Data Modeling & Schema Design",
-        "ETL/ELT Pipeline Development",
-        "Data Warehousing",
-        "Data Orchestration (Airflow, Prefect)",
+        "Pandas",
+        "NumPy",
+        "SQLAlchemy",
+        "Pydantic",
+        "Pandera",
         "Apache Spark",
-        "PySpark",
-        "SQL",
+        "Apache Airflow",
+        "Prefect",
+        "Amazon Kinesis",
+        "AWS Glue",
+        "AWS Athena",
+        "BigQuery",
+        "Redshift",
+        "KDB+",
         "PostgreSQL",
-        "MySQL",
-        "Oracle Database",
-        "KDB+/q",
-        "Time-series Databases",
-        "MongoDB",
+        "DynamoDB",
         "NoSQL",
-        "Vector Databases",
-        "SQLite",
-        "Parquet",
-        "Apache Arrow",
-        "Data Validation (Pandera)"
+        "Hadoop",
+        "Matplotlib",
+        "Plotly",
+        "Dash",
+        "Tableau"
       ]
     },
     {
-      "name": "Cloud, DevOps & Tools",
-      "level": "Master",
+      "name": "Machine Learning and Gen AI",
       "keywords": [
-        "Amazon Web Services (AWS)",
-        "Google Cloud (GCP)",
-        "Microsoft Azure",
+        "scikit-learn",
+        "PyTorch",
+        "TensorFlow",
+        "XGBoost",
+        "Hugging Face Transformers",
+        "OpenAI API",
+        "LangChain",
+        "LangGraph",
+        "LangSmith",
+        "LlamaIndex",
+        "MCP (Model Context Protocol)",
+        "Retrieval-Augmented Generation",
+        "Prompt Engineering",
+        "Knowledge Graphs"
+      ]
+    },
+    {
+      "name": "Cloud Infrastructure and DevOps",
+      "keywords": [
+        "AWS",
+        "GCP",
+        "Azure",
+        "Makefile",
         "Docker",
         "Kubernetes",
-        "CI/CD Pipelines",
+        "Terraform",
+        "CloudFormation",
+        "Helm",
+        "Argo CD",
         "GitHub Actions",
         "Jenkins",
-        "Terraform",
-        "Infrastructure as Code (IaC)",
-        "Serverless Architecture (AWS Lambda)",
+        "CircleCI",
+        "Serverless Framework",
+        "Serverless Architecture",
+        "AWS Lambda",
+        "Google Cloud Functions",
+        "ECS",
+        "EKS",
         "Vercel",
-        "System Monitoring (Datadog, Grafana, Prometheus)",
-        "Git",
-        "Shell Scripting",
-        "Linux"
+        "Netlify",
+        "Prometheus",
+        "Grafana"
       ]
     },
     {
-      "name": "Software Architecture & Quality",
-      "level": "Master",
+      "name": "Architecture & Testing",
       "keywords": [
-        "System Design",
-        "Software Design Patterns",
         "Microservices",
-        "Enterprise Architecture",
-        "High-Availability Architecture",
-        "Object-Oriented Programming (OOP)",
-        "SOLID Principles",
-        "Clean Code",
-        "Agile",
-        "Scrum",
-        "Kanban",
-        "Test-Driven Development (TDD)",
-        "Unit Testing",
-        "Integration Testing",
-        "End-to-End (E2E) Testing",
+        "Domain-Driven Design",
+        "Event-Driven Architecture",
+        "RESTful APIs",
+        "CI/CD",
+        "Test-Driven Development",
+        "Testing (unit, integration, e2e)",
         "Pytest",
-        "Jest",
-        "Cypress",
-        "Storybook",
-        "React Testing Library",
-        "API Security"
-      ]
-    },
-    {
-      "name": "Domain Expertise & Quantitative Analysis",
-      "level": "Master",
-      "keywords": [
-        "Quantitative Finance",
-        "Algorithmic Trading",
-        "Risk Management",
-        "Credit Technology",
-        "Operations Research",
-        "Mathematical Optimization",
-        "Simulation",
-        "Econometrics",
-        "Supply Chain & Logistics",
-        "Demand Forecasting",
-        "Sports Analytics",
-        "Blockchain & Web3",
-        "Decentralized Finance (DeFi)",
-        "NFTs",
-        "DAOs",
-        "Smart Contracts",
-        "Solidity",
-        "Ethers.js",
-        "Scientific Computing (SciPy, Matplotlib)",
-        "R",
-        "Matlab",
-        "Developer Mentorship",
-        "Technical Writing"
+        "Logging",
+        "Monitoring",
+        "Observability",
+        "Tracing",
+        "OAuth 2.0",
+        "OpenID Connect"
       ]
     }
   ],
@@ -300,23 +292,12 @@
       "url": "https://github.com/wyattowalsh/personal-website",
       "startDate": "2018-11-01",
       "endDate": null,
-      "description": "A personal portfolio and technical blog (v6) architected with Next.js 15, TypeScript, and TailwindCSS. Deployed on Vercel, it features a high-performance MDX-based content pipeline, interactive tsParticles animations, Fuse.js full-text search, KaTeX-powered LaTeX rendering with equation numbering, and custom URL shortening via YOURLS (w4w.to).",
+      "description": "Built an accessible, performant, type-safe personal web app and blog using Next.js, styled with TailwindCSS + SCSS, with CMS powered by MDX enriched with 40+ plugins enabling rich interactivity, responsive design, and SEO best practices.",
       "highlights": [
-        "Architected a High-Performance Jamstack Platform: Engineered a personal website and blog from the ground up using Next.js 15, TypeScript, and Tailwind CSS, featuring a sophisticated MDX-based content pipeline with 30+ remark/rehype plugins for advanced typography and code highlighting.",
-        "Implemented Best-in-Class Mathematical Typesetting: Developed a custom KaTeX integration supporting automatic equation numbering, cross-referencing, and copy-to-clipboard functionality for LaTeX source, creating a premier experience for technical content.",
-        "Integrated Advanced UX & Search Features: Implemented a fast, client-side full-text search with Fuse.js, interactive tsParticles animations, and a seamless dark/light mode, all while ensuring data integrity with Zod schema validation.",
-        "Automated End-to-End Content Delivery & SEO: Built a robust CI/CD pipeline with GitHub Actions for zero-downtime deployments to Vercel, including automated sitemap/feed generation and JSON-LD structured data for maximum search engine visibility."
-      ]
-    },
-    {
-      "name": "Algorithmic Cryptocurrency Trading System",
-      "startDate": "2020-01-01",
-      "endDate": "2020-12-01",
-      "description": "A production-grade algorithmic trading platform that leverages ML, NLP, and quantitative finance to execute strategies across multiple cryptocurrency exchanges (Binance, Coinbase, Kraken). The system features a sophisticated backtesting engine, real-time sentiment analysis, and a cloud-native, containerized architecture for high availability.",
-      "highlights": [
-        "Developed a Hybrid ML-NLP Trading Engine: Architected a sophisticated forecasting model combining time-series (ARIMA) and deep learning (LSTMs, Transformers) with a multi-source NLP pipeline that processes real-time market data and social media sentiment (OpenAI, LlamaIndex) to generate signals.",
-        "Engineered a Production-Grade, Containerized Architecture: Built a resilient, high-availability algorithmic trading system using a Python-based microservices architecture, containerized with Docker and orchestrated with Kubernetes for automated deployment and failover.",
-        "Implemented a Quantitative Backtesting & Risk Management Framework: Designed a comprehensive backtesting engine with hyperparameter optimization and a real-time risk management module based on Markowitz portfolio theory to validate strategies and actively limit losses."
+        "Developed an SEO-optimized link-tree-like landing page powered by Next.js app router featuring interactive backgrounds with configurable animations plus support for dark mode theme switching all styled in a fully accessible manner adhering to responsive design best practices.",
+        "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system.", 
+        "Enabled fuzzy search across all post content and post metadata, in addition to tag filtering, multiple sorting options, and pagination using Fuse.js",
+        "Applied robust CI/CD practices using GitHub Actions to automate deployment to Vercel, generating sitemaps, generating feeds (RSS, Atom, JSON) and JSON-LD structured data for maximum search engine visibility."
       ]
     },
     {
@@ -324,23 +305,23 @@
       "url": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": "2021-06-01",
-      "description": "An open-source data engineering project that provides the most comprehensive, historically accurate NBA dataset available. The automated pipeline processes over 65,000 games and 13 million play-by-play events, and has become a go-to resource for sports analytics, with over 315,000 views and adoption in published academic research.",
+      "description": "Democratized access to sports analytics insights by open-sourcing the most robust, comprehensive NBA basketball dataset freely available online of over 65K games and 13M play-by-play events, earning over 300K views and 45K downloads on Kaggle.",
       "highlights": [
-        "Created a Widely Adopted Open-Source Dataset: Published the most comprehensive, historically accurate NBA dataset available, attracting over 315,000 views, 40,000 downloads, and citation in published academic research.",
-        "Engineered a Resilient, Automated Data Pipeline: Developed a fully automated ETL pipeline using Python multiprocessing and cron jobs to process over 65,000 games, ensuring data integrity with a rigorous validation framework built on 15+ custom Pandera schemas.",
-        "Designed for Accessibility and Community Engagement: Provided extensive documentation with ReadTheDocs, SQL usage guides, and a permissive license, fostering a large and active user community in the sports analytics space."
+        "Implemented a high-performance, fully validated ETL pipeline using Python, Pandas, multiprocessing, pandera, pydantic, sqlalchemy, and SQL to extract data from the NBA's public API and update the dataset's SQLite database and CSV/JSON flat files with new data on a daily basis.",
+        "Created an accompanying docs site with a customized theme, updating changelog, python api docs, user guide, and development details using Sphinx, Markdown, and CSS all deployed to ReadTheDocs.",
+        "Assured robust compliance with development best practices by implementing robust CI/CD workflows using GitHub Actions for automated linting, formatting, testing, and deployment."
       ]
     },
     {
       "name": "Regularized Linear Regression Deep Dive",
-      "url": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive/tree/11d2fe0b2b41abb47fc0cc58d9a749ac01fbb7fd",
+      "url": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive",
       "startDate": "2020-11-01",
       "endDate": "2021-01-01",
-      "description": "An end-to-end research project implementing regularized linear regression algorithms (Ridge, Lasso, Elastic Net) from first principles using NumPy. The project includes complete mathematical derivations, custom optimization algorithms, and a three-part explanatory series published on Towards Data Science, demonstrating both theoretical understanding and practical application on a wine quality prediction task.",
+      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15 K+ data scientists.",
       "highlights": [
-        "Established Thought Leadership through Technical Writing: Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed over 15,000 views and established credibility in the data science community.",
-        "Implemented Advanced Optimization Algorithms from First Principles: Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn.",
-        "Delivered a Fully Reproducible Research Project: Engineered an end-to-end predictive modeling workflow, complete with mathematical derivations, interactive visualizations, and a browser-executable environment via Binder, showcasing a deep understanding of both theory and application."
+        "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed over 20,000 views and established credibility in the data science community.",
+        "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn.",
+        "Engineered an end-to-end predictive modeling workflow, complete with mathematical derivations, interactive visualizations, and a browser-executable environment via Binder, showcasing a deep understanding of both theory and application."
       ]
     },
     {

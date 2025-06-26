@@ -40,7 +40,7 @@ export function Header({ basics }: HeaderProps) {
 	)}`;
 
 	return (
-		<header className="flex flex-col items-center justify-start gap-4 text-center">
+		<header className="flex flex-col items-center justify-start gap-2 text-center">
 			<div className="flex items-center gap-4">
 				<Ornament />
 				<a href={basics.url} target="_blank" rel="noopener noreferrer">

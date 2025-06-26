@@ -36,6 +36,7 @@ const educationSchema = z.object({
   url: z.string().url().optional(),
   studyType: z.string(),
   area: z.string().optional(),
+  score: z.string().optional(),
   startDate: z.string(),
   endDate: z.string(),
 });
@@ -56,7 +57,7 @@ const publicationSchema = z.object({
 
 const skillSchema = z.object({
   name: z.string(),
-  level: z.string(),
+  level: z.string().optional(),
   keywords: z.array(z.string()),
 });
 
@@ -64,6 +65,8 @@ const projectSchema = z.object({
   name: z.string(),
   description: z.string(),
   url: z.string().url().optional(),
+  githubUrl: z.string().url().optional(),
+  stack: z.array(z.string()).optional(),
   startDate: z.string(),
   endDate: z.string().nullable(),
   highlights: z.array(z.string()),

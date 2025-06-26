@@ -8,12 +8,12 @@ type HRProps = {
 
 export function HR({ icon, className }: HRProps) {
 	return (
-		<div className={cn('relative my-4 flex items-center', className)}>
+		<div className={cn('relative mt-1.5 mb-0.5 	flex items-center', className)}>
 			<div className="h-px flex-grow bg-gradient-to-r from-transparent to-border" />
 			{icon && (
 				<span className="mx-4 flex-shrink-0 text-primary">
 					{React.cloneElement(icon as React.ReactElement, {
-						className: 'h-4 w-4 opacity-50',
+						className: 'h-4 w-4 opacity-33',
 					})}
 				</span>
 			)}

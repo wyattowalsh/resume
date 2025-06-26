@@ -10,7 +10,7 @@ type SectionProps = {
 export function Section({ title, children, className }: SectionProps) {
   return (
     <section className={cn("flex flex-col", className)}>
-      <h2>{title}</h2>
+      <h2 className="mt-0 pt-0 mb-1">{title}</h2>
       {children}
     </section>
   );

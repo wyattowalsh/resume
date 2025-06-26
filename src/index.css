@@ -13,11 +13,12 @@
   }
 
   h2 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight text-primary p-0 m-0;
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight text-primary p-0 m-0;
+    font-size: 1.5em;
   }
 
   h3 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight p-0 m-0;
   }
 
   h4 {
@@ -25,7 +26,7 @@
   }
 
   p {
-
+    font-size: 0.7em;
   }
 
   blockquote {
@@ -34,6 +35,15 @@
 
   code {
     @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+
+  li {
+    font-size: 0.925em;
+  }
+
+  .skill {
+    @apply text-xs;
+    font-size: 0.65em;
   }
 }
 
@@ -183,7 +193,10 @@
 		break-inside: avoid;
 	}
 	@page {
-		margin: 0.5in;
+		margin-left: 0.5in;
+		margin-right: 0.5in;
+		margin-top: 0.25in;
+		margin-bottom: 0.25in;
 	}
 	body,
 	html {
