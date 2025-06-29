@@ -31,6 +31,7 @@
     "tailwindcss-animate": "^1.0.7",
     "vike": "^0.4.235",
     "vike-react": "^0.6.4",
+    "vike-server": "^1.0.19",
     "zod": "^3.25.67"
   },
   "devDependencies": {

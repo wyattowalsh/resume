@@ -62,6 +62,9 @@ importers:
       vike-react:
         specifier: ^0.6.4
         version: 0.6.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(vike@0.4.235(react-streaming@0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))
+      vike-server:
+        specifier: ^1.0.19
+        version: 1.0.19(vike@0.4.235(react-streaming@0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))
       zod:
         specifier: ^3.25.67
         version: 3.25.67
@@ -1109,6 +1112,56 @@ packages:
     resolution: {integrity: sha512-zTh2+1Y8ZpmeQaQVIc/ZZxsx8UzgKJyNg1PTvjzC7WMhPSVS8bfDX34k1SrwOf016qd5RU3az2UxUNue3IfQ5g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@universal-middleware/compress@0.2.30':
+    resolution: {integrity: sha512-Qk6Yt3DOHxYYlS9QGF+VJQwCLXB4BSKuJZ9/UpDp+x8VOq//j+aJuEg8H2VAo2XEBg/amqPmw+gIesFKTLXEWw==}
+
+  '@universal-middleware/core@0.4.8':
+    resolution: {integrity: sha512-sN9CCF7NhTiFy1SfzMjipEOtFkvnB8bKgD04wkQYcGvShgvDUg1PSS0x18n0zdJOVBKE0YKvk9/RGKL6NOGg6Q==}
+    peerDependencies:
+      '@cloudflare/workers-types': ^4.20250607.0
+      '@hattip/core': ^0.0.49
+      '@webroute/route': ^0.8.0
+      elysia: ^1.3.4
+      fastify: ^5.3.3
+      h3: ^1.15.3
+      hono: ^4.7.11
+    peerDependenciesMeta:
+      '@cloudflare/workers-types':
+        optional: true
+      '@hattip/core':
+        optional: true
+      '@webroute/route':
+        optional: true
+      elysia:
+        optional: true
+      fastify:
+        optional: true
+      h3:
+        optional: true
+      hono:
+        optional: true
+
+  '@universal-middleware/elysia@0.4.8':
+    resolution: {integrity: sha512-6cDEPq96blz5x17rsNJjRmDqD4o0XrGB+6lFElEThtIBAUn1Y38OqMn1+yf7Ycdc5w45mr4T1uimfH9tAdU2Ug==}
+
+  '@universal-middleware/express@0.4.17':
+    resolution: {integrity: sha512-gAPKbhb793y3Swiw5MfAOXx5ZUOWIs0NxFNN4x0a8q+djIhErI2skHaGr2+lxkTDstaq1oZ3SPUwEAY2f6KCww==}
+
+  '@universal-middleware/fastify@0.5.19':
+    resolution: {integrity: sha512-njRduxckcHnPM8yPx2YAx4Uf06KuDrh8m3RJ/LdEWBmJQqCLxuQsJpwoYUYvb9PeVm319NyYLX3veq1hNDZTnA==}
+
+  '@universal-middleware/h3@0.4.11':
+    resolution: {integrity: sha512-jbRHhQ0TJ3XN0BGRrI8c117fE2QLrmjExOCUh5/qDBjxEx0RdVDUJDXypdQJ+PiD8H+kBAWWFm7y/DEsYpXPAg==}
+
+  '@universal-middleware/hattip@0.4.10':
+    resolution: {integrity: sha512-uANsOphYNxy0Ed0cL41q86gKYJqaxa83HmRRONfdVDB3v7yFQYgeYVFg9/fdC2oj9vNB9REp1eKlsjPi2Kce9A==}
+
+  '@universal-middleware/hono@0.4.14':
+    resolution: {integrity: sha512-xkQdvSp+Q8n6vihpEQsfZ7mZHIpqtVb33rZxKr8MXRdZoPjLbuZkwTwQ2RE8IeRlPvJDz0yv1ENYYFKKYbI12Q==}
+
+  '@universal-middleware/sirv@0.1.20':
+    resolution: {integrity: sha512-ToSuHZPelt2BtNLwJumSqtaQ3KuQVCqeEA9CgDum0cH1qfjZci9fnknNFQ2vhi4CdUkACxPfDne5ddI810+ihg==}
+
   '@vitejs/plugin-react@4.6.0':
     resolution: {integrity: sha512-5Kgff+m8e2PB+9j51eGHEpn5kUzRKH2Ry0qGoe8ItJg7pqnkPrYPkDQZGgGmTa0EGarHrkjLvOdU3b1fzI8otQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -1621,6 +1674,13 @@ packages:
 
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
+
+  fastify-plugin@5.0.1:
+    resolution: {integrity: sha512-HCxs+YnRaWzCl+cWRYFnHmeRFyR5GVnJTAaCJQiYzQSDwK9MgJdyAsuL3nh0EWRCYMgQ5MeziymvmAhUHYHDUQ==}
+
+  fastify-raw-body@5.0.0:
+    resolution: {integrity: sha512-2qfoaQ3BQDhZ1gtbkKZd6n0kKxJISJGM6u/skD9ljdWItAscjXrtZ1lnjr7PavmXX9j4EyCPmBDiIsLn07d5vA==}
+    engines: {node: '>= 10'}
 
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
@@ -2367,6 +2427,10 @@ packages:
     resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
     engines: {node: '>=0.10.0'}
 
+  regexparam@3.0.0:
+    resolution: {integrity: sha512-RSYAtP31mvYLkAHrOlh25pCNQ5hWnT106VukGaaFfuJrZFkGRX5GhUAdPqpSDXxOhA2c4akmRuplv1mRqnBn6Q==}
+    engines: {node: '>=8'}
+
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -2406,6 +2470,9 @@ packages:
 
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
+
+  secure-json-parse@2.7.0:
+    resolution: {integrity: sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -2597,6 +2664,13 @@ packages:
     resolution: {integrity: sha512-t2T/WLB2WRgZ9EpE4jgPJ9w+i66UZfDc8wHh0xrwiRNN+UwH98GIJkTeZqX9rg0i0ptwzqW+uYeIF0T4F8LR7A==}
     engines: {node: '>=14.0.0'}
 
+  tldts-core@6.1.86:
+    resolution: {integrity: sha512-Je6p7pkk+KMzMv2XXKmAE3McmolOQFdxkKw0R8EYNr7sELW46JqnNeTX8ybPiQgvg1ymCoF8LXs5fzFaZvJPTA==}
+
+  tldts@6.1.86:
+    resolution: {integrity: sha512-WMi/OQ2axVTf/ykqCQgXiIct+mSQDFdH2fkwhPwgEwvJ1kSzZRiinb0zF2Xb8u4+OqPChmyI6MEu4EezNJz+FQ==}
+    hasBin: true
+
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -2608,6 +2682,10 @@ packages:
   totalist@3.0.1:
     resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
     engines: {node: '>=6'}
+
+  tough-cookie@5.1.2:
+    resolution: {integrity: sha512-FVDYdxtnj0G6Qm/DhNPSb8Ju59ULcup3tuJxkFb5K8Bv2pUXILbf0xZWU8PX8Ov19OXljbUyveOFwRMwkXzO+A==}
+    engines: {node: '>=16'}
 
   ts-api-utils@2.1.0:
     resolution: {integrity: sha512-CUgTZL1irw8u29bzrOD/nH85jqyc74D6SshFgujOIA7osm2Rz7dYH77agkx7H4FBNxDq7Cjf+IjaX/8zwFW+ZQ==}
@@ -2700,6 +2778,15 @@ packages:
       react: '>=19'
       react-dom: '>=19'
       vike: '>=0.4.182'
+
+  vike-server@1.0.19:
+    resolution: {integrity: sha512-iVb1F7mv8T30mnWE8X+bGRKOYpEsCeq5cAAj33gpP+mwd+84JJgDsMkc4C8a+aa2OtmhNk62m7sj18Tw1ptxgA==}
+    peerDependencies:
+      vike: '>=0.4.231'
+      vite: '>=6'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   vike@0.4.235:
     resolution: {integrity: sha512-wbx9wCF7E8IpaDhyhrsIOiLUl7hE/7e8vJy2bmFMjKjhIs7BhHiLLymTHe0i5qmbATmMhMLE0ur+vK4QH+nesw==}
@@ -3746,6 +3833,92 @@ snapshots:
       '@typescript-eslint/types': 8.35.0
       eslint-visitor-keys: 4.2.1
 
+  '@universal-middleware/compress@0.2.30': {}
+
+  '@universal-middleware/core@0.4.8':
+    dependencies:
+      regexparam: 3.0.0
+      tough-cookie: 5.1.2
+
+  '@universal-middleware/elysia@0.4.8':
+    dependencies:
+      '@universal-middleware/core': 0.4.8
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
+
+  '@universal-middleware/express@0.4.17':
+    dependencies:
+      '@universal-middleware/core': 0.4.8
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
+
+  '@universal-middleware/fastify@0.5.19':
+    dependencies:
+      '@universal-middleware/core': 0.4.8
+      '@universal-middleware/express': 0.4.17
+      fastify-raw-body: 5.0.0
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
+
+  '@universal-middleware/h3@0.4.11':
+    dependencies:
+      '@universal-middleware/core': 0.4.8
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
+
+  '@universal-middleware/hattip@0.4.10':
+    dependencies:
+      '@universal-middleware/core': 0.4.8
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
+
+  '@universal-middleware/hono@0.4.14':
+    dependencies:
+      '@universal-middleware/core': 0.4.8
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
+
+  '@universal-middleware/sirv@0.1.20':
+    dependencies:
+      mrmime: 2.0.1
+      totalist: 3.0.1
+
   '@vitejs/plugin-react@4.6.0(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))':
     dependencies:
       '@babel/core': 7.27.4
@@ -4301,6 +4474,14 @@ snapshots:
   fast-json-stable-stringify@2.1.0: {}
 
   fast-levenshtein@2.0.6: {}
+
+  fastify-plugin@5.0.1: {}
+
+  fastify-raw-body@5.0.0:
+    dependencies:
+      fastify-plugin: 5.0.1
+      raw-body: 3.0.0
+      secure-json-parse: 2.7.0
 
   fastq@1.19.1:
     dependencies:
@@ -4936,6 +5117,8 @@ snapshots:
 
   react@19.1.0: {}
 
+  regexparam@3.0.0: {}
+
   require-directory@2.1.1: {}
 
   resolve-from@4.0.0: {}
@@ -4994,6 +5177,8 @@ snapshots:
   safer-buffer@2.1.2: {}
 
   scheduler@0.26.0: {}
+
+  secure-json-parse@2.7.0: {}
 
   semver@6.3.1: {}
 
@@ -5209,6 +5394,12 @@ snapshots:
 
   tinyspy@4.0.3: {}
 
+  tldts-core@6.1.86: {}
+
+  tldts@6.1.86:
+    dependencies:
+      tldts-core: 6.1.86
+
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
@@ -5216,6 +5407,10 @@ snapshots:
   toidentifier@1.0.1: {}
 
   totalist@3.0.1: {}
+
+  tough-cookie@5.1.2:
+    dependencies:
+      tldts: 6.1.86
 
   ts-api-utils@2.1.0(typescript@5.8.3):
     dependencies:
@@ -5296,6 +5491,32 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
       react-streaming: 0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       vike: 0.4.235(react-streaming@0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))
+
+  vike-server@1.0.19(vike@0.4.235(react-streaming@0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)):
+    dependencies:
+      '@brillout/picocolors': 1.0.28
+      '@brillout/vite-plugin-server-entry': 0.7.9
+      '@universal-middleware/compress': 0.2.30
+      '@universal-middleware/core': 0.4.8
+      '@universal-middleware/elysia': 0.4.8
+      '@universal-middleware/express': 0.4.17
+      '@universal-middleware/fastify': 0.5.19
+      '@universal-middleware/h3': 0.4.11
+      '@universal-middleware/hattip': 0.4.10
+      '@universal-middleware/hono': 0.4.14
+      '@universal-middleware/sirv': 0.1.20
+      esbuild: 0.25.5
+      vike: 0.4.235(react-streaming@0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))
+    optionalDependencies:
+      vite: 7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)
+    transitivePeerDependencies:
+      - '@cloudflare/workers-types'
+      - '@hattip/core'
+      - '@webroute/route'
+      - elysia
+      - fastify
+      - h3
+      - hono
 
   vike@0.4.235(react-streaming@0.4.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(vite@7.0.0(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0)):
     dependencies:
