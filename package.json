@@ -32,6 +32,7 @@
     "vike": "^0.4.235",
     "vike-react": "^0.6.4",
     "vike-server": "^1.0.19",
+    "vike-vercel": "^0.0.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {
