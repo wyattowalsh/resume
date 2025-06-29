@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "dist/server/entry.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dist/server/entry.mjs"
+    }
+  ]
+} 

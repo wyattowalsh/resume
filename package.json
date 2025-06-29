@@ -21,7 +21,6 @@
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
-    "express": "^5.1.0",
     "next-themes": "^0.4.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -31,8 +30,6 @@
     "tailwindcss-animate": "^1.0.7",
     "vike": "^0.4.235",
     "vike-react": "^0.6.4",
-    "vike-server": "^1.0.19",
-    "vike-vercel": "^0.0.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {
