@@ -1,13 +1,8 @@
 {
-  "functions": {
-    "dist/server/entry.mjs": {
-      "memory": 1024
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/dist/server/entry.mjs"
+      "destination": "/api/index.js"
     }
   ]
 } 
