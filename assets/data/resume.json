@@ -30,12 +30,12 @@
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
       "location": "New York, NY",
-      "summary": "Engineered enterprise-grade data pipelines, data integrations, and analytics solutions for trading, quantitative research, and risk groups within the credit division of the investment bank and fostered improved AI development tool usage across the firm",
+      "summary": "Engineered enterprise-grade data pipelines, data integrations, and analytics solutions for trading, quantitative research, and risk groups within the credit division of the investment bank and fostered improved AI development tool usage across the firm.",
       "highlights": [
-        "Pioneered firm-wide rollout of generative AI development tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, delivering feedback that shaped secure, scalable deployment and leading internal workshops to boost productivity for technical and non-technical teams",
-        "Devised ML-driven anomaly detection framework for data health monitoring, reducing false positives by 25% and cutting manual review time, empowering risk teams to focus on critical alerts",
-        "Developed resilient Python wrapper for KDB+, democratizing data access for 5,000+ users with CI-style tests and optimized Q functions, reducing manual processing by over 10 hours per week",
-        "Engineered a cloud-function–driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard"
+        "Pioneered firm-wide rollout of generative AI development tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, delivering feedback that shaped secure, scalable deployment and leading internal workshops to boost productivity for technical and non-technical teams.",
+        "Devised ML-driven anomaly detection framework for data health monitoring, reducing false positives by 25% and cutting manual review time, empowering risk teams to focus on critical alerts.",
+        "Developed resilient Python wrapper for KDB+, democratizing data access for 5,000+ users with CI-style tests and optimized Q functions, reducing manual processing by over 10 hours per week.",
+        "Engineered a cloud-function–driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard."
       ]
     },
     {
@@ -44,11 +44,11 @@
       "startDate": "2022-03-01",
       "endDate": "2022-07-01",
       "location": "Remote",
-      "summary": "Delivered an advanced DeFi DApp as the founding engineer — integrating ethers.js for gas-optimized web3 smart contract interactions, implementing CI/CD and TDD pipelines to boost development efficiency, and partnering with founders to translate Figma designs into pixel-perfect interfaces",
+      "summary": "Delivered an advanced DeFi DApp as the founding engineer — integrating ethers.js for gas-optimized web3 smart contract interactions, implementing CI/CD and TDD pipelines to boost development efficiency, and partnering with founders to translate Figma designs into pixel-perfect interfaces.",
       "highlights": [
-        "Architected a scalable NFT-collateralized lending DApp using React, Next.js, TypeScript, MobX, and ethers.js, enabling secure, performant on-chain loans",
-        "Implemented end-to-end CI/CD with GitHub Actions, Husky, Cypress, and Jest to halve release cycles and raise test coverage to 90%, while mentoring a front-end intern to build key UI components",
-        "Optimized front-end performance through code splitting, lazy loading, and asset caching, reducing initial load times by 40% and JavaScript bundle size by 30%"
+        "Architected a scalable NFT-collateralized lending DApp using React, Next.js, TypeScript, MobX, and ethers.js, enabling secure, performant on-chain loans.",
+        "Implemented end-to-end CI/CD with GitHub Actions, Husky, Cypress, and Jest to halve release cycles and raise test coverage to 90%, while mentoring a front-end intern to build key UI components.",
+        "Optimized front-end performance through code splitting, lazy loading, and asset caching, reducing initial load times by 40% and JavaScript bundle size by 30%."
       ]
     },
     {
@@ -59,8 +59,8 @@
       "location": "Remote",
       "summary": "Enabled better data-driven decision making for Web3 stakeholders by tokenizing a 1M+ post/comment, Web3-related Reddit dataset onto a decentralized data marketplace after creating a public-facing web app and securing grant funding to enable the project.",
       "highlights": [
-        "Engineered and launched a Next.js/TailwindCSS marketing site with top-tier Lighthouse scores and secured $75K in OCEAN tokens via a competitive DAO grant",
-        "Engineered Python pipelines to extract and normalize a 1M+ Web3-related Reddit posts & comments dataset and published the data on Ocean Protocol’s Data Marketplace"
+        "Engineered and launched a Next.js/TailwindCSS marketing site with top-tier Lighthouse scores and secured $75K in OCEAN tokens via a competitive DAO grant.",
+        "Engineered Python pipelines to extract and normalize a 1M+ Web3-related Reddit posts & comments dataset and published the data on Ocean Protocol’s Data Marketplace."
       ]
     },
     {
@@ -70,10 +70,10 @@
       "startDate": "2020-01-01",
       "endDate": "2020-05-01",
       "location": "San Francisco, CA",
-      "summary": "Engineered predictive demand forecasting models, improving forecast accuracy by 5–25% to optimize inventory planning and reduce stockouts across multiple retail divisions",
+      "summary": "Engineered predictive demand forecasting models, improving forecast accuracy by 5–25% to optimize inventory planning and reduce stockouts across multiple retail divisions.",
       "highlights": [
-        "Applied time-series decomposition and bias correction techniques to demand forecasts, boosting accuracy by up to 25% and minimizing surplus inventory costs",
-        "Architected scalable data infrastructure using MySQL and Apache Spark to process 5+ years of sales data, improving data processing throughput by 95% and standardizing insights across forecasting teams"
+        "Applied time-series decomposition and bias correction techniques to demand forecasts, boosting accuracy by up to 25% and minimizing surplus inventory costs.",
+        "Architected scalable data infrastructure using MySQL and Apache Spark to process 5+ years of sales data, improving data processing throughput by 95% and standardizing insights across forecasting teams."
       ]
     },
     {
@@ -83,10 +83,10 @@
       "startDate": "2019-01-01",
       "endDate": "2019-12-01",
       "location": "Berkeley, CA",
-      "summary": "Delivered and scaled Berkeley’s flagship Data 8 course—mentoring 1,600+ students in Python, statistics, and data analysis to drive practical data literacy and student success",  
+      "summary": "Delivered and scaled Berkeley’s flagship Data 8 course—mentoring 1,600+ students in Python, statistics, and data analysis to drive practical data literacy and student success.",  
       "highlights": [
-        "Designed and led 75+ interactive lectures and labs, empowering students to apply data science methods to real-world problems",
-        "Proctored exams, graded assignments, and hosted weekly office hours to reinforce learning and uphold academic standards"
+        "Designed and led 75+ interactive lectures and labs, empowering students to apply data science methods to real-world problems.",
+        "Proctored exams, graded assignments, and hosted weekly office hours to reinforce learning and uphold academic standards."
       ]
     }
   ],
@@ -299,7 +299,7 @@
       "highlights": [
         "Developed an SEO-optimized link-tree-like landing page powered by Next.js app router featuring interactive backgrounds with configurable animations plus support for dark mode theme switching all styled in a fully accessible manner adhering to responsive design best practices.",
         "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system.", 
-        "Enabled fuzzy search across all post content and post metadata, in addition to tag filtering, multiple sorting options, and pagination using Fuse.js",
+        "Enabled fuzzy search across all post content and post metadata, in addition to tag filtering, multiple sorting options, and pagination using Fuse.js.",
         "Applied robust CI/CD practices using GitHub Actions to automate deployment to Vercel, generating sitemaps, generating feeds (RSS, Atom, JSON) and JSON-LD structured data for maximum search engine visibility."
       ]
     },
@@ -320,7 +320,7 @@
       "url": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive",
       "startDate": "2020-11-01",
       "endDate": "2021-01-01",
-      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15 K+ data scientists.",
+      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",
       "highlights": [
         "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed over 20,000 views and established credibility in the data science community.",
         "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn.",
