@@ -1,3 +1,3 @@
-c// This file imports the Vike server entry that was built by `pnpm build`.
-// Vercel magically knows how to find this file, as it's the output of the build.
-export { default } from '../dist/server/entry.mjs'; 
+// This file is a serverless function that imports the Vike server entry.
+// It is the entry point for Vercel's serverless environment.
+export * from '../dist/server/entry.mjs'; 
