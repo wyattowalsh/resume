@@ -1,6 +1,6 @@
 import { Work } from '@/lib/schema';
 import { Section } from './Section';
-import { format } from 'date-fns';
+import { formatMonthYear } from '@/lib/date';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 type WorkExperienceProps = {
@@ -20,10 +20,8 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 							<h3 className="font-bold text-sm">{job.position}</h3>
 							<div className="flex items-baseline gap-2">
 								<div className="text-xs text-muted-foreground">
-									{format(new Date(job.startDate), "MMM yyyy")} -{" "}
-									{job.endDate
-										? format(new Date(job.endDate), "MMM yyyy")
-										: "Present"}
+									{formatMonthYear(job.startDate)} -{" "}
+									{job.endDate ? formatMonthYear(job.endDate) : "Present"}
 								</div>
 								<span className="text-xs text-muted-foreground">·</span>
 								<h4 className="text-xs font-semibold">

@@ -1,6 +1,6 @@
 import { Education as EducationType } from '@/lib/schema';
 import { Section } from './Section';
-import { format } from 'date-fns';
+import { formatMonthYear } from '@/lib/date';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 type EducationProps = {
@@ -20,10 +20,8 @@ export function Education({ education }: EducationProps) {
 							<h3 className="text-sm font-bold">{edu.studyType}</h3>
 							<div className="flex items-baseline gap-2">
 								<div className="text-xs text-muted-foreground">
-									{format(new Date(edu.startDate), "MMM yyyy")} -{" "}
-									{edu.endDate
-										? format(new Date(edu.endDate), "MMM yyyy")
-										: "Present"}
+									{formatMonthYear(edu.startDate)} -{" "}
+									{edu.endDate ? formatMonthYear(edu.endDate) : "Present"}
 								</div>
 								<span className="text-xs text-muted-foreground">·</span>
 								<h4 className="text-xs font-semibold">

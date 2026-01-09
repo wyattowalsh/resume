@@ -24,15 +24,14 @@ export default function Page() {
 			<Header basics={resume.basics} />
 			<HR />
 			<WorkExperience work={resume.work} />
-			<HR icon={<FaGraduationCap />} className="print:hidden" />
-			<Education education={resume.education} />
 			{resume.skills && resume.skills.length > 0 && (
 				<>
 					<HR icon={<FaBrain />} />
 					<Skills skills={resume.skills} />
 				</>
 			)}
-
+			<HR icon={<FaGraduationCap />} className="" />
+			<Education education={resume.education} />
 			<HR icon={<FaDiagramProject />} />
 			<Projects projects={resume.projects} />
 			<div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">

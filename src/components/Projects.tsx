@@ -1,7 +1,7 @@
 import { Project } from '@/lib/schema';
 import { Section } from './Section';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
-import { format } from 'date-fns';
+import { formatMonthYear } from '@/lib/date';
 
 type ProjectsProps = {
   projects: Project[];
@@ -44,9 +44,9 @@ export function Projects({ projects }: ProjectsProps) {
 							</h3>
 							<div className="flex items-baseline gap-2">
 								<div className="text-xs text-muted-foreground">
-									{format(new Date(project.startDate), "MMM yyyy")} -{" "}
+									{formatMonthYear(project.startDate)} -{" "}
 									{project.endDate
-										? format(new Date(project.endDate), "MMM yyyy")
+										? formatMonthYear(project.endDate)
 										: "Present"}
 								</div>
 							</div>
