@@ -1,7 +1,7 @@
 import { Publication } from '@/lib/schema';
 import { Section } from './Section';
 import { FaBook } from 'react-icons/fa';
-import { LuArrowUpRight, LuLink2 } from 'react-icons/lu';
+import { LuExternalLink } from 'react-icons/lu';
 
 type PublicationsProps = {
   publications: Publication[];
@@ -31,7 +31,7 @@ export function Publications({ publications }: PublicationsProps) {
 							rel="noopener noreferrer"
 							className="ml-3 shrink-0 transition-colors hover:text-primary"
 						>
-							<span className="inline-flex items-center -space-x-0.5"><LuLink2 size={12} strokeWidth={2} /><LuArrowUpRight size={10} strokeWidth={2.5} /></span>
+							<LuExternalLink size={13} strokeWidth={2} />
 						</a>
 					</div>
 				))}

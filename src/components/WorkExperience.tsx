@@ -1,7 +1,7 @@
 import { Work } from '@/lib/schema';
 import { Section } from './Section';
 import { formatMonthYear } from '@/lib/date';
-import { LuArrowUpRight, LuLink2 } from 'react-icons/lu';
+import { LuExternalLink } from 'react-icons/lu';
 
 type WorkExperienceProps = {
   work: Work[];
@@ -33,7 +33,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 											className="inline-flex items-center gap-1 hover:underline"
 										>
 											{job.name}
-											<span className="inline-flex items-center -space-x-0.5"><LuLink2 size={10} strokeWidth={2} /><LuArrowUpRight size={8} strokeWidth={2.5} /></span>
+											<LuExternalLink size={11} strokeWidth={2} />
 										</a>
 									) : (
 										job.name
