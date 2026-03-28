@@ -1,7 +1,7 @@
 import { Education as EducationType } from '@/lib/schema';
 import { Section } from './Section';
 import { formatMonthYear } from '@/lib/date';
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 type EducationProps = {
   education: EducationType[];
@@ -33,7 +33,7 @@ export function Education({ education }: EducationProps) {
 											className="inline-flex items-center gap-1 hover:underline"
 										>
 											{edu.institution}
-											<FaExternalLinkAlt size={10} />
+											<LuArrowUpRight size={12} strokeWidth={2} />
 										</a>
 									) : (
 										edu.institution

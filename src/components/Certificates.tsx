@@ -1,7 +1,7 @@
 import { Certificate } from '@/lib/schema';
 import { Section } from './Section';
 import { FaAward } from 'react-icons/fa';
-import { FiExternalLink } from 'react-icons/fi';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 type CertificatesProps = {
   certificates: Certificate[];
@@ -32,7 +32,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 								rel="noopener noreferrer"
 								className="ml-3 shrink-0 text-muted-foreground/50 transition-colors hover:text-primary"
 							>
-								<FiExternalLink size={14} strokeWidth={1.5} />
+								<LuArrowUpRight size={14} strokeWidth={2} />
 							</a>
 						)}
 					</div>
