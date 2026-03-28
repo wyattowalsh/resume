@@ -29,7 +29,7 @@ export function Publications({ publications }: PublicationsProps) {
 							href={pub.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="ml-3 shrink-0 text-muted-foreground/50 transition-colors hover:text-primary"
+							className="ml-3 shrink-0 transition-colors hover:text-primary"
 						>
 							<LuArrowUpRight size={14} strokeWidth={2} />
 						</a>
