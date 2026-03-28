@@ -209,4 +209,44 @@
 		padding: 0;
 		font-size: 11px;
 	}
+
+	/* 2-page (full) variant */
+	.pdf-full .print-page-break-after {
+		page-break-after: always;
+		break-after: page;
+	}
+
+	/* 1-page (single) variant — tighter spacing */
+	.pdf-single {
+		font-size: 10px;
+	}
+	.pdf-single h2 {
+		font-size: 1.15em;
+		margin-bottom: 0.1rem;
+	}
+	.pdf-single .gap-2 {
+		gap: 0.15rem;
+	}
+	.pdf-single .gap-1 {
+		gap: 0.1rem;
+	}
+	.pdf-single p {
+		font-size: 0.6em;
+	}
+	.pdf-single li {
+		font-size: 0.85em;
+	}
+	.pdf-single .print-page-break-after {
+		break-after: auto;
+		page-break-after: auto;
+	}
+	.pdf-single .p-2\.5 {
+		padding: 0.4rem;
+	}
+	.pdf-single .mt-1\.5 {
+		margin-top: 0.25rem;
+	}
+	.pdf-single .mb-0\.5 {
+		margin-bottom: 0.15rem;
+	}
 }

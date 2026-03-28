@@ -76,10 +76,10 @@ export const resumeSchema = z.object({
   basics: basicsSchema,
   work: z.array(workSchema),
   education: z.array(educationSchema),
-  certificates: z.array(certificateSchema),
-  publications: z.array(publicationSchema),
+  certificates: z.array(certificateSchema).optional(),
+  publications: z.array(publicationSchema).optional(),
   skills: z.array(skillSchema).optional(),
-  projects: z.array(projectSchema),
+  projects: z.array(projectSchema).optional(),
 });
 
 export type Resume = z.infer<typeof resumeSchema>;

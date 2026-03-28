@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/full", "destination": "/404" },
+    { "source": "/single", "destination": "/404" },
     {
       "source": "/((?!assets/).*)",
       "destination": "/api/ssr"

@@ -32,18 +32,29 @@ export default function Page() {
 			)}
 			<HR icon={<FaGraduationCap />} />
 			<Education education={resume.education} />
-			<HR icon={<FaDiagramProject />} />
-			<Projects projects={resume.projects} />
-			<div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
-				<section>
-					<HR icon={<FaCertificate />} />
-					<Certificates certificates={resume.certificates} />
-				</section>
-				<section>
-					<HR icon={<FaBookOpen />} />
-					<Publications publications={resume.publications} />
-				</section>
-			</div>
+			{resume.projects && resume.projects.length > 0 && (
+				<>
+					<HR icon={<FaDiagramProject />} />
+					<Projects projects={resume.projects} />
+				</>
+			)}
+			{((resume.certificates && resume.certificates.length > 0) ||
+				(resume.publications && resume.publications.length > 0)) && (
+				<div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
+					{resume.certificates && resume.certificates.length > 0 && (
+						<section>
+							<HR icon={<FaCertificate />} />
+							<Certificates certificates={resume.certificates} />
+						</section>
+					)}
+					{resume.publications && resume.publications.length > 0 && (
+						<section>
+							<HR icon={<FaBookOpen />} />
+							<Publications publications={resume.publications} />
+						</section>
+					)}
+				</div>
+			)}
 		</main>
 	);
 } 
