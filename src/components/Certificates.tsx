@@ -20,7 +20,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 							<FaAward className="text-primary" size={14} />
 						</div>
 						<div className="ml-3 min-w-0 flex-1">
-							<h4 className="font-semibold text-xs truncate">{cert.name}</h4>
+							<h4 className="font-semibold text-xs">{cert.name}</h4>
 							<p className="text-xs text-muted-foreground">
 								Issued by {cert.issuer} on {cert.date}
 							</p>

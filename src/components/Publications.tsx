@@ -20,7 +20,7 @@ export function Publications({ publications }: PublicationsProps) {
 							<FaBook className="text-primary" size={14} />
 						</div>
 						<div className="ml-3 min-w-0 flex-1">
-							<h4 className="font-semibold text-xs truncate">{pub.name}</h4>
+							<h4 className="font-semibold text-xs">{pub.name}</h4>
 							<p className="text-xs text-muted-foreground">
 								Published in <span className="font-semibold">{pub.publisher}</span> on {pub.releaseDate}
 							</p>
