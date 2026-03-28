@@ -35,7 +35,7 @@
         "Deployed submission-time document-category validation using PydanticAI, Amazon Bedrock AgentCore, and Claude, surfaced as in-browser feedback for confidential uploads; reduced analyst follow-ups and resubmission requests ~90% by blocking miscategorized documents before they entered review queues.",
         "Built restricted-item compliance screening that combines product images with structured submission metadata; translated banking-partner policy requirements into automated checks supporting onboarding across tens of merchants, multi-location operations, and catalogs with hundreds of items per location.",
         "Built a NotebookLM-based technical knowledge hub spanning vendor/web documentation and internal monorepo docs; automated corpus refresh with a Colab pipeline that re-ingests the latest sources to keep retrieval accurate and up to date.",
-        "Drove internal AI adoption with practical enablement assets: Notion playbooks covering MCP onboarding, “best MCPs” recommendations, and high-signal prompt patterns; ran weekly office hours reaching ~15% of the company and standardized PII/confidential-document safeguards and auditability requirements."
+        "Drove internal AI adoption with practical enablement assets: Notion playbooks covering MCP onboarding, prompt patterns, and PII/confidential-document safeguards; ran weekly office hours reaching ~15% of the company."
       ]
     },
     {

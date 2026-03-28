@@ -25,12 +25,12 @@ export default function Page() {
 			<HR />
 			<WorkExperience work={resume.work} />
 			{resume.skills && resume.skills.length > 0 && (
-				<>
+				<div className="print-page-break-after">
 					<HR icon={<FaBrain />} />
 					<Skills skills={resume.skills} />
-				</>
+				</div>
 			)}
-			<HR icon={<FaGraduationCap />} className="" />
+			<HR icon={<FaGraduationCap />} />
 			<Education education={resume.education} />
 			<HR icon={<FaDiagramProject />} />
 			<Projects projects={resume.projects} />
