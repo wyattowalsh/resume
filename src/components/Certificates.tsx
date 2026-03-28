@@ -1,6 +1,7 @@
 import { Certificate } from '@/lib/schema';
 import { Section } from './Section';
-import { FaAward, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaAward } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 type CertificatesProps = {
   certificates: Certificate[];
@@ -13,31 +14,27 @@ export function Certificates({ certificates }: CertificatesProps) {
 				{certificates.map((cert) => (
 					<div
 						key={cert.name}
-						className="flex items-start rounded-lg border bg-card p-2.5 transition-shadow hover:shadow-md"
+						className="flex items-center rounded-lg border bg-card p-2.5 transition-shadow hover:shadow-md"
 					>
-						<div className="mt-0.5">
+						<div className="shrink-0">
 							<FaAward className="text-primary" size={14} />
 						</div>
-						<div className="ml-3">
-							<h4 className="font-semibold text-xs">
-								{cert.url ? (
-									<a
-										href={cert.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="inline-flex items-center gap-1 hover:underline"
-									>
-										{cert.name}
-										<FaExternalLinkAlt size={10} />
-									</a>
-								) : (
-									cert.name
-								)}
-							</h4>
+						<div className="ml-3 min-w-0 flex-1">
+							<h4 className="font-semibold text-xs truncate">{cert.name}</h4>
 							<p className="text-xs text-muted-foreground">
 								Issued by {cert.issuer} on {cert.date}
 							</p>
 						</div>
+						{cert.url && (
+							<a
+								href={cert.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="ml-3 shrink-0 text-muted-foreground/50 transition-colors hover:text-primary"
+							>
+								<FiExternalLink size={14} strokeWidth={1.5} />
+							</a>
+						)}
 					</div>
 				))}
 			</div>

@@ -1,6 +1,7 @@
 import { Publication } from '@/lib/schema';
 import { Section } from './Section';
-import { FaBook, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaBook } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 type PublicationsProps = {
   publications: Publication[];
@@ -13,27 +14,25 @@ export function Publications({ publications }: PublicationsProps) {
 				{publications.map((pub) => (
 					<div
 						key={pub.name}
-						className="flex items-start rounded-lg border bg-card p-2.5 transition-shadow hover:shadow-md"
+						className="flex items-center rounded-lg border bg-card p-2.5 transition-shadow hover:shadow-md"
 					>
-						<div className="mt-0.5">
+						<div className="shrink-0">
 							<FaBook className="text-primary" size={14} />
 						</div>
-						<div className="ml-3">
-							<h4 className="font-semibold text-xs">
-								<a
-									href={pub.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1 hover:underline"
-								>
-									{pub.name}
-									<FaExternalLinkAlt size={10} />
-								</a>
-							</h4>
+						<div className="ml-3 min-w-0 flex-1">
+							<h4 className="font-semibold text-xs truncate">{pub.name}</h4>
 							<p className="text-xs text-muted-foreground">
 								Published in <span className="font-semibold">{pub.publisher}</span> on {pub.releaseDate}
 							</p>
 						</div>
+						<a
+							href={pub.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="ml-3 shrink-0 text-muted-foreground/50 transition-colors hover:text-primary"
+						>
+							<FiExternalLink size={14} strokeWidth={1.5} />
+						</a>
 					</div>
 				))}
 			</div>
