@@ -33,7 +33,7 @@ export function Education({ education }: EducationProps) {
 											className="inline-flex items-center gap-1 hover:underline"
 										>
 											{edu.institution}
-											<LuExternalLink size={11} strokeWidth={2} />
+											<LuExternalLink size={12} strokeWidth={2} />
 										</a>
 									) : (
 										edu.institution

@@ -27,7 +27,7 @@ export function Projects({ projects }: ProjectsProps) {
 										className="inline-flex items-center gap-1 hover:text-primary hover:underline"
 									>
 										{project.name}
-										<LuExternalLink size={13} strokeWidth={2} />
+										<LuExternalLink size={12} strokeWidth={2} />
 									</a>
 								) : (
 									<span>{project.name}</span>
@@ -55,7 +55,7 @@ export function Projects({ projects }: ProjectsProps) {
 						<p className="font-semibold text-muted-foreground italic">
 							{project.description}
 						</p>
-						{Array.isArray(project.highlights) && (
+						{Array.isArray(project.highlights) && project.highlights.length > 0 && (
 							<ul className="mt-1 list-inside list-disc text-xs text-muted-foreground">
 								{project.highlights.map((highlight) => (
 									<li key={highlight}>{highlight}</li>

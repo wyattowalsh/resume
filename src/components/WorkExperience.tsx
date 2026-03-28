@@ -33,7 +33,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 											className="inline-flex items-center gap-1 hover:underline"
 										>
 											{job.name}
-											<LuExternalLink size={11} strokeWidth={2} />
+											<LuExternalLink size={12} strokeWidth={2} />
 										</a>
 									) : (
 										job.name

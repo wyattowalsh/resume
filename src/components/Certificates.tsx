@@ -14,7 +14,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 				{certificates.map((cert) => (
 					<div
 						key={cert.name}
-						className="flex items-center rounded-lg border bg-card p-2.5 transition-shadow hover:shadow-md"
+						className="flex items-start rounded-lg border bg-card p-2.5 transition-shadow hover:shadow-md"
 					>
 						<div className="shrink-0">
 							<FaAward className="text-primary" size={14} />
@@ -32,7 +32,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 								rel="noopener noreferrer"
 								className="ml-3 shrink-0 transition-colors hover:text-primary"
 							>
-								<LuExternalLink size={13} strokeWidth={2} />
+								<LuExternalLink size={12} strokeWidth={2} />
 							</a>
 						)}
 					</div>

@@ -216,7 +216,9 @@
 		break-after: page;
 	}
 
-	/* 1-page (single) variant — aggressive density */
+	/* 1-page (single) variant — aggressive density
+	   These rules target Tailwind utility classes used in components.
+	   Update if component class names change. */
 	.pdf-single {
 		font-size: 9.5px;
 	}
