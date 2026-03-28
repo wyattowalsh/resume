@@ -1,7 +1,7 @@
 import { Education as EducationType } from '@/lib/schema';
 import { Section } from './Section';
 import { formatMonthYear } from '@/lib/date';
-import { LuArrowUpRight } from 'react-icons/lu';
+import { LuArrowUpRight, LuLink2 } from 'react-icons/lu';
 
 type EducationProps = {
   education: EducationType[];
@@ -33,7 +33,7 @@ export function Education({ education }: EducationProps) {
 											className="inline-flex items-center gap-1 hover:underline"
 										>
 											{edu.institution}
-											<LuArrowUpRight size={12} strokeWidth={2} />
+											<span className="inline-flex items-center -space-x-0.5"><LuLink2 size={10} strokeWidth={2} /><LuArrowUpRight size={8} strokeWidth={2.5} /></span>
 										</a>
 									) : (
 										edu.institution

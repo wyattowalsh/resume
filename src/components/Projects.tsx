@@ -1,7 +1,7 @@
 import { Project } from '@/lib/schema';
 import { Section } from './Section';
 import { FaGithub } from 'react-icons/fa';
-import { LuArrowUpRight } from 'react-icons/lu';
+import { LuArrowUpRight, LuLink2 } from 'react-icons/lu';
 import { formatMonthYear } from '@/lib/date';
 
 type ProjectsProps = {
@@ -27,7 +27,7 @@ export function Projects({ projects }: ProjectsProps) {
 										className="inline-flex items-center gap-1 hover:text-primary hover:underline"
 									>
 										{project.name}
-										<LuArrowUpRight size={14} strokeWidth={2} />
+										<span className="inline-flex items-center -space-x-0.5"><LuLink2 size={12} strokeWidth={2} /><LuArrowUpRight size={10} strokeWidth={2.5} /></span>
 									</a>
 								) : (
 									<span>{project.name}</span>
