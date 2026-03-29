@@ -313,9 +313,9 @@
       "description": "Democratized access to sports analytics insights by open-sourcing the most robust, comprehensive NBA basketball dataset freely available online of over 65K games and 13M play-by-play events, earning over 300K views and 45K downloads on Kaggle.",
       "highlights": [
         "Implemented a high-performance, fully validated ETL pipeline using Python, Pandas, multiprocessing, pandera, pydantic, sqlalchemy, and SQL to extract data from the NBA's public API and update the dataset's SQLite database and CSV/JSON flat files with new data on a daily basis.",
-        "Created an accompanying docs site with a customized theme, updating changelog, python api docs, user guide, and development details using Sphinx, Markdown, and CSS all deployed to ReadTheDocs.",
-        "Assured robust compliance with development best practices by implementing robust CI/CD workflows using GitHub Actions for automated linting, formatting, testing, and deployment."
-      ]
+        "Created an accompanying docs site with a customized theme, updating changelog, python api docs, user guide, and development details using Sphinx, Markdown, and CSS all deployed to ReadTheDocs."
+      ],
+      "stack": ["Python", "Pandas", "SQLAlchemy", "SQLite", "Kaggle"]
     },
     {
       "name": "Listentropy",
@@ -352,10 +352,9 @@
       "description": "Built an accessible, performant, type-safe personal web app and blog using Next.js, styled with TailwindCSS + SCSS, with CMS powered by MDX enriched with 40+ plugins enabling rich interactivity, responsive design, and SEO best practices.",
       "highlights": [
         "Developed an SEO-optimized link-tree-like landing page powered by Next.js app router featuring interactive backgrounds with configurable animations plus support for dark mode theme switching all styled in a fully accessible manner adhering to responsive design best practices.",
-        "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system.",
-        "Enabled fuzzy search across all post content and post metadata, in addition to tag filtering, multiple sorting options, and pagination using Fuse.js.",
-        "Applied robust CI/CD practices using GitHub Actions to automate deployment to Vercel, generating sitemaps, generating feeds (RSS, Atom, JSON) and JSON-LD structured data for maximum search engine visibility."
-      ]
+        "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system."
+      ],
+      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "MDX"]
     },
     {
       "name": "MDXPad",
@@ -427,9 +426,9 @@
       "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",
       "highlights": [
         "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed over 20,000 views and established credibility in the data science community.",
-        "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn.",
-        "Engineered an end-to-end predictive modeling workflow, complete with mathematical derivations, interactive visualizations, and a browser-executable environment via Binder, showcasing a deep understanding of both theory and application."
-      ]
+        "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn."
+      ],
+      "stack": ["Python", "NumPy", "scikit-learn", "Jupyter"]
     }
   ]
 }

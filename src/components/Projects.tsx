@@ -62,9 +62,9 @@ export function Projects({ projects }: ProjectsProps) {
 								))}
 							</ul>
 						)}
-						<div className="mt-2 flex flex-wrap gap-1">
-							{Array.isArray(project.stack) &&
-								project.stack.map((tech) => (
+						{Array.isArray(project.stack) && project.stack.length > 0 && (
+							<div className="mt-2 flex flex-wrap gap-1">
+								{project.stack.map((tech) => (
 									<span
 										key={tech}
 										className="px-1.5 py-0.5 text-xs bg-secondary rounded-md"
@@ -72,7 +72,8 @@ export function Projects({ projects }: ProjectsProps) {
 										{tech}
 									</span>
 								))}
-						</div>
+							</div>
+						)}
 					</div>
 				))}
 			</div>

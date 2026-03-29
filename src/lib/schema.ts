@@ -65,7 +65,7 @@ const projectSchema = z.object({
   name: z.string(),
   description: z.string(),
   url: z.string().url().optional(),
-  githubUrl: z.string().url().optional(),
+  githubUrl: z.string().url(),
   stack: z.array(z.string()).optional(),
   startDate: z.string(),
   endDate: z.string().nullable(),

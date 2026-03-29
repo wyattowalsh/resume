@@ -129,3 +129,8 @@ deno_dir
 /assets/outputs/
 src/scripts/**/*.js
 src/scripts/**/*.js.map
+
+# Session logs and scratch files
+*.txt
+!requirements*.txt
+.serena/
