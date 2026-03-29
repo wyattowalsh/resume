@@ -7,8 +7,8 @@ A Vike + React resume site driven by a single JSON data file. The repo serves an
 | Route | Purpose | Notes |
 | --- | --- | --- |
 | `/` | Interactive web resume | Uses the default app layout, including the theme toggle UI. |
-| `/full` | 2-page print resume | Print-focused route used for artifact generation. In production, `vercel.json` rewrites this route to `/404`, so it is local-only on Vercel. |
-| `/single` | 1-page print resume | Print-focused route used for artifact generation. In production, `vercel.json` rewrites this route to `/404`, so it is local-only on Vercel. |
+| `/full` | 2-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
+| `/single` | 1-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
 
 ## SEO
 
@@ -21,7 +21,7 @@ The production-facing SEO setup is intentionally simple and route-specific:
 - `src/pages/full/+Head.tsx` and `src/pages/single/+Head.tsx` add `noindex, nofollow` so the print views stay out of search results.
 - `public/robots.txt` allows crawling and points to `public/sitemap.xml`, which is a static sitemap containing the public root URL.
 
-On Vercel, `/full` and `/single` are still local-only: `vercel.json` rewrites both routes to `/404` in production, so only `/` is publicly exposed.
+On Vercel, `/full` and `/single` are still local-only: the production SSR entrypoint blocks both routes with a `404`, so only `/` is publicly exposed.
 
 ## Data source
 
@@ -69,4 +69,4 @@ Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full
 
 ## Production note
 
-The print routes exist in the app code, but they are intentionally not public on Vercel. `vercel.json` rewrites both `/full` and `/single` to `/404`, which means only the interactive `/` route is exposed in production.
+The print routes exist in the app code, but they are intentionally not public on Vercel. `api/ssr.ts` blocks both `/full` and `/single` when `VERCEL_ENV=production`, which means only the interactive `/` route is exposed in production.
