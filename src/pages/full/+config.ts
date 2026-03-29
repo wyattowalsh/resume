@@ -3,4 +3,5 @@ import PrintLayout from "../../layouts/PrintLayout";
 
 export default {
   Layout: PrintLayout,
+  title: "Wyatt Walsh | Resume (Full)",
 } satisfies Config;
