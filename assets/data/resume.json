@@ -293,21 +293,123 @@
   ],
   "projects": [
     {
+      "name": "FL Studio MCP Server",
+      "githubUrl": "https://github.com/wyattowalsh/fl-mcp",
+      "startDate": "2026-03-01",
+      "endDate": null,
+      "description": "Building a Model Context Protocol server for FL Studio that exposes the DAW's project state and editing operations to AI agents, enabling AI-assisted music production workflows.",
+      "highlights": [
+        "Designed a resources-first API surface with transaction-oriented mutations so agents can read mixer state, patterns, and arrangements without side effects, then batch edits atomically.",
+        "Structured as a monorepo with Python MCP runtime, Next.js + Fumadocs documentation portal, FL Studio plugin bundle, and provider templates for third-party extensions."
+      ],
+      "stack": ["Python", "MCP", "Next.js", "Fumadocs", "FL Studio SDK"]
+    },
+    {
+      "name": "Listentropy",
+      "url": "https://listentropy.vercel.app",
+      "githubUrl": "https://github.com/wyattowalsh/listentropy",
+      "startDate": "2026-02-01",
+      "endDate": null,
+      "description": "Privacy-first Spotify listening analytics platform that processes Extended Streaming History entirely client-side, delivering deep insights without sending personal data to any server.",
+      "highlights": [
+        "Architected a Web Worker processing pipeline with stage-level progress tracking that handles full streaming history datasets in-browser, keeping all personal listening data local.",
+        "Built a Share Studio with 14-card presets and PNG/ZIP export, plus a theme system with 4 visual modes and strict performance budgets (<450 KiB bootstrap, <300 KiB async chunks)."
+      ],
+      "stack": ["TypeScript", "React", "Web Workers", "Vercel", "Canvas"]
+    },
+    {
+      "name": "AI Agent Skills & MCP Servers",
+      "url": "https://agents.w4w.dev",
+      "githubUrl": "https://github.com/wyattowalsh/agents",
+      "startDate": "2026-01-01",
+      "endDate": null,
+      "description": "Open-source ecosystem of 40+ portable AI agent skills and 38 pre-built MCP servers that bring expert workflows—code review, security scanning, infrastructure, ML—to any compatible agent platform.",
+      "highlights": [
+        "Authored 40+ reusable skill definitions covering domains from strategic analysis and prompt engineering to full-stack development, installable across Claude Code, GitHub Copilot, Cursor, and more.",
+        "Packaged 38 MCP servers spanning web research, structured thinking, browser automation, and data tools, each with standardized configuration and documentation."
+      ],
+      "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
+    },
+    {
+      "name": "MDXPad",
+      "githubUrl": "https://github.com/wyattowalsh/mdxpad",
+      "startDate": "2025-12-01",
+      "endDate": null,
+      "description": "Native macOS desktop editor for Markdown and MDX with live synchronized preview, multi-provider AI integration (Anthropic, OpenAI, custom endpoints), and secure credential storage via macOS Keychain.",
+      "highlights": [
+        "Built a dual-format editor on Electron 39 + CodeMirror 6 with synchronized scroll between source and rendered preview, remark/rehype plugin support, and YAML frontmatter validation.",
+        "Integrated multi-provider AI assistance with bring-your-own-key support, per-provider token/cost tracking, and Keychain-backed secret storage."
+      ],
+      "stack": ["Electron", "React", "TypeScript", "CodeMirror", "Vercel AI SDK"]
+    },
+    {
+      "name": "AI/ML Web Feeds",
+      "url": "https://ai-web-feeds.vercel.app",
+      "githubUrl": "https://github.com/wyattowalsh/ai-web-feeds",
+      "startDate": "2025-10-01",
+      "endDate": null,
+      "description": "Curated AI and ML content aggregation platform with topic-classified feed schema, automated validation, and contributor workflows for community-sourced feed submissions.",
+      "highlights": [
+        "Defined a structured YAML feed schema with topic classification (ML, NLP, CV, etc.) and source-type validation (blog, paper, newsletter) to ensure feed quality at scale.",
+        "Built helper scripts and a CI testing pipeline for local feed submission validation, enabling reliable community contributions."
+      ],
+      "stack": ["Python", "YAML", "Vercel"]
+    },
+    {
+      "name": "IINA Bookmarks Plugin",
+      "url": "https://iina-plugin-bookmarks.w4w.dev",
+      "githubUrl": "https://github.com/wyattowalsh/iina-plugin-bookmarks",
+      "startDate": "2025-06-01",
+      "endDate": null,
+      "description": "Advanced bookmark management plugin for the IINA media player featuring multi-interface design (sidebar, standalone window, video overlay), tag-based organization, and file reconciliation for moved or renamed media.",
+      "highlights": [
+        "Engineered three complementary interfaces—sidebar tab, detached window, and in-video overlay—with a shared tag system supporting auto-tagging and multi-criteria filtering.",
+        "Implemented JSON/CSV import-export with duplicate handling and intelligent file reconciliation that resolves bookmarks when media files are moved or renamed."
+      ],
+      "stack": ["TypeScript", "React", "IINA Plugin API", "Radix UI", "Tailwind CSS"]
+    },
+    {
+      "name": "ProxyWhirl",
+      "url": "https://proxywhirl.com",
+      "githubUrl": "https://github.com/wyattowalsh/proxywhirl",
+      "startDate": "2025-05-01",
+      "endDate": null,
+      "description": "Intelligent rotating proxy system with 9 rotation strategies, 114 auto-validated proxy sources, and self-healing capabilities that auto-eject dead proxies and implement circuit breakers.",
+      "highlights": [
+        "Implemented 9 rotation strategies (round-robin, weighted, geo-targeted, performance-based, and more) with configurable fallback chains and per-source health scoring.",
+        "Built a self-healing pipeline that continuously validates 114 built-in proxy sources, auto-ejects unresponsive proxies via circuit breakers, and re-promotes recovered sources."
+      ],
+      "stack": ["Python", "SQLite", "PyPI"]
+    },
+    {
+      "name": "MCP-Crawl4AI",
+      "githubUrl": "https://github.com/wyattowalsh/mcp-crawl4ai",
+      "startDate": "2025-04-01",
+      "endDate": null,
+      "description": "Model Context Protocol server wrapping the Crawl4AI library, enabling AI agents to crawl and extract web content through 4 focused tools with LLM-optimized output in markdown, cleaned HTML, or plain text.",
+      "highlights": [
+        "Built a FastMCP v3 server with lifespan-managed headless Chromium, session-aware crawling workflows, and automatic Playwright browser setup—only 2 runtime dependencies.",
+        "Exposed 4 tools, 2 resources, and 3 prompt templates with both stdio and HTTP transport, enabling drop-in integration with any MCP-compatible AI agent."
+      ],
+      "stack": ["Python", "FastMCP", "Crawl4AI", "Playwright", "Docker"]
+    },
+    {
       "name": "Personal Website: w4w.dev",
-      "url": "https://github.com/wyattowalsh/personal-website",
+      "url": "https://www.w4w.dev",
+      "githubUrl": "https://github.com/wyattowalsh/personal-website",
       "startDate": "2018-11-01",
       "endDate": null,
       "description": "Built an accessible, performant, type-safe personal web app and blog using Next.js, styled with TailwindCSS + SCSS, with CMS powered by MDX enriched with 40+ plugins enabling rich interactivity, responsive design, and SEO best practices.",
       "highlights": [
         "Developed an SEO-optimized link-tree-like landing page powered by Next.js app router featuring interactive backgrounds with configurable animations plus support for dark mode theme switching all styled in a fully accessible manner adhering to responsive design best practices.",
-        "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system.", 
+        "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system.",
         "Enabled fuzzy search across all post content and post metadata, in addition to tag filtering, multiple sorting options, and pagination using Fuse.js.",
         "Applied robust CI/CD practices using GitHub Actions to automate deployment to Vercel, generating sitemaps, generating feeds (RSS, Atom, JSON) and JSON-LD structured data for maximum search engine visibility."
       ]
     },
     {
       "name": "NBA Basketball Database",
-      "url": "https://github.com/wyattowalsh/nbadb",
+      "githubUrl": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": "2021-06-01",
       "description": "Democratized access to sports analytics insights by open-sourcing the most robust, comprehensive NBA basketball dataset freely available online of over 65K games and 13M play-by-play events, earning over 300K views and 45K downloads on Kaggle.",
@@ -319,7 +421,7 @@
     },
     {
       "name": "Regularized Linear Regression Deep Dive",
-      "url": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive",
+      "githubUrl": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive",
       "startDate": "2020-11-01",
       "endDate": "2021-01-01",
       "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",

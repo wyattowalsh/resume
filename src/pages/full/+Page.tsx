@@ -19,8 +19,8 @@ import {
 export default function FullPage() {
   const resume = resumeSchema.parse(resumeData);
 
-  // Trim project highlights to 2 per project to fit 2 pages
-  const trimmedProjects = resume.projects?.map((project) => ({
+  // Top 6 projects, trim highlights to 2 each to fit 2 pages
+  const trimmedProjects = resume.projects?.slice(0, 6).map((project) => ({
     ...project,
     highlights: project.highlights.slice(0, 2),
   }));
