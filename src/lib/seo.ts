@@ -1,5 +1,6 @@
 import resumeData from "@assets/data/resume.json";
 import { resumeSchema } from "@/lib/schema";
+import { rootTitle } from "@/lib/site";
 
 const siteUrl = "https://resume.w4w.dev";
 const siteImagePath = "/android-chrome-512x512.png";
@@ -27,12 +28,11 @@ function buildDescription() {
 }
 
 const description = buildDescription();
-const title = `${resume.basics.name} | Resume`;
 const canonicalUrl = `${siteUrl}/`;
 const imageUrl = `${siteUrl}${siteImagePath}`;
 
 export const sharedSeoMetadata = {
-  title,
+  title: rootTitle,
   description,
   siteUrl,
   canonicalUrl,
@@ -41,7 +41,7 @@ export const sharedSeoMetadata = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    name: title,
+    name: rootTitle,
     description,
     url: canonicalUrl,
     mainEntity: {
