@@ -211,100 +211,124 @@
 	}
 
 	/* 2-page (full) variant */
+	.pdf-full {
+		font-size: 12px;
+		padding-top: 0.2rem;
+		padding-bottom: 0.75rem;
+	}
 	.pdf-full .print-page-break-after {
 		page-break-after: always;
 		break-after: page;
 	}
 	.pdf-full p {
-		font-size: 0.64em;
+		font-size: 0.7em;
+		line-height: 1.3;
 	}
 	.pdf-full li {
-		font-size: 0.84em;
+		font-size: 0.9em;
+		line-height: 1.3;
 	}
 	.pdf-full .p-2\.5 {
-		padding: 0.4rem;
+		padding: 0.56rem;
 	}
 	.pdf-full .gap-2 {
-		gap: 0.35rem;
+		gap: 0.56rem;
 	}
 	.pdf-full .gap-x-8 {
-		column-gap: 1.15rem;
+		column-gap: 1.35rem;
+	}
+	.pdf-full .my-4 {
+		margin-top: 0.35rem;
+		margin-bottom: 0.35rem;
+	}
+	.pdf-full .mt-1\.5 {
+		margin-top: 0.3rem;
+	}
+	.pdf-full .mb-0\.5 {
+		margin-bottom: 0.15rem;
+	}
+	.pdf-full .text-xs {
+		font-size: 0.8em;
 	}
 
 	/* 1-page (single) variant — aggressive density
 	   These rules target Tailwind utility classes used in components.
 	   Update if component class names change. */
 	.pdf-single {
-		font-size: 9.5px;
+		font-size: 11px;
+		padding-top: 0.15rem;
+		padding-bottom: 0.9rem;
 	}
 	.pdf-single h1 {
-		font-size: 1.8em;
+		font-size: 1.95em;
 	}
 	.pdf-single h2 {
-		font-size: 1.1em;
-		margin-bottom: 0.05rem;
+		font-size: 1.18em;
+		margin-bottom: 0.12rem;
 	}
 	.pdf-single h3 {
-		font-size: 0.85em;
+		font-size: 0.94em;
 	}
 	.pdf-single h4 {
-		font-size: 0.75em;
+		font-size: 0.86em;
 	}
 	.pdf-single .gap-2 {
-		gap: 0.1rem;
+		gap: 0.26rem;
 	}
 	.pdf-single .gap-1 {
-		gap: 0.05rem;
+		gap: 0.16rem;
 	}
 	.pdf-single .gap-0\.5 {
-		gap: 0.025rem;
+		gap: 0.08rem;
 	}
 	.pdf-single p {
-		font-size: 0.55em;
+		font-size: 0.64em;
+		line-height: 1.28;
 		margin: 0;
 	}
 	.pdf-single li {
-		font-size: 0.8em;
+		font-size: 0.86em;
+		line-height: 1.24;
 	}
 	.pdf-single .print-page-break-after {
 		break-after: auto;
 		page-break-after: auto;
 	}
 	.pdf-single .p-2\.5 {
-		padding: 0.3rem;
+		padding: 0.46rem;
 	}
 	.pdf-single .mt-1\.5 {
-		margin-top: 0.15rem;
+		margin-top: 0.24rem;
 	}
 	.pdf-single .mb-0\.5 {
-		margin-bottom: 0.05rem;
+		margin-bottom: 0.12rem;
 	}
 	.pdf-single .gap-x-6 {
-		column-gap: 1rem;
+		column-gap: 1.15rem;
 	}
 	.pdf-single .gap-x-8 {
-		column-gap: 1rem;
+		column-gap: 1.15rem;
 	}
 	.pdf-single .gap-4 {
-		gap: 0.5rem;
+		gap: 0.65rem;
 	}
 	.pdf-single .mt-0\.5 {
-		margin-top: 0.1rem;
+		margin-top: 0.14rem;
 	}
 	.pdf-single .mt-1 {
-		margin-top: 0.15rem;
+		margin-top: 0.22rem;
 	}
 	.pdf-single .mt-2 {
-		margin-top: 0.25rem;
+		margin-top: 0.35rem;
 	}
 	.pdf-single .my-4 {
-		margin-top: 0.1rem;
-		margin-bottom: 0.1rem;
+		margin-top: 0.28rem;
+		margin-bottom: 0.28rem;
 	}
 	.pdf-single .space-y-0\.5 > * + * {
-		margin-top: 0;
+		margin-top: 0.08rem;
 	}
 	.pdf-single .text-xs {
-		font-size: 0.72em;
+		font-size: 0.76em;
 	}
 }
