@@ -24,24 +24,6 @@
       "highlightIndexes": [0, 1]
     }
   ],
-  "skills": [
-    {
-      "name": "Machine Learning and Gen AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 8, 10, 11, 12, 13]
-    },
-    {
-      "name": "Data Engineering and Analytics",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 13, 14]
-    },
-    {
-      "name": "Cloud Infrastructure and DevOps",
-      "keywordIndexes": [0, 4, 5, 10, 14, 15, 16, 17, 19, 20, 21, 22]
-    },
-    {
-      "name": "Front-End & API Tooling",
-      "keywordIndexes": [0, 1, 4, 5, 8, 10, 11, 14, 15, 19, 20, 21]
-    }
-  ],
   "projects": [
     {
       "name": "AI Agent Skills & MCP Servers",
