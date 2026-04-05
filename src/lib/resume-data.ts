@@ -39,21 +39,6 @@ const skillSelectionSchema = namedSelectionSchema.extend({
   keywordIndexes: z.array(indexSchema).optional(),
 });
 
-const proofPointSchema = z.object({
-  value: z.string(),
-  label: z.string(),
-  detail: z.string().optional(),
-});
-
-const siteContentSchema = z.object({
-  eyebrow: z.string(),
-  headline: z.string(),
-  subheadline: z.string(),
-  focusAreas: z.array(z.string()),
-  proofPoints: z.array(proofPointSchema),
-  availability: z.string().optional(),
-});
-
 const variantSeoSchema = z.object({
   description: z.string().optional(),
 });
@@ -71,7 +56,6 @@ const resumeVariantSchema = z.object({
   certificates: z.array(z.string()).optional(),
   publications: z.array(z.string()).optional(),
   seo: variantSeoSchema.optional(),
-  site: siteContentSchema.optional(),
   options: variantOptionsSchema.optional(),
 });
 
@@ -86,7 +70,6 @@ const variantConfigs = {
 type ResumeVariantConfig = z.infer<typeof resumeVariantSchema>;
 
 export type ResumeVariantName = keyof typeof variantConfigs;
-export type SiteContent = z.infer<typeof siteContentSchema>;
 export type ResumeVariantSeo = z.infer<typeof variantSeoSchema>;
 export type ResumeVariantOptions = z.infer<typeof variantOptionsSchema>;
 
@@ -97,12 +80,6 @@ export type ResolvedResumeVariant = Pick<
   name: ResumeVariantName;
   options: ResumeVariantOptions;
   seo?: ResumeVariantSeo;
-  site?: SiteContent;
-};
-
-export type SiteResumeVariant = ResolvedResumeVariant & {
-  name: "site";
-  site: SiteContent;
 };
 
 const resolvedVariantCache = new Map<ResumeVariantName, ResolvedResumeVariant>();
@@ -307,7 +284,6 @@ function buildVariant(name: ResumeVariantName): ResolvedResumeVariant {
     publications: resolvePublications(baseResume.publications, config.publications),
     options: config.options ?? {},
     seo: config.seo,
-    site: config.site,
   };
 }
 
@@ -321,14 +297,4 @@ export function getResumeVariant(name: ResumeVariantName): ResolvedResumeVariant
   const resolvedVariant = buildVariant(name);
   resolvedVariantCache.set(name, resolvedVariant);
   return resolvedVariant;
-}
-
-export function getSiteVariant(): SiteResumeVariant {
-  const variant = getResumeVariant("site");
-
-  if (!variant.site) {
-    throw new Error("The site resume variant is missing site content.");
-  }
-
-  return variant as SiteResumeVariant;
 }

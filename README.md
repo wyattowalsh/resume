@@ -1,12 +1,12 @@
 # resume
 
-A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves a public long-form resume site and generates print-ready PDF/PNG artifacts from dedicated print routes.
+A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves an interactive online resume and generates print-ready PDF/PNG artifacts from dedicated print routes.
 
 ## Routes
 
 | Route | Purpose | Notes |
 | --- | --- | --- |
-| `/` | Public long-form resume site | Resume-led landing page with portfolio-depth sections and the default app layout, including the theme toggle UI. |
+| `/` | Interactive online resume | Public web resume using the default app layout, including the theme toggle UI. |
 | `/full` | 2-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
 | `/single` | 1-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
 
@@ -29,7 +29,7 @@ On Vercel, `/full` and `/single` are still local-only: the production SSR entryp
 
 `assets/data/variants/site.json`, `assets/data/variants/full.json`, and `assets/data/variants/single.json` layer artifact-specific curation on top of that base data:
 
-- `site.json` powers the public long-form landing page
+- `site.json` curates the interactive online resume
 - `full.json` curates the 2-page formal resume
 - `single.json` curates the 1-page distilled resume
 

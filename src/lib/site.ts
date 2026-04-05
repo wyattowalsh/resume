@@ -1,1 +1,1 @@
-export const rootTitle = "Wyatt Walsh | Production AI Engineer";
+export const rootTitle = "Wyatt Walsh | Resume";

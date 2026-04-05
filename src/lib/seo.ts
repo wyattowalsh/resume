@@ -1,10 +1,10 @@
-import { getSiteVariant } from "@/lib/resume-data";
+import { getResumeVariant } from "@/lib/resume-data";
 import { rootTitle } from "@/lib/site";
 
 const siteUrl = "https://resume.w4w.dev";
 const siteImagePath = "/android-chrome-512x512.png";
 
-const siteResume = getSiteVariant();
+const siteResume = getResumeVariant("site");
 const primaryWork = siteResume.work[0];
 const locationName = [
   siteResume.basics.location.city,
