@@ -1,30 +1,33 @@
-import resumeData from "@assets/data/resume.json";
-import { resumeSchema } from "@/lib/schema";
+import { getSiteVariant } from "@/lib/resume-data";
 import { rootTitle } from "@/lib/site";
 
 const siteUrl = "https://resume.w4w.dev";
 const siteImagePath = "/android-chrome-512x512.png";
 
-const resume = resumeSchema.parse(resumeData);
-const primaryWork = resume.work[0];
+const siteResume = getSiteVariant();
+const primaryWork = siteResume.work[0];
 const locationName = [
-  resume.basics.location.city,
-  resume.basics.location.region,
-  resume.basics.location.countryCode,
+  siteResume.basics.location.city,
+  siteResume.basics.location.region,
+  siteResume.basics.location.countryCode,
 ]
   .filter(Boolean)
   .join(", ");
 
 function buildDescription() {
-  if (resume.basics.summary?.trim()) {
-    return resume.basics.summary.trim();
+  if (siteResume.seo?.description?.trim()) {
+    return siteResume.seo.description.trim();
+  }
+
+  if (siteResume.basics.summary?.trim()) {
+    return siteResume.basics.summary.trim();
   }
 
   if (primaryWork) {
-    return `${resume.basics.name} is a ${primaryWork.position} at ${primaryWork.name}. Explore experience, skills, education, projects, and publications.`;
+    return `${siteResume.basics.name} is a ${primaryWork.position} at ${primaryWork.name}. Explore experience, skills, education, projects, and publications.`;
   }
 
-  return `Explore ${resume.basics.name}'s experience, skills, education, projects, and publications.`;
+  return `Explore ${siteResume.basics.name}'s experience, skills, education, projects, and publications.`;
 }
 
 const description = buildDescription();
@@ -37,7 +40,7 @@ export const sharedSeoMetadata = {
   siteUrl,
   canonicalUrl,
   imageUrl,
-  imageAlt: `${resume.basics.name} resume site icon`,
+  imageAlt: `${siteResume.basics.name} resume site icon`,
   structuredData: {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
@@ -46,9 +49,9 @@ export const sharedSeoMetadata = {
     url: canonicalUrl,
     mainEntity: {
       "@type": "Person",
-      name: resume.basics.name,
-      url: resume.basics.url,
-      sameAs: resume.basics.profiles.map((profile) => profile.url),
+      name: siteResume.basics.name,
+      url: siteResume.basics.url,
+      sameAs: siteResume.basics.profiles.map((profile) => profile.url),
       ...(locationName
         ? {
             homeLocation: {

@@ -215,6 +215,21 @@
 		page-break-after: always;
 		break-after: page;
 	}
+	.pdf-full p {
+		font-size: 0.64em;
+	}
+	.pdf-full li {
+		font-size: 0.84em;
+	}
+	.pdf-full .p-2\.5 {
+		padding: 0.4rem;
+	}
+	.pdf-full .gap-2 {
+		gap: 0.35rem;
+	}
+	.pdf-full .gap-x-8 {
+		column-gap: 1.15rem;
+	}
 
 	/* 1-page (single) variant — aggressive density
 	   These rules target Tailwind utility classes used in components.
@@ -288,5 +303,8 @@
 	}
 	.pdf-single .space-y-0\.5 > * + * {
 		margin-top: 0;
+	}
+	.pdf-single .text-xs {
+		font-size: 0.72em;
 	}
 }

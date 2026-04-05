@@ -1,11 +1,8 @@
-import resumeData from "@assets/data/resume.json";
 import { ResumeLayout } from "@/components/ResumeLayout";
-import { resumeSchema } from "@/lib/schema";
-
-const PROJECTS_SHOWN = 6;
+import { getResumeVariant } from "@/lib/resume-data";
 
 export default function FullPage() {
-  const resume = resumeSchema.parse(resumeData);
+  const { options, seo: _seo, site: _site, ...resume } = getResumeVariant("full");
 
   return (
     <ResumeLayout
@@ -14,10 +11,10 @@ export default function FullPage() {
       work={resume.work}
       skills={resume.skills}
       education={resume.education}
-      projects={resume.projects?.slice(0, PROJECTS_SHOWN)}
+      projects={resume.projects}
       certificates={resume.certificates}
       publications={resume.publications}
-      skillsPageBreak
+      skillsPageBreak={options.skillsPageBreak}
     />
   );
 }

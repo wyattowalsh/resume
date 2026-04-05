@@ -1,19 +1,6 @@
-import resumeData from "@assets/data/resume.json";
-import { ResumeLayout } from "@/components/ResumeLayout";
-import { resumeSchema } from "@/lib/schema";
+import { PublicResumeSite } from "@/components/PublicResumeSite";
+import { getSiteVariant } from "@/lib/resume-data";
 
 export default function Page() {
-  const resume = resumeSchema.parse(resumeData);
-
-  return (
-    <ResumeLayout
-      basics={resume.basics}
-      work={resume.work}
-      skills={resume.skills}
-      education={resume.education}
-      projects={resume.projects}
-      certificates={resume.certificates}
-      publications={resume.publications}
-    />
-  );
+  return <PublicResumeSite variant={getSiteVariant()} />;
 }

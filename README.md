@@ -1,12 +1,12 @@
 # resume
 
-A Vike + React resume site driven by a single JSON data file. The repo serves an interactive web resume and generates print-ready PDF/PNG artifacts from dedicated print routes.
+A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves a public long-form resume site and generates print-ready PDF/PNG artifacts from dedicated print routes.
 
 ## Routes
 
 | Route | Purpose | Notes |
 | --- | --- | --- |
-| `/` | Interactive web resume | Uses the default app layout, including the theme toggle UI. |
+| `/` | Public long-form resume site | Resume-led landing page with portfolio-depth sections and the default app layout, including the theme toggle UI. |
 | `/full` | 2-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
 | `/single` | 1-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
 
@@ -15,7 +15,7 @@ A Vike + React resume site driven by a single JSON data file. The repo serves an
 The production-facing SEO setup is intentionally simple and route-specific:
 
 - `src/lib/site.ts` defines the shared root title for `/`.
-- `src/lib/seo.ts` builds the rest of the shared `/` metadata from the validated resume JSON, including the description, canonical URL, Open Graph fields, Twitter card fields, and `ProfilePage` JSON-LD.
+- `src/lib/seo.ts` builds the rest of the shared `/` metadata from the resolved site variant, including the description, canonical URL, Open Graph fields, Twitter card fields, and `ProfilePage` JSON-LD.
 - `src/pages/index/+Head.tsx` emits that metadata for the interactive home route.
 - `renderer/+config.ts` reuses that shared root title, while `src/pages/full/+config.ts` and `src/pages/single/+config.ts` still override titles for the print routes.
 - `src/pages/full/+Head.tsx` and `src/pages/single/+Head.tsx` add `noindex, nofollow` so the print views stay out of search results.
@@ -25,7 +25,15 @@ On Vercel, `/full` and `/single` are still local-only: the production SSR entryp
 
 ## Data source
 
-`assets/data/resume.json` is the single source of truth for the resume content. The route components import that file directly and validate it with `resumeSchema` before rendering.
+`assets/data/resume.json` remains the canonical fact source for resume content.
+
+`assets/data/variants/site.json`, `assets/data/variants/full.json`, and `assets/data/variants/single.json` layer artifact-specific curation on top of that base data:
+
+- `site.json` powers the public long-form landing page
+- `full.json` curates the 2-page formal resume
+- `single.json` curates the 1-page distilled resume
+
+`src/lib/resume-data.ts` resolves those variant files into validated render payloads for each route.
 
 ## Commands
 
