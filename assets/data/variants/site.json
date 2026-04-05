@@ -24,24 +24,6 @@
       "highlightIndexes": [0, 1]
     }
   ],
-  "projects": [
-    {
-      "name": "AI Agent Skills & MCP Servers",
-      "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "Listentropy",
-      "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "NBA Basketball Database",
-      "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "MCP-Crawl4AI",
-      "highlightIndexes": [0, 1]
-    }
-  ],
   "education": ["University of California, Berkeley – College of Engineering"],
   "certificates": ["AWS Certified Cloud Practitioner"],
   "publications": [
