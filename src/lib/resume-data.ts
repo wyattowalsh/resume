@@ -45,6 +45,7 @@ const variantSeoSchema = z.object({
 
 const variantOptionsSchema = z.object({
   skillsPageBreak: z.boolean().optional(),
+  projectsPageBreak: z.boolean().optional(),
 });
 
 const resumeVariantSchema = z.object({

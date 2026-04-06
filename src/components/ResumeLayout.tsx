@@ -33,6 +33,7 @@ type ResumeLayoutProps = {
   publications?: Publication[];
   className?: string;
   skillsPageBreak?: boolean;
+  projectsPageBreak?: boolean;
 };
 
 export function ResumeLayout({
@@ -45,6 +46,7 @@ export function ResumeLayout({
   publications,
   className,
   skillsPageBreak,
+  projectsPageBreak,
 }: ResumeLayoutProps) {
   const skillsContent = skills && skills.length > 0 && (
     <>
@@ -69,6 +71,7 @@ export function ResumeLayout({
       <Education education={education} />
       {projects && projects.length > 0 && (
         <>
+          {projectsPageBreak && <div className="print-page-break-after" />}
           <HR icon={<FaDiagramProject />} />
           <Projects projects={projects} />
         </>

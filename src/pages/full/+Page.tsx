@@ -15,6 +15,7 @@ export default function FullPage() {
       certificates={resume.certificates}
       publications={resume.publications}
       skillsPageBreak={options.skillsPageBreak}
+      projectsPageBreak={options.projectsPageBreak}
     />
   );
 }

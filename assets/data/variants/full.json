@@ -65,5 +65,8 @@
   "publications": [
     "Basics of Linear Regression Modeling and Ordinary Least Squares (OLS)",
     "Using Ridge Regression to Overcome Drawbacks of Ordinary Least Squares (OLS)"
-  ]
+  ],
+  "options": {
+    "projectsPageBreak": true
+  }
 }
