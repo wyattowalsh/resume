@@ -1,22 +1,16 @@
-import { ResumeLayout } from "@/components/ResumeLayout";
+import { SingleResumeLayout } from "@/components/SingleResumeLayout";
 import { getResumeVariant } from "@/lib/resume-data";
 
 export default function SinglePage() {
-  const { options, seo: _seo, site: _site, ...resume } =
-    getResumeVariant("single");
+  const { seo: _seo, ...resume } = getResumeVariant("single");
 
   return (
-    <ResumeLayout
-      className="pdf-single"
+    <SingleResumeLayout
       basics={resume.basics}
       work={resume.work}
       skills={resume.skills}
       education={resume.education}
       projects={resume.projects}
-      certificates={resume.certificates}
-      publications={resume.publications}
-      skillsPageBreak={options.skillsPageBreak}
-      projectsPageBreak={options.projectsPageBreak}
     />
   );
 }

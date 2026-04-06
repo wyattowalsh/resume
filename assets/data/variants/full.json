@@ -60,13 +60,13 @@
       "highlightIndexes": [0]
     }
   ],
-  "education": ["University of California, Berkeley – College of Engineering"],
+  "education": [
+    "University of California, Berkeley – College of Engineering",
+    "The Hotchkiss School"
+  ],
   "certificates": ["AWS Certified Cloud Practitioner"],
   "publications": [
     "Basics of Linear Regression Modeling and Ordinary Least Squares (OLS)",
     "Using Ridge Regression to Overcome Drawbacks of Ordinary Least Squares (OLS)"
-  ],
-  "options": {
-    "projectsPageBreak": true
-  }
+  ]
 }

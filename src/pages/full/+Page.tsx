@@ -1,12 +1,11 @@
-import { ResumeLayout } from "@/components/ResumeLayout";
+import { FullResumeLayout } from "@/components/FullResumeLayout";
 import { getResumeVariant } from "@/lib/resume-data";
 
 export default function FullPage() {
-  const { options, seo: _seo, site: _site, ...resume } = getResumeVariant("full");
+  const { seo: _seo, ...resume } = getResumeVariant("full");
 
   return (
-    <ResumeLayout
-      className="pdf-full"
+    <FullResumeLayout
       basics={resume.basics}
       work={resume.work}
       skills={resume.skills}
@@ -14,8 +13,6 @@ export default function FullPage() {
       projects={resume.projects}
       certificates={resume.certificates}
       publications={resume.publications}
-      skillsPageBreak={options.skillsPageBreak}
-      projectsPageBreak={options.projectsPageBreak}
     />
   );
 }

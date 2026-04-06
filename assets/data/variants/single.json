@@ -44,7 +44,10 @@
       "highlightIndexes": []
     }
   ],
-  "education": ["University of California, Berkeley – College of Engineering"],
+  "education": [
+    "University of California, Berkeley – College of Engineering",
+    "The Hotchkiss School"
+  ],
   "certificates": [],
   "publications": []
 }

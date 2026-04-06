@@ -24,7 +24,10 @@
       "highlightIndexes": [0, 1]
     }
   ],
-  "education": ["University of California, Berkeley – College of Engineering"],
+  "education": [
+    "University of California, Berkeley – College of Engineering",
+    "The Hotchkiss School"
+  ],
   "certificates": ["AWS Certified Cloud Practitioner"],
   "publications": [
     "Basics of Linear Regression Modeling and Ordinary Least Squares (OLS)",

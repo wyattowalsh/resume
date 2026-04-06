@@ -10,7 +10,8 @@
     "build:script": "tsc --project tsconfig.node.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "pnpm build && pnpm serve",
-    "generate:resume": "pnpm build:script && node src/scripts/generate.js"
+    "generate:resume": "pnpm build:script && node src/scripts/generate.js",
+    "check:artifacts": "pnpm generate:resume && node src/scripts/check-artifacts.js"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",
@@ -48,6 +49,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
+    "pdfjs-dist": "5.6.205",
     "playwright": "^1.53.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",

@@ -43,11 +43,6 @@ const variantSeoSchema = z.object({
   description: z.string().optional(),
 });
 
-const variantOptionsSchema = z.object({
-  skillsPageBreak: z.boolean().optional(),
-  projectsPageBreak: z.boolean().optional(),
-});
-
 const resumeVariantSchema = z.object({
   basics: basicsOverridesSchema.optional(),
   work: z.array(workSelectionSchema).optional(),
@@ -57,7 +52,6 @@ const resumeVariantSchema = z.object({
   certificates: z.array(z.string()).optional(),
   publications: z.array(z.string()).optional(),
   seo: variantSeoSchema.optional(),
-  options: variantOptionsSchema.optional(),
 });
 
 const baseResume = resumeSchema.parse(resumeData);
@@ -72,14 +66,12 @@ type ResumeVariantConfig = z.infer<typeof resumeVariantSchema>;
 
 export type ResumeVariantName = keyof typeof variantConfigs;
 export type ResumeVariantSeo = z.infer<typeof variantSeoSchema>;
-export type ResumeVariantOptions = z.infer<typeof variantOptionsSchema>;
 
 export type ResolvedResumeVariant = Pick<
   Resume,
   "basics" | "work" | "education" | "projects" | "skills" | "certificates" | "publications"
 > & {
   name: ResumeVariantName;
-  options: ResumeVariantOptions;
   seo?: ResumeVariantSeo;
 };
 
@@ -283,7 +275,6 @@ function buildVariant(name: ResumeVariantName): ResolvedResumeVariant {
     projects: resolveProjects(baseResume.projects, config.projects),
     certificates: resolveCertificates(baseResume.certificates, config.certificates),
     publications: resolvePublications(baseResume.publications, config.publications),
-    options: config.options ?? {},
     seo: config.seo,
   };
 }

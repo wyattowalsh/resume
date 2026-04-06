@@ -1,14 +1,14 @@
 # resume
 
-A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves an interactive online resume and generates print-ready PDF/PNG artifacts from dedicated print routes.
+ A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves a screen-native online resume and generates dedicated 2-page and 1-page print artifacts from separate print compositions.
 
 ## Routes
 
 | Route | Purpose | Notes |
 | --- | --- | --- |
-| `/` | Interactive online resume | Public web resume using the default app layout, including the theme toggle UI. |
-| `/full` | 2-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
-| `/single` | 1-page print resume | Print-focused route used for artifact generation. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
+| `/` | Interactive online resume | Public web resume with a dedicated screen layout, section jump nav, and deeper project presentation. |
+| `/full` | 2-page print resume | Letter-sized, editorial 2-page artifact with dedicated print layout and page choreography. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
+| `/single` | 1-page print resume | Letter-sized recruiter scan sheet with a flatter dedicated print layout. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
 
 ## SEO
 
@@ -34,6 +34,13 @@ On Vercel, `/full` and `/single` are still local-only: the production SSR entryp
 - `single.json` curates the 1-page distilled resume
 
 `src/lib/resume-data.ts` resolves those variant files into validated render payloads for each route.
+
+Those resolved payloads now feed dedicated top-level compositions instead of one shared layout:
+
+- `src/components/SiteResumeLayout.tsx` for `/`
+- `src/components/FullResumeLayout.tsx` for `/full`
+- `src/components/SingleResumeLayout.tsx` for `/single`
+- `src/lib/artifact-specs.ts` for the artifact-specific presentation budgets shared by those layouts
 
 ## Commands
 
@@ -61,6 +68,12 @@ pnpm generate:resume
 
 Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full` and `/single` routes.
 
+```bash
+pnpm check:artifacts
+```
+
+Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, both PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, and page 2 of the full PDF still contains `Projects`.
+
 ## Resume generation workflow
 
 `src/scripts/generate.ts` is self-contained:
@@ -74,6 +87,8 @@ Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full
   - `assets/outputs/resume-single.png`
 
 `assets/outputs/` is gitignored, so generated artifacts are not committed by default.
+
+`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist`.
 
 ## Production note
 
