@@ -9,7 +9,7 @@
     },
     {
       "name": "JPMorgan Chase & Co.",
-      "highlightIndexes": [0, 2, 3]
+      "highlightIndexes": [0, 1, 2, 3]
     },
     {
       "name": "Stealth Web3 Startup",
@@ -31,7 +31,7 @@
     },
     {
       "name": "Machine Learning and Gen AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 8, 10, 11, 12, 13]
+      "keywordIndexes": [0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     },
     {
       "name": "Data Engineering and Analytics",
@@ -64,9 +64,10 @@
     "University of California, Berkeley – College of Engineering",
     "The Hotchkiss School"
   ],
-  "certificates": ["AWS Certified Cloud Practitioner"],
+  "certificates": ["AWS Certified Cloud Practitioner", "IBM Data Science Professional Certificate"],
   "publications": [
     "Basics of Linear Regression Modeling and Ordinary Least Squares (OLS)",
-    "Using Ridge Regression to Overcome Drawbacks of Ordinary Least Squares (OLS)"
+    "Using Ridge Regression to Overcome Drawbacks of Ordinary Least Squares (OLS)",
+    "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python"
   ]
 }

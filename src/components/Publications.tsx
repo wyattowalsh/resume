@@ -13,7 +13,7 @@ export function Publications({ publications }: PublicationsProps) {
 		<Section title="Publications" className="break-inside-avoid">
 			<div className="flex flex-col gap-2">
 				{publications.map((pub) => (
-					<div
+					<article
 						key={pub.name}
 						className="flex flex-col gap-3 rounded-lg border bg-card p-3 transition-shadow hover:shadow-md sm:flex-row sm:items-start"
 					>
@@ -21,10 +21,10 @@ export function Publications({ publications }: PublicationsProps) {
 							<FaBook className="text-primary" size={14} />
 						</div>
 						<div className="min-w-0 flex-1 space-y-0.5">
-							<h4 className="text-xs font-semibold leading-5">{pub.name}</h4>
+							<h3 className="text-xs font-semibold leading-5">{pub.name}</h3>
 							<p className="text-xs leading-5 text-muted-foreground">
 								Published in <span className="font-semibold">{pub.publisher}</span> in{" "}
-								{formatMonthYear(pub.releaseDate)}
+								<time dateTime={pub.releaseDate}>{formatMonthYear(pub.releaseDate)}</time>
 							</p>
 						</div>
 						<a
@@ -36,7 +36,7 @@ export function Publications({ publications }: PublicationsProps) {
 						>
 							<LuExternalLink size={12} strokeWidth={2} />
 						</a>
-					</div>
+					</article>
 				))}
 			</div>
 		</Section>

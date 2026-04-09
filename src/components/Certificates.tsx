@@ -13,7 +13,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 		<Section title="Certificates" className="break-inside-avoid">
 			<div className="flex flex-col gap-2">
 				{certificates.map((cert) => (
-					<div
+					<article
 						key={cert.name}
 						className="flex flex-col gap-3 rounded-lg border bg-card p-3 transition-shadow hover:shadow-md sm:flex-row sm:items-start"
 					>
@@ -21,9 +21,10 @@ export function Certificates({ certificates }: CertificatesProps) {
 							<FaAward className="text-primary" size={14} />
 						</div>
 						<div className="min-w-0 flex-1 space-y-0.5">
-							<h4 className="text-xs font-semibold leading-5">{cert.name}</h4>
+							<h3 className="text-xs font-semibold leading-5">{cert.name}</h3>
 							<p className="text-xs leading-5 text-muted-foreground">
-								Issued by {cert.issuer} in {formatMonthYear(cert.date)}
+								Issued by {cert.issuer} in{" "}
+								<time dateTime={cert.date}>{formatMonthYear(cert.date)}</time>
 							</p>
 						</div>
 						{cert.url && (
@@ -37,7 +38,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 								<LuExternalLink size={12} strokeWidth={2} />
 							</a>
 						)}
-					</div>
+					</article>
 				))}
 			</div>
 		</Section>

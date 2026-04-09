@@ -78,7 +78,7 @@ Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full
 pnpm check:artifacts
 ```
 
-Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, and the curated project selections still appear in the generated PDFs.
+Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, and the curated work/project/skills/education/certification/publication content still appears in the generated PDFs.
 
 ## Resume generation workflow
 
@@ -86,6 +86,7 @@ Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were g
 
 - If `APP_URL` is **not** set, it starts a local Vike dev server on an available localhost port.
 - If `APP_URL` **is** set, it uses that URL instead and waits for it to become reachable.
+- If Puppeteer cannot auto-discover Chrome in your environment, set `PUPPETEER_EXECUTABLE_PATH` to a Chrome/Chromium binary before running the generator.
 - It renders `/full` and `/single` in Puppeteer, then writes:
   - `assets/outputs/resume-full.pdf`
   - `assets/outputs/resume-full.png`

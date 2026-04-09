@@ -14,7 +14,7 @@ export function Skills({ skills }: SkillsProps) {
 						key={skill.name}
 						className="border rounded-md p-2.5 bg-card transition-all duration-200 hover:bg-card/80 hover:shadow-md hover:border-primary/20"
 					>
-						<h4 className="font-semibold mb-1 text-sm">{skill.name}</h4>
+						<h3 className="mb-1 text-sm font-semibold">{skill.name}</h3>
 						<div className="flex flex-wrap gap-0.5">
 							{skill.keywords.map((keyword) => (
 								<span

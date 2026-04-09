@@ -55,14 +55,23 @@ type PrintPublicationListProps = {
   publications: Publication[];
 };
 
-function formatDateRange(startDate: string, endDate: string | null) {
-  return `${formatMonthYear(startDate)} - ${endDate ? formatMonthYear(endDate) : "Present"}`;
+function renderDateRange(startDate: string, endDate: string | null) {
+  return (
+    <>
+      <time dateTime={startDate}>{formatMonthYear(startDate)}</time> -{" "}
+      {endDate ? <time dateTime={endDate}>{formatMonthYear(endDate)}</time> : "Present"}
+    </>
+  );
 }
 
 function skillsGridClass(columns: 1 | 2 | 3) {
   if (columns === 1) return "grid-cols-1";
   if (columns === 3) return "grid-cols-3";
   return "grid-cols-2";
+}
+
+function getPrintSectionHeadingId(title: string) {
+  return `print-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}-heading`;
 }
 
 export function PrintResumeHeader({
@@ -125,11 +134,16 @@ export function PrintResumeHeader({
 }
 
 export function PrintSection({ title, children, className }: PrintSectionProps) {
+  const headingId = getPrintSectionHeadingId(title);
+
   return (
-    <section className={cn("resume-print-section", className)}>
-      <div className="mb-2 border-t border-slate-300 pt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+    <section aria-labelledby={headingId} className={cn("resume-print-section", className)}>
+      <h2
+        id={headingId}
+        className="resume-print-section-heading mb-2 border-t border-slate-300 pt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500"
+      >
         {title}
-      </div>
+      </h2>
       {children}
     </section>
   );
@@ -160,9 +174,9 @@ export function PrintWorkList({
                 {job.location ? ` · ${job.location}` : ""}
               </div>
             </div>
-            <div className="shrink-0 text-right text-[10px] uppercase tracking-[0.08em] text-slate-500">
-              {formatDateRange(job.startDate, job.endDate)}
-            </div>
+             <div className="shrink-0 text-right text-[10px] uppercase tracking-[0.08em] text-slate-500">
+               {renderDateRange(job.startDate, job.endDate)}
+             </div>
           </div>
 
           {showSummaries && (
@@ -231,23 +245,15 @@ export function PrintProjectList({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "font-semibold text-slate-950 hover:text-slate-700",
-                      compact ? "text-[11px]" : "text-[12px]",
-                    )}
-                  >
-                    {project.name}
-                  </a>
-                ) : (
-                  <h3 className={cn("font-semibold text-slate-950", compact ? "text-[11px]" : "text-[12px]")}>
-                    {project.name}
-                  </h3>
-                )}
+                <h3 className={cn("font-semibold text-slate-950", compact ? "text-[11px]" : "text-[12px]")}>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-700">
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
+                </h3>
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
@@ -269,7 +275,7 @@ export function PrintProjectList({
               </p>
             </div>
             <div className="shrink-0 text-right text-[10px] uppercase tracking-[0.08em] text-slate-500">
-              {formatDateRange(project.startDate, project.endDate)}
+              {renderDateRange(project.startDate, project.endDate)}
             </div>
           </div>
 
@@ -322,7 +328,7 @@ export function PrintEducationList({ education, compact = false }: PrintEducatio
             {entry.score ? ` · GPA ${entry.score}` : ""}
           </p>
           <p className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
-            {formatDateRange(entry.startDate, entry.endDate)}
+            {renderDateRange(entry.startDate, entry.endDate)}
           </p>
         </article>
       ))}
@@ -345,7 +351,7 @@ export function PrintCertificateList({ certificates }: PrintCertificateListProps
             )}
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {cert.issuer} · {formatMonthYear(cert.date)}
+            {cert.issuer} · <time dateTime={cert.date}>{formatMonthYear(cert.date)}</time>
           </p>
         </article>
       ))}
@@ -364,7 +370,8 @@ export function PrintPublicationList({ publications }: PrintPublicationListProps
             </a>
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {publication.publisher} · {formatMonthYear(publication.releaseDate)}
+            {publication.publisher} ·{" "}
+            <time dateTime={publication.releaseDate}>{formatMonthYear(publication.releaseDate)}</time>
           </p>
         </article>
       ))}

@@ -8,6 +8,7 @@ export default {
   extends: [vikeReact],
   Layout,
   title: rootTitle,
+  lang: 'en',
   htmlAttributes: {
     suppressHydrationWarning: true,
   }

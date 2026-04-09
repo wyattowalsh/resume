@@ -12,7 +12,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 		<Section title="Work Experience" className="break-inside-avoid">
 			<div className="flex flex-col gap-2">
 				{work.map((job) => (
-					<div
+					<article
 						key={job.name}
 						className="rounded-lg border bg-card p-3 transition-shadow hover:shadow-md"
 					>
@@ -37,8 +37,12 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 							</div>
 							<div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground sm:justify-end">
 								<div>
-									{formatMonthYear(job.startDate)} -{" "}
-									{job.endDate ? formatMonthYear(job.endDate) : "Present"}
+									<time dateTime={job.startDate}>{formatMonthYear(job.startDate)}</time> -{" "}
+									{job.endDate ? (
+										<time dateTime={job.endDate}>{formatMonthYear(job.endDate)}</time>
+									) : (
+										"Present"
+									)}
 								</div>
 								{job.location && (
 									<>
@@ -62,7 +66,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
 								</ul>
 							)}
 						</div>
-					</div>
+					</article>
 				))}
 			</div>
 		</Section>

@@ -12,7 +12,7 @@ export function Education({ education }: EducationProps) {
 		<Section title="Education" className="break-inside-avoid">
 			<div className="flex flex-col gap-2">
 				{education.map((edu) => (
-					<div
+					<article
 						key={edu.institution}
 						className="rounded-lg border bg-card p-3 transition-shadow hover:shadow-md"
 					>
@@ -37,8 +37,12 @@ export function Education({ education }: EducationProps) {
 							</div>
 							<div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground sm:justify-end">
 								<div>
-									{formatMonthYear(edu.startDate)} -{" "}
-									{edu.endDate ? formatMonthYear(edu.endDate) : "Present"}
+									<time dateTime={edu.startDate}>{formatMonthYear(edu.startDate)}</time> -{" "}
+									{edu.endDate ? (
+										<time dateTime={edu.endDate}>{formatMonthYear(edu.endDate)}</time>
+									) : (
+										"Present"
+									)}
 								</div>
 							</div>
 						</div>
@@ -56,7 +60,7 @@ export function Education({ education }: EducationProps) {
 								)}
 							</div>
 						)}
-					</div>
+					</article>
 				))}
 			</div>
 		</Section>

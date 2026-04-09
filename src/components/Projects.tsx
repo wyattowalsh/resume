@@ -13,7 +13,7 @@ export function Projects({ projects }: ProjectsProps) {
 		<Section title="Projects" className="break-inside-avoid">
 			<div className="flex flex-col gap-2">
 				{projects.map((project) => (
-					<div
+					<article
 						key={project.name}
 						className="rounded-lg border bg-card p-3 transition-shadow hover:shadow-md"
 					>
@@ -48,10 +48,12 @@ export function Projects({ projects }: ProjectsProps) {
 							</div>
 							<div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground sm:justify-end">
 								<div>
-									{formatMonthYear(project.startDate)} -{" "}
-									{project.endDate
-										? formatMonthYear(project.endDate)
-										: "Present"}
+									<time dateTime={project.startDate}>{formatMonthYear(project.startDate)}</time> -{" "}
+									{project.endDate ? (
+										<time dateTime={project.endDate}>{formatMonthYear(project.endDate)}</time>
+									) : (
+										"Present"
+									)}
 								</div>
 							</div>
 						</div>
@@ -77,7 +79,7 @@ export function Projects({ projects }: ProjectsProps) {
 								))}
 							</div>
 						)}
-					</div>
+					</article>
 				))}
 			</div>
 		</Section>

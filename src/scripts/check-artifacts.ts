@@ -3,6 +3,7 @@ import path from "node:path";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 
 const OUTPUT_DIR = path.resolve(process.cwd(), "assets", "outputs");
+const RESUME_PATH = path.resolve(process.cwd(), "assets", "data", "resume.json");
 const FULL_VARIANT_PATH = path.resolve(process.cwd(), "assets", "data", "variants", "full.json");
 const SINGLE_VARIANT_PATH = path.resolve(process.cwd(), "assets", "data", "variants", "single.json");
 const LETTER_WIDTH_POINTS = 612;
@@ -15,9 +16,23 @@ interface PdfExpectation {
   expectedPages: number;
 }
 
+interface NamedSelection {
+  name: string;
+}
+
+interface ResumeSelection {
+  basics: {
+    name: string;
+  };
+}
+
 interface VariantContentSelection {
-  work?: Array<{ name: string }>;
-  projects?: Array<{ name: string }>;
+  work?: NamedSelection[];
+  projects?: NamedSelection[];
+  skills?: NamedSelection[];
+  education?: string[];
+  certificates?: string[];
+  publications?: string[];
 }
 
 const expectedArtifacts = [
@@ -53,6 +68,21 @@ function assertNormalizedTextIncludes(haystack: string, needle: string, context:
 async function readVariantSelection(filePath: string): Promise<VariantContentSelection> {
   const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw) as VariantContentSelection;
+}
+
+async function readResumeSelection(filePath: string): Promise<ResumeSelection> {
+  const raw = await fs.readFile(filePath, "utf8");
+  return JSON.parse(raw) as ResumeSelection;
+}
+
+function getSelectionNames(selections: NamedSelection[] | undefined) {
+  return (selections ?? []).map(({ name }) => name);
+}
+
+function assertNormalizedTextIncludesAll(haystack: string, needles: string[], context: string) {
+  for (const needle of needles) {
+    assertNormalizedTextIncludes(haystack, needle, context);
+  }
 }
 
 async function assertArtifactExists(fileName: (typeof expectedArtifacts)[number]) {
@@ -164,7 +194,8 @@ async function assertPdfExpectations({ fileName, expectedPages }: PdfExpectation
 }
 
 async function runArtifactChecks() {
-  const [fullVariant, singleVariant] = await Promise.all([
+  const [resume, fullVariant, singleVariant] = await Promise.all([
+    readResumeSelection(RESUME_PATH),
     readVariantSelection(FULL_VARIANT_PATH),
     readVariantSelection(SINGLE_VARIANT_PATH),
   ]);
@@ -181,29 +212,104 @@ async function runArtifactChecks() {
   const fullPageTwo = await getPdfPageText(path.join(OUTPUT_DIR, "resume-full.pdf"), 2);
   const singlePageOne = await getPdfPageText(path.join(OUTPUT_DIR, "resume-single.pdf"), 1);
 
-  const firstFullWork = fullVariant.work?.[0]?.name;
-  if (firstFullWork) {
-    assertNormalizedTextIncludes(fullPageOne.text, firstFullWork, "resume-full.pdf page 1");
-    console.log(`✓ resume-full.pdf page 1 contains "${firstFullWork}"`);
-  }
+  assertNormalizedTextIncludes(fullPageOne.text, resume.basics.name, "resume-full.pdf page 1");
+  assertNormalizedTextIncludes(singlePageOne.text, resume.basics.name, "resume-single.pdf");
+  console.log(`✓ generated PDFs contain "${resume.basics.name}"`);
 
-  if (!/\bprojects\b/i.test(fullPageTwo.text) && !fullPageTwo.normalizedText.includes("projects")) {
-    fail('resume-full.pdf page 2 must contain "Projects".');
-  }
+  assertNormalizedTextIncludes(fullPageOne.text, "Experience", "resume-full.pdf page 1");
+  console.log('✓ resume-full.pdf page 1 contains "Experience"');
 
+  assertNormalizedTextIncludesAll(
+    fullPageOne.text,
+    getSelectionNames(fullVariant.work),
+    "resume-full.pdf page 1",
+  );
+  console.log("✓ resume-full.pdf page 1 contains all curated work names");
+
+  assertNormalizedTextIncludes(fullPageTwo.text, "Projects", "resume-full.pdf page 2");
   console.log('✓ resume-full.pdf page 2 contains "Projects"');
 
-  for (const project of fullVariant.projects ?? []) {
-    assertNormalizedTextIncludes(fullPageTwo.text, project.name, "resume-full.pdf page 2");
+  if (fullVariant.skills?.length) {
+    assertNormalizedTextIncludes(fullPageTwo.text, "Skills", "resume-full.pdf page 2");
+    assertNormalizedTextIncludesAll(
+      fullPageTwo.text,
+      getSelectionNames(fullVariant.skills),
+      "resume-full.pdf page 2",
+    );
+    console.log("✓ resume-full.pdf page 2 contains the curated skills section");
   }
+
+  if (fullVariant.education?.length) {
+    assertNormalizedTextIncludes(fullPageTwo.text, "Education", "resume-full.pdf page 2");
+    assertNormalizedTextIncludesAll(fullPageTwo.text, fullVariant.education, "resume-full.pdf page 2");
+    console.log("✓ resume-full.pdf page 2 contains the curated education section");
+  }
+
+  if (fullVariant.certificates?.length) {
+    assertNormalizedTextIncludes(fullPageTwo.text, "Certifications", "resume-full.pdf page 2");
+    assertNormalizedTextIncludesAll(
+      fullPageTwo.text,
+      fullVariant.certificates,
+      "resume-full.pdf page 2",
+    );
+    console.log("✓ resume-full.pdf page 2 contains the curated certifications section");
+  }
+
+  if (fullVariant.publications?.length) {
+    assertNormalizedTextIncludes(fullPageTwo.text, "Publications", "resume-full.pdf page 2");
+    assertNormalizedTextIncludesAll(
+      fullPageTwo.text,
+      fullVariant.publications,
+      "resume-full.pdf page 2",
+    );
+    console.log("✓ resume-full.pdf page 2 contains the curated publications section");
+  }
+
+  assertNormalizedTextIncludesAll(
+    fullPageTwo.text,
+    getSelectionNames(fullVariant.projects),
+    "resume-full.pdf page 2",
+  );
 
   console.log("✓ resume-full.pdf page 2 contains all curated project names");
 
-  for (const project of singleVariant.projects ?? []) {
-    assertNormalizedTextIncludes(singlePageOne.text, project.name, "resume-single.pdf");
+  assertNormalizedTextIncludes(singlePageOne.text, "Experience", "resume-single.pdf");
+  console.log('✓ resume-single.pdf contains "Experience"');
+
+  assertNormalizedTextIncludesAll(
+    singlePageOne.text,
+    getSelectionNames(singleVariant.work),
+    "resume-single.pdf",
+  );
+  console.log("✓ resume-single.pdf contains all curated work names");
+
+  if (singleVariant.skills?.length) {
+    assertNormalizedTextIncludes(singlePageOne.text, "Skills", "resume-single.pdf");
+    assertNormalizedTextIncludesAll(
+      singlePageOne.text,
+      getSelectionNames(singleVariant.skills),
+      "resume-single.pdf",
+    );
+    console.log("✓ resume-single.pdf contains the curated skills section");
   }
 
+  if (singleVariant.education?.length) {
+    assertNormalizedTextIncludes(singlePageOne.text, "Education", "resume-single.pdf");
+    assertNormalizedTextIncludesAll(singlePageOne.text, singleVariant.education, "resume-single.pdf");
+    console.log("✓ resume-single.pdf contains the curated education section");
+  }
+
+  if (singleVariant.projects?.length) {
+    assertNormalizedTextIncludes(singlePageOne.text, "Projects", "resume-single.pdf");
+  }
+
+  assertNormalizedTextIncludesAll(
+    singlePageOne.text,
+    getSelectionNames(singleVariant.projects),
+    "resume-single.pdf",
+  );
   console.log("✓ resume-single.pdf contains all curated project names");
+
   console.log("Artifact regression checks passed.");
 }
 

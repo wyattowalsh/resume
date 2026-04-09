@@ -6,6 +6,7 @@ const siteImagePath = "/android-chrome-512x512.png";
 
 const siteResume = getResumeVariant("site");
 const primaryWork = siteResume.work[0];
+const siteName = `${siteResume.basics.name} Resume`;
 const locationName = [
   siteResume.basics.location.city,
   siteResume.basics.location.region,
@@ -13,6 +14,25 @@ const locationName = [
 ]
   .filter(Boolean)
   .join(", ");
+const knowsAbout = Array.from(
+  new Set(siteResume.skills?.flatMap((skill) => skill.keywords) ?? []),
+);
+const alumniOf = siteResume.education.map((education) => ({
+  "@type": "EducationalOrganization",
+  name: education.institution,
+  ...(education.url ? { url: education.url } : {}),
+}));
+const credentials =
+  siteResume.certificates?.map((certificate) => ({
+    "@type": "EducationalOccupationalCredential",
+    name: certificate.name,
+    credentialCategory: "certificate",
+    ...(certificate.url ? { url: certificate.url } : {}),
+    recognizedBy: {
+      "@type": "Organization",
+      name: certificate.issuer,
+    },
+  })) ?? [];
 
 function buildDescription() {
   if (siteResume.seo?.description?.trim()) {
@@ -41,6 +61,10 @@ export const sharedSeoMetadata = {
   canonicalUrl,
   imageUrl,
   imageAlt: `${siteResume.basics.name} resume site icon`,
+  imageWidth: 512,
+  imageHeight: 512,
+  siteName,
+  locale: "en_US",
   structuredData: {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
@@ -70,6 +94,9 @@ export const sharedSeoMetadata = {
             },
           }
         : {}),
+      ...(knowsAbout.length ? { knowsAbout } : {}),
+      ...(alumniOf.length ? { alumniOf } : {}),
+      ...(credentials.length ? { hasCredential: credentials } : {}),
     },
   },
 } as const;

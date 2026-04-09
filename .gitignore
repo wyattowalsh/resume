@@ -129,6 +129,8 @@ deno_dir
 /assets/outputs/
 src/scripts/**/*.js
 src/scripts/**/*.js.map
+src/scripts/**/*.d.ts
+vite.config.d.ts
 
 # Session logs and scratch files
 *.txt

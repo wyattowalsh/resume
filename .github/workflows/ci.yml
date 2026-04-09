@@ -8,7 +8,7 @@ on:
 
 jobs:
   quality:
-    name: Build, lint, and test
+    name: Build, lint, test, and artifacts
     runs-on: ubuntu-latest
 
     steps:
@@ -35,8 +35,26 @@ jobs:
       - name: Type check
         run: pnpm exec tsc --noEmit
 
+      - name: Build scripts
+        run: pnpm build:script
+
       - name: Lint
         run: pnpm lint
 
       - name: Test
         run: pnpm test
+
+      - name: Setup Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Generate resume artifacts
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: node src/scripts/generate.js
+
+      - name: Check artifact regressions
+        run: node src/scripts/check-artifacts.js
+
+      - name: Verify tracked files remain clean
+        run: git diff --exit-code

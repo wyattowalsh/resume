@@ -37,7 +37,7 @@
   "projects": [
     {
       "name": "AI Agent Skills & MCP Servers",
-      "highlightIndexes": []
+      "highlightIndexes": [0]
     },
     {
       "name": "NBA Basketball Database",

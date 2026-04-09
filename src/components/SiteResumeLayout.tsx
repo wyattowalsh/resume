@@ -67,7 +67,7 @@ export function SiteResumeLayout({
             <a
               key={link.id}
               href={`#${link.id}`}
-              className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-secondary px-3.5 py-1.5 text-xs font-medium text-secondary-foreground transition-colors hover:bg-primary/10 hover:text-primary"
             >
               {link.label}
             </a>

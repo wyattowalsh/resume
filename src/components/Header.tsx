@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 function Ornament({ reversed }: { reversed?: boolean }) {
 	return (
 		<div
+			aria-hidden="true"
 			className={cn('hidden items-center gap-2 md:flex', reversed && 'flex-row-reverse')}
 		>
 			<div
@@ -57,14 +58,14 @@ export function Header({ basics }: HeaderProps) {
 				<div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
 				<a
 					href={`mailto:${basics.email}`}
-					className="flex items-center gap-2 transition-colors hover:text-primary"
+					className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
 				>
 					<CiMail className="text-primary" size={18} strokeWidth={1.5} />
 					{basics.email}
 				</a>
 				<a
 					href={`tel:${basics.phone}`}
-					className="flex items-center gap-2 transition-colors hover:text-primary"
+					className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
 				>
 					<SlScreenSmartphone className="text-primary" size={18} strokeWidth={2} />
 					{basics.phone}
@@ -74,7 +75,7 @@ export function Header({ basics }: HeaderProps) {
 						href={gmapsQueryUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 transition-colors hover:text-primary"
+						className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
 					>
 						<FaMapPin className="text-primary" size={18} />
 						{locationString}
@@ -87,7 +88,7 @@ export function Header({ basics }: HeaderProps) {
 							href={profile.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="flex items-center gap-2 transition-colors hover:text-primary"
+							className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
 						>
 							{profile.network === "LinkedIn" && (
 								<FaLinkedinIn className="text-primary" size={18} />

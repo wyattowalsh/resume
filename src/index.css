@@ -7,6 +7,21 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   blockquote {
     @apply mt-6 border-l-2 pl-6 italic;
   }
@@ -170,6 +185,8 @@
 		break-inside: avoid;
 	}
 	.print-page-break-after {
+		display: block;
+		height: 0;
 		page-break-after: always;
 		break-after: page;
 	}
@@ -190,10 +207,19 @@
 		color: #0f172a;
 		background-color: white;
 		font-family: var(--font-sans);
+		min-height: auto !important;
+	}
+	.resume-print-section-heading {
+		page-break-after: avoid;
+		break-after: avoid-page;
 	}
 	.resume-print a {
 		color: inherit;
 		text-decoration: none;
+	}
+	.resume-print ul {
+		orphans: 2;
+		widows: 2;
 	}
 	.resume-print-entry {
 		break-inside: avoid;

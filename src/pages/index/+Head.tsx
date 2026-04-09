@@ -5,7 +5,11 @@ export default function Head() {
     canonicalUrl,
     description,
     imageAlt,
+    imageHeight,
     imageUrl,
+    imageWidth,
+    locale,
+    siteName,
     structuredData,
     title,
   } = sharedSeoMetadata;
@@ -21,13 +25,17 @@ export default function Head() {
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:alt" content={imageAlt} />
+      <meta property="og:image:width" content={String(imageWidth)} />
+      <meta property="og:image:height" content={String(imageHeight)} />
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:locale" content={locale} />
 
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={imageUrl} />
-      <meta property="twitter:image:alt" content={imageAlt} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content={canonicalUrl} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={imageAlt} />
 
       <script
         type="application/ld+json"
