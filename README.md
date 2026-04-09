@@ -60,7 +60,13 @@ Build the production app.
 pnpm lint
 ```
 
-Defined, but currently not a reliable validation gate: the repo is on ESLint 9 without a matching flat-config setup yet.
+Run the ESLint 9 flat-config lint gate across the TypeScript/React codebase.
+
+```bash
+pnpm test
+```
+
+Run the focused Vitest suite for the shared date and resume-variant resolver logic.
 
 ```bash
 pnpm generate:resume
@@ -72,7 +78,7 @@ Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full
 pnpm check:artifacts
 ```
 
-Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, both PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, and page 2 of the full PDF still contains `Projects`.
+Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, and the curated project selections still appear in the generated PDFs.
 
 ## Resume generation workflow
 

@@ -63,7 +63,7 @@ export function FullResumeLayout({
           </PrintSection>
         )}
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] md:gap-5">
+        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] gap-5">
           <div className="space-y-4">
             {skills && skills.length > 0 && (
               <PrintSection title="Skills">
@@ -78,7 +78,7 @@ export function FullResumeLayout({
 
           <div className="space-y-4">
             {certificates && certificates.length > 0 && (
-              <PrintSection title="Certificates">
+              <PrintSection title="Certifications">
                 <PrintCertificateList certificates={certificates} />
               </PrintSection>
             )}

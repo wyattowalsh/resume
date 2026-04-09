@@ -30,17 +30,27 @@ export function SingleResumeLayout({
     <main className={`resume-print pdf-single mx-auto w-full max-w-[7.65in] p-0 ${className ?? ""}`}>
       <PrintResumeHeader basics={basics} showSummary={singleArtifactSpec.showSummary} compact />
 
-      <div className="mt-3 space-y-3">
+      <div className="mt-2.5 space-y-2.5">
         <PrintSection title="Experience">
           <PrintWorkList work={work} showSummaries={singleArtifactSpec.showWorkSummaries} compact />
         </PrintSection>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:gap-5">
-          {skills && skills.length > 0 && (
-            <PrintSection title="Skills">
-              <PrintSkillList skills={skills} columns={singleArtifactSpec.skillsColumns} />
+        <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-4">
+          <div className="space-y-3">
+            {skills && skills.length > 0 && (
+              <PrintSection title="Skills">
+                <PrintSkillList
+                  skills={skills}
+                  columns={singleArtifactSpec.skillsColumns}
+                  compact
+                />
+              </PrintSection>
+            )}
+
+            <PrintSection title="Education">
+              <PrintEducationList education={education} compact />
             </PrintSection>
-          )}
+          </div>
 
           <div className="space-y-3">
             {projects && projects.length > 0 && (
@@ -53,10 +63,6 @@ export function SingleResumeLayout({
                 />
               </PrintSection>
             )}
-
-            <PrintSection title="Education">
-              <PrintEducationList education={education} compact />
-            </PrintSection>
           </div>
         </div>
       </div>

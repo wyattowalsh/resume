@@ -55,12 +55,12 @@ export function SiteResumeLayout({
 
   return (
     <main
-      className={`container mx-auto my-4 max-w-6xl rounded-xl p-0 print:my-0 print:max-w-full print:border-none print:shadow-none ${className ?? ""}`}
+      className={`container mx-auto my-4 max-w-6xl rounded-xl px-4 pb-8 print:my-0 print:max-w-full print:border-none print:px-0 print:pb-0 print:shadow-none sm:px-6 lg:px-8 ${className ?? ""}`}
     >
       <Header basics={basics} />
       <nav
         aria-label="Resume sections"
-        className="sticky top-3 z-20 mt-4 rounded-full border bg-background/90 px-3 py-2 shadow-sm backdrop-blur print:hidden"
+        className="sticky top-4 z-20 mt-4 rounded-full border bg-background/90 px-3 py-2 shadow-sm backdrop-blur print:hidden"
       >
         <div className="flex flex-wrap justify-center gap-2">
           {jumpLinks.map((link) => (
@@ -75,7 +75,7 @@ export function SiteResumeLayout({
         </div>
       </nav>
 
-      <div className="mt-6 grid gap-8 xl:grid-cols-[minmax(0,1.65fr)_minmax(18rem,1fr)]">
+      <div className="mt-6 grid gap-6 lg:gap-8 xl:grid-cols-[minmax(0,1.65fr)_minmax(18rem,1fr)]">
         <div className="space-y-6">
           <div id="work-experience" className="scroll-mt-24">
             <HR />
@@ -90,7 +90,7 @@ export function SiteResumeLayout({
           )}
         </div>
 
-        <aside className="space-y-6">
+        <aside className="space-y-6 xl:sticky xl:top-24 xl:self-start">
           {skills && skills.length > 0 && (
             <div id="skills" className="scroll-mt-24">
               <HR icon={<FaBrain />} />

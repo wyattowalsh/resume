@@ -3,13 +3,21 @@ import path from "node:path";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 
 const OUTPUT_DIR = path.resolve(process.cwd(), "assets", "outputs");
+const FULL_VARIANT_PATH = path.resolve(process.cwd(), "assets", "data", "variants", "full.json");
+const SINGLE_VARIANT_PATH = path.resolve(process.cwd(), "assets", "data", "variants", "single.json");
 const LETTER_WIDTH_POINTS = 612;
 const LETTER_HEIGHT_POINTS = 792;
 const LETTER_SIZE_TOLERANCE = 1;
+const MAX_ARTIFACT_AGE_MS = 15 * 60 * 1_000;
 
 interface PdfExpectation {
   fileName: string;
   expectedPages: number;
+}
+
+interface VariantContentSelection {
+  work?: Array<{ name: string }>;
+  projects?: Array<{ name: string }>;
 }
 
 const expectedArtifacts = [
@@ -34,6 +42,17 @@ function isWithinTolerance(value: number, expected: number) {
 
 function normalizeLooseText(text: string) {
   return text.toLowerCase().replace(/[^a-z]+/g, "");
+}
+
+function assertNormalizedTextIncludes(haystack: string, needle: string, context: string) {
+  if (!normalizeLooseText(haystack).includes(normalizeLooseText(needle))) {
+    fail(`${context} must contain "${needle}".`);
+  }
+}
+
+async function readVariantSelection(filePath: string): Promise<VariantContentSelection> {
+  const raw = await fs.readFile(filePath, "utf8");
+  return JSON.parse(raw) as VariantContentSelection;
 }
 
 async function assertArtifactExists(fileName: (typeof expectedArtifacts)[number]) {
@@ -61,6 +80,12 @@ async function assertArtifactExists(fileName: (typeof expectedArtifacts)[number]
   }
 
   console.log(`✓ Found ${path.relative(process.cwd(), filePath)}`);
+
+  if (Date.now() - stats.mtimeMs > MAX_ARTIFACT_AGE_MS) {
+    fail(`Generated artifact looks stale: ${fileName}`);
+  }
+
+  console.log(`✓ ${fileName} was generated recently`);
   return filePath;
 }
 
@@ -139,6 +164,11 @@ async function assertPdfExpectations({ fileName, expectedPages }: PdfExpectation
 }
 
 async function runArtifactChecks() {
+  const [fullVariant, singleVariant] = await Promise.all([
+    readVariantSelection(FULL_VARIANT_PATH),
+    readVariantSelection(SINGLE_VARIANT_PATH),
+  ]);
+
   for (const artifact of expectedArtifacts) {
     await assertArtifactExists(artifact);
   }
@@ -147,12 +177,33 @@ async function runArtifactChecks() {
     await assertPdfExpectations(expectation);
   }
 
+  const fullPageOne = await getPdfPageText(path.join(OUTPUT_DIR, "resume-full.pdf"), 1);
   const fullPageTwo = await getPdfPageText(path.join(OUTPUT_DIR, "resume-full.pdf"), 2);
+  const singlePageOne = await getPdfPageText(path.join(OUTPUT_DIR, "resume-single.pdf"), 1);
+
+  const firstFullWork = fullVariant.work?.[0]?.name;
+  if (firstFullWork) {
+    assertNormalizedTextIncludes(fullPageOne.text, firstFullWork, "resume-full.pdf page 1");
+    console.log(`✓ resume-full.pdf page 1 contains "${firstFullWork}"`);
+  }
+
   if (!/\bprojects\b/i.test(fullPageTwo.text) && !fullPageTwo.normalizedText.includes("projects")) {
     fail('resume-full.pdf page 2 must contain "Projects".');
   }
 
   console.log('✓ resume-full.pdf page 2 contains "Projects"');
+
+  for (const project of fullVariant.projects ?? []) {
+    assertNormalizedTextIncludes(fullPageTwo.text, project.name, "resume-full.pdf page 2");
+  }
+
+  console.log("✓ resume-full.pdf page 2 contains all curated project names");
+
+  for (const project of singleVariant.projects ?? []) {
+    assertNormalizedTextIncludes(singlePageOne.text, project.name, "resume-single.pdf");
+  }
+
+  console.log("✓ resume-single.pdf contains all curated project names");
   console.log("Artifact regression checks passed.");
 }
 

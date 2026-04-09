@@ -17,7 +17,7 @@ export const fullArtifactSpec = {
 } as const;
 
 export const singleArtifactSpec = {
-  showSummary: false,
+  showSummary: true,
   showWorkSummaries: false,
   showProjectHighlights: false,
   showProjectStacks: true,

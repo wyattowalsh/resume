@@ -2,7 +2,7 @@ import { FullResumeLayout } from "@/components/FullResumeLayout";
 import { getResumeVariant } from "@/lib/resume-data";
 
 export default function FullPage() {
-  const { seo: _seo, ...resume } = getResumeVariant("full");
+  const resume = getResumeVariant("full");
 
   return (
     <FullResumeLayout

@@ -2,7 +2,7 @@ import { SingleResumeLayout } from "@/components/SingleResumeLayout";
 import { getResumeVariant } from "@/lib/resume-data";
 
 export default function SinglePage() {
-  const { seo: _seo, ...resume } = getResumeVariant("single");
+  const resume = getResumeVariant("single");
 
   return (
     <SingleResumeLayout

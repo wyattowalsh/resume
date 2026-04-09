@@ -134,3 +134,4 @@ src/scripts/**/*.js.map
 *.txt
 !requirements*.txt
 .serena/
+.copilot/

@@ -19,7 +19,7 @@ export function Skills({ skills }: SkillsProps) {
 							{skill.keywords.map((keyword) => (
 								<span
 									key={keyword}
-									className="px-1.5 py-0.25 bg-secondary text-secondary-foreground rounded-md border transition-all duration-200 hover:bg-primary/10 hover:border-primary/20 hover:text-primary hover:-translate-y-px skill"
+									className="rounded-md border bg-secondary px-1.5 py-0.25 text-[11px] leading-4 text-secondary-foreground transition-all duration-200 hover:-translate-y-px hover:border-primary/20 hover:bg-primary/10 hover:text-primary"
 								>
 									{keyword}
 								</span>

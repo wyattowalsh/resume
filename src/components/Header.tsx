@@ -6,19 +6,18 @@ import {
 import { CiMail } from 'react-icons/ci';
 import { FiGithub } from 'react-icons/fi';
 import { SlScreenSmartphone } from 'react-icons/sl';
-import { Separator } from './ui/separator';
+import { cn } from '@/lib/utils';
 
 function Ornament({ reversed }: { reversed?: boolean }) {
 	return (
 		<div
-			className={`hidden items-center gap-2 md:flex ${
-				reversed ? 'flex-row-reverse' : ''
-			}`}
+			className={cn('hidden items-center gap-2 md:flex', reversed && 'flex-row-reverse')}
 		>
 			<div
-				className={`h-px w-12 bg-gradient-to-${
-					reversed ? 'l' : 'r'
-				} from-transparent to-muted-foreground/30`}
+				className={cn(
+					'h-px w-12 from-transparent to-muted-foreground/30',
+					reversed ? 'bg-gradient-to-l' : 'bg-gradient-to-r',
+				)}
 			/>
 			<div className="h-1 w-1 rounded-full bg-muted-foreground/30" />
 			<div className="h-px w-6 bg-muted-foreground/30" />
@@ -39,33 +38,35 @@ export function Header({ basics }: HeaderProps) {
 	)}`;
 
 	return (
-		<header className="flex flex-col items-center justify-start gap-2 text-center">
-			<div className="flex items-center gap-4">
+		<header className="rounded-2xl border bg-card/80 px-5 py-6 shadow-sm sm:px-8 sm:py-8">
+			<div className="flex flex-col items-center justify-start gap-4 text-center">
+				<div className="flex items-center gap-4">
 				<Ornament />
 				<a href={basics.url} target="_blank" rel="noopener noreferrer">
-					<h1 className="shrink-0 text-4xl font-bold text-gradient-textured p-0 m-0">
+					<h1 className="m-0 shrink-0 p-0 text-4xl font-bold text-gradient-textured sm:text-5xl">
 						{basics.name}
 					</h1>
 				</a>
 				<Ornament reversed />
-			</div>
-			<div className="flex flex-wrap justify-center gap-x-6 text-xs text-muted-foreground">
+				</div>
+				{basics.summary && (
+					<p className="max-w-3xl text-sm font-medium leading-6 text-foreground/80 sm:text-base">
+						{basics.summary}
+					</p>
+				)}
+				<div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
 				<a
 					href={`mailto:${basics.email}`}
 					className="flex items-center gap-2 transition-colors hover:text-primary"
 				>
-					<CiMail size={18} strokeWidth={1.5} style={{ stroke: "#B5826A" }} />
+					<CiMail className="text-primary" size={18} strokeWidth={1.5} />
 					{basics.email}
 				</a>
 				<a
 					href={`tel:${basics.phone}`}
 					className="flex items-center gap-2 transition-colors hover:text-primary"
 				>
-					<SlScreenSmartphone
-						size={18}
-						strokeWidth={2}
-						style={{ stroke: "#B5A76A", fill: "#B5A76A" }}
-					/>
+					<SlScreenSmartphone className="text-primary" size={18} strokeWidth={2} />
 					{basics.phone}
 				</a>
 				{basics.location && (
@@ -75,7 +76,7 @@ export function Header({ basics }: HeaderProps) {
 						rel="noopener noreferrer"
 						className="flex items-center gap-2 transition-colors hover:text-primary"
 					>
-						<FaMapPin size={18} style={{ fill: "#E63946" }} />
+						<FaMapPin className="text-primary" size={18} />
 						{locationString}
 					</a>
 				)}
@@ -89,21 +90,14 @@ export function Header({ basics }: HeaderProps) {
 							className="flex items-center gap-2 transition-colors hover:text-primary"
 						>
 							{profile.network === "LinkedIn" && (
-								<FaLinkedinIn size={18} style={{ fill: "#0072b1" }} />
+								<FaLinkedinIn className="text-primary" size={18} />
 							)}
-							{profile.network === "GitHub" && <FiGithub size={18} />}
+							{profile.network === "GitHub" && <FiGithub className="text-primary" size={18} />}
 							{profile.username}
 						</a>
 					))}
+				</div>
 			</div>
-			{basics.summary && (
-				<>
-					<Separator style={{ width: "50%" }} className="my-0 py-0" />
-					<p className="max-w-4xl p-0 m-0 text-xs text-muted-foreground">
-						{basics.summary}
-					</p>
-				</>
-			)}
 		</header>
 	);
 }

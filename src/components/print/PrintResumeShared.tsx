@@ -32,6 +32,7 @@ type PrintWorkListProps = {
 type PrintSkillListProps = {
   skills: Skill[];
   columns?: 1 | 2 | 3;
+  compact?: boolean;
 };
 
 type PrintProjectListProps = {
@@ -70,14 +71,24 @@ export function PrintResumeHeader({
   compact = false,
 }: PrintResumeHeaderProps) {
   return (
-    <header className={cn("border-b border-slate-300 pb-3", compact ? "space-y-2" : "space-y-2.5")}>
+    <header
+      className={cn(
+        "border-b border-slate-300",
+        compact ? "space-y-1.5 pb-2.5" : "space-y-2.5 pb-3",
+      )}
+    >
       <div className="space-y-1">
         <a href={basics.url} target="_blank" rel="noopener noreferrer" className="inline-block">
-          <h1 className={cn("font-bold tracking-tight text-slate-950", compact ? "text-[28px]" : "text-[32px]")}>
+          <h1 className={cn("font-bold tracking-tight text-slate-950", compact ? "text-[27px]" : "text-[32px]")}>
             {basics.name}
           </h1>
         </a>
-        <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[10.5px] text-slate-600">
+        <ul
+          className={cn(
+            "flex flex-wrap gap-y-1 text-slate-600",
+            compact ? "gap-x-2.5 text-[10px]" : "gap-x-3 text-[10.5px]",
+          )}
+        >
           <li>
             <a href={`mailto:${basics.email}`} className="hover:text-slate-900">
               {basics.email}
@@ -103,7 +114,7 @@ export function PrintResumeHeader({
         <p
           className={cn(
             "max-w-4xl text-slate-700",
-            compact ? "text-[10.5px] leading-[1.35]" : "text-[11px] leading-[1.45]",
+            compact ? "text-[9.9px] leading-[1.3]" : "text-[11px] leading-[1.45]",
           )}
         >
           {basics.summary}
@@ -130,7 +141,7 @@ export function PrintWorkList({
   compact = false,
 }: PrintWorkListProps) {
   return (
-    <div className={cn("space-y-3", compact && "space-y-2.5")}>
+    <div className={cn("space-y-3", compact && "space-y-2")}>
       {work.map((job) => (
         <article key={job.name} className="resume-print-entry break-inside-avoid">
           <div className="flex items-start justify-between gap-3">
@@ -176,15 +187,29 @@ export function PrintWorkList({
   );
 }
 
-export function PrintSkillList({ skills, columns = 2 }: PrintSkillListProps) {
+export function PrintSkillList({
+  skills,
+  columns = 2,
+  compact = false,
+}: PrintSkillListProps) {
   return (
-    <div className={cn("grid gap-x-4 gap-y-2", skillsGridClass(columns))}>
+    <div className={cn("grid gap-x-4", compact ? "gap-y-1.5" : "gap-y-2", skillsGridClass(columns))}>
       {skills.map((skill) => (
         <div key={skill.name} className="break-inside-avoid">
-          <h3 className="text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-600">
+          <h3
+            className={cn(
+              "font-semibold uppercase tracking-[0.08em] text-slate-600",
+              compact ? "text-[9.8px]" : "text-[10px]",
+            )}
+          >
             {skill.name}
           </h3>
-          <p className="mt-0.5 text-[10.25px] leading-[1.4] text-slate-800">
+          <p
+            className={cn(
+              "mt-0.5 text-slate-800",
+              compact ? "text-[9.8px] leading-[1.35]" : "text-[10.25px] leading-[1.4]",
+            )}
+          >
             {skill.keywords.join(", ")}
           </p>
         </div>
@@ -200,7 +225,7 @@ export function PrintProjectList({
   compact = false,
 }: PrintProjectListProps) {
   return (
-    <div className={cn("space-y-3", compact && "space-y-2.5")}>
+    <div className={cn("space-y-3", compact && "space-y-2")}>
       {projects.map((project) => (
         <article key={project.name} className="resume-print-entry break-inside-avoid">
           <div className="flex items-start justify-between gap-3">
@@ -234,7 +259,12 @@ export function PrintProjectList({
                   </a>
                 )}
               </div>
-              <p className={cn("mt-0.5 text-slate-700", compact ? "text-[10px] leading-[1.35]" : "text-[10.5px] leading-[1.45]")}>
+              <p
+                className={cn(
+                  "mt-0.5 text-slate-700",
+                  compact ? "text-[9.9px] leading-[1.3]" : "text-[10.5px] leading-[1.45]",
+                )}
+              >
                 {project.description}
               </p>
             </div>
@@ -269,13 +299,18 @@ export function PrintProjectList({
 
 export function PrintEducationList({ education, compact = false }: PrintEducationListProps) {
   return (
-    <div className={cn("space-y-2.5", compact && "space-y-2")}>
+    <div className={cn("space-y-2.5", compact && "space-y-1.5")}>
       {education.map((entry) => (
         <article key={entry.institution} className="resume-print-entry break-inside-avoid">
           <h3 className={cn("font-semibold text-slate-950", compact ? "text-[11px]" : "text-[11.5px]")}>
             {entry.studyType}
           </h3>
-          <p className={cn("text-slate-700", compact ? "text-[10px] leading-[1.3]" : "text-[10.5px] leading-[1.35]")}>
+          <p
+            className={cn(
+              "text-slate-700",
+              compact ? "text-[9.9px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
+            )}
+          >
             {entry.url ? (
               <a href={entry.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">
                 {entry.institution}

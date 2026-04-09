@@ -2,7 +2,7 @@ import { SiteResumeLayout } from "@/components/SiteResumeLayout";
 import { getResumeVariant } from "@/lib/resume-data";
 
 export default function Page() {
-  const { seo: _seo, ...resume } = getResumeVariant("site");
+  const resume = getResumeVariant("site");
 
   return (
     <SiteResumeLayout

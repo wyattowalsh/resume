@@ -16,15 +16,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             enableSystem
             storageKey="theme"
           >
+            <a
+              href="#page-content"
+              className="sr-only fixed left-4 top-4 z-[60] rounded-md bg-background px-3 py-2 text-sm font-medium text-foreground shadow-lg focus:not-sr-only focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            >
+              Skip to content
+            </a>
             <div className="fixed top-4 right-4 z-50 no-print">
               <ModeToggle />
             </div>
             <div vaul-drawer-wrapper="" className="bg-background min-h-screen">
-              <main>{children}</main>
+              <div id="page-content">{children}</div>
             </div>
           </ThemeProvider>
         </ErrorBoundary>
       </HelmetProvider>
     </React.StrictMode>
   );
-} 
+}
