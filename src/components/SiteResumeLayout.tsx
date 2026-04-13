@@ -50,32 +50,35 @@ export function SiteResumeLayout({
     >
       <Header basics={basics} />
       <div className="mt-8 space-y-12">
-        <div id="work-experience" className="scroll-mt-24">
+        <div id="work-experience" className="scroll-mt-10 sm:scroll-mt-12">
           <HR />
           <WorkExperience work={work} />
         </div>
 
         {projects && projects.length > 0 && (
-          <div id="projects" className="scroll-mt-24">
+          <div id="projects" className="scroll-mt-10 sm:scroll-mt-12">
             <HR icon={<FaDiagramProject />} />
-            <Projects projects={projects} featuredCount={2} />
+            <Projects projects={projects} />
           </div>
         )}
 
         {skills && skills.length > 0 && (
-          <div id="skills" className="scroll-mt-24">
+          <div id="skills" className="scroll-mt-10 sm:scroll-mt-12">
             <HR icon={<FaBrain />} />
             <Skills skills={skills} />
           </div>
         )}
 
-        <div id="education" className="scroll-mt-24">
+        <div id="education" className="scroll-mt-10 sm:scroll-mt-12">
           <HR icon={<FaGraduationCap />} />
           <Education education={education} />
         </div>
 
         {(Boolean(certificates?.length) || Boolean(publications?.length)) && (
-          <div id="credentials" className="scroll-mt-24 space-y-5">
+          <div
+            id="credentials"
+            className="scroll-mt-10 space-y-5 sm:scroll-mt-12"
+          >
             {certificates && certificates.length > 0 && (
               <section>
                 <HR icon={<FaCertificate />} />

@@ -49,8 +49,8 @@
   ],
   "projects": [
     {
-      "name": "AI Agent Skills & MCP Servers",
-      "description": "Open-source ecosystem of 40+ portable AI agent skills and 38 pre-built MCP servers for code review, security, infrastructure, and ML workflows.",
+      "name": "AI Agent Harness Configs",
+      "description": "Cross-harness config set for Claude Code, GitHub Copilot, and related agent runtimes, packaging reusable instructions, tools, skills, and MCP presets.",
       "highlightIndexes": [0, 1]
     },
     {

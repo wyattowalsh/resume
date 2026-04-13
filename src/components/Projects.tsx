@@ -6,7 +6,6 @@ import { formatMonthYear } from "@/lib/date";
 
 type ProjectsProps = {
   projects: Project[];
-  featuredCount?: number;
 };
 
 type ProjectHeadingProps = {
@@ -45,30 +44,24 @@ function ProjectHeading({ project, className }: ProjectHeadingProps) {
   );
 }
 
-export function Projects({
-  projects,
-  featuredCount = 2,
-}: ProjectsProps) {
-  const featuredProjects = projects.slice(0, featuredCount);
-  const moreProjects = projects.slice(featuredCount);
-
+export function Projects({ projects }: ProjectsProps) {
   return (
     <Section title="Projects" className="break-inside-avoid">
-      <div className="flex flex-col gap-3">
-        {featuredProjects.map((project) => (
+      <div className="space-y-3">
+        {projects.map((project) => (
           <article
             key={project.name}
-            className="card-hover rounded-[1.45rem] border border-primary/20 bg-primary/[0.06] p-4 shadow-[0_24px_48px_-32px_rgba(15,23,42,0.4)] ring-1 ring-primary/10"
+            className="group card-hover rounded-[1.35rem] border border-border/60 bg-card/78 p-4 shadow-[0_22px_48px_-34px_rgba(15,23,42,0.36)] ring-1 ring-white/30"
           >
-            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <ProjectHeading
                   project={project}
-                  className="flex flex-wrap items-center gap-2 text-[1.05rem] font-semibold leading-6"
+                  className="flex flex-wrap items-center gap-2 text-[1.02rem] font-semibold leading-6"
                 />
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
-                <div className="rounded-full border border-primary/15 bg-background/80 px-2.5 py-1 shadow-sm">
+                <div className="rounded-full border border-border/70 bg-background/85 px-2.5 py-1 shadow-sm transition-colors duration-200 group-hover:border-primary/20 group-hover:text-foreground/75">
                   <time dateTime={project.startDate}>
                     {formatMonthYear(project.startDate)}
                   </time>{" "}
@@ -101,32 +94,6 @@ export function Projects({
             )}
           </article>
         ))}
-
-        {moreProjects.length > 0 && (
-          <div className="grid gap-3 pt-1 sm:grid-cols-2 xl:grid-cols-3">
-            {moreProjects.map((project) => (
-              <article
-                key={project.name}
-                className="card-hover rounded-[1.25rem] border border-border/60 bg-card/78 p-3.5 shadow-[0_18px_36px_-28px_rgba(15,23,42,0.35)] ring-1 ring-white/30"
-              >
-                <ProjectHeading
-                  project={project}
-                  className="flex flex-wrap items-center gap-2 text-sm font-semibold leading-5"
-                />
-                {/* Compact cards stay summary-only so the featured tier carries the deeper proof points. */}
-                <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
-                  {project.description}
-                </p>
-                {Array.isArray(project.stack) && project.stack.length > 0 && (
-                  <p className="mt-2 text-xs leading-5 text-muted-foreground">
-                    <span className="font-semibold text-foreground/80">Stack:</span>{" "}
-                    {project.stack.join(" · ")}
-                  </p>
-                )}
-              </article>
-            ))}
-          </div>
-        )}
       </div>
     </Section>
   );

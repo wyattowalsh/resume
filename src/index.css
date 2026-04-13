@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -30,6 +31,22 @@
     @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
   }
 
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.16);
+    color: inherit;
+  }
+
 }
 
 @layer utilities {
@@ -44,19 +61,60 @@
 
   .card-hover {
     transition:
-      box-shadow 0.2s ease,
-      transform 0.2s ease,
-      border-color 0.2s ease;
+      box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 180ms ease,
+      background-color 180ms ease;
+  }
+
+  @media (hover: hover) {
+    .card-hover {
+      will-change: transform;
+    }
   }
 
   .card-hover:hover {
-    box-shadow: 0 22px 44px -28px rgba(15, 23, 42, 0.42);
+    box-shadow: 0 26px 52px -30px rgba(15, 23, 42, 0.42);
+    transform: translateY(-4px);
+  }
+
+  .card-hover:focus-within {
+    box-shadow: 0 22px 46px -30px rgba(15, 23, 42, 0.34);
     transform: translateY(-2px);
   }
 
   .dark .card-hover:hover {
-    box-shadow: 0 22px 44px -28px rgba(148, 163, 184, 0.2);
+    box-shadow: 0 26px 52px -30px rgba(148, 163, 184, 0.24);
   }
+
+  .dark .card-hover:focus-within {
+    box-shadow: 0 22px 46px -30px rgba(148, 163, 184, 0.18);
+  }
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.35) transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  background: rgba(100, 116, 139, 0.28);
+  background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.38);
+  background-clip: padding-box;
 }
 
 @theme static {

@@ -392,9 +392,9 @@ describe("getResumeVariant", () => {
     it("preserves project selection hints on curated entries", () => {
       const full = getResumeVariant("full");
       const project = full.projects?.find(
-        (entry) => entry.name === "AI Agent Skills & MCP Servers",
+        (entry) => entry.name === "AI Agent Harness Configs",
       );
-      const baseProject = getBaseProject("AI Agent Skills & MCP Servers");
+      const baseProject = getBaseProject("AI Agent Harness Configs");
 
       expect(project?.selectionHints).toEqual(baseProject.selectionHints);
     });

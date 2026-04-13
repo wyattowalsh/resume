@@ -375,12 +375,12 @@
   ],
   "projects": [
     {
-      "name": "AI Agent Skills & MCP Servers",
+      "name": "AI Agent Harness Configs",
       "url": "https://agents.w4w.dev",
       "githubUrl": "https://github.com/wyattowalsh/agents",
       "startDate": "2026-01-01",
       "endDate": null,
-      "description": "Open-source ecosystem of 40+ portable AI agent skills and 38 pre-built MCP servers that bring expert workflows—code review, security scanning, infrastructure, ML—to any compatible agent platform.",
+      "description": "Cross-harness configuration set for Claude Code, GitHub Copilot, and related agent runtimes, packaging reusable instructions, tools, skills, and MCP presets for portable AI workflows.",
       "selectionHints": {
         "themes": [
           "developer-tooling",
@@ -388,7 +388,7 @@
           "open-source",
           "workflow-automation"
         ],
-        "aliases": ["MCP servers", "AI agent skills", "developer experience"],
+        "aliases": ["AI agent harness configs", "Claude Code configs", "Copilot agent configs"],
         "impactSignals": [
           "ecosystem-adoption",
           "workflow-reuse",
@@ -396,8 +396,8 @@
         ]
       },
       "highlights": [
-        "Authored 40+ reusable skill definitions covering domains from strategic analysis and prompt engineering to full-stack development, installable across Claude Code, GitHub Copilot, Cursor, and more.",
-        "Packaged 38 MCP servers spanning web research, structured thinking, browser automation, and data tools, each with standardized configuration and documentation."
+        "Built 40+ reusable instruction and skill packs plus shared harness configs that install across Claude Code, GitHub Copilot, Cursor, and related agent runtimes.",
+        "Curated portable tool and MCP presets for code review, security, infrastructure, research, and workflow automation across environments."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
     },

@@ -7,7 +7,7 @@ import type {
   Skill,
   Work,
 } from "@/lib/schema";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { formatMonthYear } from "@/lib/date";
 import { cn } from "@/lib/utils";
 
@@ -211,7 +211,23 @@ export function PrintCertificateStrip({
       <span className="font-bold uppercase tracking-[0.08em] text-slate-600">
         Certifications:
       </span>{" "}
-      {certificates.map((certificate) => certificate.name).join(" · ")}
+      {certificates.map((certificate, index) => (
+        <Fragment key={certificate.name}>
+          {index > 0 ? " · " : null}
+          {certificate.url ? (
+            <a
+              href={certificate.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-900"
+            >
+              {certificate.name}
+            </a>
+          ) : (
+            certificate.name
+          )}
+        </Fragment>
+      ))}
     </p>
   );
 }
