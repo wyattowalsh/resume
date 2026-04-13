@@ -8,6 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/monaspace-argon':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/monaspace-krypton':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/monaspace-neon':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource/monaspace-xenon':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.15
         version: 2.1.15(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -483,6 +495,18 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@fontsource/monaspace-argon@5.2.5':
+    resolution: {integrity: sha512-EJ+jq1Smm3BB+8RK/gwB1uzjrSKdycZkKm8OZGCYvqJiTChKcGe7b2lmj0PmQbb/+lAEdCBIAcFLlPaWhtRANA==}
+
+  '@fontsource/monaspace-krypton@5.2.5':
+    resolution: {integrity: sha512-dOWSb0DtSMfjbptckxTme2FKNfRkFtmTuNRQ86sBki/CanR4ajSrE+GuJoCm9Kl3352CvafoRt2fDo8FU+Gz4A==}
+
+  '@fontsource/monaspace-neon@5.2.5':
+    resolution: {integrity: sha512-TjSSuHC37DroyhP5YCKRCAxdUb3In/uqHzqqW/8Ul+JWilz37d8lr8jFeapnbD3QdYXgiQoU2Rf/CmTdyl06DA==}
+
+  '@fontsource/monaspace-xenon@5.2.5':
+    resolution: {integrity: sha512-k10RCF5nek9ee/rKSALaeYgOcJjjvzxxGkIlPwkSAoasjrsEeVKOSJ6ii1dMXOZwL9ZtW3p56Dxhgaw0Gtwvaw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -3624,6 +3648,14 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
 
   '@floating-ui/utils@0.2.9': {}
+
+  '@fontsource/monaspace-argon@5.2.5': {}
+
+  '@fontsource/monaspace-krypton@5.2.5': {}
+
+  '@fontsource/monaspace-neon@5.2.5': {}
+
+  '@fontsource/monaspace-xenon@5.2.5': {}
 
   '@humanfs/core@0.19.1': {}
 

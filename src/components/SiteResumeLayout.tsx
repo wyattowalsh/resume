@@ -49,7 +49,7 @@ export function SiteResumeLayout({
 
   return (
     <main
-      className={`container mx-auto my-5 max-w-6xl px-4 pb-14 print:my-0 print:max-w-full print:border-none print:px-0 print:pb-0 print:shadow-none sm:px-6 lg:px-8 ${className ?? ""}`}
+      className={`container mx-auto my-5 max-w-6xl px-4 pb-14 font-[family:var(--font-site-body)] tracking-[-0.01em] print:my-0 print:max-w-full print:border-none print:px-0 print:pb-0 print:shadow-none sm:px-6 lg:px-8 ${className ?? ""}`}
     >
       <Header basics={basics} />
       <div className="mt-8 space-y-12">
@@ -105,21 +105,23 @@ export function SiteResumeLayout({
       </div>
       <footer className="mt-10 print:hidden">
         <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-2 text-xs text-muted-foreground shadow-sm">
-          <span className="px-1 uppercase tracking-[0.18em] text-foreground/45">
+          <span className="px-1 font-[family:var(--font-site-label)] uppercase tracking-[0.18em] text-foreground/45">
             PDFs
           </span>
           <a
             href="/downloads/wyatt-walsh-resume-full.pdf"
-            download="wyatt-walsh-resume-full.pdf"
-            aria-label="Download the 2-page resume PDF"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the 2-page resume PDF in a new tab"
             className={footerDownloadLinkClass}
           >
             2-page PDF
           </a>
           <a
             href="/downloads/wyatt-walsh-resume-single.pdf"
-            download="wyatt-walsh-resume-single.pdf"
-            aria-label="Download the 1-page resume PDF"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the 1-page resume PDF in a new tab"
             className={footerDownloadLinkClass}
           >
             1-page PDF

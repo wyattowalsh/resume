@@ -61,10 +61,10 @@ export function Projects({ projects }: ProjectsProps) {
               <div>
                 <ProjectHeading
                   project={project}
-                  className="flex flex-wrap items-center gap-2 text-[1.02rem] font-semibold leading-6"
+                  className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6 tracking-[-0.02em]"
                 />
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
+              <div className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-label)] text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
                 <div className="interactive-pill rounded-full border border-border/70 bg-background/85 px-2.5 py-1 shadow-sm transition-colors duration-200 group-hover/project:border-primary/20 group-hover/project:bg-primary/[0.08] group-hover/project:text-foreground/75">
                   <time dateTime={project.startDate}>
                     {formatMonthYear(project.startDate)}
@@ -97,13 +97,13 @@ export function Projects({ projects }: ProjectsProps) {
             )}
             {Array.isArray(project.stack) && project.stack.length > 0 && (
               <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5 text-xs leading-5 text-muted-foreground">
-                <span className="mr-1 font-semibold uppercase tracking-[0.08em] text-foreground/60">
+                <span className="mr-1 font-[family:var(--font-site-label)] font-semibold uppercase tracking-[0.08em] text-foreground/60">
                   Stack
                 </span>
                 {project.stack.map((item) => (
                   <span
                     key={item}
-                    className="interactive-pill rounded-full border border-border/60 bg-background/80 px-2.5 py-1 text-[11px] leading-4 text-muted-foreground group-hover/project:border-primary/15 group-hover/project:bg-primary/[0.06] group-hover/project:text-foreground/75"
+                    className="interactive-pill rounded-full border border-border/60 bg-background/80 px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-muted-foreground group-hover/project:border-primary/15 group-hover/project:bg-primary/[0.06] group-hover/project:text-foreground/75"
                   >
                     {item}
                   </span>

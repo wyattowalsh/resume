@@ -16,6 +16,10 @@
     "sync:public-downloads": "mkdir -p public/downloads && cp assets/outputs/resume-full.pdf public/downloads/wyatt-walsh-resume-full.pdf && cp assets/outputs/resume-single.pdf public/downloads/wyatt-walsh-resume-single.pdf"
   },
   "dependencies": {
+    "@fontsource/monaspace-argon": "^5.2.5",
+    "@fontsource/monaspace-krypton": "^5.2.5",
+    "@fontsource/monaspace-neon": "^5.2.5",
+    "@fontsource/monaspace-xenon": "^5.2.5",
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",

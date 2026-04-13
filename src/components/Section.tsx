@@ -25,7 +25,7 @@ export function Section({
         <div className="flex items-center gap-3">
           <h2
             id={headingId}
-            className="m-0 border-l-[3px] border-primary/40 pl-3 pr-1 text-[1.65rem] font-semibold tracking-tight text-foreground sm:text-[1.8rem]"
+            className="m-0 border-l-[3px] border-primary/40 pl-3 pr-1 font-[family:var(--font-site-heading)] text-[1.65rem] font-semibold tracking-[-0.03em] text-foreground sm:text-[1.8rem]"
           >
             {title}
           </h2>

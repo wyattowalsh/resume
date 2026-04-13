@@ -38,7 +38,7 @@ export function Header({ basics }: HeaderProps) {
     locationString,
   )}`;
   const chipClass =
-    "interactive-chip inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 shadow-sm";
+    "interactive-chip inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 font-[family:var(--font-site-label)] shadow-sm";
 
   return (
     <header className="group/header interactive-surface relative overflow-hidden rounded-[2rem] border border-border/70 bg-card/85 px-6 py-7 shadow-[0_30px_80px_-48px_rgba(15,23,42,0.45)] ring-1 ring-white/40 sm:px-8 sm:py-9">
@@ -54,14 +54,14 @@ export function Header({ basics }: HeaderProps) {
         <div className="flex items-center gap-4">
           <Ornament />
           <a href={basics.url} target="_blank" rel="noopener noreferrer">
-            <h1 className="m-0 shrink-0 p-0 text-4xl font-bold text-gradient-textured sm:text-5xl">
+            <h1 className="m-0 shrink-0 p-0 font-[family:var(--font-site-display)] text-4xl font-bold tracking-[-0.05em] text-gradient-textured sm:text-5xl">
               {basics.name}
             </h1>
           </a>
           <Ornament reversed />
         </div>
         {basics.label && (
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70 transition-colors duration-300 group-hover/header:text-foreground/80 sm:text-[0.95rem]">
+          <p className="font-[family:var(--font-site-label)] text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70 transition-colors duration-300 group-hover/header:text-foreground/80 sm:text-[0.95rem]">
             {basics.label}
           </p>
         )}
