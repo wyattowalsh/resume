@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": null
+    "summary": "AI/ML engineer building agentic AI, data platforms, and developer tooling for fintech and enterprise teams."
   },
   "work": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "name": "JPMorgan Chase & Co.",
-      "highlightIndexes": [0, 3]
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "Stealth Web3 Startup",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Machine Learning and Gen AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12]
+      "keywordIndexes": [0, 4, 5, 6, 10, 11, 14, 15, 16]
     },
     {
       "name": "Data Engineering and Analytics",
@@ -37,17 +37,22 @@
   "projects": [
     {
       "name": "AI Agent Skills & MCP Servers",
+      "description": "Open-source ecosystem of 40+ portable AI agent skills and 38 pre-built MCP servers for code review, security, infrastructure, and ML workflows.",
       "highlightIndexes": [0]
     },
     {
-      "name": "NBA Basketball Database",
-      "highlightIndexes": []
+      "name": "MCP-Crawl4AI",
+      "description": "FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools with LLM-friendly markdown, cleaned HTML, or plain-text output.",
+      "highlightIndexes": [0]
     }
   ],
   "education": [
     "University of California, Berkeley – College of Engineering",
     "The Hotchkiss School"
   ],
-  "certificates": [],
+  "certificates": [
+    "AWS Certified Cloud Practitioner",
+    "IBM Data Science Professional Certificate"
+  ],
   "publications": []
 }

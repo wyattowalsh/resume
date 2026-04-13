@@ -4,6 +4,7 @@ import siteVariantData from "@assets/data/variants/site.json";
 import resumeData from "@assets/data/resume.json";
 import { z } from "zod";
 import {
+  imageSchema,
   resumeSchema,
   type Basics,
   type Certificate,
@@ -19,6 +20,8 @@ const indexSchema = z.number().int().nonnegative();
 
 const basicsOverridesSchema = z.object({
   summary: z.string().nullable().optional(),
+  label: z.string().nullable().optional(),
+  image: imageSchema.nullable().optional(),
 });
 
 const namedSelectionSchema = z.object({
@@ -26,7 +29,7 @@ const namedSelectionSchema = z.object({
 });
 
 const workSelectionSchema = namedSelectionSchema.extend({
-  summary: z.string().optional(),
+  summary: z.string().nullable().optional(),
   highlightIndexes: z.array(indexSchema).optional(),
 });
 
@@ -69,13 +72,22 @@ export type ResumeVariantSeo = z.infer<typeof variantSeoSchema>;
 
 export type ResolvedResumeVariant = Pick<
   Resume,
-  "basics" | "work" | "education" | "projects" | "skills" | "certificates" | "publications"
+  | "basics"
+  | "work"
+  | "education"
+  | "projects"
+  | "skills"
+  | "certificates"
+  | "publications"
 > & {
   name: ResumeVariantName;
   seo?: ResumeVariantSeo;
 };
 
-const resolvedVariantCache = new Map<ResumeVariantName, ResolvedResumeVariant>();
+const resolvedVariantCache = new Map<
+  ResumeVariantName,
+  ResolvedResumeVariant
+>();
 
 function pickByIndexes<T>(
   values: T[],
@@ -120,14 +132,23 @@ function resolveBasics(
     return basics;
   }
 
-  return {
+  const resolvedBasics: Basics = {
     ...basics,
-    ...(overrides.summary === undefined
-      ? {}
-      : {
-          summary: overrides.summary ?? undefined,
-        }),
   };
+
+  if (overrides.summary !== undefined) {
+    resolvedBasics.summary = overrides.summary ?? undefined;
+  }
+
+  if (overrides.label !== undefined) {
+    resolvedBasics.label = overrides.label ?? undefined;
+  }
+
+  if (overrides.image !== undefined) {
+    resolvedBasics.image = overrides.image ?? undefined;
+  }
+
+  return resolvedBasics;
 }
 
 function resolveWork(
@@ -139,11 +160,20 @@ function resolveWork(
   }
 
   return selections.map((selection) => {
-    const baseJob = getItemByKey(work, selection.name, (item) => item.name, "work");
+    const baseJob = getItemByKey(
+      work,
+      selection.name,
+      (item) => item.name,
+      "work",
+    );
 
     return {
       ...baseJob,
-      summary: selection.summary ?? baseJob.summary,
+      ...(selection.summary === undefined
+        ? {}
+        : {
+            summary: selection.summary ?? undefined,
+          }),
       highlights: pickByIndexes(
         baseJob.highlights,
         selection.highlightIndexes,
@@ -198,7 +228,12 @@ function resolveSkills(
   }
 
   return selections.map((selection) => {
-    const baseSkill = getItemByKey(skills, selection.name, (item) => item.name, "skill");
+    const baseSkill = getItemByKey(
+      skills,
+      selection.name,
+      (item) => item.name,
+      "skill",
+    );
 
     return {
       ...baseSkill,
@@ -273,13 +308,21 @@ function buildVariant(name: ResumeVariantName): ResolvedResumeVariant {
     education: resolveEducation(baseResume.education, config.education),
     skills: resolveSkills(baseResume.skills, config.skills),
     projects: resolveProjects(baseResume.projects, config.projects),
-    certificates: resolveCertificates(baseResume.certificates, config.certificates),
-    publications: resolvePublications(baseResume.publications, config.publications),
+    certificates: resolveCertificates(
+      baseResume.certificates,
+      config.certificates,
+    ),
+    publications: resolvePublications(
+      baseResume.publications,
+      config.publications,
+    ),
     seo: config.seo,
   };
 }
 
-export function getResumeVariant(name: ResumeVariantName): ResolvedResumeVariant {
+export function getResumeVariant(
+  name: ResumeVariantName,
+): ResolvedResumeVariant {
   const cachedVariant = resolvedVariantCache.get(name);
 
   if (cachedVariant) {

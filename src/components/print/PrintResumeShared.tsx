@@ -32,6 +32,7 @@ type PrintWorkListProps = {
 type PrintSkillListProps = {
   skills: Skill[];
   columns?: 1 | 2 | 3;
+  layout?: "grid" | "inline";
   compact?: boolean;
 };
 
@@ -51,6 +52,11 @@ type PrintCertificateListProps = {
   certificates: Certificate[];
 };
 
+type PrintCertificateStripProps = {
+  certificates: Certificate[];
+  compact?: boolean;
+};
+
 type PrintPublicationListProps = {
   publications: Publication[];
 };
@@ -59,7 +65,11 @@ function renderDateRange(startDate: string, endDate: string | null) {
   return (
     <>
       <time dateTime={startDate}>{formatMonthYear(startDate)}</time> -{" "}
-      {endDate ? <time dateTime={endDate}>{formatMonthYear(endDate)}</time> : "Present"}
+      {endDate ? (
+        <time dateTime={endDate}>{formatMonthYear(endDate)}</time>
+      ) : (
+        "Present"
+      )}
     </>
   );
 }
@@ -71,7 +81,10 @@ function skillsGridClass(columns: 1 | 2 | 3) {
 }
 
 function getPrintSectionHeadingId(title: string) {
-  return `print-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}-heading`;
+  return `print-${title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}-heading`;
 }
 
 export function PrintResumeHeader({
@@ -87,11 +100,31 @@ export function PrintResumeHeader({
       )}
     >
       <div className="space-y-1">
-        <a href={basics.url} target="_blank" rel="noopener noreferrer" className="inline-block">
-          <h1 className={cn("font-bold tracking-tight text-slate-950", compact ? "text-[27px]" : "text-[32px]")}>
+        <a
+          href={basics.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block"
+        >
+          <h1
+            className={cn(
+              "font-bold tracking-tight text-slate-950",
+              compact ? "text-[27px]" : "text-[32px]",
+            )}
+          >
             {basics.name}
           </h1>
         </a>
+        {basics.label && (
+          <p
+            className={cn(
+              "font-semibold uppercase tracking-[0.12em] text-slate-600",
+              compact ? "text-[9.8px]" : "text-[10.5px]",
+            )}
+          >
+            {basics.label}
+          </p>
+        )}
         <ul
           className={cn(
             "flex flex-wrap gap-y-1 text-slate-600",
@@ -111,7 +144,12 @@ export function PrintResumeHeader({
           <li>{`${basics.location.city}, ${basics.location.region}`}</li>
           {basics.profiles.map((profile) => (
             <li key={profile.network}>
-              <a href={profile.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">
+              <a
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900"
+              >
                 {profile.network}: {profile.username}
               </a>
             </li>
@@ -122,8 +160,10 @@ export function PrintResumeHeader({
       {showSummary && basics.summary && (
         <p
           className={cn(
-            "max-w-4xl text-slate-700",
-            compact ? "text-[9.9px] leading-[1.3]" : "text-[11px] leading-[1.45]",
+            "text-slate-700",
+            compact
+              ? "text-[9.9px] leading-[1.3]"
+              : "text-[11px] leading-[1.45]",
           )}
         >
           {basics.summary}
@@ -133,19 +173,45 @@ export function PrintResumeHeader({
   );
 }
 
-export function PrintSection({ title, children, className }: PrintSectionProps) {
+export function PrintSection({
+  title,
+  children,
+  className,
+}: PrintSectionProps) {
   const headingId = getPrintSectionHeadingId(title);
 
   return (
-    <section aria-labelledby={headingId} className={cn("resume-print-section", className)}>
+    <section
+      aria-labelledby={headingId}
+      className={cn("resume-print-section", className)}
+    >
       <h2
         id={headingId}
-        className="resume-print-section-heading mb-2 border-t border-slate-300 pt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500"
+        className="resume-print-section-heading mb-2.5 border-t border-slate-300 pt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600"
       >
         {title}
       </h2>
       {children}
     </section>
+  );
+}
+
+export function PrintCertificateStrip({
+  certificates,
+  compact = false,
+}: PrintCertificateStripProps) {
+  return (
+    <p
+      className={cn(
+        "text-slate-700",
+        compact ? "text-[9.8px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
+      )}
+    >
+      <span className="font-semibold uppercase tracking-[0.08em] text-slate-500">
+        Certifications:
+      </span>{" "}
+      {certificates.map((certificate) => certificate.name).join(" · ")}
+    </p>
   );
 }
 
@@ -157,38 +223,59 @@ export function PrintWorkList({
   return (
     <div className={cn("space-y-3", compact && "space-y-2")}>
       {work.map((job) => (
-        <article key={job.name} className="resume-print-entry break-inside-avoid">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <h3 className={cn("font-semibold text-slate-950", compact ? "text-[11px]" : "text-[12px]")}>
-                {job.position}
-              </h3>
-              <div className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
+        <article
+          key={job.name}
+          className="resume-print-entry break-inside-avoid"
+        >
+          <div className="min-w-0">
+            <h3
+              className={cn(
+                "font-semibold text-slate-950",
+                compact ? "text-[11px]" : "text-[12px]",
+              )}
+            >
+              {job.position}
+            </h3>
+            <div className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
+              <span className="text-slate-700">
                 {job.url ? (
-                  <a href={job.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">
+                  <a
+                    href={job.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-slate-900"
+                  >
                     {job.name}
                   </a>
                 ) : (
                   job.name
                 )}
-                {job.location ? ` · ${job.location}` : ""}
-              </div>
+              </span>
+              {job.location ? ` · ${job.location}` : ""}
+              {" · "}
+              {renderDateRange(job.startDate, job.endDate)}
             </div>
-             <div className="shrink-0 text-right text-[10px] uppercase tracking-[0.08em] text-slate-500">
-               {renderDateRange(job.startDate, job.endDate)}
-             </div>
           </div>
 
-          {showSummaries && (
-            <p className={cn("mt-1 text-slate-700", compact ? "text-[10px] leading-[1.35]" : "text-[10.5px] leading-[1.45]")}>
+          {showSummaries && job.summary && (
+            <p
+              className={cn(
+                "mt-1 text-slate-700",
+                compact
+                  ? "text-[10px] leading-[1.35]"
+                  : "text-[10.5px] leading-[1.45]",
+              )}
+            >
               {job.summary}
             </p>
           )}
 
           <ul
             className={cn(
-              "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
-              compact ? "space-y-0.5 text-[10px] leading-[1.35]" : "space-y-0.5 text-[10.5px] leading-[1.4]",
+                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-500",
+              compact
+                ? "space-y-0.5 text-[10px] leading-[1.35]"
+                : "space-y-0.5 text-[10.5px] leading-[1.4]",
             )}
           >
             {job.highlights.map((highlight) => (
@@ -204,10 +291,38 @@ export function PrintWorkList({
 export function PrintSkillList({
   skills,
   columns = 2,
+  layout = "grid",
   compact = false,
 }: PrintSkillListProps) {
+  if (layout === "inline") {
+    return (
+      <div className={cn("space-y-1.5", compact && "space-y-1")}>
+        {skills.map((skill) => (
+          <p
+            key={skill.name}
+            className={cn(
+              "text-slate-800",
+              compact
+                ? "text-[9.8px] leading-[1.35]"
+                : "text-[10.25px] leading-[1.45]",
+            )}
+          >
+            <span className="font-semibold text-slate-900">{skill.name}:</span>{" "}
+            {skill.keywords.join(", ")}
+          </p>
+        ))}
+      </div>
+    );
+  }
+
   return (
-    <div className={cn("grid gap-x-4", compact ? "gap-y-1.5" : "gap-y-2", skillsGridClass(columns))}>
+    <div
+      className={cn(
+        "grid gap-x-4",
+        compact ? "gap-y-1.5" : "gap-y-2",
+        skillsGridClass(columns),
+      )}
+    >
       {skills.map((skill) => (
         <div key={skill.name} className="break-inside-avoid">
           <h3
@@ -221,7 +336,9 @@ export function PrintSkillList({
           <p
             className={cn(
               "mt-0.5 text-slate-800",
-              compact ? "text-[9.8px] leading-[1.35]" : "text-[10.25px] leading-[1.4]",
+              compact
+                ? "text-[9.8px] leading-[1.35]"
+                : "text-[10.25px] leading-[1.4]",
             )}
           >
             {skill.keywords.join(", ")}
@@ -241,49 +358,65 @@ export function PrintProjectList({
   return (
     <div className={cn("space-y-3", compact && "space-y-2")}>
       {projects.map((project) => (
-        <article key={project.name} className="resume-print-entry break-inside-avoid">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                <h3 className={cn("font-semibold text-slate-950", compact ? "text-[11px]" : "text-[12px]")}>
-                  {project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-700">
-                      {project.name}
-                    </a>
-                  ) : (
-                    project.name
-                  )}
-                </h3>
-                {project.githubUrl && (
+        <article
+          key={project.name}
+          className="resume-print-entry break-inside-avoid"
+        >
+          <div className="min-w-0">
+            <h3
+              className={cn(
+                "font-semibold text-slate-950",
+                compact ? "text-[11px]" : "text-[12px]",
+              )}
+            >
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-700"
+                >
+                  {project.name}
+                </a>
+              ) : (
+                project.name
+              )}
+            </h3>
+            <p className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
+              {renderDateRange(project.startDate, project.endDate)}
+              {project.githubUrl ? (
+                <>
+                  {" · "}
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] uppercase tracking-[0.08em] text-slate-500 hover:text-slate-900"
+                    className="hover:text-slate-900"
                   >
                     GitHub
                   </a>
-                )}
-              </div>
-              <p
-                className={cn(
-                  "mt-0.5 text-slate-700",
-                  compact ? "text-[9.9px] leading-[1.3]" : "text-[10.5px] leading-[1.45]",
-                )}
-              >
-                {project.description}
-              </p>
-            </div>
-            <div className="shrink-0 text-right text-[10px] uppercase tracking-[0.08em] text-slate-500">
-              {renderDateRange(project.startDate, project.endDate)}
-            </div>
+                </>
+              ) : null}
+            </p>
+            <p
+              className={cn(
+                "mt-0.5 text-slate-700",
+                compact
+                  ? "text-[9.9px] leading-[1.3]"
+                  : "text-[10.5px] leading-[1.45]",
+              )}
+            >
+              {project.description}
+            </p>
           </div>
 
           {showHighlights && project.highlights.length > 0 && (
             <ul
               className={cn(
-                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
-                compact ? "space-y-0.5 text-[10px] leading-[1.35]" : "space-y-0.5 text-[10.5px] leading-[1.4]",
+                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-500",
+                compact
+                  ? "space-y-0.5 text-[10px] leading-[1.35]"
+                  : "space-y-0.5 text-[10.5px] leading-[1.4]",
               )}
             >
               {project.highlights.map((highlight) => (
@@ -294,7 +427,8 @@ export function PrintProjectList({
 
           {showStacks && project.stack?.length ? (
             <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
-              <span className="font-semibold text-slate-800">Stack:</span> {project.stack.join(" · ")}
+              <span className="font-semibold text-slate-800">Stack:</span>{" "}
+              {project.stack.join(" · ")}
             </p>
           ) : null}
         </article>
@@ -303,22 +437,40 @@ export function PrintProjectList({
   );
 }
 
-export function PrintEducationList({ education, compact = false }: PrintEducationListProps) {
+export function PrintEducationList({
+  education,
+  compact = false,
+}: PrintEducationListProps) {
   return (
     <div className={cn("space-y-2.5", compact && "space-y-1.5")}>
       {education.map((entry) => (
-        <article key={entry.institution} className="resume-print-entry break-inside-avoid">
-          <h3 className={cn("font-semibold text-slate-950", compact ? "text-[11px]" : "text-[11.5px]")}>
+        <article
+          key={entry.institution}
+          className="resume-print-entry break-inside-avoid"
+        >
+          <h3
+            className={cn(
+              "font-semibold text-slate-950",
+              compact ? "text-[11px]" : "text-[11.5px]",
+            )}
+          >
             {entry.studyType}
           </h3>
           <p
             className={cn(
               "text-slate-700",
-              compact ? "text-[9.9px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
+              compact
+                ? "text-[9.9px] leading-[1.25]"
+                : "text-[10.5px] leading-[1.35]",
             )}
           >
             {entry.url ? (
-              <a href={entry.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">
+              <a
+                href={entry.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900"
+              >
                 {entry.institution}
               </a>
             ) : (
@@ -336,14 +488,24 @@ export function PrintEducationList({ education, compact = false }: PrintEducatio
   );
 }
 
-export function PrintCertificateList({ certificates }: PrintCertificateListProps) {
+export function PrintCertificateList({
+  certificates,
+}: PrintCertificateListProps) {
   return (
     <div className="space-y-2">
       {certificates.map((cert) => (
-        <article key={cert.name} className="resume-print-entry break-inside-avoid">
+        <article
+          key={cert.name}
+          className="resume-print-entry break-inside-avoid"
+        >
           <h3 className="text-[11px] font-semibold text-slate-950">
             {cert.url ? (
-              <a href={cert.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-700">
+              <a
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-700"
+              >
                 {cert.name}
               </a>
             ) : (
@@ -351,7 +513,8 @@ export function PrintCertificateList({ certificates }: PrintCertificateListProps
             )}
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {cert.issuer} · <time dateTime={cert.date}>{formatMonthYear(cert.date)}</time>
+            {cert.issuer} ·{" "}
+            <time dateTime={cert.date}>{formatMonthYear(cert.date)}</time>
           </p>
         </article>
       ))}
@@ -359,19 +522,31 @@ export function PrintCertificateList({ certificates }: PrintCertificateListProps
   );
 }
 
-export function PrintPublicationList({ publications }: PrintPublicationListProps) {
+export function PrintPublicationList({
+  publications,
+}: PrintPublicationListProps) {
   return (
     <div className="space-y-2">
       {publications.map((publication) => (
-        <article key={publication.name} className="resume-print-entry break-inside-avoid">
+        <article
+          key={publication.name}
+          className="resume-print-entry break-inside-avoid"
+        >
           <h3 className="text-[11px] font-semibold text-slate-950">
-            <a href={publication.url} target="_blank" rel="noopener noreferrer" className="hover:text-slate-700">
+            <a
+              href={publication.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-700"
+            >
               {publication.name}
             </a>
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
             {publication.publisher} ·{" "}
-            <time dateTime={publication.releaseDate}>{formatMonthYear(publication.releaseDate)}</time>
+            <time dateTime={publication.releaseDate}>
+              {formatMonthYear(publication.releaseDate)}
+            </time>
           </p>
         </article>
       ))}

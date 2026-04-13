@@ -6,11 +6,21 @@ const profileSchema = z.object({
   url: z.string().url(),
 });
 
+export const imageSchema = z.string().url().or(z.string().startsWith("/"));
+
+const selectionHintsSchema = z.object({
+  themes: z.array(z.string()).optional(),
+  aliases: z.array(z.string()).optional(),
+  impactSignals: z.array(z.string()).optional(),
+});
+
 const basicsSchema = z.object({
   name: z.string(),
+  label: z.string().optional(),
   email: z.string().email(),
   phone: z.string(),
   url: z.string().url(),
+  image: imageSchema.optional(),
   summary: z.string().optional(),
   location: z.object({
     city: z.string(),
@@ -27,8 +37,9 @@ const workSchema = z.object({
   startDate: z.string(),
   endDate: z.string().nullable(),
   location: z.string(),
-  summary: z.string(),
+  summary: z.string().optional(),
   highlights: z.array(z.string()),
+  selectionHints: selectionHintsSchema.optional(),
 });
 
 const educationSchema = z.object({
@@ -59,6 +70,7 @@ const skillSchema = z.object({
   name: z.string(),
   level: z.string().optional(),
   keywords: z.array(z.string()),
+  selectionHints: selectionHintsSchema.optional(),
 });
 
 const projectSchema = z.object({
@@ -70,6 +82,7 @@ const projectSchema = z.object({
   startDate: z.string(),
   endDate: z.string().nullable(),
   highlights: z.array(z.string()),
+  selectionHints: selectionHintsSchema.optional(),
 });
 
 export const resumeSchema = z.object({
@@ -85,6 +98,7 @@ export const resumeSchema = z.object({
 export type Resume = z.infer<typeof resumeSchema>;
 export type Basics = z.infer<typeof basicsSchema>;
 export type Profile = z.infer<typeof profileSchema>;
+export type SelectionHints = z.infer<typeof selectionHintsSchema>;
 export type Work = z.infer<typeof workSchema>;
 export type Education = z.infer<typeof educationSchema>;
 export type Certificate = z.infer<typeof certificateSchema>;

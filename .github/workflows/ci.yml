@@ -23,8 +23,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -55,6 +55,17 @@ jobs:
 
       - name: Check artifact regressions
         run: node src/scripts/check-artifacts.js
+
+      - name: Upload generated resume artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-artifacts
+          path: |
+            assets/outputs/resume-full.pdf
+            assets/outputs/resume-full.png
+            assets/outputs/resume-single.pdf
+            assets/outputs/resume-single.png
 
       - name: Verify tracked files remain clean
         run: git diff --exit-code

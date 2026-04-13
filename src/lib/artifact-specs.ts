@@ -12,14 +12,16 @@ export const fullArtifactSpec = {
   showSummary: true,
   showWorkSummaries: true,
   showProjectHighlights: true,
-  showProjectStacks: true,
-  skillsColumns: 2,
+  showProjectStacks: false,
+  skillsColumns: 1,
+  skillsLayout: "inline",
 } as const;
 
 export const singleArtifactSpec = {
   showSummary: true,
   showWorkSummaries: false,
-  showProjectHighlights: false,
-  showProjectStacks: true,
-  skillsColumns: 2,
+  showProjectHighlights: true,
+  showProjectStacks: false,
+  skillsColumns: 1,
+  skillsLayout: "inline",
 } as const;

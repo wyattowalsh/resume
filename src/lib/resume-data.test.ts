@@ -1,14 +1,20 @@
-import fullVariantData from '@assets/data/variants/full.json';
-import singleVariantData from '@assets/data/variants/single.json';
-import siteVariantData from '@assets/data/variants/site.json';
-import resumeData from '@assets/data/resume.json';
-import { describe, expect, it } from 'vitest';
-import { getResumeVariant, type ResumeVariantName } from './resume-data';
+import fullVariantData from "@assets/data/variants/full.json";
+import singleVariantData from "@assets/data/variants/single.json";
+import siteVariantData from "@assets/data/variants/site.json";
+import resumeData from "@assets/data/resume.json";
+import { describe, expect, it } from "vitest";
+import { getResumeVariant, type ResumeVariantName } from "./resume-data";
 
 interface WorkSelection {
   name: string;
-  summary?: string;
+  summary?: string | null;
   highlightIndexes?: number[];
+}
+
+interface BasicsSelection {
+  summary?: string | null;
+  label?: string | null;
+  image?: string | null;
 }
 
 interface ProjectSelection {
@@ -62,43 +68,70 @@ function getBasePublication(name: string) {
 }
 
 function getBaseEducation(institution: string) {
-  const item = resumeData.education.find((entry) => entry.institution === institution);
+  const item = resumeData.education.find(
+    (entry) => entry.institution === institution,
+  );
 
   expect(item).toBeDefined();
   return item!;
 }
 
-const allVariantNames: ResumeVariantName[] = ['site', 'full', 'single'];
+const allVariantNames: ResumeVariantName[] = ["site", "full", "single"];
 
-describe('getResumeVariant', () => {
-  describe('memoization', () => {
-    it('returns the same reference on repeated calls', () => {
-      expect(getResumeVariant('full')).toBe(getResumeVariant('full'));
+describe("getResumeVariant", () => {
+  describe("memoization", () => {
+    it("returns the same reference on repeated calls", () => {
+      expect(getResumeVariant("full")).toBe(getResumeVariant("full"));
     });
 
-    it('returns distinct objects for different variant names', () => {
-      expect(getResumeVariant('full')).not.toBe(getResumeVariant('single'));
-      expect(getResumeVariant('site')).not.toBe(getResumeVariant('full'));
-    });
-  });
-
-  describe('variant name property', () => {
-    it.each(allVariantNames)('sets the name property to "%s"', (variantName) => {
-      expect(getResumeVariant(variantName).name).toBe(variantName);
+    it("returns distinct objects for different variant names", () => {
+      expect(getResumeVariant("full")).not.toBe(getResumeVariant("single"));
+      expect(getResumeVariant("site")).not.toBe(getResumeVariant("full"));
     });
   });
 
-  describe('basics', () => {
-    it('applies basics summary overrides for curated variants', () => {
-      expect(getResumeVariant('site').basics.summary).toBe(siteVariantData.basics?.summary);
-      expect(getResumeVariant('single').basics.summary).toBeUndefined();
+  describe("variant name property", () => {
+    it.each(allVariantNames)(
+      'sets the name property to "%s"',
+      (variantName) => {
+        expect(getResumeVariant(variantName).name).toBe(variantName);
+      },
+    );
+  });
+
+  describe("basics", () => {
+    it("applies basics overrides by variant config", () => {
+      const baseBasics = resumeData.basics as typeof resumeData.basics &
+        BasicsSelection;
+      const variantBasicsMap = {
+        site: siteVariantData.basics as BasicsSelection | undefined,
+        full: fullVariantData.basics as BasicsSelection | undefined,
+        single: singleVariantData.basics as BasicsSelection | undefined,
+      } as const satisfies Record<ResumeVariantName, BasicsSelection | undefined>;
+
+      for (const name of allVariantNames) {
+        const resolved = getResumeVariant(name).basics;
+        const overrides = variantBasicsMap[name];
+
+        expect(resolved.summary).toBe(
+          overrides?.summary === undefined
+            ? baseBasics.summary
+            : overrides.summary ?? undefined,
+        );
+        expect(resolved.label).toBe(
+          overrides?.label === undefined
+            ? baseBasics.label
+            : overrides.label ?? undefined,
+        );
+        expect(resolved.image).toBe(
+          overrides?.image === undefined
+            ? baseBasics.image
+            : overrides.image ?? undefined,
+        );
+      }
     });
 
-    it('applies full variant summary override', () => {
-      expect(getResumeVariant('full').basics.summary).toBe(fullVariantData.basics?.summary);
-    });
-
-    it('preserves non-summary basics fields across all variants', () => {
+    it("preserves non-curated basics fields across all variants", () => {
       for (const name of allVariantNames) {
         const resolved = getResumeVariant(name);
 
@@ -112,47 +145,65 @@ describe('getResumeVariant', () => {
     });
   });
 
-  describe('work selections', () => {
-    it('resolves full-artifact work selections in declared order', () => {
-      const expectedWork = ((fullVariantData.work ?? []) as WorkSelection[]).map((selection) => {
+  describe("work selections", () => {
+    it("resolves full-artifact work selections in declared order", () => {
+      const expectedWork = (
+        (fullVariantData.work ?? []) as WorkSelection[]
+      ).map((selection) => {
         const baseJob = getBaseWork(selection.name);
 
         return {
           ...baseJob,
-          summary: selection.summary ?? baseJob.summary,
-          highlights: pickByIndexes(baseJob.highlights, selection.highlightIndexes),
+          ...(selection.summary === undefined
+            ? {}
+            : {
+                summary: selection.summary ?? undefined,
+              }),
+          highlights: pickByIndexes(
+            baseJob.highlights,
+            selection.highlightIndexes,
+          ),
         };
       });
 
-      expect(getResumeVariant('full').work).toEqual(expectedWork);
+      expect(getResumeVariant("full").work).toEqual(expectedWork);
     });
 
-    it('resolves site work selections with correct highlight filtering', () => {
-      const expectedWork = ((siteVariantData.work ?? []) as WorkSelection[]).map((selection) => {
+    it("resolves site work selections with correct highlight filtering", () => {
+      const expectedWork = (
+        (siteVariantData.work ?? []) as WorkSelection[]
+      ).map((selection) => {
         const baseJob = getBaseWork(selection.name);
 
         return {
           ...baseJob,
-          summary: selection.summary ?? baseJob.summary,
-          highlights: pickByIndexes(baseJob.highlights, selection.highlightIndexes),
+          ...(selection.summary === undefined
+            ? {}
+            : {
+                summary: selection.summary ?? undefined,
+              }),
+          highlights: pickByIndexes(
+            baseJob.highlights,
+            selection.highlightIndexes,
+          ),
         };
       });
 
-      expect(getResumeVariant('site').work).toEqual(expectedWork);
+      expect(getResumeVariant("site").work).toEqual(expectedWork);
     });
 
-    it('resolves single work selections with fewer employers', () => {
-      const single = getResumeVariant('single');
-      const singleWorkNames = ((singleVariantData.work ?? []) as WorkSelection[]).map(
-        (s) => s.name,
-      );
+    it("resolves single work selections with fewer employers", () => {
+      const single = getResumeVariant("single");
+      const singleWorkNames = (
+        (singleVariantData.work ?? []) as WorkSelection[]
+      ).map((s) => s.name);
 
       expect(single.work).toHaveLength(singleWorkNames.length);
       expect(single.work.map((w) => w.name)).toEqual(singleWorkNames);
     });
 
-    it('curates highlight counts per work entry rather than passing all', () => {
-      const full = getResumeVariant('full');
+    it("curates highlight counts per work entry rather than passing all", () => {
+      const full = getResumeVariant("full");
 
       for (const selection of (fullVariantData.work ?? []) as WorkSelection[]) {
         const resolved = full.work.find((w) => w.name === selection.name);
@@ -161,8 +212,12 @@ describe('getResumeVariant', () => {
         expect(resolved).toBeDefined();
 
         if (selection.highlightIndexes) {
-          expect(resolved!.highlights).toHaveLength(selection.highlightIndexes.length);
-          expect(resolved!.highlights.length).toBeLessThanOrEqual(base.highlights.length);
+          expect(resolved!.highlights).toHaveLength(
+            selection.highlightIndexes.length,
+          );
+          expect(resolved!.highlights.length).toBeLessThanOrEqual(
+            base.highlights.length,
+          );
         } else {
           expect(resolved!.highlights).toEqual(base.highlights);
         }
@@ -170,54 +225,80 @@ describe('getResumeVariant', () => {
     });
   });
 
-  describe('project selections', () => {
-    it('resolves single-artifact projects from configured indexes', () => {
-      const single = getResumeVariant('single');
-      const expectedProjects = ((singleVariantData.projects ?? []) as ProjectSelection[]).map(
-        (selection) => {
-          const baseProject = getBaseProject(selection.name);
+  describe("project selections", () => {
+    it("resolves single-artifact projects from configured indexes", () => {
+      const single = getResumeVariant("single");
+      const expectedProjects = (
+        (singleVariantData.projects ?? []) as ProjectSelection[]
+      ).map((selection) => {
+        const baseProject = getBaseProject(selection.name);
 
-          return {
-            ...baseProject,
-            description: selection.description ?? baseProject.description,
-            highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
-          };
-        },
-      );
+        return {
+          ...baseProject,
+          description: selection.description ?? baseProject.description,
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
+        };
+      });
 
       expect(single.projects).toEqual(expectedProjects);
     });
 
-    it('resolves full-artifact projects with curated highlights', () => {
-      const full = getResumeVariant('full');
-      const expectedProjects = ((fullVariantData.projects ?? []) as ProjectSelection[]).map(
-        (selection) => {
-          const baseProject = getBaseProject(selection.name);
+    it("resolves full-artifact projects with curated highlights", () => {
+      const full = getResumeVariant("full");
+      const expectedProjects = (
+        (fullVariantData.projects ?? []) as ProjectSelection[]
+      ).map((selection) => {
+        const baseProject = getBaseProject(selection.name);
 
-          return {
-            ...baseProject,
-            description: selection.description ?? baseProject.description,
-            highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
-          };
-        },
-      );
+        return {
+          ...baseProject,
+          description: selection.description ?? baseProject.description,
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
+        };
+      });
 
       expect(full.projects).toEqual(expectedProjects);
     });
 
-    it('passes through all base projects when variant omits project selections', () => {
-      // site.json has no projects key, so resolver should return all base projects
-      expect(siteVariantData).not.toHaveProperty('projects');
-      expect(getResumeVariant('site').projects).toEqual(resumeData.projects);
+    it("resolves site-artifact projects with curated highlights", () => {
+      const site = getResumeVariant("site");
+      const expectedProjects = (
+        (siteVariantData.projects ?? []) as ProjectSelection[]
+      ).map((selection) => {
+        const baseProject = getBaseProject(selection.name);
+
+        return {
+          ...baseProject,
+          description: selection.description ?? baseProject.description,
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
+        };
+      });
+
+      expect(site.projects).toEqual(expectedProjects);
     });
 
-    it('produces empty highlights when highlightIndexes is an empty array', () => {
-      const single = getResumeVariant('single');
+    it("produces empty highlights when highlightIndexes is an empty array", () => {
+      const single = getResumeVariant("single");
 
       // single.json configures projects with highlightIndexes: []
-      for (const selection of (singleVariantData.projects ?? []) as ProjectSelection[]) {
-        if (selection.highlightIndexes && selection.highlightIndexes.length === 0) {
-          const resolved = single.projects?.find((p) => p.name === selection.name);
+      for (const selection of (singleVariantData.projects ??
+        []) as ProjectSelection[]) {
+        if (
+          selection.highlightIndexes &&
+          selection.highlightIndexes.length === 0
+        ) {
+          const resolved = single.projects?.find(
+            (p) => p.name === selection.name,
+          );
 
           expect(resolved).toBeDefined();
           expect(resolved!.highlights).toEqual([]);
@@ -226,57 +307,72 @@ describe('getResumeVariant', () => {
     });
   });
 
-  describe('skill selections', () => {
-    it('resolves single-artifact skills from configured keyword indexes', () => {
-      const single = getResumeVariant('single');
-      const expectedSkills = ((singleVariantData.skills ?? []) as SkillSelection[]).map(
-        (selection) => {
-          const baseSkill = getBaseSkill(selection.name);
+  describe("skill selections", () => {
+    it("resolves single-artifact skills from configured keyword indexes", () => {
+      const single = getResumeVariant("single");
+      const expectedSkills = (
+        (singleVariantData.skills ?? []) as SkillSelection[]
+      ).map((selection) => {
+        const baseSkill = getBaseSkill(selection.name);
 
-          return {
-            ...baseSkill,
-            keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
-          };
-        },
-      );
+        return {
+          ...baseSkill,
+          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+        };
+      });
 
       expect(single.skills).toEqual(expectedSkills);
     });
 
-    it('resolves full-artifact skills with curated keyword indexes', () => {
-      const full = getResumeVariant('full');
-      const expectedSkills = ((fullVariantData.skills ?? []) as SkillSelection[]).map(
-        (selection) => {
-          const baseSkill = getBaseSkill(selection.name);
+    it("resolves full-artifact skills with curated keyword indexes", () => {
+      const full = getResumeVariant("full");
+      const expectedSkills = (
+        (fullVariantData.skills ?? []) as SkillSelection[]
+      ).map((selection) => {
+        const baseSkill = getBaseSkill(selection.name);
 
-          return {
-            ...baseSkill,
-            keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
-          };
-        },
-      );
+        return {
+          ...baseSkill,
+          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+        };
+      });
 
       expect(full.skills).toEqual(expectedSkills);
     });
 
-    it('passes through all base skills when variant omits skill selections', () => {
-      // site.json has no skills key, so resolver should return all base skills
-      expect(siteVariantData).not.toHaveProperty('skills');
-      expect(getResumeVariant('site').skills).toEqual(resumeData.skills);
+    it("resolves site-artifact skills with curated keyword indexes", () => {
+      const site = getResumeVariant("site");
+      const expectedSkills = (
+        (siteVariantData.skills ?? []) as SkillSelection[]
+      ).map((selection) => {
+        const baseSkill = getBaseSkill(selection.name);
+
+        return {
+          ...baseSkill,
+          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+        };
+      });
+
+      expect(site.skills).toEqual(expectedSkills);
     });
 
-    it('curates keyword counts per skill rather than passing all', () => {
-      const full = getResumeVariant('full');
+    it("curates keyword counts per skill rather than passing all", () => {
+      const full = getResumeVariant("full");
 
-      for (const selection of (fullVariantData.skills ?? []) as SkillSelection[]) {
+      for (const selection of (fullVariantData.skills ??
+        []) as SkillSelection[]) {
         const resolved = full.skills?.find((s) => s.name === selection.name);
         const base = getBaseSkill(selection.name);
 
         expect(resolved).toBeDefined();
 
         if (selection.keywordIndexes) {
-          expect(resolved!.keywords).toHaveLength(selection.keywordIndexes.length);
-          expect(resolved!.keywords.length).toBeLessThanOrEqual(base.keywords.length);
+          expect(resolved!.keywords).toHaveLength(
+            selection.keywordIndexes.length,
+          );
+          expect(resolved!.keywords.length).toBeLessThanOrEqual(
+            base.keywords.length,
+          );
         } else {
           expect(resolved!.keywords).toEqual(base.keywords);
         }
@@ -284,80 +380,116 @@ describe('getResumeVariant', () => {
     });
   });
 
-  describe('education selections', () => {
-    it('preserves single-artifact education order from the variant file', () => {
-      const expectedEducation = (singleVariantData.education ?? []).map((institution) =>
-        getBaseEducation(institution),
-      );
+  describe("selection metadata passthrough", () => {
+    it("preserves work selection hints on curated entries", () => {
+      const full = getResumeVariant("full");
+      const frame = full.work.find((job) => job.name === "Frame Payments");
+      const baseFrame = getBaseWork("Frame Payments");
 
-      expect(getResumeVariant('single').education).toEqual(expectedEducation);
+      expect(frame?.selectionHints).toEqual(baseFrame.selectionHints);
     });
 
-    it('resolves full-artifact education in declared order', () => {
-      const expectedEducation = (fullVariantData.education ?? []).map((institution) =>
-        getBaseEducation(institution),
+    it("preserves project selection hints on curated entries", () => {
+      const full = getResumeVariant("full");
+      const project = full.projects?.find(
+        (entry) => entry.name === "AI Agent Skills & MCP Servers",
       );
+      const baseProject = getBaseProject("AI Agent Skills & MCP Servers");
 
-      expect(getResumeVariant('full').education).toEqual(expectedEducation);
+      expect(project?.selectionHints).toEqual(baseProject.selectionHints);
     });
 
-    it('resolves site education in declared order', () => {
-      const expectedEducation = (siteVariantData.education ?? []).map((institution) =>
-        getBaseEducation(institution),
+    it("preserves skill selection hints on curated entries", () => {
+      const full = getResumeVariant("full");
+      const skill = full.skills?.find(
+        (entry) => entry.name === "Machine Learning and Gen AI",
       );
+      const baseSkill = getBaseSkill("Machine Learning and Gen AI");
 
-      expect(getResumeVariant('site').education).toEqual(expectedEducation);
+      expect(skill?.selectionHints).toEqual(baseSkill.selectionHints);
     });
   });
 
-  describe('certificate selections', () => {
-    it('resolves full-artifact certificates by name', () => {
-      const full = getResumeVariant('full');
-      const expectedCertificates = (fullVariantData.certificates ?? []).map((name) =>
-        getBaseCertificate(name),
+  describe("education selections", () => {
+    it("preserves single-artifact education order from the variant file", () => {
+      const expectedEducation = (singleVariantData.education ?? []).map(
+        (institution) => getBaseEducation(institution),
+      );
+
+      expect(getResumeVariant("single").education).toEqual(expectedEducation);
+    });
+
+    it("resolves full-artifact education in declared order", () => {
+      const expectedEducation = (fullVariantData.education ?? []).map(
+        (institution) => getBaseEducation(institution),
+      );
+
+      expect(getResumeVariant("full").education).toEqual(expectedEducation);
+    });
+
+    it("resolves site education in declared order", () => {
+      const expectedEducation = (siteVariantData.education ?? []).map(
+        (institution) => getBaseEducation(institution),
+      );
+
+      expect(getResumeVariant("site").education).toEqual(expectedEducation);
+    });
+  });
+
+  describe("certificate selections", () => {
+    it("resolves full-artifact certificates by name", () => {
+      const full = getResumeVariant("full");
+      const expectedCertificates = (fullVariantData.certificates ?? []).map(
+        (name) => getBaseCertificate(name),
       );
 
       expect(full.certificates).toEqual(expectedCertificates);
     });
 
-    it('resolves site certificates by name', () => {
-      const site = getResumeVariant('site');
-      const expectedCertificates = (siteVariantData.certificates ?? []).map((name) =>
-        getBaseCertificate(name),
+    it("resolves site certificates by name", () => {
+      const site = getResumeVariant("site");
+      const expectedCertificates = (siteVariantData.certificates ?? []).map(
+        (name) => getBaseCertificate(name),
       );
 
       expect(site.certificates).toEqual(expectedCertificates);
     });
 
-    it('resolves to empty array when variant selects no certificates', () => {
-      // single.json has certificates: []
-      expect(singleVariantData.certificates).toEqual([]);
-      expect(getResumeVariant('single').certificates).toEqual([]);
+    it("resolves single-artifact certificates by name", () => {
+      const single = getResumeVariant("single");
+      const expectedCertificates = (singleVariantData.certificates ?? []).map(
+        (name) => getBaseCertificate(name),
+      );
+
+      expect(single.certificates).toEqual(expectedCertificates);
     });
 
-    it('selects a strict subset of base certificates for full variant', () => {
-      const full = getResumeVariant('full');
+    it("preserves certificate ordering from the full variant config", () => {
+      const full = getResumeVariant("full");
       const baseCertCount = resumeData.certificates?.length ?? 0;
+      const fullCertificateNames = (fullVariantData.certificates ?? []) as string[];
 
       expect(full.certificates!.length).toBeLessThanOrEqual(baseCertCount);
-      expect(full.certificates!.length).toBeGreaterThan(0);
+      expect(full.certificates!.map((certificate) => certificate.name)).toEqual(
+        fullCertificateNames,
+      );
     });
   });
 
-  describe('publication selections', () => {
-    it('resolves full-artifact publications by name', () => {
-      const full = getResumeVariant('full');
-      const expectedPublications = (fullVariantData.publications ?? []).map((name) =>
-        getBasePublication(name),
+  describe("publication selections", () => {
+    it("resolves full-artifact publications by name", () => {
+      const full = getResumeVariant("full");
+      const expectedPublications = (fullVariantData.publications ?? []).map(
+        (name) => getBasePublication(name),
       );
 
       expect(full.publications).toEqual(expectedPublications);
     });
 
-    it('resolves site publications by name including all three articles', () => {
-      const site = getResumeVariant('site');
-      const expectedPublications = (siteVariantData.publications ?? []).map((name) =>
-        getBasePublication(name),
+    it("resolves site publications by name including all three articles", () => {
+      const site = getResumeVariant("site");
+      const expectedPublications = (siteVariantData.publications ?? []).map(
+        (name) => getBasePublication(name),
       );
 
       expect(site.publications).toEqual(expectedPublications);
@@ -365,63 +497,71 @@ describe('getResumeVariant', () => {
       expect(site.publications).toHaveLength(3);
     });
 
-    it('resolves to empty array when variant selects no publications', () => {
+    it("resolves to empty array when variant selects no publications", () => {
       // single.json has publications: []
       expect(singleVariantData.publications).toEqual([]);
-      expect(getResumeVariant('single').publications).toEqual([]);
+      expect(getResumeVariant("single").publications).toEqual([]);
     });
 
-    it('preserves publication ordering from the variant config', () => {
-      const full = getResumeVariant('full');
+    it("preserves publication ordering from the variant config", () => {
+      const full = getResumeVariant("full");
       const fullPubNames = (fullVariantData.publications ?? []) as string[];
 
       expect(full.publications!.map((p) => p.name)).toEqual(fullPubNames);
     });
   });
 
-  describe('SEO pass-through', () => {
-    it('passes through SEO description for site variant', () => {
-      const site = getResumeVariant('site');
+  describe("SEO pass-through", () => {
+    it("passes through SEO description for site variant", () => {
+      const site = getResumeVariant("site");
 
       expect(site.seo).toBeDefined();
       expect(site.seo!.description).toBe(siteVariantData.seo?.description);
     });
 
-    it('does not include SEO when variant config omits it', () => {
-      expect(fullVariantData).not.toHaveProperty('seo');
-      expect(getResumeVariant('full').seo).toBeUndefined();
+    it("does not include SEO when variant config omits it", () => {
+      expect(fullVariantData).not.toHaveProperty("seo");
+      expect(getResumeVariant("full").seo).toBeUndefined();
 
-      expect(singleVariantData).not.toHaveProperty('seo');
-      expect(getResumeVariant('single').seo).toBeUndefined();
+      expect(singleVariantData).not.toHaveProperty("seo");
+      expect(getResumeVariant("single").seo).toBeUndefined();
     });
   });
 
-  describe('variant referential integrity', () => {
-    it('every work name in each variant config exists in the base resume', () => {
+  describe("variant referential integrity", () => {
+    it("every work name in each variant config exists in the base resume", () => {
       const baseWorkNames = new Set(resumeData.work.map((w) => w.name));
 
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const selection of (variant.work ?? []) as WorkSelection[]) {
           expect(baseWorkNames).toContain(selection.name);
         }
       }
     });
 
-    it('every project name in each variant config exists in the base resume', () => {
-      const baseProjectNames = new Set(resumeData.projects?.map((p) => p.name) ?? []);
+    it("every project name in each variant config exists in the base resume", () => {
+      const baseProjectNames = new Set(
+        resumeData.projects?.map((p) => p.name) ?? [],
+      );
 
-      for (const variant of [fullVariantData, singleVariantData]) {
-        for (const selection of ((variant as Record<string, unknown>).projects ??
-          []) as ProjectSelection[]) {
+      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+        for (const selection of ((variant as Record<string, unknown>)
+          .projects ?? []) as ProjectSelection[]) {
           expect(baseProjectNames).toContain(selection.name);
         }
       }
     });
 
-    it('every skill name in each variant config exists in the base resume', () => {
-      const baseSkillNames = new Set(resumeData.skills?.map((s) => s.name) ?? []);
+    it("every skill name in each variant config exists in the base resume", () => {
+      const baseSkillNames = new Set(
+        resumeData.skills?.map((s) => s.name) ?? [],
+      );
 
-      for (const variant of [fullVariantData, singleVariantData]) {
+      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
         for (const selection of ((variant as Record<string, unknown>).skills ??
           []) as SkillSelection[]) {
           expect(baseSkillNames).toContain(selection.name);
@@ -429,38 +569,60 @@ describe('getResumeVariant', () => {
       }
     });
 
-    it('every education institution in each variant config exists in the base resume', () => {
-      const baseInstitutions = new Set(resumeData.education.map((e) => e.institution));
+    it("every education institution in each variant config exists in the base resume", () => {
+      const baseInstitutions = new Set(
+        resumeData.education.map((e) => e.institution),
+      );
 
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const institution of (variant.education ?? []) as string[]) {
           expect(baseInstitutions).toContain(institution);
         }
       }
     });
 
-    it('every certificate name in each variant config exists in the base resume', () => {
-      const baseCertNames = new Set(resumeData.certificates?.map((c) => c.name) ?? []);
+    it("every certificate name in each variant config exists in the base resume", () => {
+      const baseCertNames = new Set(
+        resumeData.certificates?.map((c) => c.name) ?? [],
+      );
 
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const certName of (variant.certificates ?? []) as string[]) {
           expect(baseCertNames).toContain(certName);
         }
       }
     });
 
-    it('every publication name in each variant config exists in the base resume', () => {
-      const basePubNames = new Set(resumeData.publications?.map((p) => p.name) ?? []);
+    it("every publication name in each variant config exists in the base resume", () => {
+      const basePubNames = new Set(
+        resumeData.publications?.map((p) => p.name) ?? [],
+      );
 
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const pubName of (variant.publications ?? []) as string[]) {
           expect(basePubNames).toContain(pubName);
         }
       }
     });
 
-    it('every highlightIndex in work selections is within bounds', () => {
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+    it("every highlightIndex in work selections is within bounds", () => {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const selection of (variant.work ?? []) as WorkSelection[]) {
           if (selection.highlightIndexes) {
             const base = getBaseWork(selection.name);
@@ -474,10 +636,10 @@ describe('getResumeVariant', () => {
       }
     });
 
-    it('every highlightIndex in project selections is within bounds', () => {
-      for (const variant of [fullVariantData, singleVariantData]) {
-        for (const selection of ((variant as Record<string, unknown>).projects ??
-          []) as ProjectSelection[]) {
+    it("every highlightIndex in project selections is within bounds", () => {
+      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+        for (const selection of ((variant as Record<string, unknown>)
+          .projects ?? []) as ProjectSelection[]) {
           if (selection.highlightIndexes) {
             const base = getBaseProject(selection.name);
 
@@ -490,8 +652,8 @@ describe('getResumeVariant', () => {
       }
     });
 
-    it('every keywordIndex in skill selections is within bounds', () => {
-      for (const variant of [fullVariantData, singleVariantData]) {
+    it("every keywordIndex in skill selections is within bounds", () => {
+      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
         for (const selection of ((variant as Record<string, unknown>).skills ??
           []) as SkillSelection[]) {
           if (selection.keywordIndexes) {
@@ -507,36 +669,27 @@ describe('getResumeVariant', () => {
     });
   });
 
-  describe('section passthrough when variant omits selections', () => {
-    it('passes through all base projects when site variant omits project selections', () => {
-      expect(siteVariantData).not.toHaveProperty('projects');
-      expect(getResumeVariant('site').projects).toEqual(resumeData.projects);
-    });
-
-    it('passes through all base skills when site variant omits skill selections', () => {
-      expect(siteVariantData).not.toHaveProperty('skills');
-      expect(getResumeVariant('site').skills).toEqual(resumeData.skills);
-    });
-  });
-
-  describe('all variants resolve without error', () => {
-    it.each(allVariantNames)('resolves "%s" variant without throwing', (variantName) => {
-      expect(() => getResumeVariant(variantName)).not.toThrow();
-    });
+  describe("all variants resolve without error", () => {
+    it.each(allVariantNames)(
+      'resolves "%s" variant without throwing',
+      (variantName) => {
+        expect(() => getResumeVariant(variantName)).not.toThrow();
+      },
+    );
 
     it.each(allVariantNames)(
       '"%s" variant includes all required top-level sections',
       (variantName) => {
         const resolved = getResumeVariant(variantName);
 
-        expect(resolved).toHaveProperty('basics');
-        expect(resolved).toHaveProperty('work');
-        expect(resolved).toHaveProperty('education');
-        expect(resolved).toHaveProperty('projects');
-        expect(resolved).toHaveProperty('skills');
-        expect(resolved).toHaveProperty('certificates');
-        expect(resolved).toHaveProperty('publications');
-        expect(resolved).toHaveProperty('name');
+        expect(resolved).toHaveProperty("basics");
+        expect(resolved).toHaveProperty("work");
+        expect(resolved).toHaveProperty("education");
+        expect(resolved).toHaveProperty("projects");
+        expect(resolved).toHaveProperty("skills");
+        expect(resolved).toHaveProperty("certificates");
+        expect(resolved).toHaveProperty("publications");
+        expect(resolved).toHaveProperty("name");
       },
     );
   });

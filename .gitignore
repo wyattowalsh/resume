@@ -135,5 +135,6 @@ vite.config.d.ts
 # Session logs and scratch files
 *.txt
 !requirements*.txt
+.playwright-mcp/
 .serena/
 .copilot/

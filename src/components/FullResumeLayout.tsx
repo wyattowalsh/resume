@@ -41,18 +41,28 @@ export function FullResumeLayout({
   className,
 }: FullResumeLayoutProps) {
   return (
-    <main className={`resume-print pdf-full mx-auto w-full max-w-[7.65in] p-0 ${className ?? ""}`}>
-      <PrintResumeHeader basics={basics} showSummary={fullArtifactSpec.showSummary} />
+    <main
+      className={`resume-print pdf-full mx-auto w-full max-w-[7.65in] p-0 ${className ?? ""}`}
+    >
+      <PrintResumeHeader
+        basics={basics}
+        showSummary={fullArtifactSpec.showSummary}
+      />
 
       <div className="mt-4">
         <PrintSection title="Experience">
-          <PrintWorkList work={work} showSummaries={fullArtifactSpec.showWorkSummaries} />
+          <PrintWorkList
+            work={work}
+            showSummaries={fullArtifactSpec.showWorkSummaries}
+          />
         </PrintSection>
       </div>
 
-      {projects && projects.length > 0 && <div className="print-page-break-after" aria-hidden="true" />}
+      {projects && projects.length > 0 && (
+        <div className="print-page-break-after" aria-hidden="true" />
+      )}
 
-      <div className="mt-4 space-y-4">
+      <div className="mt-4 space-y-3.5">
         {projects && projects.length > 0 && (
           <PrintSection title="Projects">
             <PrintProjectList
@@ -63,33 +73,31 @@ export function FullResumeLayout({
           </PrintSection>
         )}
 
-        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] gap-5 break-inside-avoid">
-          <div className="space-y-4">
-            {skills && skills.length > 0 && (
-              <PrintSection title="Skills">
-                <PrintSkillList skills={skills} columns={fullArtifactSpec.skillsColumns} />
-              </PrintSection>
-            )}
+        {skills && skills.length > 0 && (
+          <PrintSection title="Skills">
+            <PrintSkillList
+              skills={skills}
+              layout={fullArtifactSpec.skillsLayout}
+              columns={fullArtifactSpec.skillsColumns}
+            />
+          </PrintSection>
+        )}
 
-            <PrintSection title="Education">
-              <PrintEducationList education={education} />
-            </PrintSection>
-          </div>
+        <PrintSection title="Education">
+          <PrintEducationList education={education} />
+        </PrintSection>
 
-          <div className="space-y-4">
-            {certificates && certificates.length > 0 && (
-              <PrintSection title="Certifications">
-                <PrintCertificateList certificates={certificates} />
-              </PrintSection>
-            )}
+        {certificates && certificates.length > 0 && (
+          <PrintSection title="Certifications">
+            <PrintCertificateList certificates={certificates} />
+          </PrintSection>
+        )}
 
-            {publications && publications.length > 0 && (
-              <PrintSection title="Publications">
-                <PrintPublicationList publications={publications} />
-              </PrintSection>
-            )}
-          </div>
-        </div>
+        {publications && publications.length > 0 && (
+          <PrintSection title="Publications">
+            <PrintPublicationList publications={publications} />
+          </PrintSection>
+        )}
       </div>
     </main>
   );

@@ -172,6 +172,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   a:focus-visible,
@@ -208,6 +210,8 @@
 		background-color: white;
 		font-family: var(--font-sans);
 		min-height: auto !important;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
 	}
 	.resume-print-section-heading {
 		page-break-after: avoid;
@@ -217,21 +221,25 @@
 		color: inherit;
 		text-decoration: none;
 	}
-	.resume-print ul {
+	.resume-print ul,
+	.resume-print p {
 		orphans: 2;
 		widows: 2;
 	}
 	.resume-print-entry {
 		break-inside: avoid;
 	}
-	.resume-print-section + .resume-print-section {
-		margin-top: 0.9rem;
+	.pdf-full .resume-print-section + .resume-print-section {
+		margin-top: 1rem;
 	}
 	.pdf-full {
 		padding-bottom: 0.5rem;
 	}
 	.pdf-single {
 		padding-bottom: 0.25rem;
+	}
+	.pdf-single .resume-print-section + .resume-print-section {
+		margin-top: 0.7rem;
 	}
 	.pdf-single .print-page-break-after {
 		break-after: auto;

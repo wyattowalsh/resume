@@ -1,14 +1,19 @@
 # resume
 
- A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves a screen-native online resume and generates dedicated 2-page and 1-page print artifacts from separate print compositions.
+A Vike + React resume system driven by one canonical resume JSON plus curated per-artifact variant files. The repo serves a screen-native online resume and generates dedicated 2-page and 1-page print artifacts from separate print compositions.
 
 ## Routes
 
-| Route | Purpose | Notes |
-| --- | --- | --- |
-| `/` | Interactive online resume | Public web resume with a dedicated screen layout, section jump nav, and deeper project presentation. |
-| `/full` | 2-page print resume | Letter-sized, editorial 2-page artifact with dedicated print layout and page choreography. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
-| `/single` | 1-page print resume | Letter-sized recruiter scan sheet with a flatter dedicated print layout. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
+| Route     | Purpose                   | Notes                                                                                                                                                                                                                                   |
+| --------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`       | Interactive online resume | Public web resume with a dedicated screen layout, section jump nav, richer section intros, and the broadest project/skills surface.                                                                                                     |
+| `/full`   | 2-page print resume       | Letter-sized, editorial 2-page artifact with calmer page rhythm, dedicated print choreography, and broader supporting detail than the 1-pager. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only. |
+| `/single` | 1-page print resume       | Letter-sized distilled resume with a linear reading path tuned for both human scanability and safer PDF text extraction. In Vercel production, `api/ssr.ts` returns `404` for this route, so it stays local-only.                       |
+
+Static public downloads are intentionally separate from those blocked routes:
+
+- `/downloads/wyatt-walsh-resume-full.pdf`
+- `/downloads/wyatt-walsh-resume-single.pdf`
 
 ## SEO
 
@@ -30,7 +35,7 @@ On Vercel, `/full` and `/single` are still local-only: the production SSR entryp
 `assets/data/variants/site.json`, `assets/data/variants/full.json`, and `assets/data/variants/single.json` layer artifact-specific curation on top of that base data:
 
 - `site.json` curates the interactive online resume
-- `full.json` curates the 2-page formal resume
+- `full.json` curates the calmer 2-page editorial resume
 - `single.json` curates the 1-page distilled resume
 
 `src/lib/resume-data.ts` resolves those variant files into validated render payloads for each route.
@@ -78,7 +83,13 @@ Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full
 pnpm check:artifacts
 ```
 
-Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, and the curated work/project/skills/education/certification/publication content still appears in the generated PDFs.
+Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both generated PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, the curated work/project/skills/education/certification/publication content still appears in the generated PDFs, the 1-page PDF preserves the intended `Experience → Skills → Projects → Education` extraction order, and the public download PDFs under `public/downloads/` still satisfy the same page-budget/content checks.
+
+```bash
+pnpm sync:public-downloads
+```
+
+Copy the latest generated PDF artifacts into `public/downloads/` so the public site can expose them as static downloads without making `/full` or `/single` public routes.
 
 ## Resume generation workflow
 
@@ -95,8 +106,12 @@ Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were g
 
 `assets/outputs/` is gitignored, so generated artifacts are not committed by default.
 
-`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist`.
+`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist`, including section-order checks on `/single` so column-style extraction regressions are caught in CI.
+
+The CI workflow also uploads the generated PDF/PNG artifacts on every run so layout changes can be inspected without regenerating them locally.
 
 ## Production note
 
 The print routes exist in the app code, but they are intentionally not public on Vercel. `api/ssr.ts` blocks both `/full` and `/single` when `VERCEL_ENV=production`, which means only the interactive `/` route is exposed in production.
+
+If public download PDFs are enabled, they are served as static files from `public/downloads/` and remain separate from the blocked print routes.

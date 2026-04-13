@@ -2,11 +2,25 @@ import { getResumeVariant } from "@/lib/resume-data";
 import { rootTitle } from "@/lib/site";
 
 const siteUrl = "https://resume.w4w.dev";
-const siteImagePath = "/android-chrome-512x512.png";
+const fallbackSiteImagePath = "/android-chrome-512x512.png";
+
+function toAbsoluteUrl(pathOrUrl: string) {
+  return new URL(pathOrUrl, siteUrl).toString();
+}
 
 const siteResume = getResumeVariant("site");
 const primaryWork = siteResume.work[0];
 const siteName = `${siteResume.basics.name} Resume`;
+const profileImagePath = siteResume.basics.image?.trim() || undefined;
+const socialImagePath = profileImagePath ?? fallbackSiteImagePath;
+const jobTitle = siteResume.basics.label?.trim() || primaryWork?.position;
+const worksFor = primaryWork && !primaryWork.endDate
+  ? {
+      "@type": "Organization" as const,
+      name: primaryWork.name,
+      ...(primaryWork.url ? { url: primaryWork.url } : {}),
+    }
+  : undefined;
 const locationName = [
   siteResume.basics.location.city,
   siteResume.basics.location.region,
@@ -33,6 +47,27 @@ const credentials =
       name: certificate.issuer,
     },
   })) ?? [];
+const proofObjects = [
+  ...(siteResume.projects?.map((project) => ({
+    "@type": "SoftwareSourceCode" as const,
+    name: project.name,
+    description: project.description,
+    url: project.url ?? project.githubUrl,
+    codeRepository: project.githubUrl,
+    dateCreated: project.startDate,
+    ...(project.endDate ? { dateModified: project.endDate } : {}),
+  })) ?? []),
+  ...(siteResume.publications?.map((publication) => ({
+    "@type": "Article" as const,
+    headline: publication.name,
+    url: publication.url,
+    datePublished: publication.releaseDate,
+    publisher: {
+      "@type": "Organization" as const,
+      name: publication.publisher,
+    },
+  })) ?? []),
+];
 
 function buildDescription() {
   if (siteResume.seo?.description?.trim()) {
@@ -52,7 +87,9 @@ function buildDescription() {
 
 const description = buildDescription();
 const canonicalUrl = `${siteUrl}/`;
-const imageUrl = `${siteUrl}${siteImagePath}`;
+const imageUrl = toAbsoluteUrl(socialImagePath);
+const imageWidth = profileImagePath ? 1000 : 512;
+const imageHeight = profileImagePath ? 1000 : 512;
 
 export const sharedSeoMetadata = {
   title: rootTitle,
@@ -60,9 +97,11 @@ export const sharedSeoMetadata = {
   siteUrl,
   canonicalUrl,
   imageUrl,
-  imageAlt: `${siteResume.basics.name} resume site icon`,
-  imageWidth: 512,
-  imageHeight: 512,
+  imageAlt: profileImagePath
+    ? `${siteResume.basics.name} profile image`
+    : `${siteResume.basics.name} resume site icon`,
+  imageWidth,
+  imageHeight,
   siteName,
   locale: "en_US",
   structuredData: {
@@ -84,19 +123,17 @@ export const sharedSeoMetadata = {
             },
           }
         : {}),
-      ...(primaryWork
+      ...(profileImagePath
         ? {
-            jobTitle: primaryWork.position,
-            worksFor: {
-              "@type": "Organization",
-              name: primaryWork.name,
-              ...(primaryWork.url ? { url: primaryWork.url } : {}),
-            },
+            image: toAbsoluteUrl(profileImagePath),
           }
         : {}),
+      ...(jobTitle ? { jobTitle } : {}),
+      ...(worksFor ? { worksFor } : {}),
       ...(knowsAbout.length ? { knowsAbout } : {}),
       ...(alumniOf.length ? { alumniOf } : {}),
       ...(credentials.length ? { hasCredential: credentials } : {}),
+      ...(proofObjects.length ? { subjectOf: proofObjects } : {}),
     },
   },
 } as const;

@@ -10,6 +10,7 @@ export default function SinglePage() {
       work={resume.work}
       skills={resume.skills}
       education={resume.education}
+      certificates={resume.certificates}
       projects={resume.projects}
     />
   );

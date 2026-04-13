@@ -1,9 +1,11 @@
 {
   "basics": {
     "name": "Wyatt Walsh",
+    "label": "Senior AI/ML Engineer",
     "email": "wyattowalsh@gmail.com",
     "phone": "(209) 602-2545",
     "url": "https://www.w4w.dev",
+    "summary": "Senior AI/ML engineer building production agentic systems, data platforms, and developer tooling for regulated, data-heavy teams.",
     "location": {
       "city": "New York City",
       "region": "New York",
@@ -28,9 +30,30 @@
       "position": "Senior AI/ML Engineer",
       "url": "https://framepayments.com/",
       "startDate": "2025-10-01",
-      "endDate": "2026-01-01",
+      "endDate": "2026-01-15",
       "location": "Remote",
-      "summary": "Sole AI/ML Engineer delivering production applied AI for risk/compliance and growth at a high-risk-merchant payments platform. Ship document intelligence and restricted-item compliance screening for merchant onboarding using agentic LLM workflows and multimodal inputs, with human-in-the-loop UX and audit-aware handling of PII and confidential documents.",
+      "summary": "Served as the sole AI/ML Engineer delivering production applied AI for risk/compliance and growth at a high-risk-merchant payments platform. Shipped document intelligence and restricted-item compliance screening for merchant onboarding using agentic LLM workflows and multimodal inputs, with human-in-the-loop UX and audit-aware handling of PII and confidential documents.",
+      "selectionHints": {
+        "themes": [
+          "agentic-ai",
+          "document-intelligence",
+          "regulated-fintech",
+          "merchant-onboarding",
+          "multimodal-compliance"
+        ],
+        "aliases": [
+          "AI agents",
+          "LLM workflows",
+          "compliance automation",
+          "merchant risk"
+        ],
+        "impactSignals": [
+          "review-efficiency",
+          "analyst-productivity",
+          "submission-quality",
+          "policy-automation"
+        ]
+      },
       "highlights": [
         "Deployed submission-time document-category validation using PydanticAI, Amazon Bedrock AgentCore, and Claude, surfaced as in-browser feedback for confidential uploads; reduced analyst follow-ups and resubmission requests ~90% by blocking miscategorized documents before they entered review queues.",
         "Built restricted-item compliance screening that combines product images with structured submission metadata; translated banking-partner policy requirements into automated checks supporting onboarding across tens of merchants, multi-location operations, and catalogs with hundreds of items per location.",
@@ -46,6 +69,25 @@
       "endDate": "2025-04-01",
       "location": "New York, NY",
       "summary": "Engineered enterprise-grade data pipelines, data integrations, and analytics solutions for trading, quantitative research, and risk groups within the credit division of the investment bank and fostered improved AI development tool usage across the firm.",
+      "selectionHints": {
+        "themes": [
+          "data-platforms",
+          "enterprise-ai-tooling",
+          "capital-markets",
+          "risk-analytics"
+        ],
+        "aliases": [
+          "data engineering",
+          "data integrations",
+          "credit trading",
+          "anomaly detection"
+        ],
+        "impactSignals": [
+          "manual-time-reduction",
+          "false-positive-reduction",
+          "self-service-data-access"
+        ]
+      },
       "highlights": [
         "Pioneered firm-wide rollout of generative AI development tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, delivering feedback that shaped secure, scalable deployment and leading internal workshops to boost productivity for technical and non-technical teams.",
         "Devised ML-driven anomaly detection framework for data health monitoring, reducing false positives by 25% and cutting manual review time, empowering risk teams to focus on critical alerts.",
@@ -80,15 +122,15 @@
     },
     {
       "name": "Gap Inc.",
-      "position": "Demand Forecasting",
+      "position": "Demand Forecasting Extern",
       "url": "https://www.gapinc.com/",
       "startDate": "2020-01-01",
       "endDate": "2020-05-01",
       "location": "San Francisco, CA",
-      "summary": "Engineered predictive demand forecasting models, improving forecast accuracy by 5–25% to optimize inventory planning and reduce stockouts across multiple retail divisions.",
+      "summary": "Completed a senior-semester extern/capstone with Gap Inc.'s demand forecasting team, leading the data engineering and forecasting workflows that improved forecast accuracy by 5–25% for inventory planning across multiple retail divisions.",
       "highlights": [
         "Applied time-series decomposition and bias correction techniques to demand forecasts, boosting accuracy by up to 25% and minimizing surplus inventory costs.",
-        "Architected scalable data infrastructure using MySQL and Apache Spark to process 5+ years of sales data, improving data processing throughput by 95% and standardizing insights across forecasting teams."
+        "Owned the data engineering layer by architecting scalable MySQL and Apache Spark pipelines across 5+ years of sales data, improving data processing throughput by 95% and standardizing insights across forecasting teams."
       ]
     }
   ],
@@ -191,8 +233,15 @@
         "MobX",
         "Vitest",
         "Cypress",
-        "Puppeteer"
-      ]
+        "Puppeteer",
+        "MDX",
+        "Electron",
+        "CodeMirror"
+      ],
+      "selectionHints": {
+        "themes": ["full-stack", "frontend-platforms", "developer-tooling"],
+        "aliases": ["web apps", "frontend engineering", "API development"]
+      }
     },
     {
       "name": "Data Engineering and Analytics",
@@ -218,8 +267,19 @@
         "Matplotlib",
         "Plotly",
         "Dash",
-        "Tableau"
-      ]
+        "Tableau",
+        "ETL",
+        "SQLite"
+      ],
+      "selectionHints": {
+        "themes": ["pipelines", "warehousing", "analytics", "streaming"],
+        "aliases": ["data platforms", "analytics engineering", "etl"],
+        "impactSignals": [
+          "throughput-improvement",
+          "self-service-access",
+          "reporting-automation"
+        ]
+      }
     },
     {
       "name": "Machine Learning and Gen AI",
@@ -235,10 +295,32 @@
         "LangSmith",
         "LlamaIndex",
         "MCP (Model Context Protocol)",
-        "Retrieval-Augmented Generation",
+        "RAG",
         "Prompt Engineering",
-        "Knowledge Graphs"
-      ]
+        "Knowledge Graphs",
+        "PydanticAI",
+        "Amazon Bedrock",
+        "Claude",
+        "Claude Code",
+        "GitHub Copilot",
+        "Codex",
+        "DeepAgents",
+        "AI Agent Skills Protocol"
+      ],
+      "selectionHints": {
+        "themes": [
+          "llm-applications",
+          "agentic-systems",
+          "retrieval",
+          "ml-modeling"
+        ],
+        "aliases": ["Generative AI", "LLMs", "AI agents", "applied AI"],
+        "impactSignals": [
+          "workflow-automation",
+          "decision-support",
+          "model-assisted-review"
+        ]
+      }
     },
     {
       "name": "Cloud Infrastructure and DevOps",
@@ -299,6 +381,20 @@
       "startDate": "2026-01-01",
       "endDate": null,
       "description": "Open-source ecosystem of 40+ portable AI agent skills and 38 pre-built MCP servers that bring expert workflows—code review, security scanning, infrastructure, ML—to any compatible agent platform.",
+      "selectionHints": {
+        "themes": [
+          "developer-tooling",
+          "agent-platforms",
+          "open-source",
+          "workflow-automation"
+        ],
+        "aliases": ["MCP servers", "AI agent skills", "developer experience"],
+        "impactSignals": [
+          "ecosystem-adoption",
+          "workflow-reuse",
+          "cross-platform-portability"
+        ]
+      },
       "highlights": [
         "Authored 40+ reusable skill definitions covering domains from strategic analysis and prompt engineering to full-stack development, installable across Claude Code, GitHub Copilot, Cursor, and more.",
         "Packaged 38 MCP servers spanning web research, structured thinking, browser automation, and data tools, each with standardized configuration and documentation."
@@ -310,7 +406,12 @@
       "githubUrl": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": "2021-06-01",
-      "description": "Democratized access to sports analytics insights by open-sourcing the most robust, comprehensive NBA basketball dataset freely available online of over 65K games and 13M play-by-play events, earning over 300K views and 45K downloads on Kaggle.",
+      "description": "Democratized access to sports analytics insights by open-sourcing the most robust, comprehensive NBA basketball dataset freely available online of over 65K games and 13M play-by-play events, earning over 400K views and 45K downloads on Kaggle.",
+      "selectionHints": {
+        "themes": ["data-engineering", "open-data", "analytics"],
+        "aliases": ["ETL pipeline", "sports analytics dataset", "Kaggle dataset"],
+        "impactSignals": ["dataset-scale", "community-adoption"]
+      },
       "highlights": [
         "Implemented a high-performance, fully validated ETL pipeline using Python, Pandas, multiprocessing, pandera, pydantic, sqlalchemy, and SQL to extract data from the NBA's public API and update the dataset's SQLite database and CSV/JSON flat files with new data on a daily basis.",
         "Created an accompanying docs site with a customized theme, updating changelog, python api docs, user guide, and development details using Sphinx, Markdown, and CSS all deployed to ReadTheDocs."

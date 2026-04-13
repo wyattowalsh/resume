@@ -1,6 +1,36 @@
 ---
 title: Dev Docs
-description: Everything about my resume project
+description: Architecture, artifact intent, and validation notes for the resume system
 icon: fa/FaRocket
 ---
 
+## Artifact model
+
+This repo intentionally ships three different resume artifacts from one canonical data source:
+
+| Artifact               | Route     | Job                                                                                           |
+| ---------------------- | --------- | --------------------------------------------------------------------------------------------- |
+| Online resume          | `/`       | Broadest public surface with richer project depth, section intros, and web-native navigation. |
+| Editorial print resume | `/full`   | Local-only 2-page PDF/PNG artifact with calmer pacing and more supporting detail.             |
+| Distilled print resume | `/single` | Local-only 1-page PDF/PNG artifact with a stricter linear reading path for safer extraction.  |
+
+## Data flow
+
+1. `assets/data/resume.json` is the canonical fact source.
+2. `assets/data/variants/site.json`, `full.json`, and `single.json` curate that data per artifact.
+3. `src/lib/resume-data.ts` resolves and validates each variant before rendering.
+4. Dedicated layouts (`SiteResumeLayout`, `FullResumeLayout`, `SingleResumeLayout`) own artifact-specific composition.
+
+## Validation workflow
+
+- `pnpm build`
+- `pnpm exec tsc --noEmit`
+- `pnpm test`
+- `pnpm lint`
+- `pnpm check:artifacts`
+
+`pnpm check:artifacts` regenerates `/full` and `/single`, verifies page counts and letter sizing, checks curated content presence, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
+
+## CI behavior
+
+The GitHub Actions workflow runs the same core validation chain, regenerates the print artifacts, runs `src/scripts/check-artifacts.ts`, and uploads the generated PDFs/PNGs as workflow artifacts for visual inspection.
