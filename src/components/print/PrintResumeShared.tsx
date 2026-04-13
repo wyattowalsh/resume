@@ -95,7 +95,7 @@ export function PrintResumeHeader({
   return (
     <header
       className={cn(
-        "border-b border-slate-300",
+        "border-b-[1.5px] border-slate-400",
         compact ? "space-y-1.5 pb-2.5" : "space-y-2.5 pb-3",
       )}
     >
@@ -118,7 +118,7 @@ export function PrintResumeHeader({
         {basics.label && (
           <p
             className={cn(
-              "font-semibold uppercase tracking-[0.12em] text-slate-600",
+              "font-semibold uppercase tracking-[0.16em] text-slate-600",
               compact ? "text-[9.8px]" : "text-[10.5px]",
             )}
           >
@@ -187,9 +187,10 @@ export function PrintSection({
     >
       <h2
         id={headingId}
-        className="resume-print-section-heading mb-2.5 border-t border-slate-300 pt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600"
+        className="resume-print-section-heading mb-2 flex items-center gap-2 border-t-[1.5px] border-slate-400 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-700"
       >
-        {title}
+        <span>{title}</span>
+        <span aria-hidden="true" className="h-px flex-1 bg-slate-400" />
       </h2>
       {children}
     </section>
@@ -207,7 +208,7 @@ export function PrintCertificateStrip({
         compact ? "text-[9.8px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
       )}
     >
-      <span className="font-semibold uppercase tracking-[0.08em] text-slate-500">
+      <span className="font-bold uppercase tracking-[0.08em] text-slate-600">
         Certifications:
       </span>{" "}
       {certificates.map((certificate) => certificate.name).join(" · ")}
@@ -230,14 +231,14 @@ export function PrintWorkList({
           <div className="min-w-0">
             <h3
               className={cn(
-                "font-semibold text-slate-950",
+                "font-bold text-slate-950",
                 compact ? "text-[11px]" : "text-[12px]",
               )}
             >
               {job.position}
             </h3>
             <div className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
-              <span className="text-slate-700">
+              <span className="font-medium text-slate-700">
                 {job.url ? (
                   <a
                     href={job.url}
@@ -272,7 +273,7 @@ export function PrintWorkList({
 
           <ul
             className={cn(
-                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-500",
+              "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
               compact
                 ? "space-y-0.5 text-[10px] leading-[1.35]"
                 : "space-y-0.5 text-[10.5px] leading-[1.4]",
@@ -301,14 +302,16 @@ export function PrintSkillList({
           <p
             key={skill.name}
             className={cn(
-              "text-slate-800",
+              "text-slate-700",
               compact
                 ? "text-[9.8px] leading-[1.35]"
                 : "text-[10.25px] leading-[1.45]",
             )}
           >
-            <span className="font-semibold text-slate-900">{skill.name}:</span>{" "}
-            {skill.keywords.join(", ")}
+            <span className="font-bold uppercase tracking-[0.04em] text-slate-900">
+              {skill.name}:
+            </span>{" "}
+            {skill.keywords.join(" · ")}
           </p>
         ))}
       </div>
@@ -365,7 +368,7 @@ export function PrintProjectList({
           <div className="min-w-0">
             <h3
               className={cn(
-                "font-semibold text-slate-950",
+                "font-bold text-slate-950",
                 compact ? "text-[11px]" : "text-[12px]",
               )}
             >
@@ -413,7 +416,7 @@ export function PrintProjectList({
           {showHighlights && project.highlights.length > 0 && (
             <ul
               className={cn(
-                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-500",
+                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
                 compact
                   ? "space-y-0.5 text-[10px] leading-[1.35]"
                   : "space-y-0.5 text-[10.5px] leading-[1.4]",
@@ -427,7 +430,7 @@ export function PrintProjectList({
 
           {showStacks && project.stack?.length ? (
             <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
-              <span className="font-semibold text-slate-800">Stack:</span>{" "}
+              <span className="font-bold text-slate-800">Stack:</span>{" "}
               {project.stack.join(" · ")}
             </p>
           ) : null}
@@ -450,7 +453,7 @@ export function PrintEducationList({
         >
           <h3
             className={cn(
-              "font-semibold text-slate-950",
+              "font-bold text-slate-950",
               compact ? "text-[11px]" : "text-[11.5px]",
             )}
           >
@@ -498,7 +501,7 @@ export function PrintCertificateList({
           key={cert.name}
           className="resume-print-entry break-inside-avoid"
         >
-          <h3 className="text-[11px] font-semibold text-slate-950">
+          <h3 className="text-[11px] font-bold text-slate-950">
             {cert.url ? (
               <a
                 href={cert.url}
@@ -532,7 +535,7 @@ export function PrintPublicationList({
           key={publication.name}
           className="resume-print-entry break-inside-avoid"
         >
-          <h3 className="text-[11px] font-semibold text-slate-950">
+          <h3 className="text-[11px] font-bold text-slate-950">
             <a
               href={publication.url}
               target="_blank"

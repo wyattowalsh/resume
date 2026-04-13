@@ -58,20 +58,17 @@ export function Projects({
         {featuredProjects.map((project) => (
           <article
             key={project.name}
-            className="rounded-xl border border-primary/25 bg-primary/5 p-4 shadow-md"
+            className="card-hover rounded-[1.45rem] border border-primary/20 bg-primary/[0.06] p-4 shadow-[0_24px_48px_-32px_rgba(15,23,42,0.4)] ring-1 ring-primary/10"
           >
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-start sm:justify-between">
-              <div className="space-y-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-                  Featured proof
-                </p>
+              <div>
                 <ProjectHeading
                   project={project}
                   className="flex flex-wrap items-center gap-2 text-[1.05rem] font-semibold leading-6"
                 />
               </div>
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground sm:justify-end">
-                <div>
+              <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
+                <div className="rounded-full border border-primary/15 bg-background/80 px-2.5 py-1 shadow-sm">
                   <time dateTime={project.startDate}>
                     {formatMonthYear(project.startDate)}
                   </time>{" "}
@@ -86,7 +83,7 @@ export function Projects({
                 </div>
               </div>
             </div>
-            <p className="mt-2 text-sm font-medium italic leading-6 text-foreground/80">
+            <p className="mt-2 text-sm leading-6 text-foreground/80">
               {project.description}
             </p>
             {Array.isArray(project.highlights) && project.highlights.length > 0 && (
@@ -106,38 +103,28 @@ export function Projects({
         ))}
 
         {moreProjects.length > 0 && (
-          <div className="space-y-3 pt-1">
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                More projects
-              </p>
-              <p className="text-sm leading-6 text-muted-foreground">
-                Additional product, infrastructure, and open-source work.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-              {moreProjects.map((project) => (
-                <article
-                  key={project.name}
-                  className="rounded-xl border border-border/60 bg-card/70 p-3.5 shadow-sm"
-                >
-                  <ProjectHeading
-                    project={project}
-                    className="flex flex-wrap items-center gap-2 text-sm font-semibold leading-5"
-                  />
-                  {/* Compact cards stay summary-only so the featured tier carries the deeper proof points. */}
-                  <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
-                    {project.description}
+          <div className="grid gap-3 pt-1 sm:grid-cols-2 xl:grid-cols-3">
+            {moreProjects.map((project) => (
+              <article
+                key={project.name}
+                className="card-hover rounded-[1.25rem] border border-border/60 bg-card/78 p-3.5 shadow-[0_18px_36px_-28px_rgba(15,23,42,0.35)] ring-1 ring-white/30"
+              >
+                <ProjectHeading
+                  project={project}
+                  className="flex flex-wrap items-center gap-2 text-sm font-semibold leading-5"
+                />
+                {/* Compact cards stay summary-only so the featured tier carries the deeper proof points. */}
+                <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
+                  {project.description}
+                </p>
+                {Array.isArray(project.stack) && project.stack.length > 0 && (
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                    <span className="font-semibold text-foreground/80">Stack:</span>{" "}
+                    {project.stack.join(" · ")}
                   </p>
-                  {Array.isArray(project.stack) && project.stack.length > 0 && (
-                    <p className="mt-2 text-xs leading-5 text-muted-foreground">
-                      <span className="font-semibold text-foreground/80">Stack:</span>{" "}
-                      {project.stack.join(" · ")}
-                    </p>
-                  )}
-                </article>
-              ))}
-            </div>
+                )}
+              </article>
+            ))}
           </div>
         )}
       </div>

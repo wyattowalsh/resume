@@ -13,34 +13,24 @@ export function Skills({ skills }: SkillsProps) {
         {skills.map((skill, index) => {
           const isPrimary = index === 0;
           const isCore = index > 0 && index < 3;
-          const emphasisLabel = isPrimary
-            ? "Primary focus"
-            : isCore
-              ? "Core capability"
-              : null;
 
           return (
             <div
               key={skill.name}
               className={cn(
-                "rounded-xl border border-border/70 bg-card/80 p-3.5 shadow-sm",
-                isPrimary && "border-primary/25 bg-primary/5",
-                isCore && "border-primary/15",
+                "card-hover rounded-[1.25rem] border border-border/65 bg-card/80 p-3.5 shadow-[0_18px_36px_-28px_rgba(15,23,42,0.35)] ring-1 ring-white/30",
+                isPrimary && "border-primary/20 bg-primary/[0.06] shadow-[0_22px_44px_-30px_rgba(15,23,42,0.4)] ring-primary/10",
+                isCore && "border-primary/10 bg-background/80",
               )}
             >
-              {emphasisLabel && (
-                <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-                  {emphasisLabel}
-                </p>
-              )}
-              <h3 className="mb-2 text-sm font-semibold leading-5">
+              <h3 className="mb-2 text-sm font-semibold leading-5 text-foreground/90">
                 {skill.name}
               </h3>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-1.5">
                 {skill.keywords.map((keyword) => (
                   <span
                     key={keyword}
-                    className="rounded-full border border-border/60 bg-secondary/80 px-2 py-0.5 text-[11px] leading-4 text-secondary-foreground"
+                    className="rounded-full border border-border/55 bg-background/85 px-2.5 py-1 text-[11px] leading-4 text-secondary-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
                   >
                     {keyword}
                   </span>

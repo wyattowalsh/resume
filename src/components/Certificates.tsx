@@ -15,9 +15,9 @@ export function Certificates({ certificates }: CertificatesProps) {
         {certificates.map((cert) => (
           <article
             key={cert.name}
-            className="flex flex-col gap-3 rounded-xl border border-border/70 bg-card/85 p-4 shadow-sm sm:flex-row sm:items-start"
+            className="card-hover flex flex-col gap-3 rounded-[1.35rem] border border-border/65 bg-card/85 p-4 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.35)] ring-1 ring-white/35 sm:flex-row sm:items-start"
           >
-            <div className="shrink-0 text-primary">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/[0.08] text-primary">
               <FaAward className="text-primary" size={14} />
             </div>
             <div className="min-w-0 flex-1 space-y-0.5">

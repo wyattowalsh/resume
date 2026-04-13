@@ -14,7 +14,7 @@ export function WorkExperience({ work }: WorkExperienceProps) {
         {work.map((job) => (
           <article
             key={job.name}
-            className="rounded-xl border border-border/70 bg-card/85 p-4 shadow-sm"
+            className="card-hover rounded-[1.35rem] border border-border/65 bg-card/85 p-4 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.35)] ring-1 ring-white/35"
           >
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-0.5">
@@ -34,11 +34,11 @@ export function WorkExperience({ work }: WorkExperienceProps) {
                     </a>
                   ) : (
                     job.name
-                  )}
-                </h4>
-              </div>
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground sm:justify-end">
-                <div>
+                    )}
+                  </h4>
+                </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
+                <div className="rounded-full border border-border/60 bg-background/80 px-2.5 py-1 shadow-sm">
                   <time dateTime={job.startDate}>
                     {formatMonthYear(job.startDate)}
                   </time>{" "}
@@ -52,10 +52,9 @@ export function WorkExperience({ work }: WorkExperienceProps) {
                   )}
                 </div>
                 {job.location && (
-                  <>
-                    <span className="hidden sm:inline">·</span>
-                    <span>{job.location}</span>
-                  </>
+                  <span className="rounded-full border border-border/60 bg-background/80 px-2.5 py-1 shadow-sm">
+                    {job.location}
+                  </span>
                 )}
               </div>
             </div>

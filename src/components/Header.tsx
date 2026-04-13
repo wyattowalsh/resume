@@ -39,8 +39,16 @@ export function Header({ basics }: HeaderProps) {
   )}`;
 
   return (
-    <header className="rounded-3xl border border-border/70 bg-card/80 px-6 py-7 shadow-sm sm:px-8 sm:py-9">
-      <div className="flex flex-col items-center justify-start gap-5 text-center">
+    <header className="relative overflow-hidden rounded-[2rem] border border-border/70 bg-card/85 px-6 py-7 shadow-[0_30px_80px_-48px_rgba(15,23,42,0.45)] ring-1 ring-white/40 sm:px-8 sm:py-9">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.14),transparent_34%),radial-gradient(circle_at_top_right,rgba(245,158,11,0.10),transparent_28%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
+      />
+      <div className="relative flex flex-col items-center justify-start gap-5 text-center">
         <div className="flex items-center gap-4">
           <Ornament />
           <a href={basics.url} target="_blank" rel="noopener noreferrer">
@@ -50,27 +58,37 @@ export function Header({ basics }: HeaderProps) {
           </a>
           <Ornament reversed />
         </div>
+        {basics.image && (
+          <img
+            src={basics.image}
+            alt={`${basics.name} profile photo`}
+            className="h-20 w-20 rounded-full border border-primary/20 object-cover shadow-[0_18px_40px_-24px_rgba(15,23,42,0.4)] ring-4 ring-background/80 sm:h-24 sm:w-24"
+            width={96}
+            height={96}
+            loading="eager"
+          />
+        )}
         {basics.label && (
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70 sm:text-[0.95rem]">
             {basics.label}
           </p>
         )}
         {basics.summary && (
-          <p className="max-w-2xl text-sm font-medium leading-6 text-foreground/80 sm:text-[1.02rem]">
+          <p className="max-w-3xl text-sm font-medium leading-7 text-foreground/80 sm:text-[1.02rem]">
             {basics.summary}
           </p>
         )}
-        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2.5 text-sm text-muted-foreground">
+        <div className="flex flex-wrap justify-center gap-2.5 text-sm text-muted-foreground">
           <a
             href={`mailto:${basics.email}`}
-            className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-primary/25 hover:text-primary"
           >
             <CiMail className="text-primary" size={18} strokeWidth={1.5} />
             {basics.email}
           </a>
           <a
             href={`tel:${basics.phone}`}
-            className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-primary/25 hover:text-primary"
           >
             <SlScreenSmartphone
               className="text-primary"
@@ -84,7 +102,7 @@ export function Header({ basics }: HeaderProps) {
               href={gmapsQueryUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-primary/25 hover:text-primary"
             >
               <FaMapPin className="text-primary" size={18} />
               {locationString}
@@ -97,7 +115,7 @@ export function Header({ basics }: HeaderProps) {
                 href={profile.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[44px] items-center gap-2 px-1 transition-colors hover:text-primary"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-primary/25 hover:text-primary"
               >
                 {profile.network === "LinkedIn" && (
                   <FaLinkedinIn className="text-primary" size={18} />
@@ -108,6 +126,22 @@ export function Header({ basics }: HeaderProps) {
                 {profile.username}
               </a>
             ))}
+        </div>
+        <div className="flex flex-wrap justify-center gap-3 print:hidden">
+          <a
+            href="/downloads/wyatt-walsh-resume-full.pdf"
+            download="wyatt-walsh-resume-full.pdf"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-primary/20 bg-primary/[0.07] px-4 py-2 text-sm font-semibold text-foreground transition-all duration-150 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/[0.12] hover:text-primary"
+          >
+            Download 2-page PDF
+          </a>
+          <a
+            href="/downloads/wyatt-walsh-resume-single.pdf"
+            download="wyatt-walsh-resume-single.pdf"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-border/70 bg-background/80 px-4 py-2 text-sm font-semibold text-foreground transition-all duration-150 hover:-translate-y-0.5 hover:border-primary/25 hover:text-primary"
+          >
+            Download 1-page PDF
+          </a>
         </div>
       </div>
     </header>
