@@ -63,13 +63,28 @@
       "highlightIndexes": [0, 1]
     },
     {
+      "name": "ProxyWhirl",
+      "description": "Intelligent rotating proxy system with nine rotation strategies, 114 auto-validated proxy sources, and self-healing health checks for resilient scraping workflows.",
+      "highlightIndexes": [0]
+    },
+    {
       "name": "Listentropy",
       "description": "Privacy-first Spotify analytics app that processes Extended Streaming History entirely client-side and turns it into rich listening insights without sending personal data to a server.",
       "highlightIndexes": [0]
     },
     {
+      "name": "MDXPad",
+      "description": "Native macOS Markdown and MDX editor with live synchronized preview, multi-provider AI integration, and secure macOS Keychain-backed credential storage.",
+      "highlightIndexes": [0]
+    },
+    {
       "name": "NBA Basketball Database",
       "description": "Open-sourced a comprehensive NBA analytics dataset covering 65K games and 13M play-by-play events, reaching 400K+ views and 45K+ Kaggle downloads.",
+      "highlightIndexes": [0]
+    },
+    {
+      "name": "IINA Bookmarks Plugin",
+      "description": "Advanced IINA media-player plugin with sidebar, detached-window, and in-video bookmark workflows plus tag-based organization and file reconciliation.",
       "highlightIndexes": [0]
     }
   ],

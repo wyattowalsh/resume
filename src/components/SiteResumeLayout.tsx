@@ -91,7 +91,7 @@ export function SiteResumeLayout({
         {projects && projects.length > 0 && (
           <div id="projects" className="scroll-mt-24">
             <HR icon={<FaDiagramProject />} />
-            <Projects projects={projects} />
+            <Projects projects={projects} featuredCount={2} />
           </div>
         )}
 
