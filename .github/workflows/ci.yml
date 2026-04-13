@@ -29,14 +29,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build scripts
+        run: pnpm build:script
+
       - name: Build
         run: pnpm build
 
       - name: Type check
         run: pnpm exec tsc --noEmit
-
-      - name: Build scripts
-        run: pnpm build:script
 
       - name: Lint
         run: pnpm lint
