@@ -4,7 +4,7 @@ export const fullArtifactSpec = {
   showProjectHighlights: true,
   maxProjectHighlights: 1,
   showProjectStacks: false,
-  showProjectDates: true,
+  showProjectDates: false,
   projectSummaryOnly: false,
   skillsColumns: 1,
   skillsLayout: "inline",

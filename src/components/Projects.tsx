@@ -2,7 +2,6 @@ import { Project } from "@/lib/schema";
 import { Section } from "./Section";
 import { FaGithub } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
-import { formatMonthYear } from "@/lib/date";
 
 type ProjectsProps = {
   projects: Project[];
@@ -57,27 +56,12 @@ export function Projects({ projects }: ProjectsProps) {
             key={project.name}
             className="group/project interactive-surface card-hover rounded-[1.35rem] border border-border/60 bg-card/78 p-4 shadow-[0_22px_48px_-34px_rgba(15,23,42,0.36)] ring-1 ring-white/30"
           >
-            <div className="relative z-10 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div className="relative z-10">
               <div>
                 <ProjectHeading
                   project={project}
                   className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6 tracking-[-0.02em]"
                 />
-              </div>
-              <div className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-label)] text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
-                <div className="interactive-pill rounded-full border border-border/70 bg-background/85 px-2.5 py-1 shadow-sm transition-colors duration-200 group-hover/project:border-primary/20 group-hover/project:bg-primary/[0.08] group-hover/project:text-foreground/75">
-                  <time dateTime={project.startDate}>
-                    {formatMonthYear(project.startDate)}
-                  </time>{" "}
-                  -{" "}
-                  {project.endDate ? (
-                    <time dateTime={project.endDate}>
-                      {formatMonthYear(project.endDate)}
-                    </time>
-                  ) : (
-                    "Present"
-                  )}
-                </div>
               </div>
             </div>
             <p className="relative z-10 mt-2 text-sm leading-6 text-foreground/80 transition-colors duration-200 group-hover/project:text-foreground/90">
