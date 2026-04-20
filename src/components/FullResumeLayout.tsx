@@ -68,7 +68,10 @@ export function FullResumeLayout({
             <PrintProjectList
               projects={projects}
               showHighlights={fullArtifactSpec.showProjectHighlights}
+              maxHighlights={fullArtifactSpec.maxProjectHighlights}
               showStacks={fullArtifactSpec.showProjectStacks}
+              showDates={fullArtifactSpec.showProjectDates}
+              summaryOnly={fullArtifactSpec.projectSummaryOnly}
             />
           </PrintSection>
         )}

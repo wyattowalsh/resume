@@ -37,13 +37,28 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Cross-harness configs for Claude Code, GitHub Copilot, and related agents, packaging reusable instructions, tools, and skills.",
-      "highlightIndexes": [0]
+      "description": "Open-source agent tooling catalog packaging reusable skills, configs, and MCP-ready workflows across major coding-agent runtimes.",
+      "highlightIndexes": []
+    },
+    {
+      "name": "NBA Basketball Database",
+      "description": "Open-source NBA analytics warehouse and dataset spanning 65K+ games and 13M+ play-by-play events, shipped with docs, CLI, and Kaggle distribution.",
+      "highlightIndexes": []
+    },
+    {
+      "name": "AI/ML Web Feeds",
+      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed browse surfaces.",
+      "highlightIndexes": []
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools with LLM-friendly markdown, cleaned HTML, or plain-text output.",
-      "highlightIndexes": [0]
+      "description": "Released FastMCP server wrapping Crawl4AI with four focused tools, agent-friendly outputs, and documented stdio/HTTP integration paths.",
+      "highlightIndexes": []
+    },
+    {
+      "name": "Personal Website: w4w.dev",
+      "description": "Long-running personal web app and MDX publishing system pairing a polished frontend with durable content, SEO, and authoring workflows.",
+      "highlightIndexes": []
     }
   ],
   "education": [

@@ -39,7 +39,10 @@ type PrintSkillListProps = {
 type PrintProjectListProps = {
   projects: Project[];
   showHighlights: boolean;
+  maxHighlights?: number;
   showStacks: boolean;
+  showDates?: boolean;
+  summaryOnly?: boolean;
   compact?: boolean;
 };
 
@@ -371,16 +374,54 @@ export function PrintSkillList({
 export function PrintProjectList({
   projects,
   showHighlights,
+  maxHighlights,
   showStacks,
+  showDates = true,
+  summaryOnly = false,
   compact = false,
 }: PrintProjectListProps) {
+  const spacingClass = summaryOnly
+    ? compact
+      ? "space-y-1.25"
+      : "space-y-1.5"
+    : compact
+      ? "space-y-2"
+      : "space-y-2";
+
   return (
-    <div className={cn("space-y-3", compact && "space-y-2")}>
+    <div className={cn(spacingClass)}>
       {projects.map((project) => (
         <article
           key={project.name}
           className="resume-print-entry break-inside-avoid"
         >
+          {summaryOnly ? (
+            <p
+              className={cn(
+                "text-slate-700",
+                compact
+                  ? "text-[9.8px] leading-[1.28]"
+                  : "text-[10.25px] leading-[1.35]",
+              )}
+            >
+              <span className="font-bold text-slate-950">
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-slate-700"
+                  >
+                    {project.name}
+                  </a>
+                ) : (
+                  project.name
+                )}
+              </span>
+              {" — "}
+              {project.description}
+            </p>
+          ) : (
           <div className="min-w-0">
             <h3
               className={cn(
@@ -397,26 +438,28 @@ export function PrintProjectList({
                 >
                   {project.name}
                 </a>
-              ) : (
-                project.name
-              )}
-            </h3>
-            <p className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
-              {renderDateRange(project.startDate, project.endDate)}
-              {project.githubUrl ? (
-                <>
-                  {" · "}
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-slate-900"
-                  >
-                    GitHub
-                  </a>
-                </>
-              ) : null}
-            </p>
+                ) : (
+                  project.name
+                )}
+              </h3>
+            {(showDates || project.githubUrl) && (
+              <p className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
+                {showDates ? renderDateRange(project.startDate, project.endDate) : null}
+                {project.githubUrl ? (
+                  <>
+                    {showDates ? " · " : null}
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-slate-900"
+                    >
+                      GitHub
+                    </a>
+                  </>
+                ) : null}
+              </p>
+            )}
             <p
               className={cn(
                 "mt-0.5 text-slate-700",
@@ -428,8 +471,12 @@ export function PrintProjectList({
               {project.description}
             </p>
           </div>
+          )}
 
-          {showHighlights && project.highlights.length > 0 && (
+          {showHighlights &&
+          !summaryOnly &&
+          project.highlights.length > 0 &&
+          (maxHighlights ?? project.highlights.length) > 0 ? (
             <ul
               className={cn(
                 "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
@@ -438,13 +485,15 @@ export function PrintProjectList({
                   : "space-y-0.5 text-[10.5px] leading-[1.4]",
               )}
             >
-              {project.highlights.map((highlight) => (
+              {project.highlights
+                .slice(0, maxHighlights ?? project.highlights.length)
+                .map((highlight) => (
                 <li key={highlight}>{highlight}</li>
               ))}
             </ul>
-          )}
+          ) : null}
 
-          {showStacks && project.stack?.length ? (
+          {showStacks && !summaryOnly && project.stack?.length ? (
             <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
               <span className="font-bold text-slate-800">Stack:</span>{" "}
               {project.stack.join(" · ")}

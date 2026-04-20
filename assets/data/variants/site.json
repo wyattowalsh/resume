@@ -54,37 +54,47 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Cross-harness instruction, tool, skill, and MCP configs for Claude Code, GitHub Copilot, and related agent runtimes, making expert workflows portable across environments.",
+      "description": "Open-source agent tooling catalog packaging reusable skills, configs, and MCP-ready workflows across Claude Code, Codex, Copilot, Cursor, and related runtimes.",
       "highlightIndexes": [0, 1]
     },
     {
-      "name": "MCP-Crawl4AI",
-      "description": "FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools with LLM-friendly markdown, cleaned HTML, or plain-text output.",
+      "name": "NBA Basketball Database",
+      "description": "Open-source NBA analytics warehouse and dataset spanning 65K+ games and 13M+ play-by-play events, with docs, CLI, and Kaggle distribution for reproducible analysis.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Intelligent rotating proxy system with nine rotation strategies, 114 auto-validated proxy sources, and self-healing health checks for resilient scraping workflows.",
+      "description": "Released rotating proxy toolkit with nine strategies, 114 auto-validated sources, and self-healing health checks for resilient scraping workflows.",
       "highlightIndexes": [0]
     },
     {
       "name": "Listentropy",
-      "description": "Privacy-first Spotify analytics app that processes Extended Streaming History entirely client-side and turns it into rich listening insights without sending personal data to a server.",
+      "description": "Privacy-first Spotify analytics app that keeps Extended Streaming History processing client-side while producing rich dashboards, share cards, and exploratory views.",
       "highlightIndexes": [0]
     },
     {
-      "name": "MDXPad",
-      "description": "Native macOS Markdown and MDX editor with live synchronized preview, multi-provider AI integration, and secure macOS Keychain-backed credential storage.",
+      "name": "AI/ML Web Feeds",
+      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed browse and download surfaces.",
       "highlightIndexes": [0]
     },
     {
-      "name": "NBA Basketball Database",
-      "description": "Open-sourced a comprehensive NBA analytics dataset covering 65K games and 13M play-by-play events, reaching 400K+ views and 45K+ Kaggle downloads.",
+      "name": "MCP-Crawl4AI",
+      "description": "Released FastMCP server wrapping Crawl4AI with four focused tools, agent-friendly outputs, tagged releases, and documented stdio/HTTP integration paths.",
+      "highlightIndexes": [0]
+    },
+    {
+      "name": "Personal Website: w4w.dev",
+      "description": "Long-running personal web app and MDX publishing system combining a polished frontend with durable content tooling, SEO, and authoring workflows.",
+      "highlightIndexes": [0]
+    },
+    {
+      "name": "FL Studio MCP Server",
+      "description": "Alpha MCP platform for FL Studio with a large typed tool surface, transaction-safe mutations, and a docs-backed monorepo for AI-assisted music workflows.",
       "highlightIndexes": [0]
     },
     {
       "name": "IINA Bookmarks Plugin",
-      "description": "Advanced IINA media-player plugin with sidebar, detached-window, and in-video bookmark workflows plus tag-based organization and file reconciliation.",
+      "description": "Advanced IINA bookmark manager spanning sidebar, detached-window, and in-video workflows with tags, search, import/export, and file reconciliation.",
       "highlightIndexes": [0]
     }
   ],

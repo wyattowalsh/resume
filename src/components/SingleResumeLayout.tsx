@@ -71,7 +71,10 @@ export function SingleResumeLayout({
             <PrintProjectList
               projects={projects}
               showHighlights={singleArtifactSpec.showProjectHighlights}
+              maxHighlights={singleArtifactSpec.maxProjectHighlights}
               showStacks={singleArtifactSpec.showProjectStacks}
+              showDates={singleArtifactSpec.showProjectDates}
+              summaryOnly={singleArtifactSpec.projectSummaryOnly}
               compact
             />
           </PrintSection>

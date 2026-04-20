@@ -380,7 +380,7 @@
       "githubUrl": "https://github.com/wyattowalsh/agents",
       "startDate": "2026-01-01",
       "endDate": null,
-      "description": "Cross-harness configuration set for Claude Code, GitHub Copilot, and related agent runtimes, packaging reusable instructions, tools, skills, and MCP presets for portable AI workflows.",
+      "description": "Open-source agent tooling catalog and docs portal packaging reusable skills, configs, and MCP-ready workflows across Claude Code, Codex, Copilot, Cursor, and related runtimes.",
       "selectionHints": {
         "themes": [
           "developer-tooling",
@@ -397,24 +397,25 @@
       },
       "highlights": [
         "Built 40+ reusable instruction and skill packs plus shared harness configs that install across Claude Code, GitHub Copilot, Cursor, and related agent runtimes.",
-        "Curated portable tool and MCP presets for code review, security, infrastructure, research, and workflow automation across environments."
+        "Shipped generated docs, install flows, and portable tool and MCP presets for code review, security, infrastructure, research, and workflow automation."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
     },
     {
       "name": "NBA Basketball Database",
+      "url": "https://nbadb.w4w.dev",
       "githubUrl": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": "2021-06-01",
-      "description": "Democratized access to sports analytics insights by open-sourcing the most robust, comprehensive NBA basketball dataset freely available online of over 65K games and 13M play-by-play events, earning over 400K views and 45K downloads on Kaggle.",
+      "description": "Open-source NBA analytics warehouse and dataset covering 65K+ games and 13M+ play-by-play events, with a CLI, docs site, and Kaggle distribution for reproducible sports analysis.",
       "selectionHints": {
         "themes": ["data-engineering", "open-data", "analytics"],
         "aliases": ["ETL pipeline", "sports analytics dataset", "Kaggle dataset"],
         "impactSignals": ["dataset-scale", "community-adoption"]
       },
       "highlights": [
-        "Implemented a high-performance, fully validated ETL pipeline using Python, Pandas, multiprocessing, pandera, pydantic, sqlalchemy, and SQL to extract data from the NBA's public API and update the dataset's SQLite database and CSV/JSON flat files with new data on a daily basis.",
-        "Created an accompanying docs site with a customized theme, updating changelog, python api docs, user guide, and development details using Sphinx, Markdown, and CSS all deployed to ReadTheDocs."
+        "Implemented a high-performance, validated ETL pipeline that extracts from the NBA API, updates warehouse outputs daily, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
+        "Built the surrounding product surface with docs, schema references, release workflows, and Kaggle distribution that pushed the dataset past 400K views and 45K downloads."
       ],
       "stack": ["Python", "Pandas", "SQLAlchemy", "SQLite", "Kaggle"]
     },
@@ -424,7 +425,7 @@
       "githubUrl": "https://github.com/wyattowalsh/listentropy",
       "startDate": "2026-02-01",
       "endDate": null,
-      "description": "Privacy-first Spotify listening analytics platform that processes Extended Streaming History entirely client-side, delivering deep insights without sending personal data to any server.",
+      "description": "Privacy-first Spotify listening analytics app that processes Extended Streaming History entirely client-side and turns it into rich dashboards, share cards, and exploratory views without sending personal data to a server.",
       "highlights": [
         "Architected a Web Worker processing pipeline with stage-level progress tracking that handles full streaming history datasets in-browser, keeping all personal listening data local.",
         "Built a Share Studio with 14-card presets and PNG/ZIP export, plus a theme system with 4 visual modes and strict performance budgets (<450 KiB bootstrap, <300 KiB async chunks)."
@@ -437,7 +438,7 @@
       "githubUrl": "https://github.com/wyattowalsh/proxywhirl",
       "startDate": "2025-05-01",
       "endDate": null,
-      "description": "Intelligent rotating proxy system with 9 rotation strategies, 114 auto-validated proxy sources, and self-healing capabilities that auto-eject dead proxies and implement circuit breakers.",
+      "description": "Released rotating proxy toolkit with 9 selection strategies, 114 auto-validated sources, and self-healing health checks for resilient scraping and data-collection workflows.",
       "highlights": [
         "Implemented 9 rotation strategies (round-robin, weighted, geo-targeted, performance-based, and more) with configurable fallback chains and per-source health scoring.",
         "Built a self-healing pipeline that continuously validates 114 built-in proxy sources, auto-ejects unresponsive proxies via circuit breakers, and re-promotes recovered sources."
@@ -450,10 +451,10 @@
       "githubUrl": "https://github.com/wyattowalsh/personal-website",
       "startDate": "2018-11-01",
       "endDate": null,
-      "description": "Built an accessible, performant, type-safe personal web app and blog using Next.js, styled with TailwindCSS + SCSS, with CMS powered by MDX enriched with 40+ plugins enabling rich interactivity, responsive design, and SEO best practices.",
+      "description": "Long-running personal web app and MDX publishing system built with Next.js, combining a polished public-facing frontend with a richly tooled technical blog, strong SEO, and durable content workflows.",
       "highlights": [
-        "Developed an SEO-optimized link-tree-like landing page powered by Next.js app router featuring interactive backgrounds with configurable animations plus support for dark mode theme switching all styled in a fully accessible manner adhering to responsive design best practices.",
-        "Engineered a fully responsive, richly styled technical blog complete with fully-indexed frontmatter metadata all powered by an MDX CMS that combines 40+ plugins to enable features including reading time estimation, advanced mathematical typesetting, a post tagging system and a comment system."
+        "Designed and maintained the public product surface across multiple generations, including responsive landing experiences, theme support, motion, and accessibility-conscious UI polish.",
+        "Built a deeply customized MDX publishing workflow with search, metadata, math rendering, feeds, tags, and other authoring features usually split across several separate tools."
       ],
       "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "MDX"]
     },
@@ -474,10 +475,10 @@
       "githubUrl": "https://github.com/wyattowalsh/mcp-crawl4ai",
       "startDate": "2025-04-01",
       "endDate": null,
-      "description": "Model Context Protocol server wrapping the Crawl4AI library, enabling AI agents to crawl and extract web content through 4 focused tools with LLM-optimized output in markdown, cleaned HTML, or plain text.",
+      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools, agent-friendly outputs, tagged releases, and documented stdio/HTTP integration paths.",
       "highlights": [
         "Built a FastMCP v3 server with lifespan-managed headless Chromium, session-aware crawling workflows, and automatic Playwright browser setup—only 2 runtime dependencies.",
-        "Exposed 4 tools, 2 resources, and 3 prompt templates with both stdio and HTTP transport, enabling drop-in integration with any MCP-compatible AI agent."
+        "Exposed 4 tools, 2 resources, and 3 prompt templates with both stdio and HTTP transport, backed by docs, tests, and release-tagged install flows for MCP-compatible agents."
       ],
       "stack": ["Python", "FastMCP", "Crawl4AI", "Playwright", "Docker"]
     },
@@ -496,13 +497,14 @@
     },
     {
       "name": "FL Studio MCP Server",
+      "url": "https://fl-mcp.vercel.app",
       "githubUrl": "https://github.com/wyattowalsh/fl-mcp",
       "startDate": "2026-03-01",
       "endDate": null,
-      "description": "Building a Model Context Protocol server for FL Studio that exposes the DAW's project state and editing operations to AI agents, enabling AI-assisted music production workflows.",
+      "description": "Built an alpha MCP platform for FL Studio with a large typed tool surface, resources-first contracts, transaction-safe mutations, and a docs-backed monorepo for AI-assisted music production workflows.",
       "highlights": [
-        "Designed a resources-first API surface with transaction-oriented mutations so agents can read mixer state, patterns, and arrangements without side effects, then batch edits atomically.",
-        "Structured as a monorepo with Python MCP runtime, Next.js + Fumadocs documentation portal, FL Studio plugin bundle, and provider templates for third-party extensions."
+        "Defined 196 FL Studio tools plus core governance tools, with read paths exposed through typed resources and mutations funneled through a transaction pipeline.",
+        "Backed the alpha with a Python MCP runtime, a Next.js + Fumadocs docs portal, a plugin bundle, and 655+ tests covering contracts, unit paths, and integration scenarios."
       ],
       "stack": ["Python", "MCP", "Next.js", "Fumadocs", "FL Studio SDK"]
     },
@@ -512,10 +514,10 @@
       "githubUrl": "https://github.com/wyattowalsh/ai-web-feeds",
       "startDate": "2025-10-01",
       "endDate": null,
-      "description": "Curated AI and ML content aggregation platform with topic-classified feed schema, automated validation, and contributor workflows for community-sourced feed submissions.",
+      "description": "Built a curated AI and ML feed platform with a typed feed schema, automated validation, contributor submission workflows, and docs-backed browse and download surfaces.",
       "highlights": [
         "Defined a structured YAML feed schema with topic classification (ML, NLP, CV, etc.) and source-type validation (blog, paper, newsletter) to ensure feed quality at scale.",
-        "Built helper scripts and a CI testing pipeline for local feed submission validation, enabling reliable community contributions."
+        "Shipped helper scripts, CI checks, scheduled validation jobs, and a live docs surface so community-submitted feeds can be reviewed, normalized, and published reliably."
       ],
       "stack": ["Python", "YAML", "Vercel"]
     },
