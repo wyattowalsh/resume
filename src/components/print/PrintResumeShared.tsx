@@ -7,7 +7,7 @@ import type {
   Skill,
   Work,
 } from "@/lib/schema";
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { formatMonthYear } from "@/lib/date";
 import { cn } from "@/lib/utils";
 
@@ -58,7 +58,6 @@ type PrintCertificateListProps = {
 type PrintCertificateStripProps = {
   certificates: Certificate[];
   compact?: boolean;
-  showLabel?: boolean;
 };
 
 type PrintPublicationListProps = {
@@ -219,40 +218,55 @@ export function PrintSection({
 export function PrintCertificateStrip({
   certificates,
   compact = false,
-  showLabel = true,
 }: PrintCertificateStripProps) {
   return (
-    <p
+    <div
       className={cn(
-        "text-slate-700",
-        compact ? "text-[9.8px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
+        "grid grid-cols-2 gap-x-4",
+        compact ? "gap-y-1.5" : "gap-y-2",
       )}
     >
-      {showLabel ? (
-        <>
-          <span className="font-bold uppercase text-slate-600">
-            Certifications:
-          </span>{" "}
-        </>
-      ) : null}
-      {certificates.map((certificate, index) => (
-        <Fragment key={certificate.name}>
-          {index > 0 ? <PrintSeparator /> : null}
-          {certificate.url ? (
-            <a
-              href={certificate.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-slate-900"
-            >
-              {certificate.name}
-            </a>
-          ) : (
-            certificate.name
-          )}
-        </Fragment>
+      {certificates.map((certificate) => (
+        <article
+          key={certificate.name}
+          className="resume-print-entry break-inside-avoid"
+        >
+          <h3
+            className={cn(
+              "font-bold text-slate-950",
+              compact ? "text-[10.25px] leading-[1.2]" : "text-[10.75px]",
+            )}
+          >
+            {certificate.url ? (
+              <a
+                href={certificate.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-700"
+              >
+                {certificate.name}
+              </a>
+            ) : (
+              certificate.name
+            )}
+          </h3>
+          <p
+            className={cn(
+              "text-slate-600",
+              compact
+                ? "text-[9.3px] leading-[1.25]"
+                : "text-[9.8px] leading-[1.3]",
+            )}
+          >
+            {certificate.issuer}
+            <PrintSeparator />
+            <time dateTime={certificate.date}>
+              {formatMonthYear(certificate.date)}
+            </time>
+          </p>
+        </article>
       ))}
-    </p>
+    </div>
   );
 }
 
@@ -345,15 +359,15 @@ export function PrintSkillList({
 }: PrintSkillListProps) {
   if (layout === "inline") {
     return (
-      <div className={cn("space-y-1.5", compact && "space-y-1")}>
+      <div className={compact ? "space-y-1" : "space-y-[0.3rem]"}>
         {skills.map((skill) => (
           <p
             key={skill.name}
             className={cn(
               "text-slate-700",
               compact
-                ? "text-[9.55px] leading-[1.32]"
-                : "text-[10.05px] leading-[1.38]",
+                ? "text-[9.65px] leading-[1.33]"
+                : "text-[10.15px] leading-[1.38]",
             )}
           >
             <span className="font-bold uppercase text-slate-900">
