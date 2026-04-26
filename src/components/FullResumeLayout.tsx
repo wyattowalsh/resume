@@ -58,10 +58,6 @@ export function FullResumeLayout({
         </PrintSection>
       </div>
 
-      {projects && projects.length > 0 && (
-        <div className="print-page-break-after" aria-hidden="true" />
-      )}
-
       <div className="mt-3.5 space-y-3">
         {projects && projects.length > 0 && (
           <PrintSection title="Projects">

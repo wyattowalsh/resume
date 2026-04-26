@@ -13,7 +13,15 @@
     },
     {
       "name": "Stealth Web3 Startup",
-      "highlightIndexes": [0]
+      "highlightIndexes": [0, 1]
+    },
+    {
+      "name": "SandLabs",
+      "highlightIndexes": [0, 1]
+    },
+    {
+      "name": "Gap Inc.",
+      "highlightIndexes": [0, 1]
     }
   ],
   "skills": [

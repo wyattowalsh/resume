@@ -51,32 +51,32 @@
     {
       "name": "AI Agent Harness Configs",
       "description": "LLM developer-workflow catalog with reusable skills, MCP-ready configs, and cross-runtime agent automation.",
-      "highlightIndexes": [0]
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "NBA Basketball Database",
       "description": "Validated data warehouse spanning 65K+ NBA games and 13M+ play-by-play events with ETL, docs, CLI, and Kaggle distribution.",
-      "highlightIndexes": [0]
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
       "description": "Data-collection toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing proxy health checks.",
-      "highlightIndexes": [0]
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "AI/ML Web Feeds",
       "description": "Typed AI/ML source-discovery platform with validation, contributor workflows, and docs-backed feeds for model and agent research.",
-      "highlightIndexes": []
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "MCP-Crawl4AI",
       "description": "FastMCP server enabling AI agents to crawl, extract, and return structured web content over documented stdio/HTTP paths.",
-      "highlightIndexes": []
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "Personal Website: w4w.dev",
       "description": "Long-running personal web app and MDX publishing system pairing a polished frontend with durable content, SEO, and authoring workflows.",
-      "highlightIndexes": []
+      "highlightIndexes": [0, 1]
     }
   ],
   "education": [
@@ -87,5 +87,9 @@
     "AWS Certified Cloud Practitioner",
     "IBM Data Science Professional Certificate"
   ],
-  "publications": []
+  "publications": [
+    "Basics of Linear Regression Modeling and Ordinary Least Squares (OLS)",
+    "Using Ridge Regression to Overcome Drawbacks of Ordinary Least Squares (OLS)",
+    "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python"
+  ]
 }

@@ -1083,6 +1083,7 @@ async function assertFullResumePdf(
 ) {
   const pageOne = await getPdfPageText(filePath, 1);
   const pageTwo = await getPdfPageText(filePath, 2);
+  const fullText = `${pageOne.text}\n${pageTwo.text}`;
 
   assertNormalizedTextIncludes(pageOne.text, resume.basics.name, `${label} page 1`);
   console.log(`✓ ${label} page 1 contains "${resume.basics.name}"`);
@@ -1097,65 +1098,7 @@ async function assertFullResumePdf(
   );
   console.log(`✓ ${label} page 1 contains all curated work names`);
 
-  assertNormalizedTextIncludes(pageTwo.text, "Projects", `${label} page 2`);
-  console.log(`✓ ${label} page 2 contains "Projects"`);
-
-  if (fullVariant.skills?.length) {
-    assertNormalizedTextIncludes(pageTwo.text, "Skills", `${label} page 2`);
-    assertNormalizedTextIncludesAll(
-      pageTwo.text,
-      getSelectionNames(fullVariant.skills),
-      `${label} page 2`,
-    );
-    console.log(`✓ ${label} page 2 contains the curated skills section`);
-  }
-
-  if (fullVariant.education?.length) {
-    assertNormalizedTextIncludes(pageTwo.text, "Education", `${label} page 2`);
-    assertNormalizedTextIncludesAll(
-      pageTwo.text,
-      fullVariant.education,
-      `${label} page 2`,
-    );
-    console.log(`✓ ${label} page 2 contains the curated education section`);
-  }
-
-  if (fullVariant.certificates?.length) {
-    assertNormalizedTextIncludes(
-      pageTwo.text,
-      "Certifications",
-      `${label} page 2`,
-    );
-    assertNormalizedTextIncludesAll(
-      pageTwo.text,
-      fullVariant.certificates,
-      `${label} page 2`,
-    );
-    console.log(`✓ ${label} page 2 contains the curated certifications section`);
-  }
-
-  if (fullVariant.publications?.length) {
-    assertNormalizedTextIncludes(
-      pageTwo.text,
-      "Publications",
-      `${label} page 2`,
-    );
-    assertNormalizedTextIncludesAll(
-      pageTwo.text,
-      fullVariant.publications,
-      `${label} page 2`,
-    );
-    console.log(`✓ ${label} page 2 contains the curated publications section`);
-  }
-
-  assertNormalizedTextIncludesAll(
-    pageTwo.text,
-    getSelectionNames(fullVariant.projects),
-    `${label} page 2`,
-  );
-  console.log(`✓ ${label} page 2 contains all curated project names`);
-
-  const expectedPageTwoSections = [
+  const expectedDownstreamSections = [
     "Projects",
     ...(fullVariant.skills?.length ? ["Skills"] : []),
     ...(fullVariant.education?.length ? ["Education"] : []),
@@ -1163,9 +1106,77 @@ async function assertFullResumePdf(
     ...(fullVariant.publications?.length ? ["Publications"] : []),
   ];
 
-  assertNormalizedSectionOrder(pageTwo.text, expectedPageTwoSections, `${label} page 2`);
+  if (
+    !expectedDownstreamSections.some(
+      (section) => findNormalizedIndex(pageTwo.text, section) !== -1,
+    )
+  ) {
+    fail(`${label} page 2 must contain downstream resume sections.`);
+  }
+
+  console.log(`✓ ${label} page 2 contains downstream resume sections`);
+
+  assertNormalizedTextIncludes(fullText, "Projects", label);
+  console.log(`✓ ${label} contains "Projects"`);
+
+  if (fullVariant.skills?.length) {
+    assertNormalizedTextIncludes(fullText, "Skills", label);
+    assertNormalizedTextIncludesAll(
+      fullText,
+      getSelectionNames(fullVariant.skills),
+      label,
+    );
+    console.log(`✓ ${label} contains the curated skills section`);
+  }
+
+  if (fullVariant.education?.length) {
+    assertNormalizedTextIncludes(fullText, "Education", label);
+    assertNormalizedTextIncludesAll(
+      fullText,
+      fullVariant.education,
+      label,
+    );
+    console.log(`✓ ${label} contains the curated education section`);
+  }
+
+  if (fullVariant.certificates?.length) {
+    assertNormalizedTextIncludes(
+      fullText,
+      "Certifications",
+      label,
+    );
+    assertNormalizedTextIncludesAll(
+      fullText,
+      fullVariant.certificates,
+      label,
+    );
+    console.log(`✓ ${label} contains the curated certifications section`);
+  }
+
+  if (fullVariant.publications?.length) {
+    assertNormalizedTextIncludes(
+      fullText,
+      "Publications",
+      label,
+    );
+    assertNormalizedTextIncludesAll(
+      fullText,
+      fullVariant.publications,
+      label,
+    );
+    console.log(`✓ ${label} contains the curated publications section`);
+  }
+
+  assertNormalizedTextIncludesAll(
+    fullText,
+    getSelectionNames(fullVariant.projects),
+    label,
+  );
+  console.log(`✓ ${label} contains all curated project names`);
+
+  assertNormalizedSectionOrder(fullText, expectedDownstreamSections, label);
   console.log(
-    `✓ ${label} page 2 keeps ${expectedPageTwoSections.join(" → ")} in order`,
+    `✓ ${label} keeps ${expectedDownstreamSections.join(" → ")} in order`,
   );
 }
 
