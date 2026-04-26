@@ -168,7 +168,7 @@ export function PrintResumeHeader({
                 rel="noopener noreferrer"
                 className="hover:text-slate-900"
               >
-                {profile.network}: {formatProfileDisplayUrl(profile.url)}
+                {formatProfileDisplayUrl(profile.url)}
               </a>
             </li>
           ))}
@@ -452,7 +452,7 @@ export function PrintProjectList({
             <div className="min-w-0">
               <h3
                 className={cn(
-                  "font-bold text-slate-950",
+                  "flex flex-wrap items-baseline gap-x-1.5 font-bold text-slate-950",
                   compact ? "text-[11px]" : "text-[11.5px]",
                 )}
               >
@@ -468,25 +468,23 @@ export function PrintProjectList({
                 ) : (
                   project.name
                 )}
+                {project.githubUrl ? (
+                  <>
+                    <span className="font-normal text-slate-400">|</span>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[9.25px] font-medium text-slate-500 hover:text-slate-900"
+                    >
+                      {formatProfileDisplayUrl(project.githubUrl)}
+                    </a>
+                  </>
+                ) : null}
               </h3>
-              {(showDates || project.githubUrl) && (
+              {showDates && (
                 <p className="mt-px text-[9.25px] leading-snug text-slate-500">
-                  {showDates
-                    ? renderDateRange(project.startDate, project.endDate)
-                    : null}
-                  {project.githubUrl ? (
-                    <>
-                      {showDates ? <PrintSeparator /> : null}
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-slate-900"
-                      >
-                        GitHub: {formatProfileDisplayUrl(project.githubUrl)}
-                      </a>
-                    </>
-                  ) : null}
+                  {renderDateRange(project.startDate, project.endDate)}
                 </p>
               )}
               <p

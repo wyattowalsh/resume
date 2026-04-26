@@ -79,6 +79,7 @@ interface SkillSelection extends NamedSelection {
 
 interface ProjectSelection extends NamedSelection {
   description: string;
+  githubUrl: string;
   highlights: string[];
 }
 
@@ -589,6 +590,14 @@ function assertSeniorAiMlTargetKeywords(text: string, label: string) {
   }
 }
 
+function assertNoRedundantUrlLabels(text: string, label: string) {
+  const redundantUrlLabel = /\b(?:LinkedIn|GitHub):\s*(?:linkedin\.com|github\.com)\//i;
+
+  if (redundantUrlLabel.test(text)) {
+    fail(`${label} must use bare profile and project URLs without redundant labels.`);
+  }
+}
+
 function assertNoDanglingSkillSeparators(text: string, label: string) {
   const context = `${label} Skills section`;
   const skillsIndex = findLayoutSectionHeadingIndex(text, "Skills");
@@ -937,6 +946,7 @@ function assertParseableCoreFields(
   label: string,
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
+  requireProjectUrls: boolean,
 ) {
   const context = `${label} ATS text`;
   const profileUrls = resume.basics.profiles.map((profile) =>
@@ -979,6 +989,13 @@ function assertParseableCoreFields(
 
   for (const project of variant.projects) {
     assertStrictTextIncludes(text, project.name, context);
+    if (requireProjectUrls) {
+      assertStrictTextIncludes(
+        text,
+        stripUrlForDisplay(project.githubUrl),
+        context,
+      );
+    }
     assertStrictTextIncludes(text, project.description, context);
   }
 }
@@ -1034,12 +1051,26 @@ async function assertAtsParseability(
   );
   assertSeniorAiMlTargetKeywords(pdfjsText, `${label} pdfjs text`);
   assertSeniorAiMlTargetKeywords(popplerText.text, `${label} pdftotext text`);
+  assertNoRedundantUrlLabels(pdfjsText, `${label} pdfjs text`);
+  assertNoRedundantUrlLabels(popplerText.text, `${label} pdftotext text`);
   assertNoDanglingSkillSeparators(
     popplerText.layoutText,
     `${label} pdftotext layout text`,
   );
-  assertParseableCoreFields(pdfjsText, `${label} pdfjs text`, resume, variant);
-  assertParseableCoreFields(popplerText.text, `${label} pdftotext text`, resume, variant);
+  assertParseableCoreFields(
+    pdfjsText,
+    `${label} pdfjs text`,
+    resume,
+    variant,
+    expectedPages > 1,
+  );
+  assertParseableCoreFields(
+    popplerText.text,
+    `${label} pdftotext text`,
+    resume,
+    variant,
+    expectedPages > 1,
+  );
 
   console.log(`✓ ${label} passes ATS parseability checks`);
 }
