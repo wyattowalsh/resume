@@ -69,13 +69,8 @@
       "highlightIndexes": []
     },
     {
-      "name": "MDXPad",
-      "description": "Native macOS MDX editor with synchronized preview, multi-provider AI assistance, and Keychain-backed credentials.",
-      "highlightIndexes": []
-    },
-    {
-      "name": "Personal Website: w4w.dev",
-      "description": "Next.js and MDX publishing system with durable content workflows, SEO, and polished public UI.",
+      "name": "FL Studio MCP Server",
+      "description": "Alpha MCP platform for AI music production with 190+ FL Studio tools, transaction-safe mutations, and 650+ tests.",
       "highlightIndexes": []
     }
   ],

@@ -424,13 +424,16 @@ export function PrintProjectList({
   summaryOnly = false,
   compact = false,
 }: PrintProjectListProps) {
+  const spaciousFullList = !summaryOnly && !compact && projects.length <= 6;
   const spacingClass = summaryOnly
     ? compact
       ? "space-y-1"
       : "space-y-1.5"
     : compact
       ? "space-y-2"
-      : "space-y-2";
+      : spaciousFullList
+        ? "space-y-12"
+        : "space-y-2";
 
   return (
     <div className={cn(spacingClass)}>
@@ -440,7 +443,10 @@ export function PrintProjectList({
           className={cn(
             "resume-print-entry break-inside-avoid",
             !summaryOnly &&
-              "border-t border-slate-100 pt-1.5 first:border-t-0 first:pt-0",
+              cn(
+                "border-t border-slate-100 first:border-t-0 first:pt-0",
+                spaciousFullList ? "pt-5" : "pt-1.5",
+              ),
           )}
         >
           {summaryOnly ? (
