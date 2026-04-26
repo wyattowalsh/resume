@@ -105,15 +105,6 @@ function PrintSeparator() {
   return <span className="px-0.5 text-slate-400"> | </span>;
 }
 
-function renderSeparatedText(values: string[]) {
-  return values.map((value, index) => (
-    <Fragment key={`${value}-${index}`}>
-      {index > 0 ? <PrintSeparator /> : null}
-      {value}
-    </Fragment>
-  ));
-}
-
 export function PrintResumeHeader({
   basics,
   showSummary,
@@ -360,7 +351,7 @@ export function PrintSkillList({
             <span className="font-bold uppercase text-slate-900">
               {skill.name}:
             </span>{" "}
-            {renderSeparatedText(skill.keywords)}
+            {skill.keywords.join(", ")}
           </p>
         ))}
       </div>
@@ -528,7 +519,7 @@ export function PrintProjectList({
           {showStacks && !summaryOnly && project.stack?.length ? (
             <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
               <span className="font-bold text-slate-800">Stack:</span>{" "}
-              {renderSeparatedText(project.stack)}
+              {project.stack.join(", ")}
             </p>
           ) : null}
         </article>

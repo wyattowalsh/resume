@@ -1,16 +1,16 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer blending production agentic AI, LLM applications, data platform depth, and product minded full stack execution across fintech, enterprise, and open source environments."
+    "summary": "Senior AI/ML engineer building production agentic AI, LLM document intelligence, RAG applications, and data platforms for fintech, risk, compliance, and enterprise developer tooling."
   },
   "work": [
     {
       "name": "Frame Payments",
-      "summary": "Sole AI/ML engineer shipping agentic AI document intelligence and multimodal compliance screening for merchant onboarding at a high risk payments platform.",
+      "summary": "Sole AI/ML engineer shipping agentic AI document intelligence, human-in-the-loop review, and multimodal compliance screening for merchant onboarding at a high risk payments platform.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "JPMorgan Chase & Co.",
-      "summary": "Built enterprise data pipelines and analytics products for credit trading and risk teams while helping scale internal AI developer tooling.",
+      "summary": "Built enterprise data pipelines, risk analytics, and data-quality automation for credit trading teams while helping scale secure internal AI developer tooling.",
       "highlightIndexes": [0, 1, 2]
     },
     {
@@ -31,16 +31,16 @@
   ],
   "skills": [
     {
-      "name": "Programming & Scripting Languages",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 13]
-    },
-    {
       "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 14, 15, 16, 17, 18, 20, 21]
+      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21]
     },
     {
       "name": "Data Engineering and Analytics",
       "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 13, 14, 15, 22, 23]
+    },
+    {
+      "name": "Programming & Scripting Languages",
+      "keywordIndexes": [0, 1, 2, 3, 4, 5, 13]
     },
     {
       "name": "Cloud Infrastructure and DevOps",
@@ -50,27 +50,27 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog packaging reusable skills, configs, and MCP-ready workflows across major coding-agent runtimes.",
+      "description": "Open-source agent tooling catalog for production LLM developer workflows, reusable skills, MCP-ready configs, and cross-runtime agent automation.",
       "highlightIndexes": [0]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source NBA analytics warehouse and dataset spanning 65K+ games and 13M+ play-by-play events, shipped with docs, CLI, and Kaggle distribution.",
+      "description": "Open-source data engineering warehouse spanning 65K+ NBA games and 13M+ play-by-play events, shipped with validated ETL, docs, CLI, and Kaggle distribution.",
       "highlightIndexes": [0]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released rotating proxy toolkit with nine strategies, 100+ auto-validated sources, and self-healing checks for resilient scraping workflows.",
+      "description": "Released resilient data-collection proxy toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing health checks for scraping workflows.",
       "highlightIndexes": [0]
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed browse surfaces.",
+      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed source discovery for model and agent research.",
       "highlightIndexes": []
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "Released FastMCP server wrapping Crawl4AI with four focused tools, agent-friendly outputs, and documented stdio/HTTP integration paths.",
+      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl, extract, and return structured web content through documented stdio/HTTP integration paths.",
       "highlightIndexes": []
     },
     {

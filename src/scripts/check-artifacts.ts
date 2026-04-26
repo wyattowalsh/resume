@@ -69,6 +69,7 @@ interface WorkSelection extends NamedSelection {
   position: string;
   startDate: string;
   endDate: string | null;
+  location?: string;
   highlights: string[];
 }
 
@@ -129,6 +130,24 @@ const publicDownloadPdfExpectations: PdfExpectation[] = [
   { fileName: "wyatt-walsh-resume-full.pdf", expectedPages: 2 },
   { fileName: "wyatt-walsh-resume-single.pdf", expectedPages: 1 },
 ];
+
+const seniorAiMlTargetKeywords = [
+  "Senior AI/ML Engineer",
+  "agentic AI",
+  "LLM document intelligence",
+  "data pipelines",
+  "fintech",
+  "risk",
+  "compliance",
+  "PydanticAI",
+  "Amazon Bedrock",
+  "Claude",
+  "Python",
+  "SQL",
+  "GitHub Copilot",
+  "Model Context Protocol (MCP)",
+  "Retrieval Augmented Generation (RAG)",
+] as const;
 
 function fail(message: string): never {
   throw new Error(message);
@@ -397,6 +416,205 @@ function assertNormalizedSectionOrder(
   }
 
   return positions;
+}
+
+function formatAtsMonthYear(date: string) {
+  const [year, month] = date.split("-").map(Number);
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  if (!year || !month || month < 1 || month > 12) {
+    fail(`Invalid resume date "${date}".`);
+  }
+
+  return `${monthNames[month - 1]} ${year}`;
+}
+
+function assertContactFieldsBeforeExperience(
+  text: string,
+  label: string,
+  resume: ResumeSelection,
+) {
+  const context = `${label} contact block`;
+  const experienceIndex = getNormalizedIndex(text, "Experience", context);
+  const profileUrls = resume.basics.profiles.map((profile) =>
+    stripUrlForDisplay(profile.url),
+  );
+  const fields = [
+    resume.basics.name,
+    resume.basics.label ?? "Senior AI/ML Engineer",
+    resume.basics.email,
+    resume.basics.phone,
+    `${resume.basics.location.city}, ${resume.basics.location.region}`,
+    ...profileUrls,
+  ];
+
+  let searchFrom = 0;
+  for (const field of fields) {
+    const index = getNormalizedIndex(text, field, context, searchFrom);
+
+    if (index >= experienceIndex) {
+      fail(`${context} must keep "${field}" before the Experience section.`);
+    }
+
+    searchFrom = index + field.length;
+  }
+}
+
+function getExpectedAtsSections(
+  variant: ResolvedVariantContentSelection,
+  expectedPages: number,
+) {
+  const expectedSections =
+    expectedPages === 1
+      ? ["Summary:", "Experience", "Skills", "Projects", "Education"]
+      : ["Summary:", "Experience", "Projects", "Skills", "Education"];
+
+  if (variant.certificates.length) {
+    expectedSections.push("Certifications");
+  }
+
+  if (variant.publications.length) {
+    expectedSections.push("Publications");
+  }
+
+  return expectedSections;
+}
+
+function assertStandardAtsSectionOrder(
+  text: string,
+  label: string,
+  variant: ResolvedVariantContentSelection,
+  expectedPages: number,
+) {
+  const expectedSections = getExpectedAtsSections(variant, expectedPages);
+
+  assertNormalizedSectionOrder(text, expectedSections, `${label} section order`);
+}
+
+function findLayoutSectionHeadingIndex(
+  text: string,
+  sectionName: string,
+  fromIndex = 0,
+) {
+  const heading = sectionName.replace(/:$/, "");
+  const matcher = new RegExp(
+    `(^|\\n)\\s*${escapeRegExp(heading)}:?\\b`,
+    "i",
+  );
+  const slice = text.slice(fromIndex);
+  const match = matcher.exec(slice);
+
+  if (!match) {
+    return -1;
+  }
+
+  return fromIndex + match.index + match[1].length;
+}
+
+function assertLayoutAtsSectionHeadings(
+  text: string,
+  label: string,
+  variant: ResolvedVariantContentSelection,
+  expectedPages: number,
+) {
+  const context = `${label} layout section headings`;
+  const expectedSections = getExpectedAtsSections(variant, expectedPages);
+  let searchFrom = 0;
+
+  for (const sectionName of expectedSections) {
+    const index = findLayoutSectionHeadingIndex(text, sectionName, searchFrom);
+
+    if (index === -1) {
+      fail(`${context} must contain a standalone "${sectionName}" heading.`);
+    }
+
+    searchFrom = index + sectionName.length;
+  }
+}
+
+function assertRolePatternsExtractCleanly(
+  text: string,
+  label: string,
+  variant: ResolvedVariantContentSelection,
+) {
+  const context = `${label} role block`;
+  const skillsIndex = getNormalizedIndex(text, "Skills", context);
+  let searchFrom = getNormalizedIndex(text, "Experience", context);
+
+  for (const job of variant.work) {
+    const positionIndex = getNormalizedIndex(text, job.position, context, searchFrom);
+    const companyIndex = getNormalizedIndex(text, job.name, context, positionIndex);
+    const afterCompanyIndex = job.location
+      ? getNormalizedIndex(text, job.location, context, companyIndex)
+      : companyIndex;
+    const startDateIndex = getNormalizedIndex(
+      text,
+      formatAtsMonthYear(job.startDate),
+      context,
+      afterCompanyIndex,
+    );
+    const endDateIndex = job.endDate
+      ? getNormalizedIndex(
+          text,
+          formatAtsMonthYear(job.endDate),
+          context,
+          startDateIndex,
+        )
+      : startDateIndex;
+
+    if (positionIndex >= skillsIndex || companyIndex >= skillsIndex) {
+      fail(`${context} must keep "${job.name}" inside the Experience section.`);
+    }
+
+    searchFrom = endDateIndex + formatAtsMonthYear(job.endDate ?? job.startDate).length;
+  }
+}
+
+function assertSeniorAiMlTargetKeywords(text: string, label: string) {
+  for (const keyword of seniorAiMlTargetKeywords) {
+    assertStrictTextIncludes(text, keyword, `${label} target keywords`);
+  }
+}
+
+function assertNoDanglingSkillSeparators(text: string, label: string) {
+  const context = `${label} Skills section`;
+  const skillsIndex = findLayoutSectionHeadingIndex(text, "Skills");
+
+  if (skillsIndex === -1) {
+    fail(`${context} must contain a standalone Skills heading.`);
+  }
+
+  const nextSectionIndexes = ["Projects", "Education", "Certifications", "Publications"]
+    .map((sectionName) =>
+      findLayoutSectionHeadingIndex(text, sectionName, skillsIndex + "Skills".length),
+    )
+    .filter((index) => index > skillsIndex);
+  const nextSectionIndex = nextSectionIndexes.length
+    ? Math.min(...nextSectionIndexes)
+    : Number.POSITIVE_INFINITY;
+  const skillsText = text.slice(skillsIndex, nextSectionIndex);
+  const malformedLine = skillsText
+    .split(/\r?\n/)
+    .find((line) => /^\s*\|/.test(line) || /\|\s*$/.test(line));
+
+  if (malformedLine) {
+    fail(
+      `${context} must not contain a dangling pipe separator; found "${malformedLine.trim()}".`,
+    );
+  }
 }
 
 function assertEntriesStayWithinSection(
@@ -784,6 +1002,42 @@ async function assertAtsParseability(
   assertNoLetterSpacedHeadings(pdfjsText, `${label} pdfjs text`);
   assertNoLetterSpacedHeadings(popplerText.text, `${label} pdftotext text`);
   assertNoLetterSpacedHeadings(popplerText.layoutText, `${label} pdftotext layout text`);
+  assertContactFieldsBeforeExperience(pdfjsText, `${label} pdfjs text`, resume);
+  assertContactFieldsBeforeExperience(
+    popplerText.text,
+    `${label} pdftotext text`,
+    resume,
+  );
+  assertStandardAtsSectionOrder(
+    pdfjsText,
+    `${label} pdfjs text`,
+    variant,
+    expectedPages,
+  );
+  assertStandardAtsSectionOrder(
+    popplerText.text,
+    `${label} pdftotext text`,
+    variant,
+    expectedPages,
+  );
+  assertLayoutAtsSectionHeadings(
+    popplerText.layoutText,
+    `${label} pdftotext`,
+    variant,
+    expectedPages,
+  );
+  assertRolePatternsExtractCleanly(pdfjsText, `${label} pdfjs text`, variant);
+  assertRolePatternsExtractCleanly(
+    popplerText.text,
+    `${label} pdftotext text`,
+    variant,
+  );
+  assertSeniorAiMlTargetKeywords(pdfjsText, `${label} pdfjs text`);
+  assertSeniorAiMlTargetKeywords(popplerText.text, `${label} pdftotext text`);
+  assertNoDanglingSkillSeparators(
+    popplerText.layoutText,
+    `${label} pdftotext layout text`,
+  );
   assertParseableCoreFields(pdfjsText, `${label} pdfjs text`, resume, variant);
   assertParseableCoreFields(popplerText.text, `${label} pdftotext text`, resume, variant);
 

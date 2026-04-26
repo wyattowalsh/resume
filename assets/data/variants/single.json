@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": "AI/ML engineer building agentic AI systems, LLM applications, data platforms, and developer tooling for fintech and enterprise teams."
+    "summary": "Senior AI/ML engineer building agentic AI, LLM document intelligence, data pipelines, and developer tooling for fintech, risk, and compliance teams."
   },
   "work": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "name": "JPMorgan Chase & Co.",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0, 1, 2]
     },
     {
       "name": "Stealth Web3 Startup",
@@ -18,46 +18,46 @@
   ],
   "skills": [
     {
+      "name": "Machine Learning and Generative AI",
+      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18]
+    },
+    {
+      "name": "Data Engineering and Analytics",
+      "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 13, 14, 15, 22, 23]
+    },
+    {
       "name": "Programming & Scripting Languages",
       "keywordIndexes": [0, 1, 2, 3, 4, 13]
     },
     {
-      "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [0, 4, 5, 6, 10, 11, 14, 15, 16]
-    },
-    {
-      "name": "Data Engineering and Analytics",
-      "keywordIndexes": [0, 1, 2, 3, 5, 8, 13, 14]
-    },
-    {
       "name": "Cloud Infrastructure and DevOps",
-      "keywordIndexes": [0, 4, 5, 10, 14, 15, 16, 19]
+      "keywordIndexes": [0, 4, 5, 6, 10, 14, 15, 17, 18, 19]
     }
   ],
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog packaging reusable skills, configs, and MCP-ready workflows across major coding-agent runtimes.",
+      "description": "Open-source agent tooling catalog for LLM developer workflows, reusable skills, MCP-ready configs, and cross-runtime agent automation.",
       "highlightIndexes": []
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source NBA analytics warehouse and dataset spanning 65K+ games and 13M+ play-by-play events, shipped with docs, CLI, and Kaggle distribution.",
+      "description": "Open-source data warehouse spanning 65K+ NBA games and 13M+ play-by-play events, shipped with validated ETL, docs, CLI, and Kaggle distribution.",
+      "highlightIndexes": []
+    },
+    {
+      "name": "ProxyWhirl",
+      "description": "Released resilient data-collection proxy toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing health checks.",
       "highlightIndexes": []
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed browse surfaces.",
+      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed source discovery for model and agent research.",
       "highlightIndexes": []
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "Released FastMCP server wrapping Crawl4AI with four focused tools, agent-friendly outputs, and documented stdio/HTTP integration paths.",
-      "highlightIndexes": []
-    },
-    {
-      "name": "Personal Website: w4w.dev",
-      "description": "Long-running personal web app and MDX publishing system pairing a polished frontend with durable content, SEO, and authoring workflows.",
+      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl, extract, and return structured web content through documented stdio/HTTP integration paths.",
       "highlightIndexes": []
     }
   ],
