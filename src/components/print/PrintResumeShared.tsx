@@ -222,7 +222,8 @@ export function PrintCertificateStrip({
   return (
     <div
       className={cn(
-        "grid grid-cols-2 gap-x-4",
+        "grid gap-x-4",
+        certificates.length > 1 ? "grid-cols-2" : "grid-cols-1",
         compact ? "gap-y-1.5" : "gap-y-2",
       )}
     >
@@ -557,7 +558,16 @@ export function PrintEducationList({
   compact = false,
 }: PrintEducationListProps) {
   return (
-    <div className={cn("space-y-2.5", compact && "space-y-1.5")}>
+    <div
+      className={
+        compact
+          ? cn(
+              "grid gap-x-4 gap-y-1.5",
+              education.length > 1 ? "grid-cols-2" : "grid-cols-1",
+            )
+          : "space-y-2.5"
+      }
+    >
       {education.map((entry) => (
         <article
           key={entry.institution}

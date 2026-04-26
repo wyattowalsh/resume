@@ -89,7 +89,7 @@ export function FullResumeLayout({
         )}
 
         <PrintSection title="Education & Certifications">
-          <div className="space-y-2.5">
+          <div className="space-y-[1.1rem]">
             <PrintEducationList education={education} compact />
             {certificates && certificates.length > 0 && (
               <PrintCertificateStrip certificates={certificates} compact />
