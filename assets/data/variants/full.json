@@ -6,17 +6,17 @@
     {
       "name": "Frame Payments",
       "summary": "Sole AI/ML engineer shipping agentic AI document intelligence, human-in-the-loop review, and multimodal compliance screening for high risk merchant onboarding.",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0, 1, 2, 3]
     },
     {
       "name": "JPMorgan Chase & Co.",
       "summary": "Built enterprise data pipelines, risk analytics, and data-quality automation for credit trading while scaling secure internal AI developer tooling.",
-      "highlightIndexes": [0, 1, 2]
+      "highlightIndexes": [0, 1, 2, 3]
     },
     {
       "name": "Stealth Web3 Startup",
       "summary": null,
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0, 1, 2]
     },
     {
       "name": "SandLabs",
@@ -87,9 +87,5 @@
     "AWS Certified Cloud Practitioner",
     "IBM Data Science Professional Certificate"
   ],
-  "publications": [
-    "Basics of Linear Regression Modeling and Ordinary Least Squares (OLS)",
-    "Using Ridge Regression to Overcome Drawbacks of Ordinary Least Squares (OLS)",
-    "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python"
-  ]
+  "publications": []
 }

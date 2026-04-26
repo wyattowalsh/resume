@@ -279,6 +279,16 @@ function assertNormalizedTextIncludes(
   getNormalizedIndex(haystack, needle, context);
 }
 
+function assertNormalizedTextExcludes(
+  haystack: string,
+  needle: string,
+  context: string,
+) {
+  if (findNormalizedIndex(haystack, needle) !== -1) {
+    fail(`${context} must not contain "${needle}".`);
+  }
+}
+
 async function readVariantSelection(
   filePath: string,
 ): Promise<VariantContentSelection> {
@@ -1098,85 +1108,70 @@ async function assertFullResumePdf(
   );
   console.log(`✓ ${label} page 1 contains all curated work names`);
 
-  const expectedDownstreamSections = [
+  assertNormalizedTextExcludes(pageOne.text, "Projects", `${label} page 1`);
+  console.log(`✓ ${label} page 1 is reserved for Experience`);
+
+  if (fullVariant.publications.length) {
+    fail(`${label} full variant must not include Publications.`);
+  }
+
+  assertNormalizedTextExcludes(fullText, "Publications", label);
+  console.log(`✓ ${label} omits Publications`);
+
+  const expectedPageTwoSections = [
     "Projects",
     ...(fullVariant.skills?.length ? ["Skills"] : []),
     ...(fullVariant.education?.length ? ["Education"] : []),
     ...(fullVariant.certificates?.length ? ["Certifications"] : []),
-    ...(fullVariant.publications?.length ? ["Publications"] : []),
   ];
 
-  if (
-    !expectedDownstreamSections.some(
-      (section) => findNormalizedIndex(pageTwo.text, section) !== -1,
-    )
-  ) {
-    fail(`${label} page 2 must contain downstream resume sections.`);
-  }
-
-  console.log(`✓ ${label} page 2 contains downstream resume sections`);
-
-  assertNormalizedTextIncludes(fullText, "Projects", label);
-  console.log(`✓ ${label} contains "Projects"`);
+  assertNormalizedTextIncludes(pageTwo.text, "Projects", `${label} page 2`);
+  console.log(`✓ ${label} page 2 contains "Projects"`);
 
   if (fullVariant.skills?.length) {
-    assertNormalizedTextIncludes(fullText, "Skills", label);
+    assertNormalizedTextIncludes(pageTwo.text, "Skills", `${label} page 2`);
     assertNormalizedTextIncludesAll(
-      fullText,
+      pageTwo.text,
       getSelectionNames(fullVariant.skills),
-      label,
+      `${label} page 2`,
     );
-    console.log(`✓ ${label} contains the curated skills section`);
+    console.log(`✓ ${label} page 2 contains the curated skills section`);
   }
 
   if (fullVariant.education?.length) {
-    assertNormalizedTextIncludes(fullText, "Education", label);
+    assertNormalizedTextIncludes(pageTwo.text, "Education", `${label} page 2`);
     assertNormalizedTextIncludesAll(
-      fullText,
+      pageTwo.text,
       fullVariant.education,
-      label,
+      `${label} page 2`,
     );
-    console.log(`✓ ${label} contains the curated education section`);
+    console.log(`✓ ${label} page 2 contains the curated education section`);
   }
 
   if (fullVariant.certificates?.length) {
     assertNormalizedTextIncludes(
-      fullText,
+      pageTwo.text,
       "Certifications",
-      label,
+      `${label} page 2`,
     );
     assertNormalizedTextIncludesAll(
-      fullText,
+      pageTwo.text,
       fullVariant.certificates,
-      label,
+      `${label} page 2`,
     );
-    console.log(`✓ ${label} contains the curated certifications section`);
-  }
-
-  if (fullVariant.publications?.length) {
-    assertNormalizedTextIncludes(
-      fullText,
-      "Publications",
-      label,
-    );
-    assertNormalizedTextIncludesAll(
-      fullText,
-      fullVariant.publications,
-      label,
-    );
-    console.log(`✓ ${label} contains the curated publications section`);
+    console.log(`✓ ${label} page 2 contains the curated certifications section`);
   }
 
   assertNormalizedTextIncludesAll(
-    fullText,
+    pageTwo.text,
     getSelectionNames(fullVariant.projects),
-    label,
+    `${label} page 2`,
   );
-  console.log(`✓ ${label} contains all curated project names`);
+  console.log(`✓ ${label} page 2 contains all curated project names`);
 
-  assertNormalizedSectionOrder(fullText, expectedDownstreamSections, label);
+  assertNormalizedSectionOrder(pageTwo.text, expectedPageTwoSections, `${label} page 2`);
   console.log(
-    `✓ ${label} keeps ${expectedDownstreamSections.join(" → ")} in order`,
+    `✓ ${label} page 2 keeps ${expectedPageTwoSections.join(" → ")} in order`,
   );
 }
 
