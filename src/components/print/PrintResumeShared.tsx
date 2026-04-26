@@ -101,6 +101,19 @@ function getPrintSectionHeadingId(title: string) {
     .replace(/^-|-$/g, "")}-heading`;
 }
 
+function PrintSeparator() {
+  return <span className="px-0.5 text-slate-400"> | </span>;
+}
+
+function renderSeparatedText(values: string[]) {
+  return values.map((value, index) => (
+    <Fragment key={`${value}-${index}`}>
+      {index > 0 ? <PrintSeparator /> : null}
+      {value}
+    </Fragment>
+  ));
+}
+
 export function PrintResumeHeader({
   basics,
   showSummary,
@@ -109,8 +122,8 @@ export function PrintResumeHeader({
   return (
     <header
       className={cn(
-        "border-b-[1.5px] border-slate-400",
-        compact ? "space-y-1.5 pb-2.5" : "space-y-2.5 pb-3",
+        "border-b border-slate-300",
+        compact ? "space-y-1.5 pb-2.5" : "space-y-2 pb-3",
       )}
     >
       <div className="space-y-1">
@@ -122,8 +135,8 @@ export function PrintResumeHeader({
         >
           <h1
             className={cn(
-              "font-bold text-slate-950",
-              compact ? "text-[27px]" : "text-[32px]",
+              "font-bold leading-none text-slate-950",
+              compact ? "text-[25px]" : "text-[30px]",
             )}
           >
             {basics.name}
@@ -132,8 +145,8 @@ export function PrintResumeHeader({
         {basics.label && (
           <p
             className={cn(
-              "font-semibold uppercase text-slate-600",
-              compact ? "text-[9.8px]" : "text-[10.5px]",
+              "font-bold uppercase text-slate-700",
+              compact ? "text-[9.5px]" : "text-[10px]",
             )}
           >
             {basics.label}
@@ -141,8 +154,8 @@ export function PrintResumeHeader({
         )}
         <ul
           className={cn(
-            "flex flex-wrap gap-y-1 text-slate-600",
-            compact ? "gap-x-2.5 text-[10px]" : "gap-x-3 text-[10.5px]",
+            "flex flex-wrap gap-x-2 gap-y-0.5 leading-snug text-slate-500",
+            compact ? "text-[9.4px]" : "text-[9.8px]",
           )}
         >
           <li>
@@ -174,13 +187,13 @@ export function PrintResumeHeader({
       {showSummary && basics.summary && (
         <p
           className={cn(
-            "text-slate-700",
+            "border-l-2 border-slate-300 pl-2 text-slate-700",
             compact
-              ? "text-[9.9px] leading-[1.3]"
-              : "text-[11px] leading-[1.45]",
+              ? "text-[9.8px] leading-[1.3]"
+              : "text-[10.5px] leading-[1.4]",
           )}
         >
-          <span className="font-bold text-slate-800">Summary:</span>{" "}
+          <span className="font-bold text-slate-900">Summary:</span>{" "}
           {basics.summary}
         </p>
       )}
@@ -202,10 +215,10 @@ export function PrintSection({
     >
       <h2
         id={headingId}
-        className="resume-print-section-heading mb-2 flex items-center gap-2 border-t-[1.5px] border-slate-400 pt-2 text-[10px] font-bold uppercase text-slate-700"
+        className="resume-print-section-heading mb-2 flex items-center gap-2 text-[9.5px] font-bold uppercase text-slate-700"
       >
         <span>{title}</span>
-        <span aria-hidden="true" className="h-px flex-1 bg-slate-400" />
+        <span aria-hidden="true" className="h-px flex-1 bg-slate-300" />
       </h2>
       {children}
     </section>
@@ -228,7 +241,7 @@ export function PrintCertificateStrip({
       </span>{" "}
       {certificates.map((certificate, index) => (
         <Fragment key={certificate.name}>
-          {index > 0 ? " | " : null}
+          {index > 0 ? <PrintSeparator /> : null}
           {certificate.url ? (
             <a
               href={certificate.url}
@@ -253,7 +266,7 @@ export function PrintWorkList({
   compact = false,
 }: PrintWorkListProps) {
   return (
-    <div className={cn("space-y-3", compact && "space-y-2")}>
+    <div className={cn("space-y-2.5", compact && "space-y-2")}>
       {work.map((job) => (
         <article
           key={job.name}
@@ -262,14 +275,14 @@ export function PrintWorkList({
           <div className="min-w-0">
             <h3
               className={cn(
-                "font-bold text-slate-950",
-                compact ? "text-[11px]" : "text-[12px]",
+                "font-bold leading-snug text-slate-950",
+                compact ? "text-[11px]" : "text-[12.2px]",
               )}
             >
               {job.position}
             </h3>
-            <div className="text-[10px] uppercase text-slate-500">
-              <span className="font-medium text-slate-700">
+            <div className="mt-0.5 text-[9.5px] leading-snug text-slate-500">
+              <span className="font-semibold text-slate-700">
                 {job.url ? (
                   <a
                     href={job.url}
@@ -283,8 +296,13 @@ export function PrintWorkList({
                   job.name
                 )}
               </span>
-              {job.location ? ` | ${job.location}` : ""}
-              {" | "}
+              {job.location ? (
+                <>
+                  <PrintSeparator />
+                  {job.location}
+                </>
+              ) : null}
+              <PrintSeparator />
               {renderDateRange(job.startDate, job.endDate)}
             </div>
           </div>
@@ -295,7 +313,7 @@ export function PrintWorkList({
                 "mt-1 text-slate-700",
                 compact
                   ? "text-[10px] leading-[1.35]"
-                  : "text-[10.5px] leading-[1.45]",
+                  : "text-[10.35px] leading-[1.42]",
               )}
             >
               {job.summary}
@@ -307,7 +325,7 @@ export function PrintWorkList({
               "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
               compact
                 ? "space-y-0.5 text-[10px] leading-[1.35]"
-                : "space-y-0.5 text-[10.5px] leading-[1.4]",
+                : "space-y-0.5 text-[10.25px] leading-[1.38]",
             )}
           >
             {job.highlights.map((highlight) => (
@@ -342,7 +360,7 @@ export function PrintSkillList({
             <span className="font-bold uppercase text-slate-900">
               {skill.name}:
             </span>{" "}
-            {skill.keywords.join(" | ")}
+            {renderSeparatedText(skill.keywords)}
           </p>
         ))}
       </div>
@@ -394,7 +412,7 @@ export function PrintProjectList({
 }: PrintProjectListProps) {
   const spacingClass = summaryOnly
     ? compact
-      ? "space-y-1.25"
+      ? "space-y-1"
       : "space-y-1.5"
     : compact
       ? "space-y-2"
@@ -412,7 +430,7 @@ export function PrintProjectList({
               className={cn(
                 "text-slate-700",
                 compact
-                  ? "text-[9.8px] leading-[1.28]"
+                  ? "text-[9.8px] leading-[1.3]"
                   : "text-[10.25px] leading-[1.35]",
               )}
             >
@@ -455,13 +473,13 @@ export function PrintProjectList({
                 )}
               </h3>
               {(showDates || project.githubUrl) && (
-                <p className="text-[10px] uppercase text-slate-500">
+                <p className="mt-0.5 text-[9.5px] leading-snug text-slate-500">
                   {showDates
                     ? renderDateRange(project.startDate, project.endDate)
                     : null}
                   {project.githubUrl ? (
                     <>
-                      {showDates ? " | " : null}
+                      {showDates ? <PrintSeparator /> : null}
                       <a
                         href={project.githubUrl}
                         target="_blank"
@@ -510,7 +528,7 @@ export function PrintProjectList({
           {showStacks && !summaryOnly && project.stack?.length ? (
             <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
               <span className="font-bold text-slate-800">Stack:</span>{" "}
-              {project.stack.join(" | ")}
+              {renderSeparatedText(project.stack)}
             </p>
           ) : null}
         </article>
@@ -559,9 +577,14 @@ export function PrintEducationList({
               entry.institution
             )}
             {entry.area ? `, ${entry.area}` : ""}
-            {entry.score ? ` | GPA ${entry.score}` : ""}
+            {entry.score ? (
+              <>
+                <PrintSeparator />
+                GPA {entry.score}
+              </>
+            ) : null}
           </p>
-          <p className="text-[10px] uppercase text-slate-500">
+          <p className="text-[9.5px] leading-snug text-slate-500">
             {renderDateRange(entry.startDate, entry.endDate)}
           </p>
         </article>
@@ -595,7 +618,8 @@ export function PrintCertificateList({
             )}
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {cert.issuer} |{" "}
+            {cert.issuer}
+            <PrintSeparator />
             <time dateTime={cert.date}>{formatMonthYear(cert.date)}</time>
           </p>
         </article>
@@ -625,7 +649,8 @@ export function PrintPublicationList({
             </a>
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {publication.publisher} |{" "}
+            {publication.publisher}
+            <PrintSeparator />
             <time dateTime={publication.releaseDate}>
               {formatMonthYear(publication.releaseDate)}
             </time>

@@ -46,7 +46,7 @@ export function SingleResumeLayout({
         compact
       />
 
-      <div className="mt-2 space-y-2.5">
+      <div className="mt-2.5 space-y-2.5">
         <PrintSection title="Experience">
           <PrintWorkList
             work={work}

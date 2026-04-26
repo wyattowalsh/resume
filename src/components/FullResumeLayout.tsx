@@ -49,7 +49,7 @@ export function FullResumeLayout({
         showSummary={fullArtifactSpec.showSummary}
       />
 
-      <div className="mt-4">
+      <div className="mt-3">
         <PrintSection title="Experience">
           <PrintWorkList
             work={work}
@@ -62,7 +62,7 @@ export function FullResumeLayout({
         <div className="print-page-break-after" aria-hidden="true" />
       )}
 
-      <div className="mt-4 space-y-3.5">
+      <div className="mt-3 space-y-3">
         {projects && projects.length > 0 && (
           <PrintSection title="Projects">
             <PrintProjectList
