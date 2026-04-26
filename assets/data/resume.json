@@ -422,7 +422,7 @@
       },
       "highlights": [
         "Implemented a high-performance, Pandera-validated ETL pipeline that extracts from the NBA API, updates warehouse outputs daily, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
-        "Built docs, schema references, release workflows, and Kaggle distribution for a 183-table public warehouse spanning 137 stats.nba.com endpoint classes."
+        "Built docs, schema references, release workflows, and Kaggle distribution for a 180+ table public warehouse spanning 130+ stats.nba.com endpoint classes."
       ],
       "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
     },
@@ -435,7 +435,7 @@
       "description": "Privacy-first Spotify listening analytics app that processes Extended Streaming History entirely client-side and turns it into rich dashboards, share cards, and exploratory views without sending personal data to a server.",
       "highlights": [
         "Architected a Web Worker processing pipeline with stage-level progress tracking that handles full streaming history datasets in-browser, keeping all personal listening data local.",
-        "Built a Share Studio with 14-card presets and PNG/ZIP export, plus a theme system with 4 visual modes and strict performance budgets (<450 KiB bootstrap, <300 KiB async chunks)."
+        "Built a Share Studio with dozen-plus card presets and PNG/ZIP export, plus a theme system with multiple visual modes and strict performance budgets (sub-500 KiB bootstrap, sub-300 KiB async chunks)."
       ],
       "stack": ["TypeScript", "React", "Web Workers", "Vercel", "Canvas"]
     },
@@ -510,8 +510,8 @@
       "endDate": null,
       "description": "Built an alpha MCP platform for FL Studio with a large typed tool surface, resources-first contracts, transaction-safe mutations, and a docs-backed monorepo for AI-assisted music production workflows.",
       "highlights": [
-        "Defined 196 FL Studio tools plus core governance tools, with read paths exposed through typed resources and mutations funneled through a transaction pipeline.",
-        "Backed the alpha with a Python MCP runtime, a Next.js + Fumadocs docs portal, a plugin bundle, and 655+ tests covering contracts, unit paths, and integration scenarios."
+        "Defined 190+ FL Studio tools plus core governance tools, with read paths exposed through typed resources and mutations funneled through a transaction pipeline.",
+        "Backed the alpha with a Python MCP runtime, a Next.js + Fumadocs docs portal, a plugin bundle, and 650+ tests covering contracts, unit paths, and integration scenarios."
       ],
       "stack": ["Python", "MCP", "Next.js", "Fumadocs", "FL Studio SDK"]
     },
@@ -535,7 +535,7 @@
       "endDate": "2021-01-01",
       "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",
       "highlights": [
-        "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed over 20,000 views and established credibility in the data science community.",
+        "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed 20K+ views and established credibility in the data science community.",
         "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn."
       ],
       "stack": ["Python", "NumPy", "scikit-learn", "Jupyter"]
