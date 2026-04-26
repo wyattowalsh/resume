@@ -34,6 +34,11 @@ const MAX_ARTIFACT_AGE_MS = 15 * 60 * 1_000;
 const FULL_PAGE_ONE_LOWEST_TEXT_Y_MAX = 150;
 const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 110;
 const SINGLE_PAGE_LOWEST_TEXT_Y_MAX = 110;
+const LOWER_DENSITY_BAND_Y_MAX = 120;
+const FULL_PAGE_ONE_LOWER_DENSITY_MIN_ROWS = 4;
+const FULL_PAGE_ONE_LOWER_DENSITY_MIN_CHARS = 160;
+const DEFAULT_LOWER_DENSITY_MIN_ROWS = 2;
+const DEFAULT_LOWER_DENSITY_MIN_CHARS = 80;
 
 interface PdfExpectation {
   fileName: string;
@@ -84,6 +89,11 @@ interface ProjectSelection extends NamedSelection {
   description: string;
   githubUrl: string;
   highlights: string[];
+}
+
+interface PdfTextItemMetric {
+  text: string;
+  y: number;
 }
 
 interface WorkVariantSelection extends NamedSelection {
@@ -157,7 +167,11 @@ function fail(message: string): never {
   throw new Error(message);
 }
 
-async function runRequiredCli(command: string, args: string[], context: string) {
+async function runRequiredCli(
+  command: string,
+  args: string[],
+  context: string,
+) {
   try {
     const { stdout } = await execFileAsync(command, args, {
       maxBuffer: 10 * 1024 * 1024,
@@ -197,7 +211,7 @@ function getLowestTextYThreshold(expectedPages: number, pageNumber: number) {
   return SINGLE_PAGE_LOWEST_TEXT_Y_MAX;
 }
 
-function getPdfTextItemY(item: unknown) {
+function getPdfTextItemMetric(item: unknown): PdfTextItemMetric | null {
   if (
     typeof item !== "object" ||
     item === null ||
@@ -218,7 +232,53 @@ function getPdfTextItemY(item: unknown) {
   }
 
   const y = candidate.transform[5];
-  return typeof y === "number" ? y : null;
+  return typeof y === "number" ? { text: candidate.str.trim(), y } : null;
+}
+
+function getLowerDensityThresholds(expectedPages: number, pageNumber: number) {
+  if (expectedPages > 1 && pageNumber === 1) {
+    return {
+      minRows: FULL_PAGE_ONE_LOWER_DENSITY_MIN_ROWS,
+      minChars: FULL_PAGE_ONE_LOWER_DENSITY_MIN_CHARS,
+    };
+  }
+
+  return {
+    minRows: DEFAULT_LOWER_DENSITY_MIN_ROWS,
+    minChars: DEFAULT_LOWER_DENSITY_MIN_CHARS,
+  };
+}
+
+function assertLowerPageDensity(
+  textItems: PdfTextItemMetric[],
+  label: string,
+  expectedPages: number,
+  pageNumber: number,
+) {
+  const lowerBandItems = textItems.filter(
+    (item) => item.y <= LOWER_DENSITY_BAND_Y_MAX,
+  );
+  const lowerBandRows = new Set(
+    lowerBandItems.map((item) => Math.round(item.y)),
+  );
+  const lowerBandChars = lowerBandItems.reduce(
+    (total, item) => total + item.text.length,
+    0,
+  );
+  const { minRows, minChars } = getLowerDensityThresholds(
+    expectedPages,
+    pageNumber,
+  );
+
+  if (lowerBandRows.size < minRows || lowerBandChars < minChars) {
+    fail(
+      `${label} page ${pageNumber} lower-page density is too thin; found ${lowerBandRows.size} row(s) and ${lowerBandChars} text chars at <= ${LOWER_DENSITY_BAND_Y_MAX}pt, expected at least ${minRows} row(s) and ${minChars} chars.`,
+    );
+  }
+
+  console.log(
+    `✓ ${label} page ${pageNumber} lower-page density has ${lowerBandRows.size} row(s) and ${lowerBandChars} chars`,
+  );
 }
 
 function normalizeForStrictIncludes(text: string) {
@@ -266,15 +326,16 @@ function buildLooseNeedlePattern(needle: string) {
   }
 
   return words
-    .map((word) => word.split("").map((char) => escapeRegExp(char)).join("\\s*"))
+    .map((word) =>
+      word
+        .split("")
+        .map((char) => escapeRegExp(char))
+        .join("\\s*"),
+    )
     .join("[^a-z0-9]+");
 }
 
-function findNormalizedIndex(
-  haystack: string,
-  needle: string,
-  fromIndex = 0,
-) {
+function findNormalizedIndex(haystack: string, needle: string, fromIndex = 0) {
   const pattern = buildLooseNeedlePattern(needle);
 
   if (!pattern) {
@@ -380,7 +441,9 @@ function resolveVariantContent(
         ...baseWork,
         highlights: pickByIndexes(
           baseWork.highlights,
-          "highlightIndexes" in selection ? selection.highlightIndexes : undefined,
+          "highlightIndexes" in selection
+            ? selection.highlightIndexes
+            : undefined,
         ),
       };
     }),
@@ -395,7 +458,9 @@ function resolveVariantContent(
             : baseProject.description,
         highlights: pickByIndexes(
           baseProject.highlights,
-          "highlightIndexes" in selection ? selection.highlightIndexes : undefined,
+          "highlightIndexes" in selection
+            ? selection.highlightIndexes
+            : undefined,
         ),
       };
     }),
@@ -452,9 +517,7 @@ function assertNormalizedSectionOrder(
     );
 
     if (index <= previousIndex) {
-      fail(
-        `${context} must keep "${needle}" after "${previousNeedle}".`,
-      );
+      fail(`${context} must keep "${needle}" after "${previousNeedle}".`);
     }
 
     positions[needle] = index;
@@ -521,17 +584,47 @@ function assertContactFieldsBeforeExperience(
   }
 }
 
-function getExpectedAtsSections(
-  variant: ResolvedVariantContentSelection,
-  expectedPages: number,
-) {
-  const expectedSections =
-    expectedPages === 1
-      ? ["Summary:", "Experience", "Skills", "Projects", "Education"]
-      : ["Summary:", "Experience", "Projects", "Skills", "Education"];
+function getExpectedAtsSections(variant: ResolvedVariantContentSelection) {
+  const expectedSections = ["Summary:", "Experience"];
+
+  if (variant.skills.length) {
+    expectedSections.push("Skills");
+  }
+
+  if (variant.projects.length) {
+    expectedSections.push("Projects");
+  }
+
+  if (variant.education.length) {
+    expectedSections.push("Education");
+  }
 
   if (variant.certificates.length) {
     expectedSections.push("Certifications");
+  }
+
+  if (variant.publications.length) {
+    expectedSections.push("Publications");
+  }
+
+  return expectedSections;
+}
+
+function getExpectedLayoutSectionHeadings(
+  variant: ResolvedVariantContentSelection,
+) {
+  const expectedSections = ["Summary:", "Experience"];
+
+  if (variant.skills.length) {
+    expectedSections.push("Skills");
+  }
+
+  if (variant.projects.length) {
+    expectedSections.push("Projects");
+  }
+
+  if (variant.education.length || variant.certificates.length) {
+    expectedSections.push("Education & Certifications");
   }
 
   if (variant.publications.length) {
@@ -545,11 +638,14 @@ function assertStandardAtsSectionOrder(
   text: string,
   label: string,
   variant: ResolvedVariantContentSelection,
-  expectedPages: number,
 ) {
-  const expectedSections = getExpectedAtsSections(variant, expectedPages);
+  const expectedSections = getExpectedAtsSections(variant);
 
-  assertNormalizedSectionOrder(text, expectedSections, `${label} section order`);
+  assertNormalizedSectionOrder(
+    text,
+    expectedSections,
+    `${label} section order`,
+  );
 }
 
 function findLayoutSectionHeadingIndex(
@@ -558,10 +654,7 @@ function findLayoutSectionHeadingIndex(
   fromIndex = 0,
 ) {
   const heading = sectionName.replace(/:$/, "");
-  const matcher = new RegExp(
-    `(^|\\n)\\s*${escapeRegExp(heading)}:?\\b`,
-    "i",
-  );
+  const matcher = new RegExp(`(^|\\n)\\s*${escapeRegExp(heading)}:?\\b`, "i");
   const slice = text.slice(fromIndex);
   const match = matcher.exec(slice);
 
@@ -576,10 +669,9 @@ function assertLayoutAtsSectionHeadings(
   text: string,
   label: string,
   variant: ResolvedVariantContentSelection,
-  expectedPages: number,
 ) {
   const context = `${label} layout section headings`;
-  const expectedSections = getExpectedAtsSections(variant, expectedPages);
+  const expectedSections = getExpectedLayoutSectionHeadings(variant);
   let searchFrom = 0;
 
   for (const sectionName of expectedSections) {
@@ -603,8 +695,18 @@ function assertRolePatternsExtractCleanly(
   let searchFrom = getNormalizedIndex(text, "Experience", context);
 
   for (const job of variant.work) {
-    const positionIndex = getNormalizedIndex(text, job.position, context, searchFrom);
-    const companyIndex = getNormalizedIndex(text, job.name, context, positionIndex);
+    const positionIndex = getNormalizedIndex(
+      text,
+      job.position,
+      context,
+      searchFrom,
+    );
+    const companyIndex = getNormalizedIndex(
+      text,
+      job.name,
+      context,
+      positionIndex,
+    );
     const afterCompanyIndex = job.location
       ? getNormalizedIndex(text, job.location, context, companyIndex)
       : companyIndex;
@@ -627,7 +729,8 @@ function assertRolePatternsExtractCleanly(
       fail(`${context} must keep "${job.name}" inside the Experience section.`);
     }
 
-    searchFrom = endDateIndex + formatAtsMonthYear(job.endDate ?? job.startDate).length;
+    searchFrom =
+      endDateIndex + formatAtsMonthYear(job.endDate ?? job.startDate).length;
   }
 }
 
@@ -638,10 +741,13 @@ function assertSeniorAiMlTargetKeywords(text: string, label: string) {
 }
 
 function assertNoRedundantUrlLabels(text: string, label: string) {
-  const redundantUrlLabel = /\b(?:LinkedIn|GitHub):\s*(?:linkedin\.com|github\.com)\//i;
+  const redundantUrlLabel =
+    /\b(?:LinkedIn|GitHub):\s*(?:linkedin\.com|github\.com)\//i;
 
   if (redundantUrlLabel.test(text)) {
-    fail(`${label} must use bare profile and project URLs without redundant labels.`);
+    fail(
+      `${label} must use bare profile and project URLs without redundant labels.`,
+    );
   }
 }
 
@@ -653,9 +759,18 @@ function assertNoDanglingSkillSeparators(text: string, label: string) {
     fail(`${context} must contain a standalone Skills heading.`);
   }
 
-  const nextSectionIndexes = ["Projects", "Education", "Certifications", "Publications"]
+  const nextSectionIndexes = [
+    "Projects",
+    "Education",
+    "Certifications",
+    "Publications",
+  ]
     .map((sectionName) =>
-      findLayoutSectionHeadingIndex(text, sectionName, skillsIndex + "Skills".length),
+      findLayoutSectionHeadingIndex(
+        text,
+        sectionName,
+        skillsIndex + "Skills".length,
+      ),
     )
     .filter((index) => index > skillsIndex);
   const nextSectionIndex = nextSectionIndexes.length
@@ -751,7 +866,9 @@ async function assertPublicDownloadExists(fileName: string) {
       fail(`Missing public download artifact: ${fileName}`);
     }
 
-    fail(`Unable to inspect public download ${fileName}: ${typedError.message}`);
+    fail(
+      `Unable to inspect public download ${fileName}: ${typedError.message}`,
+    );
   }
 
   if (!stats.isFile()) {
@@ -876,9 +993,10 @@ async function assertPdfExpectations(
       }
 
       const content = await page.getTextContent();
-      const yCoordinates = content.items
-        .map(getPdfTextItemY)
-        .filter((y): y is number => y !== null);
+      const textItems = content.items
+        .map(getPdfTextItemMetric)
+        .filter((item): item is PdfTextItemMetric => item !== null);
+      const yCoordinates = textItems.map((item) => item.y);
 
       if (!yCoordinates.length) {
         fail(`${label} page ${pageNumber} must contain parseable text.`);
@@ -892,6 +1010,8 @@ async function assertPdfExpectations(
           `${label} page ${pageNumber} leaves too much bottom whitespace; lowest text baseline is ${lowestTextY.toFixed(1)}pt and must be <= ${lowestTextYMax}pt.`,
         );
       }
+
+      assertLowerPageDensity(textItems, label, expectedPages, pageNumber);
     }
 
     console.log(`✓ ${label} uses letter-sized pages`);
@@ -938,7 +1058,9 @@ async function assertPdfFontsAreAtsSafe(filePath: string, label: string) {
   const rows = fontTable
     .split("\n")
     .map((line) => line.trim())
-    .filter((line) => line && !line.startsWith("name") && !line.startsWith("-"));
+    .filter(
+      (line) => line && !line.startsWith("name") && !line.startsWith("-"),
+    );
 
   if (!rows.length) {
     fail(`${label} must expose embedded fonts to pdffonts.`);
@@ -965,7 +1087,11 @@ async function assertPdfFontsAreAtsSafe(filePath: string, label: string) {
 }
 
 async function assertPdfContainsNoImages(filePath: string, label: string) {
-  const imageTable = await runRequiredCli("pdfimages", ["-list", filePath], label);
+  const imageTable = await runRequiredCli(
+    "pdfimages",
+    ["-list", filePath],
+    label,
+  );
   const imageRows = imageTable
     .split("\n")
     .map((line) => line.trim())
@@ -1084,30 +1210,26 @@ async function assertAtsParseability(
 
   assertNoLetterSpacedHeadings(pdfjsText, `${label} pdfjs text`);
   assertNoLetterSpacedHeadings(popplerText.text, `${label} pdftotext text`);
-  assertNoLetterSpacedHeadings(popplerText.layoutText, `${label} pdftotext layout text`);
+  assertNoLetterSpacedHeadings(
+    popplerText.layoutText,
+    `${label} pdftotext layout text`,
+  );
   assertContactFieldsBeforeExperience(pdfjsText, `${label} pdfjs text`, resume);
   assertContactFieldsBeforeExperience(
     popplerText.text,
     `${label} pdftotext text`,
     resume,
   );
-  assertStandardAtsSectionOrder(
-    pdfjsText,
-    `${label} pdfjs text`,
-    variant,
-    expectedPages,
-  );
+  assertStandardAtsSectionOrder(pdfjsText, `${label} pdfjs text`, variant);
   assertStandardAtsSectionOrder(
     popplerText.text,
     `${label} pdftotext text`,
     variant,
-    expectedPages,
   );
   assertLayoutAtsSectionHeadings(
     popplerText.layoutText,
     `${label} pdftotext`,
     variant,
-    expectedPages,
   );
   assertRolePatternsExtractCleanly(pdfjsText, `${label} pdfjs text`, variant);
   assertRolePatternsExtractCleanly(
@@ -1151,7 +1273,11 @@ async function assertFullResumePdf(
   const pageTwo = await getPdfPageText(filePath, 2);
   const fullText = `${pageOne.text}\n${pageTwo.text}`;
 
-  assertNormalizedTextIncludes(pageOne.text, resume.basics.name, `${label} page 1`);
+  assertNormalizedTextIncludes(
+    pageOne.text,
+    resume.basics.name,
+    `${label} page 1`,
+  );
   console.log(`✓ ${label} page 1 contains "${resume.basics.name}"`);
 
   assertNormalizedTextIncludes(pageOne.text, "Experience", `${label} page 1`);
@@ -1164,8 +1290,20 @@ async function assertFullResumePdf(
   );
   console.log(`✓ ${label} page 1 contains all curated work names`);
 
+  if (fullVariant.skills?.length) {
+    assertNormalizedTextIncludes(pageOne.text, "Skills", `${label} page 1`);
+    assertNormalizedTextIncludesAll(
+      pageOne.text,
+      getSelectionNames(fullVariant.skills),
+      `${label} page 1`,
+    );
+    console.log(`✓ ${label} page 1 contains the curated skills section`);
+  }
+
   assertNormalizedTextExcludes(pageOne.text, "Projects", `${label} page 1`);
-  console.log(`✓ ${label} page 1 is reserved for Experience`);
+  console.log(
+    `✓ ${label} page 1 carries Experience and Skills before Projects`,
+  );
 
   if (fullVariant.publications.length) {
     fail(`${label} full variant must not include Publications.`);
@@ -1176,23 +1314,15 @@ async function assertFullResumePdf(
 
   const expectedPageTwoSections = [
     "Projects",
-    ...(fullVariant.skills?.length ? ["Skills"] : []),
-    ...(fullVariant.education?.length ? ["Education"] : []),
-    ...(fullVariant.certificates?.length ? ["Certifications"] : []),
+    ...(fullVariant.education?.length || fullVariant.certificates?.length
+      ? ["Education & Certifications"]
+      : []),
   ];
 
   assertNormalizedTextIncludes(pageTwo.text, "Projects", `${label} page 2`);
   console.log(`✓ ${label} page 2 contains "Projects"`);
 
-  if (fullVariant.skills?.length) {
-    assertNormalizedTextIncludes(pageTwo.text, "Skills", `${label} page 2`);
-    assertNormalizedTextIncludesAll(
-      pageTwo.text,
-      getSelectionNames(fullVariant.skills),
-      `${label} page 2`,
-    );
-    console.log(`✓ ${label} page 2 contains the curated skills section`);
-  }
+  console.log(`✓ ${label} page 2 is reserved for Projects and credentials`);
 
   if (fullVariant.education?.length) {
     assertNormalizedTextIncludes(pageTwo.text, "Education", `${label} page 2`);
@@ -1215,7 +1345,9 @@ async function assertFullResumePdf(
       fullVariant.certificates,
       `${label} page 2`,
     );
-    console.log(`✓ ${label} page 2 contains the curated certifications section`);
+    console.log(
+      `✓ ${label} page 2 contains the curated certifications section`,
+    );
   }
 
   assertNormalizedTextIncludesAll(
@@ -1234,7 +1366,11 @@ async function assertFullResumePdf(
   );
   console.log(`✓ ${label} page 2 contains parseable project stack keywords`);
 
-  assertNormalizedSectionOrder(pageTwo.text, expectedPageTwoSections, `${label} page 2`);
+  assertNormalizedSectionOrder(
+    pageTwo.text,
+    expectedPageTwoSections,
+    `${label} page 2`,
+  );
   console.log(
     `✓ ${label} page 2 keeps ${expectedPageTwoSections.join(" → ")} in order`,
   );
@@ -1273,8 +1409,12 @@ async function assertSingleResumePdf(
 
   if (singleVariant.education?.length) {
     assertNormalizedTextIncludes(pageOne.text, "Education", label);
-    assertNormalizedTextIncludesAll(pageOne.text, singleVariant.education, label);
-    console.log(`✓ ${label} contains the curated education section`);
+    assertNormalizedTextIncludesAll(
+      pageOne.text,
+      singleVariant.education,
+      label,
+    );
+    console.log(`✓ ${label} contains the curated education entries`);
   }
 
   if (singleVariant.projects?.length) {
@@ -1283,8 +1423,12 @@ async function assertSingleResumePdf(
 
   if (singleVariant.certificates?.length) {
     assertNormalizedTextIncludes(pageOne.text, "Certifications", label);
-    assertNormalizedTextIncludesAll(pageOne.text, singleVariant.certificates, label);
-    console.log(`✓ ${label} contains the compact certifications strip`);
+    assertNormalizedTextIncludesAll(
+      pageOne.text,
+      singleVariant.certificates,
+      label,
+    );
+    console.log(`✓ ${label} contains the compact certifications entries`);
   }
 
   assertNormalizedTextIncludesAll(
@@ -1296,13 +1440,7 @@ async function assertSingleResumePdf(
 
   assertNormalizedSectionOrder(
     pageOne.text,
-    [
-      "Experience",
-      "Skills",
-      "Projects",
-      "Education",
-      ...(singleVariant.certificates?.length ? ["Certifications"] : []),
-    ],
+    ["Experience", "Skills", "Projects", "Education & Certifications"],
     label,
   );
   console.log(`✓ ${label} keeps compact sections in order`);
@@ -1314,50 +1452,47 @@ async function assertSingleResumePdf(
     "Skills",
     label,
   );
-  console.log(`✓ ${label} keeps curated work entries inside the "Experience" section`);
+  console.log(
+    `✓ ${label} keeps curated work entries inside the "Experience" section`,
+  );
 
   if (singleVariant.skills?.length) {
     assertEntriesStayWithinSection(
-        pageOne.text,
+      pageOne.text,
       getSelectionNames(singleVariant.skills),
       "Skills",
       "Projects",
       label,
     );
-    console.log(`✓ ${label} keeps curated skill groups inside the "Skills" section`);
+    console.log(
+      `✓ ${label} keeps curated skill groups inside the "Skills" section`,
+    );
   }
 
   if (singleVariant.projects?.length) {
     assertEntriesStayWithinSection(
-        pageOne.text,
+      pageOne.text,
       getSelectionNames(singleVariant.projects),
       "Projects",
       "Education",
       label,
     );
-    console.log(`✓ ${label} keeps curated project entries inside the "Projects" section`);
+    console.log(
+      `✓ ${label} keeps curated project entries inside the "Projects" section`,
+    );
   }
 
   if (singleVariant.education?.length) {
     assertEntriesStayWithinSection(
-        pageOne.text,
-      singleVariant.education,
-      "Education",
-      singleVariant.certificates?.length ? "Certifications" : null,
-      label,
-    );
-    console.log(`✓ ${label} keeps curated education entries inside the "Education" section`);
-  }
-
-  if (singleVariant.certificates?.length) {
-    assertEntriesStayWithinSection(
-        pageOne.text,
-      singleVariant.certificates,
-      "Certifications",
+      pageOne.text,
+      [...singleVariant.education, ...(singleVariant.certificates ?? [])],
+      "Education & Certifications",
       null,
       label,
     );
-    console.log(`✓ ${label} keeps curated certifications inside the "Certifications" section`);
+    console.log(
+      `✓ ${label} keeps curated education and certification entries inside the credentials section`,
+    );
   }
 }
 

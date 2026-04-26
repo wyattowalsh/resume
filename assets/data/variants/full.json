@@ -74,6 +74,11 @@
       "highlightIndexes": [0, 1]
     },
     {
+      "name": "MDXPad",
+      "description": "Native macOS MDX editor with synchronized preview, multi-provider AI assistance, and Keychain-backed credential storage.",
+      "highlightIndexes": [0, 1]
+    },
+    {
       "name": "Personal Website: w4w.dev",
       "description": "Long-running personal web app and MDX publishing system pairing a polished frontend with durable content, SEO, and authoring workflows.",
       "highlightIndexes": [0, 1]

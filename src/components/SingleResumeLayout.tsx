@@ -80,19 +80,14 @@ export function SingleResumeLayout({
           </PrintSection>
         )}
 
-        <PrintSection title="Education">
-          <PrintEducationList education={education} compact />
+        <PrintSection title="Education & Certifications">
+          <div className="space-y-1.5">
+            <PrintEducationList education={education} compact />
+            {certificates && certificates.length > 0 && (
+              <PrintCertificateStrip certificates={certificates} compact />
+            )}
+          </div>
         </PrintSection>
-
-        {certificates && certificates.length > 0 && (
-          <PrintSection title="Certifications">
-            <PrintCertificateStrip
-              certificates={certificates}
-              compact
-              showLabel={false}
-            />
-          </PrintSection>
-        )}
       </div>
     </main>
   );

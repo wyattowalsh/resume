@@ -9,7 +9,7 @@ import type {
 } from "@/lib/schema";
 import { fullArtifactSpec } from "@/lib/artifact-specs";
 import {
-  PrintCertificateList,
+  PrintCertificateStrip,
   PrintEducationList,
   PrintProjectList,
   PrintPublicationList,
@@ -58,6 +58,18 @@ export function FullResumeLayout({
         </PrintSection>
       </div>
 
+      {skills && skills.length > 0 && (
+        <div className="mt-3">
+          <PrintSection title="Skills">
+            <PrintSkillList
+              skills={skills}
+              layout={fullArtifactSpec.skillsLayout}
+              columns={fullArtifactSpec.skillsColumns}
+            />
+          </PrintSection>
+        </div>
+      )}
+
       {projects && projects.length > 0 && (
         <div className="print-page-break-after" aria-hidden="true" />
       )}
@@ -76,25 +88,14 @@ export function FullResumeLayout({
           </PrintSection>
         )}
 
-        {skills && skills.length > 0 && (
-          <PrintSection title="Skills">
-            <PrintSkillList
-              skills={skills}
-              layout={fullArtifactSpec.skillsLayout}
-              columns={fullArtifactSpec.skillsColumns}
-            />
-          </PrintSection>
-        )}
-
-        <PrintSection title="Education">
-          <PrintEducationList education={education} />
+        <PrintSection title="Education & Certifications">
+          <div className="space-y-2">
+            <PrintEducationList education={education} compact />
+            {certificates && certificates.length > 0 && (
+              <PrintCertificateStrip certificates={certificates} compact />
+            )}
+          </div>
         </PrintSection>
-
-        {certificates && certificates.length > 0 && (
-          <PrintSection title="Certifications">
-            <PrintCertificateList certificates={certificates} />
-          </PrintSection>
-        )}
 
         {publications && publications.length > 0 && (
           <PrintSection title="Publications">

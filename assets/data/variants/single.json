@@ -67,6 +67,11 @@
       "name": "MCP-Crawl4AI",
       "description": "FastMCP server that lets AI agents crawl, extract, and return structured web content over stdio/HTTP.",
       "highlightIndexes": []
+    },
+    {
+      "name": "Personal Website: w4w.dev",
+      "description": "Next.js and MDX publishing system with durable content workflows, SEO, and polished public UI.",
+      "highlightIndexes": []
     }
   ],
   "education": [
