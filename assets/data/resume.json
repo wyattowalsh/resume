@@ -58,7 +58,7 @@
         "Deployed production LLM document intelligence with PydanticAI, Amazon Bedrock AgentCore, and Claude; added human-in-the-loop browser feedback for confidential uploads and reduced analyst follow-ups/resubmissions ~90% by blocking miscategorized documents before review.",
         "Built multimodal restricted-item compliance screening by combining product images and structured metadata; translated banking-partner policy requirements into automated risk checks for merchant onboarding across tens of merchants and multi-location catalogs.",
         "Built a NotebookLM-based technical knowledge hub spanning vendor/web documentation and internal monorepo docs; automated corpus refresh with a Colab pipeline that re-ingests the latest sources to keep retrieval accurate and up to date.",
-        "Drove internal AI adoption with practical enablement assets: Notion playbooks covering MCP onboarding, “best MCPs” recommendations, and high-signal prompt patterns; ran weekly office hours reaching ~15% of the company and standardized PII/confidential-document safeguards and auditability requirements."
+        "Drove internal AI adoption with Notion MCP playbooks, high-signal prompt patterns, and weekly office hours reaching ~15% of the company; standardized PII/confidential-document safeguards and auditability requirements."
       ]
     },
     {

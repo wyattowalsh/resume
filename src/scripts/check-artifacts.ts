@@ -31,6 +31,9 @@ const LETTER_WIDTH_POINTS = 612;
 const LETTER_HEIGHT_POINTS = 792;
 const LETTER_SIZE_TOLERANCE = 1;
 const MAX_ARTIFACT_AGE_MS = 15 * 60 * 1_000;
+const FULL_PAGE_ONE_LOWEST_TEXT_Y_MAX = 150;
+const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 110;
+const SINGLE_PAGE_LOWEST_TEXT_Y_MAX = 110;
 
 interface PdfExpectation {
   fileName: string;
@@ -182,6 +185,40 @@ async function runRequiredCli(command: string, args: string[], context: string) 
 
 function isWithinTolerance(value: number, expected: number) {
   return Math.abs(value - expected) <= LETTER_SIZE_TOLERANCE;
+}
+
+function getLowestTextYThreshold(expectedPages: number, pageNumber: number) {
+  if (expectedPages > 1) {
+    return pageNumber === 1
+      ? FULL_PAGE_ONE_LOWEST_TEXT_Y_MAX
+      : FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX;
+  }
+
+  return SINGLE_PAGE_LOWEST_TEXT_Y_MAX;
+}
+
+function getPdfTextItemY(item: unknown) {
+  if (
+    typeof item !== "object" ||
+    item === null ||
+    !("str" in item) ||
+    !("transform" in item)
+  ) {
+    return null;
+  }
+
+  const candidate = item as { str?: unknown; transform?: unknown };
+
+  if (
+    typeof candidate.str !== "string" ||
+    !candidate.str.trim() ||
+    !Array.isArray(candidate.transform)
+  ) {
+    return null;
+  }
+
+  const y = candidate.transform[5];
+  return typeof y === "number" ? y : null;
 }
 
 function normalizeForStrictIncludes(text: string) {
@@ -837,9 +874,28 @@ async function assertPdfExpectations(
           `${label} page ${pageNumber} should be letter sized (${LETTER_WIDTH_POINTS}x${LETTER_HEIGHT_POINTS}), found ${viewport.width.toFixed(2)}x${viewport.height.toFixed(2)}.`,
         );
       }
+
+      const content = await page.getTextContent();
+      const yCoordinates = content.items
+        .map(getPdfTextItemY)
+        .filter((y): y is number => y !== null);
+
+      if (!yCoordinates.length) {
+        fail(`${label} page ${pageNumber} must contain parseable text.`);
+      }
+
+      const lowestTextY = Math.min(...yCoordinates);
+      const lowestTextYMax = getLowestTextYThreshold(expectedPages, pageNumber);
+
+      if (lowestTextY > lowestTextYMax) {
+        fail(
+          `${label} page ${pageNumber} leaves too much bottom whitespace; lowest text baseline is ${lowestTextY.toFixed(1)}pt and must be <= ${lowestTextYMax}pt.`,
+        );
+      }
     }
 
     console.log(`✓ ${label} uses letter-sized pages`);
+    console.log(`✓ ${label} uses the expected page height`);
   } finally {
     await pdf.destroy();
   }
@@ -1169,6 +1225,15 @@ async function assertFullResumePdf(
   );
   console.log(`✓ ${label} page 2 contains all curated project names`);
 
+  assertNormalizedTextIncludes(pageTwo.text, "Tech:", `${label} page 2`);
+  assertNormalizedTextExcludes(pageTwo.text, "Stack:", `${label} page 2`);
+  assertNormalizedTextIncludesAll(
+    pageTwo.text,
+    ["FastMCP", "Pandas", "SQLAlchemy", "Playwright", "Docker", "Next.js"],
+    `${label} page 2 project stack keywords`,
+  );
+  console.log(`✓ ${label} page 2 contains parseable project stack keywords`);
+
   assertNormalizedSectionOrder(pageTwo.text, expectedPageTwoSections, `${label} page 2`);
   console.log(
     `✓ ${label} page 2 keeps ${expectedPageTwoSections.join(" → ")} in order`,
@@ -1231,10 +1296,16 @@ async function assertSingleResumePdf(
 
   assertNormalizedSectionOrder(
     pageOne.text,
-    ["Experience", "Skills", "Projects", "Education"],
+    [
+      "Experience",
+      "Skills",
+      "Projects",
+      "Education",
+      ...(singleVariant.certificates?.length ? ["Certifications"] : []),
+    ],
     label,
   );
-  console.log(`✓ ${label} keeps Experience → Skills → Projects → Education in order`);
+  console.log(`✓ ${label} keeps compact sections in order`);
 
   assertEntriesStayWithinSection(
     pageOne.text,
@@ -1272,10 +1343,21 @@ async function assertSingleResumePdf(
         pageOne.text,
       singleVariant.education,
       "Education",
-      null,
+      singleVariant.certificates?.length ? "Certifications" : null,
       label,
     );
     console.log(`✓ ${label} keeps curated education entries inside the "Education" section`);
+  }
+
+  if (singleVariant.certificates?.length) {
+    assertEntriesStayWithinSection(
+        pageOne.text,
+      singleVariant.certificates,
+      "Certifications",
+      null,
+      label,
+    );
+    console.log(`✓ ${label} keeps curated certifications inside the "Certifications" section`);
   }
 }
 

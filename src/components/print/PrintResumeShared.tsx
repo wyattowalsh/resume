@@ -58,6 +58,7 @@ type PrintCertificateListProps = {
 type PrintCertificateStripProps = {
   certificates: Certificate[];
   compact?: boolean;
+  showLabel?: boolean;
 };
 
 type PrintPublicationListProps = {
@@ -218,6 +219,7 @@ export function PrintSection({
 export function PrintCertificateStrip({
   certificates,
   compact = false,
+  showLabel = true,
 }: PrintCertificateStripProps) {
   return (
     <p
@@ -226,9 +228,13 @@ export function PrintCertificateStrip({
         compact ? "text-[9.8px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
       )}
     >
-      <span className="font-bold uppercase text-slate-600">
-        Certifications:
-      </span>{" "}
+      {showLabel ? (
+        <>
+          <span className="font-bold uppercase text-slate-600">
+            Certifications:
+          </span>{" "}
+        </>
+      ) : null}
       {certificates.map((certificate, index) => (
         <Fragment key={certificate.name}>
           {index > 0 ? <PrintSeparator /> : null}
@@ -521,8 +527,8 @@ export function PrintProjectList({
           ) : null}
 
           {showStacks && !summaryOnly && project.stack?.length ? (
-            <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
-              <span className="font-bold text-slate-800">Stack:</span>{" "}
+            <p className="mt-0.5 text-[9.45px] leading-[1.28] text-slate-500">
+              <span className="font-semibold text-slate-700">Tech:</span>{" "}
               {project.stack.join(", ")}
             </p>
           ) : null}

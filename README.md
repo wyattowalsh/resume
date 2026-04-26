@@ -40,6 +40,8 @@ On Vercel, `/full` and `/single` are still local-only: the production SSR entryp
 
 `src/lib/resume-data.ts` resolves those variant files into validated render payloads for each route.
 
+The next planned curation hooks are role-targeted variants for Senior AI/ML Engineer, fintech/data platform, and agent tooling applications. Keep those as variant-file curation passes until there is a concrete need for additional public routes or generated PDFs.
+
 Those resolved payloads now feed dedicated top-level compositions instead of one shared layout:
 
 - `src/components/SiteResumeLayout.tsx` for `/`
@@ -83,7 +85,7 @@ Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full
 pnpm check:artifacts
 ```
 
-Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both generated PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, the curated work/project/skills/education/certification/publication content still appears in the generated PDFs, the 1-page PDF preserves the intended `Experience → Skills → Projects → Education` extraction order, and the public download PDFs under `public/downloads/` still satisfy the same page-budget/content checks.
+Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both generated PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, each PDF page uses the expected lower-page text band, page 1 of the full PDF stays reserved for Experience, page 2 of the full PDF starts the Projects/Skills/Education/Certifications sequence, Publications stay out of the full PDF, the curated work/project/skills/education/certification content still appears in the generated PDFs, the full PDF exposes parseable project tech-stack keywords, the 1-page PDF preserves the intended compact extraction order, and the public download PDFs under `public/downloads/` still satisfy the same page-budget/content checks.
 
 The artifact checker also runs ATS-oriented PDF checks across generated and public download PDFs:
 
