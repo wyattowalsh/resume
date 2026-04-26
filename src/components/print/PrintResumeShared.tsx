@@ -114,10 +114,10 @@ export function PrintResumeHeader({
     <header
       className={cn(
         "border-b border-slate-300",
-        compact ? "space-y-1.5 pb-2.5" : "space-y-2 pb-3",
+        compact ? "space-y-1 pb-2.5" : "space-y-2 pb-3.5",
       )}
     >
-      <div className="space-y-1">
+      <div className={cn("space-y-1", compact && "space-y-0.5")}>
         <a
           href={basics.url}
           target="_blank"
@@ -127,7 +127,7 @@ export function PrintResumeHeader({
           <h1
             className={cn(
               "font-bold leading-none text-slate-950",
-              compact ? "text-[25px]" : "text-[30px]",
+              compact ? "text-[25px]" : "text-[29px]",
             )}
           >
             {basics.name}
@@ -136,8 +136,8 @@ export function PrintResumeHeader({
         {basics.label && (
           <p
             className={cn(
-              "font-bold uppercase text-slate-700",
-              compact ? "text-[9.5px]" : "text-[10px]",
+              "font-bold uppercase text-slate-800",
+              compact ? "text-[9.4px]" : "text-[9.8px]",
             )}
           >
             {basics.label}
@@ -145,8 +145,8 @@ export function PrintResumeHeader({
         )}
         <ul
           className={cn(
-            "flex flex-wrap gap-x-2 gap-y-0.5 leading-snug text-slate-500",
-            compact ? "text-[9.4px]" : "text-[9.8px]",
+            "flex flex-wrap gap-x-2.5 gap-y-0.5 leading-snug text-slate-500",
+            compact ? "text-[9.2px]" : "text-[9.6px]",
           )}
         >
           <li>
@@ -178,10 +178,10 @@ export function PrintResumeHeader({
       {showSummary && basics.summary && (
         <p
           className={cn(
-            "border-l-2 border-slate-300 pl-2 text-slate-700",
+            "border-l-[3px] border-slate-300 bg-slate-50 py-1 pl-2 pr-2 text-slate-700",
             compact
-              ? "text-[9.8px] leading-[1.3]"
-              : "text-[10.5px] leading-[1.4]",
+              ? "text-[9.6px] leading-[1.28]"
+              : "text-[10.25px] leading-[1.38]",
           )}
         >
           <span className="font-bold text-slate-900">Summary:</span>{" "}
@@ -206,10 +206,9 @@ export function PrintSection({
     >
       <h2
         id={headingId}
-        className="resume-print-section-heading mb-2 flex items-center gap-2 text-[9.5px] font-bold uppercase text-slate-700"
+        className="resume-print-section-heading mb-2.5 flex items-center gap-2 border-b border-slate-300 pb-1 text-[9.4px] font-bold uppercase text-slate-800"
       >
         <span>{title}</span>
-        <span aria-hidden="true" className="h-px flex-1 bg-slate-300" />
       </h2>
       {children}
     </section>
@@ -257,22 +256,25 @@ export function PrintWorkList({
   compact = false,
 }: PrintWorkListProps) {
   return (
-    <div className={cn("space-y-2.5", compact && "space-y-2")}>
+    <div className={cn("space-y-0", compact && "space-y-0")}>
       {work.map((job) => (
         <article
           key={job.name}
-          className="resume-print-entry break-inside-avoid"
+          className={cn(
+            "resume-print-entry break-inside-avoid border-t border-slate-100 pt-2 first:border-t-0 first:pt-0",
+            compact && "pt-1.5",
+          )}
         >
           <div className="min-w-0">
             <h3
               className={cn(
                 "font-bold leading-snug text-slate-950",
-                compact ? "text-[11px]" : "text-[12.2px]",
+                compact ? "text-[11px]" : "text-[12px]",
               )}
             >
               {job.position}
             </h3>
-            <div className="mt-0.5 text-[9.5px] leading-snug text-slate-500">
+            <div className="mt-px text-[9.4px] leading-snug text-slate-500">
               <span className="font-semibold text-slate-700">
                 {job.url ? (
                   <a
@@ -303,8 +305,8 @@ export function PrintWorkList({
               className={cn(
                 "mt-1 text-slate-700",
                 compact
-                  ? "text-[10px] leading-[1.35]"
-                  : "text-[10.35px] leading-[1.42]",
+                  ? "text-[9.9px] leading-[1.32]"
+                  : "text-[10.2px] leading-[1.38]",
               )}
             >
               {job.summary}
@@ -315,8 +317,8 @@ export function PrintWorkList({
             className={cn(
               "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
               compact
-                ? "space-y-0.5 text-[10px] leading-[1.35]"
-                : "space-y-0.5 text-[10.25px] leading-[1.38]",
+                ? "space-y-0.5 text-[9.8px] leading-[1.32]"
+                : "space-y-0.5 text-[10.15px] leading-[1.36]",
             )}
           >
             {job.highlights.map((highlight) => (
@@ -344,8 +346,8 @@ export function PrintSkillList({
             className={cn(
               "text-slate-700",
               compact
-                ? "text-[9.8px] leading-[1.35]"
-                : "text-[10.25px] leading-[1.45]",
+                ? "text-[9.55px] leading-[1.32]"
+                : "text-[10.05px] leading-[1.38]",
             )}
           >
             <span className="font-bold uppercase text-slate-900">
@@ -414,15 +416,19 @@ export function PrintProjectList({
       {projects.map((project) => (
         <article
           key={project.name}
-          className="resume-print-entry break-inside-avoid"
+          className={cn(
+            "resume-print-entry break-inside-avoid",
+            !summaryOnly &&
+              "border-t border-slate-100 pt-1.5 first:border-t-0 first:pt-0",
+          )}
         >
           {summaryOnly ? (
             <p
               className={cn(
                 "text-slate-700",
                 compact
-                  ? "text-[9.8px] leading-[1.3]"
-                  : "text-[10.25px] leading-[1.35]",
+                  ? "text-[9.55px] leading-[1.28]"
+                  : "text-[10.15px] leading-[1.35]",
               )}
             >
               <span className="font-bold text-slate-950">
@@ -447,7 +453,7 @@ export function PrintProjectList({
               <h3
                 className={cn(
                   "font-bold text-slate-950",
-                  compact ? "text-[11px]" : "text-[12px]",
+                  compact ? "text-[11px]" : "text-[11.5px]",
                 )}
               >
                 {project.url ? (
@@ -464,7 +470,7 @@ export function PrintProjectList({
                 )}
               </h3>
               {(showDates || project.githubUrl) && (
-                <p className="mt-0.5 text-[9.5px] leading-snug text-slate-500">
+                <p className="mt-px text-[9.25px] leading-snug text-slate-500">
                   {showDates
                     ? renderDateRange(project.startDate, project.endDate)
                     : null}
@@ -488,7 +494,7 @@ export function PrintProjectList({
                   "mt-0.5 text-slate-700",
                   compact
                     ? "text-[9.9px] leading-[1.3]"
-                    : "text-[10.5px] leading-[1.45]",
+                    : "text-[10.15px] leading-[1.38]",
                 )}
               >
                 {project.description}
@@ -505,7 +511,7 @@ export function PrintProjectList({
                 "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
                 compact
                   ? "space-y-0.5 text-[10px] leading-[1.35]"
-                  : "space-y-0.5 text-[10.5px] leading-[1.4]",
+                  : "space-y-0.5 text-[10.15px] leading-[1.35]",
               )}
             >
               {project.highlights

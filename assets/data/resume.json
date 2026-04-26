@@ -55,8 +55,8 @@
         ]
       },
       "highlights": [
-        "Deployed a production LLM document intelligence workflow using PydanticAI, Amazon Bedrock AgentCore, and Claude; surfaced human-in-the-loop browser feedback for confidential uploads and reduced analyst follow-ups and resubmission requests ~90% by blocking miscategorized documents before review.",
-        "Built multimodal restricted-item compliance screening that combines product images with structured submission metadata; translated banking-partner policy requirements into automated risk checks for merchant onboarding across tens of merchants, multi-location operations, and catalogs with hundreds of items per location.",
+        "Deployed production LLM document intelligence with PydanticAI, Amazon Bedrock AgentCore, and Claude; added human-in-the-loop browser feedback for confidential uploads and reduced analyst follow-ups/resubmissions ~90% by blocking miscategorized documents before review.",
+        "Built multimodal restricted-item compliance screening by combining product images and structured metadata; translated banking-partner policy requirements into automated risk checks for merchant onboarding across tens of merchants and multi-location catalogs.",
         "Built a NotebookLM-based technical knowledge hub spanning vendor/web documentation and internal monorepo docs; automated corpus refresh with a Colab pipeline that re-ingests the latest sources to keep retrieval accurate and up to date.",
         "Drove internal AI adoption with practical enablement assets: Notion playbooks covering MCP onboarding, “best MCPs” recommendations, and high-signal prompt patterns; ran weekly office hours reaching ~15% of the company and standardized PII/confidential-document safeguards and auditability requirements."
       ]
@@ -89,8 +89,8 @@
         ]
       },
       "highlights": [
-        "Pioneered firm-wide rollout of secure generative AI developer tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, delivering feedback that shaped scalable deployment and leading workshops to improve productivity for technical and non-technical teams.",
-        "Devised ML-driven data-quality anomaly detection framework for credit trading and risk analytics, reducing false positives by 25% and cutting manual review time so risk teams could focus on critical alerts.",
+        "Pioneered firm-wide rollout of secure generative AI developer tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, shaping scalable deployment and leading workshops for technical and non-technical teams.",
+        "Devised ML-driven data-quality anomaly detection for credit trading and risk analytics, reducing false positives by 25% and cutting manual review time so risk teams could focus on critical alerts.",
         "Developed resilient Python wrapper for KDB+, democratizing data access for 5,000+ users with CI-style tests and optimized Q functions, reducing manual processing by over 10 hours per week.",
         "Engineered a cloud-function-driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard."
       ]

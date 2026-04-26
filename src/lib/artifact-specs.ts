@@ -1,8 +1,8 @@
 export const fullArtifactSpec = {
   showSummary: true,
   showWorkSummaries: true,
-  showProjectHighlights: true,
-  maxProjectHighlights: 1,
+  showProjectHighlights: false,
+  maxProjectHighlights: 0,
   showProjectStacks: false,
   showProjectDates: false,
   projectSummaryOnly: false,

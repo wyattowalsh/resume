@@ -13,7 +13,7 @@
     },
     {
       "name": "Stealth Web3 Startup",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0]
     }
   ],
   "skills": [
@@ -37,27 +37,27 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog for LLM developer workflows, reusable skills, MCP-ready configs, and cross-runtime agent automation.",
+      "description": "LLM workflow catalog with reusable skills, MCP-ready configs, and cross-runtime agent automation.",
       "highlightIndexes": []
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source data warehouse spanning 65K+ NBA games and 13M+ play-by-play events, shipped with validated ETL, docs, CLI, and Kaggle distribution.",
+      "description": "Validated data warehouse spanning 65K+ NBA games and 13M+ events with ETL, docs, CLI, and Kaggle distribution.",
       "highlightIndexes": []
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released resilient data-collection proxy toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing health checks.",
+      "description": "Data-collection toolkit with nine proxy rotation strategies, 100+ sources, and self-healing health checks.",
       "highlightIndexes": []
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed source discovery for model and agent research.",
+      "description": "Typed AI/ML source-discovery platform with validation and docs-backed feed workflows for model and agent research.",
       "highlightIndexes": []
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl, extract, and return structured web content through documented stdio/HTTP integration paths.",
+      "description": "FastMCP server that lets AI agents crawl, extract, and return structured web content over stdio/HTTP.",
       "highlightIndexes": []
     }
   ],

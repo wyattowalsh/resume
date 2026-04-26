@@ -474,17 +474,17 @@ body::-webkit-scrollbar-thumb:hover {
 	}
 	@page {
 		size: letter;
-		margin-left: 0.42in;
-		margin-right: 0.42in;
-		margin-top: 0.34in;
-		margin-bottom: 0.34in;
+		margin-left: 0.44in;
+		margin-right: 0.44in;
+		margin-top: 0.36in;
+		margin-bottom: 0.36in;
 	}
 	body,
 	html {
 		margin: 0;
 		padding: 0;
 		font-size: 11px;
-    background-image: none !important;
+		background-image: none !important;
 	}
 	.resume-print {
 		color: #0f172a;

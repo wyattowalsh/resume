@@ -1,16 +1,16 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer building production agentic AI, LLM document intelligence, RAG applications, and data platforms for fintech, risk, compliance, and enterprise developer tooling."
+    "summary": "Senior AI/ML engineer building production agentic AI, LLM document intelligence, RAG, and data platforms for fintech, risk, compliance, and enterprise tooling."
   },
   "work": [
     {
       "name": "Frame Payments",
-      "summary": "Sole AI/ML engineer shipping agentic AI document intelligence, human-in-the-loop review, and multimodal compliance screening for merchant onboarding at a high risk payments platform.",
+      "summary": "Sole AI/ML engineer shipping agentic AI document intelligence, human-in-the-loop review, and multimodal compliance screening for high risk merchant onboarding.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "JPMorgan Chase & Co.",
-      "summary": "Built enterprise data pipelines, risk analytics, and data-quality automation for credit trading teams while helping scale secure internal AI developer tooling.",
+      "summary": "Built enterprise data pipelines, risk analytics, and data-quality automation for credit trading while scaling secure internal AI developer tooling.",
       "highlightIndexes": [0, 1, 2]
     },
     {
@@ -50,27 +50,27 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog for production LLM developer workflows, reusable skills, MCP-ready configs, and cross-runtime agent automation.",
+      "description": "LLM developer-workflow catalog with reusable skills, MCP-ready configs, and cross-runtime agent automation.",
       "highlightIndexes": [0]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source data engineering warehouse spanning 65K+ NBA games and 13M+ play-by-play events, shipped with validated ETL, docs, CLI, and Kaggle distribution.",
+      "description": "Validated data warehouse spanning 65K+ NBA games and 13M+ play-by-play events with ETL, docs, CLI, and Kaggle distribution.",
       "highlightIndexes": [0]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released resilient data-collection proxy toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing health checks for scraping workflows.",
+      "description": "Data-collection toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing proxy health checks.",
       "highlightIndexes": [0]
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed source discovery for model and agent research.",
+      "description": "Typed AI/ML source-discovery platform with validation, contributor workflows, and docs-backed feeds for model and agent research.",
       "highlightIndexes": []
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl, extract, and return structured web content through documented stdio/HTTP integration paths.",
+      "description": "FastMCP server enabling AI agents to crawl, extract, and return structured web content over documented stdio/HTTP paths.",
       "highlightIndexes": []
     },
     {
