@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer building production agentic AI, LLM document intelligence, RAG, and data platforms for fintech, risk, compliance, and enterprise tooling."
+    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM document intelligence, RAG/retrieval workflows, AI guardrails, and validated data pipelines and platforms for fintech, risk, compliance, and enterprise tooling."
   },
   "work": [
     {
@@ -32,11 +32,11 @@
   "skills": [
     {
       "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21]
+      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18, 22, 24]
     },
     {
       "name": "Data Engineering and Analytics",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 13, 14, 15, 22, 23]
+      "keywordIndexes": [0, 1, 2, 3, 4, 5, 9, 13, 14, 15, 22, 24, 25, 26]
     },
     {
       "name": "Programming & Scripting Languages",
@@ -44,44 +44,49 @@
     },
     {
       "name": "Cloud Infrastructure and DevOps",
-      "keywordIndexes": [0, 4, 5, 6, 10, 14, 15, 16, 17, 18, 21, 22]
+      "keywordIndexes": [0, 4, 5, 6, 10, 15, 16, 17, 18]
     }
   ],
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "LLM developer-workflow catalog with reusable skills, MCP-ready configs, and cross-runtime agent automation.",
-      "highlightIndexes": [0, 1]
+      "description": "LLM developer-workflow catalog with 40+ reusable skills, MCP-ready configs, shared instructions, and cross-runtime agent automation.",
+      "highlightIndexes": [0]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Validated data warehouse spanning 65K+ NBA games and 13M+ play-by-play events with ETL, docs, CLI, and Kaggle distribution.",
+      "description": "Star-schema analytics warehouse spanning 65K+ NBA games and 13M+ play-by-play events with validated ETL, DuckDB/SQLite/Parquet exports, docs, CLI, and Kaggle distribution.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
       "description": "Data-collection toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing proxy health checks.",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0]
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Typed AI/ML source-discovery platform with validation, contributor workflows, and docs-backed feeds for model and agent research.",
-      "highlightIndexes": [0, 1]
+      "description": "Typed AI/ML source-discovery platform with HTTP/RSS validation, contributor workflows, OPML exports, and docs-backed feeds for model and agent research.",
+      "highlightIndexes": [0]
     },
     {
       "name": "MCP-Crawl4AI",
       "description": "FastMCP server enabling AI agents to crawl, extract, and return structured web content over documented stdio/HTTP paths.",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0]
     },
     {
       "name": "MDXPad",
       "description": "Native macOS MDX editor with synchronized preview, multi-provider AI assistance, and Keychain-backed credential storage.",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0]
+    },
+    {
+      "name": "FL Studio MCP Server",
+      "description": "Alpha MCP platform for AI-assisted music production with 196 typed FL Studio tools, resources-first contracts, transaction-safe mutations, and 655+ tests.",
+      "highlightIndexes": [0]
     },
     {
       "name": "Personal Website: w4w.dev",
       "description": "Long-running personal web app and MDX publishing system pairing a polished frontend with durable content, SEO, and authoring workflows.",
-      "highlightIndexes": [0, 1]
+      "highlightIndexes": [0]
     }
   ],
   "education": [

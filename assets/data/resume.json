@@ -5,7 +5,7 @@
     "email": "wyattowalsh@gmail.com",
     "phone": "(209) 602-2545",
     "url": "https://www.w4w.dev",
-    "summary": "Senior AI/ML engineer building production agentic AI systems, LLM applications, data platforms, and developer tooling for regulated fintech and enterprise teams.",
+    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM document intelligence, retrieval workflows, validated data pipelines and platforms, and developer tooling for regulated fintech and enterprise teams.",
     "location": {
       "city": "New York City",
       "region": "New York",
@@ -101,9 +101,9 @@
       "startDate": "2022-03-01",
       "endDate": "2022-07-01",
       "location": "Remote",
-      "summary": "Delivered an advanced DeFi DApp as the founding engineer, integrating ethers.js for gas-optimized web3 smart contract interactions, implementing CI/CD and TDD pipelines to boost development efficiency, and partnering with founders to translate Figma designs into pixel-perfect interfaces.",
+      "summary": "Delivered a secure collateralized lending web app as the founding engineer, pairing React/Next.js product execution with wallet and smart-contract integrations, CI/CD, test automation, and founder-facing delivery from Figma to production UI.",
       "highlights": [
-        "Architected a scalable NFT-collateralized lending DApp using React, Next.js, TypeScript, MobX, and ethers.js, enabling secure, performant on-chain loans.",
+        "Architected a scalable collateralized lending application using React, Next.js, TypeScript, MobX, and ethers.js, translating complex wallet and smart-contract flows into secure, performant user workflows.",
         "Implemented end-to-end CI/CD with GitHub Actions, Husky, Cypress, and Jest to halve release cycles and raise test coverage to 90%, while mentoring a front-end intern to build key UI components.",
         "Optimized front-end performance through code splitting, lazy loading, and asset caching, reducing initial load times by 40% and JavaScript bundle size by 30%."
       ]
@@ -114,10 +114,10 @@
       "startDate": "2021-06-01",
       "endDate": "2022-03-01",
       "location": "Remote",
-      "summary": "Enabled better data-driven decision making for Web3 stakeholders by tokenizing a 1M+ post/comment, Web3-related Reddit dataset onto a decentralized data marketplace after creating a public-facing web app and securing grant funding to enable the project.",
+      "summary": "Founded and shipped a grant-funded data product around a 1M+ Reddit post/comment dataset, delivering the public web surface, Python extraction and normalization pipelines, and marketplace publication workflow.",
       "highlights": [
-        "Engineered and launched a Next.js/TailwindCSS marketing site with top-tier Lighthouse scores and secured $75K in OCEAN tokens via a competitive DAO grant.",
-        "Engineered Python pipelines to extract and normalize a 1M+ Web3-related Reddit posts & comments dataset and published the data on Ocean Protocol’s Data Marketplace."
+        "Engineered and launched a Next.js/TailwindCSS public site with top-tier Lighthouse scores and secured $75K in grant funding via a competitive ecosystem program.",
+        "Engineered Python pipelines to extract and normalize a 1M+ Reddit posts/comments dataset and publish a reusable data product for external analytics workflows."
       ]
     },
     {
@@ -269,7 +269,10 @@
         "Dash",
         "Tableau",
         "ETL",
-        "SQLite"
+        "SQLite",
+        "DuckDB",
+        "Polars",
+        "Parquet"
       ],
       "selectionHints": {
         "themes": ["pipelines", "warehousing", "analytics", "streaming"],
@@ -305,7 +308,11 @@
         "GitHub Copilot",
         "Codex",
         "DeepAgents",
-        "AI Agent Skills Protocol"
+        "AI Agent Skills Protocol",
+        "Document AI",
+        "LLM Evaluation",
+        "AI Guardrails",
+        "Semantic Retrieval"
       ],
       "selectionHints": {
         "themes": [
@@ -380,7 +387,7 @@
       "githubUrl": "https://github.com/wyattowalsh/agents",
       "startDate": "2026-01-01",
       "endDate": null,
-      "description": "Open-source agent tooling catalog and docs portal packaging reusable skills, configs, and MCP-ready workflows across Claude Code, Codex, Copilot, Cursor, and related runtimes.",
+      "description": "Open-source agent tooling catalog and docs portal packaging 40+ reusable skills, shared instructions, MCP-ready configs, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related agents.",
       "selectionHints": {
         "themes": [
           "developer-tooling",
@@ -396,7 +403,7 @@
         ]
       },
       "highlights": [
-        "Built 40+ reusable instruction and skill packs plus shared harness configs that install across Claude Code, GitHub Copilot, Cursor, and related agent runtimes.",
+        "Built 40+ reusable instruction and skill packs plus shared harness configs that install across Claude Code, Codex, GitHub Copilot, Cursor, and related agent runtimes.",
         "Shipped generated docs, install flows, and portable tool and MCP presets for code review, security, infrastructure, research, and workflow automation."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
@@ -407,17 +414,17 @@
       "githubUrl": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": null,
-      "description": "Open-source NBA analytics warehouse and dataset covering 65K+ games and 13M+ play-by-play events, with a CLI, docs site, and Kaggle distribution for reproducible sports analysis.",
+      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and Kaggle distribution.",
       "selectionHints": {
         "themes": ["data-engineering", "open-data", "analytics"],
         "aliases": ["ETL pipeline", "sports analytics dataset", "Kaggle dataset"],
         "impactSignals": ["dataset-scale", "community-adoption"]
       },
       "highlights": [
-        "Implemented a high-performance, validated ETL pipeline that extracts from the NBA API, updates warehouse outputs daily, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
-        "Built the surrounding product surface with docs, schema references, release workflows, and Kaggle distribution that pushed the dataset past 400K views and 45K downloads."
+        "Implemented a high-performance, Pandera-validated ETL pipeline that extracts from the NBA API, updates warehouse outputs daily, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
+        "Built docs, schema references, release workflows, and Kaggle distribution for a 183-table public warehouse spanning 137 stats.nba.com endpoint classes."
       ],
-      "stack": ["Python", "Pandas", "SQLAlchemy", "SQLite", "Kaggle"]
+      "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
     },
     {
       "name": "Listentropy",
@@ -514,12 +521,12 @@
       "githubUrl": "https://github.com/wyattowalsh/ai-web-feeds",
       "startDate": "2025-10-01",
       "endDate": null,
-      "description": "Built a curated AI and ML feed platform with a typed feed schema, automated validation, contributor submission workflows, and docs-backed browse and download surfaces.",
+      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and docs-backed browse/download surfaces.",
       "highlights": [
         "Defined a structured YAML feed schema with topic classification (ML, NLP, CV, etc.) and source-type validation (blog, paper, newsletter) to ensure feed quality at scale.",
         "Shipped helper scripts, CI checks, scheduled validation jobs, and a live docs surface so community-submitted feeds can be reviewed, normalized, and published reliably."
       ],
-      "stack": ["Python", "YAML", "Vercel"]
+      "stack": ["Python", "Pydantic", "SQLModel", "YAML", "Fumadocs", "Vercel"]
     },
     {
       "name": "Regularized Linear Regression Deep Dive",

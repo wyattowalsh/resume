@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM applications, compliant AI workflows, and developer tooling alongside data platforms and product minded full stack builds.",
+    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM document intelligence, retrieval workflows, validated data pipelines and platforms, and developer tooling alongside product minded full stack builds.",
     "image": "/wyatt-walsh-profile.png"
   },
   "work": [
@@ -28,11 +28,11 @@
   "skills": [
     {
       "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 14, 15, 16, 17, 18, 19, 20, 21]
+      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25]
     },
     {
       "name": "Data Engineering and Analytics",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 13, 14, 15, 22, 23]
+      "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 13, 14, 15, 22, 23, 24, 25, 26]
     },
     {
       "name": "Cloud Infrastructure and DevOps",
@@ -54,12 +54,12 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog packaging reusable skills, configs, and MCP-ready workflows across Claude Code, Codex, Copilot, Cursor, and related runtimes.",
+      "description": "Open-source agent tooling catalog packaging 40+ reusable skills, shared instructions, MCP-ready configs, and cross-runtime workflows across Claude Code, Codex, Copilot, Cursor, and related runtimes.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source NBA analytics warehouse and dataset spanning 65K+ games and 13M+ play-by-play events, with docs, CLI, and Kaggle distribution for reproducible analysis.",
+      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, DuckDB/SQLite/Parquet exports, docs, CLI, and Kaggle distribution.",
       "highlightIndexes": [0, 1]
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Curated AI/ML feed platform with typed schema rules, automated validation, contributor workflows, and docs-backed browse and download surfaces.",
+      "description": "Curated AI/ML feed platform with typed schema rules, HTTP/RSS validation, contributor workflows, OPML exports, and docs-backed browse and download surfaces.",
       "highlightIndexes": [0]
     },
     {
@@ -112,6 +112,6 @@
     "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python"
   ],
   "seo": {
-    "description": "Senior AI/ML engineer shipping production agentic AI systems, LLM applications, compliant AI workflows, data platforms, and open-source developer tooling across fintech, enterprise, and product builds."
+    "description": "Senior AI/ML engineer shipping production agentic AI systems, LLM document intelligence, retrieval workflows, validated data pipelines and platforms, and open-source developer tooling across fintech, enterprise, and product builds."
   }
 }
