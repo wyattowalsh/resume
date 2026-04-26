@@ -402,9 +402,9 @@ describe("getResumeVariant", () => {
     it("preserves skill selection hints on curated entries", () => {
       const full = getResumeVariant("full");
       const skill = full.skills?.find(
-        (entry) => entry.name === "Machine Learning and Gen AI",
+        (entry) => entry.name === "Machine Learning and Generative AI",
       );
-      const baseSkill = getBaseSkill("Machine Learning and Gen AI");
+      const baseSkill = getBaseSkill("Machine Learning and Generative AI");
 
       expect(skill?.selectionHints).toEqual(baseSkill.selectionHints);
     });

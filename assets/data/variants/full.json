@@ -1,11 +1,11 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer blending agentic AI product work, data-platform depth, and product-minded full-stack execution across fintech, enterprise, and open-source environments."
+    "summary": "Senior AI/ML engineer blending production agentic AI, LLM applications, data platform depth, and product minded full stack execution across fintech, enterprise, and open source environments."
   },
   "work": [
     {
       "name": "Frame Payments",
-      "summary": "Sole AI/ML engineer shipping agentic document intelligence and multimodal compliance screening for merchant onboarding at a high-risk-payments platform.",
+      "summary": "Sole AI/ML engineer shipping agentic AI document intelligence and multimodal compliance screening for merchant onboarding at a high risk payments platform.",
       "highlightIndexes": [0, 1]
     },
     {
@@ -35,7 +35,7 @@
       "keywordIndexes": [0, 1, 2, 3, 4, 5, 13]
     },
     {
-      "name": "Machine Learning and Gen AI",
+      "name": "Machine Learning and Generative AI",
       "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 14, 15, 16, 17, 18, 20, 21]
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released rotating proxy toolkit with nine strategies, 114 auto-validated sources, and self-healing checks for resilient scraping workflows.",
+      "description": "Released rotating proxy toolkit with nine strategies, 100+ auto-validated sources, and self-healing checks for resilient scraping workflows.",
       "highlightIndexes": [0]
     },
     {
@@ -80,7 +80,7 @@
     }
   ],
   "education": [
-    "University of California, Berkeley – College of Engineering",
+    "University of California, Berkeley - College of Engineering",
     "The Hotchkiss School"
   ],
   "certificates": [

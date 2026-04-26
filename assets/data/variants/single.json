@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": "AI/ML engineer building agentic AI, data platforms, and developer tooling for fintech and enterprise teams."
+    "summary": "AI/ML engineer building agentic AI systems, LLM applications, data platforms, and developer tooling for fintech and enterprise teams."
   },
   "work": [
     {
@@ -22,7 +22,7 @@
       "keywordIndexes": [0, 1, 2, 3, 4, 13]
     },
     {
-      "name": "Machine Learning and Gen AI",
+      "name": "Machine Learning and Generative AI",
       "keywordIndexes": [0, 4, 5, 6, 10, 11, 14, 15, 16]
     },
     {
@@ -62,7 +62,7 @@
     }
   ],
   "education": [
-    "University of California, Berkeley – College of Engineering",
+    "University of California, Berkeley - College of Engineering",
     "The Hotchkiss School"
   ],
   "certificates": [

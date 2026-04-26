@@ -489,10 +489,13 @@ body::-webkit-scrollbar-thumb:hover {
 	.resume-print {
 		color: #0f172a;
 		background-color: white;
-		font-family: var(--font-sans);
+		font-family: Arial, Helvetica, sans-serif;
 		min-height: auto !important;
 		-webkit-print-color-adjust: exact;
 		print-color-adjust: exact;
+	}
+	.resume-print * {
+		letter-spacing: normal !important;
 	}
 	.resume-print-section-heading {
 		page-break-after: avoid;

@@ -85,6 +85,13 @@ pnpm check:artifacts
 
 Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both generated PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, page 2 of the full PDF still contains `Projects`, the curated work/project/skills/education/certification/publication content still appears in the generated PDFs, the 1-page PDF preserves the intended `Experience → Skills → Projects → Education` extraction order, and the public download PDFs under `public/downloads/` still satisfy the same page-budget/content checks.
 
+The artifact checker also runs ATS-oriented PDF checks across generated and public download PDFs:
+
+- `pdfjs-dist` and `pdftotext` must extract contiguous contact fields, profile URLs, section headings, selected work entries, skill groups, keywords, and project descriptions.
+- `pdfinfo` must report tagged, unencrypted, non-JavaScript PDFs.
+- `pdffonts` must report embedded Unicode fonts and no Type 3 fonts.
+- `pdfimages -list` must report no embedded raster images.
+
 ```bash
 pnpm sync:public-downloads
 ```
@@ -98,6 +105,8 @@ Copy the latest generated PDF artifacts into `public/downloads/` so the public s
 - If `APP_URL` is **not** set, it starts a local Vike dev server on an available localhost port.
 - If `APP_URL` **is** set, it uses that URL instead and waits for it to become reachable.
 - If Puppeteer cannot auto-discover Chrome in your environment, set `PUPPETEER_EXECUTABLE_PATH` to a Chrome/Chromium binary before running the generator.
+- On macOS, this usually works: `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" pnpm check:artifacts`.
+- `pnpm check:artifacts` requires Poppler tools (`pdfinfo`, `pdffonts`, `pdftotext`, and `pdfimages`) for the ATS PDF checks. On macOS, install them with `brew install poppler`.
 - It renders `/full` and `/single` in Puppeteer, then writes:
   - `assets/outputs/resume-full.pdf`
   - `assets/outputs/resume-full.png`
@@ -106,7 +115,7 @@ Copy the latest generated PDF artifacts into `public/downloads/` so the public s
 
 `assets/outputs/` is gitignored, so generated artifacts are not committed by default.
 
-`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist`, including section-order checks on `/single` so column-style extraction regressions are caught in CI.
+`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist` and Poppler, including section-order and ATS parseability checks so column-style extraction, font, image, and contact/keyword regressions are caught in CI.
 
 The CI workflow also uploads the generated PDF/PNG artifacts on every run so layout changes can be inspected without regenerating them locally.
 

@@ -1,7 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 
+const execFileAsync = promisify(execFile);
 const OUTPUT_DIR = path.resolve(process.cwd(), "assets", "outputs");
 const PUBLIC_DOWNLOADS_DIR = path.resolve(process.cwd(), "public", "downloads");
 const RESUME_PATH = path.resolve(
@@ -38,19 +41,76 @@ interface NamedSelection {
   name: string;
 }
 
+interface ProfileSelection {
+  network: string;
+  url: string;
+}
+
 interface ResumeSelection {
   basics: {
     name: string;
+    email: string;
+    phone: string;
+    url: string;
+    summary?: string;
+    label?: string;
+    location: {
+      city: string;
+      region: string;
+    };
+    profiles: ProfileSelection[];
   };
+  work: WorkSelection[];
+  skills?: SkillSelection[];
+  projects?: ProjectSelection[];
+}
+
+interface WorkSelection extends NamedSelection {
+  position: string;
+  startDate: string;
+  endDate: string | null;
+  highlights: string[];
+}
+
+interface SkillSelection extends NamedSelection {
+  keywords: string[];
+}
+
+interface ProjectSelection extends NamedSelection {
+  description: string;
+  highlights: string[];
+}
+
+interface WorkVariantSelection extends NamedSelection {
+  summary?: string | null;
+  highlightIndexes?: number[];
+}
+
+interface SkillVariantSelection extends NamedSelection {
+  keywordIndexes?: number[];
+}
+
+interface ProjectVariantSelection extends NamedSelection {
+  description?: string;
+  highlightIndexes?: number[];
 }
 
 interface VariantContentSelection {
-  work?: NamedSelection[];
-  projects?: NamedSelection[];
-  skills?: NamedSelection[];
+  work?: WorkVariantSelection[];
+  projects?: ProjectVariantSelection[];
+  skills?: SkillVariantSelection[];
   education?: string[];
   certificates?: string[];
   publications?: string[];
+}
+
+interface ResolvedVariantContentSelection {
+  work: WorkSelection[];
+  projects: ProjectSelection[];
+  skills: SkillSelection[];
+  education: string[];
+  certificates: string[];
+  publications: string[];
 }
 
 const expectedArtifacts = [
@@ -74,8 +134,67 @@ function fail(message: string): never {
   throw new Error(message);
 }
 
+async function runRequiredCli(command: string, args: string[], context: string) {
+  try {
+    const { stdout } = await execFileAsync(command, args, {
+      maxBuffer: 10 * 1024 * 1024,
+    });
+    return stdout;
+  } catch (error) {
+    const typedError = error as NodeJS.ErrnoException & {
+      stderr?: string;
+      stdout?: string;
+    };
+
+    if (typedError.code === "ENOENT") {
+      fail(
+        `${context} requires the "${command}" CLI. Install poppler-utils locally or in CI before running artifact checks.`,
+      );
+    }
+
+    fail(
+      `${context} failed while running "${command} ${args.join(" ")}": ${
+        typedError.stderr ?? typedError.stdout ?? typedError.message
+      }`,
+    );
+  }
+}
+
 function isWithinTolerance(value: number, expected: number) {
   return Math.abs(value - expected) <= LETTER_SIZE_TOLERANCE;
+}
+
+function normalizeForStrictIncludes(text: string) {
+  return text
+    .replace(/-\s+/g, "")
+    .replace(/-/g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([:;,.])/g, "$1")
+    .trim();
+}
+
+function assertStrictTextIncludes(
+  haystack: string,
+  needle: string,
+  context: string,
+) {
+  const normalizedHaystack = normalizeForStrictIncludes(haystack).toLowerCase();
+  const normalizedNeedle = normalizeForStrictIncludes(needle).toLowerCase();
+
+  if (!normalizedHaystack.includes(normalizedNeedle)) {
+    fail(`${context} must contain parseable contiguous text "${needle}".`);
+  }
+}
+
+function stripUrlForDisplay(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.replace(/^www\./, "");
+    const pathname = parsedUrl.pathname.replace(/\/$/, "");
+    return `${hostname}${pathname}`;
+  } catch {
+    return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  }
 }
 
 function escapeRegExp(text: string) {
@@ -150,6 +269,84 @@ async function readVariantSelection(
 async function readResumeSelection(filePath: string): Promise<ResumeSelection> {
   const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw) as ResumeSelection;
+}
+
+function pickByIndexes<T>(values: T[], indexes: number[] | undefined) {
+  if (!indexes) {
+    return values;
+  }
+
+  return indexes.map((index) => {
+    const value = values[index];
+
+    if (value === undefined) {
+      fail(`Variant index "${index}" is outside the selected content bounds.`);
+    }
+
+    return value;
+  });
+}
+
+function getByName<T extends NamedSelection>(
+  items: T[] | undefined,
+  name: string,
+  sectionLabel: string,
+) {
+  const match = items?.find((item) => item.name === name);
+
+  if (!match) {
+    fail(`Unknown ${sectionLabel} entry "${name}".`);
+  }
+
+  return match;
+}
+
+function resolveVariantContent(
+  resume: ResumeSelection,
+  variant: VariantContentSelection,
+): ResolvedVariantContentSelection {
+  return {
+    work: (variant.work ?? resume.work).map((selection) => {
+      const baseWork = getByName(resume.work, selection.name, "work");
+
+      return {
+        ...baseWork,
+        highlights: pickByIndexes(
+          baseWork.highlights,
+          "highlightIndexes" in selection ? selection.highlightIndexes : undefined,
+        ),
+      };
+    }),
+    projects: (variant.projects ?? resume.projects ?? []).map((selection) => {
+      const baseProject = getByName(resume.projects, selection.name, "project");
+
+      return {
+        ...baseProject,
+        description:
+          "description" in selection && selection.description
+            ? selection.description
+            : baseProject.description,
+        highlights: pickByIndexes(
+          baseProject.highlights,
+          "highlightIndexes" in selection ? selection.highlightIndexes : undefined,
+        ),
+      };
+    }),
+    skills: (variant.skills ?? resume.skills ?? []).map((selection) => {
+      const baseSkill = getByName(resume.skills, selection.name, "skill");
+
+      return {
+        ...baseSkill,
+        keywords: pickByIndexes(
+          baseSkill.keywords,
+          "keywordIndexes" in selection ? selection.keywordIndexes : undefined,
+        ),
+      };
+    }),
+    education: variant.education ?? [],
+    certificates: variant.certificates ?? [],
+    publications: variant.publications ?? [],
+  };
 }
 
 function getSelectionNames(selections: NamedSelection[] | undefined) {
@@ -330,6 +527,43 @@ async function getPdfPageText(
   }
 }
 
+async function getPdfAllText(filePath: string) {
+  const data = new Uint8Array(await fs.readFile(filePath));
+  const loadingTask = getDocument({
+    data,
+    isEvalSupported: false,
+    useSystemFonts: true,
+    useWorkerFetch: false,
+    verbosity: 0,
+  });
+  const pdf = await loadingTask.promise;
+  const pages: string[] = [];
+
+  try {
+    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+      const page = await pdf.getPage(pageNumber);
+      const content = await page.getTextContent();
+      const text = content.items
+        .map((item) => {
+          if (typeof item !== "object" || item === null || !("str" in item)) {
+            return "";
+          }
+
+          return typeof item.str === "string" ? item.str : "";
+        })
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      pages.push(text);
+    }
+
+    return pages.join("\n");
+  } finally {
+    await pdf.destroy();
+  }
+}
+
 async function assertPdfExpectations(
   filePath: string,
   label: string,
@@ -374,11 +608,193 @@ async function assertPdfExpectations(
   }
 }
 
+function getPdfInfoValue(pdfInfo: string, fieldName: string) {
+  const matcher = new RegExp(`^${escapeRegExp(fieldName)}:\\s*(.+)$`, "im");
+  return matcher.exec(pdfInfo)?.[1]?.trim();
+}
+
+async function assertPdfMetadataIsAtsSafe(
+  filePath: string,
+  label: string,
+  expectedPages: number,
+) {
+  const pdfInfo = await runRequiredCli("pdfinfo", [filePath], label);
+
+  if (getPdfInfoValue(pdfInfo, "Tagged")?.toLowerCase() !== "yes") {
+    fail(`${label} must remain a tagged PDF.`);
+  }
+
+  if (getPdfInfoValue(pdfInfo, "Encrypted")?.toLowerCase() !== "no") {
+    fail(`${label} must not be encrypted.`);
+  }
+
+  if (getPdfInfoValue(pdfInfo, "JavaScript")?.toLowerCase() !== "no") {
+    fail(`${label} must not contain PDF JavaScript.`);
+  }
+
+  const pageCount = Number(getPdfInfoValue(pdfInfo, "Pages"));
+  if (pageCount !== expectedPages) {
+    fail(`${label} must have ${expectedPages} page(s), found ${pageCount}.`);
+  }
+
+  console.log(`✓ ${label} metadata is ATS-safe`);
+}
+
+async function assertPdfFontsAreAtsSafe(filePath: string, label: string) {
+  const fontTable = await runRequiredCli("pdffonts", [filePath], label);
+  const rows = fontTable
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith("name") && !line.startsWith("-"));
+
+  if (!rows.length) {
+    fail(`${label} must expose embedded fonts to pdffonts.`);
+  }
+
+  for (const row of rows) {
+    if (/\bType\s+3\b/.test(row)) {
+      fail(`${label} must not use Type 3 fonts; found "${row}".`);
+    }
+
+    const columns = row.split(/\s+/);
+    const embedded = columns[columns.length - 5];
+    const subset = columns[columns.length - 4];
+    const unicode = columns[columns.length - 3];
+
+    if (embedded !== "yes" || subset !== "yes" || unicode !== "yes") {
+      fail(
+        `${label} fonts must be embedded, subset, and Unicode-mapped; found "${row}".`,
+      );
+    }
+  }
+
+  console.log(`✓ ${label} uses embedded Unicode fonts without Type 3 fonts`);
+}
+
+async function assertPdfContainsNoImages(filePath: string, label: string) {
+  const imageTable = await runRequiredCli("pdfimages", ["-list", filePath], label);
+  const imageRows = imageTable
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => /^\d+\s+\d+\s+/.test(line));
+
+  if (imageRows.length) {
+    fail(`${label} must not contain embedded raster images.`);
+  }
+
+  console.log(`✓ ${label} contains no embedded images`);
+}
+
+async function getPopplerText(filePath: string, label: string) {
+  const [text, layoutText] = await Promise.all([
+    runRequiredCli("pdftotext", [filePath, "-"], label),
+    runRequiredCli("pdftotext", ["-layout", filePath, "-"], label),
+  ]);
+
+  return { text, layoutText };
+}
+
+function assertNoLetterSpacedHeadings(text: string, label: string) {
+  const collapsed = normalizeForStrictIncludes(text);
+  const letterSpacedNeedles = [
+    "S E N I O R",
+    "A I / M L",
+    "E N G I N E E R",
+    "E X P E R I E N C E",
+    "S K I L L S",
+    "P R O J E C T S",
+    "E D U C A T I O N",
+    "C E R T I F I C A T I O N S",
+  ];
+
+  for (const needle of letterSpacedNeedles) {
+    if (collapsed.includes(needle)) {
+      fail(`${label} must not extract letter-spaced heading text "${needle}".`);
+    }
+  }
+}
+
+function assertParseableCoreFields(
+  text: string,
+  label: string,
+  resume: ResumeSelection,
+  variant: ResolvedVariantContentSelection,
+) {
+  const context = `${label} ATS text`;
+  const profileUrls = resume.basics.profiles.map((profile) =>
+    stripUrlForDisplay(profile.url),
+  );
+  const requiredFields = [
+    resume.basics.name,
+    resume.basics.label ?? "Senior AI/ML Engineer",
+    resume.basics.email,
+    resume.basics.phone,
+    `${resume.basics.location.city}, ${resume.basics.location.region}`,
+    "Summary:",
+    "Experience",
+    "Skills",
+    "Projects",
+    "Education",
+    ...profileUrls,
+  ];
+
+  for (const field of requiredFields) {
+    assertStrictTextIncludes(text, field, context);
+  }
+
+  for (const job of variant.work) {
+    assertStrictTextIncludes(text, job.position, context);
+    assertStrictTextIncludes(text, job.name, context);
+    assertStrictTextIncludes(text, job.startDate.slice(0, 4), context);
+
+    if (job.endDate) {
+      assertStrictTextIncludes(text, job.endDate.slice(0, 4), context);
+    }
+  }
+
+  for (const skill of variant.skills) {
+    assertStrictTextIncludes(text, `${skill.name}:`, context);
+    for (const keyword of skill.keywords) {
+      assertStrictTextIncludes(text, keyword, context);
+    }
+  }
+
+  for (const project of variant.projects) {
+    assertStrictTextIncludes(text, project.name, context);
+    assertStrictTextIncludes(text, project.description, context);
+  }
+}
+
+async function assertAtsParseability(
+  filePath: string,
+  label: string,
+  resume: ResumeSelection,
+  variant: ResolvedVariantContentSelection,
+  expectedPages: number,
+) {
+  await assertPdfMetadataIsAtsSafe(filePath, label, expectedPages);
+  await assertPdfFontsAreAtsSafe(filePath, label);
+  await assertPdfContainsNoImages(filePath, label);
+
+  const [pdfjsText, popplerText] = await Promise.all([
+    getPdfAllText(filePath),
+    getPopplerText(filePath, label),
+  ]);
+
+  assertNoLetterSpacedHeadings(pdfjsText, `${label} pdfjs text`);
+  assertNoLetterSpacedHeadings(popplerText.text, `${label} pdftotext text`);
+  assertNoLetterSpacedHeadings(popplerText.layoutText, `${label} pdftotext layout text`);
+  assertParseableCoreFields(pdfjsText, `${label} pdfjs text`, resume, variant);
+  assertParseableCoreFields(popplerText.text, `${label} pdftotext text`, resume, variant);
+
+  console.log(`✓ ${label} passes ATS parseability checks`);
+}
+
 async function assertFullResumePdf(
   filePath: string,
   label: string,
   resume: ResumeSelection,
-  fullVariant: VariantContentSelection,
+  fullVariant: ResolvedVariantContentSelection,
 ) {
   const pageOne = await getPdfPageText(filePath, 1);
   const pageTwo = await getPdfPageText(filePath, 2);
@@ -472,7 +888,7 @@ async function assertSingleResumePdf(
   filePath: string,
   label: string,
   resume: ResumeSelection,
-  singleVariant: VariantContentSelection,
+  singleVariant: ResolvedVariantContentSelection,
 ) {
   const pageOne = await getPdfPageText(filePath, 1);
 
@@ -578,6 +994,8 @@ async function runArtifactChecks() {
     readVariantSelection(FULL_VARIANT_PATH),
     readVariantSelection(SINGLE_VARIANT_PATH),
   ]);
+  const resolvedFullVariant = resolveVariantContent(resume, fullVariant);
+  const resolvedSingleVariant = resolveVariantContent(resume, singleVariant);
 
   for (const artifact of expectedArtifacts) {
     await assertArtifactExists(artifact);
@@ -595,13 +1013,27 @@ async function runArtifactChecks() {
     path.join(OUTPUT_DIR, "resume-full.pdf"),
     "resume-full.pdf",
     resume,
-    fullVariant,
+    resolvedFullVariant,
   );
   await assertSingleResumePdf(
     path.join(OUTPUT_DIR, "resume-single.pdf"),
     "resume-single.pdf",
     resume,
-    singleVariant,
+    resolvedSingleVariant,
+  );
+  await assertAtsParseability(
+    path.join(OUTPUT_DIR, "resume-full.pdf"),
+    "resume-full.pdf",
+    resume,
+    resolvedFullVariant,
+    2,
+  );
+  await assertAtsParseability(
+    path.join(OUTPUT_DIR, "resume-single.pdf"),
+    "resume-single.pdf",
+    resume,
+    resolvedSingleVariant,
+    1,
   );
 
   for (const expectation of publicDownloadPdfExpectations) {
@@ -617,13 +1049,27 @@ async function runArtifactChecks() {
     path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-full.pdf"),
     path.join("public", "downloads", "wyatt-walsh-resume-full.pdf"),
     resume,
-    fullVariant,
+    resolvedFullVariant,
   );
   await assertSingleResumePdf(
     path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-single.pdf"),
     path.join("public", "downloads", "wyatt-walsh-resume-single.pdf"),
     resume,
-    singleVariant,
+    resolvedSingleVariant,
+  );
+  await assertAtsParseability(
+    path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-full.pdf"),
+    path.join("public", "downloads", "wyatt-walsh-resume-full.pdf"),
+    resume,
+    resolvedFullVariant,
+    2,
+  );
+  await assertAtsParseability(
+    path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-single.pdf"),
+    path.join("public", "downloads", "wyatt-walsh-resume-single.pdf"),
+    resume,
+    resolvedSingleVariant,
+    1,
   );
 
   console.log("Artifact regression checks passed.");

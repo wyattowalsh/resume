@@ -5,7 +5,7 @@
     "email": "wyattowalsh@gmail.com",
     "phone": "(209) 602-2545",
     "url": "https://www.w4w.dev",
-    "summary": "Senior AI/ML engineer building production agentic systems, data platforms, and developer tooling for regulated, data-heavy teams.",
+    "summary": "Senior AI/ML engineer building production agentic AI systems, LLM applications, data platforms, and developer tooling for regulated fintech and enterprise teams.",
     "location": {
       "city": "New York City",
       "region": "New York",
@@ -32,7 +32,7 @@
       "startDate": "2025-10-01",
       "endDate": "2026-01-15",
       "location": "Remote",
-      "summary": "Served as the sole AI/ML Engineer delivering production applied AI for risk/compliance and growth at a high-risk-merchant payments platform. Shipped document intelligence and restricted-item compliance screening for merchant onboarding using agentic LLM workflows and multimodal inputs, with human-in-the-loop UX and audit-aware handling of PII and confidential documents.",
+      "summary": "Served as the sole AI/ML Engineer delivering production agentic AI, LLM document intelligence, and multimodal compliance automation for risk/compliance and growth at a high risk merchant payments platform, with human-in-the-loop UX and audit-aware handling of PII and confidential documents.",
       "selectionHints": {
         "themes": [
           "agentic-ai",
@@ -55,7 +55,7 @@
         ]
       },
       "highlights": [
-        "Deployed submission-time document-category validation using PydanticAI, Amazon Bedrock AgentCore, and Claude, surfaced as in-browser feedback for confidential uploads; reduced analyst follow-ups and resubmission requests ~90% by blocking miscategorized documents before they entered review queues.",
+        "Deployed an LLM document classification workflow using PydanticAI, Amazon Bedrock AgentCore, and Claude, surfaced as in-browser feedback for confidential uploads; reduced analyst follow-ups and resubmission requests ~90% by blocking miscategorized documents before review.",
         "Built restricted-item compliance screening that combines product images with structured submission metadata; translated banking-partner policy requirements into automated checks supporting onboarding across tens of merchants, multi-location operations, and catalogs with hundreds of items per location.",
         "Built a NotebookLM-based technical knowledge hub spanning vendor/web documentation and internal monorepo docs; automated corpus refresh with a Colab pipeline that re-ingests the latest sources to keep retrieval accurate and up to date.",
         "Drove internal AI adoption with practical enablement assets: Notion playbooks covering MCP onboarding, “best MCPs” recommendations, and high-signal prompt patterns; ran weekly office hours reaching ~15% of the company and standardized PII/confidential-document safeguards and auditability requirements."
@@ -63,7 +63,7 @@
     },
     {
       "name": "JPMorgan Chase & Co.",
-      "position": "Associate III, Senior Software Engineer — Data Integrations",
+      "position": "Associate III, Senior Software Engineer - Data Integrations",
       "url": "https://www.jpmorganchase.com/",
       "startDate": "2023-05-01",
       "endDate": "2025-04-01",
@@ -92,7 +92,7 @@
         "Pioneered firm-wide rollout of generative AI development tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, delivering feedback that shaped secure, scalable deployment and leading internal workshops to boost productivity for technical and non-technical teams.",
         "Devised ML-driven anomaly detection framework for data health monitoring, reducing false positives by 25% and cutting manual review time, empowering risk teams to focus on critical alerts.",
         "Developed resilient Python wrapper for KDB+, democratizing data access for 5,000+ users with CI-style tests and optimized Q functions, reducing manual processing by over 10 hours per week.",
-        "Engineered a cloud-function–driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard."
+        "Engineered a cloud-function-driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard."
       ]
     },
     {
@@ -101,7 +101,7 @@
       "startDate": "2022-03-01",
       "endDate": "2022-07-01",
       "location": "Remote",
-      "summary": "Delivered an advanced DeFi DApp as the founding engineer — integrating ethers.js for gas-optimized web3 smart contract interactions, implementing CI/CD and TDD pipelines to boost development efficiency, and partnering with founders to translate Figma designs into pixel-perfect interfaces.",
+      "summary": "Delivered an advanced DeFi DApp as the founding engineer, integrating ethers.js for gas-optimized web3 smart contract interactions, implementing CI/CD and TDD pipelines to boost development efficiency, and partnering with founders to translate Figma designs into pixel-perfect interfaces.",
       "highlights": [
         "Architected a scalable NFT-collateralized lending DApp using React, Next.js, TypeScript, MobX, and ethers.js, enabling secure, performant on-chain loans.",
         "Implemented end-to-end CI/CD with GitHub Actions, Husky, Cypress, and Jest to halve release cycles and raise test coverage to 90%, while mentoring a front-end intern to build key UI components.",
@@ -127,7 +127,7 @@
       "startDate": "2020-01-01",
       "endDate": "2020-05-01",
       "location": "San Francisco, CA",
-      "summary": "Completed a senior-semester extern/capstone with Gap Inc.'s demand forecasting team, leading the data engineering and forecasting workflows that improved forecast accuracy by 5–25% for inventory planning across multiple retail divisions.",
+      "summary": "Completed a senior-semester extern/capstone with Gap Inc.'s demand forecasting team, leading the data engineering and forecasting workflows that improved forecast accuracy by 5-25% for inventory planning across multiple retail divisions.",
       "highlights": [
         "Applied time-series decomposition and bias correction techniques to demand forecasts, boosting accuracy by up to 25% and minimizing surplus inventory costs.",
         "Owned the data engineering layer by architecting scalable MySQL and Apache Spark pipelines across 5+ years of sales data, improving data processing throughput by 95% and standardizing insights across forecasting teams."
@@ -136,7 +136,7 @@
   ],
   "education": [
     {
-      "institution": "University of California, Berkeley – College of Engineering",
+      "institution": "University of California, Berkeley - College of Engineering",
       "url": "https://ieor.berkeley.edu/academics/bs-ieor/",
       "studyType": "Bachelor of Science",
       "area": "Industrial Engineering & Operations Research",
@@ -282,7 +282,7 @@
       }
     },
     {
-      "name": "Machine Learning and Gen AI",
+      "name": "Machine Learning and Generative AI",
       "keywords": [
         "scikit-learn",
         "PyTorch",
@@ -294,8 +294,8 @@
         "LangGraph",
         "LangSmith",
         "LlamaIndex",
-        "MCP (Model Context Protocol)",
-        "RAG",
+        "Model Context Protocol (MCP)",
+        "Retrieval Augmented Generation (RAG)",
         "Prompt Engineering",
         "Knowledge Graphs",
         "PydanticAI",
@@ -438,10 +438,10 @@
       "githubUrl": "https://github.com/wyattowalsh/proxywhirl",
       "startDate": "2025-05-01",
       "endDate": null,
-      "description": "Released rotating proxy toolkit with 9 selection strategies, 114 auto-validated sources, and self-healing health checks for resilient scraping and data-collection workflows.",
+      "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-validated sources, and self-healing health checks for resilient scraping and data-collection workflows.",
       "highlights": [
         "Implemented 9 rotation strategies (round-robin, weighted, geo-targeted, performance-based, and more) with configurable fallback chains and per-source health scoring.",
-        "Built a self-healing pipeline that continuously validates 114 built-in proxy sources, auto-ejects unresponsive proxies via circuit breakers, and re-promotes recovered sources."
+        "Built a self-healing pipeline that continuously validates 100+ built-in proxy sources, auto-ejects unresponsive proxies via circuit breakers, and re-promotes recovered sources."
       ],
       "stack": ["Python", "SQLite", "PyPI"]
     },

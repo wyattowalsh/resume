@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer shipping production agentic systems, compliant AI workflows, and developer tooling alongside data platforms and product-minded full-stack builds.",
+    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM applications, compliant AI workflows, and developer tooling alongside data platforms and product minded full stack builds.",
     "image": "/wyatt-walsh-profile.png"
   },
   "work": [
@@ -27,7 +27,7 @@
   ],
   "skills": [
     {
-      "name": "Machine Learning and Gen AI",
+      "name": "Machine Learning and Generative AI",
       "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 14, 15, 16, 17, 18, 19, 20, 21]
     },
     {
@@ -64,7 +64,7 @@
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released rotating proxy toolkit with nine strategies, 114 auto-validated sources, and self-healing health checks for resilient scraping workflows.",
+      "description": "Released rotating proxy toolkit with nine strategies, 100+ auto-validated sources, and self-healing health checks for resilient scraping workflows.",
       "highlightIndexes": [0]
     },
     {
@@ -99,7 +99,7 @@
     }
   ],
   "education": [
-    "University of California, Berkeley – College of Engineering",
+    "University of California, Berkeley - College of Engineering",
     "The Hotchkiss School"
   ],
   "certificates": [
@@ -112,6 +112,6 @@
     "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python"
   ],
   "seo": {
-    "description": "Senior AI/ML engineer shipping production agentic systems, compliant AI workflows, data platforms, and open-source developer tooling across fintech, enterprise, and product builds."
+    "description": "Senior AI/ML engineer shipping production agentic AI systems, LLM applications, compliant AI workflows, data platforms, and open-source developer tooling across fintech, enterprise, and product builds."
   }
 }

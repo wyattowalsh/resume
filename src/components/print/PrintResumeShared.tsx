@@ -77,6 +77,17 @@ function renderDateRange(startDate: string, endDate: string | null) {
   );
 }
 
+function formatProfileDisplayUrl(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.replace(/^www\./, "");
+    const pathname = parsedUrl.pathname.replace(/\/$/, "");
+    return `${hostname}${pathname}`;
+  } catch {
+    return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  }
+}
+
 function skillsGridClass(columns: 1 | 2 | 3) {
   if (columns === 1) return "grid-cols-1";
   if (columns === 3) return "grid-cols-3";
@@ -111,7 +122,7 @@ export function PrintResumeHeader({
         >
           <h1
             className={cn(
-              "font-bold tracking-tight text-slate-950",
+              "font-bold text-slate-950",
               compact ? "text-[27px]" : "text-[32px]",
             )}
           >
@@ -121,7 +132,7 @@ export function PrintResumeHeader({
         {basics.label && (
           <p
             className={cn(
-              "font-semibold uppercase tracking-[0.16em] text-slate-600",
+              "font-semibold uppercase text-slate-600",
               compact ? "text-[9.8px]" : "text-[10.5px]",
             )}
           >
@@ -153,7 +164,7 @@ export function PrintResumeHeader({
                 rel="noopener noreferrer"
                 className="hover:text-slate-900"
               >
-                {profile.network}: {profile.username}
+                {profile.network}: {formatProfileDisplayUrl(profile.url)}
               </a>
             </li>
           ))}
@@ -169,6 +180,7 @@ export function PrintResumeHeader({
               : "text-[11px] leading-[1.45]",
           )}
         >
+          <span className="font-bold text-slate-800">Summary:</span>{" "}
           {basics.summary}
         </p>
       )}
@@ -190,7 +202,7 @@ export function PrintSection({
     >
       <h2
         id={headingId}
-        className="resume-print-section-heading mb-2 flex items-center gap-2 border-t-[1.5px] border-slate-400 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-700"
+        className="resume-print-section-heading mb-2 flex items-center gap-2 border-t-[1.5px] border-slate-400 pt-2 text-[10px] font-bold uppercase text-slate-700"
       >
         <span>{title}</span>
         <span aria-hidden="true" className="h-px flex-1 bg-slate-400" />
@@ -211,12 +223,12 @@ export function PrintCertificateStrip({
         compact ? "text-[9.8px] leading-[1.25]" : "text-[10.5px] leading-[1.35]",
       )}
     >
-      <span className="font-bold uppercase tracking-[0.08em] text-slate-600">
+      <span className="font-bold uppercase text-slate-600">
         Certifications:
       </span>{" "}
       {certificates.map((certificate, index) => (
         <Fragment key={certificate.name}>
-          {index > 0 ? " · " : null}
+          {index > 0 ? " | " : null}
           {certificate.url ? (
             <a
               href={certificate.url}
@@ -256,7 +268,7 @@ export function PrintWorkList({
             >
               {job.position}
             </h3>
-            <div className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
+            <div className="text-[10px] uppercase text-slate-500">
               <span className="font-medium text-slate-700">
                 {job.url ? (
                   <a
@@ -271,8 +283,8 @@ export function PrintWorkList({
                   job.name
                 )}
               </span>
-              {job.location ? ` · ${job.location}` : ""}
-              {" · "}
+              {job.location ? ` | ${job.location}` : ""}
+              {" | "}
               {renderDateRange(job.startDate, job.endDate)}
             </div>
           </div>
@@ -327,10 +339,10 @@ export function PrintSkillList({
                 : "text-[10.25px] leading-[1.45]",
             )}
           >
-            <span className="font-bold uppercase tracking-[0.04em] text-slate-900">
+            <span className="font-bold uppercase text-slate-900">
               {skill.name}:
             </span>{" "}
-            {skill.keywords.join(" · ")}
+            {skill.keywords.join(" | ")}
           </p>
         ))}
       </div>
@@ -349,7 +361,7 @@ export function PrintSkillList({
         <div key={skill.name} className="break-inside-avoid">
           <h3
             className={cn(
-              "font-semibold uppercase tracking-[0.08em] text-slate-600",
+              "font-semibold uppercase text-slate-600",
               compact ? "text-[9.8px]" : "text-[10px]",
             )}
           >
@@ -418,59 +430,61 @@ export function PrintProjectList({
                   project.name
                 )}
               </span>
-              {" — "}
+              {" - "}
               {project.description}
             </p>
           ) : (
-          <div className="min-w-0">
-            <h3
-              className={cn(
-                "font-bold text-slate-950",
-                compact ? "text-[11px]" : "text-[12px]",
-              )}
-            >
-              {project.url ? (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-slate-700"
-                >
-                  {project.name}
-                </a>
+            <div className="min-w-0">
+              <h3
+                className={cn(
+                  "font-bold text-slate-950",
+                  compact ? "text-[11px]" : "text-[12px]",
+                )}
+              >
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-slate-700"
+                  >
+                    {project.name}
+                  </a>
                 ) : (
                   project.name
                 )}
               </h3>
-            {(showDates || project.githubUrl) && (
-              <p className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
-                {showDates ? renderDateRange(project.startDate, project.endDate) : null}
-                {project.githubUrl ? (
-                  <>
-                    {showDates ? " · " : null}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-slate-900"
-                    >
-                      GitHub
-                    </a>
-                  </>
-                ) : null}
-              </p>
-            )}
-            <p
-              className={cn(
-                "mt-0.5 text-slate-700",
-                compact
-                  ? "text-[9.9px] leading-[1.3]"
-                  : "text-[10.5px] leading-[1.45]",
+              {(showDates || project.githubUrl) && (
+                <p className="text-[10px] uppercase text-slate-500">
+                  {showDates
+                    ? renderDateRange(project.startDate, project.endDate)
+                    : null}
+                  {project.githubUrl ? (
+                    <>
+                      {showDates ? " | " : null}
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-slate-900"
+                      >
+                        GitHub: {formatProfileDisplayUrl(project.githubUrl)}
+                      </a>
+                    </>
+                  ) : null}
+                </p>
               )}
-            >
-              {project.description}
-            </p>
-          </div>
+              <p
+                className={cn(
+                  "mt-0.5 text-slate-700",
+                  compact
+                    ? "text-[9.9px] leading-[1.3]"
+                    : "text-[10.5px] leading-[1.45]",
+                )}
+              >
+                {project.description}
+              </p>
+            </div>
           )}
 
           {showHighlights &&
@@ -488,15 +502,15 @@ export function PrintProjectList({
               {project.highlights
                 .slice(0, maxHighlights ?? project.highlights.length)
                 .map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
+                  <li key={highlight}>{highlight}</li>
+                ))}
             </ul>
           ) : null}
 
           {showStacks && !summaryOnly && project.stack?.length ? (
             <p className="mt-1 text-[10px] leading-[1.35] text-slate-600">
               <span className="font-bold text-slate-800">Stack:</span>{" "}
-              {project.stack.join(" · ")}
+              {project.stack.join(" | ")}
             </p>
           ) : null}
         </article>
@@ -545,9 +559,9 @@ export function PrintEducationList({
               entry.institution
             )}
             {entry.area ? `, ${entry.area}` : ""}
-            {entry.score ? ` · GPA ${entry.score}` : ""}
+            {entry.score ? ` | GPA ${entry.score}` : ""}
           </p>
-          <p className="text-[10px] uppercase tracking-[0.08em] text-slate-500">
+          <p className="text-[10px] uppercase text-slate-500">
             {renderDateRange(entry.startDate, entry.endDate)}
           </p>
         </article>
@@ -581,7 +595,7 @@ export function PrintCertificateList({
             )}
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {cert.issuer} ·{" "}
+            {cert.issuer} |{" "}
             <time dateTime={cert.date}>{formatMonthYear(cert.date)}</time>
           </p>
         </article>
@@ -611,7 +625,7 @@ export function PrintPublicationList({
             </a>
           </h3>
           <p className="text-[10px] leading-[1.35] text-slate-600">
-            {publication.publisher} ·{" "}
+            {publication.publisher} |{" "}
             <time dateTime={publication.releaseDate}>
               {formatMonthYear(publication.releaseDate)}
             </time>
