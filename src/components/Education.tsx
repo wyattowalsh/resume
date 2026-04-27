@@ -9,7 +9,7 @@ type EducationProps = {
 
 export function Education({ education }: EducationProps) {
   const metaChipClass =
-    "rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted-foreground shadow-sm tabular-nums";
+    "rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] text-muted-foreground shadow-sm tabular-nums";
 
   return (
     <Section title="Education" className="break-inside-avoid">
@@ -19,12 +19,12 @@ export function Education({ education }: EducationProps) {
             key={edu.institution}
             className="card-hover interactive-surface rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
           >
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div className="relative z-10 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-1">
-                <h3 className="text-base font-semibold leading-6">
+                <h3 className="font-[family:var(--font-site-heading)] text-base font-semibold leading-6 text-foreground">
                   {edu.studyType}
                 </h3>
-                <h4 className="text-sm font-medium text-foreground/75">
+                <h4 className="font-[family:var(--font-site-label)] text-sm font-medium text-foreground/75">
                   {edu.url ? (
                     <a
                       href={edu.url}
@@ -59,7 +59,7 @@ export function Education({ education }: EducationProps) {
             {(edu.area || edu.score) && (
               <div className="mt-2 space-y-1">
                 {edu.area && (
-                  <p className="text-pretty text-sm italic leading-6 text-muted-foreground">
+                  <p className="text-pretty text-sm italic leading-6 text-foreground/72">
                     in {edu.area}
                   </p>
                 )}

@@ -8,14 +8,6 @@ type ProjectsProps = {
   projects: Project[];
 };
 
-const FEATURED_PROJECT_COUNT = 3;
-
-function renderProjectDateRange(startDate: string, endDate: string | null) {
-  return `${formatMonthYear(startDate)} - ${
-    endDate ? formatMonthYear(endDate) : "Present"
-  }`;
-}
-
 function formatThemeLabel(theme: string) {
   return theme
     .split("-")
@@ -23,34 +15,16 @@ function formatThemeLabel(theme: string) {
     .join(" ");
 }
 
-function buildProjectMeta(project: Project) {
-  const metadata = [renderProjectDateRange(project.startDate, project.endDate)];
-
-  if (Array.isArray(project.stack) && project.stack.length > 0) {
-    metadata.push(project.stack.slice(0, 4).join(" / "));
+function buildProjectSummary(project: Project) {
+  if (!Array.isArray(project.stack) || project.stack.length === 0) {
+    return project.description;
   }
 
-  return metadata.join(" • ");
-}
+  const description = project.description.endsWith(".")
+    ? project.description
+    : `${project.description}.`;
 
-function buildDisclosureLabel(project: Project) {
-  const parts: string[] = [];
-
-  if (project.highlights.length > 0) {
-    parts.push(
-      `${project.highlights.length} proof point${
-        project.highlights.length === 1 ? "" : "s"
-      }`,
-    );
-  }
-
-  if (Array.isArray(project.stack) && project.stack.length > 0) {
-    parts.push(
-      `${project.stack.length} stack item${project.stack.length === 1 ? "" : "s"}`,
-    );
-  }
-
-  return parts.length > 0 ? `View ${parts.join(" + ")}` : "View details";
+  return `${description} Stack: ${project.stack.join(", ")}.`;
 }
 
 type ProjectHeadingProps = {
@@ -129,7 +103,7 @@ function ProjectThemeBadges({ project }: { project: Project }) {
       {themes.map((theme) => (
         <span
           key={theme}
-          className="rounded-full border border-primary/15 bg-primary/[0.08] px-2 py-1 font-[family:var(--font-site-label)] text-[10px] font-semibold text-primary/85"
+          className="rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] text-muted-foreground shadow-sm"
         >
           {formatThemeLabel(theme)}
         </span>
@@ -138,146 +112,65 @@ function ProjectThemeBadges({ project }: { project: Project }) {
   );
 }
 
-function ProjectStackPills({ stack }: { stack: string[] | undefined }) {
-  if (!Array.isArray(stack) || stack.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5 text-xs leading-5 text-muted-foreground">
-      <span className="mr-1 font-[family:var(--font-site-label)] font-semibold text-foreground/60">
-        Stack
-      </span>
-      {stack.map((item) => (
-        <span
-          key={item}
-          className="interactive-pill rounded-full border border-border/60 bg-background/80 px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-muted-foreground"
-        >
-          {item}
-        </span>
-      ))}
-    </div>
-  );
-}
-
 export function Projects({ projects }: ProjectsProps) {
-  const featuredProjects = projects.slice(0, FEATURED_PROJECT_COUNT);
-  const additionalProjects = projects.slice(FEATURED_PROJECT_COUNT);
-
   return (
     <Section
       title="Projects"
-      description={
-        additionalProjects.length > 0
-          ? `${projects.length} selected AI, data, and product builds. ${featuredProjects.length} featured projects stay fully expanded; ${additionalProjects.length} more remain compact while still exposing dates, links, themes, and on-demand implementation detail.`
-          : "Selected AI, data, and product builds with shipped scope, proof points, and stack context."
-      }
+      description={`${projects.length} selected AI, data, and product builds with shipped scope, proof points, and stack context.`}
       className="break-inside-avoid"
     >
-      <div className="space-y-5">
-        <div className="space-y-3">
-          {additionalProjects.length > 0 && (
-            <p className="px-1 font-[family:var(--font-site-label)] text-[11px] font-semibold text-foreground/50">
-              Featured Projects
-            </p>
-          )}
-          {featuredProjects.map((project) => (
-            <article
-              key={project.name}
-              className="group/project interactive-surface card-hover rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
-            >
-              <div className="relative z-10 flex flex-col gap-3">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="space-y-1">
-                    <ProjectHeading
-                      project={project}
-                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6"
-                    />
-                    <p className="text-xs leading-5 text-muted-foreground tabular-nums">
-                      {buildProjectMeta(project)}
-                    </p>
-                    <ProjectThemeBadges project={project} />
-                  </div>
-                  <ProjectActions project={project} />
+      <div className="flex flex-col gap-3">
+        {projects.map((project) => (
+          <article
+            key={project.name}
+            className="group/project card-hover interactive-surface rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
+          >
+            <div className="relative z-10 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+              <div className="space-y-1">
+                <ProjectHeading
+                  project={project}
+                  className="font-[family:var(--font-site-heading)] text-base font-semibold leading-6 text-foreground"
+                />
+                <div className="flex flex-wrap items-center gap-2">
+                  <ProjectThemeBadges project={project} />
                 </div>
-                <p className="text-sm leading-6 text-foreground/80 transition-colors duration-200 group-hover/project:text-foreground/90">
-                  {project.description}
-                </p>
-                {Array.isArray(project.highlights) && project.highlights.length > 0 && (
-                  <ul className="list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
-                    {project.highlights.map((highlight) => (
-                      <li
-                        key={highlight}
-                        className="transition-colors duration-200 group-hover/project:text-foreground/75"
-                      >
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <ProjectStackPills stack={project.stack} />
               </div>
-            </article>
-          ))}
-        </div>
-
-        {additionalProjects.length > 0 && (
-          <div className="space-y-3">
-            <div className="flex items-center gap-3 px-1">
-              <p className="font-[family:var(--font-site-label)] text-[11px] font-semibold text-foreground/50">
-                More Selected Builds
-              </p>
-              <div className="h-px flex-1 bg-border" />
-            </div>
-            {additionalProjects.map((project) => (
-              <article
-                key={project.name}
-                className="group/project rounded-2xl border border-border bg-background p-4 shadow-sm sm:p-5"
-              >
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="space-y-1">
-                    <ProjectHeading
-                      project={project}
-                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-base font-semibold leading-6"
-                    />
-                    <p className="text-xs leading-5 text-muted-foreground tabular-nums">
-                      {buildProjectMeta(project)}
-                    </p>
-                    <ProjectThemeBadges project={project} />
-                  </div>
-                  <ProjectActions project={project} />
+              <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+                <div className="rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] text-muted-foreground shadow-sm tabular-nums">
+                  <time dateTime={project.startDate}>
+                    {formatMonthYear(project.startDate)}
+                  </time>{" "}
+                  -{" "}
+                  {project.endDate ? (
+                    <time dateTime={project.endDate}>
+                      {formatMonthYear(project.endDate)}
+                    </time>
+                  ) : (
+                    "Present"
+                  )}
                 </div>
-                <p className="mt-2 text-sm leading-6 text-foreground/80">
-                  {project.description}
-                </p>
-                {(project.highlights.length > 0 ||
-                  (Array.isArray(project.stack) && project.stack.length > 0)) && (
-                  <details className="mt-3 rounded-2xl border border-border bg-card px-3 py-2">
-                    <summary className="cursor-pointer list-none font-[family:var(--font-site-label)] text-[11px] font-semibold text-foreground/60 transition-colors hover:text-foreground/80">
-                      {buildDisclosureLabel(project)}
-                    </summary>
-                    <div className="mt-3">
-                      {Array.isArray(project.highlights) &&
-                        project.highlights.length > 0 && (
-                          <ul className="list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
-                            {project.highlights.map((highlight) => (
-                              <li
-                                key={highlight}
-                                className="transition-colors duration-200 group-hover/project:text-foreground/75"
-                              >
-                                {highlight}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      <ProjectStackPills stack={project.stack} />
-                    </div>
-                  </details>
-                )}
-              </article>
-            ))}
-          </div>
-        )}
+                <ProjectActions project={project} />
+              </div>
+            </div>
+            <div className="mt-2">
+              <p className="text-pretty text-sm font-medium italic leading-6 text-foreground/72">
+                {buildProjectSummary(project)}
+              </p>
+              {Array.isArray(project.highlights) && project.highlights.length > 0 && (
+                <ul className="mt-2 list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
+                  {project.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="transition-colors duration-200 group-hover/project:text-foreground/75"
+                    >
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </Section>
   );

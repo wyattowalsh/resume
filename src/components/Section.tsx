@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { cn } from "../lib/utils";
+import { cn } from "@/lib/utils";
 
 type SectionProps = {
   title: string;
@@ -25,7 +25,7 @@ export function Section({
         <div className="flex items-center gap-3">
           <h2
             id={headingId}
-            className="m-0 font-[family:var(--font-site-heading)] text-2xl font-semibold text-foreground sm:text-[1.85rem]"
+            className="m-0 text-2xl sm:text-[1.85rem] font-semibold text-foreground font-[family:var(--font-site-heading)]"
           >
             {title}
           </h2>

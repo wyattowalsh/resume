@@ -41,7 +41,7 @@ export function Header({ basics }: HeaderProps) {
     "interactive-chip inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 font-[family:var(--font-site-label)] shadow-sm";
 
   return (
-    <header className="group/header interactive-surface relative overflow-hidden rounded-[2rem] border border-border/70 bg-card/85 px-6 py-7 shadow-[0_30px_80px_-48px_rgba(15,23,42,0.45)] ring-1 ring-white/40 sm:px-8 sm:py-9">
+    <header className="group/header interactive-surface relative overflow-hidden rounded-[2rem] border border-border bg-card/85 px-6 py-7 shadow-[0_30px_80px_-48px_rgba(15,23,42,0.45)] ring-1 ring-black/5 dark:ring-white/40 sm:px-8 sm:py-9">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.14),transparent_34%),radial-gradient(circle_at_top_right,rgba(245,158,11,0.10),transparent_28%)]"

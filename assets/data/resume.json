@@ -387,7 +387,7 @@
       "githubUrl": "https://github.com/wyattowalsh/agents",
       "startDate": "2026-01-01",
       "endDate": null,
-      "description": "Open-source agent tooling catalog and docs portal packaging 40+ reusable skills, shared instructions, MCP-ready configs, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related agents.",
+      "description": "Open-source agent tooling catalog and docs portal packaging 112 portable skills, 8 reusable agents, 30 MCP tools, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
       "selectionHints": {
         "themes": [
           "developer-tooling",
@@ -403,8 +403,8 @@
         ]
       },
       "highlights": [
-        "Built 40+ instruction and skill packs plus harness configs across Claude Code, Codex, GitHub Copilot, Cursor, and related IDE agents.",
-        "Shipped generated docs, install flows, and portable tool and MCP presets for code review, security, infrastructure, research, and workflow automation."
+        "Built and organized 112 portable skills plus reusable agent definitions across Claude Code, Codex, GitHub Copilot, Cursor, OpenCode, and related IDE agents.",
+        "Shipped generated docs, install flows, and 30 MCP-ready tool presets spanning code review, security, infrastructure, research, and workflow automation."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
     },
@@ -414,7 +414,7 @@
       "githubUrl": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": null,
-      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and Kaggle distribution.",
+      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and a Kaggle dataset reaching 425K+ views and 60K+ downloads.",
       "selectionHints": {
         "themes": ["data-engineering", "open-data", "analytics"],
         "aliases": ["ETL pipeline", "sports analytics dataset", "Kaggle dataset"],
@@ -422,7 +422,7 @@
       },
       "highlights": [
         "Implemented Pandera-validated NBA API ETL with daily warehouse updates plus DuckDB, SQLite, Parquet, and CSV exports.",
-        "Built docs, schema references, release workflows, and Kaggle distribution for a 180+ table public warehouse spanning 130+ stats.nba.com endpoint classes."
+        "Built docs, schema references, release workflows, and Kaggle distribution for a 180+ table public warehouse spanning 130+ stats.nba.com endpoint classes and 425K+ dataset views."
       ],
       "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
     },
@@ -445,10 +445,10 @@
       "githubUrl": "https://github.com/wyattowalsh/proxywhirl",
       "startDate": "2025-05-01",
       "endDate": null,
-      "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-validated sources, and self-healing health checks for resilient scraping and data-collection workflows.",
+      "description": "Released rotating proxy toolkit with 9 selection strategies, 114+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
       "highlights": [
         "Implemented 9 proxy rotation strategies with configurable fallback chains, per-source scoring, and performance-based selection.",
-        "Built self-healing validation for 100+ proxy sources with circuit breakers, auto-ejection, and recovery promotion."
+        "Built self-healing validation across 114+ proxy sources with circuit breakers, auto-ejection, recovery promotion, and five interfaces for different scraping workflows."
       ],
       "stack": ["Python", "SQLite", "PyPI"]
     },
@@ -483,10 +483,10 @@
       "githubUrl": "https://github.com/wyattowalsh/mcp-crawl4ai",
       "startDate": "2025-04-01",
       "endDate": null,
-      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools, agent-friendly outputs, tagged releases, and documented stdio/HTTP integration paths.",
+      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can scrape, crawl, manage sessions, and retrieve artifacts through a focused MCP surface with documented stdio and HTTP integration paths.",
       "highlights": [
         "Built a FastMCP v3 server with managed headless Chromium, session-aware crawling, and automatic Playwright setup using two runtime dependencies.",
-        "Exposed stdio/HTTP tools, resources, and prompt templates with docs, tests, and release-tagged MCP install flows."
+        "Exposed scrape, crawl, session, and artifact-retrieval workflows with docs, tests, and release-tagged MCP install flows."
       ],
       "stack": ["Python", "FastMCP", "Crawl4AI", "Playwright", "Docker"]
     },
@@ -522,10 +522,10 @@
       "githubUrl": "https://github.com/wyattowalsh/ai-web-feeds",
       "startDate": "2025-10-01",
       "endDate": null,
-      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and docs-backed browse/download surfaces.",
+      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and docs-backed browse and download surfaces.",
       "highlights": [
         "Defined YAML feed schemas with topic and source-type validation across blogs, papers, and newsletters for reliable feed quality.",
-        "Shipped helper scripts, CI checks, scheduled validation jobs, and live docs for reliable community feed review."
+        "Shipped helper scripts, CI checks, scheduled validation jobs, and a docs-backed submission/review flow for reliable community feed curation."
       ],
       "stack": ["Python", "Pydantic", "SQLModel", "YAML", "Fumadocs", "Vercel"]
     },

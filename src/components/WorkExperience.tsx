@@ -9,7 +9,7 @@ type WorkExperienceProps = {
 
 export function WorkExperience({ work }: WorkExperienceProps) {
   const metaChipClass =
-    "rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted-foreground shadow-sm tabular-nums";
+    "rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] text-muted-foreground shadow-sm tabular-nums";
 
   return (
     <Section title="Experience" className="break-inside-avoid">
@@ -19,12 +19,12 @@ export function WorkExperience({ work }: WorkExperienceProps) {
             key={job.name}
             className="card-hover interactive-surface rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
           >
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div className="relative z-10 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-1">
-                <h3 className="text-base font-semibold leading-6">
+                <h3 className="font-[family:var(--font-site-heading)] text-base font-semibold leading-6 text-foreground">
                   {job.position}
                 </h3>
-                <h4 className="text-sm font-medium text-foreground/75">
+                <h4 className="font-[family:var(--font-site-label)] text-sm font-medium text-foreground/75">
                   {job.url ? (
                     <a
                       href={job.url}
@@ -63,14 +63,16 @@ export function WorkExperience({ work }: WorkExperienceProps) {
             </div>
             <div className="mt-2">
               {job.summary && (
-                <p className="text-pretty text-sm font-medium italic leading-6 text-muted-foreground">
+                <p className="text-pretty text-sm font-medium italic leading-6 text-foreground/72">
                   {job.summary}
                 </p>
               )}
               {Array.isArray(job.highlights) && job.highlights.length > 0 && (
-                <ul className="mt-2 list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground">
+                <ul className="mt-2 list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
                   {job.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
+                    <li key={highlight} className="transition-colors duration-200 group-hover:text-foreground/75">
+                      {highlight}
+                    </li>
                   ))}
                 </ul>
               )}

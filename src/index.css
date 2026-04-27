@@ -295,8 +295,8 @@ body::-webkit-scrollbar-thumb:hover {
   --accent: oklch(0.7 0.15 58.24);
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.91 0.01 248);
-  --input: oklch(0.91 0.01 248);
+  --border: oklch(0.82 0.015 248);
+  --input: oklch(0.82 0.015 248);
   --ring: oklch(0.7 0.08 238.24);
   --chart-1: oklch(0.627 0.08 238.24);
   --chart-2: oklch(0.7 0.15 58.24);

@@ -4,20 +4,23 @@ import { describe, expect, it } from "vitest";
 import { Projects } from "./Projects";
 
 describe("Projects", () => {
-  it("renders featured and additional project groupings with metadata", () => {
+  it("renders a flat curated project list with metadata", () => {
     const siteProjects = getResumeVariant("site").projects;
 
     expect(siteProjects).toBeDefined();
 
     const markup = renderToStaticMarkup(<Projects projects={siteProjects ?? []} />);
 
-    expect(markup).toContain("Featured Projects");
-    expect(markup).toContain("More Selected Builds");
-    expect(markup).toContain("9 selected AI, data, and product builds.");
+    expect(markup).not.toContain("Featured Projects");
+    expect(markup).not.toContain("More Selected Builds");
+    expect(markup).toContain("7 selected AI, data, and product builds.");
     expect(markup).toContain("Jan 2026 - Present");
     expect(markup).toContain("Developer Tooling");
     expect(markup).toContain("GitHub");
-    expect(markup).toContain("View 2 proof points + 5 stack items");
+    expect(markup).not.toContain("View 2 proof points + 5 stack items");
+    expect(markup).not.toContain("FL Studio MCP Server");
+    expect(markup).not.toContain("Listentropy");
+    expect(markup).toContain("425K+ views and 60K+ downloads");
     expect(markup).toContain("https://mcp-crawl4ai.w4w.dev/");
   });
 

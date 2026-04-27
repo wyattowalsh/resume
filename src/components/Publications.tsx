@@ -17,11 +17,13 @@ export function Publications({ publications }: PublicationsProps) {
             key={pub.name}
             className="card-hover interactive-surface flex flex-col gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-start sm:p-5"
           >
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
+            <div className="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
               <FaBook className="text-primary" size={14} />
             </div>
-            <div className="min-w-0 flex-1 space-y-0.5">
-              <h3 className="text-sm font-semibold leading-6">{pub.name}</h3>
+            <div className="relative z-10 min-w-0 flex-1 space-y-0.5">
+              <h3 className="font-[family:var(--font-site-heading)] text-base font-semibold leading-6 text-foreground">
+                {pub.name}
+              </h3>
               <p className="text-pretty text-sm leading-6 text-muted-foreground tabular-nums">
                 Published in{" "}
                 <span className="font-semibold">{pub.publisher}</span> in{" "}
@@ -35,7 +37,7 @@ export function Publications({ publications }: PublicationsProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View publication: ${pub.name}`}
-              className="shrink-0 self-start transition-colors hover:text-primary"
+              className="relative z-10 shrink-0 self-start rounded-full border border-border bg-background p-2 text-foreground/65 shadow-sm transition-colors hover:border-primary/20 hover:text-primary"
             >
               <LuExternalLink size={12} strokeWidth={2} />
             </a>

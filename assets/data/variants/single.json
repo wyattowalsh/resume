@@ -41,22 +41,22 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Python/TypeScript MCP workflow catalog with 40+ reusable skills, FastMCP configs, and cross-runtime agent automation.",
+      "description": "Python and TypeScript agent tooling catalog with 112 portable skills, 8 reusable agents, and 30 MCP tools.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Python warehouse using Pandas, Polars, SQLAlchemy, DuckDB, and Pandera across 65K+ games, 13M+ events, and Parquet/SQLite exports.",
+      "description": "NBA analytics warehouse covering 65K+ games, 13M+ events, and a Kaggle dataset with 425K+ views and 60K+ downloads.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Python/SQLite proxy toolkit with nine rotation strategies, 100+ sources, PyPI distribution, and self-healing health checks.",
+      "description": "Python and SQLite proxy toolkit with 9 rotation strategies, 114+ sources, and self-healing circuit breakers.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "Personal Website: w4w.dev",
-      "description": "Next.js/React/TypeScript publishing system with Tailwind CSS, MDX, durable content, SEO, and polished public UI.",
+      "description": "Next.js and MDX publishing system with polished public UI, durable content workflows, and strong SEO.",
       "highlightIndexes": [0, 1]
     }
   ],

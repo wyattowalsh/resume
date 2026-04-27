@@ -53,39 +53,38 @@
   ],
   "projects": [
     {
-      "name": "AI Agent Harness Configs",
+      "name": "NBA Basketball Database",
+      "description": "Open-source NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, multi-format exports, and a Kaggle dataset reaching 425K+ views and 60K+ downloads.",
       "highlightIndexes": [0, 1]
     },
     {
-      "name": "NBA Basketball Database",
+      "name": "AI Agent Harness Configs",
+      "description": "Open-source agent tooling catalog packaging 112 portable skills, 8 reusable agents, 30 MCP tools, and cross-runtime workflows for modern coding assistants.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
-      "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "Listentropy",
-      "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "AI/ML Web Feeds",
+      "description": "Rotating proxy toolkit with 9 selection strategies, 114+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping workflows.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "MCP-Crawl4AI",
+      "description": "FastMCP server wrapping Crawl4AI so agents can scrape, crawl, manage sessions, and retrieve artifacts through a focused MCP surface.",
+      "highlightIndexes": [0, 1]
+    },
+    {
+      "name": "AI/ML Web Feeds",
+      "description": "Curated AI and ML feed platform with typed schemas, validation, contributor workflows, OPML exports, and docs-backed browse and download surfaces.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "Personal Website: w4w.dev",
-      "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "FL Studio MCP Server",
+      "description": "Long-running Next.js and MDX publishing system pairing a polished public frontend, strong SEO, and durable technical content workflows.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "IINA Bookmarks Plugin",
+      "description": "Advanced bookmark-management plugin for IINA with multiple UI interfaces, tag organization, import/export tooling, and resilient file reconciliation.",
       "highlightIndexes": [0, 1]
     }
   ],

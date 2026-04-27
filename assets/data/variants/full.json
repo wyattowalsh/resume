@@ -50,17 +50,17 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog and docs portal packaging 40+ reusable skills, shared instructions, MCP-ready configs, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related agents.",
+      "description": "Open-source agent tooling catalog and docs portal packaging 112 portable skills, 8 reusable agents, 30 MCP tools, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and Kaggle distribution.",
+      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and a Kaggle dataset reaching 425K+ views and 60K+ downloads.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-validated sources, and self-healing health checks for resilient scraping and data-collection workflows.",
+      "description": "Released rotating proxy toolkit with 9 selection strategies, 114+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
       "highlightIndexes": [0, 1]
     },
     {
@@ -70,12 +70,12 @@
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools, agent-friendly outputs, tagged releases, and documented stdio/HTTP integration paths.",
+      "description": "Released FastMCP server wrapping Crawl4AI so AI agents can scrape, crawl, manage sessions, and retrieve artifacts through a focused MCP surface with documented stdio and HTTP integration paths.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "Personal Website: w4w.dev",
-      "description": "Long-running personal web app and MDX publishing system built with Next.js, combining a polished public-facing frontend with a richly tooled technical blog, strong SEO, and durable content workflows.",
+      "description": "Long-running personal web app and MDX publishing system built with Next.js, pairing a polished public-facing frontend, a richly tooled technical blog, strong SEO, and durable content workflows.",
       "highlightIndexes": [0, 1]
     }
   ],
