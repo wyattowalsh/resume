@@ -79,26 +79,27 @@ Run the focused Vitest suite for the shared date and resume-variant resolver log
 pnpm generate:resume
 ```
 
-Compile `src/scripts/generate.ts`, then generate print artifacts from the `/full` and `/single` routes.
+Compile `src/scripts/generate.ts`, then generate PDF/PNG print artifacts from the `/full` and `/single` routes plus semantic DOCX exports from the same curated variants.
 
 ```bash
 pnpm check:artifacts
 ```
 
-Regenerate the print artifacts, then verify the expected PDFs/PNGs exist, were generated recently, both generated PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, each PDF page uses the expected lower-page text band and density, page 1 of the full PDF carries Experience plus Skills before Projects, page 2 of the full PDF stays focused on Projects plus Education & Certifications, Publications stay out of the full PDF, the curated work/project/skills/education/certification content still appears in the generated PDFs, the full PDF exposes parseable project tech-stack keywords, the 1-page PDF preserves the intended compact extraction order, and the public download PDFs under `public/downloads/` still satisfy the same page-budget/content checks.
+Regenerate the artifacts, then verify the expected PDFs/PNGs/DOCX files exist, were generated recently, both generated PDFs stay letter-sized, the full artifact stays at 2 pages, the single artifact stays at 1 page, each PDF page uses the expected lower-page text band and density, page 1 of the full PDF carries Experience plus Skills before Projects, page 2 of the full PDF stays focused on Projects plus Education & Certifications, Publications stay out of the full PDF, the curated work/project/skills/education/certification content still appears in the generated PDFs and DOCX files, the full PDF exposes parseable project tech-stack keywords, the 1-page PDF preserves the intended compact extraction order, and the public downloads under `public/downloads/` still satisfy the same content checks.
 
-The artifact checker also runs ATS-oriented PDF checks across generated and public download PDFs:
+The artifact checker also runs ATS-oriented checks across generated and public download files:
 
 - `pdfjs-dist` and `pdftotext` must extract contiguous contact fields, profile URLs, section headings, selected work entries, skill groups, keywords, and project descriptions.
 - `pdfinfo` must report tagged, unencrypted, non-JavaScript PDFs.
 - `pdffonts` must report embedded Unicode fonts and no Type 3 fonts.
 - `pdfimages -list` must report no embedded raster images.
+- DOCX `word/document.xml` must expose parseable resume text and `document.xml.rels` must contain the expected contact/profile/project hyperlink targets.
 
 ```bash
 pnpm sync:public-downloads
 ```
 
-Copy the latest generated PDF artifacts into `public/downloads/` so the public site can expose them as static downloads without making `/full` or `/single` public routes.
+Copy the latest generated PDF and DOCX artifacts into `public/downloads/` so the public site can expose them as static downloads without making `/full` or `/single` public routes.
 
 ## Resume generation workflow
 
@@ -111,18 +112,20 @@ Copy the latest generated PDF artifacts into `public/downloads/` so the public s
 - `pnpm check:artifacts` requires Poppler tools (`pdfinfo`, `pdffonts`, `pdftotext`, and `pdfimages`) for the ATS PDF checks. On macOS, install them with `brew install poppler`.
 - It renders `/full` and `/single` in Puppeteer, then writes:
   - `assets/outputs/resume-full.pdf`
+  - `assets/outputs/resume-full.docx`
   - `assets/outputs/resume-full.png`
   - `assets/outputs/resume-single.pdf`
+  - `assets/outputs/resume-single.docx`
   - `assets/outputs/resume-single.png`
 
 `assets/outputs/` is gitignored, so generated artifacts are not committed by default.
 
-`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist` and Poppler, including section-order and ATS parseability checks so column-style extraction, font, image, and contact/keyword regressions are caught in CI.
+`src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist` and Poppler and the DOCX files through their Word XML, including section-order and ATS parseability checks so column-style extraction, font, image, hyperlink, and contact/keyword regressions are caught in CI.
 
-The CI workflow also uploads the generated PDF/PNG artifacts on every run so layout changes can be inspected without regenerating them locally.
+The CI workflow also uploads the generated PDF/PNG/DOCX artifacts on every run so layout changes can be inspected without regenerating them locally.
 
 ## Production note
 
 The print routes exist in the app code, but they are intentionally not public on Vercel. `api/ssr.ts` blocks both `/full` and `/single` when `VERCEL_ENV=production`, which means only the interactive `/` route is exposed in production.
 
-If public download PDFs are enabled, they are served as static files from `public/downloads/` and remain separate from the blocked print routes.
+If public resume downloads are enabled, they are served as static files from `public/downloads/` and remain separate from the blocked print routes.

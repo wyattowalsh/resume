@@ -13,7 +13,7 @@
     "test": "vitest run",
     "generate:resume": "pnpm build:script && node src/scripts/generate.js",
     "check:artifacts": "pnpm generate:resume && node src/scripts/check-artifacts.js",
-    "sync:public-downloads": "mkdir -p public/downloads && cp assets/outputs/resume-full.pdf public/downloads/wyatt-walsh-resume-full.pdf && cp assets/outputs/resume-single.pdf public/downloads/wyatt-walsh-resume-single.pdf"
+    "sync:public-downloads": "mkdir -p public/downloads && cp assets/outputs/resume-full.pdf public/downloads/wyatt-walsh-resume-full.pdf && cp assets/outputs/resume-single.pdf public/downloads/wyatt-walsh-resume-single.pdf && cp assets/outputs/resume-full.docx public/downloads/wyatt-walsh-resume-full.docx && cp assets/outputs/resume-single.docx public/downloads/wyatt-walsh-resume-single.docx"
   },
   "dependencies": {
     "@fontsource/monaspace-argon": "^5.2.5",
@@ -28,6 +28,7 @@
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
+    "docx": "9.6.1",
     "express": "^5.1.0",
     "next-themes": "^0.4.6",
     "react": "^19.1.0",

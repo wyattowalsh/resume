@@ -29,17 +29,19 @@ This repo intentionally ships three different resume artifacts from one canonica
 - `pnpm lint`
 - `pnpm check:artifacts`
 
-`pnpm check:artifacts` regenerates `/full` and `/single`, verifies page counts and letter sizing, checks curated content presence, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
+`pnpm check:artifacts` regenerates `/full` and `/single`, verifies page counts and letter sizing, checks curated content presence across PDF and DOCX artifacts, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
 
-The same gate also verifies ATS-oriented PDF parseability for generated artifacts and static public downloads:
+The same gate also verifies ATS-oriented parseability for generated artifacts and static public downloads:
 
 - PDFs must remain tagged, unencrypted, JavaScript-free, and image-free.
 - Fonts must be embedded Unicode fonts, with Type 3 fonts rejected.
 - `pdfjs-dist` and Poppler `pdftotext` must extract contiguous contact fields, profile URLs, section headings, selected work entries, skill groups, keywords, and project descriptions.
+- DOCX `word/document.xml` must expose parseable contact fields, section headings, selected entries, skills, education, certifications, and project descriptions.
+- DOCX relationships must retain contact, profile, and project hyperlinks.
 - Required headings must not degrade into letter-spaced text such as `E X P E R I E N C E`.
 
 Local runs need Poppler (`pdfinfo`, `pdffonts`, `pdftotext`, `pdfimages`) on `PATH`. If Puppeteer cannot find Chrome automatically, run with `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`.
 
 ## CI behavior
 
-The GitHub Actions workflow installs `poppler-utils`, runs the same core validation chain, regenerates the print artifacts, runs `src/scripts/check-artifacts.ts`, and uploads the generated PDFs/PNGs as workflow artifacts for visual inspection.
+The GitHub Actions workflow installs `poppler-utils`, runs the same core validation chain, regenerates the print artifacts and DOCX exports, runs `src/scripts/check-artifacts.ts`, and uploads the generated PDFs/PNGs/DOCX files as workflow artifacts for inspection.

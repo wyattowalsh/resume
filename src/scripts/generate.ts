@@ -4,6 +4,7 @@ import net from "node:net";
 import path from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
 import puppeteer, { type Browser } from "puppeteer";
+import { generateDocxArtifacts } from "./generate-docx.js";
 
 const APP_URL_OVERRIDE = process.env.APP_URL?.trim() || undefined;
 const LOCAL_APP_HOST = "127.0.0.1";
@@ -411,6 +412,9 @@ async function generateResume() {
       await page.close();
       console.log(`  -> ${variant.pdfName}, ${variant.pngName}`);
     }
+
+    console.log("\nGenerating DOCX artifacts...");
+    await generateDocxArtifacts(OUTPUT_DIR);
 
     console.log("\nResume generation complete!");
   } catch (error) {

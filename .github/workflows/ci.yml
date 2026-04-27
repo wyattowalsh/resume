@@ -66,8 +66,10 @@ jobs:
           name: resume-artifacts
           path: |
             assets/outputs/resume-full.pdf
+            assets/outputs/resume-full.docx
             assets/outputs/resume-full.png
             assets/outputs/resume-single.pdf
+            assets/outputs/resume-single.docx
             assets/outputs/resume-single.png
 
       - name: Verify tracked files remain clean

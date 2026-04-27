@@ -46,6 +46,38 @@ export function SiteResumeLayout({
 }: SiteResumeLayoutProps) {
   const footerDownloadLinkClass =
     "interactive-chip inline-flex min-h-[36px] items-center rounded-full border border-border/70 bg-background/75 px-3 py-1.5 text-xs font-medium tracking-[0.08em] text-muted-foreground shadow-sm";
+  const downloadGroups = [
+    {
+      label: "1-page",
+      links: [
+        {
+          href: "/downloads/wyatt-walsh-resume-single.pdf",
+          label: "PDF",
+          ariaLabel: "Open the 1-page resume PDF in a new tab",
+        },
+        {
+          href: "/downloads/wyatt-walsh-resume-single.docx",
+          label: "DOCX",
+          ariaLabel: "Open the 1-page resume DOCX in a new tab",
+        },
+      ],
+    },
+    {
+      label: "2-page",
+      links: [
+        {
+          href: "/downloads/wyatt-walsh-resume-full.pdf",
+          label: "PDF",
+          ariaLabel: "Open the 2-page resume PDF in a new tab",
+        },
+        {
+          href: "/downloads/wyatt-walsh-resume-full.docx",
+          label: "DOCX",
+          ariaLabel: "Open the 2-page resume DOCX in a new tab",
+        },
+      ],
+    },
+  ];
 
   return (
     <main
@@ -106,26 +138,30 @@ export function SiteResumeLayout({
       <footer className="mt-10 print:hidden">
         <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-2 text-xs text-muted-foreground shadow-sm">
           <span className="px-1 font-[family:var(--font-site-label)] uppercase tracking-[0.18em] text-foreground/45">
-            PDFs
+            Downloads
           </span>
-          <a
-            href="/downloads/wyatt-walsh-resume-full.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open the 2-page resume PDF in a new tab"
-            className={footerDownloadLinkClass}
-          >
-            2-page PDF
-          </a>
-          <a
-            href="/downloads/wyatt-walsh-resume-single.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open the 1-page resume PDF in a new tab"
-            className={footerDownloadLinkClass}
-          >
-            1-page PDF
-          </a>
+          {downloadGroups.map((group) => (
+            <div
+              key={group.label}
+              className="flex items-center gap-1 rounded-full bg-muted/35 px-1 py-1"
+            >
+              <span className="px-2 font-[family:var(--font-site-label)] uppercase tracking-[0.16em] text-foreground/50">
+                {group.label}
+              </span>
+              {group.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.ariaLabel}
+                  className={footerDownloadLinkClass}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          ))}
         </div>
       </footer>
     </main>

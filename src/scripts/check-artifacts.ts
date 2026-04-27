@@ -135,8 +135,10 @@ interface ResolvedVariantContentSelection {
 
 const expectedArtifacts = [
   "resume-full.pdf",
+  "resume-full.docx",
   "resume-full.png",
   "resume-single.pdf",
+  "resume-single.docx",
   "resume-single.png",
 ] as const;
 
@@ -149,6 +151,11 @@ const publicDownloadPdfExpectations: PdfExpectation[] = [
   { fileName: "wyatt-walsh-resume-full.pdf", expectedPages: 2 },
   { fileName: "wyatt-walsh-resume-single.pdf", expectedPages: 1 },
 ];
+
+const publicDownloadDocxArtifacts = [
+  "wyatt-walsh-resume-full.docx",
+  "wyatt-walsh-resume-single.docx",
+] as const;
 
 const seniorAiMlTargetKeywords = [
   "Senior AI/ML Engineer",
@@ -1119,6 +1126,60 @@ async function getPopplerText(filePath: string, label: string) {
   return { text, layoutText };
 }
 
+function decodeXmlEntities(text: string) {
+  return text
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'");
+}
+
+function extractDocxText(documentXml: string) {
+  return decodeXmlEntities(
+    documentXml
+      .replace(/<w:tab\b[^>]*\/>/g, " ")
+      .replace(/<\/w:p>/g, "\n")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim(),
+  );
+}
+
+async function getDocxXml(filePath: string, label: string) {
+  const [documentXml, relationshipsXml] = await Promise.all([
+    runRequiredCli("unzip", ["-p", filePath, "word/document.xml"], label),
+    runRequiredCli(
+      "unzip",
+      ["-p", filePath, "word/_rels/document.xml.rels"],
+      label,
+    ),
+  ]);
+
+  return { documentXml, relationshipsXml };
+}
+
+function assertDocxHyperlinkTargets(
+  relationshipsXml: string,
+  label: string,
+  resume: ResumeSelection,
+  variant: ResolvedVariantContentSelection,
+) {
+  const requiredTargets = [
+    resume.basics.url,
+    `mailto:${resume.basics.email}`,
+    `tel:${resume.basics.phone}`,
+    ...resume.basics.profiles.map((profile) => profile.url),
+    ...variant.projects.map((project) => project.githubUrl),
+  ];
+
+  for (const target of requiredTargets) {
+    if (!relationshipsXml.includes(target)) {
+      fail(`${label} DOCX relationships must contain hyperlink target "${target}".`);
+    }
+  }
+}
+
 function assertNoLetterSpacedHeadings(text: string, label: string) {
   const collapsed = normalizeForStrictIncludes(text);
   const letterSpacedNeedles = [
@@ -1271,6 +1332,50 @@ async function assertAtsParseability(
   );
 
   console.log(`✓ ${label} passes ATS parseability checks`);
+}
+
+async function assertDocxParseability(
+  filePath: string,
+  label: string,
+  resume: ResumeSelection,
+  variant: ResolvedVariantContentSelection,
+) {
+  const { documentXml, relationshipsXml } = await getDocxXml(filePath, label);
+  const text = extractDocxText(documentXml);
+
+  assertNoLetterSpacedHeadings(text, `${label} DOCX text`);
+  assertContactFieldsBeforeExperience(text, `${label} DOCX text`, resume);
+  assertStandardAtsSectionOrder(text, `${label} DOCX text`, variant);
+  assertRolePatternsExtractCleanly(text, `${label} DOCX text`, variant);
+  assertSeniorAiMlTargetKeywords(text, `${label} DOCX text`);
+  assertNoRedundantUrlLabels(text, `${label} DOCX text`);
+  assertParseableCoreFields(
+    text,
+    `${label} DOCX text`,
+    resume,
+    variant,
+    true,
+  );
+
+  if (variant.education.length) {
+    assertStrictTextIncludes(text, "Education & Certifications", `${label} DOCX text`);
+    assertNormalizedTextIncludesAll(
+      text,
+      variant.education,
+      `${label} DOCX text`,
+    );
+  }
+
+  if (variant.certificates.length) {
+    assertNormalizedTextIncludesAll(
+      text,
+      variant.certificates,
+      `${label} DOCX text`,
+    );
+  }
+
+  assertDocxHyperlinkTargets(relationshipsXml, label, resume, variant);
+  console.log(`✓ ${label} passes DOCX parseability checks`);
 }
 
 async function assertFullResumePdf(
@@ -1553,6 +1658,18 @@ async function runArtifactChecks() {
     resolvedSingleVariant,
     1,
   );
+  await assertDocxParseability(
+    path.join(OUTPUT_DIR, "resume-full.docx"),
+    "resume-full.docx",
+    resume,
+    resolvedFullVariant,
+  );
+  await assertDocxParseability(
+    path.join(OUTPUT_DIR, "resume-single.docx"),
+    "resume-single.docx",
+    resume,
+    resolvedSingleVariant,
+  );
 
   for (const expectation of publicDownloadPdfExpectations) {
     const filePath = await assertPublicDownloadExists(expectation.fileName);
@@ -1561,6 +1678,10 @@ async function runArtifactChecks() {
       path.join("public", "downloads", expectation.fileName),
       expectation.expectedPages,
     );
+  }
+
+  for (const artifact of publicDownloadDocxArtifacts) {
+    await assertPublicDownloadExists(artifact);
   }
 
   await assertFullResumePdf(
@@ -1588,6 +1709,18 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     1,
+  );
+  await assertDocxParseability(
+    path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-full.docx"),
+    path.join("public", "downloads", "wyatt-walsh-resume-full.docx"),
+    resume,
+    resolvedFullVariant,
+  );
+  await assertDocxParseability(
+    path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-single.docx"),
+    path.join("public", "downloads", "wyatt-walsh-resume-single.docx"),
+    resume,
+    resolvedSingleVariant,
   );
 
   console.log("Artifact regression checks passed.");
