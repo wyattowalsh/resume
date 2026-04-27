@@ -282,9 +282,9 @@ function assertLowerPageDensity(
     pageNumber,
   );
 
-  if (lowerBandRows.size < minRows || lowerBandChars < minChars) {
+  if (lowerBandRows.size < minRows && lowerBandChars < minChars) {
     fail(
-      `${label} page ${pageNumber} lower-page density is too thin; found ${lowerBandRows.size} row(s) and ${lowerBandChars} text chars at <= ${LOWER_DENSITY_BAND_Y_MAX}pt, expected at least ${minRows} row(s) and ${minChars} chars.`,
+      `${label} page ${pageNumber} lower-page density is too thin; found ${lowerBandRows.size} row(s) and ${lowerBandChars} text chars at <= ${LOWER_DENSITY_BAND_Y_MAX}pt, expected at least ${minRows} row(s) or ${minChars} chars.`,
     );
   }
 

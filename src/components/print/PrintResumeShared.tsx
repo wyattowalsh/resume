@@ -265,7 +265,7 @@ export function PrintWorkList({
           key={job.name}
           className={cn(
             "resume-print-entry break-inside-avoid border-t border-slate-100 first:border-t-0 first:pt-0",
-            compact ? "pt-1.5" : "pt-4",
+            compact ? "pt-1" : "pt-4",
           )}
         >
           <div className="min-w-0">
@@ -320,7 +320,7 @@ export function PrintWorkList({
             className={cn(
               "list-disc pl-4 text-slate-800 marker:text-slate-400",
               compact
-                ? "mt-1.5 space-y-0.5 text-[9.8px] leading-[1.32]"
+                ? "mt-1 space-y-0 text-[9.75px] leading-[1.25]"
                 : "mt-2 space-y-0.5 text-[10.15px] leading-[1.36]",
             )}
           >
@@ -411,14 +411,14 @@ export function PrintProjectList({
   const includeStackText = showStacks;
   const spacingClass = summaryOnly
     ? compact
-      ? "space-y-1"
+      ? "space-y-1.5"
       : "space-y-1.5"
     : compact
       ? "space-y-2"
       : spaciousFullList
-        ? "space-y-8"
+        ? "space-y-5"
         : denseFullList
-        ? "space-y-8"
+        ? "space-y-5"
         : "space-y-2";
 
   return (
@@ -431,7 +431,7 @@ export function PrintProjectList({
             !summaryOnly &&
               cn(
                 "border-t border-slate-100 first:border-t-0 first:pt-0",
-                spaciousFullList ? "pt-5" : "pt-1.5",
+                spaciousFullList ? "pt-4" : denseFullList ? "pt-3" : "pt-1.5",
               ),
           )}
         >
@@ -440,7 +440,7 @@ export function PrintProjectList({
               className={cn(
                 "text-slate-700",
                 compact
-                  ? "text-[9.55px] leading-[1.28]"
+                  ? "text-[9.6px] leading-[1.32]"
                   : "text-[10.15px] leading-[1.35]",
               )}
             >
@@ -526,7 +526,7 @@ export function PrintProjectList({
               className={cn(
                 "list-disc pl-4 text-slate-800 marker:text-slate-400",
                 summaryOnly
-                  ? "mt-0.5 space-y-0 text-[9.25px] leading-[1.2]"
+                  ? "mt-0.5 space-y-0.5 text-[9.3px] leading-[1.24]"
                   : compact
                   ? "space-y-0.5 text-[10px] leading-[1.35]"
                   : "mt-1.5 space-y-0.5 text-[10.15px] leading-[1.35]",
