@@ -16,6 +16,13 @@ function renderProjectDateRange(startDate: string, endDate: string | null) {
   }`;
 }
 
+function formatThemeLabel(theme: string) {
+  return theme
+    .split("-")
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(" ");
+}
+
 function buildProjectMeta(project: Project) {
   const metadata = [renderProjectDateRange(project.startDate, project.endDate)];
 
@@ -24,6 +31,26 @@ function buildProjectMeta(project: Project) {
   }
 
   return metadata.join(" • ");
+}
+
+function buildDisclosureLabel(project: Project) {
+  const parts: string[] = [];
+
+  if (project.highlights.length > 0) {
+    parts.push(
+      `${project.highlights.length} proof point${
+        project.highlights.length === 1 ? "" : "s"
+      }`,
+    );
+  }
+
+  if (Array.isArray(project.stack) && project.stack.length > 0) {
+    parts.push(
+      `${project.stack.length} stack item${project.stack.length === 1 ? "" : "s"}`,
+    );
+  }
+
+  return parts.length > 0 ? `View ${parts.join(" + ")}` : "View details";
 }
 
 type ProjectHeadingProps = {
@@ -90,6 +117,27 @@ function ProjectHeading({ project, className }: ProjectHeadingProps) {
   );
 }
 
+function ProjectThemeBadges({ project }: { project: Project }) {
+  const themes = project.selectionHints?.themes?.slice(0, 2) ?? [];
+
+  if (themes.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="flex flex-wrap items-center gap-1.5">
+      {themes.map((theme) => (
+        <span
+          key={theme}
+          className="rounded-full border border-primary/12 bg-primary/[0.06] px-2 py-1 font-[family:var(--font-site-label)] text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/85"
+        >
+          {formatThemeLabel(theme)}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function ProjectStackPills({ stack }: { stack: string[] | undefined }) {
   if (!Array.isArray(stack) || stack.length === 0) {
     return null;
@@ -121,7 +169,7 @@ export function Projects({ projects }: ProjectsProps) {
       title="Projects"
       description={
         additionalProjects.length > 0
-          ? "Selected AI, data, and product builds. Featured projects carry full proof points up front; the rest stay compact while still exposing dates, links, and on-demand implementation detail."
+          ? `${projects.length} selected AI, data, and product builds. ${featuredProjects.length} featured projects stay fully expanded; ${additionalProjects.length} more remain compact while still exposing dates, links, themes, and on-demand implementation detail.`
           : "Selected AI, data, and product builds with shipped scope, proof points, and stack context."
       }
       className="break-inside-avoid"
@@ -148,6 +196,7 @@ export function Projects({ projects }: ProjectsProps) {
                     <p className="text-xs leading-5 text-muted-foreground">
                       {buildProjectMeta(project)}
                     </p>
+                    <ProjectThemeBadges project={project} />
                   </div>
                   <ProjectActions project={project} />
                 </div>
@@ -194,6 +243,7 @@ export function Projects({ projects }: ProjectsProps) {
                     <p className="text-xs leading-5 text-muted-foreground">
                       {buildProjectMeta(project)}
                     </p>
+                    <ProjectThemeBadges project={project} />
                   </div>
                   <ProjectActions project={project} />
                 </div>
@@ -204,7 +254,7 @@ export function Projects({ projects }: ProjectsProps) {
                   (Array.isArray(project.stack) && project.stack.length > 0)) && (
                   <details className="mt-3 rounded-2xl border border-border/50 bg-card/65 px-3 py-2">
                     <summary className="cursor-pointer list-none font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground/55 transition-colors hover:text-foreground/75">
-                      View proof points & stack
+                      {buildDisclosureLabel(project)}
                     </summary>
                     <div className="mt-3">
                       {Array.isArray(project.highlights) &&

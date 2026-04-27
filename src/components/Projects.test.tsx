@@ -13,9 +13,12 @@ describe("Projects", () => {
 
     expect(markup).toContain("Featured Projects");
     expect(markup).toContain("More Selected Builds");
+    expect(markup).toContain("9 selected AI, data, and product builds.");
     expect(markup).toContain("Jan 2026 - Present");
+    expect(markup).toContain("Developer Tooling");
     expect(markup).toContain("GitHub");
-    expect(markup).toContain("View proof points &amp; stack");
+    expect(markup).toContain("View 2 proof points + 5 stack items");
+    expect(markup).toContain("https://mcp-crawl4ai.w4w.dev/");
   });
 
   it("keeps a simple layout when there are only a few projects", () => {

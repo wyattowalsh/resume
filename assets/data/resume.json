@@ -479,6 +479,7 @@
     },
     {
       "name": "MCP-Crawl4AI",
+      "url": "https://mcp-crawl4ai.w4w.dev/",
       "githubUrl": "https://github.com/wyattowalsh/mcp-crawl4ai",
       "startDate": "2025-04-01",
       "endDate": null,
