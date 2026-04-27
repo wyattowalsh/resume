@@ -184,7 +184,6 @@ export function PrintResumeHeader({
               : "text-[10.25px] leading-[1.38]",
           )}
         >
-          <span className="font-bold text-slate-900">Summary:</span>{" "}
           {basics.summary}
         </p>
       )}
@@ -265,8 +264,8 @@ export function PrintWorkList({
         <article
           key={job.name}
           className={cn(
-            "resume-print-entry break-inside-avoid border-t border-slate-100 pt-2 first:border-t-0 first:pt-0",
-            compact && "pt-1.5",
+            "resume-print-entry break-inside-avoid border-t border-slate-100 first:border-t-0 first:pt-0",
+            compact ? "pt-1.5" : "pt-4",
           )}
         >
           <div className="min-w-0">
@@ -307,10 +306,10 @@ export function PrintWorkList({
           {showSummaries && job.summary && (
             <p
               className={cn(
-                "mt-1 text-slate-700",
+                "text-slate-700",
                 compact
-                  ? "text-[9.9px] leading-[1.32]"
-                  : "text-[10.2px] leading-[1.38]",
+                  ? "mt-1 text-[9.9px] leading-[1.32]"
+                  : "mt-1.5 text-[10.2px] leading-[1.38]",
               )}
             >
               {job.summary}
@@ -319,10 +318,10 @@ export function PrintWorkList({
 
           <ul
             className={cn(
-              "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
+              "list-disc pl-4 text-slate-800 marker:text-slate-400",
               compact
-                ? "space-y-0.5 text-[9.8px] leading-[1.32]"
-                : "space-y-0.5 text-[10.15px] leading-[1.36]",
+                ? "mt-1.5 space-y-0.5 text-[9.8px] leading-[1.32]"
+                : "mt-2 space-y-0.5 text-[10.15px] leading-[1.36]",
             )}
           >
             {job.highlights.map((highlight) => (
@@ -416,7 +415,7 @@ export function PrintProjectList({
     : compact
       ? "space-y-2"
       : spaciousFullList
-        ? "space-y-11"
+        ? "space-y-[65px]"
         : "space-y-2";
 
   return (

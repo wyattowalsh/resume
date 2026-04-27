@@ -59,7 +59,7 @@ export function FullResumeLayout({
       </div>
 
       {skills && skills.length > 0 && (
-        <div className="mt-3">
+        <div className="mt-20">
           <PrintSection title="Skills">
             <PrintSkillList
               skills={skills}

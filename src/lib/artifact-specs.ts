@@ -14,7 +14,7 @@ export const singleArtifactSpec = {
   showSummary: true,
   showWorkSummaries: false,
   showProjectHighlights: true,
-  maxProjectHighlights: 1,
+  maxProjectHighlights: 2,
   showProjectStacks: false,
   showProjectDates: false,
   projectSummaryOnly: true,

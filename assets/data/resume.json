@@ -90,8 +90,8 @@
       },
       "highlights": [
         "Pioneered firm-wide rollout of secure generative AI developer tools (LLMs, GitHub Copilot, Codeium) as one of the first 500 engineers, shaping scalable deployment and leading workshops for technical and non-technical teams.",
-        "Devised ML-driven data-quality anomaly detection for credit trading and risk analytics, reducing false positives by 25% and cutting manual review time so risk teams could focus on critical alerts.",
-        "Developed resilient Python wrapper for KDB+, democratizing data access for 5,000+ users with CI-style tests and optimized Q functions, reducing manual processing by over 10 hours per week.",
+        "Devised ML-driven anomaly detection for credit trading and risk analytics, reducing false positives by 25% and manual review time for risk teams.",
+        "Developed a resilient Python wrapper for KDB+ with CI-style tests and optimized Q functions, democratizing data access for 5,000+ users.",
         "Engineered a cloud-function-driven asset-fee data sink, consolidating 10+ sources into a centralized database, cutting manual maintenance by 90% and providing on-demand access for traders through a Python SDK, REST API, and interactive dashboard."
       ]
     },
@@ -103,8 +103,8 @@
       "location": "Remote",
       "summary": "Delivered a secure collateralized lending web app as the founding engineer, pairing React/Next.js product execution with wallet and smart-contract integrations, CI/CD, test automation, and founder-facing delivery from Figma to production UI.",
       "highlights": [
-        "Architected a scalable collateralized lending application using React, Next.js, TypeScript, MobX, and ethers.js, translating complex wallet and smart-contract flows into secure, performant user workflows.",
-        "Implemented end-to-end CI/CD with GitHub Actions, Husky, Cypress, and Jest to halve release cycles and raise test coverage to 90%, while mentoring a front-end intern to build key UI components.",
+        "Architected a scalable collateralized lending app with React, Next.js, TypeScript, MobX, and ethers.js for secure wallet and smart-contract workflows.",
+        "Implemented CI/CD with GitHub Actions, Husky, Cypress, and Jest, halving release cycles, raising test coverage to 90%, and mentoring a front-end intern.",
         "Optimized front-end performance through code splitting, lazy loading, and asset caching, reducing initial load times by 40% and JavaScript bundle size by 30%."
       ]
     },
@@ -116,8 +116,8 @@
       "location": "Remote",
       "summary": "Founded and shipped a grant-funded data product around a 1M+ Reddit post/comment dataset, delivering the public web surface, Python extraction and normalization pipelines, and marketplace publication workflow.",
       "highlights": [
-        "Engineered and launched a Next.js/TailwindCSS public site with top-tier Lighthouse scores and secured $75K in grant funding via a competitive ecosystem program.",
-        "Engineered Python pipelines to extract and normalize a 1M+ Reddit posts/comments dataset and publish a reusable data product for external analytics workflows."
+        "Launched a Next.js/TailwindCSS public site with top-tier Lighthouse scores and secured $75K in competitive ecosystem grant funding.",
+        "Built Python pipelines that normalized a 1M+ Reddit posts/comments dataset into a reusable analytics data product for external users."
       ]
     },
     {
@@ -403,7 +403,7 @@
         ]
       },
       "highlights": [
-        "Built 40+ reusable instruction and skill packs plus shared harness configs that install across Claude Code, Codex, GitHub Copilot, Cursor, and related agent runtimes.",
+        "Built 40+ instruction and skill packs plus harness configs across Claude Code, Codex, GitHub Copilot, Cursor, and related IDE agents.",
         "Shipped generated docs, install flows, and portable tool and MCP presets for code review, security, infrastructure, research, and workflow automation."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
@@ -421,7 +421,7 @@
         "impactSignals": ["dataset-scale", "community-adoption"]
       },
       "highlights": [
-        "Implemented a Pandera-validated ETL pipeline that extracts NBA API data, updates daily warehouse outputs, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
+        "Implemented Pandera-validated NBA API ETL with daily warehouse updates plus DuckDB, SQLite, Parquet, and CSV exports.",
         "Built docs, schema references, release workflows, and Kaggle distribution for a 180+ table public warehouse spanning 130+ stats.nba.com endpoint classes."
       ],
       "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
@@ -447,8 +447,8 @@
       "endDate": null,
       "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-validated sources, and self-healing health checks for resilient scraping and data-collection workflows.",
       "highlights": [
-        "Implemented 9 rotation strategies (round-robin, weighted, geo-targeted, performance-based, and more) with configurable fallback chains and per-source health scoring.",
-        "Built a self-healing pipeline that continuously validates 100+ built-in proxy sources, auto-ejects unresponsive proxies via circuit breakers, and re-promotes recovered sources."
+        "Implemented 9 proxy rotation strategies with configurable fallback chains, per-source scoring, and performance-based selection.",
+        "Built self-healing validation for 100+ proxy sources with circuit breakers, auto-ejection, and recovery promotion."
       ],
       "stack": ["Python", "SQLite", "PyPI"]
     },
@@ -460,8 +460,8 @@
       "endDate": null,
       "description": "Long-running personal web app and MDX publishing system built with Next.js, combining a polished public-facing frontend with a richly tooled technical blog, strong SEO, and durable content workflows.",
       "highlights": [
-        "Maintained the public site across multiple generations, covering responsive landing pages, themes, motion, accessibility, and MDX publishing workflows.",
-        "Built a deeply customized MDX publishing workflow with search, metadata, math rendering, feeds, tags, and other authoring features usually split across several separate tools."
+        "Maintained the public site across multiple generations, covering responsive landing pages, themes, motion, accessibility, and MDX publishing.",
+        "Built custom MDX publishing with search, metadata, math rendering, feeds, tags, and integrated authoring tools."
       ],
       "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "MDX"]
     },
@@ -484,8 +484,8 @@
       "endDate": null,
       "description": "Released FastMCP server wrapping Crawl4AI so AI agents can crawl and extract web content through four focused tools, agent-friendly outputs, tagged releases, and documented stdio/HTTP integration paths.",
       "highlights": [
-        "Built a FastMCP v3 server with lifespan-managed headless Chromium, session-aware crawling workflows, and automatic Playwright browser setup—only 2 runtime dependencies.",
-        "Exposed 4 tools, 2 resources, and 3 prompt templates with both stdio and HTTP transport, backed by docs, tests, and release-tagged install flows for MCP-compatible agents."
+        "Built a FastMCP v3 server with managed headless Chromium, session-aware crawling, and automatic Playwright setup using two runtime dependencies.",
+        "Exposed stdio/HTTP tools, resources, and prompt templates with docs, tests, and release-tagged MCP install flows."
       ],
       "stack": ["Python", "FastMCP", "Crawl4AI", "Playwright", "Docker"]
     },
@@ -523,8 +523,8 @@
       "endDate": null,
       "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and docs-backed browse/download surfaces.",
       "highlights": [
-        "Defined a structured YAML feed schema with topic classification (ML, NLP, CV, etc.) and source-type validation (blog, paper, newsletter) to ensure feed quality at scale.",
-        "Shipped helper scripts, CI checks, scheduled validation jobs, and a live docs surface so community-submitted feeds can be reviewed, normalized, and published reliably."
+        "Defined YAML feed schemas with topic and source-type validation across blogs, papers, and newsletters for reliable feed quality.",
+        "Shipped helper scripts, CI checks, scheduled validation jobs, and live docs for reliable community feed review."
       ],
       "stack": ["Python", "Pydantic", "SQLModel", "YAML", "Fumadocs", "Vercel"]
     },

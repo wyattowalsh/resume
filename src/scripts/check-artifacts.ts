@@ -112,6 +112,9 @@ interface ProjectVariantSelection extends NamedSelection {
 }
 
 interface VariantContentSelection {
+  basics?: {
+    summary?: string;
+  };
   work?: WorkVariantSelection[];
   projects?: ProjectVariantSelection[];
   skills?: SkillVariantSelection[];
@@ -121,6 +124,7 @@ interface VariantContentSelection {
 }
 
 interface ResolvedVariantContentSelection {
+  summary?: string;
   work: WorkSelection[];
   projects: ProjectSelection[];
   skills: SkillSelection[];
@@ -435,6 +439,7 @@ function resolveVariantContent(
   variant: VariantContentSelection,
 ): ResolvedVariantContentSelection {
   return {
+    summary: variant.basics?.summary ?? resume.basics.summary,
     work: (variant.work ?? resume.work).map((selection) => {
       const baseWork = getByName(resume.work, selection.name, "work");
 
@@ -586,7 +591,7 @@ function assertContactFieldsBeforeExperience(
 }
 
 function getExpectedAtsSections(variant: ResolvedVariantContentSelection) {
-  const expectedSections = ["Summary:", "Experience"];
+  const expectedSections = ["Experience"];
 
   if (variant.skills.length) {
     expectedSections.push("Skills");
@@ -614,7 +619,7 @@ function getExpectedAtsSections(variant: ResolvedVariantContentSelection) {
 function getExpectedLayoutSectionHeadings(
   variant: ResolvedVariantContentSelection,
 ) {
-  const expectedSections = ["Summary:", "Experience"];
+  const expectedSections = ["Experience"];
 
   if (variant.skills.length) {
     expectedSections.push("Skills");
@@ -1151,7 +1156,7 @@ function assertParseableCoreFields(
     resume.basics.email,
     resume.basics.phone,
     `${resume.basics.location.city}, ${resume.basics.location.region}`,
-    "Summary:",
+    ...(variant.summary ? [variant.summary] : []),
     "Experience",
     "Skills",
     "Projects",
