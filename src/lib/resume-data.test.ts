@@ -21,6 +21,7 @@ interface ProjectSelection {
   name: string;
   description?: string;
   highlightIndexes?: number[];
+  highlights?: string[];
 }
 
 interface SkillSelection {
@@ -236,10 +237,9 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(
-            baseProject.highlights,
-            selection.highlightIndexes,
-          ),
+          highlights:
+            selection.highlights ??
+            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       });
 
@@ -256,10 +256,9 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(
-            baseProject.highlights,
-            selection.highlightIndexes,
-          ),
+          highlights:
+            selection.highlights ??
+            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       });
 
@@ -276,10 +275,9 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(
-            baseProject.highlights,
-            selection.highlightIndexes,
-          ),
+          highlights:
+            selection.highlights ??
+            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       });
 

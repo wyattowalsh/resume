@@ -61,7 +61,10 @@
     {
       "name": "Listentropy",
       "description": "TypeScript/React listening-analytics app using Web Workers, Canvas exports, and Vercel to process private Spotify history in-browser.",
-      "highlightIndexes": [0]
+      "highlights": [
+        "Architected a Web Worker pipeline with stage-level progress tracking for full streaming history datasets in-browser.",
+        "Built a Share Studio with dozen-plus card presets, PNG/ZIP export, themes, and strict performance budgets."
+      ]
     },
     {
       "name": "ProxyWhirl",
@@ -81,7 +84,10 @@
     {
       "name": "MDXPad",
       "description": "Electron/React/TypeScript macOS editor with CodeMirror, Vercel AI SDK assistance, synchronized MDX preview, and Keychain credentials.",
-      "highlightIndexes": [0]
+      "highlights": [
+        "Built a dual-format Electron editor with CodeMirror 6, synchronized MDX preview, and YAML frontmatter validation.",
+        "Integrated multi-provider AI assistance with token/cost tracking and Keychain-backed secret storage."
+      ]
     },
     {
       "name": "Personal Website: w4w.dev",

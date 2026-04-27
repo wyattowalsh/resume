@@ -431,7 +431,7 @@ export function PrintProjectList({
             !summaryOnly &&
               cn(
                 "border-t border-slate-100 first:border-t-0 first:pt-0",
-                spaciousFullList ? "pt-4" : denseFullList ? "pt-3" : "pt-1.5",
+                spaciousFullList ? "pt-4" : denseFullList ? "pt-2.5" : "pt-1.5",
               ),
           )}
         >

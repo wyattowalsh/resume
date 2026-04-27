@@ -36,6 +36,7 @@ const workSelectionSchema = namedSelectionSchema.extend({
 const projectSelectionSchema = namedSelectionSchema.extend({
   description: z.string().optional(),
   highlightIndexes: z.array(indexSchema).optional(),
+  highlights: z.array(z.string()).optional(),
 });
 
 const skillSelectionSchema = namedSelectionSchema.extend({
@@ -206,11 +207,13 @@ function resolveProjects(
     return {
       ...baseProject,
       description: selection.description ?? baseProject.description,
-      highlights: pickByIndexes(
-        baseProject.highlights,
-        selection.highlightIndexes,
-        `project highlight for ${baseProject.name}`,
-      ),
+      highlights:
+        selection.highlights ??
+        pickByIndexes(
+          baseProject.highlights,
+          selection.highlightIndexes,
+          `project highlight for ${baseProject.name}`,
+        ),
     };
   });
 }

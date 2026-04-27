@@ -109,6 +109,7 @@ interface SkillVariantSelection extends NamedSelection {
 interface ProjectVariantSelection extends NamedSelection {
   description?: string;
   highlightIndexes?: number[];
+  highlights?: string[];
 }
 
 interface VariantContentSelection {
@@ -469,12 +470,15 @@ function resolveVariantContent(
           "description" in selection && selection.description
             ? selection.description
             : baseProject.description,
-        highlights: pickByIndexes(
-          baseProject.highlights,
-          "highlightIndexes" in selection
-            ? selection.highlightIndexes
-            : undefined,
-        ),
+        highlights:
+          "highlights" in selection && selection.highlights
+            ? selection.highlights
+            : pickByIndexes(
+                baseProject.highlights,
+                "highlightIndexes" in selection
+                  ? selection.highlightIndexes
+                  : undefined,
+              ),
       };
     }),
     skills: (variant.skills ?? resume.skills ?? []).map((selection) => {

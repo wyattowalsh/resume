@@ -106,6 +106,7 @@ interface WorkVariantSelection extends NamedSelection {
 interface ProjectVariantSelection extends NamedSelection {
   description?: string;
   highlightIndexes?: number[];
+  highlights?: string[];
 }
 
 interface SkillVariantSelection extends NamedSelection {
@@ -246,7 +247,9 @@ function resolveVariant(
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights:
+            selection.highlights ??
+            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       })
     : (resume.projects ?? []);
