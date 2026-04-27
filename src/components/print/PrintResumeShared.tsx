@@ -219,7 +219,7 @@ export function PrintCertificateStrip({
   compact = false,
 }: PrintCertificateStripProps) {
   return (
-    <div className={cn("space-y-2", compact && "space-y-0.5")}>
+    <div className={cn("space-y-2", compact && "space-y-1.5")}>
       {certificates.map((certificate) => (
         <article
           key={certificate.name}
@@ -228,7 +228,7 @@ export function PrintCertificateStrip({
           <h3
             className={cn(
               "font-bold text-slate-950",
-              compact ? "text-[10px] leading-[1.12]" : "text-[10.75px]",
+              compact ? "text-[10px] leading-[1.18]" : "text-[10.75px]",
             )}
           >
             {certificate.name}
@@ -237,7 +237,7 @@ export function PrintCertificateStrip({
             className={cn(
               "text-slate-600",
               compact
-                ? "text-[9.1px] leading-[1.15]"
+                ? "text-[9.1px] leading-[1.22]"
                 : "text-[9.8px] leading-[1.3]",
             )}
           >
@@ -550,7 +550,7 @@ export function PrintEducationList({
   compact = false,
 }: PrintEducationListProps) {
   return (
-    <div className={cn("space-y-2.5", compact && "space-y-1")}>
+    <div className={cn("space-y-2.5", compact && "space-y-2")}>
       {education.map((entry) => (
         <article
           key={entry.institution}
@@ -559,7 +559,7 @@ export function PrintEducationList({
           <h3
             className={cn(
               "font-bold text-slate-950",
-              compact ? "text-[10.6px] leading-[1.15]" : "text-[11.5px]",
+              compact ? "text-[10.6px] leading-[1.2]" : "text-[11.5px]",
             )}
           >
             {entry.studyType}
@@ -568,7 +568,7 @@ export function PrintEducationList({
             className={cn(
               "text-slate-700",
               compact
-                ? "text-[9.6px] leading-[1.18]"
+                ? "text-[9.6px] leading-[1.24]"
                 : "text-[10.5px] leading-[1.35]",
             )}
           >
@@ -584,7 +584,7 @@ export function PrintEducationList({
           <p
             className={cn(
               "text-slate-500",
-              compact ? "text-[9.1px] leading-[1.15]" : "text-[9.5px] leading-snug",
+              compact ? "text-[9.1px] leading-[1.2]" : "text-[9.5px] leading-snug",
             )}
           >
             {renderDateRange(entry.startDate, entry.endDate)}
