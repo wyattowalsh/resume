@@ -64,7 +64,7 @@ type ProjectActionsProps = {
 
 function ProjectActions({ project }: ProjectActionsProps) {
   const actionClass =
-    "interactive-chip inline-flex items-center gap-1 rounded-full border border-border/65 bg-background/80 px-2.5 py-1 text-[11px] font-[family:var(--font-site-label)] font-semibold uppercase tracking-[0.08em] text-foreground/70 shadow-sm transition-colors duration-200 hover:border-primary/20 hover:bg-primary/[0.06] hover:text-foreground";
+    "interactive-chip inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] font-[family:var(--font-site-label)] font-semibold text-foreground/70 shadow-sm transition-colors duration-200 hover:border-primary/20 hover:text-foreground";
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -129,7 +129,7 @@ function ProjectThemeBadges({ project }: { project: Project }) {
       {themes.map((theme) => (
         <span
           key={theme}
-          className="rounded-full border border-primary/12 bg-primary/[0.06] px-2 py-1 font-[family:var(--font-site-label)] text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/85"
+          className="rounded-full border border-primary/15 bg-primary/[0.08] px-2 py-1 font-[family:var(--font-site-label)] text-[10px] font-semibold text-primary/85"
         >
           {formatThemeLabel(theme)}
         </span>
@@ -145,7 +145,7 @@ function ProjectStackPills({ stack }: { stack: string[] | undefined }) {
 
   return (
     <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5 text-xs leading-5 text-muted-foreground">
-      <span className="mr-1 font-[family:var(--font-site-label)] font-semibold uppercase tracking-[0.08em] text-foreground/60">
+      <span className="mr-1 font-[family:var(--font-site-label)] font-semibold text-foreground/60">
         Stack
       </span>
       {stack.map((item) => (
@@ -177,23 +177,23 @@ export function Projects({ projects }: ProjectsProps) {
       <div className="space-y-5">
         <div className="space-y-3">
           {additionalProjects.length > 0 && (
-            <p className="px-1 font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45">
+            <p className="px-1 font-[family:var(--font-site-label)] text-[11px] font-semibold text-foreground/50">
               Featured Projects
             </p>
           )}
           {featuredProjects.map((project) => (
             <article
               key={project.name}
-              className="group/project interactive-surface card-hover rounded-[1.35rem] border border-border/60 bg-card/78 p-4 shadow-[0_22px_48px_-34px_rgba(15,23,42,0.36)] ring-1 ring-white/30"
+              className="group/project interactive-surface card-hover rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
             >
               <div className="relative z-10 flex flex-col gap-3">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-1">
                     <ProjectHeading
                       project={project}
-                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6 tracking-[-0.02em]"
+                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6"
                     />
-                    <p className="text-xs leading-5 text-muted-foreground">
+                    <p className="text-xs leading-5 text-muted-foreground tabular-nums">
                       {buildProjectMeta(project)}
                     </p>
                     <ProjectThemeBadges project={project} />
@@ -224,23 +224,23 @@ export function Projects({ projects }: ProjectsProps) {
         {additionalProjects.length > 0 && (
           <div className="space-y-3">
             <div className="flex items-center gap-3 px-1">
-              <p className="font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45">
+              <p className="font-[family:var(--font-site-label)] text-[11px] font-semibold text-foreground/50">
                 More Selected Builds
               </p>
-              <div className="h-px flex-1 bg-gradient-to-r from-border/70 to-transparent" />
+              <div className="h-px flex-1 bg-border" />
             </div>
             {additionalProjects.map((project) => (
               <article
                 key={project.name}
-                className="group/project rounded-[1.2rem] border border-border/55 bg-background/70 p-4 shadow-[0_16px_34px_-30px_rgba(15,23,42,0.28)]"
+                className="group/project rounded-2xl border border-border bg-background p-4 shadow-sm sm:p-5"
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-1">
                     <ProjectHeading
                       project={project}
-                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-base font-semibold leading-6 tracking-[-0.02em]"
+                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-base font-semibold leading-6"
                     />
-                    <p className="text-xs leading-5 text-muted-foreground">
+                    <p className="text-xs leading-5 text-muted-foreground tabular-nums">
                       {buildProjectMeta(project)}
                     </p>
                     <ProjectThemeBadges project={project} />
@@ -252,8 +252,8 @@ export function Projects({ projects }: ProjectsProps) {
                 </p>
                 {(project.highlights.length > 0 ||
                   (Array.isArray(project.stack) && project.stack.length > 0)) && (
-                  <details className="mt-3 rounded-2xl border border-border/50 bg-card/65 px-3 py-2">
-                    <summary className="cursor-pointer list-none font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground/55 transition-colors hover:text-foreground/75">
+                  <details className="mt-3 rounded-2xl border border-border bg-card px-3 py-2">
+                    <summary className="cursor-pointer list-none font-[family:var(--font-site-label)] text-[11px] font-semibold text-foreground/60 transition-colors hover:text-foreground/80">
                       {buildDisclosureLabel(project)}
                     </summary>
                     <div className="mt-3">

@@ -8,16 +8,19 @@ type EducationProps = {
 };
 
 export function Education({ education }: EducationProps) {
+  const metaChipClass =
+    "rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted-foreground shadow-sm tabular-nums";
+
   return (
     <Section title="Education" className="break-inside-avoid">
       <div className="flex flex-col gap-3">
         {education.map((edu) => (
           <article
             key={edu.institution}
-            className="card-hover rounded-[1.35rem] border border-border/65 bg-card/85 p-4 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.35)] ring-1 ring-white/35"
+            className="card-hover interactive-surface rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5"
           >
-            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-start sm:justify-between">
-              <div className="space-y-0.5">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+              <div className="space-y-1">
                 <h3 className="text-base font-semibold leading-6">
                   {edu.studyType}
                 </h3>
@@ -37,8 +40,8 @@ export function Education({ education }: EducationProps) {
                   )}
                 </h4>
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.08em] text-muted-foreground sm:justify-end">
-                <div className="rounded-full border border-border/60 bg-background/80 px-2.5 py-1 shadow-sm">
+              <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+                <div className={metaChipClass}>
                   <time dateTime={edu.startDate}>
                     {formatMonthYear(edu.startDate)}
                   </time>{" "}
@@ -56,12 +59,12 @@ export function Education({ education }: EducationProps) {
             {(edu.area || edu.score) && (
               <div className="mt-2 space-y-1">
                 {edu.area && (
-                  <p className="mt-0 pt-0 text-sm italic leading-6 text-muted-foreground">
+                  <p className="text-pretty text-sm italic leading-6 text-muted-foreground">
                     in {edu.area}
                   </p>
                 )}
                 {edu.score && (
-                  <p className="text-sm leading-6 text-muted-foreground">
+                  <p className="text-sm leading-6 text-muted-foreground tabular-nums">
                     GPA: {edu.score}
                   </p>
                 )}

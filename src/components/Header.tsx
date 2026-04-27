@@ -3,29 +3,6 @@ import { FaLinkedinIn, FaMapPin } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
 import { SlScreenSmartphone } from "react-icons/sl";
-import { cn } from "@/lib/utils";
-
-function Ornament({ reversed }: { reversed?: boolean }) {
-  return (
-    <div
-      aria-hidden="true"
-      className={cn(
-        "hidden items-center gap-2 md:flex",
-        reversed && "flex-row-reverse",
-      )}
-    >
-      <div
-        className={cn(
-          "h-px w-12 from-transparent to-muted-foreground/30",
-          reversed ? "bg-gradient-to-l" : "bg-gradient-to-r",
-        )}
-      />
-      <div className="h-1 w-1 rounded-full bg-muted-foreground/30" />
-      <div className="h-px w-6 bg-muted-foreground/30" />
-      <div className="h-px w-px rounded-full bg-muted-foreground/30" />
-    </div>
-  );
-}
 
 type HeaderProps = {
   basics: Basics;
@@ -38,39 +15,27 @@ export function Header({ basics }: HeaderProps) {
     locationString,
   )}`;
   const chipClass =
-    "interactive-chip inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3.5 py-2 font-[family:var(--font-site-label)] shadow-sm";
+    "interactive-chip inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-background px-3.5 py-2 font-[family:var(--font-site-label)] text-sm text-foreground shadow-sm sm:min-h-10 sm:w-auto";
 
   return (
-    <header className="group/header interactive-surface relative overflow-hidden rounded-[2rem] border border-border/70 bg-card/85 px-6 py-7 shadow-[0_30px_80px_-48px_rgba(15,23,42,0.45)] ring-1 ring-white/40 sm:px-8 sm:py-9">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.14),transparent_34%),radial-gradient(circle_at_top_right,rgba(245,158,11,0.10),transparent_28%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
-      />
-      <div className="relative z-10 flex flex-col items-center justify-start gap-4 text-center">
-        <div className="flex items-center gap-4">
-          <Ornament />
-          <a href={basics.url} target="_blank" rel="noopener noreferrer">
-            <h1 className="m-0 shrink-0 p-0 font-[family:var(--font-site-display)] text-4xl font-bold tracking-[-0.05em] text-gradient-textured sm:text-5xl">
-              {basics.name}
-            </h1>
-          </a>
-          <Ornament reversed />
-        </div>
+    <header className="interactive-surface rounded-[1.75rem] border border-border bg-card px-4 py-6 shadow-sm sm:px-6 sm:py-7">
+      <div className="flex flex-col items-center gap-4 text-center sm:gap-5">
+        <a href={basics.url} target="_blank" rel="noopener noreferrer">
+          <h1 className="font-[family:var(--font-site-display)] text-balance text-3xl font-bold text-foreground sm:text-5xl">
+            {basics.name}
+          </h1>
+        </a>
         {basics.label && (
-          <p className="font-[family:var(--font-site-label)] text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70 transition-colors duration-300 group-hover/header:text-foreground/80 sm:text-[0.95rem]">
+          <p className="font-[family:var(--font-site-label)] text-sm font-semibold text-primary sm:text-base">
             {basics.label}
           </p>
         )}
         {basics.summary && (
-          <p className="max-w-[64ch] text-sm font-medium leading-7 text-foreground/80 transition-colors duration-300 group-hover/header:text-foreground/90 sm:text-[1.02rem]">
+          <p className="max-w-[66ch] text-pretty text-sm leading-7 text-foreground/80 sm:text-base">
             {basics.summary}
           </p>
         )}
-        <div className="flex flex-wrap justify-center gap-2.5 text-sm text-muted-foreground">
+        <div className="flex w-full flex-col gap-2 text-muted-foreground sm:flex-row sm:flex-wrap sm:justify-center">
           <a
             href={`mailto:${basics.email}`}
             className={chipClass}

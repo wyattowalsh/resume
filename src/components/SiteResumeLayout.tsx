@@ -45,7 +45,7 @@ export function SiteResumeLayout({
   className,
 }: SiteResumeLayoutProps) {
   const footerDownloadLinkClass =
-    "interactive-chip inline-flex min-h-[36px] items-center rounded-full border border-border/70 bg-background/75 px-3 py-1.5 text-xs font-medium tracking-[0.08em] text-muted-foreground shadow-sm";
+    "interactive-chip inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm";
   const downloadGroups = [
     {
       label: "1-page",
@@ -81,10 +81,10 @@ export function SiteResumeLayout({
 
   return (
     <main
-      className={`container mx-auto my-5 max-w-6xl px-4 pb-14 font-[family:var(--font-site-body)] tracking-[-0.01em] print:my-0 print:max-w-full print:border-none print:px-0 print:pb-0 print:shadow-none sm:px-6 lg:px-8 ${className ?? ""}`}
+      className={`container mx-auto my-4 max-w-5xl px-4 pb-12 font-[family:var(--font-site-body)] print:my-0 print:max-w-full print:border-none print:px-0 print:pb-0 print:shadow-none sm:my-6 sm:px-6 lg:px-8 ${className ?? ""}`}
     >
       <Header basics={basics} />
-      <div className="mt-8 space-y-12">
+      <div className="mt-8 space-y-10 sm:space-y-12">
         <div
           id="work-experience"
           className="section-reveal scroll-mt-10 sm:scroll-mt-12"
@@ -136,16 +136,16 @@ export function SiteResumeLayout({
         )}
       </div>
       <footer className="mt-10 print:hidden">
-        <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-2 text-xs text-muted-foreground shadow-sm">
-          <span className="px-1 font-[family:var(--font-site-label)] uppercase tracking-[0.18em] text-foreground/45">
+        <div className="mx-auto flex max-w-full flex-col items-center justify-center gap-2 rounded-[1.5rem] border border-border bg-card px-3 py-3 text-xs text-muted-foreground shadow-sm sm:w-fit sm:flex-row sm:flex-wrap">
+          <span className="px-1 font-[family:var(--font-site-label)] font-semibold text-foreground/55">
             Downloads
           </span>
           {downloadGroups.map((group) => (
             <div
               key={group.label}
-              className="flex items-center gap-1 rounded-full bg-muted/35 px-1 py-1"
+              className="flex flex-wrap items-center justify-center gap-1 rounded-full bg-muted/60 px-1 py-1"
             >
-              <span className="px-2 font-[family:var(--font-site-label)] uppercase tracking-[0.16em] text-foreground/50">
+              <span className="px-2 font-[family:var(--font-site-label)] font-medium text-foreground/55">
                 {group.label}
               </span>
               {group.links.map((link) => (
