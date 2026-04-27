@@ -342,7 +342,7 @@ export function PrintSkillList({
 }: PrintSkillListProps) {
   if (layout === "inline") {
     return (
-      <div className={compact ? "space-y-1" : "space-y-[0.3rem]"}>
+      <div className={compact ? "space-y-1" : "space-y-1"}>
         {skills.map((skill) => (
           <p
             key={skill.name}
@@ -350,7 +350,7 @@ export function PrintSkillList({
               "text-slate-700",
               compact
                 ? "text-[9.65px] leading-[1.33]"
-                : "text-[10.15px] leading-[1.38]",
+                : "text-[10.15px] leading-[1.45]",
             )}
           >
             <span className="font-bold uppercase text-slate-900">
@@ -407,6 +407,7 @@ export function PrintProjectList({
   compact = false,
 }: PrintProjectListProps) {
   const spaciousFullList = !summaryOnly && !compact && projects.length <= 6;
+  const denseFullList = !summaryOnly && !compact && projects.length > 6;
   const includeStackText = showStacks;
   const spacingClass = summaryOnly
     ? compact
@@ -415,7 +416,9 @@ export function PrintProjectList({
     : compact
       ? "space-y-2"
       : spaciousFullList
-        ? "space-y-[65px]"
+        ? "space-y-8"
+        : denseFullList
+        ? "space-y-8"
         : "space-y-2";
 
   return (
