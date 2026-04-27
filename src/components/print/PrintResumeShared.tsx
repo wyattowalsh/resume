@@ -115,7 +115,7 @@ export function PrintResumeHeader({
     <header
       className={cn(
         "border-b border-slate-300",
-        compact ? "space-y-1 pb-2.5" : "space-y-2 pb-3.5",
+        compact ? "space-y-1 pb-2.5" : "space-y-1.5 pb-3",
       )}
     >
       <div className={cn("space-y-1", compact && "space-y-0.5")}>
@@ -182,7 +182,7 @@ export function PrintResumeHeader({
             "border-l-[3px] border-slate-300 bg-slate-50 py-1 pl-2 pr-2 text-slate-700",
             compact
               ? "text-[9.6px] leading-[1.28]"
-              : "text-[10.25px] leading-[1.38]",
+              : "text-[10.1px] leading-[1.34]",
           )}
         >
           {basics.summary}
@@ -266,7 +266,7 @@ export function PrintWorkList({
           key={job.name}
           className={cn(
             "resume-print-entry break-inside-avoid border-t border-slate-100 first:border-t-0 first:pt-0",
-            compact ? "pt-1" : "pt-4",
+            compact ? "pt-1" : "pt-3.5",
           )}
         >
           <div className="min-w-0">
@@ -310,7 +310,7 @@ export function PrintWorkList({
                 "text-slate-700",
                 compact
                   ? "mt-1 text-[9.9px] leading-[1.32]"
-                  : "mt-1.5 text-[10.2px] leading-[1.38]",
+                  : "mt-1 text-[10.1px] leading-[1.34]",
               )}
             >
               {job.summary}
@@ -322,7 +322,7 @@ export function PrintWorkList({
               "list-disc pl-4 text-slate-800 marker:text-slate-400",
               compact
                 ? "mt-1 space-y-0 text-[9.75px] leading-[1.25]"
-                : "mt-2 space-y-0.5 text-[10.15px] leading-[1.36]",
+                : "mt-1.5 space-y-0.5 text-[10.05px] leading-[1.32]",
             )}
           >
             {job.highlights.map((highlight) => (
@@ -411,9 +411,15 @@ export function PrintProjectList({
   const spaciousFullList = !summaryOnly && !compact && projects.length <= 6;
   const denseFullList = !summaryOnly && !compact && projects.length > 6;
   const tightenedFullList = !summaryOnly && !compact && tightSpacing;
+  const balancedTightFullList = tightenedFullList && projects.length <= 4;
   const includeStackText = showStacks;
+  const showFullProjectMetaRow = tightenedFullList;
+  const shouldShowProjectDates = showDates || showFullProjectMetaRow;
+  const shouldShowProjectStacks = includeStackText || showFullProjectMetaRow;
   const fullListSpacingClass = tightenedFullList
-    ? spaciousFullList
+    ? balancedTightFullList
+      ? "space-y-4.5"
+      : spaciousFullList
       ? "space-y-3.5"
       : denseFullList
         ? "space-y-3"
@@ -424,7 +430,9 @@ export function PrintProjectList({
         ? "space-y-5"
         : "space-y-2";
   const fullListPaddingClass = tightenedFullList
-    ? spaciousFullList
+    ? balancedTightFullList
+      ? "pt-3"
+      : spaciousFullList
       ? "pt-2.5"
       : denseFullList
         ? "pt-2"
@@ -481,7 +489,7 @@ export function PrintProjectList({
               </span>
               {" - "}
               {project.description}
-              {includeStackText && project.stack?.length ? (
+              {shouldShowProjectStacks && project.stack?.length ? (
                 <> Built with {project.stack.join(", ")}.</>
               ) : null}
             </p>
@@ -519,9 +527,22 @@ export function PrintProjectList({
                   </>
                 ) : null}
               </h3>
-              {showDates && (
-                <p className="mt-px text-[9.25px] leading-snug text-slate-500">
-                  {renderDateRange(project.startDate, project.endDate)}
+              {(shouldShowProjectDates ||
+                (shouldShowProjectStacks && project.stack?.length)) && (
+                <p className="mt-px flex flex-wrap items-baseline gap-x-1 text-[9.25px] leading-snug text-slate-500">
+                  {shouldShowProjectDates ? (
+                    <span>{renderDateRange(project.startDate, project.endDate)}</span>
+                  ) : null}
+                  {shouldShowProjectDates &&
+                  shouldShowProjectStacks &&
+                  project.stack?.length ? (
+                    <span className="font-normal text-slate-400">|</span>
+                  ) : null}
+                  {shouldShowProjectStacks && project.stack?.length ? (
+                    <span className="text-slate-600">
+                      {project.stack.join(", ")}
+                    </span>
+                  ) : null}
                 </p>
               )}
               <p
@@ -533,9 +554,6 @@ export function PrintProjectList({
                 )}
               >
                 {project.description}
-                {includeStackText && project.stack?.length ? (
-                  <> Built with {project.stack.join(", ")}.</>
-                ) : null}
               </p>
             </div>
           )}

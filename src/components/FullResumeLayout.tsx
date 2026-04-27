@@ -49,7 +49,7 @@ export function FullResumeLayout({
         showSummary={fullArtifactSpec.showSummary}
       />
 
-      <div className="mt-3.5">
+      <div className="mt-3">
         <PrintSection title="Experience">
           <PrintWorkList
             work={work}
@@ -59,12 +59,13 @@ export function FullResumeLayout({
       </div>
 
       {skills && skills.length > 0 && (
-        <div className="mt-9">
+        <div className="mt-6">
           <PrintSection title="Skills">
             <PrintSkillList
               skills={skills}
               layout={fullArtifactSpec.skillsLayout}
               columns={fullArtifactSpec.skillsColumns}
+              compact
             />
           </PrintSection>
         </div>

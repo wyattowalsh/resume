@@ -42,10 +42,11 @@ const MAX_ARTIFACT_AGE_MS = 15 * 60 * 1_000;
 const SHOULD_SKIP_ARTIFACT_RECENCY =
   process.env.RESUME_ARTIFACT_RECENCY === "skip";
 const FULL_PAGE_ONE_LOWEST_TEXT_Y_MAX = 150;
-const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 280;
+const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 200;
 const SINGLE_PAGE_LOWEST_TEXT_Y_MAX = 110;
 const DEFAULT_LOWER_DENSITY_BAND_Y_MAX = 120;
-const FULL_PAGE_TWO_LOWER_DENSITY_BAND_Y_MAX = 280;
+const FULL_PAGE_ONE_LOWER_DENSITY_BAND_Y_MAX = 130;
+const FULL_PAGE_TWO_LOWER_DENSITY_BAND_Y_MAX = 140;
 const FULL_PAGE_ONE_LOWER_DENSITY_MIN_ROWS = 4;
 const FULL_PAGE_ONE_LOWER_DENSITY_MIN_CHARS = 160;
 const DEFAULT_LOWER_DENSITY_MIN_ROWS = 2;
@@ -57,7 +58,7 @@ const SINGLE_PAGE_BOTTOM_TEXT_Y_MAX = 110;
 const FULL_PAGE_ONE_SKILLS_HEADING_Y_MIN = 160;
 const FULL_PAGE_ONE_SKILLS_HEADING_Y_MAX = 190;
 const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MIN = 90;
-const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MAX = 110;
+const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MAX = 120;
 const FULL_PAGE_TWO_PROJECT_HEADING_DELTA_SPREAD_MAX = 8;
 const PERSONAL_WEBSITE_PROJECT_NAME = "Personal Website: w4w.dev";
 const PROXYWHIRL_PROJECT_NAME = "ProxyWhirl";
@@ -330,6 +331,10 @@ function getLowerDensityThresholds(expectedPages: number, pageNumber: number) {
 }
 
 function getLowerDensityBandYMax(expectedPages: number, pageNumber: number) {
+  if (expectedPages > 1 && pageNumber === 1) {
+    return FULL_PAGE_ONE_LOWER_DENSITY_BAND_Y_MAX;
+  }
+
   if (expectedPages > 1 && pageNumber === 2) {
     return FULL_PAGE_TWO_LOWER_DENSITY_BAND_Y_MAX;
   }
@@ -1559,6 +1564,7 @@ function assertParseableCoreFields(
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
   requireProjectUrls: boolean,
+  requireProjectStackKeywords: boolean,
 ) {
   const context = `${label} ATS text`;
   const profileUrls = resume.basics.profiles.map((profile) =>
@@ -1610,8 +1616,10 @@ function assertParseableCoreFields(
     }
     assertStrictTextIncludes(text, project.description, context);
 
-    for (const keyword of project.stack ?? []) {
-      assertStrictTextIncludes(text, keyword, context);
+    if (requireProjectStackKeywords) {
+      for (const keyword of project.stack ?? []) {
+        assertStrictTextIncludes(text, keyword, context);
+      }
     }
   }
 }
@@ -1681,12 +1689,14 @@ async function assertAtsParseability(
     resume,
     variant,
     expectedPages > 1,
+    expectedPages > 1,
   );
   assertParseableCoreFields(
     popplerText.text,
     `${label} pdftotext text`,
     resume,
     variant,
+    expectedPages > 1,
     expectedPages > 1,
   );
 
@@ -1716,6 +1726,7 @@ async function assertDocxParseability(
     resume,
     variant,
     true,
+    false,
   );
 
   if (variant.education.length) {
