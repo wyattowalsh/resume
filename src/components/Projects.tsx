@@ -116,7 +116,6 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <Section
       title="Projects"
-      description={`${projects.length} selected AI, data, and product builds with shipped scope, proof points, and stack context.`}
       className="break-inside-avoid"
     >
       <div className="flex flex-col gap-3">

@@ -2,7 +2,6 @@ import { Basics } from "@/lib/schema";
 import { FaLinkedinIn, FaMapPin } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
-import { SlScreenSmartphone } from "react-icons/sl";
 import { cn } from "@/lib/utils";
 
 function Ornament({ reversed }: { reversed?: boolean }) {
@@ -77,17 +76,6 @@ export function Header({ basics }: HeaderProps) {
           >
             <CiMail className="text-primary" size={18} strokeWidth={1.5} />
             {basics.email}
-          </a>
-          <a
-            href={`tel:${basics.phone}`}
-            className={chipClass}
-          >
-            <SlScreenSmartphone
-              className="text-primary"
-              size={18}
-              strokeWidth={2}
-            />
-            {basics.phone}
           </a>
           {basics.location && (
             <a
