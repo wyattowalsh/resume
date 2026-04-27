@@ -84,6 +84,7 @@ export function FullResumeLayout({
               showStacks={fullArtifactSpec.showProjectStacks}
               showDates={fullArtifactSpec.showProjectDates}
               summaryOnly={fullArtifactSpec.projectSummaryOnly}
+              tightSpacing
             />
           </PrintSection>
         )}

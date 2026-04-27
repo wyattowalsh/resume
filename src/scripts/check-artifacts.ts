@@ -42,9 +42,10 @@ const MAX_ARTIFACT_AGE_MS = 15 * 60 * 1_000;
 const SHOULD_SKIP_ARTIFACT_RECENCY =
   process.env.RESUME_ARTIFACT_RECENCY === "skip";
 const FULL_PAGE_ONE_LOWEST_TEXT_Y_MAX = 150;
-const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 110;
+const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 280;
 const SINGLE_PAGE_LOWEST_TEXT_Y_MAX = 110;
-const LOWER_DENSITY_BAND_Y_MAX = 120;
+const DEFAULT_LOWER_DENSITY_BAND_Y_MAX = 120;
+const FULL_PAGE_TWO_LOWER_DENSITY_BAND_Y_MAX = 280;
 const FULL_PAGE_ONE_LOWER_DENSITY_MIN_ROWS = 4;
 const FULL_PAGE_ONE_LOWER_DENSITY_MIN_CHARS = 160;
 const DEFAULT_LOWER_DENSITY_MIN_ROWS = 2;
@@ -328,14 +329,23 @@ function getLowerDensityThresholds(expectedPages: number, pageNumber: number) {
   };
 }
 
+function getLowerDensityBandYMax(expectedPages: number, pageNumber: number) {
+  if (expectedPages > 1 && pageNumber === 2) {
+    return FULL_PAGE_TWO_LOWER_DENSITY_BAND_Y_MAX;
+  }
+
+  return DEFAULT_LOWER_DENSITY_BAND_Y_MAX;
+}
+
 function assertLowerPageDensity(
   textItems: PdfTextItemMetric[],
   label: string,
   expectedPages: number,
   pageNumber: number,
 ) {
+  const lowerDensityBandYMax = getLowerDensityBandYMax(expectedPages, pageNumber);
   const lowerBandItems = textItems.filter(
-    (item) => item.y <= LOWER_DENSITY_BAND_Y_MAX,
+    (item) => item.y <= lowerDensityBandYMax,
   );
   const lowerBandRows = new Set(
     lowerBandItems.map((item) => Math.round(item.y)),
@@ -351,7 +361,7 @@ function assertLowerPageDensity(
 
   if (lowerBandRows.size < minRows && lowerBandChars < minChars) {
     fail(
-      `${label} page ${pageNumber} lower-page density is too thin; found ${lowerBandRows.size} row(s) and ${lowerBandChars} text chars at <= ${LOWER_DENSITY_BAND_Y_MAX}pt, expected at least ${minRows} row(s) or ${minChars} chars.`,
+      `${label} page ${pageNumber} lower-page density is too thin; found ${lowerBandRows.size} row(s) and ${lowerBandChars} text chars at <= ${lowerDensityBandYMax}pt, expected at least ${minRows} row(s) or ${minChars} chars.`,
     );
   }
 

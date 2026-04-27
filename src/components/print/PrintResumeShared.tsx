@@ -44,6 +44,7 @@ type PrintProjectListProps = {
   showDates?: boolean;
   summaryOnly?: boolean;
   compact?: boolean;
+  tightSpacing?: boolean;
 };
 
 type PrintEducationListProps = {
@@ -405,21 +406,41 @@ export function PrintProjectList({
   showDates = true,
   summaryOnly = false,
   compact = false,
+  tightSpacing = false,
 }: PrintProjectListProps) {
   const spaciousFullList = !summaryOnly && !compact && projects.length <= 6;
   const denseFullList = !summaryOnly && !compact && projects.length > 6;
+  const tightenedFullList = !summaryOnly && !compact && tightSpacing;
   const includeStackText = showStacks;
+  const fullListSpacingClass = tightenedFullList
+    ? spaciousFullList
+      ? "space-y-3.5"
+      : denseFullList
+        ? "space-y-3"
+        : "space-y-2"
+    : spaciousFullList
+      ? "space-y-5"
+      : denseFullList
+        ? "space-y-5"
+        : "space-y-2";
+  const fullListPaddingClass = tightenedFullList
+    ? spaciousFullList
+      ? "pt-2.5"
+      : denseFullList
+        ? "pt-2"
+        : "pt-1.5"
+    : spaciousFullList
+      ? "pt-4"
+      : denseFullList
+        ? "pt-2.5"
+        : "pt-1.5";
   const spacingClass = summaryOnly
     ? compact
       ? "space-y-1.5"
       : "space-y-1.5"
     : compact
       ? "space-y-2"
-      : spaciousFullList
-        ? "space-y-5"
-        : denseFullList
-        ? "space-y-5"
-        : "space-y-2";
+      : fullListSpacingClass;
 
   return (
     <div className={cn(spacingClass)}>
@@ -431,7 +452,7 @@ export function PrintProjectList({
             !summaryOnly &&
               cn(
                 "border-t border-slate-100 first:border-t-0 first:pt-0",
-                spaciousFullList ? "pt-4" : denseFullList ? "pt-2.5" : "pt-1.5",
+                fullListPaddingClass,
               ),
           )}
         >
