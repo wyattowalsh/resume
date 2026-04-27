@@ -9,8 +9,25 @@ import {
   TextRun,
   UnderlineType,
 } from "docx";
+import ts from "typescript";
 
 type ResumeVariantName = "full" | "single";
+
+interface DocxArtifactPolicy {
+  showSummary: boolean;
+  showWorkSummaries: boolean;
+  showProjectHighlights: boolean;
+  projectSectionStartsOnNewPage: boolean;
+}
+
+interface LoadedArtifactSpecs {
+  full: {
+    docx: DocxArtifactPolicy;
+  };
+  single: {
+    docx: DocxArtifactPolicy;
+  };
+}
 
 interface ProfileSelection {
   network: string;
@@ -138,9 +155,15 @@ interface DocxArtifact {
   name: ResumeVariantName;
   variantPath: string;
   outputName: string;
+  policy: DocxArtifactPolicy;
 }
 
-const RESUME_DATA_PATH = path.resolve(process.cwd(), "assets", "data", "resume.json");
+const RESUME_DATA_PATH = path.resolve(
+  process.cwd(),
+  "assets",
+  "data",
+  "resume.json",
+);
 const DOCX_FONT = "Arial";
 const BODY_SIZE = 20;
 const SMALL_SIZE = 18;
@@ -148,16 +171,62 @@ const HEADING_COLOR = "0F172A";
 const MUTED_COLOR = "475569";
 const LINK_COLOR = "2563EB";
 
+function loadArtifactSpecs() {
+  const artifactSpecsPath = path.resolve(
+    process.cwd(),
+    "src",
+    "lib",
+    "artifact-specs.ts",
+  );
+  const source = fs.readFileSync(artifactSpecsPath, "utf8");
+  const { outputText } = ts.transpileModule(source, {
+    compilerOptions: {
+      module: ts.ModuleKind.CommonJS,
+      target: ts.ScriptTarget.ES2020,
+    },
+    fileName: artifactSpecsPath,
+  });
+  const module = { exports: {} as { artifactSpecs?: LoadedArtifactSpecs } };
+
+  // build:script only compiles src/scripts, so load the DOCX contract from the
+  // source artifact spec at runtime instead of adding a cross-project TS import.
+  new Function("exports", "module", outputText)(module.exports, module);
+
+  if (!module.exports.artifactSpecs) {
+    throw new Error(
+      "artifact-specs.ts must export artifactSpecs for DOCX generation.",
+    );
+  }
+
+  return module.exports.artifactSpecs;
+}
+
+const artifactSpecs = loadArtifactSpecs();
+
 const docxArtifacts: DocxArtifact[] = [
   {
     name: "full",
-    variantPath: path.resolve(process.cwd(), "assets", "data", "variants", "full.json"),
+    variantPath: path.resolve(
+      process.cwd(),
+      "assets",
+      "data",
+      "variants",
+      "full.json",
+    ),
     outputName: "resume-full.docx",
+    policy: artifactSpecs.full.docx,
   },
   {
     name: "single",
-    variantPath: path.resolve(process.cwd(), "assets", "data", "variants", "single.json"),
+    variantPath: path.resolve(
+      process.cwd(),
+      "assets",
+      "data",
+      "variants",
+      "single.json",
+    ),
     outputName: "resume-single.docx",
+    policy: artifactSpecs.single.docx,
   },
 ];
 
@@ -188,7 +257,9 @@ function pickByIndexes<T>(values: T[], indexes: number[] | undefined) {
     const value = values[index];
 
     if (value === undefined) {
-      throw new Error(`Variant index "${index}" is outside the selected content bounds.`);
+      throw new Error(
+        `Variant index "${index}" is outside the selected content bounds.`,
+      );
     }
 
     return value;
@@ -205,7 +276,9 @@ function resolveBasics(
 
   return {
     ...basics,
-    ...(overrides.label === undefined ? {} : { label: overrides.label ?? undefined }),
+    ...(overrides.label === undefined
+      ? {}
+      : { label: overrides.label ?? undefined }),
     ...(overrides.summary === undefined
       ? {}
       : { summary: overrides.summary ?? undefined }),
@@ -226,7 +299,10 @@ function resolveVariant(
           ...(selection.summary === undefined
             ? {}
             : { summary: selection.summary ?? undefined }),
-          highlights: pickByIndexes(baseWork.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(
+            baseWork.highlights,
+            selection.highlightIndexes,
+          ),
         };
       })
     : resume.work;
@@ -242,7 +318,11 @@ function resolveVariant(
     : (resume.skills ?? []);
   const projects = variant.projects
     ? variant.projects.map((selection) => {
-        const baseProject = getByName(resume.projects, selection.name, "project");
+        const baseProject = getByName(
+          resume.projects,
+          selection.name,
+          "project",
+        );
 
         return {
           ...baseProject,
@@ -258,22 +338,37 @@ function resolveVariant(
     name,
     basics: resolveBasics(resume.basics, variant.basics),
     work,
-    education: (variant.education ?? resume.education.map(({ institution }) => institution)).map(
-      (institution) => {
-        const match = resume.education.find((entry) => entry.institution === institution);
+    education: (
+      variant.education ??
+      resume.education.map(({ institution }) => institution)
+    ).map((institution) => {
+      const match = resume.education.find(
+        (entry) => entry.institution === institution,
+      );
 
-        if (!match) {
-          throw new Error(`Unknown education entry "${institution}".`);
-        }
+      if (!match) {
+        throw new Error(`Unknown education entry "${institution}".`);
+      }
 
-        return match;
-      },
+      return match;
+    }),
+    certificates: (
+      variant.certificates ??
+      resume.certificates?.map(
+        ({ name: certificateName }) => certificateName,
+      ) ??
+      []
+    ).map((certificateName) =>
+      getByName(resume.certificates, certificateName, "certificate"),
     ),
-    certificates: (variant.certificates ?? resume.certificates?.map(({ name: certificateName }) => certificateName) ?? []).map(
-      (certificateName) => getByName(resume.certificates, certificateName, "certificate"),
-    ),
-    publications: (variant.publications ?? resume.publications?.map(({ name: publicationName }) => publicationName) ?? []).map(
-      (publicationName) => getByName(resume.publications, publicationName, "publication"),
+    publications: (
+      variant.publications ??
+      resume.publications?.map(
+        ({ name: publicationName }) => publicationName,
+      ) ??
+      []
+    ).map((publicationName) =>
+      getByName(resume.publications, publicationName, "publication"),
     ),
     skills,
     projects,
@@ -402,7 +497,11 @@ function itemTitle(
   return paragraph(children, { after: 45 });
 }
 
-function addHeader(children: Paragraph[], basics: BasicsSelection) {
+function addHeader(
+  children: Paragraph[],
+  basics: BasicsSelection,
+  policy: Pick<DocxArtifactPolicy, "showSummary">,
+) {
   children.push(
     paragraph([linkRun(basics.url, basics.name)], {
       after: 75,
@@ -411,7 +510,11 @@ function addHeader(children: Paragraph[], basics: BasicsSelection) {
   );
 
   if (basics.label) {
-    children.push(paragraph([textRun(basics.label, { bold: true, size: 20 })], { after: 45 }));
+    children.push(
+      paragraph([textRun(basics.label, { bold: true, size: 20 })], {
+        after: 45,
+      }),
+    );
   }
 
   children.push(
@@ -434,12 +537,18 @@ function addHeader(children: Paragraph[], basics: BasicsSelection) {
     ),
   );
 
-  if (basics.summary) {
-    children.push(paragraph([textRun(basics.summary, { size: BODY_SIZE })], { after: 170 }));
+  if (policy.showSummary && basics.summary) {
+    children.push(
+      paragraph([textRun(basics.summary, { size: BODY_SIZE })], { after: 170 }),
+    );
   }
 }
 
-function addWork(children: Paragraph[], work: WorkSelection[]) {
+function addWork(
+  children: Paragraph[],
+  work: WorkSelection[],
+  policy: Pick<DocxArtifactPolicy, "showWorkSummaries">,
+) {
   children.push(sectionHeading("Experience"));
 
   for (const job of work) {
@@ -451,12 +560,14 @@ function addWork(children: Paragraph[], work: WorkSelection[]) {
       ]),
     );
 
-    if (job.summary) {
+    if (policy.showWorkSummaries && job.summary) {
       children.push(paragraph([textRun(job.summary)], { after: 50 }));
     }
 
     for (const highlight of job.highlights) {
-      children.push(paragraph([textRun(highlight)], { after: 35, bullet: true }));
+      children.push(
+        paragraph([textRun(highlight)], { after: 35, bullet: true }),
+      );
     }
   }
 }
@@ -483,23 +594,35 @@ function addSkills(children: Paragraph[], skills: SkillSelection[]) {
 function addProjects(
   children: Paragraph[],
   projects: ProjectSelection[],
-  pageBreakBefore: boolean,
+  policy: Pick<
+    DocxArtifactPolicy,
+    "projectSectionStartsOnNewPage" | "showProjectHighlights"
+  >,
 ) {
   if (!projects.length) {
     return;
   }
 
-  children.push(sectionHeading("Projects", pageBreakBefore));
+  children.push(
+    sectionHeading("Projects", policy.projectSectionStartsOnNewPage),
+  );
   for (const project of projects) {
     children.push(
       itemTitle(project.name, [
-        { href: project.githubUrl, label: formatProfileDisplayUrl(project.githubUrl) },
+        {
+          href: project.githubUrl,
+          label: formatProfileDisplayUrl(project.githubUrl),
+        },
       ]),
     );
     children.push(paragraph([textRun(project.description)], { after: 45 }));
 
-    for (const highlight of project.highlights) {
-      children.push(paragraph([textRun(highlight)], { after: 35, bullet: true }));
+    if (policy.showProjectHighlights) {
+      for (const highlight of project.highlights) {
+        children.push(
+          paragraph([textRun(highlight)], { after: 35, bullet: true }),
+        );
+      }
     }
   }
 }
@@ -512,7 +635,11 @@ function addCredentials(
   children.push(sectionHeading("Education & Certifications"));
 
   for (const entry of education) {
-    children.push(paragraph([textRun(entry.studyType, { bold: true, size: 21 })], { after: 35 }));
+    children.push(
+      paragraph([textRun(entry.studyType, { bold: true, size: 21 })], {
+        after: 35,
+      }),
+    );
     children.push(
       paragraph(
         [
@@ -527,9 +654,17 @@ function addCredentials(
       ),
     );
     children.push(
-      paragraph([textRun(formatDateRange(entry.startDate, entry.endDate), { color: MUTED_COLOR, size: SMALL_SIZE })], {
-        after: 80,
-      }),
+      paragraph(
+        [
+          textRun(formatDateRange(entry.startDate, entry.endDate), {
+            color: MUTED_COLOR,
+            size: SMALL_SIZE,
+          }),
+        ],
+        {
+          after: 80,
+        },
+      ),
     );
   }
 
@@ -549,7 +684,10 @@ function addCredentials(
         [
           textRun(certificate.issuer, { color: MUTED_COLOR, size: SMALL_SIZE }),
           separatorRun(),
-          textRun(formatMonthYear(certificate.date), { color: MUTED_COLOR, size: SMALL_SIZE }),
+          textRun(formatMonthYear(certificate.date), {
+            color: MUTED_COLOR,
+            size: SMALL_SIZE,
+          }),
         ],
         { after: 80 },
       ),
@@ -557,7 +695,10 @@ function addCredentials(
   }
 }
 
-function addPublications(children: Paragraph[], publications: PublicationSelection[]) {
+function addPublications(
+  children: Paragraph[],
+  publications: PublicationSelection[],
+) {
   if (!publications.length) {
     return;
   }
@@ -568,19 +709,25 @@ function addPublications(children: Paragraph[], publications: PublicationSelecti
       itemTitle(publication.name, [
         publication.publisher,
         formatMonthYear(publication.releaseDate),
-        { href: publication.url, label: formatProfileDisplayUrl(publication.url) },
+        {
+          href: publication.url,
+          label: formatProfileDisplayUrl(publication.url),
+        },
       ]),
     );
   }
 }
 
-function buildDocxDocument(variant: ResolvedResumeVariant) {
+function buildDocxDocument(
+  variant: ResolvedResumeVariant,
+  policy: DocxArtifactPolicy,
+) {
   const children: Paragraph[] = [];
 
-  addHeader(children, variant.basics);
-  addWork(children, variant.work);
+  addHeader(children, variant.basics, policy);
+  addWork(children, variant.work, policy);
   addSkills(children, variant.skills);
-  addProjects(children, variant.projects, variant.name === "full");
+  addProjects(children, variant.projects, policy);
   addCredentials(children, variant.education, variant.certificates);
   addPublications(children, variant.publications);
 
@@ -612,7 +759,7 @@ export async function generateDocxArtifacts(outputDir: string) {
   for (const artifact of docxArtifacts) {
     const variantConfig = readJsonFile<VariantSelection>(artifact.variantPath);
     const variant = resolveVariant(artifact.name, resume, variantConfig);
-    const document = buildDocxDocument(variant);
+    const document = buildDocxDocument(variant, artifact.policy);
     const buffer = await Packer.toBuffer(document);
     const outputPath = path.join(outputDir, artifact.outputName);
 

@@ -49,6 +49,8 @@ Those resolved payloads now feed dedicated top-level compositions instead of one
 - `src/components/SingleResumeLayout.tsx` for `/single`
 - `src/lib/artifact-specs.ts` for the artifact-specific presentation budgets shared by those layouts
 
+`src/lib/artifact-specs.ts` also carries the DOCX content contract through each artifact spec's `docx` policy. The intent is explicit: both DOCX exports keep the basics summary, work role summaries, and project highlights available for ATS parsing, while the 1-page PDF can still suppress role summaries for visual density. The same DOCX policy also declares whether Projects should start on a fresh DOCX page (`full`) or continue inline (`single`).
+
 ## Commands
 
 ```bash
@@ -94,6 +96,14 @@ The artifact checker also runs ATS-oriented checks across generated and public d
 - `pdffonts` must report embedded Unicode fonts and no Type 3 fonts.
 - `pdfimages -list` must report no embedded raster images.
 - DOCX `word/document.xml` must expose parseable resume text and `document.xml.rels` must contain the expected contact/profile/project hyperlink targets.
+
+```bash
+pnpm check:artifacts:current
+```
+
+Validate the currently generated artifacts and their matching `public/downloads/` copies without failing the generated-artifact freshness gate. This is the audit path for current artifacts: it runs `pnpm build:script` and then executes the checker with `RESUME_ARTIFACT_RECENCY=skip`, which skips only the 15-minute generated-artifact recency check while keeping the rest of the PDF, DOCX, parity, and content guards intact.
+
+Keep `src/lib/artifact-specs.ts` aligned with that DOCX lane: the checker should enforce the `docx` policy fields for summary and project-highlight presence so the DOCX exports stay intentionally ATS-rich even when the `/single` PDF trims visible copy.
 
 ```bash
 pnpm sync:public-downloads

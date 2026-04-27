@@ -1,8 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { execFile } from "node:child_process";
+import { createHash } from "node:crypto";
 import { promisify } from "node:util";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
+import ts from "typescript";
 
 const execFileAsync = promisify(execFile);
 const OUTPUT_DIR = path.resolve(process.cwd(), "assets", "outputs");
@@ -27,10 +29,18 @@ const SINGLE_VARIANT_PATH = path.resolve(
   "variants",
   "single.json",
 );
+const ARTIFACT_SPECS_PATH = path.resolve(
+  process.cwd(),
+  "src",
+  "lib",
+  "artifact-specs.ts",
+);
 const LETTER_WIDTH_POINTS = 612;
 const LETTER_HEIGHT_POINTS = 792;
 const LETTER_SIZE_TOLERANCE = 1;
 const MAX_ARTIFACT_AGE_MS = 15 * 60 * 1_000;
+const SHOULD_SKIP_ARTIFACT_RECENCY =
+  process.env.RESUME_ARTIFACT_RECENCY === "skip";
 const FULL_PAGE_ONE_LOWEST_TEXT_Y_MAX = 150;
 const FULL_PAGE_TWO_LOWEST_TEXT_Y_MAX = 110;
 const SINGLE_PAGE_LOWEST_TEXT_Y_MAX = 110;
@@ -39,10 +49,46 @@ const FULL_PAGE_ONE_LOWER_DENSITY_MIN_ROWS = 4;
 const FULL_PAGE_ONE_LOWER_DENSITY_MIN_CHARS = 160;
 const DEFAULT_LOWER_DENSITY_MIN_ROWS = 2;
 const DEFAULT_LOWER_DENSITY_MIN_CHARS = 80;
+const SINGLE_PAGE_TOP_TEXT_Y_MIN = 735;
+const SINGLE_PAGE_TOP_TEXT_Y_MAX = 755;
+const SINGLE_PAGE_BOTTOM_TEXT_Y_MIN = 90;
+const SINGLE_PAGE_BOTTOM_TEXT_Y_MAX = 110;
+const FULL_PAGE_ONE_SKILLS_HEADING_Y_MIN = 160;
+const FULL_PAGE_ONE_SKILLS_HEADING_Y_MAX = 190;
+const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MIN = 90;
+const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MAX = 110;
+const FULL_PAGE_TWO_PROJECT_HEADING_DELTA_SPREAD_MAX = 8;
+const PERSONAL_WEBSITE_PROJECT_NAME = "Personal Website: w4w.dev";
+const PROXYWHIRL_PROJECT_NAME = "ProxyWhirl";
+const EXCLUDED_PROJECT_NAME = "FL Studio MCP Server";
+const LEGACY_SOURCE_COUNT_PATTERN =
+  /\b114(?:\+)?\s+(?:auto-validated\s+)?sources?\b/i;
+const PROJECT_SECTION_END_HEADINGS = [
+  "Education & Certifications",
+  "Education",
+  "Certifications",
+  "Publications",
+] as const;
 
 interface PdfExpectation {
   fileName: string;
   expectedPages: number;
+}
+
+interface DocxArtifactPolicy {
+  showSummary: boolean;
+  showWorkSummaries: boolean;
+  showProjectHighlights: boolean;
+  projectSectionStartsOnNewPage: boolean;
+}
+
+interface LoadedArtifactSpecs {
+  full: {
+    docx: DocxArtifactPolicy;
+  };
+  single: {
+    docx: DocxArtifactPolicy;
+  };
 }
 
 interface NamedSelection {
@@ -78,6 +124,7 @@ interface WorkSelection extends NamedSelection {
   startDate: string;
   endDate: string | null;
   location?: string;
+  summary?: string;
   highlights: string[];
 }
 
@@ -156,6 +203,25 @@ const publicDownloadPdfExpectations: PdfExpectation[] = [
 const publicDownloadDocxArtifacts = [
   "wyatt-walsh-resume-full.docx",
   "wyatt-walsh-resume-single.docx",
+] as const;
+
+const artifactParityPairs = [
+  {
+    generatedFileName: "resume-full.pdf",
+    publicFileName: "wyatt-walsh-resume-full.pdf",
+  },
+  {
+    generatedFileName: "resume-single.pdf",
+    publicFileName: "wyatt-walsh-resume-single.pdf",
+  },
+  {
+    generatedFileName: "resume-full.docx",
+    publicFileName: "wyatt-walsh-resume-full.docx",
+  },
+  {
+    generatedFileName: "resume-single.docx",
+    publicFileName: "wyatt-walsh-resume-single.docx",
+  },
 ] as const;
 
 const seniorAiMlTargetKeywords = [
@@ -316,6 +382,19 @@ function assertStrictTextIncludes(
   }
 }
 
+function assertStrictTextExcludes(
+  haystack: string,
+  needle: string,
+  context: string,
+) {
+  const normalizedHaystack = normalizeForStrictIncludes(haystack).toLowerCase();
+  const normalizedNeedle = normalizeForStrictIncludes(needle).toLowerCase();
+
+  if (normalizedHaystack.includes(normalizedNeedle)) {
+    fail(`${context} must not contain parseable contiguous text "${needle}".`);
+  }
+}
+
 function stripUrlForDisplay(url: string) {
   try {
     const parsedUrl = new URL(url);
@@ -400,6 +479,120 @@ function assertNormalizedTextExcludes(
   }
 }
 
+function assertTextExcludesPattern(
+  haystack: string,
+  pattern: RegExp,
+  context: string,
+  description: string,
+) {
+  if (pattern.test(normalizeForStrictIncludes(haystack))) {
+    fail(`${context} must not contain ${description}.`);
+  }
+}
+
+function getTextItemY(
+  textItems: PdfTextItemMetric[],
+  needle: string,
+  context: string,
+) {
+  const normalizedNeedle = normalizeForStrictIncludes(needle).toLowerCase();
+  const matches = textItems.filter(
+    (item) =>
+      normalizeForStrictIncludes(item.text).toLowerCase() === normalizedNeedle,
+  );
+
+  if (!matches.length) {
+    fail(`${context} must contain "${needle}".`);
+  }
+
+  return Math.max(...matches.map((item) => item.y));
+}
+
+function assertTextYWithinRange(
+  value: number,
+  minimum: number,
+  maximum: number,
+  context: string,
+) {
+  if (value < minimum || value > maximum) {
+    fail(
+      `${context} must stay between ${minimum}pt and ${maximum}pt; found ${value.toFixed(1)}pt.`,
+    );
+  }
+
+  console.log(`✓ ${context} is ${value.toFixed(1)}pt`);
+}
+
+function getOrderedTextBlock(
+  haystack: string,
+  needle: string,
+  orderedNeedles: string[],
+  context: string,
+) {
+  const needleIndex = orderedNeedles.indexOf(needle);
+
+  if (needleIndex === -1) {
+    fail(`${context} is missing ordered entry "${needle}".`);
+  }
+
+  const startIndex = getNormalizedIndex(haystack, needle, context);
+  const endIndexCandidates = [
+    ...orderedNeedles.slice(needleIndex + 1),
+    ...PROJECT_SECTION_END_HEADINGS,
+  ]
+    .map((candidate) =>
+      findNormalizedIndex(haystack, candidate, startIndex + needle.length),
+    )
+    .filter((index) => index > startIndex);
+  const endIndex = endIndexCandidates.length
+    ? Math.min(...endIndexCandidates)
+    : haystack.length;
+
+  return haystack.slice(startIndex, endIndex);
+}
+
+function assertArtifactContentConsistency(
+  text: string,
+  label: string,
+  variant: ResolvedVariantContentSelection,
+) {
+  const context = `${label} content consistency`;
+  const selectedProjectNames = getSelectionNames(variant.projects);
+
+  if (selectedProjectNames.includes(PERSONAL_WEBSITE_PROJECT_NAME)) {
+    assertNormalizedTextIncludes(text, PERSONAL_WEBSITE_PROJECT_NAME, context);
+  }
+
+  assertNormalizedTextExcludes(text, EXCLUDED_PROJECT_NAME, context);
+  assertTextExcludesPattern(
+    text,
+    LEGACY_SOURCE_COUNT_PATTERN,
+    context,
+    'the brittle "114 sources" phrasing',
+  );
+
+  if (selectedProjectNames.includes(PROXYWHIRL_PROJECT_NAME)) {
+    const proxyWhirlBlock = getOrderedTextBlock(
+      text,
+      PROXYWHIRL_PROJECT_NAME,
+      selectedProjectNames,
+      `${context} ProxyWhirl entry`,
+    );
+    assertStrictTextIncludes(
+      proxyWhirlBlock,
+      "100+",
+      `${context} ProxyWhirl entry`,
+    );
+  }
+
+  const selectedCredentials = [...variant.education, ...variant.certificates];
+  if (selectedCredentials.length) {
+    assertNormalizedTextIncludesAll(text, selectedCredentials, context);
+  }
+
+  console.log(`✓ ${label} keeps curated project and credential content consistent`);
+}
+
 async function readVariantSelection(
   filePath: string,
 ): Promise<VariantContentSelection> {
@@ -410,6 +603,28 @@ async function readVariantSelection(
 async function readResumeSelection(filePath: string): Promise<ResumeSelection> {
   const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw) as ResumeSelection;
+}
+
+async function loadArtifactSpecs() {
+  const source = await fs.readFile(ARTIFACT_SPECS_PATH, "utf8");
+  const { outputText } = ts.transpileModule(source, {
+    compilerOptions: {
+      module: ts.ModuleKind.CommonJS,
+      target: ts.ScriptTarget.ES2020,
+    },
+    fileName: ARTIFACT_SPECS_PATH,
+  });
+  const module = { exports: {} as { artifactSpecs?: LoadedArtifactSpecs } };
+
+  // build:script only compiles src/scripts, so load the source artifact contract
+  // directly at runtime instead of introducing a cross-project TS import edge.
+  new Function("exports", "module", outputText)(module.exports, module);
+
+  if (!module.exports.artifactSpecs) {
+    fail("artifact-specs.ts must export artifactSpecs for artifact checks.");
+  }
+
+  return module.exports.artifactSpecs;
 }
 
 function pickByIndexes<T>(values: T[], indexes: number[] | undefined) {
@@ -453,6 +668,9 @@ function resolveVariantContent(
 
       return {
         ...baseWork,
+        ...(selection.summary === undefined
+          ? {}
+          : { summary: selection.summary ?? undefined }),
         highlights: pickByIndexes(
           baseWork.highlights,
           "highlightIndexes" in selection
@@ -862,6 +1080,13 @@ async function assertArtifactExists(
 
   console.log(`✓ Found ${path.relative(process.cwd(), filePath)}`);
 
+  if (SHOULD_SKIP_ARTIFACT_RECENCY) {
+    console.log(
+      `✓ Skipped generated-artifact recency check for ${fileName} because RESUME_ARTIFACT_RECENCY=skip`,
+    );
+    return filePath;
+  }
+
   if (Date.now() - stats.mtimeMs > MAX_ARTIFACT_AGE_MS) {
     fail(`Generated artifact looks stale: ${fileName}`);
   }
@@ -900,10 +1125,41 @@ async function assertPublicDownloadExists(fileName: string) {
   return filePath;
 }
 
+async function getFileSha256(filePath: string) {
+  const buffer = await fs.readFile(filePath);
+  return createHash("sha256").update(buffer).digest("hex");
+}
+
+async function assertMatchingArtifactHash(
+  generatedFilePath: string,
+  publicFilePath: string,
+  generatedLabel: string,
+  publicLabel: string,
+) {
+  const [generatedHash, publicHash] = await Promise.all([
+    getFileSha256(generatedFilePath),
+    getFileSha256(publicFilePath),
+  ]);
+
+  if (generatedHash !== publicHash) {
+    fail(
+      `${generatedLabel} SHA-256 (${generatedHash}) must match ${publicLabel} (${publicHash}).`,
+    );
+  }
+
+  console.log(`✓ ${generatedLabel} SHA-256 matches ${publicLabel}`);
+}
+
 async function getPdfPageText(
   filePath: string,
   pageNumber: number,
-): Promise<{ text: string; normalizedText: string }> {
+): Promise<{
+  text: string;
+  normalizedText: string;
+  textItems: PdfTextItemMetric[];
+  highestTextY: number;
+  lowestTextY: number;
+}> {
   const data = new Uint8Array(await fs.readFile(filePath));
   const loadingTask = getDocument({
     data,
@@ -917,19 +1173,27 @@ async function getPdfPageText(
   try {
     const page = await pdf.getPage(pageNumber);
     const content = await page.getTextContent();
-    const text = content.items
-      .map((item) => {
-        if (typeof item !== "object" || item === null || !("str" in item)) {
-          return "";
-        }
-
-        return typeof item.str === "string" ? item.str : "";
-      })
+    const textItems = content.items
+      .map(getPdfTextItemMetric)
+      .filter((item): item is PdfTextItemMetric => item !== null);
+    const text = textItems
+      .map((item) => item.text)
       .join(" ")
       .replace(/\s+/g, " ")
       .trim();
+    const yCoordinates = textItems.map((item) => item.y);
 
-    return { text, normalizedText: text };
+    if (!yCoordinates.length) {
+      fail(`${path.basename(filePath)} page ${pageNumber} must contain parseable text.`);
+    }
+
+    return {
+      text,
+      normalizedText: text,
+      textItems,
+      highestTextY: Math.max(...yCoordinates),
+      lowestTextY: Math.min(...yCoordinates),
+    };
   } finally {
     await pdf.destroy();
   }
@@ -1184,6 +1448,81 @@ function assertDocxHyperlinkTargets(
   }
 }
 
+function getParagraphXmlContainingText(
+  documentXml: string,
+  needle: string,
+  context: string,
+) {
+  const matcher = new RegExp(
+    `<w:p\\b[\\s\\S]*?<w:t[^>]*>${escapeRegExp(needle)}<\\/w:t>[\\s\\S]*?<\\/w:p>`,
+    "i",
+  );
+  const match = matcher.exec(documentXml);
+
+  if (!match?.[0]) {
+    fail(`${context} must contain a paragraph for "${needle}".`);
+  }
+
+  return match[0];
+}
+
+function assertDocxPolicy(
+  documentXml: string,
+  text: string,
+  label: string,
+  variant: ResolvedVariantContentSelection,
+  policy: DocxArtifactPolicy,
+) {
+  const context = `${label} DOCX policy`;
+
+  if (variant.summary) {
+    if (policy.showSummary) {
+      assertStrictTextIncludes(text, variant.summary, context);
+    } else {
+      assertStrictTextExcludes(text, variant.summary, context);
+    }
+  }
+
+  const workSummaries = variant.work
+    .map((job) => job.summary)
+    .filter((summary): summary is string => Boolean(summary));
+  for (const summary of workSummaries) {
+    if (policy.showWorkSummaries) {
+      assertStrictTextIncludes(text, summary, context);
+    } else {
+      assertStrictTextExcludes(text, summary, context);
+    }
+  }
+
+  const projectHighlights = variant.projects.flatMap((project) => project.highlights);
+  for (const highlight of projectHighlights) {
+    if (policy.showProjectHighlights) {
+      assertStrictTextIncludes(text, highlight, context);
+    } else {
+      assertStrictTextExcludes(text, highlight, context);
+    }
+  }
+
+  const projectsHeadingParagraph = getParagraphXmlContainingText(
+    documentXml,
+    "Projects",
+    context,
+  );
+  const hasPageBreakBefore = /<w:pageBreakBefore\b[^/>]*(?:\/>|>)/i.test(
+    projectsHeadingParagraph,
+  );
+
+  if (policy.projectSectionStartsOnNewPage && !hasPageBreakBefore) {
+    fail(`${context} must start the Projects section on a new page.`);
+  }
+
+  if (!policy.projectSectionStartsOnNewPage && hasPageBreakBefore) {
+    fail(`${context} must keep the Projects section inline without a page break.`);
+  }
+
+  console.log(`✓ ${label} satisfies the explicit DOCX policy`);
+}
+
 function assertNoLetterSpacedHeadings(text: string, label: string) {
   const collapsed = normalizeForStrictIncludes(text);
   const letterSpacedNeedles = [
@@ -1320,6 +1659,12 @@ async function assertAtsParseability(
     popplerText.layoutText,
     `${label} pdftotext layout text`,
   );
+  assertArtifactContentConsistency(pdfjsText, `${label} pdfjs text`, variant);
+  assertArtifactContentConsistency(
+    popplerText.text,
+    `${label} pdftotext text`,
+    variant,
+  );
   assertParseableCoreFields(
     pdfjsText,
     `${label} pdfjs text`,
@@ -1343,6 +1688,7 @@ async function assertDocxParseability(
   label: string,
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
+  policy: DocxArtifactPolicy,
 ) {
   const { documentXml, relationshipsXml } = await getDocxXml(filePath, label);
   const text = extractDocxText(documentXml);
@@ -1353,6 +1699,7 @@ async function assertDocxParseability(
   assertRolePatternsExtractCleanly(text, `${label} DOCX text`, variant);
   assertSeniorAiMlTargetKeywords(text, `${label} DOCX text`);
   assertNoRedundantUrlLabels(text, `${label} DOCX text`);
+  assertArtifactContentConsistency(text, `${label} DOCX text`, variant);
   assertParseableCoreFields(
     text,
     `${label} DOCX text`,
@@ -1379,6 +1726,7 @@ async function assertDocxParseability(
   }
 
   assertDocxHyperlinkTargets(relationshipsXml, label, resume, variant);
+  assertDocxPolicy(documentXml, text, label, variant, policy);
   console.log(`✓ ${label} passes DOCX parseability checks`);
 }
 
@@ -1391,6 +1739,24 @@ async function assertFullResumePdf(
   const pageOne = await getPdfPageText(filePath, 1);
   const pageTwo = await getPdfPageText(filePath, 2);
   const fullText = `${pageOne.text}\n${pageTwo.text}`;
+  const pageOneSkillsHeadingY = getTextItemY(
+    pageOne.textItems,
+    "Skills",
+    `${label} page 1 layout`,
+  );
+
+  assertTextYWithinRange(
+    pageOneSkillsHeadingY,
+    FULL_PAGE_ONE_SKILLS_HEADING_Y_MIN,
+    FULL_PAGE_ONE_SKILLS_HEADING_Y_MAX,
+    `${label} page 1 Skills heading Y`,
+  );
+  assertTextYWithinRange(
+    pageOne.lowestTextY,
+    FULL_PAGE_ONE_BOTTOM_TEXT_Y_MIN,
+    FULL_PAGE_ONE_BOTTOM_TEXT_Y_MAX,
+    `${label} page 1 bottom text Y`,
+  );
 
   assertNormalizedTextIncludes(
     pageOne.text,
@@ -1442,6 +1808,64 @@ async function assertFullResumePdf(
   console.log(`✓ ${label} page 2 contains "Projects"`);
 
   console.log(`✓ ${label} page 2 is reserved for Projects and credentials`);
+
+  if (fullVariant.education.length || fullVariant.certificates.length) {
+    const projectsHeadingY = getTextItemY(
+      pageTwo.textItems,
+      "Projects",
+      `${label} page 2 layout`,
+    );
+    const credentialsHeadingY = getTextItemY(
+      pageTwo.textItems,
+      "Education & Certifications",
+      `${label} page 2 layout`,
+    );
+
+    if (projectsHeadingY <= credentialsHeadingY) {
+      fail(
+        `${label} page 2 must keep Projects above Education & Certifications; found ${projectsHeadingY.toFixed(1)}pt and ${credentialsHeadingY.toFixed(1)}pt.`,
+      );
+    }
+
+    console.log(
+      `✓ ${label} page 2 keeps Projects at ${projectsHeadingY.toFixed(1)}pt above Education & Certifications at ${credentialsHeadingY.toFixed(1)}pt`,
+    );
+
+    const projectHeadingYs = fullVariant.projects.map((project) =>
+      getTextItemY(pageTwo.textItems, project.name, `${label} page 2 layout`),
+    );
+
+    for (let index = 0; index < projectHeadingYs.length; index += 1) {
+      const projectHeadingY = projectHeadingYs[index];
+
+      if (projectHeadingY <= credentialsHeadingY) {
+        fail(
+          `${label} page 2 must keep "${fullVariant.projects[index]?.name}" above Education & Certifications.`,
+        );
+      }
+    }
+
+    if (projectHeadingYs.length > 1) {
+      const deltas = projectHeadingYs
+        .slice(0, -1)
+        .map((y, index) => y - projectHeadingYs[index + 1]);
+
+      if (deltas.some((delta) => delta <= 0)) {
+        fail(`${label} page 2 project headings must descend from top to bottom.`);
+      }
+
+      const deltaSpread = Math.max(...deltas) - Math.min(...deltas);
+      if (deltaSpread > FULL_PAGE_TWO_PROJECT_HEADING_DELTA_SPREAD_MAX) {
+        fail(
+          `${label} page 2 project heading delta spread must stay <= ${FULL_PAGE_TWO_PROJECT_HEADING_DELTA_SPREAD_MAX}pt; found ${deltaSpread.toFixed(1)}pt (${deltas.map((delta) => delta.toFixed(1)).join(", ")}pt).`,
+        );
+      }
+
+      console.log(
+        `✓ ${label} page 2 project heading deltas are ${deltas.map((delta) => delta.toFixed(1)).join(", ")}pt (spread ${deltaSpread.toFixed(1)}pt)`,
+      );
+    }
+  }
 
   if (fullVariant.education?.length) {
     assertNormalizedTextIncludes(pageTwo.text, "Education", `${label} page 2`);
@@ -1502,6 +1926,19 @@ async function assertSingleResumePdf(
   singleVariant: ResolvedVariantContentSelection,
 ) {
   const pageOne = await getPdfPageText(filePath, 1);
+
+  assertTextYWithinRange(
+    pageOne.highestTextY,
+    SINGLE_PAGE_TOP_TEXT_Y_MIN,
+    SINGLE_PAGE_TOP_TEXT_Y_MAX,
+    `${label} top text Y`,
+  );
+  assertTextYWithinRange(
+    pageOne.lowestTextY,
+    SINGLE_PAGE_BOTTOM_TEXT_Y_MIN,
+    SINGLE_PAGE_BOTTOM_TEXT_Y_MAX,
+    `${label} bottom text Y`,
+  );
 
   assertNormalizedTextIncludes(pageOne.text, resume.basics.name, label);
   console.log(`✓ ${label} contains "${resume.basics.name}"`);
@@ -1616,10 +2053,11 @@ async function assertSingleResumePdf(
 }
 
 async function runArtifactChecks() {
-  const [resume, fullVariant, singleVariant] = await Promise.all([
+  const [resume, fullVariant, singleVariant, artifactSpecs] = await Promise.all([
     readResumeSelection(RESUME_PATH),
     readVariantSelection(FULL_VARIANT_PATH),
     readVariantSelection(SINGLE_VARIANT_PATH),
+    loadArtifactSpecs(),
   ]);
   const resolvedFullVariant = resolveVariantContent(resume, fullVariant);
   const resolvedSingleVariant = resolveVariantContent(resume, singleVariant);
@@ -1667,12 +2105,14 @@ async function runArtifactChecks() {
     "resume-full.docx",
     resume,
     resolvedFullVariant,
+    artifactSpecs.full.docx,
   );
   await assertDocxParseability(
     path.join(OUTPUT_DIR, "resume-single.docx"),
     "resume-single.docx",
     resume,
     resolvedSingleVariant,
+    artifactSpecs.single.docx,
   );
 
   for (const expectation of publicDownloadPdfExpectations) {
@@ -1686,6 +2126,15 @@ async function runArtifactChecks() {
 
   for (const artifact of publicDownloadDocxArtifacts) {
     await assertPublicDownloadExists(artifact);
+  }
+
+  for (const pair of artifactParityPairs) {
+    await assertMatchingArtifactHash(
+      path.join(OUTPUT_DIR, pair.generatedFileName),
+      path.join(PUBLIC_DOWNLOADS_DIR, pair.publicFileName),
+      pair.generatedFileName,
+      path.join("public", "downloads", pair.publicFileName),
+    );
   }
 
   await assertFullResumePdf(
@@ -1719,12 +2168,14 @@ async function runArtifactChecks() {
     path.join("public", "downloads", "wyatt-walsh-resume-full.docx"),
     resume,
     resolvedFullVariant,
+    artifactSpecs.full.docx,
   );
   await assertDocxParseability(
     path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-single.docx"),
     path.join("public", "downloads", "wyatt-walsh-resume-single.docx"),
     resume,
     resolvedSingleVariant,
+    artifactSpecs.single.docx,
   );
 
   console.log("Artifact regression checks passed.");
