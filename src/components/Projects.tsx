@@ -1,5 +1,6 @@
 import { Project } from "@/lib/schema";
 import { Section } from "./Section";
+import { formatMonthYear } from "@/lib/date";
 import { FaGithub } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
 
@@ -7,10 +8,63 @@ type ProjectsProps = {
   projects: Project[];
 };
 
+const FEATURED_PROJECT_COUNT = 3;
+
+function renderProjectDateRange(startDate: string, endDate: string | null) {
+  return `${formatMonthYear(startDate)} - ${
+    endDate ? formatMonthYear(endDate) : "Present"
+  }`;
+}
+
+function buildProjectMeta(project: Project) {
+  const metadata = [renderProjectDateRange(project.startDate, project.endDate)];
+
+  if (Array.isArray(project.stack) && project.stack.length > 0) {
+    metadata.push(project.stack.slice(0, 4).join(" / "));
+  }
+
+  return metadata.join(" • ");
+}
+
 type ProjectHeadingProps = {
   project: Project;
   className?: string;
 };
+
+type ProjectActionsProps = {
+  project: Project;
+};
+
+function ProjectActions({ project }: ProjectActionsProps) {
+  const actionClass =
+    "interactive-chip inline-flex items-center gap-1 rounded-full border border-border/65 bg-background/80 px-2.5 py-1 text-[11px] font-[family:var(--font-site-label)] font-semibold uppercase tracking-[0.08em] text-foreground/70 shadow-sm transition-colors duration-200 hover:border-primary/20 hover:bg-primary/[0.06] hover:text-foreground";
+
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      {project.url && (
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={actionClass}
+        >
+          Live
+          <LuExternalLink size={12} strokeWidth={2} />
+        </a>
+      )}
+      <a
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`GitHub repository for ${project.name}`}
+        className={actionClass}
+      >
+        GitHub
+        <FaGithub size={12} />
+      </a>
+    </div>
+  );
+}
 
 function ProjectHeading({ project, className }: ProjectHeadingProps) {
   return (
@@ -32,70 +86,148 @@ function ProjectHeading({ project, className }: ProjectHeadingProps) {
       ) : (
         <span>{project.name}</span>
       )}
-      {project.githubUrl && (
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`GitHub repository for ${project.name}`}
-          className="interactive-chip inline-flex items-center gap-1 rounded-full border border-transparent p-1 hover:text-primary"
-        >
-          <FaGithub size={16} />
-        </a>
-      )}
     </h3>
   );
 }
 
-export function Projects({ projects }: ProjectsProps) {
+function ProjectStackPills({ stack }: { stack: string[] | undefined }) {
+  if (!Array.isArray(stack) || stack.length === 0) {
+    return null;
+  }
+
   return (
-    <Section title="Projects" className="break-inside-avoid">
-      <div className="space-y-3">
-        {projects.map((project) => (
-          <article
-            key={project.name}
-            className="group/project interactive-surface card-hover rounded-[1.35rem] border border-border/60 bg-card/78 p-4 shadow-[0_22px_48px_-34px_rgba(15,23,42,0.36)] ring-1 ring-white/30"
-          >
-            <div className="relative z-10">
-              <div>
-                <ProjectHeading
-                  project={project}
-                  className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6 tracking-[-0.02em]"
-                />
-              </div>
-            </div>
-            <p className="relative z-10 mt-2 text-sm leading-6 text-foreground/80 transition-colors duration-200 group-hover/project:text-foreground/90">
-              {project.description}
+    <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5 text-xs leading-5 text-muted-foreground">
+      <span className="mr-1 font-[family:var(--font-site-label)] font-semibold uppercase tracking-[0.08em] text-foreground/60">
+        Stack
+      </span>
+      {stack.map((item) => (
+        <span
+          key={item}
+          className="interactive-pill rounded-full border border-border/60 bg-background/80 px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-muted-foreground"
+        >
+          {item}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+export function Projects({ projects }: ProjectsProps) {
+  const featuredProjects = projects.slice(0, FEATURED_PROJECT_COUNT);
+  const additionalProjects = projects.slice(FEATURED_PROJECT_COUNT);
+
+  return (
+    <Section
+      title="Projects"
+      description={
+        additionalProjects.length > 0
+          ? "Selected AI, data, and product builds. Featured projects carry full proof points up front; the rest stay compact while still exposing dates, links, and on-demand implementation detail."
+          : "Selected AI, data, and product builds with shipped scope, proof points, and stack context."
+      }
+      className="break-inside-avoid"
+    >
+      <div className="space-y-5">
+        <div className="space-y-3">
+          {additionalProjects.length > 0 && (
+            <p className="px-1 font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45">
+              Featured Projects
             </p>
-            {Array.isArray(project.highlights) && project.highlights.length > 0 && (
-              <ul className="relative z-10 mt-2.5 list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
-                {project.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="transition-colors duration-200 group-hover/project:text-foreground/75"
-                  >
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            )}
-            {Array.isArray(project.stack) && project.stack.length > 0 && (
-              <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5 text-xs leading-5 text-muted-foreground">
-                <span className="mr-1 font-[family:var(--font-site-label)] font-semibold uppercase tracking-[0.08em] text-foreground/60">
-                  Stack
-                </span>
-                {project.stack.map((item) => (
-                  <span
-                    key={item}
-                    className="interactive-pill rounded-full border border-border/60 bg-background/80 px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-muted-foreground group-hover/project:border-primary/15 group-hover/project:bg-primary/[0.06] group-hover/project:text-foreground/75"
-                  >
-                    {item}
-                  </span>
-                ))}
+          )}
+          {featuredProjects.map((project) => (
+            <article
+              key={project.name}
+              className="group/project interactive-surface card-hover rounded-[1.35rem] border border-border/60 bg-card/78 p-4 shadow-[0_22px_48px_-34px_rgba(15,23,42,0.36)] ring-1 ring-white/30"
+            >
+              <div className="relative z-10 flex flex-col gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="space-y-1">
+                    <ProjectHeading
+                      project={project}
+                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-[1.02rem] font-semibold leading-6 tracking-[-0.02em]"
+                    />
+                    <p className="text-xs leading-5 text-muted-foreground">
+                      {buildProjectMeta(project)}
+                    </p>
+                  </div>
+                  <ProjectActions project={project} />
+                </div>
+                <p className="text-sm leading-6 text-foreground/80 transition-colors duration-200 group-hover/project:text-foreground/90">
+                  {project.description}
+                </p>
+                {Array.isArray(project.highlights) && project.highlights.length > 0 && (
+                  <ul className="list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
+                    {project.highlights.map((highlight) => (
+                      <li
+                        key={highlight}
+                        className="transition-colors duration-200 group-hover/project:text-foreground/75"
+                      >
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <ProjectStackPills stack={project.stack} />
               </div>
-            )}
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
+
+        {additionalProjects.length > 0 && (
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 px-1">
+              <p className="font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45">
+                More Selected Builds
+              </p>
+              <div className="h-px flex-1 bg-gradient-to-r from-border/70 to-transparent" />
+            </div>
+            {additionalProjects.map((project) => (
+              <article
+                key={project.name}
+                className="group/project rounded-[1.2rem] border border-border/55 bg-background/70 p-4 shadow-[0_16px_34px_-30px_rgba(15,23,42,0.28)]"
+              >
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="space-y-1">
+                    <ProjectHeading
+                      project={project}
+                      className="flex flex-wrap items-center gap-2 font-[family:var(--font-site-heading)] text-base font-semibold leading-6 tracking-[-0.02em]"
+                    />
+                    <p className="text-xs leading-5 text-muted-foreground">
+                      {buildProjectMeta(project)}
+                    </p>
+                  </div>
+                  <ProjectActions project={project} />
+                </div>
+                <p className="mt-2 text-sm leading-6 text-foreground/80">
+                  {project.description}
+                </p>
+                {(project.highlights.length > 0 ||
+                  (Array.isArray(project.stack) && project.stack.length > 0)) && (
+                  <details className="mt-3 rounded-2xl border border-border/50 bg-card/65 px-3 py-2">
+                    <summary className="cursor-pointer list-none font-[family:var(--font-site-label)] text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground/55 transition-colors hover:text-foreground/75">
+                      View proof points & stack
+                    </summary>
+                    <div className="mt-3">
+                      {Array.isArray(project.highlights) &&
+                        project.highlights.length > 0 && (
+                          <ul className="list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
+                            {project.highlights.map((highlight) => (
+                              <li
+                                key={highlight}
+                                className="transition-colors duration-200 group-hover/project:text-foreground/75"
+                              >
+                                {highlight}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      <ProjectStackPills stack={project.stack} />
+                    </div>
+                  </details>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </Section>
   );
