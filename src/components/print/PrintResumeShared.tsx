@@ -220,13 +220,7 @@ export function PrintCertificateStrip({
   compact = false,
 }: PrintCertificateStripProps) {
   return (
-    <div
-      className={cn(
-        "grid gap-x-4",
-        certificates.length > 1 ? "grid-cols-2" : "grid-cols-1",
-        compact ? "gap-y-1.5" : "gap-y-2",
-      )}
-    >
+    <div className={cn("space-y-2", compact && "space-y-0.5")}>
       {certificates.map((certificate) => (
         <article
           key={certificate.name}
@@ -235,27 +229,16 @@ export function PrintCertificateStrip({
           <h3
             className={cn(
               "font-bold text-slate-950",
-              compact ? "text-[10.25px] leading-[1.2]" : "text-[10.75px]",
+              compact ? "text-[10px] leading-[1.12]" : "text-[10.75px]",
             )}
           >
-            {certificate.url ? (
-              <a
-                href={certificate.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-slate-700"
-              >
-                {certificate.name}
-              </a>
-            ) : (
-              certificate.name
-            )}
+            {certificate.name}
           </h3>
           <p
             className={cn(
               "text-slate-600",
               compact
-                ? "text-[9.3px] leading-[1.25]"
+                ? "text-[9.1px] leading-[1.15]"
                 : "text-[9.8px] leading-[1.3]",
             )}
           >
@@ -564,16 +547,7 @@ export function PrintEducationList({
   compact = false,
 }: PrintEducationListProps) {
   return (
-    <div
-      className={
-        compact
-          ? cn(
-              "grid gap-x-4 gap-y-1.5",
-              education.length > 1 ? "grid-cols-2" : "grid-cols-1",
-            )
-          : "space-y-2.5"
-      }
-    >
+    <div className={cn("space-y-2.5", compact && "space-y-1")}>
       {education.map((entry) => (
         <article
           key={entry.institution}
@@ -582,7 +556,7 @@ export function PrintEducationList({
           <h3
             className={cn(
               "font-bold text-slate-950",
-              compact ? "text-[11px]" : "text-[11.5px]",
+              compact ? "text-[10.6px] leading-[1.15]" : "text-[11.5px]",
             )}
           >
             {entry.studyType}
@@ -591,22 +565,11 @@ export function PrintEducationList({
             className={cn(
               "text-slate-700",
               compact
-                ? "text-[9.9px] leading-[1.25]"
+                ? "text-[9.6px] leading-[1.18]"
                 : "text-[10.5px] leading-[1.35]",
             )}
           >
-            {entry.url ? (
-              <a
-                href={entry.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-slate-900"
-              >
-                {entry.institution}
-              </a>
-            ) : (
-              entry.institution
-            )}
+            {entry.institution}
             {entry.area ? `, ${entry.area}` : ""}
             {entry.score ? (
               <>
@@ -615,7 +578,12 @@ export function PrintEducationList({
               </>
             ) : null}
           </p>
-          <p className="text-[9.5px] leading-snug text-slate-500">
+          <p
+            className={cn(
+              "text-slate-500",
+              compact ? "text-[9.1px] leading-[1.15]" : "text-[9.5px] leading-snug",
+            )}
+          >
             {renderDateRange(entry.startDate, entry.endDate)}
           </p>
         </article>
