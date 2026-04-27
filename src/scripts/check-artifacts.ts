@@ -89,6 +89,7 @@ interface ProjectSelection extends NamedSelection {
   description: string;
   githubUrl: string;
   highlights: string[];
+  stack?: string[];
 }
 
 interface PdfTextItemMetric {
@@ -1189,6 +1190,10 @@ function assertParseableCoreFields(
       );
     }
     assertStrictTextIncludes(text, project.description, context);
+
+    for (const keyword of project.stack ?? []) {
+      assertStrictTextIncludes(text, keyword, context);
+    }
   }
 }
 
@@ -1357,7 +1362,7 @@ async function assertFullResumePdf(
   );
   console.log(`✓ ${label} page 2 contains all curated project names`);
 
-  assertNormalizedTextIncludes(pageTwo.text, "Tech:", `${label} page 2`);
+  assertNormalizedTextExcludes(pageTwo.text, "Tech:", `${label} page 2`);
   assertNormalizedTextExcludes(pageTwo.text, "Stack:", `${label} page 2`);
   assertNormalizedTextIncludesAll(
     pageTwo.text,

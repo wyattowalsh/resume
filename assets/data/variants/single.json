@@ -18,10 +18,6 @@
     {
       "name": "SandLabs",
       "highlightIndexes": [0, 1]
-    },
-    {
-      "name": "Gap Inc.",
-      "highlightIndexes": [0, 1]
     }
   ],
   "skills": [
@@ -45,33 +41,23 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "LLM workflow catalog with 40+ reusable skills, MCP-ready configs, and cross-runtime agent automation.",
-      "highlightIndexes": []
+      "description": "Python/TypeScript MCP workflow catalog with 40+ reusable skills, FastMCP configs, and cross-runtime agent automation.",
+      "highlightIndexes": [0]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Validated star-schema warehouse spanning 65K+ NBA games and 13M+ events with DuckDB/SQLite/Parquet exports.",
-      "highlightIndexes": []
+      "description": "Python warehouse using Pandas, Polars, SQLAlchemy, DuckDB, and Pandera across 65K+ games, 13M+ events, and Parquet/SQLite exports.",
+      "highlightIndexes": [0]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Data-collection toolkit with nine proxy rotation strategies, 100+ sources, and self-healing health checks.",
-      "highlightIndexes": []
-    },
-    {
-      "name": "AI/ML Web Feeds",
-      "description": "Typed AI/ML source-discovery platform with HTTP/RSS validation, OPML exports, and docs-backed feed workflows.",
-      "highlightIndexes": []
-    },
-    {
-      "name": "MCP-Crawl4AI",
-      "description": "FastMCP server that lets AI agents crawl, extract, and return structured web content over stdio/HTTP.",
-      "highlightIndexes": []
+      "description": "Python/SQLite proxy toolkit with nine rotation strategies, 100+ sources, PyPI distribution, and self-healing health checks.",
+      "highlightIndexes": [0]
     },
     {
       "name": "Personal Website: w4w.dev",
-      "description": "Long-running Next.js and MDX publishing system with durable content, SEO, and polished public UI.",
-      "highlightIndexes": []
+      "description": "Next.js/React/TypeScript publishing system with Tailwind CSS, MDX, durable content, SEO, and polished public UI.",
+      "highlightIndexes": [0]
     }
   ],
   "education": [

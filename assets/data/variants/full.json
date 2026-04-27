@@ -50,33 +50,33 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "LLM developer-workflow catalog with 40+ reusable skills, MCP-ready configs, shared instructions, and cross-runtime agent automation.",
-      "highlightIndexes": [0]
+      "description": "Python/TypeScript MCP developer-workflow catalog with 40+ reusable skills, FastMCP configs, shared instructions, and cross-runtime agent automation.",
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Star-schema analytics warehouse spanning 65K+ NBA games and 13M+ play-by-play events with validated ETL, DuckDB/SQLite/Parquet exports, docs, CLI, and Kaggle distribution.",
+      "description": "Python warehouse using Pandas, Polars, SQLAlchemy, DuckDB, and Pandera to validate 65K+ NBA games, 13M+ events, Parquet exports, docs, CLI, and Kaggle distribution.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Data-collection toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing proxy health checks.",
-      "highlightIndexes": [0]
+      "description": "Python/SQLite/PyPI data-collection toolkit with nine rotation strategies, 100+ auto-validated sources, and self-healing proxy health checks.",
+      "highlightIndexes": [0, 1]
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Typed AI/ML source-discovery platform with HTTP/RSS validation, contributor workflows, OPML exports, and docs-backed feeds for model and agent research.",
+      "description": "Python source-discovery platform with Pydantic, SQLModel, YAML feeds, Fumadocs docs, Vercel deploys, HTTP/RSS validation, and OPML exports.",
       "highlightIndexes": [0]
     },
     {
       "name": "MCP-Crawl4AI",
-      "description": "FastMCP server enabling AI agents to crawl, extract, and return structured web content over documented stdio/HTTP paths.",
+      "description": "Python/FastMCP server using Crawl4AI, Playwright, and Docker so AI agents can crawl, extract, and return structured web content over stdio/HTTP.",
       "highlightIndexes": [0]
     },
     {
       "name": "Personal Website: w4w.dev",
-      "description": "Long-running personal web app and MDX publishing system pairing a polished frontend with durable content, SEO, and authoring workflows.",
-      "highlightIndexes": [0]
+      "description": "Next.js/React/TypeScript personal web app using Tailwind CSS and MDX for durable content, SEO, polished UI, and authoring workflows.",
+      "highlightIndexes": [0, 1]
     }
   ],
   "education": [

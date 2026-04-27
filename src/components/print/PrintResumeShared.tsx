@@ -408,6 +408,7 @@ export function PrintProjectList({
   compact = false,
 }: PrintProjectListProps) {
   const spaciousFullList = !summaryOnly && !compact && projects.length <= 6;
+  const includeStackText = showStacks;
   const spacingClass = summaryOnly
     ? compact
       ? "space-y-1"
@@ -415,7 +416,7 @@ export function PrintProjectList({
     : compact
       ? "space-y-2"
       : spaciousFullList
-        ? "space-y-12"
+        ? "space-y-11"
         : "space-y-2";
 
   return (
@@ -457,6 +458,9 @@ export function PrintProjectList({
               </span>
               {" - "}
               {project.description}
+              {includeStackText && project.stack?.length ? (
+                <> Built with {project.stack.join(", ")}.</>
+              ) : null}
             </p>
           ) : (
             <div className="min-w-0">
@@ -506,20 +510,24 @@ export function PrintProjectList({
                 )}
               >
                 {project.description}
+                {includeStackText && project.stack?.length ? (
+                  <> Built with {project.stack.join(", ")}.</>
+                ) : null}
               </p>
             </div>
           )}
 
           {showHighlights &&
-          !summaryOnly &&
           project.highlights.length > 0 &&
           (maxHighlights ?? project.highlights.length) > 0 ? (
             <ul
               className={cn(
-                "mt-1.5 list-disc pl-4 text-slate-800 marker:text-slate-400",
-                compact
+                "list-disc pl-4 text-slate-800 marker:text-slate-400",
+                summaryOnly
+                  ? "mt-0.5 space-y-0 text-[9.25px] leading-[1.2]"
+                  : compact
                   ? "space-y-0.5 text-[10px] leading-[1.35]"
-                  : "space-y-0.5 text-[10.15px] leading-[1.35]",
+                  : "mt-1.5 space-y-0.5 text-[10.15px] leading-[1.35]",
               )}
             >
               {project.highlights
@@ -528,13 +536,6 @@ export function PrintProjectList({
                   <li key={highlight}>{highlight}</li>
                 ))}
             </ul>
-          ) : null}
-
-          {showStacks && !summaryOnly && project.stack?.length ? (
-            <p className="mt-0.5 text-[9.45px] leading-[1.28] text-slate-500">
-              <span className="font-semibold text-slate-700">Tech:</span>{" "}
-              {project.stack.join(", ")}
-            </p>
           ) : null}
         </article>
       ))}

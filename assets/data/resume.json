@@ -421,7 +421,7 @@
         "impactSignals": ["dataset-scale", "community-adoption"]
       },
       "highlights": [
-        "Implemented a high-performance, Pandera-validated ETL pipeline that extracts from the NBA API, updates warehouse outputs daily, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
+        "Implemented a Pandera-validated ETL pipeline that extracts NBA API data, updates daily warehouse outputs, and exports DuckDB, SQLite, Parquet, and CSV artifacts.",
         "Built docs, schema references, release workflows, and Kaggle distribution for a 180+ table public warehouse spanning 130+ stats.nba.com endpoint classes."
       ],
       "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
@@ -460,7 +460,7 @@
       "endDate": null,
       "description": "Long-running personal web app and MDX publishing system built with Next.js, combining a polished public-facing frontend with a richly tooled technical blog, strong SEO, and durable content workflows.",
       "highlights": [
-        "Designed and maintained the public product surface across multiple generations, including responsive landing experiences, theme support, motion, and accessibility-conscious UI polish.",
+        "Maintained the public site across multiple generations, covering responsive landing pages, themes, motion, accessibility, and MDX publishing workflows.",
         "Built a deeply customized MDX publishing workflow with search, metadata, math rendering, feeds, tags, and other authoring features usually split across several separate tools."
       ],
       "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "MDX"]
