@@ -1,15 +1,24 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   quality:
     name: Build, lint, test, and artifacts
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout code
@@ -47,13 +56,10 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - name: Setup Chrome
-        id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
+      - name: Install Puppeteer Chrome
+        run: pnpm exec puppeteer browsers install chrome
 
       - name: Generate resume artifacts
-        env:
-          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: node src/scripts/generate.js
 
       - name: Check artifact regressions

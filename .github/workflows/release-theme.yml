@@ -1,13 +1,24 @@
-name: Release Theme
+name: Release Resume
 
 on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: Optional release tag to upload generated artifacts to
+        required: false
+        type: string
   release:
     types: [published]
 
+concurrency:
+  group: release-resume-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build_and_release:
-    name: Build and Release
+    name: Build and Release Resume
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
     steps:
@@ -22,37 +33,60 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
 
       - name: Install dependencies
-        working-directory: ./themes/jsonresume-theme-w
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
-      - name: Install resume-cli
-        run: pnpm add -g resume-cli
+      - name: Install PDF inspection tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Build scripts
+        run: pnpm build:script
 
-      - name: Export HTML
-        working-directory: ./themes/jsonresume-theme-w
-        run: resume export resume.html --theme .
+      - name: Build
+        run: pnpm build
 
-      - name: Export PDF
-        working-directory: ./themes/jsonresume-theme-w
-        run: resume export resume.pdf --theme .
+      - name: Install Puppeteer Chrome
+        run: pnpm exec puppeteer browsers install chrome
 
-      - name: Convert PDF to PNG
-        working-directory: ./themes/jsonresume-theme-w
+      - name: Generate resume artifacts
+        run: node src/scripts/generate.js
+
+      - name: Check artifact regressions
+        run: node src/scripts/check-artifacts.js
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-release-artifacts
+          path: |
+            assets/outputs/resume-full.pdf
+            assets/outputs/resume-full.docx
+            assets/outputs/resume-full.png
+            assets/outputs/resume-single.pdf
+            assets/outputs/resume-single.docx
+            assets/outputs/resume-single.png
+
+      - name: Resolve release tag
+        id: release-tag
         run: |
-          convert -density 300 resume.pdf -quality 100 -background white -alpha remove resume.png
+          tag_name="${{ github.event.release.tag_name || inputs.tag_name }}"
+          if [ -n "$tag_name" ]; then
+            echo "tag_name=$tag_name" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Upload assets to release
+        if: steps.release-tag.outputs.tag_name != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload ${{ github.event.release.tag_name }} \
-            ./themes/jsonresume-theme-w/resume.html \
-            ./themes/jsonresume-theme-w/resume.pdf \
-            ./themes/jsonresume-theme-w/resume.png 
+          gh release upload "${{ steps.release-tag.outputs.tag_name }}" \
+            assets/outputs/resume-full.pdf \
+            assets/outputs/resume-full.docx \
+            assets/outputs/resume-full.png \
+            assets/outputs/resume-single.pdf \
+            assets/outputs/resume-single.docx \
+            assets/outputs/resume-single.png \
+            --clobber
