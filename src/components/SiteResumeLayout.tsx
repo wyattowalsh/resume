@@ -136,8 +136,8 @@ export function SiteResumeLayout({
         )}
       </div>
       <footer className="mt-10 print:hidden">
-        <div className="mx-auto flex max-w-full flex-col items-center justify-center gap-2 rounded-[1.5rem] border border-border bg-card px-3 py-3 text-xs text-muted-foreground shadow-sm sm:w-fit sm:flex-row sm:flex-wrap">
-          <span className="px-1 font-[family:var(--font-site-label)] font-semibold text-foreground/55">
+        <div className="mx-auto flex w-fit max-w-full flex-col items-center justify-center gap-2 rounded-[1.5rem] border border-border bg-card px-3 py-3 text-center text-xs text-muted-foreground shadow-sm sm:flex-row sm:flex-wrap sm:text-left">
+          <span className="rounded-full bg-muted/60 px-3 py-1 font-[family:var(--font-site-label)] font-semibold text-foreground/55">
             Downloads
           </span>
           {downloadGroups.map((group) => (
