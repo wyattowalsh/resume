@@ -90,6 +90,9 @@ const canonicalUrl = `${siteUrl}/`;
 const imageUrl = toAbsoluteUrl(socialImagePath);
 const imageWidth = profileImagePath ? 1000 : 512;
 const imageHeight = profileImagePath ? 1000 : 512;
+const sameAs = Array.from(
+  new Set([siteResume.basics.url, ...siteResume.basics.profiles.map((profile) => profile.url)].filter(Boolean)),
+);
 
 export const sharedSeoMetadata = {
   title: rootTitle,
@@ -113,8 +116,8 @@ export const sharedSeoMetadata = {
     mainEntity: {
       "@type": "Person",
       name: siteResume.basics.name,
-      url: siteResume.basics.url,
-      sameAs: siteResume.basics.profiles.map((profile) => profile.url),
+      url: canonicalUrl,
+      sameAs,
       ...(locationName
         ? {
             homeLocation: {

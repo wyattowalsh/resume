@@ -21,6 +21,7 @@ import {
   FaCertificate,
   FaDiagramProject,
   FaGraduationCap,
+  FaTimeline,
 } from "react-icons/fa6";
 
 type SiteResumeLayoutProps = {
@@ -89,7 +90,7 @@ export function SiteResumeLayout({
           id="work-experience"
           className="section-reveal scroll-mt-10 sm:scroll-mt-12"
         >
-          <HR />
+          <HR icon={<FaTimeline />} />
           <WorkExperience work={work} />
         </div>
 

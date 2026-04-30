@@ -1,45 +1,27 @@
-# docs
+# Resume Developer Docs
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+This directory contains the project-local developer documentation app for the resume site. It is a standalone Next.js + Fumadocs application and is separate from the public Vike resume app at the repository root.
 
-Run development server:
+## Commands
+
+Run commands from the repository root with `pnpm -C docs <script>`:
 
 ```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+pnpm -C docs dev       # start the Fumadocs dev server
+pnpm -C docs build     # build the docs app
+pnpm -C docs start     # serve the built docs app
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+## Structure
 
-## Explore
+| Path | Purpose |
+| --- | --- |
+| `content/docs` | MDX documentation pages and metadata |
+| `lib/source.ts` | Fumadocs source adapter for the MDX content collection |
+| `app/layout.config.tsx` | Shared docs navigation and base layout options |
+| `app/docs/[[...slug]]/page.tsx` | Dynamic docs route renderer |
+| `app/api/search/route.ts` | Fumadocs search endpoint |
 
-In the project, you can see:
+## Maintenance
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `app/layout.config.tsx`: Shared options for layouts, optional but preferred to keep.
-
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
-
-### Fumadocs MDX
-
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
-
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
-
-## Learn More
-
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+Keep developer docs aligned with root project behavior when routes, build commands, generated artifacts, or resume data workflows change. Validate docs changes with `pnpm -C docs build`; validate the public resume app from the repository root with `pnpm test`, `pnpm lint`, and `pnpm build`.

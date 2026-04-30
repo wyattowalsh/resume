@@ -498,7 +498,7 @@
       "endDate": null,
       "description": "Advanced bookmark management plugin for the IINA media player featuring multi-interface design (sidebar, standalone window, video overlay), tag-based organization, and file reconciliation for moved or renamed media.",
       "highlights": [
-        "Engineered three complementary interfaces—sidebar tab, detached window, and in-video overlay—with a shared tag system supporting auto-tagging and multi-criteria filtering.",
+        "Engineered three complementary interfaces (sidebar tab, detached window, and in-video overlay) with a shared tag system supporting auto-tagging and multi-criteria filtering.",
         "Implemented JSON/CSV import-export with duplicate handling and intelligent file reconciliation that resolves bookmarks when media files are moved or renamed."
       ],
       "stack": ["TypeScript", "React", "IINA Plugin API", "Radix UI", "Tailwind CSS"]
@@ -534,7 +534,7 @@
       "githubUrl": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive",
       "startDate": "2020-11-01",
       "endDate": "2021-01-01",
-      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models—Ridge, Lasso, Elastic Net—derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",
+      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models, including Ridge, Lasso, and Elastic Net, derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",
       "highlights": [
         "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed 20K+ views and established credibility in the data science community.",
         "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn."

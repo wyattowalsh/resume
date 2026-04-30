@@ -9,7 +9,7 @@ describe("rootTitle", () => {
     const expectedTitle = [
       siteResume.basics.name,
       siteResume.basics.label?.trim()
-        ? `— ${siteResume.basics.label.trim()}`
+        ? `- ${siteResume.basics.label.trim()}`
         : undefined,
       siteResume.basics.location.city.trim()
         ? `· ${siteResume.basics.location.city.trim()}`
@@ -33,5 +33,23 @@ describe("sharedSeoMetadata", () => {
     expect(sharedSeoMetadata.imageAlt).toBe("Wyatt Walsh profile image");
     expect(sharedSeoMetadata.imageWidth).toBe(1000);
     expect(sharedSeoMetadata.imageHeight).toBe(1000);
+  });
+
+  it("keeps structured data URLs aligned with the canonical resume page", () => {
+    const siteResume = getResumeVariant("site");
+    const expectedSameAs = [
+      siteResume.basics.url,
+      ...siteResume.basics.profiles.map((profile) => profile.url),
+    ];
+
+    expect(sharedSeoMetadata.structuredData.url).toBe(
+      sharedSeoMetadata.canonicalUrl,
+    );
+    expect(sharedSeoMetadata.structuredData.mainEntity.url).toBe(
+      sharedSeoMetadata.canonicalUrl,
+    );
+    expect(sharedSeoMetadata.structuredData.mainEntity.sameAs).toEqual(
+      expectedSameAs,
+    );
   });
 });

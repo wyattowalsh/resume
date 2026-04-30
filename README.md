@@ -111,6 +111,18 @@ pnpm sync:public-downloads
 
 Copy the latest generated PDF and DOCX artifacts into `public/downloads/` so the public site can expose them as static downloads without making `/full` or `/single` public routes.
 
+## Developer Docs
+
+The `docs/` directory is a standalone Next.js + Fumadocs app for project developer documentation. It keeps its own package manifest and content tree separate from the public resume site.
+
+```bash
+pnpm -C docs dev
+pnpm -C docs build
+pnpm -C docs start
+```
+
+Use `pnpm -C docs dev` for local docs authoring, `pnpm -C docs build` for validation, and `pnpm -C docs start` to serve a built docs app. Docs content lives in `docs/content/docs`, the Fumadocs source adapter is `docs/lib/source.ts`, and shared docs navigation options live in `docs/app/layout.config.tsx`.
+
 ## Resume generation workflow
 
 `src/scripts/generate.ts` is self-contained:

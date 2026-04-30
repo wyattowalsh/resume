@@ -1,5 +1,6 @@
 import { Skill } from "@/lib/schema";
 import { Section } from "./Section";
+import { FaCode } from "react-icons/fa";
 
 type SkillsProps = {
   skills: Skill[];
@@ -13,20 +14,25 @@ export function Skills({ skills }: SkillsProps) {
           return (
             <div
               key={skill.name}
-              className="group/skill skill-card rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5 card-hover interactive-surface"
+              className="group/skill skill-card card-hover interactive-surface flex flex-col gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm sm:flex-row sm:items-start sm:p-5"
             >
-              <h3 className="relative z-10 mb-2 font-[family:var(--font-site-heading)] text-sm font-semibold leading-5 text-foreground/90 transition-colors duration-200 group-hover/skill:text-foreground">
-                {skill.name}
-              </h3>
-              <div className="relative z-10 flex flex-wrap gap-1.5">
-                {skill.keywords.map((keyword) => (
-                  <span
-                    key={keyword}
-                    className="interactive-pill skill-pill rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-secondary-foreground group-hover/skill:border-primary/20 group-hover/skill:text-foreground/80"
-                  >
-                    {keyword}
-                  </span>
-                ))}
+              <div className="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
+                <FaCode className="text-primary" size={14} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="relative z-10 mb-2 font-[family:var(--font-site-heading)] text-sm font-semibold leading-5 text-foreground/90 transition-colors duration-200 group-hover/skill:text-foreground">
+                  {skill.name}
+                </h3>
+                <div className="relative z-10 flex flex-wrap gap-1.5">
+                  {skill.keywords.map((keyword) => (
+                    <span
+                      key={keyword}
+                      className="interactive-pill skill-pill rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-secondary-foreground group-hover/skill:border-primary/20 group-hover/skill:text-foreground/80"
+                    >
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           );

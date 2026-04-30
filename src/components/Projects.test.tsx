@@ -13,9 +13,11 @@ describe("Projects", () => {
 
     expect(markup).not.toContain("Featured Projects");
     expect(markup).not.toContain("More Selected Builds");
-    expect(markup).toContain("7 selected AI, data, and product builds.");
     expect(markup).toContain("Jan 2026 - Present");
-    expect(markup).toContain("Developer Tooling");
+    expect(markup).not.toContain("Data Engineering");
+    expect(markup).not.toContain("Open Data");
+    expect(markup).not.toContain("Developer Tooling");
+    expect(markup).not.toContain("Agent Platforms");
     expect(markup).toContain("GitHub");
     expect(markup).not.toContain("View 2 proof points + 5 stack items");
     expect(markup).not.toContain("FL Studio MCP Server");
