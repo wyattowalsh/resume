@@ -61,6 +61,7 @@ const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MIN = 90;
 const FULL_PAGE_ONE_BOTTOM_TEXT_Y_MAX = 120;
 const FULL_PAGE_TWO_PROJECT_HEADING_DELTA_SPREAD_MAX = 8;
 const PERSONAL_WEBSITE_PROJECT_NAME = "Personal Website: w4w.dev";
+const NBA_DATABASE_PROJECT_NAME = "NBA Basketball Database";
 const PROXYWHIRL_PROJECT_NAME = "ProxyWhirl";
 const EXCLUDED_PROJECT_NAME = "FL Studio MCP Server";
 const LEGACY_SOURCE_COUNT_PATTERN =
@@ -597,6 +598,20 @@ function assertArtifactContentConsistency(
       proxyWhirlBlock,
       "100+",
       `${context} ProxyWhirl entry`,
+    );
+  }
+
+  if (selectedProjectNames.includes(NBA_DATABASE_PROJECT_NAME)) {
+    const nbaDatabaseBlock = getOrderedTextBlock(
+      text,
+      NBA_DATABASE_PROJECT_NAME,
+      selectedProjectNames,
+      `${context} NBA Basketball Database entry`,
+    );
+    assertStrictTextIncludes(
+      nbaDatabaseBlock,
+      "425K+ views and 60K+ downloads",
+      `${context} NBA Basketball Database entry`,
     );
   }
 

@@ -64,7 +64,7 @@
     },
     {
       "name": "ProxyWhirl",
-      "description": "Rotating proxy toolkit with 9 selection strategies, 114+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping workflows.",
+      "description": "Rotating proxy toolkit with 9 selection strategies, 100+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping workflows.",
       "highlightIndexes": [0, 1]
     },
     {

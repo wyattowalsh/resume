@@ -457,6 +457,7 @@ export function PrintProjectList({
           key={project.name}
           className={cn(
             "resume-print-entry break-inside-avoid",
+            tightenedFullList && "min-h-[84.6pt]",
             !summaryOnly &&
               cn(
                 "border-t border-slate-100 first:border-t-0 first:pt-0",

@@ -445,10 +445,10 @@
       "githubUrl": "https://github.com/wyattowalsh/proxywhirl",
       "startDate": "2025-05-01",
       "endDate": null,
-      "description": "Released rotating proxy toolkit with 9 selection strategies, 114+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
+      "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
       "highlights": [
         "Implemented 9 proxy rotation strategies with configurable fallback chains, per-source scoring, and performance-based selection.",
-        "Built self-healing validation across 114+ proxy sources with circuit breakers, auto-ejection, recovery promotion, and five interfaces for different scraping workflows."
+        "Built self-healing validation across 100+ proxy sources with circuit breakers, auto-ejection, recovery promotion, and five interfaces for different scraping workflows."
       ],
       "stack": ["Python", "SQLite", "PyPI"]
     },

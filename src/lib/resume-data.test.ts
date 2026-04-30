@@ -265,6 +265,18 @@ describe("getResumeVariant", () => {
       expect(full.projects).toEqual(expectedProjects);
     });
 
+    it("keeps NBA Basketball Database Kaggle stats in full-artifact highlights", () => {
+      const full = getResumeVariant("full");
+      const nbadb = full.projects?.find(
+        (project) => project.name === "NBA Basketball Database",
+      );
+
+      expect(nbadb).toBeDefined();
+      expect(nbadb!.highlights.join(" ")).toContain(
+        "425K+ views and 60K+ downloads",
+      );
+    });
+
     it("resolves site-artifact projects with curated highlights", () => {
       const site = getResumeVariant("site");
       const expectedProjects = (

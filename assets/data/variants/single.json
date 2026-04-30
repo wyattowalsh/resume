@@ -51,7 +51,7 @@
     },
     {
       "name": "ProxyWhirl",
-      "description": "Python and SQLite proxy toolkit with 9 rotation strategies, 114+ sources, and self-healing circuit breakers.",
+      "description": "Python and SQLite proxy toolkit with 9 rotation strategies, 100+ sources, and self-healing circuit breakers.",
       "highlightIndexes": [0, 1]
     },
     {

@@ -55,12 +55,15 @@
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and a Kaggle dataset reaching 425K+ views and 60K+ downloads.",
-      "highlightIndexes": [0, 1]
+      "description": "Open-source NBA warehouse with 65K+ games, 13M+ plays, validated ETL, multi-format exports, and Kaggle distribution reaching 425K+ views and 60K+ downloads.",
+      "highlights": [
+        "Implemented daily Pandera-validated NBA ETL plus DuckDB, SQLite, Parquet, and CSV exports.",
+        "Published a 180+ table Kaggle warehouse reaching 425K+ views and 60K+ downloads."
+      ]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released rotating proxy toolkit with 9 selection strategies, 114+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
+      "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
       "highlightIndexes": [0, 1]
     },
     {
