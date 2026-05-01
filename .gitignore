@@ -119,6 +119,7 @@ deno_dir
 /dist
 /dist-ssr
 *.js
+!server/index.js
 *.js.map
 
 # IDE files
