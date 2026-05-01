@@ -43,7 +43,6 @@ function isDirectRun() {
 }
 
 app.use(express.static(clientDirectory));
-app.use(express.static(distDirectory));
 app.use(express.static(publicDirectory));
 
 app.get("*splat", async (req, res, next) => {

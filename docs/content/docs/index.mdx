@@ -10,7 +10,7 @@ This repo intentionally ships three different resume artifacts from one canonica
 
 | Artifact               | Route     | Job                                                                                           |
 | ---------------------- | --------- | --------------------------------------------------------------------------------------------- |
-| Online resume          | `/`       | Broadest public surface with richer project depth, section intros, and web-native navigation. |
+| Online resume          | `/`       | Broadest public surface with richer project depth, subtle scroll progress, skill-only popovers, and footer downloads. |
 | Editorial print resume | `/full`   | Local-only 2-page PDF/PNG visual artifact plus semantic DOCX export with calmer pacing and more supporting detail. |
 | Distilled print resume | `/single` | Local-only 1-page PDF/PNG visual artifact plus semantic DOCX export with a stricter linear reading path for safer extraction. |
 
@@ -21,8 +21,17 @@ This repo intentionally ships three different resume artifacts from one canonica
 3. `src/lib/resume-data.ts` resolves and validates each variant before rendering.
 4. Dedicated layouts (`SiteResumeLayout`, `FullResumeLayout`, `SingleResumeLayout`) own artifact-specific composition.
 5. `src/lib/artifact-specs.ts` also defines the explicit DOCX policy contract under each artifact spec's `docx` field.
+6. `assets/data/skill-details.json` adds web-only skill popover evidence that is guarded from leaking into generated PDF/DOCX artifacts.
+7. `src/lib/resume-downloads.ts` centralizes the public footer download labels, paths, and accessibility labels.
 
-The DOCX intent is deliberate: both exports retain the basics summary, selected work summaries, and project highlights for ATS richness, while the 1-page PDF can still suppress visible role summaries for layout density. The same DOCX policy also defines whether Projects start on a fresh DOCX page (`full`) or continue inline (`single`).
+The DOCX intent is deliberate: both exports retain the basics summary, selected work summaries, and project highlights for ATS richness, while the 1-page PDF can still suppress visible role summaries for layout density. The same DOCX policy also defines whether Projects start on a fresh DOCX page (`full`) or continue inline (`single`) and whether project stacks are emitted into DOCX text (`full` includes stack keywords, `single` stays compact).
+
+## Web interaction contract
+
+- The top progress indicator is noninteractive and uses a Radix Progress primitive wrapped in `src/components/ui/progress.tsx`.
+- The progress indicator appears only after the header sentinel leaves the viewport and updates via `IntersectionObserver`; it does not poll `scrollY` or attach scroll handlers.
+- Skills are the only popover surface. Work and project proof should remain directly visible in the page content, not hidden behind role/project dialogs.
+- Public resume downloads live in the bottom footer only.
 
 ## Validation workflow
 
@@ -33,7 +42,7 @@ The DOCX intent is deliberate: both exports retain the basics summary, selected 
 - `pnpm check:artifacts`
 - `pnpm check:artifacts:current`
 
-`pnpm check:artifacts` regenerates `/full` and `/single`, verifies page counts and letter sizing, checks curated content presence across PDF and DOCX artifacts, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
+`pnpm check:artifacts` regenerates `/full` and `/single`, syncs `public/downloads/`, verifies page counts and letter sizing, checks generated/public download hash parity, checks curated content presence across PDF and DOCX artifacts, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
 
 `pnpm check:artifacts:current` is the audit path for the artifacts already on disk. It runs `pnpm build:script` and then executes the checker with `RESUME_ARTIFACT_RECENCY=skip`, which skips only the generated-artifact freshness gate while keeping the same PDF, DOCX, parity, and content assertions.
 
@@ -44,6 +53,8 @@ The same gate also verifies ATS-oriented parseability for generated artifacts an
 - `pdfjs-dist` and Poppler `pdftotext` must extract contiguous contact fields, profile URLs, section headings, selected work entries, skill groups, keywords, and project descriptions.
 - DOCX `word/document.xml` must expose parseable contact fields, section headings, selected entries, skills, education, certifications, and project descriptions.
 - DOCX relationships must retain contact, profile, and project hyperlinks.
+- DOCX stack expectations must follow each artifact spec's `docx.showProjectStacks` policy.
+- Web-only skill-detail copy and reference URLs from `assets/data/skill-details.json` must stay out of generated and public PDF/DOCX artifacts.
 - Required headings must not degrade into letter-spaced text such as `E X P E R I E N C E`.
 
 Keep the checker aligned with `src/lib/artifact-specs.ts`: the `docx` policy fields are the source of truth for whether DOCX summaries and project highlights must be present.

@@ -15,10 +15,9 @@ describe("Projects", () => {
     expect(markup).not.toContain("More Selected Builds");
     expect(markup).toContain('<time dateTime="2026-01-01">Jan 2026</time>');
     expect(markup).toContain("Present");
-    expect(markup).not.toContain("Data Engineering");
-    expect(markup).not.toContain("Open Data");
-    expect(markup).not.toContain("Developer Tooling");
-    expect(markup).not.toContain("Agent Platforms");
+    expect(markup).not.toContain("Project proof");
+    expect(markup).not.toContain("Stack evidence");
+    expect(markup).not.toContain("aria-haspopup=\"dialog\"");
     expect(markup).toContain("GitHub");
     expect(markup).not.toContain("View 2 proof points + 5 stack items");
     expect(markup).not.toContain("FL Studio MCP Server");

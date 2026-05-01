@@ -1,0 +1,362 @@
+{
+  "AMPS": {
+    "category": "Streaming, Messaging & Capital Markets Systems",
+    "description": "High-performance publish/subscribe messaging platform from 60East used for low-latency real-time systems including financial services.",
+    "officialUrl": "https://crankuptheamps.com/",
+    "referenceUrl": "https://docs.crankuptheamps.com/",
+    "evidence": ["JPMorgan Chase & Co."]
+  },
+  "AI Agent Harnesses": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "Reusable configuration, tools, prompts, and workflows that coordinate AI coding agents across multiple runtimes.",
+    "officialUrl": "https://agents.w4w.dev",
+    "evidence": ["AI Agent Harness Configs"]
+  },
+  "AI Agent Skills": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Open skill package format for extending AI agents with concise instructions, scripts, references, and assets.",
+    "officialUrl": "https://agentskills.io/",
+    "referenceUrl": "https://agentskills.io/specification",
+    "evidence": ["AI Agent Harness Configs"]
+  },
+  "Amazon Bedrock": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "AWS managed service for building and scaling generative AI applications with foundation models and agent tooling.",
+    "officialUrl": "https://aws.amazon.com/bedrock/",
+    "referenceUrl": "https://docs.aws.amazon.com/bedrock/"
+  },
+  "Anthropic Claude API": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Anthropic's API for Claude models used in LLM applications, document workflows, and agentic systems.",
+    "officialUrl": "https://www.anthropic.com/api",
+    "referenceUrl": "https://docs.anthropic.com/"
+  },
+  "Apache Airflow": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Open-source platform for authoring, scheduling, and monitoring batch data workflows.",
+    "officialUrl": "https://airflow.apache.org/",
+    "referenceUrl": "https://airflow.apache.org/docs/"
+  },
+  "Apache Kafka": {
+    "category": "Streaming, Messaging & Capital Markets Systems",
+    "description": "Distributed event-streaming platform for durable logs, stream processing, and high-throughput pub/sub data movement.",
+    "officialUrl": "https://kafka.apache.org/",
+    "referenceUrl": "https://kafka.apache.org/documentation/"
+  },
+  "Apache Spark": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Distributed analytics engine for large-scale batch, SQL, streaming, and machine-learning workloads.",
+    "officialUrl": "https://spark.apache.org/",
+    "referenceUrl": "https://spark.apache.org/docs/latest/"
+  },
+  "AWS": {
+    "category": "Cloud, DevOps & Observability",
+    "description": "Amazon Web Services cloud platform used for compute, data, serverless, storage, and AI infrastructure.",
+    "officialUrl": "https://aws.amazon.com/",
+    "evidence": ["AWS Certified Cloud Practitioner"]
+  },
+  "AWS Athena": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Serverless AWS query service for analyzing data in object storage with SQL.",
+    "officialUrl": "https://aws.amazon.com/athena/",
+    "referenceUrl": "https://docs.aws.amazon.com/athena/"
+  },
+  "AWS Glue": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "AWS serverless data integration service for ETL, cataloging, and pipeline orchestration.",
+    "officialUrl": "https://aws.amazon.com/glue/",
+    "referenceUrl": "https://docs.aws.amazon.com/glue/"
+  },
+  "AWS Lambda": {
+    "category": "Cloud, DevOps & Observability",
+    "description": "AWS serverless compute service for event-driven functions without managing servers.",
+    "officialUrl": "https://aws.amazon.com/lambda/",
+    "referenceUrl": "https://docs.aws.amazon.com/lambda/"
+  },
+  "Amazon Kinesis": {
+    "category": "Streaming, Messaging & Capital Markets Systems",
+    "description": "AWS streaming data service for collecting, processing, and analyzing real-time event streams.",
+    "officialUrl": "https://aws.amazon.com/kinesis/",
+    "referenceUrl": "https://docs.aws.amazon.com/kinesis/"
+  },
+  "BigQuery": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Google Cloud serverless data warehouse for large-scale SQL analytics.",
+    "officialUrl": "https://cloud.google.com/bigquery",
+    "referenceUrl": "https://cloud.google.com/bigquery/docs"
+  },
+  "Claude Code": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "Anthropic's agentic coding tool for editing, testing, and navigating software projects from the terminal.",
+    "officialUrl": "https://www.anthropic.com/claude-code",
+    "referenceUrl": "https://docs.anthropic.com/en/docs/claude-code"
+  },
+  "Claude Desktop": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "Desktop Claude application that supports interactive AI workflows and MCP-connected local tools.",
+    "officialUrl": "https://claude.ai/download",
+    "referenceUrl": "https://support.anthropic.com/"
+  },
+  "Codex": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "OpenAI coding agent family and CLI workflows for agent-assisted software development.",
+    "officialUrl": "https://openai.com/codex/",
+    "referenceUrl": "https://developers.openai.com/codex/"
+  },
+  "Context Engineering": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Design discipline for shaping model context, memory, retrieval, tools, and instructions so AI systems behave reliably.",
+    "officialUrl": "https://www.anthropic.com/engineering/building-effective-agents",
+    "referenceUrl": "https://modelcontextprotocol.io/"
+  },
+  "Cursor": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "AI-first code editor for codebase-aware chat, inline edits, and agentic programming workflows.",
+    "officialUrl": "https://cursor.com/",
+    "referenceUrl": "https://docs.cursor.com/"
+  },
+  "Cursor Agent": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "Cursor's agent workflow for planning and applying code changes across a project context.",
+    "officialUrl": "https://cursor.com/agents",
+    "referenceUrl": "https://docs.cursor.com/"
+  },
+  "DeepAgents": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "LangChain agent framework layer for planning, subagents, filesystem-backed context, and longer-running AI workflows.",
+    "officialUrl": "https://github.com/langchain-ai/deepagents",
+    "referenceUrl": "https://docs.langchain.com/"
+  },
+  "Docker": {
+    "category": "Cloud, DevOps & Observability",
+    "description": "Container platform for packaging applications and dependencies into reproducible runtime images.",
+    "officialUrl": "https://www.docker.com/",
+    "referenceUrl": "https://docs.docker.com/"
+  },
+  "DuckDB": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "In-process analytical database optimized for local OLAP, Parquet, and embedded data workflows.",
+    "officialUrl": "https://duckdb.org/",
+    "referenceUrl": "https://duckdb.org/docs/",
+    "evidence": ["NBA Basketball Database"]
+  },
+  "FastAPI": {
+    "category": "Backend, APIs & Distributed Systems",
+    "description": "Python web framework for building typed, OpenAPI-first APIs with async support.",
+    "officialUrl": "https://fastapi.tiangolo.com/",
+    "referenceUrl": "https://fastapi.tiangolo.com/tutorial/"
+  },
+  "GitHub Actions": {
+    "category": "Cloud, DevOps & Observability",
+    "description": "GitHub-native CI/CD automation platform for tests, builds, releases, and deployment workflows.",
+    "officialUrl": "https://github.com/features/actions",
+    "referenceUrl": "https://docs.github.com/actions"
+  },
+  "GitHub Copilot CLI": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "GitHub Copilot tooling for command-line and agent-assisted developer workflows.",
+    "officialUrl": "https://github.com/features/copilot",
+    "referenceUrl": "https://docs.github.com/copilot"
+  },
+  "GitHub Copilot Web": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "GitHub Copilot's web and GitHub-integrated assistant surfaces for code, pull requests, and repository workflows.",
+    "officialUrl": "https://github.com/features/copilot",
+    "referenceUrl": "https://docs.github.com/copilot"
+  },
+  "Google Cloud Pub/Sub": {
+    "category": "Streaming, Messaging & Capital Markets Systems",
+    "description": "Google Cloud messaging service for global asynchronous pub/sub event ingestion and distribution.",
+    "officialUrl": "https://cloud.google.com/pubsub",
+    "referenceUrl": "https://cloud.google.com/pubsub/docs"
+  },
+  "Google Gemini API": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Google's Gemini model API for multimodal generative AI applications.",
+    "officialUrl": "https://ai.google.dev/gemini-api",
+    "referenceUrl": "https://ai.google.dev/gemini-api/docs"
+  },
+  "GraphQL (Apollo)": {
+    "category": "Backend, APIs & Distributed Systems",
+    "description": "GraphQL API tooling around Apollo Client, Server, Federation, Router, and GraphOS ecosystem patterns.",
+    "officialUrl": "https://www.apollographql.com/",
+    "referenceUrl": "https://www.apollographql.com/docs/"
+  },
+  "Guardrails AI": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Open-source framework for validating, constraining, and correcting LLM outputs with structured guardrails.",
+    "officialUrl": "https://www.guardrailsai.com/",
+    "referenceUrl": "https://www.guardrailsai.com/docs"
+  },
+  "Hugging Face": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Machine-learning platform and model hub for models, datasets, evaluation, inference, and training workflows.",
+    "officialUrl": "https://huggingface.co/",
+    "referenceUrl": "https://huggingface.co/docs"
+  },
+  "KDB+": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "High-performance time-series database from KX widely used for financial market data and analytics.",
+    "officialUrl": "https://kx.com/kdb/",
+    "referenceUrl": "https://code.kx.com/q/",
+    "evidence": ["JPMorgan Chase & Co."]
+  },
+  "Kubernetes": {
+    "category": "Cloud, DevOps & Observability",
+    "description": "Open-source orchestration system for deploying, scaling, and managing containerized applications.",
+    "officialUrl": "https://kubernetes.io/",
+    "referenceUrl": "https://kubernetes.io/docs/"
+  },
+  "LangChain": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Framework for building LLM applications with models, tools, retrieval, agents, and orchestration primitives.",
+    "officialUrl": "https://www.langchain.com/",
+    "referenceUrl": "https://docs.langchain.com/"
+  },
+  "LangGraph": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "LangChain framework for stateful, graph-based agent workflows with persistence, interrupts, and streaming.",
+    "officialUrl": "https://www.langchain.com/langgraph",
+    "referenceUrl": "https://langchain-ai.github.io/langgraph/"
+  },
+  "LangSmith": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "LangChain observability and evaluation platform for tracing, debugging, testing, and monitoring LLM systems.",
+    "officialUrl": "https://www.langchain.com/langsmith",
+    "referenceUrl": "https://docs.smith.langchain.com/"
+  },
+  "LlamaIndex": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Data framework for connecting private data to LLM applications through indexing, retrieval, and agent workflows.",
+    "officialUrl": "https://www.llamaindex.ai/",
+    "referenceUrl": "https://docs.llamaindex.ai/"
+  },
+  "Model Context Protocol (MCP)": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Open protocol for connecting AI applications to tools, resources, prompts, and external context providers.",
+    "officialUrl": "https://modelcontextprotocol.io/",
+    "referenceUrl": "https://modelcontextprotocol.io/specification/"
+  },
+  "NotebookLM": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Google AI research and note-taking product for grounding answers in uploaded or connected source material.",
+    "officialUrl": "https://notebooklm.google/",
+    "evidence": ["Frame Payments"]
+  },
+  "OpenAI API": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "OpenAI platform API for building applications with text, vision, audio, embeddings, tools, and agents.",
+    "officialUrl": "https://platform.openai.com/docs/overview",
+    "referenceUrl": "https://platform.openai.com/docs"
+  },
+  "OpenCode": {
+    "category": "AI Agent Harnesses & Coding Assistants",
+    "description": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows.",
+    "officialUrl": "https://opencode.ai/",
+    "referenceUrl": "https://opencode.ai/docs/"
+  },
+  "Pandera": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Dataframe validation library for typed, testable data-quality contracts in Python data pipelines.",
+    "officialUrl": "https://pandera.readthedocs.io/",
+    "referenceUrl": "https://pandera.readthedocs.io/en/stable/",
+    "evidence": ["NBA Basketball Database"]
+  },
+  "Polars": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Fast DataFrame library and query engine implemented in Rust for Python, SQL, and lazy analytical workflows.",
+    "officialUrl": "https://pola.rs/",
+    "referenceUrl": "https://docs.pola.rs/"
+  },
+  "PostgreSQL": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Open-source relational database widely used for transactional, analytical, and application data workloads.",
+    "officialUrl": "https://www.postgresql.org/",
+    "referenceUrl": "https://www.postgresql.org/docs/"
+  },
+  "Prompt Engineering": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Practice of designing prompts, instructions, examples, and constraints to improve LLM task performance and reliability.",
+    "officialUrl": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+    "referenceUrl": "https://platform.openai.com/docs/guides/prompt-engineering"
+  },
+  "PydanticAI": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "Pydantic-backed Python framework for type-safe LLM agents, structured output, tools, and evaluation loops.",
+    "officialUrl": "https://ai.pydantic.dev/",
+    "referenceUrl": "https://ai.pydantic.dev/agents/",
+    "evidence": ["Frame Payments"]
+  },
+  "Python": {
+    "category": "Languages & Authoring",
+    "description": "General-purpose programming language used here for AI, data engineering, APIs, automation, and developer tooling.",
+    "officialUrl": "https://www.python.org/",
+    "referenceUrl": "https://docs.python.org/3/"
+  },
+  "q": {
+    "category": "Languages & Authoring",
+    "description": "Vector-oriented query and programming language used with KDB+ for high-performance time-series analytics.",
+    "officialUrl": "https://code.kx.com/q/",
+    "evidence": ["JPMorgan Chase & Co."]
+  },
+  "qPython": {
+    "category": "Data Engineering, Databases & Analytics",
+    "description": "Python interface for communicating with KDB+/q processes and integrating q data workflows with Python systems.",
+    "officialUrl": "https://github.com/exxeleron/qPython",
+    "evidence": ["JPMorgan Chase & Co."]
+  },
+  "React": {
+    "category": "Frontend, Product & Desktop Engineering",
+    "description": "JavaScript library for building component-based user interfaces across web and application surfaces.",
+    "officialUrl": "https://react.dev/",
+    "referenceUrl": "https://react.dev/learn"
+  },
+  "Redis Pub/Sub": {
+    "category": "Streaming, Messaging & Capital Markets Systems",
+    "description": "Redis messaging pattern for low-latency publish/subscribe communication between application components.",
+    "officialUrl": "https://redis.io/docs/latest/develop/pubsub/",
+    "referenceUrl": "https://redis.io/docs/latest/"
+  },
+  "Retrieval Augmented Generation (RAG)": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "LLM architecture pattern that retrieves external knowledge before generation to improve grounding and freshness.",
+    "officialUrl": "https://arxiv.org/abs/2005.11401",
+    "referenceUrl": "https://www.pinecone.io/learn/retrieval-augmented-generation/"
+  },
+  "Tailwind CSS": {
+    "category": "Frontend, Product & Desktop Engineering",
+    "description": "Utility-first CSS framework for rapidly composing responsive, token-driven interface styles.",
+    "officialUrl": "https://tailwindcss.com/",
+    "referenceUrl": "https://tailwindcss.com/docs"
+  },
+  "Terraform": {
+    "category": "Cloud, DevOps & Observability",
+    "description": "Infrastructure-as-code tool for provisioning and managing cloud and platform resources declaratively.",
+    "officialUrl": "https://www.terraform.io/",
+    "referenceUrl": "https://developer.hashicorp.com/terraform/docs"
+  },
+  "TypeScript": {
+    "category": "Languages & Authoring",
+    "description": "Typed superset of JavaScript used for safer frontend, backend, tooling, and configuration code.",
+    "officialUrl": "https://www.typescriptlang.org/",
+    "referenceUrl": "https://www.typescriptlang.org/docs/"
+  },
+  "Vercel AI SDK": {
+    "category": "AI, LLM & Agent Engineering",
+    "description": "TypeScript toolkit for building AI-powered applications with streaming, providers, tools, and structured output.",
+    "officialUrl": "https://ai-sdk.dev/",
+    "referenceUrl": "https://ai-sdk.dev/docs"
+  },
+  "Vitest": {
+    "category": "Testing, Quality, Security & Architecture",
+    "description": "Fast Vite-native test runner for unit and integration testing in JavaScript and TypeScript projects.",
+    "officialUrl": "https://vitest.dev/",
+    "referenceUrl": "https://vitest.dev/guide/"
+  },
+  "shadcn/ui": {
+    "category": "Frontend, Product & Desktop Engineering",
+    "description": "Copyable component system built on Radix UI and Tailwind CSS for accessible, customizable React interfaces.",
+    "officialUrl": "https://ui.shadcn.com/",
+    "referenceUrl": "https://ui.shadcn.com/docs"
+  }
+}

@@ -24,4 +24,6 @@ pnpm -C docs start     # serve the built docs app
 
 ## Maintenance
 
-Keep developer docs aligned with root project behavior when routes, build commands, generated artifacts, or resume data workflows change. Validate docs changes with `pnpm -C docs build`; validate the public resume app from the repository root with `pnpm test`, `pnpm lint`, and `pnpm build`.
+Keep developer docs aligned with root project behavior when routes, build commands, generated artifacts, resume data workflows, or interactive web disclosures change. In particular, document changes to `assets/data/skill-details.json`, `src/lib/artifact-specs.ts`, and the public-download workflow because those files define what appears on the web route versus what is allowed into generated PDF/DOCX artifacts.
+
+Validate docs changes with `pnpm -C docs build`; validate the public resume app from the repository root with `pnpm test`, `pnpm lint`, `pnpm build`, and `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" pnpm check:artifacts` when artifacts or downloads change.

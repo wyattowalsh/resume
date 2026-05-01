@@ -40,7 +40,7 @@ const projectSelectionSchema = namedSelectionSchema.extend({
 });
 
 const skillSelectionSchema = namedSelectionSchema.extend({
-  keywordIndexes: z.array(indexSchema).optional(),
+  keywords: z.array(z.string()).optional(),
 });
 
 const variantSeoSchema = z.object({
@@ -123,6 +123,26 @@ function getItemByKey<T>(
   }
 
   return match;
+}
+
+function pickByValues<T extends string>(
+  values: T[],
+  selectedValues: string[] | undefined,
+  sectionLabel: string,
+): T[] {
+  if (!selectedValues) {
+    return values;
+  }
+
+  const valueSet = new Set(values);
+
+  return selectedValues.map((selectedValue) => {
+    if (!valueSet.has(selectedValue as T)) {
+      throw new Error(`Unknown ${sectionLabel} value "${selectedValue}".`);
+    }
+
+    return selectedValue as T;
+  });
 }
 
 function resolveBasics(
@@ -240,9 +260,9 @@ function resolveSkills(
 
     return {
       ...baseSkill,
-      keywords: pickByIndexes(
+      keywords: pickByValues(
         baseSkill.keywords,
-        selection.keywordIndexes,
+        selection.keywords,
         `skill keyword for ${baseSkill.name}`,
       ),
     };

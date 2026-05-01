@@ -1,4 +1,5 @@
 import { formatMonthYear } from "@/lib/date";
+import { formatThemeLabel } from "@/lib/format-theme-label";
 import { Project } from "@/lib/schema";
 import { FaFolderOpen, FaGithub } from "react-icons/fa";
 import { LuCalendarDays, LuExternalLink } from "react-icons/lu";
@@ -7,13 +8,6 @@ import { Section } from "./Section";
 type ProjectsProps = {
   projects: Project[];
 };
-
-function formatThemeLabel(theme: string) {
-  return theme
-    .split("-")
-    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
-    .join(" ");
-}
 
 function buildProjectSummary(project: Project) {
   if (!Array.isArray(project.stack) || project.stack.length === 0) {

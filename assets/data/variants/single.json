@@ -22,20 +22,59 @@
   ],
   "skills": [
     {
-      "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18, 22, 24, 25]
+      "name": "AI, LLM & Agent Engineering",
+      "keywords": [
+        "OpenAI API",
+        "Anthropic Claude API",
+        "Amazon Bedrock",
+        "LangChain",
+        "LangGraph",
+        "DeepAgents",
+        "PydanticAI",
+        "Model Context Protocol (MCP)",
+        "AI Agent Skills",
+        "Retrieval Augmented Generation (RAG)",
+        "Prompt Engineering",
+        "Context Engineering",
+        "LLM Evaluation",
+        "Guardrails AI"
+      ]
     },
     {
-      "name": "Data Engineering and Analytics",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 8, 9, 13, 14, 15, 22, 23, 24, 25, 26]
+      "name": "Data Engineering, Databases & Analytics",
+      "keywords": [
+        "PostgreSQL",
+        "KDB+",
+        "qPython",
+        "DuckDB",
+        "Apache Spark",
+        "Pandera",
+        "Polars",
+        "Parquet"
+      ]
     },
     {
-      "name": "Programming & Scripting Languages",
-      "keywordIndexes": [0, 1, 2, 3, 4, 13]
+      "name": "Streaming, Messaging & Capital Markets Systems",
+      "keywords": [
+        "AMPS",
+        "Publish/Subscribe Architecture",
+        "Apache Kafka",
+        "Amazon Kinesis"
+      ]
     },
     {
-      "name": "Cloud Infrastructure and DevOps",
-      "keywordIndexes": [0, 4, 5, 6, 10, 14, 15, 17, 18, 19]
+      "name": "Cloud, DevOps & Observability",
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "AWS Lambda",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "name": "Languages & Authoring",
+      "keywords": ["Python", "SQL", "TypeScript", "Go", "Rust", "q", "Bash"]
     }
   ],
   "projects": [

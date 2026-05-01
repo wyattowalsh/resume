@@ -27,28 +27,234 @@
   ],
   "skills": [
     {
-      "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [4, 5, 6, 7, 10, 11, 14, 15, 22, 23, 24, 25]
+      "name": "AI, LLM & Agent Engineering",
+      "keywords": [
+        "OpenAI API",
+        "Anthropic Claude API",
+        "Amazon Bedrock",
+        "Google Gemini API",
+        "Hugging Face",
+        "Vercel AI SDK",
+        "LangChain",
+        "LangGraph",
+        "LangSmith",
+        "DeepAgents",
+        "PydanticAI",
+        "LlamaIndex",
+        "Model Context Protocol (MCP)",
+        "AI Agent Skills",
+        "Guardrails AI",
+        "Retrieval Augmented Generation (RAG)",
+        "Prompt Engineering",
+        "Context Engineering",
+        "LLM Evaluation",
+        "AI Guardrails",
+        "Semantic Retrieval",
+        "Document AI",
+        "Knowledge Graphs",
+        "NotebookLM"
+      ]
     },
     {
-      "name": "Data Engineering and Analytics",
-      "keywordIndexes": [2, 3, 4, 5, 8, 9, 10, 14, 15, 23, 24, 25, 26]
+      "name": "AI Agent Harnesses & Coding Assistants",
+      "keywords": [
+        "AI Agent Harnesses",
+        "Claude Desktop",
+        "Claude Code",
+        "ChatGPT",
+        "Codex",
+        "GitHub Copilot Web",
+        "GitHub Copilot CLI",
+        "OpenCode",
+        "Gemini CLI",
+        "Antigravity",
+        "Perplexity Desktop",
+        "Cherry Studio",
+        "Cursor",
+        "Cursor Agent"
+      ]
     },
     {
-      "name": "Cloud Infrastructure and DevOps",
-      "keywordIndexes": [0, 4, 5, 6, 10, 15, 16, 17, 18, 19, 21, 22]
+      "name": "Machine Learning & Data Science",
+      "keywords": [
+        "scikit-learn",
+        "PyTorch",
+        "TensorFlow",
+        "XGBoost",
+        "NumPy",
+        "Pandas",
+        "Statistical Modeling",
+        "Anomaly Detection",
+        "Time-Series Forecasting",
+        "Regularized Regression",
+        "Coordinate Descent",
+        "Feature Engineering",
+        "Model Evaluation",
+        "Jupyter"
+      ]
     },
     {
-      "name": "Architecture & Testing",
-      "keywordIndexes": [0, 2, 3, 4, 7, 8, 11, 13, 14, 15]
+      "name": "Data Engineering, Databases & Analytics",
+      "keywords": [
+        "PostgreSQL",
+        "KDB+",
+        "qPython",
+        "DuckDB",
+        "SQLite",
+        "DynamoDB",
+        "BigQuery",
+        "Redshift",
+        "AWS Athena",
+        "Apache Spark",
+        "AWS Glue",
+        "Apache Airflow",
+        "Prefect",
+        "Polars",
+        "SQLAlchemy",
+        "Pydantic",
+        "Pandera",
+        "Parquet",
+        "ETL",
+        "Data Validation",
+        "Data Warehousing",
+        "NoSQL",
+        "Hadoop",
+        "Tableau",
+        "Plotly",
+        "Dash",
+        "Matplotlib"
+      ]
     },
     {
-      "name": "Front-End & API Tooling",
-      "keywordIndexes": [0, 1, 2, 4, 6, 9, 10, 12, 19, 20, 21, 22, 23, 24]
+      "name": "Streaming, Messaging & Capital Markets Systems",
+      "keywords": [
+        "Publish/Subscribe Architecture",
+        "AMPS",
+        "Apache Kafka",
+        "Amazon Kinesis",
+        "Google Cloud Pub/Sub",
+        "Redis Pub/Sub",
+        "Event-Driven Architecture",
+        "Market Data Systems",
+        "Low-Latency Messaging",
+        "Content-Based Filtering",
+        "Real-Time Data Processing",
+        "WebSockets"
+      ]
     },
     {
-      "name": "Programming & Scripting Languages",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 13]
+      "name": "Backend, APIs & Distributed Systems",
+      "keywords": [
+        "FastAPI",
+        "Django",
+        "Flask",
+        "Node.js",
+        "Express.js",
+        "RESTful APIs",
+        "Python SDKs",
+        "CLI Tooling",
+        "gRPC",
+        "GraphQL (Apollo)",
+        "Microservices",
+        "Serverless Architecture",
+        "OAuth 2.0",
+        "OpenID Connect"
+      ]
+    },
+    {
+      "name": "Frontend, Product & Desktop Engineering",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Vite",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Material UI",
+        "Ant Design",
+        "Chakra UI",
+        "Redux",
+        "MobX",
+        "MDX",
+        "Electron",
+        "CodeMirror",
+        "Canvas",
+        "Web Workers",
+        "Hugo"
+      ]
+    },
+    {
+      "name": "Cloud, DevOps & Observability",
+      "keywords": [
+        "AWS",
+        "GCP",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CloudFormation",
+        "Helm",
+        "Argo CD",
+        "GitHub Actions",
+        "Jenkins",
+        "CircleCI",
+        "AWS Lambda",
+        "Google Cloud Functions",
+        "ECS",
+        "EKS",
+        "Vercel",
+        "Netlify",
+        "Prometheus",
+        "Grafana",
+        "Monitoring",
+        "Tracing",
+        "Structured Logging",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Testing, Quality, Security & Architecture",
+      "keywords": [
+        "Pytest",
+        "Vitest",
+        "Jest",
+        "Cypress",
+        "Puppeteer",
+        "Playwright",
+        "Test-Driven Development",
+        "Unit Testing",
+        "Integration Testing",
+        "End-to-End Testing",
+        "Linting",
+        "Formatting",
+        "Domain-Driven Design",
+        "Security-Aware Development",
+        "Auditability",
+        "Human-in-the-Loop Review"
+      ]
+    },
+    {
+      "name": "Languages & Authoring",
+      "keywords": [
+        "Python",
+        "SQL",
+        "TypeScript",
+        "JavaScript",
+        "Go",
+        "Rust",
+        "Java",
+        "C++",
+        "q",
+        "R",
+        "SPARQL",
+        "MATLAB",
+        "Swift",
+        "Bash",
+        "HTML5",
+        "CSS3",
+        "Markdown",
+        "LaTeX",
+        "YAML"
+      ]
     }
   ],
   "projects": [

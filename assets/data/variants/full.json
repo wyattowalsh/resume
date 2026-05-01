@@ -31,20 +31,86 @@
   ],
   "skills": [
     {
-      "name": "Machine Learning and Generative AI",
-      "keywordIndexes": [0, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 18, 22, 24]
+      "name": "AI, LLM & Agent Engineering",
+      "keywords": [
+        "OpenAI API",
+        "Anthropic Claude API",
+        "Amazon Bedrock",
+        "LangChain",
+        "LangGraph",
+        "DeepAgents",
+        "PydanticAI",
+        "Model Context Protocol (MCP)",
+        "AI Agent Skills",
+        "Guardrails AI",
+        "Retrieval Augmented Generation (RAG)",
+        "Prompt Engineering",
+        "Context Engineering",
+        "LLM Evaluation"
+      ]
     },
     {
-      "name": "Data Engineering and Analytics",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 9, 13, 14, 15, 22, 24, 25, 26]
+      "name": "Data Engineering, Databases & Analytics",
+      "keywords": [
+        "PostgreSQL",
+        "KDB+",
+        "qPython",
+        "DuckDB",
+        "BigQuery",
+        "AWS Athena",
+        "Apache Spark",
+        "AWS Glue",
+        "Apache Airflow",
+        "Prefect",
+        "Polars",
+        "SQLAlchemy",
+        "Pydantic",
+        "Pandera",
+        "Parquet",
+        "ETL",
+        "Data Validation"
+      ]
     },
     {
-      "name": "Programming & Scripting Languages",
-      "keywordIndexes": [0, 1, 2, 3, 4, 5, 13]
+      "name": "Streaming, Messaging & Capital Markets Systems",
+      "keywords": [
+        "Publish/Subscribe Architecture",
+        "AMPS",
+        "Apache Kafka",
+        "Amazon Kinesis",
+        "Google Cloud Pub/Sub",
+        "Event-Driven Architecture",
+        "Market Data Systems",
+        "Low-Latency Messaging"
+      ]
     },
     {
-      "name": "Cloud Infrastructure and DevOps",
-      "keywordIndexes": [0, 4, 5, 6, 10, 15, 16, 17, 18]
+      "name": "Cloud, DevOps & Observability",
+      "keywords": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "GitHub Actions",
+        "AWS Lambda",
+        "Vercel",
+        "Prometheus",
+        "Monitoring",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Languages & Authoring",
+      "keywords": [
+        "Python",
+        "SQL",
+        "TypeScript",
+        "Go",
+        "Rust",
+        "q",
+        "Bash"
+      ]
     }
   ],
   "projects": [

@@ -1,5 +1,6 @@
 import { Skill } from "@/lib/schema";
 import { Section } from "./Section";
+import { SkillPopover } from "./SkillPopover";
 import { FaCode } from "react-icons/fa";
 
 type SkillsProps = {
@@ -25,12 +26,13 @@ export function Skills({ skills }: SkillsProps) {
                 </h3>
                 <div className="relative z-10 flex flex-wrap gap-1.5">
                   {skill.keywords.map((keyword) => (
-                    <span
+                    <SkillPopover
                       key={keyword}
-                      className="interactive-pill skill-pill rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] leading-4 text-secondary-foreground group-hover/skill:border-primary/20 group-hover/skill:text-foreground/80"
+                      category={skill.name}
+                      skillName={keyword}
                     >
                       {keyword}
-                    </span>
+                    </SkillPopover>
                   ))}
                 </div>
               </div>

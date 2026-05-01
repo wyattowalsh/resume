@@ -4,6 +4,7 @@ import siteVariantData from "@assets/data/variants/site.json";
 import resumeData from "@assets/data/resume.json";
 import { describe, expect, it } from "vitest";
 import { getResumeVariant, type ResumeVariantName } from "./resume-data";
+import { getSkillDetail, getSkillDetails } from "./skill-details";
 
 interface WorkSelection {
   name: string;
@@ -26,11 +27,19 @@ interface ProjectSelection {
 
 interface SkillSelection {
   name: string;
-  keywordIndexes?: number[];
+  keywords?: string[];
 }
 
 function pickByIndexes<T>(values: T[], indexes?: number[]) {
   return indexes ? indexes.map((index) => values[index]) : values;
+}
+
+function pickByValues<T extends string>(values: T[], selectedValues?: string[]) {
+  return selectedValues ? selectedValues.map((value) => value as T) : values;
+}
+
+function getVariantSkillKeywords(variantName: ResumeVariantName) {
+  return getResumeVariant(variantName).skills?.flatMap((skill) => skill.keywords) ?? [];
 }
 
 function getBaseWork(name: string) {
@@ -314,7 +323,7 @@ describe("getResumeVariant", () => {
   });
 
   describe("skill selections", () => {
-    it("resolves single-artifact skills from configured keyword indexes", () => {
+    it("resolves single-artifact skills from configured keywords", () => {
       const single = getResumeVariant("single");
       const expectedSkills = (
         (singleVariantData.skills ?? []) as SkillSelection[]
@@ -323,14 +332,14 @@ describe("getResumeVariant", () => {
 
         return {
           ...baseSkill,
-          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+          keywords: pickByValues(baseSkill.keywords, selection.keywords),
         };
       });
 
       expect(single.skills).toEqual(expectedSkills);
     });
 
-    it("resolves full-artifact skills with curated keyword indexes", () => {
+    it("resolves full-artifact skills with curated keywords", () => {
       const full = getResumeVariant("full");
       const expectedSkills = (
         (fullVariantData.skills ?? []) as SkillSelection[]
@@ -339,14 +348,14 @@ describe("getResumeVariant", () => {
 
         return {
           ...baseSkill,
-          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+          keywords: pickByValues(baseSkill.keywords, selection.keywords),
         };
       });
 
       expect(full.skills).toEqual(expectedSkills);
     });
 
-    it("resolves site-artifact skills with curated keyword indexes", () => {
+    it("resolves site-artifact skills with curated keywords", () => {
       const site = getResumeVariant("site");
       const expectedSkills = (
         (siteVariantData.skills ?? []) as SkillSelection[]
@@ -355,7 +364,7 @@ describe("getResumeVariant", () => {
 
         return {
           ...baseSkill,
-          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+          keywords: pickByValues(baseSkill.keywords, selection.keywords),
         };
       });
 
@@ -372,16 +381,52 @@ describe("getResumeVariant", () => {
 
         expect(resolved).toBeDefined();
 
-        if (selection.keywordIndexes) {
-          expect(resolved!.keywords).toHaveLength(
-            selection.keywordIndexes.length,
-          );
+        if (selection.keywords) {
+          expect(resolved!.keywords).toHaveLength(selection.keywords.length);
           expect(resolved!.keywords.length).toBeLessThanOrEqual(
             base.keywords.length,
           );
         } else {
           expect(resolved!.keywords).toEqual(base.keywords);
         }
+      }
+    });
+
+    it.each(allVariantNames)(
+      'does not duplicate skill keywords in "%s" skills section',
+      (variantName) => {
+        const keywords = getVariantSkillKeywords(variantName);
+        const duplicateKeywords = keywords.filter(
+          (keyword, index) => keywords.indexOf(keyword) !== index,
+        );
+
+        expect(duplicateKeywords).toEqual([]);
+      },
+    );
+  });
+
+  describe("skill metadata", () => {
+    it("resolves metadata for high-signal web skill popovers", () => {
+      expect(getSkillDetail("AMPS", "Streaming")).toMatchObject({
+        category: "Streaming, Messaging & Capital Markets Systems",
+        officialUrl: "https://crankuptheamps.com/",
+      });
+      expect(getSkillDetail("AI Agent Skills", "AI")).toMatchObject({
+        officialUrl: "https://agentskills.io/",
+      });
+    });
+
+    it("safely returns undefined for skills without metadata", () => {
+      expect(getSkillDetail("Deliberately Missing Skill", "Other")).toBeUndefined();
+    });
+
+    it("keeps metadata scoped to skills in the master taxonomy", () => {
+      const allKeywords = new Set(
+        resumeData.skills?.flatMap((skill) => skill.keywords) ?? [],
+      );
+
+      for (const keyword of Object.keys(getSkillDetails())) {
+        expect(allKeywords).toContain(keyword);
       }
     });
   });
@@ -408,9 +453,9 @@ describe("getResumeVariant", () => {
     it("preserves skill selection hints on curated entries", () => {
       const full = getResumeVariant("full");
       const skill = full.skills?.find(
-        (entry) => entry.name === "Machine Learning and Generative AI",
+        (entry) => entry.name === "AI, LLM & Agent Engineering",
       );
-      const baseSkill = getBaseSkill("Machine Learning and Generative AI");
+      const baseSkill = getBaseSkill("AI, LLM & Agent Engineering");
 
       expect(skill?.selectionHints).toEqual(baseSkill.selectionHints);
     });
@@ -658,16 +703,15 @@ describe("getResumeVariant", () => {
       }
     });
 
-    it("every keywordIndex in skill selections is within bounds", () => {
+    it("every selected skill keyword exists in its base skill category", () => {
       for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
         for (const selection of ((variant as Record<string, unknown>).skills ??
           []) as SkillSelection[]) {
-          if (selection.keywordIndexes) {
+          if (selection.keywords) {
             const base = getBaseSkill(selection.name);
 
-            for (const index of selection.keywordIndexes) {
-              expect(index).toBeLessThan(base.keywords.length);
-              expect(index).toBeGreaterThanOrEqual(0);
+            for (const keyword of selection.keywords) {
+              expect(base.keywords).toContain(keyword);
             }
           }
         }

@@ -187,43 +187,173 @@
   ],
   "skills": [
     {
-      "name": "Programming & Scripting Languages",
+      "name": "AI, LLM & Agent Engineering",
       "keywords": [
-        "Python",
-        "SQL",
-        "TypeScript",
-        "JavaScript",
-        "Go",
-        "Rust",
-        "Java",
-        "C++",
-        "Q",
-        "R",
-        "SPARQL",
-        "MATLAB",
-        "Swift",
-        "Bash",
-        "HTML5",
-        "CSS3",
-        "Markdown",
-        "LaTeX"
-      ]
+        "OpenAI API",
+        "Anthropic Claude API",
+        "Amazon Bedrock",
+        "Google Gemini API",
+        "Hugging Face",
+        "Vercel AI SDK",
+        "LangChain",
+        "LangGraph",
+        "LangSmith",
+        "DeepAgents",
+        "PydanticAI",
+        "LlamaIndex",
+        "Model Context Protocol (MCP)",
+        "AI Agent Skills",
+        "Guardrails AI",
+        "Retrieval Augmented Generation (RAG)",
+        "Prompt Engineering",
+        "Context Engineering",
+        "LLM Evaluation",
+        "AI Guardrails",
+        "Semantic Retrieval",
+        "Document AI",
+        "Knowledge Graphs",
+        "NotebookLM"
+      ],
+      "selectionHints": {
+        "themes": ["llm-applications", "agentic-systems", "retrieval"],
+        "aliases": ["Generative AI", "LLMs", "AI agents", "applied AI"],
+        "impactSignals": ["workflow-automation", "decision-support", "model-assisted-review"]
+      }
     },
     {
-      "name": "Front-End & API Tooling",
+      "name": "AI Agent Harnesses & Coding Assistants",
+      "keywords": [
+        "AI Agent Harnesses",
+        "Claude Desktop",
+        "Claude Code",
+        "ChatGPT",
+        "Codex",
+        "GitHub Copilot Web",
+        "GitHub Copilot CLI",
+        "OpenCode",
+        "Gemini CLI",
+        "Antigravity",
+        "Perplexity Desktop",
+        "Cherry Studio",
+        "Cursor",
+        "Cursor Agent"
+      ],
+      "selectionHints": {
+        "themes": ["developer-tooling", "agent-harnesses", "coding-assistants"],
+        "aliases": ["AI coding agents", "agent runtimes", "developer productivity"]
+      }
+    },
+    {
+      "name": "Machine Learning & Data Science",
+      "keywords": [
+        "scikit-learn",
+        "PyTorch",
+        "TensorFlow",
+        "XGBoost",
+        "NumPy",
+        "Pandas",
+        "Statistical Modeling",
+        "Anomaly Detection",
+        "Time-Series Forecasting",
+        "Regularized Regression",
+        "Coordinate Descent",
+        "Feature Engineering",
+        "Model Evaluation",
+        "Jupyter"
+      ],
+      "selectionHints": {
+        "themes": ["ml-modeling", "statistics", "forecasting"],
+        "aliases": ["machine learning", "data science", "predictive modeling"]
+      }
+    },
+    {
+      "name": "Data Engineering, Databases & Analytics",
+      "keywords": [
+        "PostgreSQL",
+        "KDB+",
+        "qPython",
+        "DuckDB",
+        "SQLite",
+        "DynamoDB",
+        "BigQuery",
+        "Redshift",
+        "AWS Athena",
+        "Apache Spark",
+        "AWS Glue",
+        "Apache Airflow",
+        "Prefect",
+        "Polars",
+        "SQLAlchemy",
+        "Pydantic",
+        "Pandera",
+        "Parquet",
+        "ETL",
+        "Data Validation",
+        "Data Warehousing",
+        "NoSQL",
+        "Hadoop",
+        "Tableau",
+        "Plotly",
+        "Dash",
+        "Matplotlib"
+      ],
+      "selectionHints": {
+        "themes": ["pipelines", "warehousing", "analytics", "validation"],
+        "aliases": ["data platforms", "analytics engineering", "ETL"],
+        "impactSignals": ["throughput-improvement", "self-service-access", "reporting-automation"]
+      }
+    },
+    {
+      "name": "Streaming, Messaging & Capital Markets Systems",
+      "keywords": [
+        "Publish/Subscribe Architecture",
+        "AMPS",
+        "Apache Kafka",
+        "Amazon Kinesis",
+        "Google Cloud Pub/Sub",
+        "Redis Pub/Sub",
+        "Event-Driven Architecture",
+        "Market Data Systems",
+        "Low-Latency Messaging",
+        "Content-Based Filtering",
+        "Real-Time Data Processing",
+        "WebSockets"
+      ],
+      "selectionHints": {
+        "themes": ["capital-markets", "streaming", "messaging"],
+        "aliases": ["pub/sub", "market data", "real-time systems"],
+        "impactSignals": ["low-latency-delivery", "data-distribution", "real-time-processing"]
+      }
+    },
+    {
+      "name": "Backend, APIs & Distributed Systems",
+      "keywords": [
+        "FastAPI",
+        "Django",
+        "Flask",
+        "Node.js",
+        "Express.js",
+        "RESTful APIs",
+        "Python SDKs",
+        "CLI Tooling",
+        "gRPC",
+        "GraphQL (Apollo)",
+        "Microservices",
+        "Serverless Architecture",
+        "OAuth 2.0",
+        "OpenID Connect"
+      ],
+      "selectionHints": {
+        "themes": ["backend-platforms", "api-development", "distributed-systems"],
+        "aliases": ["API engineering", "platform engineering", "service architecture"]
+      }
+    },
+    {
+      "name": "Frontend, Product & Desktop Engineering",
       "keywords": [
         "React",
         "Next.js",
         "Vite",
-        "Hugo",
-        "Node.js",
-        "Express.js",
-        "FastAPI",
-        "Django",
-        "Flask",
-        "gRPC",
-        "GraphQL (Apollo)",
-        "WebSockets",
         "Tailwind CSS",
         "shadcn/ui",
         "Material UI",
@@ -231,111 +361,24 @@
         "Chakra UI",
         "Redux",
         "MobX",
-        "Vitest",
-        "Cypress",
-        "Puppeteer",
         "MDX",
         "Electron",
-        "CodeMirror"
+        "CodeMirror",
+        "Canvas",
+        "Web Workers",
+        "Hugo"
       ],
       "selectionHints": {
         "themes": ["full-stack", "frontend-platforms", "developer-tooling"],
-        "aliases": ["web apps", "frontend engineering", "API development"]
+        "aliases": ["web apps", "frontend engineering", "desktop apps"]
       }
     },
     {
-      "name": "Data Engineering and Analytics",
-      "keywords": [
-        "Pandas",
-        "NumPy",
-        "SQLAlchemy",
-        "Pydantic",
-        "Pandera",
-        "Apache Spark",
-        "Apache Airflow",
-        "Prefect",
-        "Amazon Kinesis",
-        "AWS Glue",
-        "AWS Athena",
-        "BigQuery",
-        "Redshift",
-        "KDB+",
-        "PostgreSQL",
-        "DynamoDB",
-        "NoSQL",
-        "Hadoop",
-        "Matplotlib",
-        "Plotly",
-        "Dash",
-        "Tableau",
-        "ETL",
-        "SQLite",
-        "DuckDB",
-        "Polars",
-        "Parquet"
-      ],
-      "selectionHints": {
-        "themes": ["pipelines", "warehousing", "analytics", "streaming"],
-        "aliases": ["data platforms", "analytics engineering", "etl"],
-        "impactSignals": [
-          "throughput-improvement",
-          "self-service-access",
-          "reporting-automation"
-        ]
-      }
-    },
-    {
-      "name": "Machine Learning and Generative AI",
-      "keywords": [
-        "scikit-learn",
-        "PyTorch",
-        "TensorFlow",
-        "XGBoost",
-        "Hugging Face Transformers",
-        "OpenAI API",
-        "LangChain",
-        "LangGraph",
-        "LangSmith",
-        "LlamaIndex",
-        "Model Context Protocol (MCP)",
-        "Retrieval Augmented Generation (RAG)",
-        "Prompt Engineering",
-        "Knowledge Graphs",
-        "PydanticAI",
-        "Amazon Bedrock",
-        "Claude",
-        "Claude Code",
-        "GitHub Copilot",
-        "Codex",
-        "DeepAgents",
-        "AI Agent Skills Protocol",
-        "Document AI",
-        "LLM Evaluation",
-        "AI Guardrails",
-        "Semantic Retrieval"
-      ],
-      "selectionHints": {
-        "themes": [
-          "llm-applications",
-          "agentic-systems",
-          "retrieval",
-          "ml-modeling"
-        ],
-        "aliases": ["Generative AI", "LLMs", "AI agents", "applied AI"],
-        "impactSignals": [
-          "workflow-automation",
-          "decision-support",
-          "model-assisted-review"
-        ]
-      }
-    },
-    {
-      "name": "Cloud Infrastructure and DevOps",
+      "name": "Cloud, DevOps & Observability",
       "keywords": [
         "AWS",
         "GCP",
         "Azure",
-        "Makefile",
         "Docker",
         "Kubernetes",
         "Terraform",
@@ -345,8 +388,6 @@
         "GitHub Actions",
         "Jenkins",
         "CircleCI",
-        "Serverless Framework",
-        "Serverless Architecture",
         "AWS Lambda",
         "Google Cloud Functions",
         "ECS",
@@ -354,30 +395,69 @@
         "Vercel",
         "Netlify",
         "Prometheus",
-        "Grafana"
-      ]
+        "Grafana",
+        "Monitoring",
+        "Tracing",
+        "Structured Logging",
+        "CI/CD"
+      ],
+      "selectionHints": {
+        "themes": ["cloud-platforms", "devops", "observability"],
+        "aliases": ["cloud infrastructure", "deployment automation", "monitoring"]
+      }
     },
     {
-      "name": "Architecture & Testing",
+      "name": "Testing, Quality, Security & Architecture",
       "keywords": [
-        "Microservices",
-        "Domain-Driven Design",
-        "Event-Driven Architecture",
-        "RESTful APIs",
-        "CI/CD",
+        "Pytest",
+        "Vitest",
+        "Jest",
+        "Cypress",
+        "Puppeteer",
+        "Playwright",
+        "Test-Driven Development",
+        "Unit Testing",
+        "Integration Testing",
+        "End-to-End Testing",
         "Linting",
         "Formatting",
-        "Test-Driven Development",
-        "Testing (unit, integration, e2e)",
-        "Pytest",
-        "Logging",
-        "Structured Logging",
-        "Monitoring",
-        "Observability",
-        "Tracing",
-        "OAuth 2.0",
-        "OpenID Connect"
-      ]
+        "Domain-Driven Design",
+        "Security-Aware Development",
+        "Auditability",
+        "Human-in-the-Loop Review"
+      ],
+      "selectionHints": {
+        "themes": ["testing", "quality", "secure-development", "architecture"],
+        "aliases": ["software quality", "verification", "governance"]
+      }
+    },
+    {
+      "name": "Languages & Authoring",
+      "keywords": [
+        "Python",
+        "SQL",
+        "TypeScript",
+        "JavaScript",
+        "Go",
+        "Rust",
+        "Java",
+        "C++",
+        "q",
+        "R",
+        "SPARQL",
+        "MATLAB",
+        "Swift",
+        "Bash",
+        "HTML5",
+        "CSS3",
+        "Markdown",
+        "LaTeX",
+        "YAML"
+      ],
+      "selectionHints": {
+        "themes": ["languages", "scripting", "technical-authoring"],
+        "aliases": ["programming languages", "query languages", "markup"]
+      }
     }
   ],
   "projects": [

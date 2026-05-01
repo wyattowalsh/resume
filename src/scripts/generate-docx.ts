@@ -17,6 +17,7 @@ interface DocxArtifactPolicy {
   showSummary: boolean;
   showWorkSummaries: boolean;
   showProjectHighlights: boolean;
+  showProjectStacks: boolean;
   projectSectionStartsOnNewPage: boolean;
 }
 
@@ -127,7 +128,7 @@ interface ProjectVariantSelection extends NamedSelection {
 }
 
 interface SkillVariantSelection extends NamedSelection {
-  keywordIndexes?: number[];
+  keywords?: string[];
 }
 
 interface VariantSelection {
@@ -266,6 +267,26 @@ function pickByIndexes<T>(values: T[], indexes: number[] | undefined) {
   });
 }
 
+function pickByValues<T extends string>(
+  values: T[],
+  selectedValues: string[] | undefined,
+  sectionLabel: string,
+): T[] {
+  if (!selectedValues) {
+    return values;
+  }
+
+  const valueSet = new Set(values);
+
+  return selectedValues.map((selectedValue) => {
+    if (!valueSet.has(selectedValue as T)) {
+      throw new Error(`Unknown ${sectionLabel} value "${selectedValue}".`);
+    }
+
+    return selectedValue as T;
+  });
+}
+
 function resolveBasics(
   basics: BasicsSelection,
   overrides: BasicsOverrides | undefined,
@@ -312,7 +333,11 @@ function resolveVariant(
 
         return {
           ...baseSkill,
-          keywords: pickByIndexes(baseSkill.keywords, selection.keywordIndexes),
+          keywords: pickByValues(
+            baseSkill.keywords,
+            selection.keywords,
+            `skill keyword for ${baseSkill.name}`,
+          ),
         };
       })
     : (resume.skills ?? []);
@@ -596,7 +621,7 @@ function addProjects(
   projects: ProjectSelection[],
   policy: Pick<
     DocxArtifactPolicy,
-    "projectSectionStartsOnNewPage" | "showProjectHighlights"
+    "projectSectionStartsOnNewPage" | "showProjectHighlights" | "showProjectStacks"
   >,
 ) {
   if (!projects.length) {
@@ -616,6 +641,15 @@ function addProjects(
       ]),
     );
     children.push(paragraph([textRun(project.description)], { after: 45 }));
+
+    if (policy.showProjectStacks && project.stack?.length) {
+      children.push(
+        paragraph(
+          [textRun(`Stack: ${project.stack.join(", ")}`, { color: MUTED_COLOR })],
+          { after: 35 },
+        ),
+      );
+    }
 
     if (policy.showProjectHighlights) {
       for (const highlight of project.highlights) {

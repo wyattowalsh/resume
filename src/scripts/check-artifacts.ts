@@ -29,6 +29,12 @@ const SINGLE_VARIANT_PATH = path.resolve(
   "variants",
   "single.json",
 );
+const SKILL_DETAILS_PATH = path.resolve(
+  process.cwd(),
+  "assets",
+  "data",
+  "skill-details.json",
+);
 const ARTIFACT_SPECS_PATH = path.resolve(
   process.cwd(),
   "src",
@@ -71,6 +77,26 @@ const PROJECT_SECTION_END_HEADINGS = [
   "Certifications",
   "Publications",
 ] as const;
+const REQUIRED_PRINT_SKILL_TERMS = [
+  "AMPS",
+  "KDB+",
+  "q",
+  "qPython",
+  "Prompt Engineering",
+  "Context Engineering",
+  "OpenAI API",
+  "Anthropic Claude API",
+  "Amazon Bedrock",
+  "PydanticAI",
+  "DeepAgents",
+  "Guardrails AI",
+  "AI Agent Skills",
+] as const;
+const STATIC_TOOLTIP_ONLY_TERMS = [
+  "High-performance publish/subscribe messaging platform",
+  "https://crankuptheamps.com/",
+  "https://agentskills.io/",
+] as const;
 
 interface PdfExpectation {
   fileName: string;
@@ -81,6 +107,7 @@ interface DocxArtifactPolicy {
   showSummary: boolean;
   showWorkSummaries: boolean;
   showProjectHighlights: boolean;
+  showProjectStacks: boolean;
   projectSectionStartsOnNewPage: boolean;
 }
 
@@ -141,6 +168,12 @@ interface ProjectSelection extends NamedSelection {
   stack?: string[];
 }
 
+interface SkillDetailsSelection {
+  description?: string;
+  officialUrl?: string;
+  referenceUrl?: string;
+}
+
 interface PdfTextItemMetric {
   text: string;
   y: number;
@@ -152,7 +185,7 @@ interface WorkVariantSelection extends NamedSelection {
 }
 
 interface SkillVariantSelection extends NamedSelection {
-  keywordIndexes?: number[];
+  keywords?: string[];
 }
 
 interface ProjectVariantSelection extends NamedSelection {
@@ -494,6 +527,16 @@ function assertNormalizedTextExcludes(
   }
 }
 
+function assertTooltipOnlyTermsAreAbsent(
+  text: string,
+  tooltipOnlyTerms: string[],
+  context: string,
+) {
+  for (const tooltipOnlyTerm of tooltipOnlyTerms) {
+    assertNormalizedTextExcludes(text, tooltipOnlyTerm, context);
+  }
+}
+
 function assertTextExcludesPattern(
   haystack: string,
   pattern: RegExp,
@@ -571,6 +614,7 @@ function assertArtifactContentConsistency(
   label: string,
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
+  tooltipOnlyTerms: string[],
 ) {
   const context = `${label} content consistency`;
   const selectedProjectNames = getSelectionNames(variant.projects);
@@ -626,6 +670,31 @@ function assertArtifactContentConsistency(
     );
   }
 
+  const renderedSkillKeywords = variant.skills.flatMap((skill) => skill.keywords);
+  const duplicateSkillKeywords = renderedSkillKeywords.filter(
+    (keyword, index) => renderedSkillKeywords.indexOf(keyword) !== index,
+  );
+
+  if (duplicateSkillKeywords.length) {
+    fail(
+      `${context} Skills section repeats keyword(s): ${Array.from(
+        new Set(duplicateSkillKeywords),
+      ).join(", ")}.`,
+    );
+  }
+
+  assertNormalizedTextIncludesAll(
+    text,
+    [...REQUIRED_PRINT_SKILL_TERMS],
+    `${context} Skills section`,
+  );
+
+  assertTooltipOnlyTermsAreAbsent(
+    text,
+    tooltipOnlyTerms,
+    `${context} tooltip metadata leakage`,
+  );
+
   const selectedCredentials = [...variant.education, ...variant.certificates];
   if (selectedCredentials.length) {
     assertNormalizedTextIncludesAll(text, selectedCredentials, context);
@@ -644,6 +713,26 @@ async function readVariantSelection(
 async function readResumeSelection(filePath: string): Promise<ResumeSelection> {
   const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw) as ResumeSelection;
+}
+
+async function loadTooltipOnlyTerms() {
+  const raw = await fs.readFile(SKILL_DETAILS_PATH, "utf8");
+  const skillDetails = JSON.parse(raw) as Record<string, SkillDetailsSelection>;
+  const terms = new Set<string>(STATIC_TOOLTIP_ONLY_TERMS);
+
+  for (const detail of Object.values(skillDetails)) {
+    for (const term of [
+      detail.description,
+      detail.officialUrl,
+      detail.referenceUrl,
+    ]) {
+      if (term) {
+        terms.add(term);
+      }
+    }
+  }
+
+  return Array.from(terms);
 }
 
 async function loadArtifactSpecs() {
@@ -681,6 +770,26 @@ function pickByIndexes<T>(values: T[], indexes: number[] | undefined) {
     }
 
     return value;
+  });
+}
+
+function pickByValues<T extends string>(
+  values: T[],
+  selectedValues: string[] | undefined,
+  sectionLabel: string,
+) {
+  if (!selectedValues) {
+    return values;
+  }
+
+  const valueSet = new Set(values);
+
+  return selectedValues.map((selectedValue) => {
+    if (!valueSet.has(selectedValue as T)) {
+      fail(`Unknown ${sectionLabel} value "${selectedValue}".`);
+    }
+
+    return selectedValue as T;
   });
 }
 
@@ -745,9 +854,10 @@ function resolveVariantContent(
 
       return {
         ...baseSkill,
-        keywords: pickByIndexes(
+        keywords: pickByValues(
           baseSkill.keywords,
-          "keywordIndexes" in selection ? selection.keywordIndexes : undefined,
+          "keywords" in selection ? selection.keywords : undefined,
+          `skill keyword for ${baseSkill.name}`,
         ),
       };
     }),
@@ -1473,6 +1583,7 @@ function assertDocxHyperlinkTargets(
   label: string,
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
+  tooltipOnlyTerms: string[],
 ) {
   const requiredTargets = [
     resume.basics.url,
@@ -1485,6 +1596,12 @@ function assertDocxHyperlinkTargets(
   for (const target of requiredTargets) {
     if (!relationshipsXml.includes(target)) {
       fail(`${label} DOCX relationships must contain hyperlink target "${target}".`);
+    }
+  }
+
+  for (const tooltipOnlyTerm of tooltipOnlyTerms) {
+    if (relationshipsXml.includes(tooltipOnlyTerm)) {
+      fail(`${label} DOCX relationships must not contain tooltip-only target "${tooltipOnlyTerm}".`);
     }
   }
 }
@@ -1656,6 +1773,7 @@ async function assertAtsParseability(
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
   expectedPages: number,
+  tooltipOnlyTerms: string[],
 ) {
   await assertPdfMetadataIsAtsSafe(filePath, label, expectedPages);
   await assertPdfFontsAreAtsSafe(filePath, label);
@@ -1703,12 +1821,19 @@ async function assertAtsParseability(
     popplerText.layoutText,
     `${label} pdftotext layout text`,
   );
-  assertArtifactContentConsistency(pdfjsText, `${label} pdfjs text`, resume, variant);
+  assertArtifactContentConsistency(
+    pdfjsText,
+    `${label} pdfjs text`,
+    resume,
+    variant,
+    tooltipOnlyTerms,
+  );
   assertArtifactContentConsistency(
     popplerText.text,
     `${label} pdftotext text`,
     resume,
     variant,
+    tooltipOnlyTerms,
   );
   assertParseableCoreFields(
     pdfjsText,
@@ -1736,6 +1861,7 @@ async function assertDocxParseability(
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
   policy: DocxArtifactPolicy,
+  tooltipOnlyTerms: string[],
 ) {
   const { documentXml, relationshipsXml } = await getDocxXml(filePath, label);
   const text = extractDocxText(documentXml);
@@ -1746,14 +1872,20 @@ async function assertDocxParseability(
   assertRolePatternsExtractCleanly(text, `${label} DOCX text`, variant);
   assertSeniorAiMlTargetKeywords(text, `${label} DOCX text`);
   assertNoRedundantUrlLabels(text, `${label} DOCX text`);
-  assertArtifactContentConsistency(text, `${label} DOCX text`, resume, variant);
+  assertArtifactContentConsistency(
+    text,
+    `${label} DOCX text`,
+    resume,
+    variant,
+    tooltipOnlyTerms,
+  );
   assertParseableCoreFields(
     text,
     `${label} DOCX text`,
     resume,
     variant,
     true,
-    false,
+    policy.showProjectStacks,
   );
 
   if (variant.education.length) {
@@ -1773,7 +1905,13 @@ async function assertDocxParseability(
     );
   }
 
-  assertDocxHyperlinkTargets(relationshipsXml, label, resume, variant);
+  assertDocxHyperlinkTargets(
+    relationshipsXml,
+    label,
+    resume,
+    variant,
+    tooltipOnlyTerms,
+  );
   assertDocxPolicy(documentXml, text, label, variant, policy);
   console.log(`✓ ${label} passes DOCX parseability checks`);
 }
@@ -2101,11 +2239,18 @@ async function assertSingleResumePdf(
 }
 
 async function runArtifactChecks() {
-  const [resume, fullVariant, singleVariant, artifactSpecs] = await Promise.all([
+  const [
+    resume,
+    fullVariant,
+    singleVariant,
+    artifactSpecs,
+    tooltipOnlyTerms,
+  ] = await Promise.all([
     readResumeSelection(RESUME_PATH),
     readVariantSelection(FULL_VARIANT_PATH),
     readVariantSelection(SINGLE_VARIANT_PATH),
     loadArtifactSpecs(),
+    loadTooltipOnlyTerms(),
   ]);
   const resolvedFullVariant = resolveVariantContent(resume, fullVariant);
   const resolvedSingleVariant = resolveVariantContent(resume, singleVariant);
@@ -2140,6 +2285,7 @@ async function runArtifactChecks() {
     resume,
     resolvedFullVariant,
     2,
+    tooltipOnlyTerms,
   );
   await assertAtsParseability(
     path.join(OUTPUT_DIR, "resume-single.pdf"),
@@ -2147,6 +2293,7 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     1,
+    tooltipOnlyTerms,
   );
   await assertDocxParseability(
     path.join(OUTPUT_DIR, "resume-full.docx"),
@@ -2154,6 +2301,7 @@ async function runArtifactChecks() {
     resume,
     resolvedFullVariant,
     artifactSpecs.full.docx,
+    tooltipOnlyTerms,
   );
   await assertDocxParseability(
     path.join(OUTPUT_DIR, "resume-single.docx"),
@@ -2161,6 +2309,7 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     artifactSpecs.single.docx,
+    tooltipOnlyTerms,
   );
 
   for (const expectation of publicDownloadPdfExpectations) {
@@ -2203,6 +2352,7 @@ async function runArtifactChecks() {
     resume,
     resolvedFullVariant,
     2,
+    tooltipOnlyTerms,
   );
   await assertAtsParseability(
     path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-single.pdf"),
@@ -2210,6 +2360,7 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     1,
+    tooltipOnlyTerms,
   );
   await assertDocxParseability(
     path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-full.docx"),
@@ -2217,6 +2368,7 @@ async function runArtifactChecks() {
     resume,
     resolvedFullVariant,
     artifactSpecs.full.docx,
+    tooltipOnlyTerms,
   );
   await assertDocxParseability(
     path.join(PUBLIC_DOWNLOADS_DIR, "wyatt-walsh-resume-single.docx"),
@@ -2224,6 +2376,7 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     artifactSpecs.single.docx,
+    tooltipOnlyTerms,
   );
 
   console.log("Artifact regression checks passed.");

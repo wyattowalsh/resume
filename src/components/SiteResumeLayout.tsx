@@ -7,12 +7,14 @@ import type {
   Skill,
   Work,
 } from "@/lib/schema";
+import { resumeDownloadGroups } from "@/lib/resume-downloads";
 import { Certificates } from "./Certificates";
 import { Education } from "./Education";
 import { Header } from "./Header";
 import { Projects } from "./Projects";
 import { Publications } from "./Publications";
 import { Skills } from "./Skills";
+import { SectionProgressNav, type SectionProgressItem } from "./SectionProgressNav";
 import { WorkExperience } from "./WorkExperience";
 import { HR } from "./ui/HR";
 import {
@@ -47,44 +49,52 @@ export function SiteResumeLayout({
 }: SiteResumeLayoutProps) {
   const footerDownloadLinkClass =
     "interactive-chip inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm";
-  const downloadGroups = [
+  const sectionNavItems: SectionProgressItem[] = [
     {
-      label: "1-page",
-      links: [
-        {
-          href: "/downloads/wyatt-walsh-resume-single.pdf",
-          label: "PDF",
-          ariaLabel: "Open or download the 1-page resume PDF",
-        },
-        {
-          href: "/downloads/wyatt-walsh-resume-single.docx",
-          label: "DOCX",
-          ariaLabel: "Download the 1-page resume DOCX",
-        },
-      ],
+      id: "work-experience",
+      label: "Experience",
+      kicker: "Evidence-first roles",
     },
+    ...(projects && projects.length > 0
+      ? [
+          {
+            id: "projects",
+            label: "Projects",
+            kicker: "Selected builds",
+          },
+        ]
+      : []),
+    ...(skills && skills.length > 0
+      ? [
+          {
+            id: "skills",
+            label: "Skills",
+            kicker: "ATS taxonomy",
+          },
+        ]
+      : []),
     {
-      label: "2-page",
-      links: [
-        {
-          href: "/downloads/wyatt-walsh-resume-full.pdf",
-          label: "PDF",
-          ariaLabel: "Open or download the 2-page resume PDF",
-        },
-        {
-          href: "/downloads/wyatt-walsh-resume-full.docx",
-          label: "DOCX",
-          ariaLabel: "Download the 2-page resume DOCX",
-        },
-      ],
+      id: "education",
+      label: "Education",
+      kicker: "Foundation",
     },
+    ...(Boolean(certificates?.length) || Boolean(publications?.length)
+      ? [
+          {
+            id: "credentials",
+            label: "Credentials",
+            kicker: "Signals",
+          },
+        ]
+      : []),
   ];
-
   return (
     <main
       className={`container mx-auto my-4 max-w-5xl px-4 pb-12 font-[family:var(--font-site-body)] print:my-0 print:max-w-full print:border-none print:px-0 print:pb-0 print:shadow-none sm:my-6 sm:px-6 lg:px-8 ${className ?? ""}`}
     >
       <Header basics={basics} />
+      <div data-scroll-progress-sentinel aria-hidden="true" className="h-px" />
+      <SectionProgressNav items={sectionNavItems} />
       <div className="mt-8 space-y-10 sm:space-y-12">
         <div
           id="work-experience"
@@ -141,7 +151,7 @@ export function SiteResumeLayout({
           <span className="rounded-full bg-muted/60 px-3 py-1 font-[family:var(--font-site-label)] font-semibold text-foreground/55">
             Downloads
           </span>
-          {downloadGroups.map((group) => (
+          {resumeDownloadGroups.map((group) => (
             <div
               key={group.label}
               className="flex flex-wrap items-center justify-center gap-1 rounded-full bg-muted/60 px-1 py-1"

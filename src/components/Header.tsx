@@ -38,7 +38,6 @@ export function Header({ basics }: HeaderProps) {
   )}`;
   const chipClass =
     "interactive-chip inline-flex min-h-10 items-center gap-2 rounded-full border border-border/70 bg-background/75 px-3 py-1.5 font-[family:var(--font-site-label)] shadow-sm sm:min-h-[44px] sm:px-3.5 sm:py-2";
-
   return (
     <header className="group/header interactive-surface relative overflow-hidden rounded-[1.75rem] border border-border bg-card/85 px-4 py-5 shadow-[0_30px_80px_-48px_rgba(15,23,42,0.45)] ring-1 ring-black/5 dark:ring-white/40 sm:rounded-[2rem] sm:px-8 sm:py-9">
       <div

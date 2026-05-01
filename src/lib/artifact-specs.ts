@@ -2,6 +2,7 @@ export interface DocxArtifactPolicy {
   showSummary: boolean;
   showWorkSummaries: boolean;
   showProjectHighlights: boolean;
+  showProjectStacks: boolean;
   projectSectionStartsOnNewPage: boolean;
 }
 
@@ -32,6 +33,7 @@ export const fullArtifactSpec = {
     showSummary: true,
     showWorkSummaries: true,
     showProjectHighlights: true,
+    showProjectStacks: true,
     projectSectionStartsOnNewPage: true,
   },
 } as const satisfies ArtifactSpec;
@@ -50,6 +52,7 @@ export const singleArtifactSpec = {
     showSummary: true,
     showWorkSummaries: true,
     showProjectHighlights: true,
+    showProjectStacks: false,
     projectSectionStartsOnNewPage: false,
   },
 } as const satisfies ArtifactSpec;
