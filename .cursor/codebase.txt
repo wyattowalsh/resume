@@ -1,63 +1,25 @@
-### Codebase Analysis Report
+This repository is a Vike + React resume system for Wyatt Walsh.
 
-This document provides a detailed analysis of the resume project codebase.
+Core architecture:
 
-#### Project Overview
+- Canonical resume content lives in `assets/data/resume.json`.
+- Variant overlays live in `assets/data/variants/{site,full,single}.json`.
+- Runtime data loading and variant resolution live in `src/lib/resume-data.ts`.
+- Human-facing routes are `/` for the web resume, `/full` for the 2-page artifact view, and `/single` for the 1-page artifact view.
+- Shared rendering components live in `src/components/`.
+- PDF, DOCX, and PNG generation flows are implemented under `src/scripts/`.
+- Generated artifacts are written to `assets/outputs/`; public downloads are synced to `public/downloads/`.
 
-The project is a resume generation system built around the `json-resume` standard. It leverages `resume-cli` to process a `resume.json` data file and render it into various formats (HTML, PDF, PNG) using a custom, modern theme.
+Primary commands:
 
-The project is structured as a monorepo, with the root project managing the build process and the theme residing in a sub-directory (`themes/jsonresume-theme-w`).
+- `pnpm dev` starts the Vike development server.
+- `pnpm build` builds the site.
+- `pnpm generate:resume` regenerates PDF, DOCX, and PNG artifacts.
+- `pnpm check:artifacts` verifies generated and public artifacts, extracted text, hashes, and wording expectations.
+- `pnpm sync:public-downloads` copies generated PDF and DOCX artifacts into `public/downloads/`.
 
-#### Root Project (`/`)
+Important wording context:
 
--   **`package.json`**:
-    -   **Dependencies**: Uses `resume-cli` for the core resume generation functionality and references the local theme `jsonresume-theme-w` using a `file:` dependency.
-    -   **Scripts**:
-        -   `html`: Exports the resume to an HTML file.
-        -   `pdf`: Exports the resume to a PDF file.
-        -   `png`: Converts the generated PDF to a PNG image using the `convert` command (from ImageMagick). This implies a system dependency on ImageMagick.
-        -   `build:all`: A convenience script to run the PDF and PNG generation steps.
-
--   **`resume.json`**:
-    -   This file contains the structured resume data, adhering to the official JSON Resume schema.
-    -   The data is comprehensive, covering basic information, work experience, education, skills, projects, certificates, and publications.
-
-#### Theme Project (`themes/jsonresume-theme-w/`)
-
-This directory contains the source code for the custom `w` theme. It is a self-contained, modern web application.
-
--   **`package.json`**:
-    -   **Stack**: It's a **React** project built with **Vite** and written in **TypeScript**.
-    -   **Styling**: It uses **Tailwind CSS** for utility-first styling. The keywords also mention `shadcn-ui`, indicating it might use components from that library.
-    -   **Dependencies**: Includes `react`, `react-dom`, `date-fns` (for date formatting), and `react-icons`.
-
--   **`vite.config.ts`**:
-    -   The Vite configuration is set up to bundle the entire React application into a single IIFE (Immediately Invoked Function Expression) JavaScript file named `theme.js`.
-    -   It externalizes `react` and `react-dom`, expecting them to be available globally in the final HTML page (likely loaded from a CDN, although this part is handled in `index.ts`).
-
--   **`index.ts` (Theme Entry Point for `resume-cli`)**:
-    -   This file is the crucial bridge between `resume-cli` and the React application.
-    -   It exports a `render(resume)` function, which is the standard API for `jsonresume` themes.
-    -   Inside `render`, it:
-        1.  Reads the content of the bundled `dist/theme.js`.
-        2.  Reads the favicon, encodes it as a Base64 data URI.
-        3.  Generates a full HTML document as a string.
-        4.  **Injects Data**: Serializes the `resume` JSON object and embeds it into the HTML inside a `<script>` tag, assigning it to `window.__resume__`.
-        5.  **Injects Application**: Embeds the `theme.js` content into another `<script>` tag.
-
--   **`src/` (React Application Source)**:
-    -   **`main.tsx`**: The entry point for the React application. It finds the `window.__resume__` object and passes it as a prop to the main `App` component before rendering it into the `<div id="root">`.
-    -   **`App.tsx`**: The root component of the React application. It receives the `resume` data as a prop and lays out the main structure of the resume page using Tailwind CSS classes.
-    -   **`components/`**: The application is well-structured, with different sections of the resume broken down into individual React components (e.g., `Skills.tsx`, `Education.tsx`, `Projects.tsx`). This promotes modularity and maintainability.
-    -   **`types.ts`**: Defines TypeScript types for the `resume.json` structure, ensuring type safety throughout the application.
-
-#### Architecture Summary & Workflow
-
-1.  The user runs a script from the root `package.json` (e.g., `pnpm html`).
-2.  `resume-cli` is invoked, which loads the `resume.json` data.
-3.  `resume-cli` loads the theme `w`, which points to `themes/jsonresume-theme-w`.
-4.  The `render` function from the theme's `index.js` (compiled from `index.ts`) is executed.
-5.  This function generates a self-contained `resume.html` file. This file includes the resume data and the entire rendered React application logic.
-6.  When `resume.html` is opened in a browser, the embedded React script executes, reads the data from the global `window.__resume__` object, and renders the resume content into the DOM.
-
-This is a clever and robust architecture. It keeps the theme development experience modern (Vite, React, HMR) while still producing a standard `resume-cli` compatible theme. The final output is a static, portable HTML file with no external dependencies (besides the PDF/PNG conversion toolchain).
+- The 1-page PDF is visually compressed and may suppress work role summaries.
+- The DOCX exports intentionally retain ATS-oriented semantic content, including basics summary, role summaries, and project highlights.
+- NBA Basketball Database wording should distinguish the public Kaggle dataset/repo frozen at the 2023-07-06 update from the newer in-development `nbadb` rebuild.
