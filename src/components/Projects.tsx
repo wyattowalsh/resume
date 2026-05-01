@@ -47,9 +47,10 @@ function ProjectActions({ project }: ProjectActionsProps) {
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Live site for ${project.name}`}
           className={actionClass}
         >
-          Live
+          Live site
           <LuExternalLink size={12} strokeWidth={2} />
         </a>
       )}

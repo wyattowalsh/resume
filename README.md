@@ -13,7 +13,9 @@ A Vike + React resume system driven by one canonical resume JSON plus curated pe
 Static public downloads are intentionally separate from those blocked routes:
 
 - `/downloads/wyatt-walsh-resume-full.pdf`
+- `/downloads/wyatt-walsh-resume-full.docx`
 - `/downloads/wyatt-walsh-resume-single.pdf`
+- `/downloads/wyatt-walsh-resume-single.docx`
 
 ## SEO
 

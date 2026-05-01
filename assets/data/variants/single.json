@@ -46,7 +46,7 @@
     },
     {
       "name": "NBA Basketball Database",
-      "description": "NBA analytics warehouse covering 65K+ games, 13M+ events, and a Kaggle dataset with 425K+ views and 60K+ downloads.",
+      "description": "Kaggle dataset/repo froze 2023-07-06 after 425K+ views and 60K+ downloads; rebuilding nbadb with 152 extractors/204 outputs.",
       "highlightIndexes": [0, 1]
     },
     {

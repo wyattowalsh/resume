@@ -5,7 +5,7 @@
   "work": [
     {
       "name": "Frame Payments",
-      "summary": "Delivered production agentic AI document intelligence, human-in-the-loop review, and multimodal compliance screening for high risk merchant onboarding.",
+      "summary": "Delivered production agentic AI document intelligence, human-in-the-loop review, and multimodal compliance screening for high-risk merchant onboarding.",
       "highlightIndexes": [0, 1, 2, 3]
     },
     {
@@ -55,10 +55,10 @@
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source NBA warehouse with 65K+ games, 13M+ plays, validated ETL, multi-format exports, and Kaggle distribution reaching 425K+ views and 60K+ downloads.",
+      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ plays; reached 425K+ views and 60K+ downloads before freezing at the 2023-07-06 update.",
       "highlights": [
         "Implemented daily Pandera-validated NBA ETL plus DuckDB, SQLite, Parquet, and CSV exports.",
-        "Published a 180+ table Kaggle warehouse reaching 425K+ views and 60K+ downloads."
+        "Building the next-generation nbadb rebuild with 152 extractor wrappers and 204 generated public star-schema outputs."
       ]
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and docs-backed browse/download surfaces.",
+      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and documented browse/download surfaces.",
       "highlightIndexes": [0, 1]
     },
     {

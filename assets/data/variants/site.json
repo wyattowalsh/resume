@@ -1,6 +1,6 @@
 {
   "basics": {
-    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM document intelligence, retrieval workflows, validated data pipelines and platforms, and developer tooling alongside product minded full stack builds.",
+    "summary": "Senior AI/ML engineer shipping production agentic AI systems, LLM document intelligence, retrieval workflows, validated data pipelines and platforms, and developer tooling alongside product-minded full-stack builds.",
     "image": "/wyatt-walsh-profile.png"
   },
   "work": [
@@ -54,7 +54,7 @@
   "projects": [
     {
       "name": "NBA Basketball Database",
-      "description": "Open-source NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, multi-format exports, and a Kaggle dataset reaching 425K+ views and 60K+ downloads.",
+      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ play-by-play events, frozen at the 2023-07-06 update after reaching 425K+ views and 60K+ downloads; next-generation nbadb rebuild is in development.",
       "highlightIndexes": [0, 1]
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Curated AI and ML feed platform with typed schemas, validation, contributor workflows, OPML exports, and docs-backed browse and download surfaces.",
+      "description": "Curated AI and ML feed platform with typed schemas, validation, contributor workflows, OPML exports, and documented browse and download surfaces.",
       "highlightIndexes": [0, 1]
     },
     {

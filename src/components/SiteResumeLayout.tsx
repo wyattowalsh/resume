@@ -54,12 +54,12 @@ export function SiteResumeLayout({
         {
           href: "/downloads/wyatt-walsh-resume-single.pdf",
           label: "PDF",
-          ariaLabel: "Open the 1-page resume PDF in a new tab",
+          ariaLabel: "Open or download the 1-page resume PDF",
         },
         {
           href: "/downloads/wyatt-walsh-resume-single.docx",
           label: "DOCX",
-          ariaLabel: "Open the 1-page resume DOCX in a new tab",
+          ariaLabel: "Download the 1-page resume DOCX",
         },
       ],
     },
@@ -69,12 +69,12 @@ export function SiteResumeLayout({
         {
           href: "/downloads/wyatt-walsh-resume-full.pdf",
           label: "PDF",
-          ariaLabel: "Open the 2-page resume PDF in a new tab",
+          ariaLabel: "Open or download the 2-page resume PDF",
         },
         {
           href: "/downloads/wyatt-walsh-resume-full.docx",
           label: "DOCX",
-          ariaLabel: "Open the 2-page resume DOCX in a new tab",
+          ariaLabel: "Download the 2-page resume DOCX",
         },
       ],
     },

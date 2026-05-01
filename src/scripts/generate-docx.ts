@@ -731,9 +731,11 @@ function buildDocxDocument(
   addCredentials(children, variant.education, variant.certificates);
   addPublications(children, variant.publications);
 
+  const pageLabel = variant.name === "single" ? "1-page resume" : "2-page resume";
+
   return new Document({
     creator: "Wyatt Walsh",
-    description: `${variant.name === "single" ? "One-page" : "Two-page"} ATS-friendly resume for Wyatt Walsh.`,
+    description: `${pageLabel} for Wyatt Walsh with ATS-friendly semantic structure.`,
     sections: [
       {
         properties: {
@@ -749,7 +751,7 @@ function buildDocxDocument(
         children,
       },
     ],
-    title: `Wyatt Walsh Resume (${variant.name === "single" ? "1-page" : "2-page"})`,
+    title: `Wyatt Walsh ${pageLabel}`,
   });
 }
 

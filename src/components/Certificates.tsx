@@ -10,7 +10,7 @@ type CertificatesProps = {
 
 export function Certificates({ certificates }: CertificatesProps) {
   return (
-    <Section title="Certificates" className="break-inside-avoid">
+    <Section title="Certifications" className="break-inside-avoid">
       <div className="flex flex-col gap-3">
         {certificates.map((cert) => (
           <article

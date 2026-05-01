@@ -32,7 +32,7 @@
       "startDate": "2025-10-01",
       "endDate": "2026-01-15",
       "location": "Remote",
-      "summary": "Served as the sole AI/ML Engineer delivering production agentic AI, LLM document intelligence, and multimodal compliance automation for risk/compliance and growth at a high risk merchant payments platform, with human-in-the-loop UX and audit-aware handling of PII and confidential documents.",
+      "summary": "Served as the sole AI/ML Engineer delivering production agentic AI, LLM document intelligence, and multimodal compliance automation for risk/compliance and growth at a high-risk merchant payments platform, with human-in-the-loop UX and audit-aware handling of PII and confidential documents.",
       "selectionHints": {
         "themes": [
           "agentic-ai",
@@ -403,7 +403,7 @@
         ]
       },
       "highlights": [
-        "Built and organized 112 portable skills plus reusable agent definitions across Claude Code, Codex, GitHub Copilot, Cursor, OpenCode, and related IDE agents.",
+        "Standardized reusable agent definitions across Claude Code, Codex, GitHub Copilot, Cursor, OpenCode, and related IDE agents.",
         "Shipped generated docs, install flows, and 30 MCP-ready tool presets spanning code review, security, infrastructure, research, and workflow automation."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
@@ -414,7 +414,7 @@
       "githubUrl": "https://github.com/wyattowalsh/nbadb",
       "startDate": "2021-04-01",
       "endDate": null,
-      "description": "Open-source star-schema NBA analytics warehouse spanning 65K+ games and 13M+ play-by-play events, with validated ETL, docs, CLI, DuckDB/SQLite/Parquet/CSV exports, and a Kaggle dataset reaching 425K+ views and 60K+ downloads.",
+      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ play-by-play events, with DuckDB/SQLite/Parquet/CSV exports; reached 425K+ views and 60K+ downloads before freezing at the 2023-07-06 update.",
       "selectionHints": {
         "themes": ["data-engineering", "open-data", "analytics"],
         "aliases": ["ETL pipeline", "sports analytics dataset", "Kaggle dataset"],
@@ -422,7 +422,7 @@
       },
       "highlights": [
         "Implemented Pandera-validated NBA API ETL with daily warehouse updates plus DuckDB, SQLite, Parquet, and CSV exports.",
-        "Built docs, schema references, release workflows, and Kaggle distribution for a 180+ table public warehouse spanning 130+ stats.nba.com endpoint classes and 425K+ dataset views."
+        "Building the next-generation nbadb rebuild with 152 extractor wrappers and 204 generated public star-schema outputs across docs, schema references, and release workflows."
       ],
       "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
     },
@@ -522,7 +522,7 @@
       "githubUrl": "https://github.com/wyattowalsh/ai-web-feeds",
       "startDate": "2025-10-01",
       "endDate": null,
-      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and docs-backed browse and download surfaces.",
+      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and documented browse and download surfaces.",
       "highlights": [
         "Defined YAML feed schemas with topic and source-type validation across blogs, papers, and newsletters for reliable feed quality.",
         "Shipped helper scripts, CI checks, scheduled validation jobs, and a docs-backed submission/review flow for reliable community feed curation."
@@ -534,7 +534,7 @@
       "githubUrl": "https://github.com/wyattowalsh/regularized-linear-regression-deep-dive",
       "startDate": "2020-11-01",
       "endDate": "2021-01-01",
-      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models, including Ridge, Lasso, and Elastic Net, derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series read by 15K+ data scientists.",
+      "description": "Open-sourced a theory-to-practice deep dive on regularized linear models, including Ridge, Lasso, and Elastic Net, derived from first principles in NumPy, validated on a wine-quality dataset, and narrated through a three-part Towards Data Science series with 20K+ views.",
       "highlights": [
         "Authored an in-depth, three-part article series on Towards Data Science demystifying regularized regression, which amassed 20K+ views and established credibility in the data science community.",
         "Developed custom, vectorized NumPy implementations of Ridge, Lasso, and Elastic Net, including a Pathwise Coordinate Descent solver, achieving performance comparable to scikit-learn."

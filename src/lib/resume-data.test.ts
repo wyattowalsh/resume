@@ -265,17 +265,24 @@ describe("getResumeVariant", () => {
       expect(full.projects).toEqual(expectedProjects);
     });
 
-    it("keeps NBA Basketball Database Kaggle stats in full-artifact highlights", () => {
-      const full = getResumeVariant("full");
-      const nbadb = full.projects?.find(
-        (project) => project.name === "NBA Basketball Database",
-      );
+  it("separates NBA Basketball Database public Kaggle stats from rebuild highlights", () => {
+    const full = getResumeVariant("full");
+    const nbadb = full.projects?.find(
+      (project) => project.name === "NBA Basketball Database",
+    );
 
-      expect(nbadb).toBeDefined();
-      expect(nbadb!.highlights.join(" ")).toContain(
-        "425K+ views and 60K+ downloads",
-      );
-    });
+    expect(nbadb).toBeDefined();
+    expect(nbadb!.description).toContain(
+      "425K+ views and 60K+ downloads",
+    );
+    expect(nbadb!.description).toContain("2023-07-06");
+    expect(nbadb!.highlights.join(" ")).toContain(
+      "152 extractor wrappers",
+    );
+    expect(nbadb!.highlights.join(" ")).toContain(
+      "204 generated public star-schema outputs",
+    );
+  });
 
     it("resolves site-artifact projects with curated highlights", () => {
       const site = getResumeVariant("site");
@@ -296,25 +303,14 @@ describe("getResumeVariant", () => {
       expect(site.projects).toEqual(expectedProjects);
     });
 
-    it("produces empty highlights when highlightIndexes is an empty array", () => {
-      const single = getResumeVariant("single");
+  it("resolves empty highlight indexes to no highlights", () => {
+    const baseProject = getBaseProject("NBA Basketball Database");
 
-      // single.json configures projects with highlightIndexes: []
-      for (const selection of (singleVariantData.projects ??
-        []) as ProjectSelection[]) {
-        if (
-          selection.highlightIndexes &&
-          selection.highlightIndexes.length === 0
-        ) {
-          const resolved = single.projects?.find(
-            (p) => p.name === selection.name,
-          );
-
-          expect(resolved).toBeDefined();
-          expect(resolved!.highlights).toEqual([]);
-        }
-      }
-    });
+    expect(pickByIndexes(baseProject.highlights, [])).toEqual([]);
+    expect(pickByIndexes(baseProject.highlights, undefined)).toEqual(
+      baseProject.highlights,
+    );
+  });
   });
 
   describe("skill selections", () => {

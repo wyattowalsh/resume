@@ -63,7 +63,6 @@ const FULL_PAGE_TWO_PROJECT_HEADING_DELTA_SPREAD_MAX = 8;
 const PERSONAL_WEBSITE_PROJECT_NAME = "Personal Website: w4w.dev";
 const NBA_DATABASE_PROJECT_NAME = "NBA Basketball Database";
 const PROXYWHIRL_PROJECT_NAME = "ProxyWhirl";
-const EXCLUDED_PROJECT_NAME = "FL Studio MCP Server";
 const LEGACY_SOURCE_COUNT_PATTERN =
   /\b114(?:\+)?\s+(?:auto-validated\s+)?sources?\b/i;
 const PROJECT_SECTION_END_HEADINGS = [
@@ -570,16 +569,23 @@ function getOrderedTextBlock(
 function assertArtifactContentConsistency(
   text: string,
   label: string,
+  resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
 ) {
   const context = `${label} content consistency`;
   const selectedProjectNames = getSelectionNames(variant.projects);
+  const omittedProjectNames = (resume.projects ?? [])
+    .map((project) => project.name)
+    .filter((projectName) => !selectedProjectNames.includes(projectName));
 
   if (selectedProjectNames.includes(PERSONAL_WEBSITE_PROJECT_NAME)) {
     assertNormalizedTextIncludes(text, PERSONAL_WEBSITE_PROJECT_NAME, context);
   }
 
-  assertNormalizedTextExcludes(text, EXCLUDED_PROJECT_NAME, context);
+  for (const projectName of omittedProjectNames) {
+    assertNormalizedTextExcludes(text, projectName, context);
+  }
+
   assertTextExcludesPattern(
     text,
     LEGACY_SOURCE_COUNT_PATTERN,
@@ -611,6 +617,11 @@ function assertArtifactContentConsistency(
     assertStrictTextIncludes(
       nbaDatabaseBlock,
       "425K+ views and 60K+ downloads",
+      `${context} NBA Basketball Database entry`,
+    );
+    assertStrictTextIncludes(
+      nbaDatabaseBlock,
+      "2023-07-06",
       `${context} NBA Basketball Database entry`,
     );
   }
@@ -1692,10 +1703,11 @@ async function assertAtsParseability(
     popplerText.layoutText,
     `${label} pdftotext layout text`,
   );
-  assertArtifactContentConsistency(pdfjsText, `${label} pdfjs text`, variant);
+  assertArtifactContentConsistency(pdfjsText, `${label} pdfjs text`, resume, variant);
   assertArtifactContentConsistency(
     popplerText.text,
     `${label} pdftotext text`,
+    resume,
     variant,
   );
   assertParseableCoreFields(
@@ -1734,7 +1746,7 @@ async function assertDocxParseability(
   assertRolePatternsExtractCleanly(text, `${label} DOCX text`, variant);
   assertSeniorAiMlTargetKeywords(text, `${label} DOCX text`);
   assertNoRedundantUrlLabels(text, `${label} DOCX text`);
-  assertArtifactContentConsistency(text, `${label} DOCX text`, variant);
+  assertArtifactContentConsistency(text, `${label} DOCX text`, resume, variant);
   assertParseableCoreFields(
     text,
     `${label} DOCX text`,

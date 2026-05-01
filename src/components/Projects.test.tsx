@@ -13,7 +13,8 @@ describe("Projects", () => {
 
     expect(markup).not.toContain("Featured Projects");
     expect(markup).not.toContain("More Selected Builds");
-    expect(markup).toContain("Jan 2026 - Present");
+    expect(markup).toContain('<time dateTime="2026-01-01">Jan 2026</time>');
+    expect(markup).toContain("Present");
     expect(markup).not.toContain("Data Engineering");
     expect(markup).not.toContain("Open Data");
     expect(markup).not.toContain("Developer Tooling");
@@ -23,6 +24,8 @@ describe("Projects", () => {
     expect(markup).not.toContain("FL Studio MCP Server");
     expect(markup).not.toContain("Listentropy");
     expect(markup).toContain("425K+ views and 60K+ downloads");
+    expect(markup).toContain("2023-07-06");
+    expect(markup).toContain("Live site");
     expect(markup).toContain("https://mcp-crawl4ai.w4w.dev/");
   });
 
@@ -32,6 +35,7 @@ describe("Projects", () => {
 
     expect(markup).not.toContain("Featured Projects");
     expect(markup).not.toContain("More Selected Builds");
-    expect(markup).toContain("Jan 2026 - Present");
+    expect(markup).toContain('<time dateTime="2026-01-01">Jan 2026</time>');
+    expect(markup).toContain("Present");
   });
 });

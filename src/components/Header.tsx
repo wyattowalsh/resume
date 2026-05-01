@@ -95,6 +95,7 @@ export function Header({ basics }: HeaderProps) {
                 href={profile.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${profile.network} profile: ${profile.username}`}
                 className={chipClass}
               >
                 {profile.network === "LinkedIn" && (
