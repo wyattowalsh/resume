@@ -63,4 +63,4 @@ Local runs need Poppler (`pdfinfo`, `pdffonts`, `pdftotext`, `pdfimages`) on `PA
 
 ## CI behavior
 
-The GitHub Actions workflow installs `poppler-utils`, runs the same core validation chain, regenerates the print artifacts and DOCX exports, runs `src/scripts/check-artifacts.ts`, and uploads the generated PDFs/PNGs/DOCX files as workflow artifacts for inspection.
+The GitHub Actions workflow installs `poppler-utils`, runs the same core validation chain, executes `pnpm check:artifacts` so generated files and `public/downloads/` are checked in one synced pass, and uploads the generated PDFs/PNGs/DOCX files as workflow artifacts for inspection. Its final clean-tree check ignores regenerated tracked binary downloads because PDF/DOCX byte output can vary across macOS and Linux while the content, layout, and same-run generated/public parity checks remain enforced.

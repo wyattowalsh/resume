@@ -59,11 +59,8 @@ jobs:
       - name: Install Puppeteer Chrome
         run: pnpm exec puppeteer browsers install chrome
 
-      - name: Generate resume artifacts
-        run: node src/scripts/generate.js
-
-      - name: Check artifact regressions
-        run: node src/scripts/check-artifacts.js
+      - name: Generate, sync, and check resume artifacts
+        run: pnpm check:artifacts
 
       - name: Upload generated resume artifacts
         if: always()
@@ -79,4 +76,9 @@ jobs:
             assets/outputs/resume-single.png
 
       - name: Verify tracked files remain clean
-        run: git diff --exit-code
+        run: >-
+          git diff --exit-code -- .
+          ':!public/downloads/wyatt-walsh-resume-full.pdf'
+          ':!public/downloads/wyatt-walsh-resume-full.docx'
+          ':!public/downloads/wyatt-walsh-resume-single.pdf'
+          ':!public/downloads/wyatt-walsh-resume-single.docx'
