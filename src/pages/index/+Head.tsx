@@ -3,13 +3,17 @@ import { sharedSeoMetadata } from "@/lib/seo";
 export default function Head() {
   const {
     canonicalUrl,
+    author,
     description,
     imageAlt,
     imageHeight,
     imageUrl,
     imageWidth,
     locale,
+    keywords,
     siteName,
+    profileFirstName,
+    profileLastName,
     structuredData,
     title,
   } = sharedSeoMetadata;
@@ -19,8 +23,11 @@ export default function Head() {
       <title>{title}</title>
       <link rel="canonical" href={canonicalUrl} />
       <meta name="description" content={description} />
+      <meta name="author" content={author} />
+      <meta name="keywords" content={keywords} />
+      <meta name="robots" content="index, follow" />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="profile" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -34,8 +41,10 @@ export default function Head() {
       ) : null}
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content={locale} />
+      <meta property="profile:first_name" content={profileFirstName} />
+      <meta property="profile:last_name" content={profileLastName} />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

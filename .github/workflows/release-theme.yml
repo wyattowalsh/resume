@@ -48,6 +48,15 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Type check
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test
+
       - name: Install Puppeteer Chrome
         run: pnpm exec puppeteer browsers install chrome
 
@@ -56,6 +65,17 @@ jobs:
 
       - name: Check artifact regressions
         run: node src/scripts/check-artifacts.js
+
+      - name: Create checksum manifest
+        run: |
+          sha256sum \
+            assets/outputs/resume-full.pdf \
+            assets/outputs/resume-full.docx \
+            assets/outputs/resume-full.png \
+            assets/outputs/resume-single.pdf \
+            assets/outputs/resume-single.docx \
+            assets/outputs/resume-single.png \
+            > assets/outputs/SHA256SUMS.txt
 
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v4
@@ -68,25 +88,29 @@ jobs:
             assets/outputs/resume-single.pdf
             assets/outputs/resume-single.docx
             assets/outputs/resume-single.png
+            assets/outputs/SHA256SUMS.txt
 
       - name: Resolve release tag
         id: release-tag
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag_name }}
         run: |
-          tag_name="${{ github.event.release.tag_name || inputs.tag_name }}"
-          if [ -n "$tag_name" ]; then
-            echo "tag_name=$tag_name" >> "$GITHUB_OUTPUT"
+          if [ -n "$RELEASE_TAG" ]; then
+            printf 'tag_name=%s\n' "$RELEASE_TAG" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Upload assets to release
         if: steps.release-tag.outputs.tag_name != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag_name }}
         run: |
-          gh release upload "${{ steps.release-tag.outputs.tag_name }}" \
+          gh release upload "$RELEASE_TAG" \
             assets/outputs/resume-full.pdf \
             assets/outputs/resume-full.docx \
             assets/outputs/resume-full.png \
             assets/outputs/resume-single.pdf \
             assets/outputs/resume-single.docx \
             assets/outputs/resume-single.png \
+            assets/outputs/SHA256SUMS.txt \
             --clobber

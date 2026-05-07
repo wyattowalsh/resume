@@ -169,9 +169,9 @@ interface ProjectSelection extends NamedSelection {
 }
 
 interface SkillDetailsSelection {
-  description?: string;
-  officialUrl?: string;
-  referenceUrl?: string;
+  summary?: string;
+  resumeContext?: string;
+  links?: Array<{ href: string }>;
 }
 
 interface PdfTextItemMetric {
@@ -722,9 +722,9 @@ async function loadTooltipOnlyTerms() {
 
   for (const detail of Object.values(skillDetails)) {
     for (const term of [
-      detail.description,
-      detail.officialUrl,
-      detail.referenceUrl,
+      detail.summary,
+      detail.resumeContext,
+      ...(detail.links?.map((link) => link.href) ?? []),
     ]) {
       if (term) {
         terms.add(term);
@@ -747,7 +747,7 @@ async function loadArtifactSpecs() {
   const module = { exports: {} as { artifactSpecs?: LoadedArtifactSpecs } };
 
   // build:script only compiles src/scripts, so load the source artifact contract
-  // directly at runtime instead of introducing a cross-project TS import edge.
+  // at runtime instead of introducing a cross-project TS import edge.
   new Function("exports", "module", outputText)(module.exports, module);
 
   if (!module.exports.artifactSpecs) {
@@ -1314,7 +1314,6 @@ async function getPdfPageText(
   const data = new Uint8Array(await fs.readFile(filePath));
   const loadingTask = getDocument({
     data,
-    isEvalSupported: false,
     useSystemFonts: true,
     useWorkerFetch: false,
     verbosity: 0,
@@ -1354,7 +1353,6 @@ async function getPdfAllText(filePath: string) {
   const data = new Uint8Array(await fs.readFile(filePath));
   const loadingTask = getDocument({
     data,
-    isEvalSupported: false,
     useSystemFonts: true,
     useWorkerFetch: false,
     verbosity: 0,
@@ -1395,7 +1393,6 @@ async function assertPdfExpectations(
   const data = new Uint8Array(await fs.readFile(filePath));
   const loadingTask = getDocument({
     data,
-    isEvalSupported: false,
     useSystemFonts: true,
     useWorkerFetch: false,
     verbosity: 0,

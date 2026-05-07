@@ -95,6 +95,7 @@ interface ProjectSelection extends NamedSelection {
   description: string;
   url?: string;
   githubUrl: string;
+  links?: Array<{ label: string; url: string }>;
   stack?: string[];
   startDate: string;
   endDate: string | null;
@@ -632,13 +633,21 @@ function addProjects(
     sectionHeading("Projects", policy.projectSectionStartsOnNewPage),
   );
   for (const project of projects) {
+    const projectLinks = [
+      ...(project.links ?? []),
+      { label: "GitHub", url: project.githubUrl },
+    ].filter(
+      (link, index, links) => links.findIndex((candidate) => candidate.url === link.url) === index,
+    );
+
     children.push(
-      itemTitle(project.name, [
-        {
-          href: project.githubUrl,
-          label: formatProfileDisplayUrl(project.githubUrl),
-        },
-      ]),
+      itemTitle(
+        project.name,
+        projectLinks.map((link) => ({
+          href: link.url,
+          label: link.label === "GitHub" ? formatProfileDisplayUrl(link.url) : link.label,
+        })),
+      ),
     );
     children.push(paragraph([textRun(project.description)], { after: 45 }));
 

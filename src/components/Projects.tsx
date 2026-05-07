@@ -33,57 +33,40 @@ type ProjectActionsProps = {
 function ProjectActions({ project }: ProjectActionsProps) {
   const actionClass =
     "interactive-chip inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] font-[family:var(--font-site-label)] font-semibold text-foreground/70 shadow-sm transition-colors duration-200 hover:border-primary/20 hover:text-foreground";
+  const actions = [
+    ...(project.links?.map((link) => ({ ...link, kind: "external" as const })) ?? []),
+    ...(project.url ? [{ label: "Live site", url: project.url, kind: "external" as const }] : []),
+    { label: "GitHub", url: project.githubUrl, kind: "github" as const },
+  ].filter(
+    (action, index, actions) =>
+      actions.findIndex((candidate) => candidate.url === action.url) === index,
+  );
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      {project.url && (
+      {actions.map((action) => (
         <a
-          href={project.url}
+          key={`${action.label}-${action.url}`}
+          href={action.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Live site for ${project.name}`}
+          aria-label={`${action.label} for ${project.name}`}
           className={actionClass}
         >
-          Live site
-          <LuExternalLink size={12} strokeWidth={2} />
+          {action.label}
+          {action.kind === "github" ? (
+            <FaGithub size={12} />
+          ) : (
+            <LuExternalLink size={12} strokeWidth={2} />
+          )}
         </a>
-      )}
-      <a
-        href={project.githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`GitHub repository for ${project.name}`}
-        className={actionClass}
-      >
-        GitHub
-        <FaGithub size={12} />
-      </a>
+      ))}
     </div>
   );
 }
 
 function ProjectHeading({ project, className }: ProjectHeadingProps) {
-  return (
-    <h3 className={className}>
-      {project.url ? (
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group/link inline-flex items-center gap-1 transition-colors duration-200 hover:text-primary hover:underline"
-        >
-          {project.name}
-          <LuExternalLink
-            size={12}
-            strokeWidth={2}
-            className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-          />
-        </a>
-      ) : (
-        <span>{project.name}</span>
-      )}
-    </h3>
-  );
+  return <h3 className={className}>{project.name}</h3>;
 }
 
 function ProjectThemeBadges({ project }: { project: Project }) {

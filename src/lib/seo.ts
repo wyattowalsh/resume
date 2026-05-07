@@ -29,12 +29,21 @@ const locationName = [
   .filter(Boolean)
   .join(", ");
 const knowsAbout = Array.from(
-  new Set(siteResume.skills?.flatMap((skill) => skill.keywords) ?? []),
+  new Set(
+    siteResume.skills?.flatMap((skill) => [skill.name, ...skill.keywords]) ?? [],
+  ),
 );
 const alumniOf = siteResume.education.map((education) => ({
   "@type": "EducationalOrganization",
   name: education.institution,
   ...(education.url ? { url: education.url } : {}),
+  ...(education.studyType || education.area
+    ? {
+        description: [education.studyType, education.area]
+          .filter(Boolean)
+          .join(", "),
+      }
+    : {}),
 }));
 const credentials =
   siteResume.certificates?.map((certificate) => ({
@@ -46,19 +55,22 @@ const credentials =
       "@type": "Organization",
       name: certificate.issuer,
     },
+    ...(certificate.date ? { dateCreated: certificate.date } : {}),
   })) ?? [];
 const proofObjects = [
   ...(siteResume.projects?.map((project) => ({
     "@type": "SoftwareSourceCode" as const,
     name: project.name,
     description: project.description,
-    url: project.url ?? project.githubUrl,
-    codeRepository: project.githubUrl,
-    dateCreated: project.startDate,
+    ...(project.url || project.githubUrl ? { url: project.url ?? project.githubUrl } : {}),
+    ...(project.githubUrl ? { codeRepository: project.githubUrl } : {}),
+    ...(project.startDate ? { dateCreated: project.startDate } : {}),
     ...(project.endDate ? { dateModified: project.endDate } : {}),
+    ...(project.stack?.length ? { programmingLanguage: project.stack } : {}),
   })) ?? []),
   ...(siteResume.publications?.map((publication) => ({
     "@type": "Article" as const,
+    name: publication.name,
     headline: publication.name,
     url: publication.url,
     datePublished: publication.releaseDate,
@@ -90,13 +102,19 @@ const canonicalUrl = `${siteUrl}/`;
 const imageUrl = toAbsoluteUrl(socialImagePath);
 const imageWidth = profileImagePath ? 1000 : 512;
 const imageHeight = profileImagePath ? 1000 : 512;
+const keywordSummary = knowsAbout.slice(0, 40).join(", ");
 const sameAs = Array.from(
   new Set([siteResume.basics.url, ...siteResume.basics.profiles.map((profile) => profile.url)].filter(Boolean)),
 );
+const profilePageId = `${canonicalUrl}#profile`;
+const personId = `${canonicalUrl}#person`;
+const websiteId = `${canonicalUrl}#website`;
 
 export const sharedSeoMetadata = {
   title: rootTitle,
   description,
+  author: siteResume.basics.name,
+  keywords: keywordSummary,
   siteUrl,
   canonicalUrl,
   imageUrl,
@@ -107,36 +125,59 @@ export const sharedSeoMetadata = {
   imageHeight,
   siteName,
   locale: "en_US",
+  profileFirstName: siteResume.basics.name.split(" ")[0],
+  profileLastName: siteResume.basics.name.split(" ").slice(1).join(" "),
   structuredData: {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    name: rootTitle,
-    description,
-    url: canonicalUrl,
-    mainEntity: {
-      "@type": "Person",
-      name: siteResume.basics.name,
-      url: canonicalUrl,
-      sameAs,
-      ...(locationName
-        ? {
-            homeLocation: {
-              "@type": "Place",
-              name: locationName,
-            },
-          }
-        : {}),
-      ...(profileImagePath
-        ? {
-            image: toAbsoluteUrl(profileImagePath),
-          }
-        : {}),
-      ...(jobTitle ? { jobTitle } : {}),
-      ...(worksFor ? { worksFor } : {}),
-      ...(knowsAbout.length ? { knowsAbout } : {}),
-      ...(alumniOf.length ? { alumniOf } : {}),
-      ...(credentials.length ? { hasCredential: credentials } : {}),
-      ...(proofObjects.length ? { subjectOf: proofObjects } : {}),
-    },
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        name: siteName,
+        url: canonicalUrl,
+        inLanguage: "en-US",
+        publisher: { "@id": personId },
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": profilePageId,
+        name: rootTitle,
+        headline: rootTitle,
+        description,
+        url: canonicalUrl,
+        inLanguage: "en-US",
+        isPartOf: { "@id": websiteId },
+        mainEntity: { "@id": personId },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: imageUrl,
+          width: imageWidth,
+          height: imageHeight,
+          caption: `${siteResume.basics.name} profile image`,
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: siteResume.basics.name,
+        url: canonicalUrl,
+        sameAs,
+        ...(locationName
+          ? {
+              homeLocation: {
+                "@type": "Place",
+                name: locationName,
+              },
+            }
+          : {}),
+        image: imageUrl,
+        ...(jobTitle ? { jobTitle } : {}),
+        ...(worksFor ? { worksFor } : {}),
+        ...(knowsAbout.length ? { knowsAbout } : {}),
+        ...(alumniOf.length ? { alumniOf } : {}),
+        ...(credentials.length ? { hasCredential: credentials } : {}),
+        ...(proofObjects.length ? { subjectOf: proofObjects } : {}),
+      },
+    ],
   },
 } as const;

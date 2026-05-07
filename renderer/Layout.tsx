@@ -26,7 +26,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ModeToggle />
             </div>
             <div vaul-drawer-wrapper="" className="bg-background min-h-screen">
-              <div id="page-content">{children}</div>
+              <div id="page-content" tabIndex={-1}>
+                {children}
+              </div>
             </div>
           </ThemeProvider>
         </ErrorBoundary>

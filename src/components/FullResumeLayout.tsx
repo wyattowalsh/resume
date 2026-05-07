@@ -75,7 +75,7 @@ export function FullResumeLayout({
         <div className="print-page-break-after" aria-hidden="true" />
       )}
 
-      <div className="mt-3.5 space-y-3">
+      <div className="mt-2.5 space-y-2.5">
         {projects && projects.length > 0 && (
           <PrintSection title="Projects">
             <PrintProjectList
@@ -91,7 +91,7 @@ export function FullResumeLayout({
         )}
 
         <PrintSection title="Education & Certifications">
-          <div className="space-y-6">
+          <div className="space-y-3">
             <PrintEducationList education={education} compact />
             {certificates && certificates.length > 0 && (
               <PrintCertificateStrip certificates={certificates} compact />

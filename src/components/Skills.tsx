@@ -1,4 +1,5 @@
 import { Skill } from "@/lib/schema";
+import { getSkillDetail } from "@/lib/skill-details";
 import { Section } from "./Section";
 import { SkillPopover } from "./SkillPopover";
 import { FaCode } from "react-icons/fa";
@@ -25,15 +26,21 @@ export function Skills({ skills }: SkillsProps) {
                   {skill.name}
                 </h3>
                 <div className="relative z-10 flex flex-wrap gap-1.5">
-                  {skill.keywords.map((keyword) => (
-                    <SkillPopover
-                      key={keyword}
-                      category={skill.name}
-                      skillName={keyword}
-                    >
-                      {keyword}
-                    </SkillPopover>
-                  ))}
+                  {skill.keywords.map((keyword) => {
+                    const detail = getSkillDetail(keyword, skill.name);
+
+                    return detail ? (
+                      <SkillPopover
+                        key={keyword}
+                        detail={detail}
+                        skillName={keyword}
+                      >
+                        {keyword}
+                      </SkillPopover>
+                    ) : (
+                      <StaticSkillChip key={keyword}>{keyword}</StaticSkillChip>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -41,5 +48,13 @@ export function Skills({ skills }: SkillsProps) {
         })}
       </div>
     </Section>
+  );
+}
+
+function StaticSkillChip({ children }: { children: string }) {
+  return (
+    <span className="skill-pill inline-flex min-h-11 items-center rounded-full border border-border bg-background px-3 py-1.5 font-[family:var(--font-site-label)] text-[11px] leading-4 text-secondary-foreground sm:min-h-0 sm:px-2.5 sm:py-1">
+      {children}
+    </span>
   );
 }

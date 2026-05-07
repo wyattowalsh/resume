@@ -409,10 +409,10 @@ describe("getResumeVariant", () => {
     it("resolves metadata for high-signal web skill popovers", () => {
       expect(getSkillDetail("AMPS", "Streaming")).toMatchObject({
         category: "Streaming, Messaging & Capital Markets Systems",
-        officialUrl: "https://crankuptheamps.com/",
+        links: [{ href: "https://crankuptheamps.com/" }],
       });
       expect(getSkillDetail("AI Agent Skills", "AI")).toMatchObject({
-        officialUrl: "https://agentskills.io/",
+        links: [{ href: "https://agentskills.io/specification" }],
       });
     });
 

@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { Github, Book } from 'lucide-react';
+import { Book } from 'lucide-react';
 import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
 
 export default function HomePage() {
   return (
@@ -21,7 +22,7 @@ export default function HomePage() {
           <Link
             href="https://github.com/wyattowalsh/resume"
           >
-            <Github className="mr-2 size-4" />
+            <FaGithub className="mr-2 size-4" />
             GitHub
           </Link>
         </Button>

@@ -79,7 +79,12 @@ describe("SectionProgressNav", () => {
     expect(observer.observe).toHaveBeenCalledWith(workSection);
     expect(observer.observe).toHaveBeenCalledWith(skillsSection);
     expect(sentinelObserver.observe).toHaveBeenCalledWith(sentinel);
-    expect(container.querySelector("nav")?.className).toContain("opacity-0");
+    expect(container.querySelector(".section-progress-nav")?.className).toContain(
+      "opacity-0",
+    );
+    expect(
+      container.querySelector(".section-progress-nav")?.getAttribute("aria-hidden"),
+    ).toBe("true");
     expect(container.querySelector("a[href]")).toBeNull();
 
     act(() => {
@@ -110,7 +115,12 @@ describe("SectionProgressNav", () => {
     expect(
       container.querySelector('[role="progressbar"]')?.getAttribute("aria-valuetext"),
     ).toBe("Skills section");
-    expect(container.querySelector("nav")?.className).toContain("opacity-100");
+    expect(container.querySelector(".section-progress-nav")?.className).toContain(
+      "opacity-100",
+    );
+    expect(
+      container.querySelector(".section-progress-nav")?.getAttribute("aria-hidden"),
+    ).toBe("false");
     expect(
       container
         .querySelector<HTMLElement>('[data-slot="progress-indicator"]')

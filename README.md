@@ -19,16 +19,22 @@ Static public downloads are intentionally separate from those blocked routes:
 
 ## SEO
 
-The production-facing SEO setup is intentionally simple and route-specific:
+The production-facing SEO setup is intentionally strict and route-specific:
 
-- `src/lib/site.ts` defines the shared root title for `/`.
-- `src/lib/seo.ts` builds the rest of the shared `/` metadata from the resolved site variant, including the description, canonical URL, Open Graph fields, Twitter card fields, and `ProfilePage` JSON-LD.
+- `src/lib/site.ts` defines the shared root title for `/` in the format `Name | Role in City`.
+- `src/lib/seo.ts` builds the rest of the shared `/` metadata from the resolved site variant, including the description, canonical URL, Open Graph profile fields, Twitter card fields, and truthful `ProfilePage` + `Person` JSON-LD.
 - `src/pages/index/+Head.tsx` emits that metadata for the interactive home route.
 - `renderer/+config.ts` reuses that shared root title, while `src/pages/full/+config.ts` and `src/pages/single/+config.ts` still override titles for the print routes.
 - `src/pages/full/+Head.tsx` and `src/pages/single/+Head.tsx` add `noindex, nofollow` so the print views stay out of search results.
-- `public/robots.txt` allows crawling and points to `public/sitemap.xml`, which is a static sitemap containing the public root URL.
+- `public/robots.txt` allows the canonical root route, blocks `/full`, `/single`, and `/downloads/`, and points to `public/sitemap.xml`, which is a static sitemap containing only the public root URL.
+- `public/llms.txt` gives AI crawlers a short Markdown map of the canonical resume page and clarifies that print routes and generated downloads are not separate landing pages.
+- `src/lib/site.test.ts` is the focused regression gate for title, description, social image, canonical URL, and JSON-LD shape.
 
-On Vercel, `/full` and `/single` are still local-only: the production SSR entrypoint blocks both routes with a `404`, so only `/` is publicly exposed.
+On Vercel, `/full` and `/single` are still local-only: the production SSR entrypoint blocks both routes with a `404`, so only `/` is publicly exposed. Do not add print routes or static download files to the sitemap.
+
+The public PDF/DOCX downloads are intentionally crawl-blocked and omitted from the sitemap. They exist as user-initiated footer downloads, not indexable landing pages; if hosting headers are later added for static files, they should mirror this policy with `X-Robots-Tag: noindex` for `/downloads/*`.
+
+When resume facts change, update `assets/data/resume.json` or `assets/data/variants/site.json`, then verify the public entity surface with `pnpm exec vitest run src/lib/site.test.ts`. The JSON-LD must stay truthful: `sameAs` comes from actual profile URLs, `jobTitle` and location come from the resolved site resume, education and credentials come from committed resume facts, and projects/publications appear under `subjectOf` only when they exist in the public site variant.
 
 ## Data source
 
@@ -77,6 +83,14 @@ pnpm build
 ```
 
 Build the production app.
+
+```bash
+pnpm docs:dev
+pnpm docs:build
+pnpm check:docs
+```
+
+Run, build, or validate the standalone developer docs app from the root package scripts. CI installs docs dependencies with the docs lockfile and runs `pnpm check:docs` after the root test lane.
 
 ```bash
 pnpm lint
@@ -159,6 +173,22 @@ Use `pnpm -C docs dev` for local docs authoring, `pnpm -C docs build` for valida
 `src/scripts/check-artifacts.ts` provides a portable regression gate on top of those generated files by parsing the PDFs in Node with `pdfjs-dist` and Poppler and the DOCX files through their Word XML, including section-order and ATS parseability checks so column-style extraction, font, image, hyperlink, and contact/keyword regressions are caught in CI.
 
 The CI workflow also uploads the generated PDF/PNG/DOCX artifacts on every run so layout changes can be inspected without regenerating them locally.
+
+## Visual QA loop
+
+Use the uploaded CI artifacts or a local `pnpm check:artifacts` run to inspect the generated PDFs/PNGs after changes to layout, typography, section ordering, skill icons, or print content budgets. The automated checks guard page counts, extraction order, ATS parseability, public-download parity, and tooltip leakage; visual review should still confirm the interactive `/` route, the `/full` 2-page composition, and the `/single` 1-page composition still read as distinct artifacts.
+
+## Icon provenance
+
+Skill icons are source-controlled UI assets for the interactive route only. Keep their provenance in the icon data pipeline, do not allow icon metadata or tooltip-only skill evidence to leak into generated PDF/DOCX content, and rerun the artifact checker after icon or popover changes because it verifies public downloads remain text-first and image-free.
+
+## Release gate
+
+`.github/workflows/release-theme.yml` mirrors the root build, typecheck, lint, test, generation, and artifact-check lane before upload. Release uploads include the six generated resume artifacts plus `assets/outputs/SHA256SUMS.txt`; manual dispatches may pass `tag_name`, while release events resolve the published tag through an environment variable before invoking `gh release upload`.
+
+## Professional context cards
+
+Keep professional positioning consistent across the visible resume, metadata, JSON-LD, docs, and public downloads. The canonical `/` route should present Wyatt Walsh as a Senior AI/ML Engineer in New York City with proof across production AI agents, LLM document intelligence, retrieval systems, data platforms, developer tooling, education, credentials, open-source projects, and publications.
 
 ## Production note
 

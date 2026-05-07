@@ -1,23 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /full
+Disallow: /full/
+Disallow: /single
+Disallow: /single/
+Disallow: /downloads/
 
-# AI Crawler Bots
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
+# Only the canonical root resume page is intended for public indexing.
+# Local print routes and static download copies stay out of crawler paths.
 
 Sitemap: https://resume.w4w.dev/sitemap.xml

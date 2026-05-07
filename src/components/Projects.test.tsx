@@ -25,7 +25,11 @@ describe("Projects", () => {
     expect(markup).toContain("425K+ views and 60K+ downloads");
     expect(markup).toContain("2023-07-06");
     expect(markup).toContain("Live site");
+    expect(markup).toContain("Docs");
+    expect(markup).toContain("Kaggle");
+    expect(markup).toContain("https://www.kaggle.com/datasets/wyattowalsh/basketball");
     expect(markup).toContain("https://mcp-crawl4ai.w4w.dev/");
+    expect(markup.match(/https:\/\/nbadb\.w4w\.dev/g)).toHaveLength(1);
   });
 
   it("keeps a simple layout when there are only a few projects", () => {

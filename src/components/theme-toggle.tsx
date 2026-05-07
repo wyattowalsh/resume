@@ -1,15 +1,27 @@
 import { useTheme } from "./theme-provider"
 import { Button } from "./ui/button"
-import { useEffect, useState } from "react"
+import { useSyncExternalStore } from "react"
 import { FaMoon, FaSun } from "react-icons/fa"
 
-export function ModeToggle() {
-  const [mounted, setMounted] = useState(false)
-  const { resolvedTheme, setTheme } = useTheme()
+function subscribeToMount() {
+  return () => undefined
+}
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+function getClientSnapshot() {
+  return true
+}
+
+function getServerSnapshot() {
+  return false
+}
+
+export function ModeToggle() {
+  const mounted = useSyncExternalStore(
+    subscribeToMount,
+    getClientSnapshot,
+    getServerSnapshot,
+  )
+  const { resolvedTheme, setTheme } = useTheme()
 
   if (!mounted) {
     // Render a disabled placeholder to prevent layout shift

@@ -7,7 +7,7 @@ import type {
   Skill,
   Work,
 } from "@/lib/schema";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { formatMonthYear } from "@/lib/date";
 import { cn } from "@/lib/utils";
 
@@ -100,6 +100,17 @@ function getPrintSectionHeadingId(title: string) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")}-heading`;
+}
+
+function getProjectLinks(project: Project) {
+  const links = [
+    ...(project.links ?? []),
+    { label: "GitHub", url: project.githubUrl },
+  ];
+
+  return links.filter(
+    (link, index) => links.findIndex((candidate) => candidate.url === link.url) === index,
+  );
 }
 
 function PrintSeparator() {
@@ -418,7 +429,7 @@ export function PrintProjectList({
   const shouldShowProjectStacks = includeStackText || showFullProjectMetaRow;
   const fullListSpacingClass = tightenedFullList
     ? balancedTightFullList
-      ? "space-y-4.5"
+      ? "space-y-3.5"
       : spaciousFullList
       ? "space-y-3.5"
       : denseFullList
@@ -431,7 +442,7 @@ export function PrintProjectList({
         : "space-y-2";
   const fullListPaddingClass = tightenedFullList
     ? balancedTightFullList
-      ? "pt-3"
+      ? "pt-2.5"
       : spaciousFullList
       ? "pt-2.5"
       : denseFullList
@@ -502,31 +513,20 @@ export function PrintProjectList({
                   compact ? "text-[11px]" : "text-[11.5px]",
                 )}
               >
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-slate-700"
-                  >
-                    {project.name}
-                  </a>
-                ) : (
-                  project.name
-                )}
-                {project.githubUrl ? (
-                  <>
+                <span>{project.name}</span>
+                {getProjectLinks(project).map((link) => (
+                  <Fragment key={`${link.label}-${link.url}`}>
                     <span className="font-normal text-slate-400">|</span>
                     <a
-                      href={project.githubUrl}
+                      href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[9.25px] font-medium text-slate-500 hover:text-slate-900"
                     >
-                      {formatProfileDisplayUrl(project.githubUrl)}
+                      {link.label === "GitHub" ? formatProfileDisplayUrl(link.url) : link.label}
                     </a>
-                  </>
-                ) : null}
+                  </Fragment>
+                ))}
               </h3>
               {(shouldShowProjectDates ||
                 (shouldShowProjectStacks && project.stack?.length)) && (

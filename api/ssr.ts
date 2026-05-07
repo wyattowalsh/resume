@@ -6,14 +6,32 @@ import { renderPage } from 'vike/server';
 
 const blockedProductionPaths = new Set(['/full', '/single']);
 
-function normalizePath(url: string | undefined) {
-  const pathname = new URL(url ?? '/', 'https://resume.w4w.dev').pathname;
+type ProductionRouteEnvironment = {
+  VERCEL?: string;
+  VERCEL_ENV?: string;
+};
+
+export function normalizePath(url: string | undefined) {
+  let pathname = new URL(url ?? '/', 'https://resume.w4w.dev').pathname;
+
+  try {
+    pathname = decodeURIComponent(pathname);
+  } catch {
+    // Keep the parsed pathname when malformed escapes cannot be decoded.
+  }
+
   const normalized = pathname.replace(/\/+$/, '');
   return normalized === '' ? '/' : normalized;
 }
 
-function isBlockedProductionPath(url: string | undefined) {
-  if (process.env.VERCEL !== '1' || process.env.VERCEL_ENV !== 'production') {
+export function isBlockedProductionPath(
+  url: string | undefined,
+  env: ProductionRouteEnvironment = {
+    VERCEL: process.env.VERCEL,
+    VERCEL_ENV: process.env.VERCEL_ENV,
+  },
+) {
+  if (env.VERCEL !== '1' || env.VERCEL_ENV !== 'production') {
     return false;
   }
 
@@ -32,7 +50,7 @@ export default async function handler(
   }
 
   const pageContextInit = {
-    urlOriginal: req.url,
+    urlOriginal: req.url ?? '/',
     headersOriginal: req.headers,
   };
   const pageContext = await renderPage(pageContextInit);

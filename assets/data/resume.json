@@ -492,6 +492,10 @@
       "name": "NBA Basketball Database",
       "url": "https://nbadb.w4w.dev",
       "githubUrl": "https://github.com/wyattowalsh/nbadb",
+      "links": [
+        { "label": "Docs", "url": "https://nbadb.w4w.dev" },
+        { "label": "Kaggle", "url": "https://www.kaggle.com/datasets/wyattowalsh/basketball" }
+      ],
       "startDate": "2021-04-01",
       "endDate": null,
       "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ play-by-play events, with DuckDB/SQLite/Parquet/CSV exports; reached 425K+ views and 60K+ downloads before freezing at the 2023-07-06 update.",

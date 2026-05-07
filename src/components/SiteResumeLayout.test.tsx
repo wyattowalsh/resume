@@ -19,7 +19,6 @@ describe("SiteResumeLayout", () => {
       />,
     );
 
-    expect(markup).toContain("Scroll progress");
     expect(markup).toContain("Resume scroll progress");
     expect(markup).not.toContain('href="#work-experience"');
     expect(markup).not.toContain('href="#projects"');

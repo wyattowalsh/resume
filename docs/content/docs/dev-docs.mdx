@@ -18,3 +18,9 @@ This documentation site is built as a separate Next.js application within the ma
 | **Utilities** |
 | `clsx` | A tiny utility for constructing `className` strings conditionally. | [github.com/lukeed/clsx](https://github.com/lukeed/clsx) | [lukeed/clsx](https://github.com/lukeed/clsx) | Utility for managing class names. |
 | `class-variance-authority` | A library for creating type-safe and composable UI components. | [cva.style](https://cva.style) | [joe-bell/cva](https://github.com/joe-bell/cva) | Used for creating variant-based components like buttons. |
+
+## Docs CI
+
+The docs app keeps its own `pnpm-lock.yaml`. Root CI installs docs dependencies with `pnpm -C docs install --frozen-lockfile`, then runs the root `pnpm check:docs` shortcut so docs build failures block the same lane as public resume build, lint, test, and artifact checks.
+
+Keep docs content focused on developer maintenance details: route/indexing policy, artifact generation, visual QA expectations, icon provenance, and the professional context cards that should remain consistent across visible resume copy, metadata, JSON-LD, and generated downloads.

@@ -36,6 +36,23 @@ function getHost() {
 }
 
 const app = express();
+app.disable("x-powered-by");
+
+app.use((req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader(
+    "Permissions-Policy",
+    "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()",
+  );
+  res.setHeader("X-Frame-Options", "DENY");
+
+  if (req.path.startsWith("/downloads/")) {
+    res.setHeader("X-Robots-Tag", "noindex");
+  }
+
+  next();
+});
 
 function isDirectRun() {
   const scriptPath = process.argv[1] ? path.resolve(process.argv[1]) : undefined;

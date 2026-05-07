@@ -34,9 +34,15 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            docs/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Install docs dependencies
+        run: pnpm -C docs install --frozen-lockfile
 
       - name: Install PDF inspection tools
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
@@ -55,6 +61,9 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+      - name: Build docs
+        run: pnpm check:docs
 
       - name: Install Puppeteer Chrome
         run: pnpm exec puppeteer browsers install chrome

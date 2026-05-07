@@ -14,7 +14,9 @@ type SectionProgressNavProps = {
 
 export function SectionProgressNav({ items }: SectionProgressNavProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(
+    () => typeof window !== "undefined" && !("IntersectionObserver" in window),
+  );
 
   useEffect(() => {
     if (items.length === 0 || !("IntersectionObserver" in window)) {
@@ -58,14 +60,12 @@ export function SectionProgressNav({ items }: SectionProgressNavProps) {
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) {
-      setIsVisible(true);
       return undefined;
     }
 
     const sentinel = document.querySelector("[data-scroll-progress-sentinel]");
 
     if (!sentinel) {
-      setIsVisible(true);
       return undefined;
     }
 
@@ -90,8 +90,8 @@ export function SectionProgressNav({ items }: SectionProgressNavProps) {
   const progressValue = Math.round(((activeIndex + 1) / items.length) * 100);
 
   return (
-    <nav
-      aria-label="Scroll progress"
+    <div
+      aria-hidden={!isVisible}
       className={cn(
         "section-progress-nav print:hidden",
         isVisible
@@ -105,6 +105,6 @@ export function SectionProgressNav({ items }: SectionProgressNavProps) {
         aria-valuetext={`${items[activeIndex]?.label ?? "Resume"} section`}
         className="h-px rounded-none bg-transparent"
       />
-    </nav>
+    </div>
   );
 }

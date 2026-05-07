@@ -14,6 +14,8 @@ This repo intentionally ships three different resume artifacts from one canonica
 | Editorial print resume | `/full`   | Local-only 2-page PDF/PNG visual artifact plus semantic DOCX export with calmer pacing and more supporting detail. |
 | Distilled print resume | `/single` | Local-only 1-page PDF/PNG visual artifact plus semantic DOCX export with a stricter linear reading path for safer extraction. |
 
+Only `/` is canonical and indexable. The production SSR layer blocks `/full` and `/single`, `robots.txt` disallows those paths plus `/downloads/`, and `sitemap.xml` lists only `https://resume.w4w.dev/`. Static PDF/DOCX downloads are intentional user downloads, not search landing pages; keep them omitted from the sitemap and mirror the noindex policy with static-file headers if hosting support is added later.
+
 ## Data flow
 
 1. `assets/data/resume.json` is the canonical fact source.
@@ -39,8 +41,11 @@ The DOCX intent is deliberate: both exports retain the basics summary, selected 
 - `pnpm exec tsc --noEmit`
 - `pnpm test`
 - `pnpm lint`
+- `pnpm check:docs`
 - `pnpm check:artifacts`
 - `pnpm check:artifacts:current`
+
+For SEO-only edits, run `pnpm exec vitest run src/lib/site.test.ts` to validate the canonical title, description, social image, canonical URL, and JSON-LD graph shape.
 
 `pnpm check:artifacts` regenerates `/full` and `/single`, syncs `public/downloads/`, verifies page counts and letter sizing, checks generated/public download hash parity, checks curated content presence across PDF and DOCX artifacts, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
 
@@ -63,4 +68,12 @@ Local runs need Poppler (`pdfinfo`, `pdffonts`, `pdftotext`, `pdfimages`) on `PA
 
 ## CI behavior
 
-The GitHub Actions workflow installs `poppler-utils`, runs the same core validation chain, executes `pnpm check:artifacts` so generated files and `public/downloads/` are checked in one synced pass, and uploads the generated PDFs/PNGs/DOCX files as workflow artifacts for inspection. Its final clean-tree check ignores regenerated tracked binary downloads because PDF/DOCX byte output can vary across macOS and Linux while the content, layout, and same-run generated/public parity checks remain enforced.
+The GitHub Actions workflow installs root dependencies and docs dependencies from their separate lockfiles, installs `poppler-utils`, runs the same core validation chain, builds the docs app with `pnpm check:docs`, executes `pnpm check:artifacts` so generated files and `public/downloads/` are checked in one synced pass, and uploads the generated PDFs/PNGs/DOCX files as workflow artifacts for inspection. Its final clean-tree check ignores regenerated tracked binary downloads because PDF/DOCX byte output can vary across macOS and Linux while the content, layout, and same-run generated/public parity checks remain enforced.
+
+The release workflow mirrors practical root quality gates before upload: build scripts, production build, typecheck, lint, tests, artifact generation, artifact regression checks, and a SHA-256 manifest. Release uploads include generated PDFs, DOCX files, PNG previews, and `SHA256SUMS.txt`.
+
+## Visual and professional QA
+
+Use CI artifacts or local generated PNG/PDF outputs for visual QA whenever layout, typography, section budgets, icons, or public resume facts change. Confirm the web route remains a professional person/entity page for Wyatt Walsh as a Senior AI/ML Engineer in New York City, with the same context reflected in metadata, JSON-LD, visible copy, and the print artifacts.
+
+Skill icons and popover evidence are web-only. Keep icon provenance in the icon data pipeline, keep generated PDFs image-free, and preserve the artifact checker rule that tooltip-only skill descriptions and reference URLs stay out of PDF/DOCX exports.

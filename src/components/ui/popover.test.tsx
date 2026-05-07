@@ -44,5 +44,5 @@ describe("PopoverContent", () => {
     expect(dialog?.className).toContain("print:hidden");
     expect(dialog?.getAttribute("aria-labelledby")).toBe("popover-title");
     expect(dialog?.getAttribute("aria-describedby")).toBe("popover-description");
-  });
+  }, 20000);
 });

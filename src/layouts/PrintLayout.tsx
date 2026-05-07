@@ -13,7 +13,7 @@ export default function PrintLayout({
       <HelmetProvider>
         <ErrorBoundary>
           <div className="bg-background min-h-screen">
-            <main>{children}</main>
+            <div>{children}</div>
           </div>
         </ErrorBoundary>
       </HelmetProvider>
