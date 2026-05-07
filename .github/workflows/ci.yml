@@ -85,9 +85,4 @@ jobs:
             assets/outputs/resume-single.png
 
       - name: Verify tracked files remain clean
-        run: >-
-          git diff --exit-code -- .
-          ':!public/downloads/wyatt-walsh-resume-full.pdf'
-          ':!public/downloads/wyatt-walsh-resume-full.docx'
-          ':!public/downloads/wyatt-walsh-resume-single.pdf'
-          ':!public/downloads/wyatt-walsh-resume-single.docx'
+        run: git diff --exit-code -- .

@@ -2,6 +2,8 @@ import fullVariantData from "@assets/data/variants/full.json";
 import singleVariantData from "@assets/data/variants/single.json";
 import siteVariantData from "@assets/data/variants/site.json";
 import resumeData from "@assets/data/resume.json";
+import fs from "node:fs";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { getResumeVariant, type ResumeVariantName } from "./resume-data";
 import { getSkillDetail, getSkillDetails } from "./skill-details";
@@ -22,7 +24,6 @@ interface ProjectSelection {
   name: string;
   description?: string;
   highlightIndexes?: number[];
-  highlights?: string[];
 }
 
 interface SkillSelection {
@@ -87,6 +88,11 @@ function getBaseEducation(institution: string) {
 }
 
 const allVariantNames: ResumeVariantName[] = ["site", "full", "single"];
+const variantDataByName = {
+  site: siteVariantData,
+  full: fullVariantData,
+  single: singleVariantData,
+} as const;
 
 describe("getResumeVariant", () => {
   describe("memoization", () => {
@@ -246,9 +252,7 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights:
-            selection.highlights ??
-            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       });
 
@@ -265,9 +269,7 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights:
-            selection.highlights ??
-            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       });
 
@@ -303,9 +305,7 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights:
-            selection.highlights ??
-            pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
         };
       });
 
@@ -703,6 +703,15 @@ describe("getResumeVariant", () => {
       }
     });
 
+    it("keeps project highlight prose in canonical resume data", () => {
+      for (const [variantName, variant] of Object.entries(variantDataByName)) {
+        for (const selection of ((variant as Record<string, unknown>).projects ??
+          []) as Array<Record<string, unknown>>) {
+          expect(selection.highlights, `${variantName}:${selection.name}`).toBeUndefined();
+        }
+      }
+    });
+
     it("every selected skill keyword exists in its base skill category", () => {
       for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
         for (const selection of ((variant as Record<string, unknown>).skills ??
@@ -742,5 +751,17 @@ describe("getResumeVariant", () => {
         expect(resolved).toHaveProperty("name");
       },
     );
+  });
+});
+
+describe("CI artifact freshness contract", () => {
+  it("fails when synced public downloads differ from generated artifacts", () => {
+    const workflow = fs.readFileSync(
+      path.resolve(process.cwd(), ".github", "workflows", "ci.yml"),
+      "utf8",
+    );
+
+    expect(workflow).not.toMatch(/:!public\/downloads\/wyatt-walsh-resume-/);
+    expect(workflow).toMatch(/run:\s*git diff --exit-code -- \./);
   });
 });
