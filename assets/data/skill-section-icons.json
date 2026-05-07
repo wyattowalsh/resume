@@ -1,0 +1,12 @@
+{
+  "AI, LLM & Agent Engineering": "brain-circuit",
+  "AI Agent Harnesses & Coding Assistants": "bot",
+  "Machine Learning & Data Science": "chart-line",
+  "Data Engineering, Databases & Analytics": "database",
+  "Streaming, Messaging & Capital Markets Systems": "radio-tower",
+  "Backend, APIs & Distributed Systems": "server",
+  "Frontend, Product & Desktop Engineering": "monitor",
+  "Cloud, DevOps & Observability": "cloud",
+  "Testing, Quality, Security & Architecture": "shield-check",
+  "Languages & Authoring": "languages"
+}

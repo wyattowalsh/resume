@@ -40,14 +40,15 @@ const skillIconsSchema = z.record(z.string(), skillIconSchema);
 
 export type SkillEvidence = z.infer<typeof skillDetailSchema>["evidence"][number];
 export type SkillLink = z.infer<typeof skillDetailSchema>["links"][number];
-export type SkillDetail = z.infer<typeof skillDetailSchema> & {
-  icon?: {
+export type SkillIconDetail = {
     path: string;
     source: z.infer<typeof skillIconSchema>["source"];
     sourceUrl: string;
     sha256: string;
     semanticFit: "brand" | "ecosystem" | "conceptual" | "fallback";
-  };
+};
+export type SkillDetail = z.infer<typeof skillDetailSchema> & {
+  icon?: SkillIconDetail;
 };
 
 const skillDetails = skillDetailsSchema.parse(skillDetailsData);
@@ -66,7 +67,6 @@ export function getSkillDetail(
   category: string,
 ): SkillDetail | undefined {
   const detail = skillDetails[skillName];
-  const icon = skillIcons[skillName];
 
   if (!detail) {
     return undefined;
@@ -75,15 +75,23 @@ export function getSkillDetail(
   return {
     ...detail,
     category: detail.category || category,
-    icon: icon
-      ? {
-          path: icon.iconPath,
-          source: icon.source,
-          sourceUrl: icon.sourceUrl,
-          sha256: icon.sha256,
-          semanticFit: getIconSemanticFit(icon.source),
-        }
-      : undefined,
+    icon: getSkillIcon(skillName),
+  };
+}
+
+export function getSkillIcon(skillName: string): SkillIconDetail | undefined {
+  const icon = skillIcons[skillName];
+
+  if (!icon) {
+    return undefined;
+  }
+
+  return {
+    path: icon.iconPath,
+    source: icon.source,
+    sourceUrl: icon.sourceUrl,
+    sha256: icon.sha256,
+    semanticFit: getIconSemanticFit(icon.source),
   };
 }
 

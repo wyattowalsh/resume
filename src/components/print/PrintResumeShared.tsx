@@ -105,6 +105,7 @@ function getPrintSectionHeadingId(title: string) {
 function getProjectLinks(project: Project) {
   const links = [
     ...(project.links ?? []),
+    ...(project.url ? [{ label: "Live site", url: project.url }] : []),
     { label: "GitHub", url: project.githubUrl },
   ];
 
@@ -429,11 +430,11 @@ export function PrintProjectList({
   const shouldShowProjectStacks = includeStackText || showFullProjectMetaRow;
   const fullListSpacingClass = tightenedFullList
     ? balancedTightFullList
-      ? "space-y-3.5"
+      ? "space-y-2"
       : spaciousFullList
-      ? "space-y-3.5"
+      ? "space-y-2"
       : denseFullList
-        ? "space-y-3"
+        ? "space-y-2"
         : "space-y-2"
     : spaciousFullList
       ? "space-y-5"
@@ -442,11 +443,11 @@ export function PrintProjectList({
         : "space-y-2";
   const fullListPaddingClass = tightenedFullList
     ? balancedTightFullList
-      ? "pt-2.5"
+      ? "pt-1.5"
       : spaciousFullList
-      ? "pt-2.5"
+      ? "pt-1.5"
       : denseFullList
-        ? "pt-2"
+        ? "pt-1.5"
         : "pt-1.5"
     : spaciousFullList
       ? "pt-4"
@@ -468,7 +469,7 @@ export function PrintProjectList({
           key={project.name}
           className={cn(
             "resume-print-entry break-inside-avoid",
-            tightenedFullList && "min-h-[84.6pt]",
+            tightenedFullList && "min-h-[88pt]",
             !summaryOnly &&
               cn(
                 "border-t border-slate-100 first:border-t-0 first:pt-0",

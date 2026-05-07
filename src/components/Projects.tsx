@@ -2,7 +2,8 @@ import { formatMonthYear } from "@/lib/date";
 import { formatThemeLabel } from "@/lib/format-theme-label";
 import { Project } from "@/lib/schema";
 import { FaFolderOpen, FaGithub } from "react-icons/fa";
-import { LuCalendarDays, LuExternalLink } from "react-icons/lu";
+import { SiKaggle } from "react-icons/si";
+import { LuBookOpen, LuCalendarDays, LuExternalLink, LuGlobe } from "react-icons/lu";
 import { Section } from "./Section";
 
 type ProjectsProps = {
@@ -30,6 +31,12 @@ type ProjectActionsProps = {
   project: Project;
 };
 
+type ProjectAction = {
+  label: string;
+  url: string;
+  kind: "external" | "github";
+};
+
 function ProjectActions({ project }: ProjectActionsProps) {
   const actionClass =
     "interactive-chip inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] font-[family:var(--font-site-label)] font-semibold text-foreground/70 shadow-sm transition-colors duration-200 hover:border-primary/20 hover:text-foreground";
@@ -53,16 +60,40 @@ function ProjectActions({ project }: ProjectActionsProps) {
           aria-label={`${action.label} for ${project.name}`}
           className={actionClass}
         >
+          <ProjectActionIcon action={action} />
           {action.label}
-          {action.kind === "github" ? (
-            <FaGithub size={12} />
-          ) : (
-            <LuExternalLink size={12} strokeWidth={2} />
-          )}
+          <LuExternalLink size={11} strokeWidth={2} aria-hidden="true" />
         </a>
       ))}
     </div>
   );
+}
+
+function ProjectActionIcon({ action }: { action: ProjectAction }) {
+  const hostname = getHostname(action.url);
+  const label    = action.label.toLowerCase();
+
+  if (action.kind === "github" || hostname === "github.com") {
+    return <FaGithub size={12} aria-hidden="true" />;
+  }
+
+  if (hostname.includes("kaggle.com") || label.includes("kaggle")) {
+    return <SiKaggle size={12} aria-hidden="true" />;
+  }
+
+  if (label.includes("docs") || action.url.includes("/docs")) {
+    return <LuBookOpen size={12} strokeWidth={2} aria-hidden="true" />;
+  }
+
+  return <LuGlobe size={12} strokeWidth={2} aria-hidden="true" />;
+}
+
+function getHostname(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
 }
 
 function ProjectHeading({ project, className }: ProjectHeadingProps) {

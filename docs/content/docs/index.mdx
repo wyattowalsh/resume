@@ -24,7 +24,8 @@ Only `/` is canonical and indexable. The production SSR layer blocks `/full` and
 4. Dedicated layouts (`SiteResumeLayout`, `FullResumeLayout`, `SingleResumeLayout`) own artifact-specific composition.
 5. `src/lib/artifact-specs.ts` also defines the explicit DOCX policy contract under each artifact spec's `docx` field.
 6. `assets/data/skill-details.json` adds web-only skill popover evidence that is guarded from leaking into generated PDF/DOCX artifacts.
-7. `src/lib/resume-downloads.ts` centralizes the public footer download labels, paths, and accessibility labels.
+7. `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, and `public/skill-icons/` provide the web-only local icon layer for skill chips and section headings.
+8. `src/lib/resume-downloads.ts` centralizes the public footer download labels, paths, and accessibility labels.
 
 The DOCX intent is deliberate: both exports retain the basics summary, selected work summaries, and project highlights for ATS richness, while the 1-page PDF can still suppress visible role summaries for layout density. The same DOCX policy also defines whether Projects start on a fresh DOCX page (`full`) or continue inline (`single`) and whether project stacks are emitted into DOCX text (`full` includes stack keywords, `single` stays compact).
 
@@ -33,6 +34,8 @@ The DOCX intent is deliberate: both exports retain the basics summary, selected 
 - The top progress indicator is noninteractive and uses a Radix Progress primitive wrapped in `src/components/ui/progress.tsx`.
 - The progress indicator appears only after the header sentinel leaves the viewport and updates via `IntersectionObserver`; it does not poll `scrollY` or attach scroll handlers.
 - Skills are the only popover surface. Work and project proof should remain directly visible in the page content, not hidden behind role/project dialogs.
+- All visible skill chips are keyboard-accessible popover triggers. Curated skills use `assets/data/skill-details.json` and `assets/data/skill-icons.json`; uncatalogued skills still open lightweight category-context cards so the UI has no static skill pills.
+- Project action pills use contextual leading icons for GitHub, Kaggle, docs, and live/external links while preserving the trailing external-link indicator.
 - Public resume downloads live in the bottom footer only.
 
 ## Validation workflow
@@ -47,7 +50,7 @@ The DOCX intent is deliberate: both exports retain the basics summary, selected 
 
 For SEO-only edits, run `pnpm exec vitest run src/lib/site.test.ts` to validate the canonical title, description, social image, canonical URL, and JSON-LD graph shape.
 
-`pnpm check:artifacts` regenerates `/full` and `/single`, syncs `public/downloads/`, verifies page counts and letter sizing, checks generated/public download hash parity, checks curated content presence across PDF and DOCX artifacts, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
+`pnpm check:artifacts` regenerates `/full` and `/single`, syncs `public/downloads/`, verifies page counts and letter sizing, checks generated/public download hash parity, checks curated content presence across PDF and DOCX artifacts, confirms the full PDF remains exactly 2 pages, and confirms the `/single` PDF still extracts in the intended `Experience → Skills → Projects → Education` order.
 
 `pnpm check:artifacts:current` is the audit path for the artifacts already on disk. It runs `pnpm build:script` and then executes the checker with `RESUME_ARTIFACT_RECENCY=skip`, which skips only the generated-artifact freshness gate while keeping the same PDF, DOCX, parity, and content assertions.
 
@@ -57,7 +60,7 @@ The same gate also verifies ATS-oriented parseability for generated artifacts an
 - Fonts must be embedded Unicode fonts, with Type 3 fonts rejected.
 - `pdfjs-dist` and Poppler `pdftotext` must extract contiguous contact fields, profile URLs, section headings, selected work entries, skill groups, keywords, and project descriptions.
 - DOCX `word/document.xml` must expose parseable contact fields, section headings, selected entries, skills, education, certifications, and project descriptions.
-- DOCX relationships must retain contact, profile, and project hyperlinks.
+- DOCX relationships must retain contact, profile, and project hyperlinks, including project live-site links when a variant includes a `url`.
 - DOCX stack expectations must follow each artifact spec's `docx.showProjectStacks` policy.
 - Web-only skill-detail copy and reference URLs from `assets/data/skill-details.json` must stay out of generated and public PDF/DOCX artifacts.
 - Required headings must not degrade into letter-spaced text such as `E X P E R I E N C E`.
@@ -70,10 +73,10 @@ Local runs need Poppler (`pdfinfo`, `pdffonts`, `pdftotext`, `pdfimages`) on `PA
 
 The GitHub Actions workflow installs root dependencies and docs dependencies from their separate lockfiles, installs `poppler-utils`, runs the same core validation chain, builds the docs app with `pnpm check:docs`, executes `pnpm check:artifacts` so generated files and `public/downloads/` are checked in one synced pass, and uploads the generated PDFs/PNGs/DOCX files as workflow artifacts for inspection. Its final clean-tree check ignores regenerated tracked binary downloads because PDF/DOCX byte output can vary across macOS and Linux while the content, layout, and same-run generated/public parity checks remain enforced.
 
-The release workflow mirrors practical root quality gates before upload: build scripts, production build, typecheck, lint, tests, artifact generation, artifact regression checks, and a SHA-256 manifest. Release uploads include generated PDFs, DOCX files, PNG previews, and `SHA256SUMS.txt`.
+The release workflow mirrors practical root quality gates before upload: build scripts, production build, typecheck, lint, tests, `pnpm check:artifacts`, and a SHA-256 manifest. Release uploads include generated PDFs, DOCX files, PNG previews, and `SHA256SUMS.txt`.
 
 ## Visual and professional QA
 
 Use CI artifacts or local generated PNG/PDF outputs for visual QA whenever layout, typography, section budgets, icons, or public resume facts change. Confirm the web route remains a professional person/entity page for Wyatt Walsh as a Senior AI/ML Engineer in New York City, with the same context reflected in metadata, JSON-LD, visible copy, and the print artifacts.
 
-Skill icons and popover evidence are web-only. Keep icon provenance in the icon data pipeline, keep generated PDFs image-free, and preserve the artifact checker rule that tooltip-only skill descriptions and reference URLs stay out of PDF/DOCX exports.
+Skill icons and popover evidence are web-only. Keep icon provenance in the icon data pipeline, keep generated PDFs image-free, preserve all visible skill chips as interactive triggers, and preserve the artifact checker rule that tooltip-only skill descriptions and reference URLs stay out of PDF/DOCX exports.

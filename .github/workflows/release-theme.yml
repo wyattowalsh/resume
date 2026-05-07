@@ -60,11 +60,8 @@ jobs:
       - name: Install Puppeteer Chrome
         run: pnpm exec puppeteer browsers install chrome
 
-      - name: Generate resume artifacts
-        run: node src/scripts/generate.js
-
-      - name: Check artifact regressions
-        run: node src/scripts/check-artifacts.js
+      - name: Generate, sync, and check resume artifacts
+        run: pnpm check:artifacts
 
       - name: Create checksum manifest
         run: |

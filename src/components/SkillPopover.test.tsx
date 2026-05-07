@@ -49,7 +49,11 @@ describe("SkillPopover", () => {
 
     act(() => {
       root.render(
-        <SkillPopover detail={detail!} skillName="AMPS">
+        <SkillPopover
+          category="Streaming, Messaging & Capital Markets Systems"
+          detail={detail!}
+          skillName="AMPS"
+        >
           AMPS
         </SkillPopover>,
       );
@@ -72,7 +76,11 @@ describe("SkillPopover", () => {
 
     act(() => {
       root.render(
-        <SkillPopover detail={detail!} skillName="AMPS">
+        <SkillPopover
+          category="Streaming, Messaging & Capital Markets Systems"
+          detail={detail!}
+          skillName="AMPS"
+        >
           AMPS
         </SkillPopover>,
       );
@@ -92,12 +100,16 @@ describe("SkillPopover", () => {
     expect(document.body.querySelector('[role="dialog"]')).toBeNull();
   });
 
-  it("renders a professional context card without quality or ranking language", () => {
+  it("renders a distilled context card without quality or ranking language", () => {
     const detail = getSkillDetail("AMPS", "Streaming, Messaging & Capital Markets Systems");
 
     act(() => {
       root.render(
-        <SkillPopover detail={detail!} skillName="AMPS">
+        <SkillPopover
+          category="Streaming, Messaging & Capital Markets Systems"
+          detail={detail!}
+          skillName="AMPS"
+        >
           AMPS
         </SkillPopover>,
       );
@@ -110,10 +122,14 @@ describe("SkillPopover", () => {
     const dialog = document.body.querySelector('[role="dialog"]');
 
     expect(dialog).not.toBeNull();
-    expect(dialog?.textContent).toContain("Professional use");
-    expect(dialog?.textContent).toContain("Resume context");
-    expect(dialog?.textContent).toContain("Evidence");
-    expect(dialog?.textContent).toContain("References");
+    expect(dialog?.textContent).toContain("60East's high-performance");
+    expect(dialog?.textContent).toContain("Wyatt used AMPS");
+    expect(dialog?.textContent).toContain("JPMorgan Chase & Co.");
+    expect(dialog?.textContent).toContain("Product site");
+    expect(dialog?.textContent).not.toContain("Professional use");
+    expect(dialog?.textContent).not.toContain("Resume context");
+    expect(dialog?.textContent).not.toContain("Evidence");
+    expect(dialog?.textContent).not.toContain("References");
     expect(dialog?.textContent).not.toMatch(blockedRenderedPattern);
   });
 });

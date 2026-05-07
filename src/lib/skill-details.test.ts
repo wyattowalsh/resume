@@ -91,4 +91,13 @@ describe("skill details", () => {
     expect(skillIcons.React.sourceUrl).toContain("react-original.svg");
     expect(skillIcons.AWS.sourceUrl).toMatch(/^https:\/\//);
   });
+
+  it("keeps every visible site skill covered by the icon manifest", () => {
+    const visibleSkills = siteVariant.skills.flatMap((group) => group.keywords);
+
+    for (const skillName of visibleSkills) {
+      expect(skillIcons).toHaveProperty(skillName);
+      expect(skillIcons[skillName as keyof typeof skillIcons].iconPath).toMatch(/^\/skill-icons\//);
+    }
+  });
 });

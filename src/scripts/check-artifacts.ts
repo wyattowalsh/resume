@@ -163,7 +163,9 @@ interface SkillSelection extends NamedSelection {
 
 interface ProjectSelection extends NamedSelection {
   description: string;
+  url?: string;
   githubUrl: string;
+  links?: Array<{ label: string; url: string }>;
   highlights: string[];
   stack?: string[];
 }
@@ -1587,8 +1589,13 @@ function assertDocxHyperlinkTargets(
     `mailto:${resume.basics.email}`,
     `tel:${resume.basics.phone}`,
     ...resume.basics.profiles.map((profile) => profile.url),
+    ...variant.projects.flatMap((project) => [
+      ...(project.links?.map((link) => link.url) ?? []),
+      ...(project.url ? [project.url] : []),
+    ]),
     ...variant.projects.map((project) => project.githubUrl),
   ];
+  const requiredTargetSet = new Set(requiredTargets);
 
   for (const target of requiredTargets) {
     if (!relationshipsXml.includes(target)) {
@@ -1597,6 +1604,10 @@ function assertDocxHyperlinkTargets(
   }
 
   for (const tooltipOnlyTerm of tooltipOnlyTerms) {
+    if (requiredTargetSet.has(tooltipOnlyTerm)) {
+      continue;
+    }
+
     if (relationshipsXml.includes(tooltipOnlyTerm)) {
       fail(`${label} DOCX relationships must not contain tooltip-only target "${tooltipOnlyTerm}".`);
     }

@@ -1,5 +1,7 @@
 import type { SkillDetail } from "@/lib/skill-details";
 import { useId, useState, type ReactNode } from "react";
+import { FaGithub } from "react-icons/fa";
+import { LuBookOpen, LuFileText, LuGlobe } from "react-icons/lu";
 import {
   Popover,
   PopoverContent,
@@ -7,19 +9,28 @@ import {
 } from "./ui/popover";
 
 type SkillPopoverProps = {
-  detail: SkillDetail;
+  category: string;
+  detail?: SkillDetail;
+  iconPath?: string;
   skillName: string;
   children: ReactNode;
 };
 
 export function SkillPopover({
+  category,
   detail,
+  iconPath,
   skillName,
   children,
 }: SkillPopoverProps) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
   const descriptionId = useId();
+  const resolvedCategory = detail?.category ?? category;
+  const resolvedIconPath = detail?.icon?.path ?? iconPath;
+  const contextText = detail
+    ? `${detail.summary} ${detail.resumeContext}`
+    : `${skillName} is part of Wyatt's ${category.toLowerCase()} toolkit across the roles and projects represented on this page.`;
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -32,8 +43,8 @@ export function SkillPopover({
         >
           <span>{children}</span>
           <SkillIcon
-            category={detail.category}
-            iconPath={detail.icon?.path}
+            category={resolvedCategory}
+            iconPath={resolvedIconPath}
             skillName={skillName}
             size="trigger"
           />
@@ -43,100 +54,55 @@ export function SkillPopover({
         align="start"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="max-h-[min(76dvh,34rem)] w-[min(94vw,25rem)] overflow-y-auto rounded-[1.75rem] border-primary/15 bg-card/98 p-0 shadow-2xl shadow-primary/10 backdrop-blur"
+        className="max-h-[min(82dvh,28rem)] w-[min(calc(100vw-2rem),27rem)] overflow-y-auto rounded-2xl border-border bg-card p-0 shadow-lg"
       >
-        <div className="space-y-3.5 p-3.5 sm:p-4">
-          <div className="flex items-start gap-3 border-b border-border/70 pb-3.5">
+        <div className="space-y-3 p-4">
+          <div className="flex items-start gap-3">
             <SkillIcon
-              category={detail.category}
-              iconPath={detail.icon?.path}
+              category={resolvedCategory}
+              iconPath={resolvedIconPath}
               skillName={skillName}
               size="card"
             />
-            <div className="min-w-0 flex-1 space-y-1.5">
-              <p className="font-[family:var(--font-site-label)] text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
-                {detail.category}
-              </p>
-              <h4 id={titleId} className="font-[family:var(--font-site-heading)] text-base font-semibold text-foreground">
+            <div className="min-w-0 flex-1 space-y-1">
+              <h4 id={titleId} className="text-balance font-[family:var(--font-site-heading)] text-base font-semibold leading-6 text-foreground">
                 {skillName}
               </h4>
+              <p className="font-[family:var(--font-site-label)] text-[11px] font-medium leading-4 text-primary">
+                {resolvedCategory}
+              </p>
             </div>
             <button
               type="button"
-              className="grid size-9 shrink-0 place-items-center rounded-full border border-border bg-background text-foreground/60 transition-colors hover:border-primary/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="grid size-8 shrink-0 place-items-center rounded-full border border-border bg-background text-foreground/60 transition-colors hover:border-primary/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               aria-label={`Close ${skillName} details`}
               onClick={() => setOpen(false)}
             >
               <CloseIcon />
             </button>
           </div>
-          <div id={descriptionId} className="grid gap-3">
-            <ContextSection title="Professional use">
-              <p>{detail.summary}</p>
-            </ContextSection>
-            <ContextSection title="Resume context">
-              <p>{detail.resumeContext}</p>
-            </ContextSection>
+          <p id={descriptionId} className="text-pretty text-sm leading-6 text-foreground/75">
+            {contextText}
+          </p>
+          <div className="flex flex-wrap items-center gap-2 border-t border-border pt-3">
+            {detail?.evidence.map((evidence) => (
+              <span
+                key={`${evidence.kind}:${evidence.label}`}
+                className="inline-flex min-h-7 items-center rounded-full bg-muted px-2.5 py-1 text-[11px] leading-4 text-muted-foreground"
+              >
+                {evidence.label}
+              </span>
+            ))}
+            {detail?.links.map((link) => (
+              <SkillLink key={link.href} href={link.href} kind={link.kind}>
+                {link.label || getSkillLinkLabel(link.href, "Reference")}
+              </SkillLink>
+            ))}
           </div>
-          <ContextSection title="Evidence">
-            <div className="flex flex-wrap gap-1.5">
-              {detail.evidence.map((evidence) => (
-                <span
-                  key={`${evidence.kind}:${evidence.label}`}
-                  className="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-border/80 bg-background/80 px-2.5 py-1 text-[11px] leading-4 text-foreground/74"
-                >
-                  <span className="font-[family:var(--font-site-label)] text-[9px] font-semibold uppercase tracking-[0.14em] text-primary/75">
-                    {getEvidenceKindLabel(evidence.kind)}
-                  </span>
-                  <span>{evidence.label}</span>
-                </span>
-              ))}
-            </div>
-          </ContextSection>
-          {detail.links.length ? (
-            <ContextSection title="References">
-              <div className="flex flex-wrap gap-2">
-                {detail.links.map((link) => (
-                  <SkillLink key={link.href} href={link.href}>
-                    {link.label || getSkillLinkLabel(link.href, "Reference")}
-                  </SkillLink>
-                ))}
-              </div>
-            </ContextSection>
-          ) : null}
         </div>
       </PopoverContent>
     </Popover>
   );
-}
-
-function ContextSection({
-  children,
-  title,
-}: {
-  children: ReactNode;
-  title: string;
-}) {
-  return (
-    <section className="rounded-2xl border border-border/75 bg-background/70 p-3 text-xs leading-5 text-foreground/72 shadow-sm shadow-background/40">
-      <h5 className="mb-1.5 font-[family:var(--font-site-label)] text-[9px] font-semibold uppercase tracking-[0.18em] text-primary/80">
-        {title}
-      </h5>
-      {children}
-    </section>
-  );
-}
-
-function getEvidenceKindLabel(kind: SkillDetail["evidence"][number]["kind"]) {
-  const labels: Record<SkillDetail["evidence"][number]["kind"], string> = {
-    credential: "Credential",
-    "first-party": "First-party",
-    project: "Project",
-    publication: "Publication",
-    work: "Work",
-  };
-
-  return labels[kind];
 }
 
 function getSkillLinkLabel(url: string, fallback: string) {
@@ -151,18 +117,59 @@ function getSkillLinkLabel(url: string, fallback: string) {
   return fallback;
 }
 
-function SkillLink({ children, href }: { children: ReactNode; href: string }) {
+function SkillLink({
+  children,
+  href,
+  kind,
+}: {
+  children: ReactNode;
+  href: string;
+  kind: SkillDetail["links"][number]["kind"];
+}) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-2.5 py-1.5 font-[family:var(--font-site-label)] text-[11px] font-semibold text-primary transition-colors hover:border-primary/30 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-border bg-background px-2.5 py-1 font-[family:var(--font-site-label)] text-[11px] font-medium leading-4 text-primary transition-colors hover:border-primary/30 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
+      <SkillLinkIcon href={href} kind={kind} />
       {children}
       <ExternalLinkIcon />
     </a>
   );
+}
+
+function SkillLinkIcon({
+  href,
+  kind,
+}: {
+  href: string;
+  kind: SkillDetail["links"][number]["kind"];
+}) {
+  const hostname = getHostname(href);
+
+  if (kind === "source" || hostname === "github.com") {
+    return <FaGithub size={12} aria-hidden="true" />;
+  }
+
+  if (kind === "docs" || href.includes("/docs") || hostname.includes("docs")) {
+    return <LuBookOpen size={12} strokeWidth={2} aria-hidden="true" />;
+  }
+
+  if (hostname.includes("arxiv.org") || kind === "reference") {
+    return <LuFileText size={12} strokeWidth={2} aria-hidden="true" />;
+  }
+
+  return <LuGlobe size={12} strokeWidth={2} aria-hidden="true" />;
+}
+
+function getHostname(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
 }
 
 function CloseIcon() {
@@ -203,7 +210,7 @@ function ExternalLinkIcon() {
   );
 }
 
-function SkillIcon({
+export function SkillIcon({
   category,
   iconPath,
   skillName,
@@ -218,7 +225,7 @@ function SkillIcon({
   const isCard = size === "card";
   const fallbackLabel = skillName.match(/[A-Za-z0-9]/)?.[0]?.toUpperCase() ?? category[0]?.toUpperCase() ?? "?";
   const wrapperClassName = isCard
-    ? "grid size-11 shrink-0 place-items-center rounded-2xl border border-primary/15 bg-primary/8 text-primary shadow-sm"
+    ? "grid size-10 shrink-0 place-items-center rounded-xl border border-primary/15 bg-primary/10 text-primary"
     : "grid size-4 shrink-0 place-items-center rounded-full text-primary/70";
 
   if (iconPath && !imageFailed) {
@@ -229,7 +236,7 @@ function SkillIcon({
           alt=""
           loading="lazy"
           decoding="async"
-          className={isCard ? "size-5 rounded-sm" : "size-3 rounded-[2px]"}
+          className={isCard ? "size-5 rounded-[0.25rem]" : "size-3 rounded-[0.125rem]"}
           onError={() => setImageFailed(true)}
         />
       </span>

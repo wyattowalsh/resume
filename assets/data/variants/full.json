@@ -117,35 +117,56 @@
     {
       "name": "AI Agent Harness Configs",
       "description": "Open-source agent tooling catalog and docs portal packaging 112 portable skills, 8 reusable agents, 30 MCP tools, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
-      "highlightIndexes": [0, 1]
+      "highlights": [
+        "Standardized reusable agent definitions across Claude Code, Codex, GitHub Copilot, Cursor, OpenCode, and related IDE agents.",
+        "Shipped generated docs, install flows, and 30 MCP-ready tool presets spanning code review, security, infrastructure, research, and workflow automation.",
+        "Packaged 112 portable skills and 8 reusable agents into a cross-runtime workflow system for AI-assisted software development."
+      ]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ plays; reached 425K+ views and 60K+ downloads before freezing at the 2023-07-06 update.",
+      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ plays; reached 425K+ views and 60K+ downloads before freezing at the 2023-07-06 update for reproducible sports analytics workflows.",
       "highlights": [
         "Implemented daily Pandera-validated NBA ETL plus DuckDB, SQLite, Parquet, and CSV exports.",
-        "Building the next-generation nbadb rebuild with 152 extractor wrappers and 204 generated public star-schema outputs."
+        "Building the next-generation nbadb rebuild with 152 extractor wrappers and 204 generated public star-schema outputs.",
+        "Published a public sports analytics dataset with 65K+ games and 13M+ play-by-play events across multiple warehouse formats."
       ]
     },
     {
       "name": "ProxyWhirl",
-      "description": "Released rotating proxy toolkit with 9 selection strategies, 100+ auto-fetched sources, self-healing circuit breakers, and five interfaces for resilient scraping and data-collection workflows.",
-      "highlightIndexes": [0, 1]
+      "description": "Released rotating proxy toolkit with 9 strategies, 100+ auto-fetched sources, self-healing circuit breakers, and five interfaces for scraping/data workflows.",
+      "highlights": [
+        "Implemented 9 proxy rotation strategies with configurable fallback chains, per-source scoring, and performance-based selection.",
+        "Built self-healing validation across 100+ proxy sources with circuit breakers, auto-ejection, recovery promotion, and workflow-specific health scoring.",
+        "Released the toolkit for resilient scraping and data-collection workflows with SQLite-backed state and PyPI distribution."
+      ]
     },
     {
       "name": "AI/ML Web Feeds",
-      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and documented browse/download surfaces.",
-      "highlightIndexes": [0, 1]
+      "description": "Built a curated AI and ML feed platform with typed schemas, HTTP/RSS validation, contributor submission workflows, OPML exports, and documented browse/download surfaces for research discovery.",
+      "highlights": [
+        "Defined YAML feed schemas with topic and source-type validation across blogs, papers, and newsletters for reliable feed quality.",
+        "Shipped helper scripts, CI checks, scheduled validation jobs, and a docs-backed submission/review flow for reliable community feed curation.",
+        "Published OPML exports and documented browse/download surfaces for AI and ML research feeds, downstream readers, and offline subscription managers."
+      ]
     },
     {
       "name": "MCP-Crawl4AI",
       "description": "Released FastMCP server wrapping Crawl4AI so AI agents can scrape, crawl, manage sessions, and retrieve artifacts through a focused MCP surface with documented stdio and HTTP integration paths.",
-      "highlightIndexes": [0, 1]
+      "highlights": [
+        "Built a FastMCP v3 server with managed headless Chromium, session-aware crawling, and automatic Playwright setup using two runtime dependencies.",
+        "Exposed scrape, crawl, session, and artifact-retrieval workflows with docs, tests, and release-tagged MCP install flows.",
+        "Documented stdio and HTTP integration paths so AI agents can use web crawling through a focused MCP surface."
+      ]
     },
     {
       "name": "Personal Website: w4w.dev",
       "description": "Long-running personal web app and MDX publishing system built with Next.js, pairing a polished public-facing frontend, a richly tooled technical blog, strong SEO, and durable content workflows.",
-      "highlightIndexes": [0, 1]
+      "highlights": [
+        "Maintained the public site across multiple generations, covering responsive landing pages, themes, motion, accessibility, and MDX publishing.",
+        "Built custom MDX publishing with search, metadata, math rendering, feeds, tags, and integrated authoring tools.",
+        "Sustained a polished public-facing frontend with strong SEO and durable content workflows."
+      ]
     }
   ],
   "education": [

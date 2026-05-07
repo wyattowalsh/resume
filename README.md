@@ -50,6 +50,8 @@ When resume facts change, update `assets/data/resume.json` or `assets/data/varia
 
 `assets/data/skill-details.json` adds web-only skill evidence for the interactive `/` route. Those descriptions and reference URLs are intentionally excluded from generated PDF/DOCX artifacts; `src/scripts/check-artifacts.ts` derives its tooltip-only leakage guard from this file so web popover copy does not drift into print exports.
 
+`assets/data/skill-icons.json` and `assets/data/skill-section-icons.json` drive the interactive route's local skill-icon system. Every visible skill chip on `/` should resolve to a local `/skill-icons/...` asset when available, and every skill section should resolve to a typed React icon through `src/components/Skills.tsx`.
+
 The next planned curation hooks are role-targeted variants for Senior AI/ML Engineer, fintech/data platform, and agent tooling applications. Keep those as variant-file curation passes until there is a concrete need for additional public routes or generated PDFs.
 
 Those resolved payloads now feed dedicated top-level compositions instead of one shared layout:
@@ -60,7 +62,7 @@ Those resolved payloads now feed dedicated top-level compositions instead of one
 - `src/lib/artifact-specs.ts` for the artifact-specific presentation budgets shared by those layouts
 - `src/lib/resume-downloads.ts` for the public footer download links shared by web UI and tests
 
-`src/lib/artifact-specs.ts` also carries the DOCX content contract through each artifact spec's `docx` policy. The intent is explicit: both DOCX exports keep the basics summary, work role summaries, and project highlights available for ATS parsing, while the 1-page PDF can still suppress role summaries for visual density. The same DOCX policy also declares whether Projects should start on a fresh DOCX page (`full`) or continue inline (`single`) and whether project stack keywords are emitted into the DOCX export (`full` keeps them, `single` stays tighter).
+`src/lib/artifact-specs.ts` also carries the DOCX content contract through each artifact spec's `docx` policy. The intent is explicit: both DOCX exports keep the basics summary, work role summaries, and project highlights available for ATS parsing, while the 1-page PDF can still suppress role summaries for visual density. The same DOCX policy also declares whether Projects should start on a fresh DOCX page (`full`) or continue inline (`single`) and whether project stack keywords are emitted into the DOCX export (`full` keeps them, `single` stays tighter). The full artifact currently allows up to three project highlights, while the single-page artifact remains capped at two.
 
 ## Web interaction model
 
@@ -68,6 +70,8 @@ The interactive `/` route keeps motion and disclosure intentionally restrained:
 
 - `src/components/SectionProgressNav.tsx` renders a noninteractive Radix Progress hairline that appears only after the header scrolls away. It uses `IntersectionObserver` for visibility and active-section updates instead of scroll-event polling.
 - `src/components/SkillPopover.tsx` is the only popover disclosure surface. Work and project evidence is rendered directly in the page content rather than hidden behind role/project popups.
+- Every visible skill chip is a keyboard-accessible popover trigger. Curated skills show detailed context, evidence, references, and icons from `src/lib/skill-details.ts`; skills without curated detail still open a lightweight category-context card.
+- Project action pills use contextual leading icons for GitHub, Kaggle, docs, and live/external links while preserving the trailing external-link indicator.
 - Downloads are exposed only in the bottom footer from `resumeDownloadGroups`; the header stays focused on identity and contact links.
 
 ## Commands
@@ -122,7 +126,7 @@ The artifact checker also runs ATS-oriented checks across generated and public d
 - `pdfinfo` must report tagged, unencrypted, non-JavaScript PDFs.
 - `pdffonts` must report embedded Unicode fonts and no Type 3 fonts.
 - `pdfimages -list` must report no embedded raster images.
-- DOCX `word/document.xml` must expose parseable resume text and `document.xml.rels` must contain the expected contact/profile/project hyperlink targets.
+- DOCX `word/document.xml` must expose parseable resume text and `document.xml.rels` must contain the expected contact/profile/project hyperlink targets, including project live-site links when the variant includes a `url`.
 - Tooltip-only skill-detail descriptions and reference URLs from `assets/data/skill-details.json` must stay out of generated and public PDF/DOCX artifacts.
 
 ```bash
@@ -180,11 +184,11 @@ Use the uploaded CI artifacts or a local `pnpm check:artifacts` run to inspect t
 
 ## Icon provenance
 
-Skill icons are source-controlled UI assets for the interactive route only. Keep their provenance in the icon data pipeline, do not allow icon metadata or tooltip-only skill evidence to leak into generated PDF/DOCX content, and rerun the artifact checker after icon or popover changes because it verifies public downloads remain text-first and image-free.
+Skill icons are source-controlled UI assets for the interactive route only. Keep their provenance in the icon data pipeline, do not allow icon metadata or tooltip-only skill evidence to leak into generated PDF/DOCX content, and rerun the artifact checker after icon or popover changes because it verifies public downloads remain text-first and image-free. Use `pnpm sync:skill-icons` only when intentionally refreshing local skill icon assets or their manifest.
 
 ## Release gate
 
-`.github/workflows/release-theme.yml` mirrors the root build, typecheck, lint, test, generation, and artifact-check lane before upload. Release uploads include the six generated resume artifacts plus `assets/outputs/SHA256SUMS.txt`; manual dispatches may pass `tag_name`, while release events resolve the published tag through an environment variable before invoking `gh release upload`.
+`.github/workflows/release-theme.yml` mirrors the root build, typecheck, lint, test, synced generation/public-download copy/artifact-check lane before upload. It uses `pnpm check:artifacts` so release validation follows the same generate, sync, and parity path as CI. Release uploads include the six generated resume artifacts plus `assets/outputs/SHA256SUMS.txt`; manual dispatches may pass `tag_name`, while release events resolve the published tag through an environment variable before invoking `gh release upload`.
 
 ## Professional context cards
 

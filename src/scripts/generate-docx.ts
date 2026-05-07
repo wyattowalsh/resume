@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import "./node-localstorage-shim.js";
 import {
   Document,
   ExternalHyperlink,
@@ -635,6 +636,7 @@ function addProjects(
   for (const project of projects) {
     const projectLinks = [
       ...(project.links ?? []),
+      ...(project.url ? [{ label: "Live site", url: project.url }] : []),
       { label: "GitHub", url: project.githubUrl },
     ].filter(
       (link, index, links) => links.findIndex((candidate) => candidate.url === link.url) === index,
