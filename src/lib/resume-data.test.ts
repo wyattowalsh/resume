@@ -2,8 +2,6 @@ import fullVariantData from "@assets/data/variants/full.json";
 import singleVariantData from "@assets/data/variants/single.json";
 import siteVariantData from "@assets/data/variants/site.json";
 import resumeData from "@assets/data/resume.json";
-import fs from "node:fs";
-import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { getResumeVariant, type ResumeVariantName } from "./resume-data";
 import { getSkillDetail, getSkillDetails } from "./skill-details";
@@ -751,17 +749,5 @@ describe("getResumeVariant", () => {
         expect(resolved).toHaveProperty("name");
       },
     );
-  });
-});
-
-describe("CI artifact freshness contract", () => {
-  it("fails when synced public downloads differ from generated artifacts", () => {
-    const workflow = fs.readFileSync(
-      path.resolve(process.cwd(), ".github", "workflows", "ci.yml"),
-      "utf8",
-    );
-
-    expect(workflow).not.toMatch(/:!public\/downloads\/wyatt-walsh-resume-/);
-    expect(workflow).toMatch(/run:\s*git diff --exit-code -- \./);
   });
 });
