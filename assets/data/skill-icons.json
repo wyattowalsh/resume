@@ -1,76 +1,90 @@
 {
   "OpenAI API": {
     "category": "AI, LLM & Agent Engineering",
-    "iconName": "openai-api",
+    "iconName": "openai",
     "iconPath": "/skill-icons/openai-api.svg",
-    "sha256": "50144a2bdd90129b732cd60174dc21f9a47437ce7e269eadb6cdeacf40162c43",
-    "source": "custom",
-    "sourceUrl": "https://platform.openai.com/docs",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "1da76493b0ffed215d15e33b0ef5c9bd81c11ea170eac1f7690fecad0453410b",
+    "source": "web-sourced",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_%28symbol%29.svg",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "Anthropic Claude API": {
     "category": "AI, LLM & Agent Engineering",
-    "iconName": "anthropic-claude-api",
+    "iconName": "anthropic",
     "iconPath": "/skill-icons/anthropic-claude-api.svg",
-    "sha256": "d11d8fa87db50aacbdf262f39f0d34bdeafc0d2bdf03f01bf1a96974c464925b",
-    "source": "custom",
-    "sourceUrl": "https://docs.anthropic.com/",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "1c10881e4729127e1a86e569613d786240acae13eacfa01860be065b66260e36",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/anthropic",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Amazon Bedrock": {
     "category": "AI, LLM & Agent Engineering",
-    "iconPath": "/skill-icons/amazon-bedrock.ico",
-    "sha256": "c57bda756de7653e294f2e56972869c1b61ce6960dd936bc348b843cf7e36696",
-    "source": "favicon",
-    "sourceUrl": "https://docs.aws.amazon.com/assets/r/images/favicon.ico"
+    "iconName": "amazon-bedrock",
+    "iconPath": "/skill-icons/amazon-bedrock.png",
+    "sha256": "8c93dfb201251a53f30fe87ddf1a48bcbecbc5dc7007f791d2381665a70bd2be",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/ArtificialIntelligence/Bedrock.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Google Gemini API": {
     "category": "AI, LLM & Agent Engineering",
-    "iconName": "google-gemini-api",
+    "iconName": "googlegemini",
     "iconPath": "/skill-icons/google-gemini-api.svg",
-    "sha256": "31c5e9c1260fc55c71464d2efa6a5cf1bb065dffdefa6cc8a87913714ea6d142",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#google-gemini-api",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "404eba6940a54e63d40edcce2d2e7cb2b3dbfec765e7a1d523662b6f4e0d6747",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/googlegemini",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Hugging Face": {
     "category": "AI, LLM & Agent Engineering",
-    "iconName": "hugging-face",
+    "iconName": "huggingface",
     "iconPath": "/skill-icons/hugging-face.svg",
-    "sha256": "47c01f1d19372bf6fd6950784982088f033c0043e6cf405987af63184aca2d1a",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#hugging-face",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "c167703fa2fb404f1de9bbbd38b6ac6c4c01dbeae49e7783521333ba03ab706a",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/huggingface",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Vercel AI SDK": {
     "category": "AI, LLM & Agent Engineering",
-    "iconPath": "/skill-icons/vercel-ai-sdk.ico",
-    "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932",
-    "source": "favicon",
-    "sourceUrl": "https://ai-sdk.dev/favicon.ico"
+    "iconName": "vercel",
+    "iconPath": "/skill-icons/vercel-ai-sdk.svg",
+    "sha256": "075b9d221ef5a7ea63d85f140bd2d63007f31d3ed8ceec011abc3ffd529827e3",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/vercel",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "LangChain": {
     "category": "AI, LLM & Agent Engineering",
-    "iconPath": "/skill-icons/langchain.png",
-    "sha256": "3882825a4c8f64f76106e90e0a0c86ea0bbbeb1f1d997f837ee61b50c8bc9720",
-    "source": "favicon",
-    "sourceUrl": "https://docs.langchain.com/mintlify-assets/_mintlify/favicons/langchain-5e9cc07a/YSQua9Gt91yRswvJ/_generated/favicon/apple-touch-icon.png"
+    "iconName": "langchain",
+    "iconPath": "/skill-icons/langchain.svg",
+    "sha256": "972f5acd5b2e9026e26fa652b2ade87e198f17cd858f20fc5721e3a82083b4af",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/langchain",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "LangGraph": {
     "category": "AI, LLM & Agent Engineering",
-    "iconPath": "/skill-icons/langgraph.png",
-    "sha256": "7e02411cef9d611a101166392b71415f156642da5c0438da5034829fb9513b1e",
-    "source": "favicon",
-    "sourceUrl": "https://docs.langchain.com/mintlify-assets/_mintlify/favicons/langchain-5e9cc07a/YSQua9Gt91yRswvJ/_generated/favicon/favicon-16x16.png"
+    "iconName": "langgraph",
+    "iconPath": "/skill-icons/langgraph.svg",
+    "sha256": "d503c047fee81c5a02cb4c8bfe3ec383c5ce719d0c13563cab0409fb627971e0",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/langgraph",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "LangSmith": {
     "category": "AI, LLM & Agent Engineering",
     "iconName": "langsmith",
-    "iconPath": "/skill-icons/langsmith.svg",
-    "sha256": "b4a479cf2ce3eb955320c164703c7d4ca88618dd07299624ffcfc050ea624615",
-    "source": "custom",
-    "sourceUrl": "https://docs.smith.langchain.com/",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/langsmith.ico",
+    "sha256": "f8810d6bb336f549679a52a5505cb83deec4b906143bb6764c213076f2dd1cfe",
+    "source": "favicon",
+    "sourceUrl": "https://smith.langchain.com/favicon.ico",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "DeepAgents": {
     "category": "AI, LLM & Agent Engineering",
@@ -86,26 +100,30 @@
     "category": "AI, LLM & Agent Engineering",
     "iconName": "pydanticai",
     "iconPath": "/skill-icons/pydanticai.svg",
-    "sha256": "d67bcd54a3f7ed8fe1a0bc65effdcf59e6b92aecdafd1e4711bdea70ad08f874",
-    "source": "custom",
-    "sourceUrl": "https://ai.pydantic.dev/",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "c7d436dd2b39d352ebbd89bc5ad8d0fd718463d344ec0fcd8b3df858f0404b01",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/pydantic/0B2C4A",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "LlamaIndex": {
     "category": "AI, LLM & Agent Engineering",
     "iconName": "llamaindex",
     "iconPath": "/skill-icons/llamaindex.svg",
-    "sha256": "f75a604eae8d24a5649658734060b567f65d4387cc87f7a9435c06f407801ba8",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#llamaindex",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "ee8721490cec0d775cc99218fbbe0d8199388766bca08c5d69bda74aee194d87",
+    "source": "favicon",
+    "sourceUrl": "https://developers.llamaindex.ai/favicon.svg",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "Model Context Protocol (MCP)": {
     "category": "AI, LLM & Agent Engineering",
-    "iconPath": "/skill-icons/model-context-protocol-mcp.png",
-    "sha256": "36cb8b1f6e72908114a18cb8c3fd4741bb7746129c3ad32bde9cc5903c071cd0",
-    "source": "favicon",
-    "sourceUrl": "https://modelcontextprotocol.io/mintlify-assets/_mintlify/favicons/mcp/ebiVJzri-bsiCfVZ/_generated/favicon/apple-touch-icon.png"
+    "iconName": "modelcontextprotocol",
+    "iconPath": "/skill-icons/model-context-protocol-mcp.svg",
+    "sha256": "c1f3c1672346935816d34b1d64bd34998f578aef8ba51aa24a032055c23ecfd9",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/modelcontextprotocol",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "AI Agent Skills": {
     "category": "AI, LLM & Agent Engineering",
@@ -119,7 +137,7 @@
     "iconPath": "/skill-icons/guardrails-ai.png",
     "sha256": "d4499669ed63ab4486358c13afe8db1f7b56de1b304388090d2d9429a1b94a26",
     "source": "favicon",
-    "sourceUrl": "https://www.guardrailsai.com/mintlify-assets/_mintlify/favicons/snowglobe/mCrZdLISKhgXvgx0/_generated/favicon/apple-touch-icon.png"
+    "sourceUrl": "https://guardrailsai.com/mintlify-assets/_mintlify/favicons/snowglobe/mCrZdLISKhgXvgx0/_generated/favicon/apple-touch-icon.png"
   },
   "Retrieval Augmented Generation (RAG)": {
     "category": "AI, LLM & Agent Engineering",
@@ -133,12 +151,13 @@
   },
   "Prompt Engineering": {
     "category": "AI, LLM & Agent Engineering",
-    "iconName": "prompt-engineering",
+    "iconName": "keyboard",
     "iconPath": "/skill-icons/prompt-engineering.svg",
-    "sha256": "2645783594b0debc86c6cb94ae8bfd6c6a2861fde12637d300e397c7c1f82bd7",
+    "sha256": "f9b4c287ecb256d2784d53f63aeee4f0db98d96340bbd330117f90520291fa90",
     "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#prompt-engineering",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/2328.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "Context Engineering": {
     "category": "AI, LLM & Agent Engineering",
@@ -201,10 +220,11 @@
     "category": "AI, LLM & Agent Engineering",
     "iconName": "notebooklm",
     "iconPath": "/skill-icons/notebooklm.svg",
-    "sha256": "8fea06f6f5556ba6985b2a94aae08f099c2925ac9854f92071f96efbcffa9f4a",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#notebooklm",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "db7c074281f17235eafea0f5f821139b68b492e5aa2149840881ddc7ba7dd880",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/notebooklm",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "AI Agent Harnesses": {
     "category": "AI Agent Harnesses & Coding Assistants",
@@ -216,28 +236,30 @@
   "Claude Desktop": {
     "category": "AI Agent Harnesses & Coding Assistants",
     "iconName": "claude-desktop",
-    "iconPath": "/skill-icons/claude-desktop.svg",
-    "sha256": "be4f13a763d7f23a556ff7f481c1581c39e291c567ff4f02417631aea3b95af8",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#claude-desktop",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/claude-desktop.ico",
+    "sha256": "816a55828befeb50fe8a9556cb92d80194efefbd3f4e04ccf694992dd8e085e3",
+    "source": "favicon",
+    "sourceUrl": "https://claude.ai/favicon.ico",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "Claude Code": {
     "category": "AI Agent Harnesses & Coding Assistants",
-    "iconName": "claude-code",
+    "iconName": "claude",
     "iconPath": "/skill-icons/claude-code.svg",
-    "sha256": "29df4eb0c3ae862731ed54d5406368b9372423b6016386b2c908382cc67a3991",
-    "source": "custom",
-    "sourceUrl": "https://docs.anthropic.com/en/docs/claude-code",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "5119ef950a0d648b3fd62865791e73f07f32e18ddab84e4f21160f8c641c0f5f",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/claude",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "ChatGPT": {
     "category": "AI Agent Harnesses & Coding Assistants",
     "iconName": "chatgpt",
     "iconPath": "/skill-icons/chatgpt.svg",
     "sha256": "5a8dad2864cc1c8109ebae74bea447df2f30b978bdad56749247c406e1cb2227",
-    "source": "custom",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+    "source": "web-sourced",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "Codex": {
     "category": "AI Agent Harnesses & Coding Assistants",
@@ -248,22 +270,22 @@
   },
   "GitHub Copilot Web": {
     "category": "AI Agent Harnesses & Coding Assistants",
-    "iconName": "github",
+    "iconName": "githubcopilot",
     "iconPath": "/skill-icons/github-copilot-web.svg",
-    "sha256": "45262793de6292206a895ed63593cdb1eaed82074173f7f4b5bdb3e427ca805a",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sha256": "0d34b0aa829c23094eafce1447481d56f41dde65d779121222dcf294943dd245",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/githubcopilot",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "GitHub Copilot CLI": {
     "category": "AI Agent Harnesses & Coding Assistants",
-    "iconName": "terminal",
+    "iconName": "github",
     "iconPath": "/skill-icons/github-copilot-cli.svg",
-    "sha256": "14855ea42b283517da6932c7868e51f7868a5d9500607aa47956d634668276e0",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F5A5.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "45262793de6292206a895ed63593cdb1eaed82074173f7f4b5bdb3e427ca805a",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "OpenCode": {
     "category": "AI Agent Harnesses & Coding Assistants",
@@ -284,23 +306,20 @@
   },
   "Antigravity": {
     "category": "AI Agent Harnesses & Coding Assistants",
-    "iconName": "rocket",
-    "iconPath": "/skill-icons/antigravity.svg",
-    "sha256": "2403e0a305f931cf8c2ebd1a06de994c08733d0554eda8c0e52d1b8fe1be7001",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F680.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "iconPath": "/skill-icons/antigravity.ico",
+    "sha256": "fc6531d7e0f7b029029e6fcac4d9f2cbcdf4b486403a040d3b4d19ae026d9c8b",
+    "source": "favicon",
+    "sourceUrl": "https://antigravity.google/favicon.ico"
   },
   "Perplexity Desktop": {
     "category": "AI Agent Harnesses & Coding Assistants",
-    "iconName": "compass",
+    "iconName": "perplexity",
     "iconPath": "/skill-icons/perplexity-desktop.svg",
-    "sha256": "e8ab346391122e69bfcaf143616b39a54d864b9603e7dfdf97fbb76d06a237fd",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F9ED.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "407ad1254700503eb124ef5650cc267d83c79dc6dea9e9332fbdc92bb2bdf262",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/perplexity",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Cherry Studio": {
     "category": "AI Agent Harnesses & Coding Assistants",
@@ -316,19 +335,20 @@
     "category": "AI Agent Harnesses & Coding Assistants",
     "iconName": "cursor",
     "iconPath": "/skill-icons/cursor.svg",
-    "sha256": "1572d0b95039367b407b962f6bff3a70b53e26a7f662e01edf358cd4d65175e3",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#cursor",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "68c88e317a03fefb7d8ed68b9fe86ef33c0a002765fa6bfc84cdc43d7bb9f4fe",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/cursor",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Cursor Agent": {
     "category": "AI Agent Harnesses & Coding Assistants",
     "iconName": "cursor-agent",
-    "iconPath": "/skill-icons/cursor-agent.svg",
-    "sha256": "267a685bf911270486d1ae286c6193c689b89db0050b8e2944c3a87e555f1ce2",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#cursor-agent",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/cursor-agent.ico",
+    "sha256": "0f128813ae8f4360fbe6b5c85e5e9d13b25c6b54da5e9f57fd8f19f965bda773",
+    "source": "favicon",
+    "sourceUrl": "https://cursor.com/favicon.ico",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "scikit-learn": {
     "category": "Machine Learning & Data Science",
@@ -337,7 +357,7 @@
     "sha256": "d60362a1c43c5571876ebaab923f7783f6f7d3bd64bd78cca765a451dc5e92e2",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/scikitlearn/scikitlearn-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "PyTorch": {
     "category": "Machine Learning & Data Science",
@@ -346,7 +366,7 @@
     "sha256": "7fb9c244f59aa3261ed17d6166ef50d0f07e6e5bc4e5211ca53b6e4837e09e75",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "TensorFlow": {
     "category": "Machine Learning & Data Science",
@@ -355,17 +375,16 @@
     "sha256": "44f2bb3db305bc30f50ec0578f7a4a840c82c3544d36e436ab7d8afee3937b71",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "XGBoost": {
     "category": "Machine Learning & Data Science",
-    "iconName": "deciduous-tree",
-    "iconPath": "/skill-icons/xgboost.svg",
-    "sha256": "5e9aa542a9e8bce244c326fd2d1427f432ad72e5d8ba92905f3d801d393f6b63",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F333.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "iconName": "xgboost-logo",
+    "iconPath": "/skill-icons/xgboost.png",
+    "sha256": "6637e38dea1db7a54d6c16fd5b149c2c443d7a4c54a45829ce4b25cef6edbb15",
+    "source": "web-sourced",
+    "sourceUrl": "https://xgboost.ai/images/logo/xgboost-logo-trimmed.png",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "NumPy": {
     "category": "Machine Learning & Data Science",
@@ -374,7 +393,7 @@
     "sha256": "efd53b9bf8637500d43ece39fe7ac43c972066f7166e408c5fd13e7cb73d7a05",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Pandas": {
     "category": "Machine Learning & Data Science",
@@ -383,7 +402,7 @@
     "sha256": "0051003a5e5f8739c3304386456843a51be4717dab49c4fea6732ecc6e891b3d",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Statistical Modeling": {
     "category": "Machine Learning & Data Science",
@@ -462,7 +481,7 @@
     "sha256": "9b246fe756a3b600f68a7af1f17702033a1cdb6417da3a9f695337f584b5d545",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "PostgreSQL": {
     "category": "Data Engineering, Databases & Analytics",
@@ -471,14 +490,17 @@
     "sha256": "f220a436258ed014c512ba4f9c0de6b9e5c2c4b55331a0a29f8c7a1a12c36443",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "KDB+": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconPath": "/skill-icons/kdb.ico",
-    "sha256": "ff635abfbf5feb3376887c9ca2beba1434cbe63e789622c927de9eef1cf64b8f",
-    "source": "favicon",
-    "sourceUrl": "https://code.kx.com/q/local/favicon.ico"
+    "iconName": "kx",
+    "iconPath": "/skill-icons/kdb.svg",
+    "sha256": "a2eff880101f0a0119657d6921d402ce706e5a9c0a4945223c4891b8851154d8",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/kx",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "qPython": {
     "category": "Data Engineering, Databases & Analytics",
@@ -487,147 +509,147 @@
     "sha256": "71493b4a732f0532b3a03a7a95da3ee11a65766367c8303b901ffbe7bf91a3a2",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "DuckDB": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "duckdb",
     "iconPath": "/skill-icons/duckdb.svg",
-    "sha256": "2f3926812548d0b942e612c620ed194cdb084c9038678de4a2704ecf098088f7",
-    "source": "custom",
-    "sourceUrl": "https://duckdb.org/docs/",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "06be219668a471b16413677305b9765e41d56e927c7b72146f99e492bef36bcb",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/duckdb/duckdb-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "SQLite": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "sqlite",
     "iconPath": "/skill-icons/sqlite.svg",
-    "sha256": "99c6dbe94a42f4eeb6567b610256f798e1df03721ae3fc0f4e817801eb2ef2db",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#sqlite",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "2b91c30887d3602479ba845cc012ef6ae577fba71eb96705a05b12e35d2c5e7e",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "DynamoDB": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "card-file-box",
-    "iconPath": "/skill-icons/dynamodb.svg",
-    "sha256": "5434548b6f8d18e68e048e9d173e794f4090c19c99daf161474d571dbc030834",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F5C3.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "iconName": "dynamodb",
+    "iconPath": "/skill-icons/dynamodb.png",
+    "sha256": "e15ee090401abeafdfc4a3e3a31280354d1783c4170074f692796be330265b32",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Database/DynamoDB.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "BigQuery": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "bigquery",
+    "iconName": "googlebigquery",
     "iconPath": "/skill-icons/bigquery.svg",
-    "sha256": "c2dbc275fb110b711ffdc20a793da19b41384b334499880f02b5946b1a8c12bb",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#bigquery",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "a26f6aafc25bfab0ab984274eeca019e4562809e6d6b3464810a520b697e6e59",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/googlebigquery",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Redshift": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "warehouse",
-    "iconPath": "/skill-icons/redshift.svg",
-    "sha256": "857ea4d16c5d65155b787391a371cf3b4456f8c2222e04c677bf2c39b677c76a",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3ED.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "iconName": "redshift",
+    "iconPath": "/skill-icons/redshift.png",
+    "sha256": "36e927335d935fb3f624af32f858cadcc6f6c97a91e70344924f826e1f0e6e58",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Analytics/Redshift.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "AWS Athena": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "aws-athena",
-    "iconPath": "/skill-icons/aws-athena.svg",
-    "sha256": "1e5227b5c42387e4cb54682a4a7fa84695fc7516a792f73bb7a6a49ad5290073",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#aws-athena",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/aws-athena.png",
+    "sha256": "4276b8d2f25799688cd171d072c5ab63af090178e5d2a04924e64843c99b2d78",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Analytics/Athena.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Apache Spark": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "apache-spark",
+    "iconName": "apachespark",
     "iconPath": "/skill-icons/apache-spark.svg",
-    "sha256": "dd7d8144bc269a45e0362eebcab95f38061ccf5b98c51e5410445faa0ffaf51f",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#apache-spark",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "c9eea5d3f0bc25067fa5d2f8ec6c40226854ae85b7658e3d9cf07a15f702cc9a",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apachespark/apachespark-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "AWS Glue": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "link",
-    "iconPath": "/skill-icons/aws-glue.svg",
-    "sha256": "80ee4d83227a8aa2b7f4f0efb2c3fad0c11bf231f1e8c0206364650b27239574",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F517.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "iconName": "aws-glue",
+    "iconPath": "/skill-icons/aws-glue.png",
+    "sha256": "fb52608b397a5fcdb4148bd1d041eea56e4ace4cf9492dadae26acf9146ffa63",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Analytics/Glue.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Apache Airflow": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "apache-airflow",
+    "iconName": "apacheairflow",
     "iconPath": "/skill-icons/apache-airflow.svg",
-    "sha256": "9d900bc141422c0f82e66c2c57fc9035b8001b12084be3d4cbafaf5abd04ea0b",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#apache-airflow",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "0c83b226d54e77eda3336a4a7138a8ba61d82b5a8fee2bc026c135a239ec1814",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apacheairflow/apacheairflow-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Prefect": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "route",
+    "iconName": "prefect",
     "iconPath": "/skill-icons/prefect.svg",
-    "sha256": "478e6d091b16a4869265164677e8f9d6e38af0e94ec53416e85c21f7e63adb9e",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F5FA.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "bbdd414b1f226b08519495853e64cadfa84a17f229c0f0e0df962c6655598629",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/prefect",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Polars": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "polars",
     "iconPath": "/skill-icons/polars.svg",
-    "sha256": "90885f20e9cf2807043dd0f5eddc4a44c338664864e43556b663672563116f12",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#polars",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "069e472de4e28c271976122678c2a14b170ffb2be7e151dcc69b80c93d40dab0",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/polars",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "SQLAlchemy": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "sqlalchemy",
     "iconPath": "/skill-icons/sqlalchemy.svg",
-    "sha256": "14b944235657fd589f4e16e88d5719f793f66ab2a42327a4cad9d1bbb35be36d",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#sqlalchemy",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "f7cd6f77f031d112250e3fff789a616d5fdd9a7be95856cf3adf1c9d7e30882a",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlalchemy/sqlalchemy-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Pydantic": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "pydantic",
     "iconPath": "/skill-icons/pydantic.svg",
-    "sha256": "692fa49de7fce460b150dc184cafb85ffef49f4acd527e0b392839911dd488ba",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#pydantic",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "668d741ae5dae3599c03374d85a22176040fe225b249579afa1ea578c7215771",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/pydantic",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Pandera": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "pandera",
-    "iconPath": "/skill-icons/pandera.svg",
-    "sha256": "82d2a8ad0e437db7730737281932c9d152c4d09b4e81751950ae6e2fb3ebe1b0",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#pandera",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconName": "pandera-banner",
+    "iconPath": "/skill-icons/pandera.png",
+    "sha256": "b52cf4ece1d254c40696b33231375579528c13491f7512ec13184a2507b78912",
+    "source": "web-sourced",
+    "sourceUrl": "https://pandera.readthedocs.io/en/stable/_static/pandera-banner.png",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "Parquet": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "package",
+    "iconName": "apacheparquet",
     "iconPath": "/skill-icons/parquet.svg",
-    "sha256": "39a2b6ed185c127b0f100397bd95ceaf6a0c12233c0533a0c43916be384fcf52",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F4E6.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "2234f1f873f9f739604e0d1aeb3c6fe4d683fbebb246fd48686ebaa1b0506117",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/apacheparquet",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "ETL": {
     "category": "Data Engineering, Databases & Analytics",
@@ -651,66 +673,70 @@
   },
   "Data Warehousing": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "data-warehousing",
+    "iconName": "factory",
     "iconPath": "/skill-icons/data-warehousing.svg",
-    "sha256": "7ff8f3cdaf9195683d667f1bcf24cd65ef1e1fddd6d83d5a4acd24a69a89ae58",
+    "sha256": "857ea4d16c5d65155b787391a371cf3b4456f8c2222e04c677bf2c39b677c76a",
     "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#data-warehousing",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3ED.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "NoSQL": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "nosql",
+    "iconName": "card-file-box",
     "iconPath": "/skill-icons/nosql.svg",
-    "sha256": "b67aabe25e77eadfdc0d106365a8e6690fee1fb9c6ddb6ef20033d7b6d2a9900",
+    "sha256": "5434548b6f8d18e68e048e9d173e794f4090c19c99daf161474d571dbc030834",
     "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#nosql",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F5C3.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "Hadoop": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "hadoop",
+    "iconName": "apachehadoop",
     "iconPath": "/skill-icons/hadoop.svg",
-    "sha256": "a4610d90ab8316f9b6cd342d4aefea3cec622f6fb469d149a8f8a0ec3bfc2c3e",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#hadoop",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "7a43567a25db053e1b87106710e0072f7a196049d8ea2dfcead69cc3b88913cc",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/apachehadoop",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Tableau": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "tableau",
-    "iconPath": "/skill-icons/tableau.svg",
-    "sha256": "bebb1d15ac4a852a28515cba7dcd911eb286118fe8ddfd32a4c869dc490dab70",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#tableau",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconName": "tableau-logo",
+    "iconPath": "/skill-icons/tableau.png",
+    "sha256": "38046835450ff4ed52b8b90d80d6155534b9ef69e1648e95af8751d6d3d27cdc",
+    "source": "web-sourced",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "Plotly": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "plotly",
     "iconPath": "/skill-icons/plotly.svg",
-    "sha256": "fe0c1a3311ba99219f6778e6d36c16cb61fc29ef83b9f48bb6df287fadb4bf5e",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#plotly",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
-  },
-  "Dash": {
-    "category": "Data Engineering, Databases & Analytics",
-    "iconName": "plotly",
-    "iconPath": "/skill-icons/dash.svg",
     "sha256": "ce447cdbb2c5b978c1622d1700776b28c78550bfb44e471d88b613adee5c573d",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/plotly/plotly-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
+  },
+  "Dash": {
+    "category": "Data Engineering, Databases & Analytics",
+    "iconName": "speedometer",
+    "iconPath": "/skill-icons/dash.svg",
+    "sha256": "3d74cdd661163cf30b098db5df7e40357c51455c7a2e6d0dc166153dae2954a1",
+    "source": "custom",
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3CE.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "Matplotlib": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "matplotlib",
     "iconPath": "/skill-icons/matplotlib.svg",
-    "sha256": "f69836b0a04c124e5432798aca130f446e65b49f15734800576e386f9a7ba09d",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#matplotlib",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "c93696650c82f3c87b0c7228b501187feab0c10326249ffa1ea8b4c196e57f1b",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Publish/Subscribe Architecture": {
     "category": "Streaming, Messaging & Capital Markets Systems",
@@ -724,46 +750,49 @@
   },
   "AMPS": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconPath": "/skill-icons/amps.ico",
-    "sha256": "bc112acec3a6a179d728a5ff6af135e679e0b784bc9c1ed29bafebdc4ded04f2",
-    "source": "favicon",
-    "sourceUrl": "https://crankuptheamps.com/img/favicon.ico"
+    "iconName": "amps-logo",
+    "iconPath": "/skill-icons/amps.svg",
+    "sha256": "c989f517b90be8e822b417b5014472f5e5d6a2148dbdece1095640e8da67ae9e",
+    "source": "official",
+    "sourceUrl": "https://crankuptheamps.com/img/logo.svg",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Apache Kafka": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "apache-kafka",
+    "iconName": "apachekafka",
     "iconPath": "/skill-icons/apache-kafka.svg",
-    "sha256": "3c85724b48c4ebe35f68618017e3e1b604117e60ebd6247341779bc923055055",
-    "source": "custom",
-    "sourceUrl": "https://kafka.apache.org/documentation/",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "2505c5b688c18c8fd5dd8e888561eb7b23a56a75d291ff17e8ee18770193f3e8",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Amazon Kinesis": {
     "category": "Streaming, Messaging & Capital Markets Systems",
     "iconName": "amazon-kinesis",
-    "iconPath": "/skill-icons/amazon-kinesis.svg",
-    "sha256": "f05f5aef70134b9755541701fb44bc66f7e436ceec3d8c7a788c43889a7c3781",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#amazon-kinesis",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/amazon-kinesis.png",
+    "sha256": "bc8cf72688826f6daa80e2c8a7447251f034ae6e54243467698421a5e626c7d4",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Analytics/Kinesis.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Google Cloud Pub/Sub": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "google-cloud-pub-sub",
+    "iconName": "googlepubsub",
     "iconPath": "/skill-icons/google-cloud-pub-sub.svg",
-    "sha256": "9cbc42f5c459cbbc67161f4bea86e48d1c59bc73332f2f35626c78e8bc3b3fdf",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#google-cloud-pub-sub",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "992a927d19b88dc0f9c5a86cc4d22ddba91ebe7c9e1839064e6f1670eb8744d2",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/googlepubsub",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Redis Pub/Sub": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "redis-pub-sub",
+    "iconName": "redis",
     "iconPath": "/skill-icons/redis-pub-sub.svg",
-    "sha256": "79a5f2c3bcc8cf31fdcfe7cc7b04b96c5ee1fbbd6f66fc4d8964899955ae200e",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#redis-pub-sub",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "4707378b190878f36f7e6e1c01fa3ee7e7884c76101809d191dddd943a2e6bdb",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Event-Driven Architecture": {
     "category": "Streaming, Messaging & Capital Markets Systems",
@@ -777,12 +806,12 @@
   },
   "Market Data Systems": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "market-data-systems",
-    "iconPath": "/skill-icons/market-data-systems.svg",
-    "sha256": "b11ec767608d113924fce4903854310cb34f5292924b40c195a41d74a4dc15b9",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#market-data-systems",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconName": "fix-trading-community-logo",
+    "iconPath": "/skill-icons/market-data-systems.png",
+    "sha256": "776cfb4029ab8942c662fb2aa1566b4b5a891b929f79cd5ecbfc8679c6379c2a",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdnws.fixtrading.org/wp-content/uploads/2023/06/Logo-white.png",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "Low-Latency Messaging": {
     "category": "Streaming, Messaging & Capital Markets Systems",
@@ -816,13 +845,13 @@
   },
   "WebSockets": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "left-right-arrow",
+    "iconName": "socketdotio",
     "iconPath": "/skill-icons/websockets.svg",
-    "sha256": "8eb374f10bc142711c29588c9117bfc521aaf483f94420bb59330c3f0ad4b50c",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/2194.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "051808185f510a3935f549c3a633b44c7bd1b6305f0ad5a3910ec2aab1093a00",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/socketdotio",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "FastAPI": {
     "category": "Backend, APIs & Distributed Systems",
@@ -831,7 +860,7 @@
     "sha256": "7ef41f6a363b00ff595e6d0b933c025c92cbfae29dc1df24b2f6eb8b476ee486",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Django": {
     "category": "Backend, APIs & Distributed Systems",
@@ -840,7 +869,7 @@
     "sha256": "c3037ac285dd5f85ee148a151afb85e64b2a03b62c3affc178376d82ebff6a46",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Flask": {
     "category": "Backend, APIs & Distributed Systems",
@@ -849,7 +878,7 @@
     "sha256": "7a27bb8cb739a080c285066c16c75828bc2eca4d76fa06eff76d556e0274a9d7",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Node.js": {
     "category": "Backend, APIs & Distributed Systems",
@@ -858,7 +887,7 @@
     "sha256": "3218687c5ea24a4d4c0a33dc5c287da38c33a72dcfe9382469d7ce4e0bf661fb",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Express.js": {
     "category": "Backend, APIs & Distributed Systems",
@@ -867,25 +896,24 @@
     "sha256": "27ec7e3d21d59102c046a96277877abf78aa9d7ad244277345d9c395486d42d4",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "RESTful APIs": {
     "category": "Backend, APIs & Distributed Systems",
-    "iconName": "restful-apis",
+    "iconName": "link",
     "iconPath": "/skill-icons/restful-apis.svg",
-    "sha256": "c999a4f7b0d7909ffc854f4a15cb5ba331407545e967eab844f3c187e6210f2c",
+    "sha256": "80ee4d83227a8aa2b7f4f0efb2c3fad0c11bf231f1e8c0206364650b27239574",
     "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#restful-apis",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F517.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "Python SDKs": {
     "category": "Backend, APIs & Distributed Systems",
-    "iconName": "python-sdks",
-    "iconPath": "/skill-icons/python-sdks.svg",
-    "sha256": "18bb9c37883046962bc2a5f46d4cf9699f34db8b7f3aa365bbd4c6c79bb3bca4",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#python-sdks",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/python-sdks.png",
+    "sha256": "e17b4bee1c1c28fcb7e2a2c288acc57aeb773fc1792384ad4043816fa8f01c44",
+    "source": "web-sourced",
+    "sourceUrl": "https://packaging.python.org/en/latest/_static/py.png"
   },
   "CLI Tooling": {
     "category": "Backend, APIs & Distributed Systems",
@@ -894,7 +922,7 @@
     "sha256": "8e9b1f859331c8d11571e77b1371c5d7ac7e380abfcd2f31160ed81dc37de403",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "gRPC": {
     "category": "Backend, APIs & Distributed Systems",
@@ -903,16 +931,16 @@
     "sha256": "91b240df26e443aafd6fbc303ee00f8ae60fcef5bb9136b54bdf7a6589a8c975",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/grpc/grpc-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "GraphQL (Apollo)": {
     "category": "Backend, APIs & Distributed Systems",
-    "iconName": "graphql-apollo",
+    "iconName": "apollographql",
     "iconPath": "/skill-icons/graphql-apollo.svg",
-    "sha256": "dc895598d4405538a5074a25306214a76b642b99c3dd3594bfb707fc45dec8da",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#graphql-apollo",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "35788a3c4cbe441da0ab29277d8e7bb764a79c2bcfb680e8bee6920d58acfa9f",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/apollographql/apollographql-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Microservices": {
     "category": "Backend, APIs & Distributed Systems",
@@ -946,13 +974,13 @@
   },
   "OpenID Connect": {
     "category": "Backend, APIs & Distributed Systems",
-    "iconName": "identification-card",
+    "iconName": "openid",
     "iconPath": "/skill-icons/openid-connect.svg",
-    "sha256": "dc7f5d6439a2fc5baa707956f7a52012e01d56f01edd1df483b594ccf0b25631",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1FAAA.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "1147805e4f75d23ee84d68c27ea201153ba63bb79e186423f108eddf6fdd6139",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/openid",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "React": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -961,7 +989,7 @@
     "sha256": "5825b649c8c04dec13ecf01d0182401bd0ec71789d2fa06224866d882cd1515f",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Next.js": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -970,7 +998,7 @@
     "sha256": "d9435c4ede7133b376c0173a80226bb3856729366707cd96e9a66e39448d0288",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Vite": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -979,7 +1007,7 @@
     "sha256": "f84e50febcb3a2a81399c9a1ae76d96dc235428202f91610b6f36bfb5b62051a",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Tailwind CSS": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -988,14 +1016,17 @@
     "sha256": "f8cec54589553807eb603bcaf4e056aa090196211698b056542e3cc62a2f3448",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "shadcn/ui": {
     "category": "Frontend, Product & Desktop Engineering",
-    "iconPath": "/skill-icons/shadcn-ui.png",
-    "sha256": "0ecc62d682727f68fc4937eed19960c706714fa084d44f63028d611ae02bf3d7",
-    "source": "favicon",
-    "sourceUrl": "https://ui.shadcn.com/favicon-16x16.png"
+    "iconName": "shadcnui",
+    "iconPath": "/skill-icons/shadcn-ui.svg",
+    "sha256": "e51a817da5d32931a4bf72eeb71a9ceceb0e785436610a1aa41778c7f276a65e",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/shadcnui",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Material UI": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -1004,7 +1035,7 @@
     "sha256": "6480f23a1e32cf36801e7e771f4f68d6c5f3b2f1c9cb636b9ac6c25c58779f18",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Ant Design": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -1013,7 +1044,7 @@
     "sha256": "1613beec6cea81f4277755fa65adf22ef9083adfad7d9f1f4fbc80c4da81f8d6",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/antdesign/antdesign-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Chakra UI": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -1022,7 +1053,7 @@
     "sha256": "73f55fcf42575d33242034884df61acd91cafb3d6dab67fd2e6dcac9931b0b02",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/chakraui/chakraui-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Redux": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -1031,26 +1062,26 @@
     "sha256": "72a56f5d8acc368b77624e1e7b7d8a2acbbc070ac6bf5d1b9979c92072d89962",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "MobX": {
     "category": "Frontend, Product & Desktop Engineering",
     "iconName": "mobx",
     "iconPath": "/skill-icons/mobx.svg",
-    "sha256": "ccb83db3997889cde584e7042c176928f3bee28bb79df637791fc183b02d74d0",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#mobx",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "5dc07fa6aae9727c6605a5a57dd5ffa1f3ba889fa70f60b1ec1a029bdc1d7852",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mobx/mobx-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "MDX": {
     "category": "Frontend, Product & Desktop Engineering",
-    "iconName": "memo",
+    "iconName": "mdx",
     "iconPath": "/skill-icons/mdx.svg",
-    "sha256": "a5abbf3510114c62e2544c689a35efe8bf1c3e1fa9914df0db3a598385eb7006",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F4DD.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "65641ed30d81a136612d74fe3e163c0c99345ea7d2641a4da1a6f4ad0a273d2b",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/mdx",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Electron": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -1059,16 +1090,17 @@
     "sha256": "b5cae00151e368734a36f261dc9a497a93bacad07cf609d75321ccd7e186a50a",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/electron/electron-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "CodeMirror": {
     "category": "Frontend, Product & Desktop Engineering",
     "iconName": "codemirror",
     "iconPath": "/skill-icons/codemirror.svg",
-    "sha256": "f39e7d43ab3eefdc13befc71d85ccd401a890c703cc2a4a370454a6a3784e09c",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#codemirror",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "90daadab2955310705682c5f3943e68699e3e33744cf79bbeec6d60c6323c79f",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/codemirror",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Canvas": {
     "category": "Frontend, Product & Desktop Engineering",
@@ -1097,14 +1129,16 @@
     "sha256": "3ddc8b498ca1872f7d95ad6cf9fe02741169c4a39682066c1ba6416478b5a6cc",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/hugo/hugo-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "AWS": {
     "category": "Cloud, DevOps & Observability",
-    "iconPath": "/skill-icons/aws.ico",
-    "sha256": "1dc902bf12f36533773b6e0399ca6dcfe2e19b88c7d1c3d9f211a4082d28d219",
-    "source": "favicon",
-    "sourceUrl": "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
+    "iconName": "amazonwebservices",
+    "iconPath": "/skill-icons/aws.svg",
+    "sha256": "5b4d8371d79a5c0d3a27ea4e929f772e68d47f7d267496bf9211d5f60fcf8084",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "GCP": {
     "category": "Cloud, DevOps & Observability",
@@ -1113,7 +1147,7 @@
     "sha256": "1615b3e53228faa14378f1abb2b78e5f6c3f0ec562bc37db3efde885714e6c2f",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Azure": {
     "category": "Cloud, DevOps & Observability",
@@ -1122,7 +1156,7 @@
     "sha256": "7923db83e3f9755bd412241a683fa996fb7a9d0259b5084de449e6be92f7ca20",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Docker": {
     "category": "Cloud, DevOps & Observability",
@@ -1131,7 +1165,7 @@
     "sha256": "3fd830ea69431ed7a0b8d068cd5b34ad3f00a1a78195d50f13ff56713f2462e1",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Kubernetes": {
     "category": "Cloud, DevOps & Observability",
@@ -1140,7 +1174,7 @@
     "sha256": "fb31e4163238978201cfde0601728ee5168b74e476c32c37739bed626fa281ae",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Terraform": {
     "category": "Cloud, DevOps & Observability",
@@ -1149,16 +1183,16 @@
     "sha256": "0be6427291ae47f057b75f9010dffd6f58a40f0c83c43606ff68851cef1621dc",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "CloudFormation": {
     "category": "Cloud, DevOps & Observability",
     "iconName": "cloudformation",
-    "iconPath": "/skill-icons/cloudformation.svg",
-    "sha256": "0e66f7d61e4f189d1259e465265fb6ddbd0088009485e949d5476f9cae006073",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#cloudformation",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/cloudformation.png",
+    "sha256": "7dbffb8edbfc52a21c9861d8c9be905b9baececffc869f5c84ff461b4020e18e",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/ManagementGovernance/CloudFormation.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Helm": {
     "category": "Cloud, DevOps & Observability",
@@ -1167,7 +1201,7 @@
     "sha256": "83efc74139c06f09c29cab6592fdad80c8ce9e5090fc1da3ba39d40686fb511b",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/helm/helm-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Argo CD": {
     "category": "Cloud, DevOps & Observability",
@@ -1176,23 +1210,26 @@
     "sha256": "946ce9ce2e6a2513846c2ec90095fd1938ee079d8aa0f5ac2039db7cb37532bb",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/argocd/argocd-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "GitHub Actions": {
     "category": "Cloud, DevOps & Observability",
-    "iconPath": "/skill-icons/github-actions.png",
-    "sha256": "bda87ade4bd3a6c8ac8bdd1cdf4af4268e1698e43ac18660090873c99eecb48f",
-    "source": "favicon",
-    "sourceUrl": "https://docs.github.com/assets/cb-345/images/site/favicon.png"
+    "iconName": "githubactions",
+    "iconPath": "/skill-icons/github-actions.svg",
+    "sha256": "68e27a7570b9e0f18a1f85d84d211f3328d845dfac8ce7e101ec16576c67db5b",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/githubactions",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Jenkins": {
     "category": "Cloud, DevOps & Observability",
-    "iconName": "jenkins",
+    "iconName": "jenkins-butler",
     "iconPath": "/skill-icons/jenkins.svg",
-    "sha256": "917c7525a9d6c544f4b5d1d4318778e2dee5ef2d47be075ee494613cb10d2a4e",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sha256": "5afd00080797a0568f7305696775e53a2d1fb88c59c054ebc554b3d284b5d230",
+    "source": "official",
+    "sourceUrl": "https://www.jenkins.io/images/logos/jenkins/jenkins.svg",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "CircleCI": {
     "category": "Cloud, DevOps & Observability",
@@ -1201,52 +1238,53 @@
     "sha256": "77a7fb145905ac57daa12223b40dcf6527eb4c001120a3a92f5bb065dec93688",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/circleci/circleci-plain.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "AWS Lambda": {
     "category": "Cloud, DevOps & Observability",
     "iconName": "aws-lambda",
-    "iconPath": "/skill-icons/aws-lambda.svg",
-    "sha256": "cbd67456b93b465a4dbdf134bb05d9b110767ae388d1ebfdfda313e3559580a7",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#aws-lambda",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/aws-lambda.png",
+    "sha256": "c10101a20a279b47c66caaf8adb54aedaad4735a27ad54075e1d200a15af55e1",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Compute/Lambda.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Google Cloud Functions": {
     "category": "Cloud, DevOps & Observability",
-    "iconName": "google-cloud-functions",
+    "iconName": "googlecloudfunctions",
     "iconPath": "/skill-icons/google-cloud-functions.svg",
-    "sha256": "6d457da324ac88deb1280f35756561e98d50ee7a415af0c6cf9766953512c244",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#google-cloud-functions",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "eb848405c6a1ed56510e7cc88ffe6e2e12cd8331be4b0c8c31048d0b0e6d53a9",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/googlecloud/4285F4",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "ECS": {
     "category": "Cloud, DevOps & Observability",
     "iconName": "ecs",
-    "iconPath": "/skill-icons/ecs.svg",
-    "sha256": "252ca2d06bf8a4730170bcd0326a7c2138dea233df0f684476d20d9345f73c6b",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#ecs",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/ecs.png",
+    "sha256": "c3dcff02e52e0ec461882c45978ef80cfec1558c94ad2167707aa1fbad423c46",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Containers/ElasticContainerService.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "EKS": {
     "category": "Cloud, DevOps & Observability",
     "iconName": "eks",
-    "iconPath": "/skill-icons/eks.svg",
-    "sha256": "d632fb8b5e64c707e3ab5480e9dac3d9de71ad68fc4edee7cc1acf9c58e83c65",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#eks",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "iconPath": "/skill-icons/eks.png",
+    "sha256": "551826cb5e4fbdb81d0ce01115223c7e79714b902100539ac93d3461b1620727",
+    "source": "official",
+    "sourceUrl": "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Containers/ElasticKubernetesService.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Vercel": {
     "category": "Cloud, DevOps & Observability",
     "iconName": "vercel",
     "iconPath": "/skill-icons/vercel.svg",
-    "sha256": "48b92f47669b98d45784cd49d8e27ed08ce6c381622d14b597af0b5e16b5ee1d",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#vercel",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "ab2bb3dfbed3aa637dc1847e42d1a576e50b0d7717092d781ab43e91073ace23",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Netlify": {
     "category": "Cloud, DevOps & Observability",
@@ -1255,7 +1293,7 @@
     "sha256": "728e614f2d3a6587bbdd3f66232ef1a75dbc438d3af12d43ca20dee93bbe7758",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Prometheus": {
     "category": "Cloud, DevOps & Observability",
@@ -1264,7 +1302,7 @@
     "sha256": "cae70cfcf9a8b88de32ab1035819d0c7c9a2b278048112f8c9f99dae42b5b657",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/prometheus/prometheus-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Grafana": {
     "category": "Cloud, DevOps & Observability",
@@ -1273,7 +1311,7 @@
     "sha256": "2dec200d4e56521bec8dd463173c623b33b8c97e6159cac9b3ed00b6bff0f6ad",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/grafana/grafana-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Monitoring": {
     "category": "Cloud, DevOps & Observability",
@@ -1287,12 +1325,13 @@
   },
   "Tracing": {
     "category": "Cloud, DevOps & Observability",
-    "iconName": "tracing",
+    "iconName": "opentelemetry",
     "iconPath": "/skill-icons/tracing.svg",
-    "sha256": "1e03663a981345e240c75c8454aea127291c18a4b3baba84475fa249adab2b1b",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#tracing",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "e58e9c5b51e396e95a8370ddecb307f5423dea88d5f4b781a269425f25669b1c",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/opentelemetry",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Structured Logging": {
     "category": "Cloud, DevOps & Observability",
@@ -1321,16 +1360,16 @@
     "sha256": "e3073e7f520866f93a40e76b633efc29715539150423178cdb2e33f7077e4be1",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytest/pytest-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Vitest": {
     "category": "Testing, Quality, Security & Architecture",
     "iconName": "vitest",
     "iconPath": "/skill-icons/vitest.svg",
-    "sha256": "5135869f214f52756b0b55d20cb0b250c023ad8a01dd9c27e2a0fe71375e420e",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#vitest",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "f8dbcabd9d6be373fcc6afe31632e22c674cb20a93e977c22809030bd58df7fb",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/vitest/vitest-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Jest": {
     "category": "Testing, Quality, Security & Architecture",
@@ -1339,7 +1378,7 @@
     "sha256": "56aa3bd209339d2253cdce508143109d20f6d7342db07db7a2d1e8a59ba202f3",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Cypress": {
     "category": "Testing, Quality, Security & Architecture",
@@ -1348,26 +1387,25 @@
     "sha256": "17cfd19e56397859714a8d4ee6e97b9e9afb0bffd9be87a70240d01e47dfda3b",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/cypressio/cypressio-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Puppeteer": {
     "category": "Testing, Quality, Security & Architecture",
-    "iconName": "performing-arts",
+    "iconName": "puppeteer",
     "iconPath": "/skill-icons/puppeteer.svg",
-    "sha256": "8c5d1c4e6a23dfbf7cf918e538de7f178176d8d724e52c7f99a7a9e57253eaff",
-    "source": "custom",
-    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F3AD.svg",
-    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
-    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
+    "sha256": "48f25c7cf9bf7e000d901ad1cbd41f6a294da4522aa15500d20cf1681513f762",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/puppeteer/puppeteer-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Playwright": {
     "category": "Testing, Quality, Security & Architecture",
     "iconName": "playwright",
     "iconPath": "/skill-icons/playwright.svg",
-    "sha256": "c71873a81a330c9cfd4cd354418df63a836e04852d692dbd3c050d3e70d1f17c",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#playwright",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "c829ee41780a2c9748b9aeeeec530dc9ceeade68687e252ff7f044c16a8c384b",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/playwright/playwright-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Test-Driven Development": {
     "category": "Testing, Quality, Security & Architecture",
@@ -1391,12 +1429,13 @@
   },
   "Integration Testing": {
     "category": "Testing, Quality, Security & Architecture",
-    "iconName": "integration-testing",
+    "iconName": "nut-and-bolt",
     "iconPath": "/skill-icons/integration-testing.svg",
-    "sha256": "e34a92018d7458508e4f87b95dc3c15c981aebede00a5be7fedd791b15791fc1",
+    "sha256": "998a62a73a2248c46799f24c874b6620f58ace5606c847c64cadb7237b1ea4e8",
     "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#integration-testing",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F529.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "End-to-End Testing": {
     "category": "Testing, Quality, Security & Architecture",
@@ -1420,30 +1459,33 @@
   },
   "Formatting": {
     "category": "Testing, Quality, Security & Architecture",
-    "iconName": "formatting",
+    "iconName": "prettier",
     "iconPath": "/skill-icons/formatting.svg",
-    "sha256": "2c00501dff43088b68b44443a43fd711637fdbc6be4d86fdbeeee46cd63f2eb5",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#formatting",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "57456de82d7b876c19c539d9e8a044ef6dff1dbcc58f7e536235922d35d97b52",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/prettier",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Domain-Driven Design": {
     "category": "Testing, Quality, Security & Architecture",
-    "iconName": "domain-driven-design",
+    "iconName": "compass",
     "iconPath": "/skill-icons/domain-driven-design.svg",
-    "sha256": "d939f41db74f65ab378c114813967b2b8df7a4705186012632b6b3df8b0d14fb",
+    "sha256": "e8ab346391122e69bfcaf143616b39a54d864b9603e7dfdf97fbb76d06a237fd",
     "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#domain-driven-design",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sourceUrl": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F9ED.svg",
+    "sourceNote": "Explicit curated concept icon, not a generic category fallback.",
+    "licenseNote": "Curated OpenMoji SVG under CC BY-SA 4.0; used only as an explicit unique concept icon."
   },
   "Security-Aware Development": {
     "category": "Testing, Quality, Security & Architecture",
-    "iconName": "security-aware-development",
+    "iconName": "owasp",
     "iconPath": "/skill-icons/security-aware-development.svg",
-    "sha256": "66b1c83bc882b58cfc29cca432de020f53643421b3d5337ee99e2d72f930c6c1",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#security-aware-development",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "df31265960b3f6952d1f73f7d8152083604db108d7b39b890aaf800f6c4e6989",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/owasp",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "Auditability": {
     "category": "Testing, Quality, Security & Architecture",
@@ -1467,10 +1509,12 @@
   },
   "Python": {
     "category": "Languages & Authoring",
-    "iconPath": "/skill-icons/python.ico",
-    "sha256": "39a32ed052ec937b46c40afcc3b87b98ecf2526cf8b6e2cd1698a8b4cd9a6e39",
+    "iconName": "python-classic",
+    "iconPath": "/skill-icons/python.png",
+    "sha256": "515d56e5b2bb0ea82350bc42fca54149ca135815a1c7d3fedd8e44615a77d37a",
     "source": "official",
-    "sourceUrl": "https://www.python.org/static/favicon.ico"
+    "sourceUrl": "https://www.python.org/static/community_logos/python-logo-master-v3-TM.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "SQL": {
     "category": "Languages & Authoring",
@@ -1489,7 +1533,7 @@
     "sha256": "c9191199f4049920c2fc19035b8a6664f37f4689fcd9e8434e786097e78863f0",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "JavaScript": {
     "category": "Languages & Authoring",
@@ -1498,77 +1542,80 @@
     "sha256": "0656ff65fc8eeacda5c78d7f9ffe91ec1eb919db64f56e0b7dcd460af4bbd36c",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Go": {
     "category": "Languages & Authoring",
-    "iconName": "go",
+    "iconName": "go-logo",
     "iconPath": "/skill-icons/go.svg",
-    "sha256": "2d4558b96d3ec71d0d922a62668cb2ea5a5d83ed7d4caf6b0479b3266f795a2f",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sha256": "c89d8c4a31dd4f6487e69bc3bdb6585a52466a393f6e8d863bfc1a0189bc213c",
+    "source": "official",
+    "sourceUrl": "https://go.dev/images/go-logo-blue.svg",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Rust": {
     "category": "Languages & Authoring",
-    "iconName": "rust",
+    "iconName": "rust-official",
     "iconPath": "/skill-icons/rust.svg",
-    "sha256": "16c6c6a98e990944fc5e1cc64cc8fc7b8be3a662ec4ee7951b7995d2e52f5e12",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sha256": "6d6e0fd29e2015bec5ca9bdbdc11ede1e84fb792c560599b58e564346825a229",
+    "source": "official",
+    "sourceUrl": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "Java": {
     "category": "Languages & Authoring",
-    "iconName": "java",
-    "iconPath": "/skill-icons/java.svg",
-    "sha256": "7582e518a9c02425f97155e5a3bd39d1a3a7d421b78caf9c8df7443dad3edc5d",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "iconName": "java-classic",
+    "iconPath": "/skill-icons/java.png",
+    "sha256": "ecc9fbd84b44c07febcdbcac1088486d695713f4bc32cb5203ce1076ddff49d5",
+    "source": "legacy",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/120px-Java_programming_language_logo.svg.png",
+    "sourceNote": "Historical or classic logo asset selected for stronger product recognition."
   },
   "C++": {
     "category": "Languages & Authoring",
-    "iconName": "cplusplus",
-    "iconPath": "/skill-icons/c.svg",
-    "sha256": "7ff8253551235e3a6b002a7c2bd6e3190d85113a64fcb40f2254473caeb025d4",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "iconName": "isocpp",
+    "iconPath": "/skill-icons/c.png",
+    "sha256": "a1af8f6778a1d313c73a65b9c287e50379c9305cd4752fcfe4f9a729da37c58d",
+    "source": "official",
+    "sourceUrl": "https://isocpp.org/assets/images/cpp_logo.png",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "q": {
     "category": "Languages & Authoring",
     "iconName": "q",
     "iconPath": "/skill-icons/q.svg",
-    "sha256": "c6f8e54e4a78cd3b3e24b829e262f83f34d6ddc97f96dced666cab28cdc859bb",
-    "source": "custom",
-    "sourceUrl": "https://code.kx.com/q/",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "0bf20bf815376295abc76025d43896bec1cc8151bb03dde5bc54015ef639f33a",
+    "source": "web-sourced",
+    "sourceUrl": "https://code.kx.com/q/local/img/kx.svg",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "R": {
     "category": "Languages & Authoring",
-    "iconName": "r",
+    "iconName": "r-logo",
     "iconPath": "/skill-icons/r.svg",
-    "sha256": "9d135e1a56f58f89203afc9253f1db91901e19522f92dfc10575e3312336e61b",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sha256": "6d3318a61b6370799dc413c8bded66ee3417509c0f4a82c7739e5e1c057c4269",
+    "source": "official",
+    "sourceUrl": "https://www.r-project.org/logo/Rlogo.svg",
+    "sourceNote": "Official project or vendor icon resolved from a first-party source."
   },
   "SPARQL": {
     "category": "Languages & Authoring",
-    "iconPath": "/skill-icons/sparql.ico",
-    "sha256": "1838f0e6ed15ed21a9b999553077f43c170fe1450cbfc55f097ec1c434b6a349",
-    "source": "favicon",
-    "sourceUrl": "https://www.w3.org/favicon.ico"
+    "iconName": "semanticweb",
+    "iconPath": "/skill-icons/sparql.svg",
+    "sha256": "6ba4e8d8f2beb49f43553f441fb78c36c6f2ce12fd0d190649378d1cd39299ee",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/semanticweb",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "MATLAB": {
     "category": "Languages & Authoring",
-    "iconName": "matlab",
-    "iconPath": "/skill-icons/matlab.svg",
-    "sha256": "03f162fa2d349019b1fad920206b27246e5f5b48e6f7c15fb890fc3e8d3c82e0",
-    "source": "devicon",
-    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/matlab/matlab-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "iconName": "matlab-classic",
+    "iconPath": "/skill-icons/matlab.png",
+    "sha256": "7f0d0abb020fd35f1072c4337ecf8289c04141dcb873a712566afdacaea22ecc",
+    "source": "legacy",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png",
+    "sourceNote": "Historical or classic logo asset selected for stronger product recognition."
   },
   "Swift": {
     "category": "Languages & Authoring",
@@ -1577,16 +1624,16 @@
     "sha256": "46b6e4abd3ab12c589b8e276295f9439e2869bc4788d918efbc6e76147e8a06e",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Bash": {
     "category": "Languages & Authoring",
-    "iconName": "bash",
+    "iconName": "gnu-bash",
     "iconPath": "/skill-icons/bash.svg",
-    "sha256": "0f7df336a4d757f11255b3409b5f5799da45c34cacd13498c9ccc2b5dc76814b",
-    "source": "custom",
-    "sourceUrl": "https://w4w.dev/resume#bash",
-    "sourceNote": "Generated unique custom SVG because no safe unique brand, favicon, legacy, or source-traced icon was resolved."
+    "sha256": "1eb203ffdfa02fe663c769d8fec93af810e72cd07605cee86a5060d288e5fa26",
+    "source": "legacy",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg",
+    "sourceNote": "Historical or classic logo asset selected for stronger product recognition."
   },
   "HTML5": {
     "category": "Languages & Authoring",
@@ -1595,7 +1642,7 @@
     "sha256": "34826e5b3315daadf4fa15f723a3c1d5ba4a89277bfd94e22ac4d7d3d54338c5",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "CSS3": {
     "category": "Languages & Authoring",
@@ -1604,7 +1651,7 @@
     "sha256": "36b7d94b657d571d3f94042acbf6a4c86a5301a222f83f4b4583ad2acf6e297d",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Markdown": {
     "category": "Languages & Authoring",
@@ -1613,7 +1660,7 @@
     "sha256": "9d0c0aeff8d36500dd4023a50bf9bfd7152541402eab1ae8fcd7b86cdcb91853",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/markdown/markdown-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "LaTeX": {
     "category": "Languages & Authoring",
@@ -1622,7 +1669,7 @@
     "sha256": "95a355c5cfcde05317304ce9e770bf532fd45c203e9dc11e4b5a83c4e228ab6a",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "YAML": {
     "category": "Languages & Authoring",
@@ -1631,6 +1678,6 @@
     "sha256": "7fecdaa89f0c22424ea16b655c739ab147dc31d4b72a128ea4de2f28ed1d75d3",
     "source": "devicon",
     "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/yaml/yaml-original.svg",
-    "sourceNote": "Devicon ecosystem icon; treated as an official source-traced ecosystem asset."
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   }
 }
