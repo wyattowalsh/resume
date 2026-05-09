@@ -90,7 +90,7 @@
 	"Amazon Kinesis": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "AWS service family for collecting, processing, and analyzing real-time streaming data.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "Within the streaming systems set, Amazon Kinesis refers to AWS stream processing alongside Kafka, Pub/Sub, and low-latency delivery work.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -156,7 +156,7 @@
 	"Ant Design": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Enterprise-oriented React design system and component library for complex application interfaces.",
-		"resumeContext": "Ant Design is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Ant Design implementation.",
+		"resumeContext": "Here, Ant Design marks an enterprise React component system for the frontend toolkit, useful for dense admin and product interfaces.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -200,7 +200,7 @@
 	"Antigravity": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Agentic coding environment surface for delegating development work across editor and browser-style workflows.",
-		"resumeContext": "Antigravity is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Antigravity implementation.",
+		"resumeContext": "For readers, Antigravity names coding-agent surfaces for comparing editor, browser, and delegated development workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -222,7 +222,7 @@
 	"Apache Airflow": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines.",
-		"resumeContext": "Visible in Wyatt's Data Engineering, Databases & Analytics skill group; no dedicated implementation is named.",
+		"resumeContext": "This popup frames Apache Airflow around scheduled DAG orchestration for data jobs, dependencies, retries, and pipeline monitoring.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -244,7 +244,7 @@
 	"Apache Kafka": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing.",
-		"resumeContext": "Kafka is listed in Wyatt's streaming and capital-markets skill group alongside broader event-driven messaging work.",
+		"resumeContext": "The Streaming, Messaging & Capital Markets Systems grouping treats Apache Kafka as durable event logs and high-throughput messaging in the real-time systems cluster.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -288,7 +288,7 @@
 	"Argo CD": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "GitOps continuous delivery tool for syncing Kubernetes application state from version control.",
-		"resumeContext": "Argo CD is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Argo CD implementation.",
+		"resumeContext": "Argo CD appears here as GitOps delivery for Kubernetes applications, pairing infrastructure state with version-controlled release workflows.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -354,7 +354,7 @@
 	"AWS Athena": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Serverless AWS query service for running SQL over data in S3 and lake-style storage.",
-		"resumeContext": "AWS Athena is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific AWS Athena implementation.",
+		"resumeContext": "In this skill group, AWS Athena describes SQL-over-object-storage analytics in the data platform set, useful for querying lake-style datasets.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -376,7 +376,7 @@
 	"AWS Glue": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing.",
-		"resumeContext": "AWS Glue is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific AWS Glue implementation.",
+		"resumeContext": "For this popover, AWS Glue means managed ETL and cataloging on AWS, connecting raw storage, transformations, and analytics-ready datasets.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -398,7 +398,7 @@
 	"AWS Lambda": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS serverless compute service for running event-driven functions without managing servers.",
-		"resumeContext": "AWS Lambda is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific AWS Lambda implementation.",
+		"resumeContext": "The cloud operations context uses AWS Lambda to describe event-driven serverless compute for jobs, APIs, and automation without server management.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -420,7 +420,7 @@
 	"Azure": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations.",
-		"resumeContext": "Azure is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Azure implementation.",
+		"resumeContext": "Readers can read Azure here as the Microsoft cloud side of the deployment stack, complementing AWS and Google Cloud infrastructure capabilities.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -442,7 +442,7 @@
 	"Bash": {
 		"category": "Languages & Authoring",
 		"summary": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows.",
-		"resumeContext": "Bash is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Bash implementation.",
+		"resumeContext": "Bash serves as shorthand for shell automation for local setup, build glue, deployment helpers, and repeatable command-line workflows.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -464,7 +464,7 @@
 	"BigQuery": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets.",
-		"resumeContext": "BigQuery is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific BigQuery implementation.",
+		"resumeContext": "Inside the data platform set, BigQuery identifies serverless warehouse analytics for large-scale SQL, reporting, and exploration.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -485,8 +485,8 @@
 	},
 	"C++": {
 		"category": "Languages & Authoring",
-		"summary": "Programming language listed on the public resume as part of Wyatt's broader language toolkit.",
-		"resumeContext": "The public resume lists C++ as part of Wyatt's broader language toolkit; no project-specific C++ work is named.",
+		"summary": "General-purpose systems language for performance-sensitive software, native libraries, and lower-level platform work.",
+		"resumeContext": "Within the language set, C++ refers to performance-sensitive systems code, native libraries, and platform-facing components.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -530,7 +530,7 @@
 	"Chakra UI": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Composable React component library with accessible primitives and theme-driven styling.",
-		"resumeContext": "Chakra UI is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Chakra UI implementation.",
+		"resumeContext": "Here, Chakra UI marks accessible React primitives and theme-driven components for the frontend design-system toolkit.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -552,7 +552,7 @@
 	"ChatGPT": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation.",
-		"resumeContext": "ChatGPT is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific ChatGPT implementation.",
+		"resumeContext": "For readers, ChatGPT names the general AI-assistant surface in the coding-harness set, alongside specialized editor and desktop tools.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -574,7 +574,7 @@
 	"Cherry Studio": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows.",
-		"resumeContext": "Cherry Studio is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Cherry Studio implementation.",
+		"resumeContext": "This popup frames Cherry Studio around desktop multi-model orchestration in the assistant stack, complementing CLI, editor, and MCP-connected workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -618,7 +618,7 @@
 	"CircleCI": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Hosted CI/CD platform for automated builds, tests, and deployment workflows.",
-		"resumeContext": "CircleCI is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific CircleCI implementation.",
+		"resumeContext": "The Cloud, DevOps & Observability grouping treats CircleCI as hosted automation for build, test, and deploy pipelines across delivery workflow topics.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -662,7 +662,7 @@
 	"Claude Desktop": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces.",
-		"resumeContext": "Claude Desktop is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Claude Desktop implementation.",
+		"resumeContext": "Claude Desktop appears here as the local MCP-connected assistant surface for tool-backed desktop and repository workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -684,7 +684,7 @@
 	"CLI Tooling": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks.",
-		"resumeContext": "CLI Tooling is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific CLI Tooling implementation.",
+		"resumeContext": "In this skill group, CLI Tooling describes backend/API work tied to operator-facing commands so data, release, and maintenance tasks can run predictably.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -706,7 +706,7 @@
 	"CloudFormation": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS infrastructure-as-code service for defining and managing cloud resources with templates.",
-		"resumeContext": "CloudFormation is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific CloudFormation implementation.",
+		"resumeContext": "For this popover, CloudFormation means AWS-native infrastructure definitions for repeatable cloud environments and managed resource changes.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -772,7 +772,7 @@
 	"Content-Based Filtering": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "The streaming systems context uses Content-Based Filtering to describe payload-based routing for selective subscriber delivery.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -838,7 +838,7 @@
 	"CSS3": {
 		"category": "Languages & Authoring",
 		"summary": "Styling language for layout, responsive design, typography, animation, and frontend visual systems.",
-		"resumeContext": "CSS3 is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific CSS3 implementation.",
+		"resumeContext": "Readers can read CSS3 here as layout, responsive styling, animation, and visual system work in browser-based interfaces.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -882,7 +882,7 @@
 	"Cursor Agent": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context.",
-		"resumeContext": "Cursor Agent is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Cursor Agent implementation.",
+		"resumeContext": "Cursor Agent serves as shorthand for editor-native delegated coding in the harness set, complementing CLI and browser-style agent workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -926,7 +926,7 @@
 	"Dash": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks.",
-		"resumeContext": "Dash is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Dash implementation.",
+		"resumeContext": "Inside Data Engineering, Databases & Analytics, Dash identifies Python analytical apps and dashboards that turn data workflows into interactive stakeholder-facing tools.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -1014,7 +1014,7 @@
 	"Django": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults.",
-		"resumeContext": "Django is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Django implementation.",
+		"resumeContext": "Within the backend systems set, Django refers to full-stack Python web development with ORM-backed services, admin surfaces, and secure defaults.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1080,7 +1080,7 @@
 	"Domain-Driven Design": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Architecture approach that models software around domain concepts, boundaries, and shared language.",
-		"resumeContext": "Visible in Wyatt's Testing, Quality, Security & Architecture skill group; no dedicated implementation is named.",
+		"resumeContext": "Here, Domain-Driven Design marks domain boundaries, shared language, and model structure for maintainable system architecture.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -1124,7 +1124,7 @@
 	"DynamoDB": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "AWS managed NoSQL database for key-value and document workloads at serverless scale.",
-		"resumeContext": "DynamoDB is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific DynamoDB implementation.",
+		"resumeContext": "For readers, DynamoDB names managed NoSQL storage for key-value and document workloads in cloud-backed applications.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -1146,7 +1146,7 @@
 	"ECS": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity.",
-		"resumeContext": "ECS is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific ECS implementation.",
+		"resumeContext": "This popup frames ECS around AWS container orchestration for services that need managed scheduling without hands-on Kubernetes administration.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1168,7 +1168,7 @@
 	"EKS": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem.",
-		"resumeContext": "EKS is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific EKS implementation.",
+		"resumeContext": "The Cloud, DevOps & Observability grouping treats EKS as managed Kubernetes on AWS, pairing container orchestration with cloud delivery and operations themes.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1212,7 +1212,7 @@
 	"End-to-End Testing": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Testing realistic user or system workflows through the full application stack.",
-		"resumeContext": "Visible in Wyatt's Testing, Quality, Security & Architecture skill group; no dedicated implementation is named.",
+		"resumeContext": "End-to-End Testing appears here as full user and system workflows, checking behavior across UI, services, data, and external boundaries.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -1256,7 +1256,7 @@
 	"Event-Driven Architecture": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "In this skill group, Event-Driven Architecture describes the asynchronous service style behind pub/sub, streaming, and real-time data topics.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -1278,7 +1278,7 @@
 	"Express.js": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints.",
-		"resumeContext": "Express.js is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Express.js implementation.",
+		"resumeContext": "For this popover, Express.js means minimal Node.js HTTP APIs and middleware when a lightweight backend service layer is enough.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1300,7 +1300,7 @@
 	"FastAPI": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Python framework for typed, OpenAPI-first HTTP APIs with async support.",
-		"resumeContext": "FastAPI is listed in Wyatt's backend skill group alongside Python APIs, SDKs, and MCP server projects.",
+		"resumeContext": "The Backend, APIs & Distributed Systems context uses FastAPI to describe typed Python API development with async handlers, validation, and OpenAPI-generated contracts.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1322,7 +1322,7 @@
 	"Feature Engineering": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping.",
-		"resumeContext": "Visible in Wyatt's Machine Learning & Data Science skill group; no dedicated implementation is named.",
+		"resumeContext": "Readers can read Feature Engineering here as the transformation layer that turns raw records into model-ready variables and domain-shaped inputs.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -1344,7 +1344,7 @@
 	"Flask": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Lightweight Python web framework for small services, APIs, and composable backend applications.",
-		"resumeContext": "Flask is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Flask implementation.",
+		"resumeContext": "Flask serves as shorthand for lightweight Python services and small APIs where composable routes are preferable to a full framework.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1366,7 +1366,7 @@
 	"Formatting": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Automated source formatting to keep codebases consistent, readable, and low-friction to review.",
-		"resumeContext": "Formatting is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Formatting implementation.",
+		"resumeContext": "Inside Testing, Quality, Security & Architecture, Formatting identifies automated style consistency so reviews focus on behavior rather than whitespace or layout churn.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -1388,7 +1388,7 @@
 	"GCP": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services.",
-		"resumeContext": "GCP is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific GCP implementation.",
+		"resumeContext": "Within the cloud operations set, GCP refers to managed compute, data, messaging, and deployment services on Google Cloud.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1410,7 +1410,7 @@
 	"Gemini CLI": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Command-line Gemini coding assistant for repository-aware development workflows.",
-		"resumeContext": "Gemini CLI is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Gemini CLI implementation.",
+		"resumeContext": "Here, Gemini CLI marks terminal-native AI coding assistance in the harness set, next to editor, desktop, and MCP-backed tools.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -1498,7 +1498,7 @@
 	"Go": {
 		"category": "Languages & Authoring",
 		"summary": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling.",
-		"resumeContext": "Go is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Go implementation.",
+		"resumeContext": "For readers, Go names compiled service and CLI development, especially where simple deployment and network concurrency matter.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1520,7 +1520,7 @@
 	"Google Cloud Functions": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code.",
-		"resumeContext": "Visible in Wyatt's Cloud, DevOps & Observability skill group; no dedicated implementation is named.",
+		"resumeContext": "This popup frames Google Cloud Functions around serverless event handlers in the cloud stack, paired with managed messaging and API workflows.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1542,7 +1542,7 @@
 	"Google Cloud Pub/Sub": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "The streaming systems grouping treats Google Cloud Pub/Sub as managed cloud messaging alongside Kafka and Redis Pub/Sub.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -1564,7 +1564,7 @@
 	"Google Gemini API": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation.",
-		"resumeContext": "Google Gemini API is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific Google Gemini API implementation.",
+		"resumeContext": "Google Gemini API appears here as Gemini models for multimodal generation, structured output, and tool-aware AI application patterns.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -1586,7 +1586,7 @@
 	"Grafana": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization.",
-		"resumeContext": "Grafana is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Grafana implementation.",
+		"resumeContext": "In this skill group, Grafana describes operational dashboards for metrics, logs, and traces across the observability toolchain.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1608,7 +1608,7 @@
 	"GraphQL (Apollo)": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services.",
-		"resumeContext": "Visible in Wyatt's Backend, APIs & Distributed Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "For this popover, GraphQL (Apollo) means schema-first API design and client/server tooling for typed application data access.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1630,7 +1630,7 @@
 	"gRPC": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication.",
-		"resumeContext": "gRPC is listed in Wyatt's backend and distributed-systems skill group; no project-specific gRPC implementation is named.",
+		"resumeContext": "The Backend, APIs & Distributed Systems context uses gRPC to describe typed service-to-service RPC with Protocol Buffers for backend systems that need strict contracts.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1652,7 +1652,7 @@
 	"Guardrails AI": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Guardrails AI platform reference for validation and control patterns in LLM applications.",
-		"resumeContext": "Wyatt's resume covers guardrail, validation, and auditability work; product-specific Guardrails AI use is not named.",
+		"resumeContext": "AI Agent Harness Configs covers validation, guardrail, and auditability patterns that overlap with Guardrails AI concepts.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -1674,7 +1674,7 @@
 	"Hadoop": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Apache ecosystem for distributed storage and batch processing over large datasets.",
-		"resumeContext": "Hadoop is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Hadoop implementation.",
+		"resumeContext": "Readers can read Hadoop here as distributed storage and batch-processing foundations for large datasets and legacy big-data environments.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -1696,7 +1696,7 @@
 	"Helm": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Kubernetes package manager for templating, installing, and upgrading application charts.",
-		"resumeContext": "Helm is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Helm implementation.",
+		"resumeContext": "Helm serves as shorthand for Kubernetes packaging and release templating, useful for repeatable application deployment across clusters.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1718,7 +1718,7 @@
 	"HTML5": {
 		"category": "Languages & Authoring",
 		"summary": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces.",
-		"resumeContext": "HTML5 is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific HTML5 implementation.",
+		"resumeContext": "Inside Languages & Authoring, HTML5 identifies semantic document structure and accessible browser interfaces across the frontend authoring set.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1740,7 +1740,7 @@
 	"Hugging Face": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows.",
-		"resumeContext": "Hugging Face is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific Hugging Face implementation.",
+		"resumeContext": "Within the AI, LLM & Agent Engineering set, Hugging Face refers to model, dataset, and inference workflows for applied ML and open-model experimentation.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -1762,7 +1762,7 @@
 	"Hugo": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Static site generator for fast content-heavy sites, documentation, and publishing workflows.",
-		"resumeContext": "Hugo is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Hugo implementation.",
+		"resumeContext": "Here, Hugo marks static publishing and documentation-site generation within the broader frontend and product publishing stack.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -1828,7 +1828,7 @@
 	"Java": {
 		"category": "Languages & Authoring",
 		"summary": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software.",
-		"resumeContext": "Java is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Java implementation.",
+		"resumeContext": "For readers, Java names JVM-based service and enterprise application development within the multi-language technical practice set.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1850,7 +1850,7 @@
 	"JavaScript": {
 		"category": "Languages & Authoring",
 		"summary": "Core web language for browser behavior, Node-based tooling, and frontend application logic.",
-		"resumeContext": "JavaScript is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific JavaScript implementation.",
+		"resumeContext": "This popup frames JavaScript around browser behavior, Node tooling, and frontend application logic across the web stack.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1872,7 +1872,7 @@
 	"Jenkins": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Automation server for build, test, and deployment pipelines across many languages and platforms.",
-		"resumeContext": "Jenkins is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Jenkins implementation.",
+		"resumeContext": "The Cloud, DevOps & Observability grouping treats Jenkins as self-hosted automation for build, test, and release pipelines where jobs need explicit orchestration.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1960,7 +1960,7 @@
 	"Knowledge Graphs": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems.",
-		"resumeContext": "Knowledge Graphs is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific Knowledge Graphs implementation.",
+		"resumeContext": "Knowledge Graphs appears here as entity-relationship context for retrieval systems, document intelligence, and semantic data linking.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -1982,7 +1982,7 @@
 	"Kubernetes": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Container orchestration platform for deploying, scaling, and operating distributed workloads.",
-		"resumeContext": "Kubernetes is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Kubernetes implementation.",
+		"resumeContext": "In this skill group, Kubernetes describes container orchestration in the cloud stack, tying deployment, scaling, service discovery, and operations together.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2070,7 +2070,7 @@
 	"LaTeX": {
 		"category": "Languages & Authoring",
 		"summary": "Typesetting system for mathematical, academic, and technical documents with precise formatting control.",
-		"resumeContext": "LaTeX is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific LaTeX implementation.",
+		"resumeContext": "For this popover, LaTeX means precise technical typesetting for academic, mathematical, and document-heavy authoring workflows.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -2092,7 +2092,7 @@
 	"Linting": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Static checking that catches style, correctness, and maintainability issues before runtime.",
-		"resumeContext": "Linting is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Linting implementation.",
+		"resumeContext": "The quality context uses Linting to describe static checks for risky patterns, dead code, and maintainability issues before runtime.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -2114,7 +2114,7 @@
 	"LlamaIndex": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools.",
-		"resumeContext": "LlamaIndex is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific LlamaIndex implementation.",
+		"resumeContext": "Readers can read LlamaIndex here as document indexing and retrieval orchestration for LLM applications that need grounded data access.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -2158,7 +2158,7 @@
 	"Low-Latency Messaging": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "Low-Latency Messaging serves as shorthand for the timing discipline behind market-data, streaming, and pub/sub systems where delivery delay matters.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -2224,7 +2224,7 @@
 	"Material UI": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "React component library implementing Material Design components, theming, and application patterns.",
-		"resumeContext": "Material UI is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Material UI implementation.",
+		"resumeContext": "Inside Frontend, Product & Desktop Engineering, Material UI identifies a React component system for product UI, dashboards, and design-system-driven application surfaces.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -2246,7 +2246,7 @@
 	"MATLAB": {
 		"category": "Languages & Authoring",
 		"summary": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework.",
-		"resumeContext": "MATLAB is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific MATLAB implementation.",
+		"resumeContext": "Within the Languages & Authoring set, MATLAB refers to numerical computing for engineering analysis, simulation, and technical coursework.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -2268,7 +2268,7 @@
 	"Matplotlib": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures.",
-		"resumeContext": "Matplotlib is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Matplotlib implementation.",
+		"resumeContext": "Here, Matplotlib marks Python plotting for exploratory analysis, diagnostics, and publication-quality static figures.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2289,7 +2289,7 @@
 	},
 	"MDX": {
 		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Markdown format that blends JSX components into rich technical publishing and documentation.",
+		"summary": "Markdown format that combines JSX components with technical publishing and documentation workflows.",
 		"resumeContext": "Personal Website names custom MDX publishing, and MDXPad is a Markdown/MDX desktop editor.",
 		"evidence": [
 			{
@@ -2312,7 +2312,7 @@
 	"Microservices": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Distributed service architecture that separates capabilities into independently deployable components.",
-		"resumeContext": "Microservices is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Microservices implementation.",
+		"resumeContext": "For readers, Microservices names decomposed service boundaries, independent deployment units, and distributed ownership patterns.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2378,7 +2378,7 @@
 	"Model Evaluation": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions.",
-		"resumeContext": "Model Evaluation is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific Model Evaluation implementation.",
+		"resumeContext": "This popup frames Model Evaluation around the ML quality layer, checking whether outputs are dependable enough for product or analytics use.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -2400,7 +2400,7 @@
 	"Monitoring": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Operational practice of collecting health, performance, and reliability telemetry from systems in production.",
-		"resumeContext": "Monitoring is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Monitoring implementation.",
+		"resumeContext": "The Cloud, DevOps & Observability grouping treats Monitoring as the operational feedback loop for availability, performance, and reliability across running services.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2422,7 +2422,7 @@
 	"Netlify": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows.",
-		"resumeContext": "Netlify is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Netlify implementation.",
+		"resumeContext": "Netlify appears here as static-site hosting, preview builds, redirects, and download-friendly web publishing.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2466,7 +2466,7 @@
 	"Node.js": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines.",
-		"resumeContext": "Node.js is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Node.js implementation.",
+		"resumeContext": "In this skill group, Node.js describes JavaScript backend and tooling work, spanning APIs, CLIs, build systems, and automation scripts.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2488,7 +2488,7 @@
 	"NoSQL": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads.",
-		"resumeContext": "NoSQL is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific NoSQL implementation.",
+		"resumeContext": "For this popover, NoSQL means non-relational storage patterns for document, key-value, wide-column, and graph-shaped data needs.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2554,7 +2554,7 @@
 	"OAuth 2.0": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Authorization framework for delegated API access without sharing a user's original credentials.",
-		"resumeContext": "OAuth 2.0 is listed in Wyatt's backend and distributed-systems skill group; no project-specific OAuth implementation is named.",
+		"resumeContext": "The backend systems context uses OAuth 2.0 to describe delegated authorization for APIs and external services without primary credentials.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2620,7 +2620,7 @@
 	"OpenID Connect": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Identity layer on OAuth 2.0 that standardizes login and user profile claims.",
-		"resumeContext": "OpenID Connect is listed in Wyatt's backend and distributed-systems skill group; no project-specific OIDC implementation is named.",
+		"resumeContext": "Readers can read OpenID Connect here as identity on top of OAuth 2.0, adding standardized login claims and user profile exchange.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2708,7 +2708,7 @@
 	"Perplexity Desktop": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows.",
-		"resumeContext": "Visible in Wyatt's AI Agent Harnesses & Coding Assistants skill group; no dedicated implementation is named.",
+		"resumeContext": "Perplexity Desktop serves as shorthand for source-aware research, browsing, and synthesis alongside coding and documentation workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -2752,7 +2752,7 @@
 	"Plotly": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts.",
-		"resumeContext": "Plotly is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Plotly implementation.",
+		"resumeContext": "Inside the data platform set, Plotly identifies interactive visualization for dashboards and richer exploration than static charts alone.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2796,7 +2796,7 @@
 	"PostgreSQL": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support.",
-		"resumeContext": "PostgreSQL is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific PostgreSQL implementation.",
+		"resumeContext": "Within the data platform set, PostgreSQL refers to relational modeling and SQL-backed application storage.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2818,7 +2818,7 @@
 	"Prefect": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability.",
-		"resumeContext": "Prefect is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Prefect implementation.",
+		"resumeContext": "Here, Prefect marks pythonic workflow orchestration for data pipelines, scheduled jobs, retries, and operational visibility.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2840,7 +2840,7 @@
 	"Prometheus": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Open-source monitoring system for metrics collection, time-series storage, and alerting.",
-		"resumeContext": "Prometheus is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Prometheus implementation.",
+		"resumeContext": "For readers, Prometheus names metrics collection and alerting in the observability stack, pairing service instrumentation with operational checks.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2884,7 +2884,7 @@
 	"Publish/Subscribe Architecture": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "This popup frames Publish/Subscribe Architecture around the decoupled messaging pattern behind streaming and event-delivery skills.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -2906,7 +2906,7 @@
 	"Puppeteer": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows.",
-		"resumeContext": "Puppeteer is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Puppeteer implementation.",
+		"resumeContext": "The Testing, Quality, Security & Architecture grouping treats Puppeteer as Chromium automation for rendering, PDF generation, browser checks, and regression workflows.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -2972,7 +2972,7 @@
 	"Pytest": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Python testing framework for concise unit, integration, fixture, and parametrized test suites.",
-		"resumeContext": "Pytest is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Pytest implementation.",
+		"resumeContext": "Pytest appears here as Python test coverage with fixtures, parametrization, service checks, and clear failure output.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -2994,7 +2994,7 @@
 	"Python": {
 		"category": "Languages & Authoring",
 		"summary": "General-purpose language used across Wyatt's AI, data engineering, MCP, SDK, and analytics projects.",
-		"resumeContext": "Python appears across Wyatt's AI, data engineering, MCP, SDK, and analytics projects.",
+		"resumeContext": "Python is the common implementation thread behind the basketball database, AI utilities, MCP work, SDK tooling, and analytics.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -3038,7 +3038,7 @@
 	"PyTorch": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows.",
-		"resumeContext": "PyTorch is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific PyTorch implementation.",
+		"resumeContext": "In this skill group, PyTorch describes tensor operations, neural-network training loops, and deep-learning modeling practice.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3104,7 +3104,7 @@
 	"R": {
 		"category": "Languages & Authoring",
 		"summary": "Statistical computing language for analysis, visualization, modeling, and data-science workflows.",
-		"resumeContext": "R is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific R implementation.",
+		"resumeContext": "For this popover, R means statistical analysis, modeling, and visualization workflows in the multi-language data toolkit.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3148,7 +3148,7 @@
 	"Real-Time Data Processing": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "The streaming systems context uses Real-Time Data Processing to describe event streams feeding dashboards, alerts, or downstream services.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -3170,7 +3170,7 @@
 	"Redis Pub/Sub": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Redis messaging primitive for lightweight topic-based publish/subscribe communication.",
-		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"resumeContext": "Readers can read Redis Pub/Sub here as lightweight topic messaging in the real-time systems set, distinct from heavier stream-processing platforms.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -3192,7 +3192,7 @@
 	"Redshift": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries.",
-		"resumeContext": "Redshift is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Redshift implementation.",
+		"resumeContext": "Redshift serves as shorthand for AWS warehouse analytics for reporting, SQL aggregation, and large-scale structured datasets.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -3214,7 +3214,7 @@
 	"Redux": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores.",
-		"resumeContext": "Redux is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Redux implementation.",
+		"resumeContext": "Inside Frontend, Product & Desktop Engineering, Redux identifies centralized state management for complex frontend flows where predictable updates and debugging matter.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -3302,7 +3302,7 @@
 	"Rust": {
 		"category": "Languages & Authoring",
 		"summary": "Systems programming language emphasizing memory safety, performance, and explicit ownership.",
-		"resumeContext": "Rust is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Rust implementation.",
+		"resumeContext": "Within the Languages & Authoring set, Rust refers to memory-safe systems programming coverage for performance-sensitive services, tooling, and infrastructure code.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3434,7 +3434,7 @@
 	"SPARQL": {
 		"category": "Languages & Authoring",
 		"summary": "Query language for RDF knowledge graphs and linked entity relationships.",
-		"resumeContext": "SPARQL is listed in Wyatt's Languages & Authoring group alongside knowledge-graph and semantic-retrieval skills.",
+		"resumeContext": "Here, SPARQL marks RDF and knowledge-graph querying where entity relationships need graph-native retrieval.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3456,7 +3456,7 @@
 	"SQL": {
 		"category": "Languages & Authoring",
 		"summary": "Query language for relational databases, analytical stores, schema work, and data access layers.",
-		"resumeContext": "SQL is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific SQL implementation.",
+		"resumeContext": "For readers, SQL names relational querying, schema work, analytics, and data-access patterns across the database toolkit.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3522,7 +3522,7 @@
 	"Statistical Modeling": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data.",
-		"resumeContext": "Visible in Wyatt's Machine Learning & Data Science skill group; no dedicated implementation is named.",
+		"resumeContext": "This popup frames Statistical Modeling around explainable quantitative methods, assumptions, diagnostics, and prediction from observed data.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3544,7 +3544,7 @@
 	"Structured Logging": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited.",
-		"resumeContext": "Structured Logging is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Structured Logging implementation.",
+		"resumeContext": "The Cloud, DevOps & Observability grouping treats Structured Logging as machine-readable events that make runtime behavior searchable, auditable, and easier to correlate.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -3566,7 +3566,7 @@
 	"Swift": {
 		"category": "Languages & Authoring",
 		"summary": "Apple ecosystem programming language for iOS, macOS, and native application development.",
-		"resumeContext": "Swift is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Swift implementation.",
+		"resumeContext": "Swift appears here as Apple-platform development in the language set, covering native iOS and macOS application work.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3588,7 +3588,7 @@
 	"Tableau": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting.",
-		"resumeContext": "Tableau is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Tableau implementation.",
+		"resumeContext": "In this skill group, Tableau describes business-intelligence dashboards and stakeholder-facing analysis in the analytics presentation layer.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -3632,7 +3632,7 @@
 	"TensorFlow": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Machine-learning platform for training, evaluating, and deploying neural-network models.",
-		"resumeContext": "TensorFlow is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific TensorFlow implementation.",
+		"resumeContext": "For this popover, TensorFlow means neural-network tooling for training, evaluation, and model-serving workflows.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3654,7 +3654,7 @@
 	"Terraform": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources.",
-		"resumeContext": "Terraform is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Terraform implementation.",
+		"resumeContext": "The cloud operations context uses Terraform to describe repeatable infrastructure definitions, reviews, and controlled resource changes.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -3676,7 +3676,7 @@
 	"Test-Driven Development": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Development approach that uses tests to define expected behavior before or alongside implementation.",
-		"resumeContext": "Visible in Wyatt's Testing, Quality, Security & Architecture skill group; no dedicated implementation is named.",
+		"resumeContext": "Readers can read Test-Driven Development here as using tests to define behavior early and keep technical practice changes verifiable.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -3720,7 +3720,7 @@
 	"Tracing": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior.",
-		"resumeContext": "Tracing is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Tracing implementation.",
+		"resumeContext": "Tracing serves as shorthand for request-level visibility across services, helping connect latency, failures, and workflow behavior during operations.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -3830,7 +3830,7 @@
 	"Vite": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications.",
-		"resumeContext": "Vite is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Vite implementation.",
+		"resumeContext": "Inside Frontend, Product & Desktop Engineering, Vite identifies the modern frontend build path for fast TypeScript and React development, testing, and local iteration.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -3852,7 +3852,7 @@
 	"Vitest": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing.",
-		"resumeContext": "Vitest is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Vitest implementation.",
+		"resumeContext": "Within the Testing, Quality, Security & Architecture set, Vitest refers to TypeScript and React test coverage in the Vite toolchain with fast unit and component runs.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -3896,7 +3896,7 @@
 	"WebSockets": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Browser and server protocol for bidirectional, persistent real-time communication.",
-		"resumeContext": "WebSockets is listed in Wyatt's visible Streaming, Messaging & Capital Markets Systems skill group; the resume does not name a project-specific WebSockets implementation.",
+		"resumeContext": "Here, WebSockets marks the browser-server channel for bidirectional live updates, pairing with real-time messaging themes.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -3918,7 +3918,7 @@
 	"XGBoost": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models.",
-		"resumeContext": "XGBoost is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific XGBoost implementation.",
+		"resumeContext": "For readers, XGBoost names boosted-tree modeling for tabular classification, regression, ranking, and feature-importance analysis.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",

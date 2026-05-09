@@ -182,7 +182,7 @@ describe("SkillPopover", () => {
 			"Google API surface for building applications with Gemini models",
 		);
 		expect(dialog?.textContent).toContain(
-			"Google Gemini API is listed in Wyatt's visible AI, LLM & Agent Engineering skill group",
+			"Google Gemini API appears here as Gemini models for multimodal generation",
 		);
 		expect(dialog?.textContent).toContain("AI, LLM & Agent Engineering");
 		expect(link).not.toBeNull();
