@@ -1,330 +1,3962 @@
 {
-  "AI Agent Harnesses": {
-    "category": "AI Agent Harnesses & Coding Assistants",
-    "summary": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes.",
-    "resumeContext": "Wyatt maintains the AI Agent Harness Configs project and its public tooling catalog.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Project site", "href": "https://agents.w4w.dev", "kind": "first-party" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "AI Agent Skills": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks.",
-    "resumeContext": "Wyatt packages repeatable agent workflows as skills across cross-runtime harness work.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Specification", "href": "https://agentskills.io/specification", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "AI Guardrails": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds.",
-    "resumeContext": "Wyatt applies policy, validation, and audit patterns in agent engineering workflows.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Reference", "href": "https://www.anthropic.com/engineering/building-effective-agents", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "AMPS": {
-    "category": "Streaming, Messaging & Capital Markets Systems",
-    "summary": "60East's high-performance publish/subscribe platform for low-latency real-time systems.",
-    "resumeContext": "Wyatt used AMPS in JPMorgan market-data and capital-markets systems work.",
-    "evidence": [{ "label": "JPMorgan Chase & Co.", "kind": "work" }],
-    "links": [{ "label": "Product site", "href": "https://crankuptheamps.com/", "kind": "official" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Amazon Bedrock": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "AWS service for building generative-AI applications with managed foundation models and agent tooling.",
-    "resumeContext": "Wyatt combines AWS delivery experience with agent and LLM application work.",
-    "evidence": [{ "label": "AWS Certified Cloud Practitioner", "kind": "credential" }],
-    "links": [{ "label": "AWS docs", "href": "https://docs.aws.amazon.com/bedrock/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Anthropic Claude API": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Anthropic's API for building Claude-powered applications, document workflows, and agent systems.",
-    "resumeContext": "Wyatt works with Claude-powered application patterns and coding-agent workflows.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.anthropic.com/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Apache Kafka": {
-    "category": "Streaming, Messaging & Capital Markets Systems",
-    "summary": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing.",
-    "resumeContext": "Wyatt's fintech systems work includes event-driven and real-time messaging patterns.",
-    "evidence": [{ "label": "JPMorgan Chase & Co.", "kind": "work" }],
-    "links": [{ "label": "Docs", "href": "https://kafka.apache.org/documentation/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "AWS": {
-    "category": "Cloud, DevOps & Observability",
-    "summary": "Amazon Web Services cloud platform for compute, data, storage, networking, AI, and operations.",
-    "resumeContext": "Wyatt holds the AWS Certified Cloud Practitioner credential and delivers cloud-oriented systems.",
-    "evidence": [{ "label": "AWS Certified Cloud Practitioner", "kind": "credential" }],
-    "links": [{ "label": "Product site", "href": "https://aws.amazon.com/", "kind": "official" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Claude Code": {
-    "category": "AI Agent Harnesses & Coding Assistants",
-    "summary": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows.",
-    "resumeContext": "Wyatt includes Claude Code in modern AI-assisted engineering workflow evaluations.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.anthropic.com/en/docs/claude-code", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Codex": {
-    "category": "AI Agent Harnesses & Coding Assistants",
-    "summary": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows.",
-    "resumeContext": "Wyatt evaluates and configures Codex within cross-runtime agent harness work.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://developers.openai.com/codex/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Context Engineering": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Designing prompts, memory, retrieval, tools, and context windows so AI systems behave reliably.",
-    "resumeContext": "Wyatt designs agent harnesses, skill packages, and long-running AI workflows around context quality.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Reference", "href": "https://www.anthropic.com/engineering/building-effective-agents", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "DeepAgents": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows.",
-    "resumeContext": "Wyatt coordinates multi-agent coding workflows and reusable skills across harness runtimes.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Source", "href": "https://github.com/langchain-ai/deepagents", "kind": "source" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Docker": {
-    "category": "Cloud, DevOps & Observability",
-    "summary": "Container platform for packaging applications and dependencies into reproducible runtime images.",
-    "resumeContext": "Wyatt uses container patterns for deployable services, MCP servers, and infrastructure-oriented projects.",
-    "evidence": [{ "label": "ProxyWhirl", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.docker.com/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "DuckDB": {
-    "category": "Data Engineering, Databases & Analytics",
-    "summary": "Embedded analytical database for fast local OLAP queries over files such as Parquet.",
-    "resumeContext": "Wyatt builds local analytics workflows around NBA-scale structured datasets.",
-    "evidence": [{ "label": "NBA Basketball Database", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://duckdb.org/docs/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "ETL": {
-    "category": "Data Engineering, Databases & Analytics",
-    "summary": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores.",
-    "resumeContext": "Wyatt builds datasets, validation pipelines, and analytics-ready data products.",
-    "evidence": [{ "label": "NBA Basketball Database", "kind": "project" }],
-    "links": [{ "label": "Overview", "href": "https://en.wikipedia.org/wiki/Extract,_transform,_load", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "FastAPI": {
-    "category": "Backend, APIs & Distributed Systems",
-    "summary": "Python framework for typed, OpenAPI-first HTTP APIs with async support.",
-    "resumeContext": "Wyatt builds APIs, MCP servers, and Python service projects with typed service boundaries.",
-    "evidence": [{ "label": "MCP-Crawl4AI", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://fastapi.tiangolo.com/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "GitHub Actions": {
-    "category": "Cloud, DevOps & Observability",
-    "summary": "GitHub-native automation for tests, builds, releases, and deployment workflows.",
-    "resumeContext": "Wyatt uses GitHub-native automation for CI, artifact checks, and public project delivery.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.github.com/actions", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "GitHub Copilot CLI": {
-    "category": "AI Agent Harnesses & Coding Assistants",
-    "summary": "GitHub Copilot command-line and agent workflows for terminal-based development assistance.",
-    "resumeContext": "Wyatt tracks Copilot CLI as a terminal coding-assistant surface in his harness ecosystem.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.github.com/copilot", "kind": "docs" }],
-    "verification": { "status": "needs-review", "lastCheckedAt": "2026-05-06" }
-  },
-  "GitHub Copilot Web": {
-    "category": "AI Agent Harnesses & Coding Assistants",
-    "summary": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows.",
-    "resumeContext": "Wyatt evaluates Copilot Web in web-based and hosted coding-agent workflows.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.github.com/copilot", "kind": "docs" }],
-    "verification": { "status": "needs-review", "lastCheckedAt": "2026-05-06" }
-  },
-  "gRPC": {
-    "category": "Backend, APIs & Distributed Systems",
-    "summary": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication.",
-    "resumeContext": "Wyatt works with distributed-service contracts beyond ad hoc JSON API boundaries.",
-    "evidence": [{ "label": "Backend systems", "kind": "work" }],
-    "links": [{ "label": "Docs", "href": "https://grpc.io/docs/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Guardrails AI": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "AI reliability platform for validating, constraining, and monitoring LLM application behavior.",
-    "resumeContext": "Wyatt emphasizes checked, auditable, production-aware agent workflows.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://www.guardrailsai.com/docs", "kind": "docs" }],
-    "verification": { "status": "needs-review", "lastCheckedAt": "2026-05-06" }
-  },
-  "KDB+": {
-    "category": "Data Engineering, Databases & Analytics",
-    "summary": "KX time-series database used heavily for high-volume financial market data.",
-    "resumeContext": "Wyatt used KDB+ in JPMorgan capital-markets and market-data systems work.",
-    "evidence": [{ "label": "JPMorgan Chase & Co.", "kind": "work" }],
-    "links": [{ "label": "Docs", "href": "https://code.kx.com/q/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "LangChain": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration.",
-    "resumeContext": "Wyatt builds agent framework workflows and LLM application engineering patterns.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.langchain.com/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "LangGraph": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow.",
-    "resumeContext": "Wyatt designs orchestrated, reviewable, multi-step agent workflows.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.langchain.com/oss/python/langgraph/overview", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "LangSmith": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems.",
-    "resumeContext": "Wyatt emphasizes evaluated, inspectable, regression-tested AI systems.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://docs.smith.langchain.com/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "LLM Evaluation": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops.",
-    "resumeContext": "Wyatt focuses on agent reliability rather than unchecked model demos.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Reference", "href": "https://docs.smith.langchain.com/evaluation", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Model Context Protocol (MCP)": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers.",
-    "resumeContext": "Wyatt builds MCP servers and agent-tooling portfolio projects.",
-    "evidence": [{ "label": "MCP-Crawl4AI", "kind": "project" }],
-    "links": [{ "label": "Specification", "href": "https://modelcontextprotocol.io/specification/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "OAuth 2.0": {
-    "category": "Backend, APIs & Distributed Systems",
-    "summary": "Authorization framework for delegated API access without sharing a user's original credentials.",
-    "resumeContext": "Wyatt works with production API and identity-flow patterns in distributed applications.",
-    "evidence": [{ "label": "Backend systems", "kind": "work" }],
-    "links": [{ "label": "Reference", "href": "https://oauth.net/2/", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "OpenAI API": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents.",
-    "resumeContext": "Wyatt builds LLM applications and coding-agent workflow integrations.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://platform.openai.com/docs", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "OpenCode": {
-    "category": "AI Agent Harnesses & Coding Assistants",
-    "summary": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows.",
-    "resumeContext": "Wyatt includes OpenCode in cross-runtime agent tooling and coding-assistant workflow catalogs.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://opencode.ai/docs/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "OpenID Connect": {
-    "category": "Backend, APIs & Distributed Systems",
-    "summary": "Identity layer on OAuth 2.0 that standardizes login and user profile claims.",
-    "resumeContext": "Wyatt works with API authentication and distributed-system identity patterns.",
-    "evidence": [{ "label": "Backend systems", "kind": "work" }],
-    "links": [{ "label": "Reference", "href": "https://openid.net/developers/how-connect-works/", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "PydanticAI": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations.",
-    "resumeContext": "Wyatt uses PydanticAI patterns in Frame Payments AI and agent-oriented engineering work.",
-    "evidence": [{ "label": "Frame Payments", "kind": "work" }],
-    "links": [{ "label": "Docs", "href": "https://ai.pydantic.dev/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "q": {
-    "category": "Languages & Authoring",
-    "summary": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics.",
-    "resumeContext": "Wyatt used q in JPMorgan market-data and capital-markets engineering work.",
-    "evidence": [{ "label": "JPMorgan Chase & Co.", "kind": "work" }],
-    "links": [{ "label": "Docs", "href": "https://code.kx.com/q/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "qPython": {
-    "category": "Data Engineering, Databases & Analytics",
-    "summary": "Python interface for communicating with KDB+/q processes from Python systems.",
-    "resumeContext": "Wyatt bridges Python data workflows with JPMorgan KDB+/q market-data systems.",
-    "evidence": [{ "label": "JPMorgan Chase & Co.", "kind": "work" }],
-    "links": [{ "label": "Source", "href": "https://github.com/exxeleron/qPython", "kind": "source" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Retrieval Augmented Generation (RAG)": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Pattern where an LLM retrieves trusted external context before generating an answer.",
-    "resumeContext": "Wyatt builds source-grounded AI, document, and semantic retrieval workflows.",
-    "evidence": [{ "label": "Frame Payments", "kind": "work" }],
-    "links": [{ "label": "Paper", "href": "https://arxiv.org/abs/2005.11401", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Semantic Retrieval": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords.",
-    "resumeContext": "Wyatt builds RAG, document AI, and knowledge retrieval workflows.",
-    "evidence": [{ "label": "Frame Payments", "kind": "work" }],
-    "links": [{ "label": "Reference", "href": "https://www.pinecone.io/learn/semantic-search/", "kind": "reference" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "SPARQL": {
-    "category": "Languages & Authoring",
-    "summary": "Query language for RDF knowledge graphs and linked entity relationships.",
-    "resumeContext": "Wyatt works with semantic-data patterns in knowledge graph and retrieval projects.",
-    "evidence": [{ "label": "Knowledge Graphs", "kind": "project" }],
-    "links": [{ "label": "Specification", "href": "https://www.w3.org/TR/sparql11-query/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Tailwind CSS": {
-    "category": "Frontend, Product & Desktop Engineering",
-    "summary": "Utility-first CSS framework for composing responsive, token-driven interface styles.",
-    "resumeContext": "Wyatt uses Tailwind CSS in web portfolio and agent tooling interfaces.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://tailwindcss.com/docs", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "TypeScript": {
-    "category": "Languages & Authoring",
-    "summary": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code.",
-    "resumeContext": "Wyatt uses TypeScript across React, Vite, agent tooling, and resume-generation codebases.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://www.typescriptlang.org/docs/", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "Vercel AI SDK": {
-    "category": "AI, LLM & Agent Engineering",
-    "summary": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output.",
-    "resumeContext": "Wyatt builds TypeScript AI applications and agent-interface workflows.",
-    "evidence": [{ "label": "Frame Payments", "kind": "work" }],
-    "links": [{ "label": "Docs", "href": "https://ai-sdk.dev/docs", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  },
-  "shadcn/ui": {
-    "category": "Frontend, Product & Desktop Engineering",
-    "summary": "Copyable React component patterns built on Radix UI and Tailwind CSS.",
-    "resumeContext": "Wyatt uses shadcn/ui patterns in polished portfolio and developer-facing UI work.",
-    "evidence": [{ "label": "AI Agent Harness Configs", "kind": "project" }],
-    "links": [{ "label": "Docs", "href": "https://ui.shadcn.com/docs", "kind": "docs" }],
-    "verification": { "status": "verified", "lastCheckedAt": "2026-05-06" }
-  }
+	"AI Agent Harnesses": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes.",
+		"resumeContext": "Wyatt maintains the AI Agent Harness Configs project and its public tooling catalog.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Project site",
+				"href": "https://agents.w4w.dev",
+				"kind": "first-party"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"AI Agent Skills": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks.",
+		"resumeContext": "Wyatt packages repeatable agent workflows as skills across cross-runtime harness work.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Specification",
+				"href": "https://agentskills.io/specification",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"AI Guardrails": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds.",
+		"resumeContext": "Wyatt applies policy, validation, and audit patterns in agent engineering workflows.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://www.anthropic.com/engineering/building-effective-agents",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Amazon Bedrock": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "AWS service for building generative-AI applications with managed foundation models and agent tooling.",
+		"resumeContext": "Wyatt used Amazon Bedrock AgentCore in Frame Payments LLM document-intelligence work.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "AWS docs",
+				"href": "https://docs.aws.amazon.com/bedrock/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Amazon Kinesis": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "AWS service family for collecting, processing, and analyzing real-time streaming data.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Kinesis docs",
+				"href": "https://docs.aws.amazon.com/kinesis/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"AMPS": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "60East's high-performance publish/subscribe platform for low-latency real-time systems.",
+		"resumeContext": "Wyatt used AMPS in JPMorgan market-data and capital-markets systems work.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Product site",
+				"href": "https://crankuptheamps.com/",
+				"kind": "official"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Anomaly Detection": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Identifying unusual observations, shifts, or outliers in data streams and analytical datasets.",
+		"resumeContext": "JPMorgan explicitly names ML-driven anomaly detection for credit trading and risk analytics.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Outlier detection docs",
+				"href": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Ant Design": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Enterprise-oriented React design system and component library for complex application interfaces.",
+		"resumeContext": "Ant Design is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Ant Design implementation.",
+		"evidence": [
+			{
+				"label": "Frontend, Product & Desktop Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Ant Design docs",
+				"href": "https://ant.design/docs/react/introduce",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Anthropic Claude API": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Anthropic's API for building Claude-powered applications, document workflows, and agent systems.",
+		"resumeContext": "Wyatt used Claude in Frame Payments LLM document-intelligence work and AI-assisted engineering workflows.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://platform.claude.com/docs/en/home",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Antigravity": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Agentic coding environment surface for delegating development work across editor and browser-style workflows.",
+		"resumeContext": "Antigravity is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Antigravity implementation.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Product site",
+				"href": "https://antigravity.google/",
+				"kind": "official"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Apache Airflow": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines.",
+		"resumeContext": "Visible in Wyatt's Data Engineering, Databases & Analytics skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Airflow docs",
+				"href": "https://airflow.apache.org/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Apache Kafka": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing.",
+		"resumeContext": "Kafka is listed in Wyatt's streaming and capital-markets skill group alongside broader event-driven messaging work.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://kafka.apache.org/documentation/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Apache Spark": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Distributed data-processing engine for batch analytics, ETL, and large-scale transformation workloads.",
+		"resumeContext": "Gap Inc. explicitly names Apache Spark pipelines across five-plus years of sales data.",
+		"evidence": [
+			{
+				"label": "Gap Inc.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Spark docs",
+				"href": "https://spark.apache.org/docs/latest/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Argo CD": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "GitOps continuous delivery tool for syncing Kubernetes application state from version control.",
+		"resumeContext": "Argo CD is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Argo CD implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Argo CD docs",
+				"href": "https://argo-cd.readthedocs.io/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Auditability": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Designing systems so decisions, inputs, outputs, and review actions can be inspected after the fact.",
+		"resumeContext": "Frame Payments explicitly names audit-aware handling and standardized auditability requirements.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "NIST SP 800-53",
+				"href": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"AWS": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Amazon Web Services cloud platform for compute, data, storage, networking, AI, and operations.",
+		"resumeContext": "Wyatt holds the AWS Certified Cloud Practitioner credential and delivers cloud-oriented systems.",
+		"evidence": [
+			{
+				"label": "AWS Certified Cloud Practitioner",
+				"kind": "credential"
+			}
+		],
+		"links": [
+			{
+				"label": "Product site",
+				"href": "https://aws.amazon.com/",
+				"kind": "official"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"AWS Athena": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Serverless AWS query service for running SQL over data in S3 and lake-style storage.",
+		"resumeContext": "AWS Athena is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific AWS Athena implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Athena docs",
+				"href": "https://docs.aws.amazon.com/athena/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"AWS Glue": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing.",
+		"resumeContext": "AWS Glue is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific AWS Glue implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Glue docs",
+				"href": "https://docs.aws.amazon.com/glue/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"AWS Lambda": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "AWS serverless compute service for running event-driven functions without managing servers.",
+		"resumeContext": "AWS Lambda is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific AWS Lambda implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Lambda docs",
+				"href": "https://docs.aws.amazon.com/lambda/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Azure": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations.",
+		"resumeContext": "Azure is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Azure implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Azure docs",
+				"href": "https://learn.microsoft.com/en-us/azure/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Bash": {
+		"category": "Languages & Authoring",
+		"summary": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows.",
+		"resumeContext": "Bash is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Bash implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Bash manual",
+				"href": "https://www.gnu.org/software/bash/manual/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"BigQuery": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets.",
+		"resumeContext": "BigQuery is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific BigQuery implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "BigQuery docs",
+				"href": "https://cloud.google.com/bigquery/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"C++": {
+		"category": "Languages & Authoring",
+		"summary": "Programming language listed on the public resume as part of Wyatt's broader language toolkit.",
+		"resumeContext": "The public resume lists C++ as part of Wyatt's broader language toolkit; no project-specific C++ work is named.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://isocpp.org/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Canvas": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Browser drawing API for rendering graphics, exported cards, charts, and pixel-level visual outputs.",
+		"resumeContext": "Listentropy lists Canvas in its stack and describes share-card PNG/ZIP export workflows.",
+		"evidence": [
+			{
+				"label": "Listentropy",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "MDN Canvas API",
+				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Chakra UI": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Composable React component library with accessible primitives and theme-driven styling.",
+		"resumeContext": "Chakra UI is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Chakra UI implementation.",
+		"evidence": [
+			{
+				"label": "Frontend, Product & Desktop Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Chakra UI docs",
+				"href": "https://chakra-ui.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"ChatGPT": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation.",
+		"resumeContext": "ChatGPT is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific ChatGPT implementation.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "ChatGPT help",
+				"href": "https://help.openai.com/en/collections/3742473-chatgpt",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Cherry Studio": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows.",
+		"resumeContext": "Cherry Studio is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Cherry Studio implementation.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Source",
+				"href": "https://github.com/CherryHQ/cherry-studio",
+				"kind": "source"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"CI/CD": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Automated build, test, validation, and deployment pipelines that reduce release friction and catch regressions.",
+		"resumeContext": "Stealth Web3 Startup explicitly names CI/CD with GitHub Actions, Cypress, and Jest, halving release cycles.",
+		"evidence": [
+			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "GitHub Actions CI docs",
+				"href": "https://docs.github.com/en/actions/automating-builds-and-tests",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"CircleCI": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Hosted CI/CD platform for automated builds, tests, and deployment workflows.",
+		"resumeContext": "CircleCI is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific CircleCI implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "CircleCI docs",
+				"href": "https://circleci.com/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Claude Code": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows.",
+		"resumeContext": "Wyatt includes Claude Code in modern AI-assisted engineering workflow evaluations.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://code.claude.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Claude Desktop": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces.",
+		"resumeContext": "Claude Desktop is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Claude Desktop implementation.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Claude Desktop help",
+				"href": "https://support.anthropic.com/en/articles/10065433-installing-claude-for-desktop",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"CLI Tooling": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks.",
+		"resumeContext": "CLI Tooling is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific CLI Tooling implementation.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Click docs",
+				"href": "https://click.palletsprojects.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"CloudFormation": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "AWS infrastructure-as-code service for defining and managing cloud resources with templates.",
+		"resumeContext": "CloudFormation is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific CloudFormation implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "CloudFormation docs",
+				"href": "https://docs.aws.amazon.com/cloudformation/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"CodeMirror": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Browser-based code editor toolkit for rich editing, syntax highlighting, and extension-driven authoring interfaces.",
+		"resumeContext": "MDXPad explicitly names CodeMirror 6 for its synchronized Markdown/MDX editing surface.",
+		"evidence": [
+			{
+				"label": "MDXPad",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "CodeMirror docs",
+				"href": "https://codemirror.net/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Codex": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows.",
+		"resumeContext": "Wyatt evaluates and configures Codex within cross-runtime agent harness work.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://developers.openai.com/codex/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Content-Based Filtering": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "DDS specification",
+				"href": "https://www.omg.org/spec/DDS/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Context Engineering": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Designing prompts, memory, retrieval, tools, and context windows so AI systems behave reliably.",
+		"resumeContext": "Wyatt designs agent harnesses, skill packages, and long-running AI workflows around context quality.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://www.anthropic.com/engineering/building-effective-agents",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Coordinate Descent": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Optimization method that updates one parameter or coordinate at a time, often used for regularized linear models.",
+		"resumeContext": "Wyatt published a dedicated article on implementing pairwise coordinate descent for Lasso and Elastic Net in Python.",
+		"evidence": [
+			{
+				"label": "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python",
+				"kind": "publication"
+			}
+		],
+		"links": [
+			{
+				"label": "Lasso reference",
+				"href": "https://scikit-learn.org/stable/modules/linear_model.html#lasso",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"CSS3": {
+		"category": "Languages & Authoring",
+		"summary": "Styling language for layout, responsive design, typography, animation, and frontend visual systems.",
+		"resumeContext": "CSS3 is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific CSS3 implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "MDN CSS",
+				"href": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Cursor": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "AI-native IDE for repository-aware editing, code navigation, and agent-assisted implementation.",
+		"resumeContext": "AI Agent Harness Configs explicitly names Cursor among standardized reusable agent definitions for modern coding assistants.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Cursor docs",
+				"href": "https://cursor.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Cursor Agent": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context.",
+		"resumeContext": "Cursor Agent is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Cursor Agent implementation.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Cursor agent docs",
+				"href": "https://cursor.com/docs/agent/overview",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Cypress": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Browser testing framework for application flows, integration coverage, and frontend regression checks.",
+		"resumeContext": "Stealth Web3 Startup explicitly names Cypress in its CI/CD and test automation stack.",
+		"evidence": [
+			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Cypress docs",
+				"href": "https://docs.cypress.io/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Dash": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks.",
+		"resumeContext": "Dash is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Dash implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Dash docs",
+				"href": "https://dash.plotly.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Data Validation": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Enforcing data shape, type, completeness, and business-rule expectations before downstream use.",
+		"resumeContext": "NBA Basketball Database names Pandera-validated ETL, and AI/ML Web Feeds names typed schema plus HTTP/RSS validation.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Pandera docs",
+				"href": "https://pandera.readthedocs.io/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Data Warehousing": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Organizing analytical data into durable, queryable models for reporting, reuse, and self-service access.",
+		"resumeContext": "NBA Basketball Database names daily warehouse updates and generated public star-schema outputs.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Data warehouse overview",
+				"href": "https://cloud.google.com/learn/what-is-a-data-warehouse",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"DeepAgents": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows.",
+		"resumeContext": "Wyatt coordinates multi-agent coding workflows and reusable skills across harness runtimes.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Source",
+				"href": "https://github.com/langchain-ai/deepagents",
+				"kind": "source"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Django": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults.",
+		"resumeContext": "Django is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Django implementation.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Django docs",
+				"href": "https://docs.djangoproject.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Docker": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Container platform for packaging applications and dependencies into reproducible runtime images.",
+		"resumeContext": "Wyatt uses Docker in the MCP-Crawl4AI project stack and deployable service workflows.",
+		"evidence": [
+			{
+				"label": "MCP-Crawl4AI",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.docker.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Document AI": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "AI-assisted extraction, classification, and review of document content across structured and unstructured submissions.",
+		"resumeContext": "Frame Payments explicitly names production LLM document intelligence for confidential uploads and merchant review workflows.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Google Document AI docs",
+				"href": "https://cloud.google.com/document-ai/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Domain-Driven Design": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Architecture approach that models software around domain concepts, boundaries, and shared language.",
+		"resumeContext": "Visible in Wyatt's Testing, Quality, Security & Architecture skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "DDD reference",
+				"href": "https://domainlanguage.com/ddd/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"DuckDB": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Embedded analytical database for fast local OLAP queries over files such as Parquet.",
+		"resumeContext": "Wyatt builds local analytics workflows around NBA-scale structured datasets.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://duckdb.org/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"DynamoDB": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "AWS managed NoSQL database for key-value and document workloads at serverless scale.",
+		"resumeContext": "DynamoDB is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific DynamoDB implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "DynamoDB docs",
+				"href": "https://docs.aws.amazon.com/dynamodb/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"ECS": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity.",
+		"resumeContext": "ECS is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific ECS implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Amazon ECS docs",
+				"href": "https://docs.aws.amazon.com/ecs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"EKS": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem.",
+		"resumeContext": "EKS is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific EKS implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Amazon EKS docs",
+				"href": "https://docs.aws.amazon.com/eks/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Electron": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Desktop application framework for building cross-platform apps with web technologies.",
+		"resumeContext": "MDXPad explicitly lists Electron 39 in its stack for a native macOS Markdown/MDX editor.",
+		"evidence": [
+			{
+				"label": "MDXPad",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Electron docs",
+				"href": "https://www.electronjs.org/docs/latest/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"End-to-End Testing": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Testing realistic user or system workflows through the full application stack.",
+		"resumeContext": "Visible in Wyatt's Testing, Quality, Security & Architecture skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Playwright tests docs",
+				"href": "https://playwright.dev/docs/writing-tests",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"ETL": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores.",
+		"resumeContext": "Wyatt builds datasets, validation pipelines, and analytics-ready data products.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Overview",
+				"href": "https://en.wikipedia.org/wiki/Extract,_transform,_load",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Event-Driven Architecture": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Event-driven architecture",
+				"href": "https://aws.amazon.com/event-driven-architecture/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Express.js": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints.",
+		"resumeContext": "Express.js is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Express.js implementation.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Express docs",
+				"href": "https://expressjs.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"FastAPI": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Python framework for typed, OpenAPI-first HTTP APIs with async support.",
+		"resumeContext": "FastAPI is listed in Wyatt's backend skill group alongside Python APIs, SDKs, and MCP server projects.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://fastapi.tiangolo.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Feature Engineering": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping.",
+		"resumeContext": "Visible in Wyatt's Machine Learning & Data Science skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Machine Learning & Data Science",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Preprocessing docs",
+				"href": "https://scikit-learn.org/stable/modules/preprocessing.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Flask": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Lightweight Python web framework for small services, APIs, and composable backend applications.",
+		"resumeContext": "Flask is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Flask implementation.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Flask docs",
+				"href": "https://flask.palletsprojects.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Formatting": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Automated source formatting to keep codebases consistent, readable, and low-friction to review.",
+		"resumeContext": "Formatting is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Formatting implementation.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Prettier docs",
+				"href": "https://prettier.io/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"GCP": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services.",
+		"resumeContext": "GCP is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific GCP implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Google Cloud docs",
+				"href": "https://cloud.google.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Gemini CLI": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Command-line Gemini coding assistant for repository-aware development workflows.",
+		"resumeContext": "Gemini CLI is listed in Wyatt's visible AI Agent Harnesses & Coding Assistants skill group; the resume does not name a project-specific Gemini CLI implementation.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Source",
+				"href": "https://github.com/google-gemini/gemini-cli",
+				"kind": "source"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"GitHub Actions": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "GitHub-native automation for tests, builds, releases, and deployment workflows.",
+		"resumeContext": "Wyatt uses GitHub-native automation for CI, artifact checks, and public project delivery.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.github.com/en/actions",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"GitHub Copilot CLI": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "GitHub Copilot command-line and agent workflows for terminal-based development assistance.",
+		"resumeContext": "Wyatt tracks Copilot CLI as a terminal coding-assistant surface in his harness ecosystem.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.github.com/en/copilot",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "needs-review",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"GitHub Copilot Web": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows.",
+		"resumeContext": "Wyatt evaluates Copilot Web in web-based and hosted coding-agent workflows.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.github.com/en/copilot",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "needs-review",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Go": {
+		"category": "Languages & Authoring",
+		"summary": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling.",
+		"resumeContext": "Go is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Go implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Go docs",
+				"href": "https://go.dev/doc/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Google Cloud Functions": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code.",
+		"resumeContext": "Visible in Wyatt's Cloud, DevOps & Observability skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Cloud Functions docs",
+				"href": "https://cloud.google.com/functions/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Google Cloud Pub/Sub": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Pub/Sub docs",
+				"href": "https://cloud.google.com/pubsub/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Google Gemini API": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation.",
+		"resumeContext": "Google Gemini API is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific Google Gemini API implementation.",
+		"evidence": [
+			{
+				"label": "AI, LLM & Agent Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Gemini API docs",
+				"href": "https://ai.google.dev/gemini-api/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Grafana": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization.",
+		"resumeContext": "Grafana is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Grafana implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Grafana docs",
+				"href": "https://grafana.com/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"GraphQL (Apollo)": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services.",
+		"resumeContext": "Visible in Wyatt's Backend, APIs & Distributed Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Apollo docs",
+				"href": "https://www.apollographql.com/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"gRPC": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication.",
+		"resumeContext": "gRPC is listed in Wyatt's backend and distributed-systems skill group; no project-specific gRPC implementation is named.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://grpc.io/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Guardrails AI": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Guardrails AI platform reference for validation and control patterns in LLM applications.",
+		"resumeContext": "Wyatt's resume covers guardrail, validation, and auditability work; product-specific Guardrails AI use is not named.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://guardrailsai.com/guardrails/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "needs-review",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Hadoop": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Apache ecosystem for distributed storage and batch processing over large datasets.",
+		"resumeContext": "Hadoop is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Hadoop implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Hadoop docs",
+				"href": "https://hadoop.apache.org/docs/current/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Helm": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Kubernetes package manager for templating, installing, and upgrading application charts.",
+		"resumeContext": "Helm is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Helm implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Helm docs",
+				"href": "https://helm.sh/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"HTML5": {
+		"category": "Languages & Authoring",
+		"summary": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces.",
+		"resumeContext": "HTML5 is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific HTML5 implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "MDN HTML",
+				"href": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Hugging Face": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows.",
+		"resumeContext": "Hugging Face is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific Hugging Face implementation.",
+		"evidence": [
+			{
+				"label": "AI, LLM & Agent Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Hugging Face docs",
+				"href": "https://huggingface.co/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Hugo": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Static site generator for fast content-heavy sites, documentation, and publishing workflows.",
+		"resumeContext": "Hugo is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Hugo implementation.",
+		"evidence": [
+			{
+				"label": "Frontend, Product & Desktop Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Hugo docs",
+				"href": "https://gohugo.io/documentation/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Human-in-the-Loop Review": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Workflow pattern that keeps humans in approval, feedback, or exception-handling loops for sensitive AI outputs.",
+		"resumeContext": "Frame Payments explicitly names human-in-the-loop browser feedback for confidential uploads.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Agents reference",
+				"href": "https://www.anthropic.com/engineering/building-effective-agents",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Integration Testing": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Testing interactions across components, services, tools, or boundaries to catch system-level regressions.",
+		"resumeContext": "FL Studio MCP Server explicitly names integration scenarios among its 650+ tests.",
+		"evidence": [
+			{
+				"label": "FL Studio MCP Server",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Integration test reference",
+				"href": "https://martinfowler.com/bliki/IntegrationTest.html",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Java": {
+		"category": "Languages & Authoring",
+		"summary": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software.",
+		"resumeContext": "Java is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Java implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Java docs",
+				"href": "https://docs.oracle.com/en/java/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"JavaScript": {
+		"category": "Languages & Authoring",
+		"summary": "Core web language for browser behavior, Node-based tooling, and frontend application logic.",
+		"resumeContext": "JavaScript is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific JavaScript implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "MDN JavaScript guide",
+				"href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Jenkins": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Automation server for build, test, and deployment pipelines across many languages and platforms.",
+		"resumeContext": "Jenkins is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Jenkins implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Jenkins docs",
+				"href": "https://www.jenkins.io/doc/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Jest": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "JavaScript testing framework for unit tests, assertions, mocks, and frontend validation.",
+		"resumeContext": "Stealth Web3 Startup explicitly names Jest in its CI/CD and test automation workflow.",
+		"evidence": [
+			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Jest docs",
+				"href": "https://jestjs.io/docs/getting-started",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Jupyter": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Interactive notebook environment for exploratory analysis, model prototyping, and technical explanation.",
+		"resumeContext": "Regularized Linear Regression Deep Dive lists Jupyter in its stack for theory-to-practice modeling work.",
+		"evidence": [
+			{
+				"label": "Regularized Linear Regression Deep Dive",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Jupyter docs",
+				"href": "https://docs.jupyter.org/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"KDB+": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "KX time-series database used heavily for high-volume financial market data.",
+		"resumeContext": "Wyatt used KDB+ in JPMorgan capital-markets and market-data systems work.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://code.kx.com/q/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Knowledge Graphs": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems.",
+		"resumeContext": "Knowledge Graphs is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific Knowledge Graphs implementation.",
+		"evidence": [
+			{
+				"label": "AI, LLM & Agent Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "W3C RDF concepts",
+				"href": "https://www.w3.org/TR/rdf11-concepts/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Kubernetes": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Container orchestration platform for deploying, scaling, and operating distributed workloads.",
+		"resumeContext": "Kubernetes is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Kubernetes implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Kubernetes docs",
+				"href": "https://kubernetes.io/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"LangChain": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration.",
+		"resumeContext": "Wyatt builds agent framework workflows and LLM application engineering patterns.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.langchain.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"LangGraph": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow.",
+		"resumeContext": "Wyatt designs orchestrated, reviewable, multi-step agent workflows.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.langchain.com/oss/python/langgraph/overview",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"LangSmith": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems.",
+		"resumeContext": "Wyatt emphasizes evaluated, inspectable, regression-tested AI systems.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://docs.langchain.com/langsmith/home",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"LaTeX": {
+		"category": "Languages & Authoring",
+		"summary": "Typesetting system for mathematical, academic, and technical documents with precise formatting control.",
+		"resumeContext": "LaTeX is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific LaTeX implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "LaTeX docs",
+				"href": "https://www.latex-project.org/help/documentation/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Linting": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Static checking that catches style, correctness, and maintainability issues before runtime.",
+		"resumeContext": "Linting is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Linting implementation.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "ESLint docs",
+				"href": "https://eslint.org/docs/latest/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"LlamaIndex": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools.",
+		"resumeContext": "LlamaIndex is listed in Wyatt's visible AI, LLM & Agent Engineering skill group; the resume does not name a project-specific LlamaIndex implementation.",
+		"evidence": [
+			{
+				"label": "AI, LLM & Agent Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "LlamaIndex docs",
+				"href": "https://docs.llamaindex.ai/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"LLM Evaluation": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops.",
+		"resumeContext": "Wyatt focuses on agent reliability rather than unchecked model demos.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://docs.langchain.com/langsmith/evaluation-concepts",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Low-Latency Messaging": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "AMPS docs",
+				"href": "https://docs.crankuptheamps.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Markdown": {
+		"category": "Languages & Authoring",
+		"summary": "Lightweight authoring format for documentation, technical writing, docs portals, and MDX-paired publishing.",
+		"resumeContext": "MDXPad is a Markdown/MDX desktop editor, and Personal Website uses MDX publishing workflows.",
+		"evidence": [
+			{
+				"label": "MDXPad",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "CommonMark spec",
+				"href": "https://spec.commonmark.org/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Market Data Systems": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Financial-data infrastructure for distributing prices, trades, reference data, and risk workflows.",
+		"resumeContext": "JPMorgan context names credit trading, quantitative research, risk groups, KDB+/q, and market-data systems work.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "FIX Trading standards",
+				"href": "https://www.fixtrading.org/standards/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Material UI": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "React component library implementing Material Design components, theming, and application patterns.",
+		"resumeContext": "Material UI is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Material UI implementation.",
+		"evidence": [
+			{
+				"label": "Frontend, Product & Desktop Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Material UI docs",
+				"href": "https://mui.com/material-ui/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"MATLAB": {
+		"category": "Languages & Authoring",
+		"summary": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework.",
+		"resumeContext": "MATLAB is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific MATLAB implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "MATLAB documentation",
+				"href": "https://www.mathworks.com/help/matlab/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Matplotlib": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures.",
+		"resumeContext": "Matplotlib is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Matplotlib implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Matplotlib docs",
+				"href": "https://matplotlib.org/stable/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"MDX": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Markdown format that blends JSX components into rich technical publishing and documentation.",
+		"resumeContext": "Personal Website names custom MDX publishing, and MDXPad is a Markdown/MDX desktop editor.",
+		"evidence": [
+			{
+				"label": "Personal Website: w4w.dev",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "MDX docs",
+				"href": "https://mdxjs.com/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Microservices": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Distributed service architecture that separates capabilities into independently deployable components.",
+		"resumeContext": "Microservices is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Microservices implementation.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Microservices architecture",
+				"href": "https://learn.microsoft.com/en-us/azure/architecture/microservices/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"MobX": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Reactive state-management library for JavaScript applications using observable state and derived reactions.",
+		"resumeContext": "Stealth Web3 Startup explicitly lists MobX in its React/Next.js collateralized lending app stack.",
+		"evidence": [
+			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "MobX docs",
+				"href": "https://mobx.js.org/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Model Context Protocol (MCP)": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers.",
+		"resumeContext": "Wyatt builds MCP servers and agent-tooling portfolio projects.",
+		"evidence": [
+			{
+				"label": "MCP-Crawl4AI",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Specification",
+				"href": "https://modelcontextprotocol.io/specification/2025-11-25",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Model Evaluation": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions.",
+		"resumeContext": "Model Evaluation is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific Model Evaluation implementation.",
+		"evidence": [
+			{
+				"label": "Machine Learning & Data Science",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Model evaluation docs",
+				"href": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Monitoring": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Operational practice of collecting health, performance, and reliability telemetry from systems in production.",
+		"resumeContext": "Monitoring is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Monitoring implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Cloud Monitoring docs",
+				"href": "https://cloud.google.com/monitoring/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Netlify": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows.",
+		"resumeContext": "Netlify is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Netlify implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Netlify docs",
+				"href": "https://docs.netlify.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Next.js": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "React framework for routed web applications, publishing systems, docs portals, and production frontend delivery.",
+		"resumeContext": "Stealth Web3 Startup, SandLabs, Personal Website, and FL Studio MCP Server all name Next.js.",
+		"evidence": [
+			{
+				"label": "Personal Website: w4w.dev",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Next.js docs",
+				"href": "https://nextjs.org/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Node.js": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines.",
+		"resumeContext": "Node.js is listed in Wyatt's visible Backend, APIs & Distributed Systems skill group; the resume does not name a project-specific Node.js implementation.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Node.js docs",
+				"href": "https://nodejs.org/api/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"NoSQL": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads.",
+		"resumeContext": "NoSQL is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific NoSQL implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "AWS NoSQL overview",
+				"href": "https://aws.amazon.com/nosql/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"NotebookLM": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Google's source-grounded research and note assistant for querying curated document collections.",
+		"resumeContext": "Frame Payments explicitly names a NotebookLM-based technical knowledge hub refreshed from vendor, web, and monorepo documentation.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "NotebookLM help",
+				"href": "https://support.google.com/notebooklm/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"NumPy": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Core Python array-computing library for vectorized numerical methods and model implementations.",
+		"resumeContext": "Regularized Linear Regression Deep Dive lists NumPy and describes vectorized Ridge, Lasso, and Elastic Net implementations.",
+		"evidence": [
+			{
+				"label": "Regularized Linear Regression Deep Dive",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "NumPy docs",
+				"href": "https://numpy.org/doc/stable/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"OAuth 2.0": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Authorization framework for delegated API access without sharing a user's original credentials.",
+		"resumeContext": "OAuth 2.0 is listed in Wyatt's backend and distributed-systems skill group; no project-specific OAuth implementation is named.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://oauth.net/2/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"OpenAI API": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents.",
+		"resumeContext": "Wyatt builds LLM applications and coding-agent workflow integrations.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://platform.openai.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"OpenCode": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows.",
+		"resumeContext": "Wyatt includes OpenCode in cross-runtime agent tooling and coding-assistant workflow catalogs.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://opencode.ai/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"OpenID Connect": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Identity layer on OAuth 2.0 that standardizes login and user profile claims.",
+		"resumeContext": "OpenID Connect is listed in Wyatt's backend and distributed-systems skill group; no project-specific OIDC implementation is named.",
+		"evidence": [
+			{
+				"label": "Backend, APIs & Distributed Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://openid.net/developers/how-connect-works/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Pandas": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Python data-analysis library for tabular data preparation, transformations, and exploratory workflows.",
+		"resumeContext": "NBA Basketball Database lists Pandas in its stack for validated sports-data ETL and warehouse export work.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Pandas docs",
+				"href": "https://pandas.pydata.org/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Pandera": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "DataFrame validation library for enforcing schema, type, and quality constraints in data pipelines.",
+		"resumeContext": "NBA Basketball Database explicitly names Pandera-validated NBA API ETL and lists Pandera in its stack.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Pandera docs",
+				"href": "https://pandera.readthedocs.io/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Parquet": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Columnar file format for efficient analytical storage, compression, and interoperability across data engines.",
+		"resumeContext": "NBA Basketball Database publishes Parquet exports alongside DuckDB, SQLite, and CSV formats.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Apache Parquet docs",
+				"href": "https://parquet.apache.org/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Perplexity Desktop": {
+		"category": "AI Agent Harnesses & Coding Assistants",
+		"summary": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows.",
+		"resumeContext": "Visible in Wyatt's AI Agent Harnesses & Coding Assistants skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "AI Agent Harnesses & Coding Assistants",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Product site",
+				"href": "https://www.perplexity.ai/",
+				"kind": "official"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Playwright": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Cross-browser automation framework for testing, scraping, and controlled browser workflows.",
+		"resumeContext": "MCP-Crawl4AI lists Playwright in its stack and mentions automatic Playwright setup for managed headless Chromium.",
+		"evidence": [
+			{
+				"label": "MCP-Crawl4AI",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Playwright docs",
+				"href": "https://playwright.dev/docs/intro",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Plotly": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts.",
+		"resumeContext": "Plotly is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Plotly implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Plotly Python docs",
+				"href": "https://plotly.com/python/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Polars": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Fast DataFrame library built around columnar execution for high-performance local analytics.",
+		"resumeContext": "NBA Basketball Database lists Polars in its stack for large sports-data ETL and generated exports.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Polars docs",
+				"href": "https://docs.pola.rs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"PostgreSQL": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support.",
+		"resumeContext": "PostgreSQL is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific PostgreSQL implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "PostgreSQL docs",
+				"href": "https://www.postgresql.org/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Prefect": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability.",
+		"resumeContext": "Prefect is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Prefect implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Prefect docs",
+				"href": "https://docs.prefect.io/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Prometheus": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Open-source monitoring system for metrics collection, time-series storage, and alerting.",
+		"resumeContext": "Prometheus is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Prometheus implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Prometheus docs",
+				"href": "https://prometheus.io/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Prompt Engineering": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Designing instructions, examples, constraints, and review loops so LLM workflows produce reliable, auditable outputs.",
+		"resumeContext": "Frame Payments explicitly names high-quality prompt patterns, internal AI adoption playbooks, and weekly AI office hours.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Claude prompt engineering docs",
+				"href": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Publish/Subscribe Architecture": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Pub/Sub overview",
+				"href": "https://cloud.google.com/pubsub/docs/overview",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Puppeteer": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows.",
+		"resumeContext": "Puppeteer is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Puppeteer implementation.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Puppeteer docs",
+				"href": "https://pptr.dev/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Pydantic": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Python validation library for typed models, parsing, serialization, and schema-driven application contracts.",
+		"resumeContext": "AI/ML Web Feeds lists Pydantic in its stack for typed schemas and validation workflows.",
+		"evidence": [
+			{
+				"label": "AI/ML Web Feeds",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Pydantic docs",
+				"href": "https://docs.pydantic.dev/latest/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"PydanticAI": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations.",
+		"resumeContext": "Wyatt uses PydanticAI patterns in Frame Payments AI and agent-oriented engineering work.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://pydantic.dev/docs/ai/overview/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Pytest": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Python testing framework for concise unit, integration, fixture, and parametrized test suites.",
+		"resumeContext": "Pytest is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Pytest implementation.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Pytest docs",
+				"href": "https://docs.pytest.org/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Python": {
+		"category": "Languages & Authoring",
+		"summary": "General-purpose language used across Wyatt's AI, data engineering, MCP, SDK, and analytics projects.",
+		"resumeContext": "Python appears across Wyatt's AI, data engineering, MCP, SDK, and analytics projects.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Python docs",
+				"href": "https://docs.python.org/3/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Python SDKs": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Python client libraries that package APIs, data access, and developer workflows into reusable interfaces.",
+		"resumeContext": "JPMorgan explicitly names a Python SDK for trader access plus a Python wrapper for KDB+.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Packaging guide",
+				"href": "https://packaging.python.org/en/latest/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"PyTorch": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows.",
+		"resumeContext": "PyTorch is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific PyTorch implementation.",
+		"evidence": [
+			{
+				"label": "Machine Learning & Data Science",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "PyTorch docs",
+				"href": "https://pytorch.org/docs/stable/index.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"q": {
+		"category": "Languages & Authoring",
+		"summary": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics.",
+		"resumeContext": "Wyatt used q in JPMorgan market-data and capital-markets engineering work.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://code.kx.com/q/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"qPython": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Python interface for communicating with KDB+/q processes from Python systems.",
+		"resumeContext": "Wyatt bridges Python data workflows with JPMorgan KDB+/q market-data systems.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Source",
+				"href": "https://github.com/exxeleron/qPython",
+				"kind": "source"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"R": {
+		"category": "Languages & Authoring",
+		"summary": "Statistical computing language for analysis, visualization, modeling, and data-science workflows.",
+		"resumeContext": "R is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific R implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "R manuals",
+				"href": "https://cran.r-project.org/manuals.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"React": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Component-based JavaScript library for building interactive interfaces across web, desktop, and plugin surfaces.",
+		"resumeContext": "React appears across Stealth Web3 Startup, Listentropy, Personal Website, MDXPad, and IINA Bookmarks Plugin work.",
+		"evidence": [
+			{
+				"label": "Personal Website: w4w.dev",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "React docs",
+				"href": "https://react.dev/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Real-Time Data Processing": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Kafka Streams docs",
+				"href": "https://kafka.apache.org/documentation/streams/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Redis Pub/Sub": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Redis messaging primitive for lightweight topic-based publish/subscribe communication.",
+		"resumeContext": "Visible in Wyatt's Streaming, Messaging & Capital Markets Systems skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Redis Pub/Sub docs",
+				"href": "https://redis.io/docs/latest/develop/interact/pubsub/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Redshift": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries.",
+		"resumeContext": "Redshift is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Redshift implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Redshift docs",
+				"href": "https://docs.aws.amazon.com/redshift/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Redux": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores.",
+		"resumeContext": "Redux is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Redux implementation.",
+		"evidence": [
+			{
+				"label": "Frontend, Product & Desktop Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Redux docs",
+				"href": "https://redux.js.org/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Regularized Regression": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Linear modeling with penalty terms such as Ridge, Lasso, and Elastic Net to improve stability and generalization.",
+		"resumeContext": "Wyatt published and open-sourced a regularized linear regression deep dive covering Ridge, Lasso, and Elastic Net.",
+		"evidence": [
+			{
+				"label": "Regularized Linear Regression Deep Dive",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Linear models docs",
+				"href": "https://scikit-learn.org/stable/modules/linear_model.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"RESTful APIs": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "HTTP API style using resources, methods, status codes, and representations for service integration.",
+		"resumeContext": "JPMorgan explicitly names an on-demand REST API for traders as part of the asset-fee data sink.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "API guidelines",
+				"href": "https://github.com/microsoft/api-guidelines",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Retrieval Augmented Generation (RAG)": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Pattern where an LLM retrieves trusted external context before generating an answer.",
+		"resumeContext": "Wyatt builds source-grounded AI, document, and semantic retrieval workflows.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Paper",
+				"href": "https://arxiv.org/abs/2005.11401",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Rust": {
+		"category": "Languages & Authoring",
+		"summary": "Systems programming language emphasizing memory safety, performance, and explicit ownership.",
+		"resumeContext": "Rust is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Rust implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Rust book",
+				"href": "https://doc.rust-lang.org/book/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"scikit-learn": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Python machine-learning library for classical modeling, preprocessing, metrics, and model-selection workflows.",
+		"resumeContext": "Regularized Linear Regression Deep Dive lists scikit-learn in its stack and compares custom model implementations against it.",
+		"evidence": [
+			{
+				"label": "Regularized Linear Regression Deep Dive",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "User guide",
+				"href": "https://scikit-learn.org/stable/user_guide.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Security-Aware Development": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Building with attention to secrets, identity, privacy, validation, and misuse-resistant workflows.",
+		"resumeContext": "Frame Payments names PII/confidential-document safeguards, auditability, and regulated fintech workflows.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "OWASP SAMM",
+				"href": "https://owaspsamm.org/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Semantic Retrieval": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords.",
+		"resumeContext": "Wyatt builds RAG, document AI, and knowledge retrieval workflows.",
+		"evidence": [
+			{
+				"label": "Frame Payments",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Reference",
+				"href": "https://www.pinecone.io/learn/semantic-search/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Serverless Architecture": {
+		"category": "Backend, APIs & Distributed Systems",
+		"summary": "Cloud design model using managed functions and services to reduce server management and scale on demand.",
+		"resumeContext": "JPMorgan describes a cloud-function-driven asset-fee data sink, without naming a vendor-specific serverless runtime.",
+		"evidence": [
+			{
+				"label": "JPMorgan Chase & Co.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "Serverless overview",
+				"href": "https://aws.amazon.com/serverless/",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"shadcn/ui": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Copyable React component patterns built on Radix UI and Tailwind CSS.",
+		"resumeContext": "Wyatt uses shadcn/ui patterns in polished portfolio and developer-facing UI work.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://ui.shadcn.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"SPARQL": {
+		"category": "Languages & Authoring",
+		"summary": "Query language for RDF knowledge graphs and linked entity relationships.",
+		"resumeContext": "SPARQL is listed in Wyatt's Languages & Authoring group alongside knowledge-graph and semantic-retrieval skills.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Specification",
+				"href": "https://www.w3.org/TR/sparql11-query/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"SQL": {
+		"category": "Languages & Authoring",
+		"summary": "Query language for relational databases, analytical stores, schema work, and data access layers.",
+		"resumeContext": "SQL is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific SQL implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "PostgreSQL SQL docs",
+				"href": "https://www.postgresql.org/docs/current/sql.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"SQLAlchemy": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Python SQL toolkit and ORM for database access, query construction, and schema-aware application code.",
+		"resumeContext": "NBA Basketball Database lists SQLAlchemy in its stack for validated dataset and warehouse workflows.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "SQLAlchemy docs",
+				"href": "https://docs.sqlalchemy.org/en/20/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"SQLite": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Embedded relational database used for local state, portable datasets, and lightweight application storage.",
+		"resumeContext": "NBA Basketball Database publishes SQLite exports, and ProxyWhirl lists SQLite-backed state in its stack.",
+		"evidence": [
+			{
+				"label": "NBA Basketball Database",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "SQLite docs",
+				"href": "https://www.sqlite.org/docs.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Statistical Modeling": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data.",
+		"resumeContext": "Visible in Wyatt's Machine Learning & Data Science skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Machine Learning & Data Science",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "NIST modeling handbook",
+				"href": "https://www.itl.nist.gov/div898/handbook/pmd/pmd.htm",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Structured Logging": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited.",
+		"resumeContext": "Structured Logging is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Structured Logging implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "OpenTelemetry logs docs",
+				"href": "https://opentelemetry.io/docs/specs/otel/logs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Swift": {
+		"category": "Languages & Authoring",
+		"summary": "Apple ecosystem programming language for iOS, macOS, and native application development.",
+		"resumeContext": "Swift is listed in Wyatt's visible Languages & Authoring skill group; the resume does not name a project-specific Swift implementation.",
+		"evidence": [
+			{
+				"label": "Languages & Authoring",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Swift docs",
+				"href": "https://www.swift.org/documentation/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Tableau": {
+		"category": "Data Engineering, Databases & Analytics",
+		"summary": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting.",
+		"resumeContext": "Tableau is listed in Wyatt's visible Data Engineering, Databases & Analytics skill group; the resume does not name a project-specific Tableau implementation.",
+		"evidence": [
+			{
+				"label": "Data Engineering, Databases & Analytics",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Tableau help",
+				"href": "https://help.tableau.com/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Tailwind CSS": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Utility-first CSS framework for composing responsive, token-driven interface styles.",
+		"resumeContext": "Wyatt used Tailwind CSS in public web and portfolio projects, including SandLabs and personal-site work.",
+		"evidence": [
+			{
+				"label": "Personal Website: w4w.dev",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://tailwindcss.com/docs/installation/using-vite",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"TensorFlow": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Machine-learning platform for training, evaluating, and deploying neural-network models.",
+		"resumeContext": "TensorFlow is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific TensorFlow implementation.",
+		"evidence": [
+			{
+				"label": "Machine Learning & Data Science",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "TensorFlow docs",
+				"href": "https://www.tensorflow.org/learn",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Terraform": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources.",
+		"resumeContext": "Terraform is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Terraform implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Terraform docs",
+				"href": "https://developer.hashicorp.com/terraform/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Test-Driven Development": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Development approach that uses tests to define expected behavior before or alongside implementation.",
+		"resumeContext": "Visible in Wyatt's Testing, Quality, Security & Architecture skill group; no dedicated implementation is named.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "TDD reference",
+				"href": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+				"kind": "reference"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Time-Series Forecasting": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Forecasting ordered observations over time using decomposition, trend, seasonality, and error-correction techniques.",
+		"resumeContext": "Gap Inc. explicitly names demand forecasting, time-series decomposition, and forecast accuracy improvements.",
+		"evidence": [
+			{
+				"label": "Gap Inc.",
+				"kind": "work"
+			}
+		],
+		"links": [
+			{
+				"label": "statsmodels time series docs",
+				"href": "https://www.statsmodels.org/stable/tsa.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Tracing": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior.",
+		"resumeContext": "Tracing is listed in Wyatt's visible Cloud, DevOps & Observability skill group; the resume does not name a project-specific Tracing implementation.",
+		"evidence": [
+			{
+				"label": "Cloud, DevOps & Observability",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Tracing docs",
+				"href": "https://opentelemetry.io/docs/concepts/observability-primer/#distributed-traces",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"TypeScript": {
+		"category": "Languages & Authoring",
+		"summary": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code.",
+		"resumeContext": "Wyatt uses TypeScript across React, Vite, agent tooling, and resume-generation codebases.",
+		"evidence": [
+			{
+				"label": "AI Agent Harness Configs",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://www.typescriptlang.org/docs/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Unit Testing": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Focused tests that validate small functions, classes, modules, or contracts in isolation.",
+		"resumeContext": "FL Studio MCP Server names 650+ tests covering contracts and unit paths.",
+		"evidence": [
+			{
+				"label": "FL Studio MCP Server",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "unittest docs",
+				"href": "https://docs.python.org/3/library/unittest.html",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Vercel": {
+		"category": "Cloud, DevOps & Observability",
+		"summary": "Frontend cloud platform for deploying web apps, docs portals, and serverless-backed product experiences.",
+		"resumeContext": "Listentropy and AI/ML Web Feeds list Vercel in their project stacks.",
+		"evidence": [
+			{
+				"label": "Listentropy",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Vercel docs",
+				"href": "https://vercel.com/docs",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Vercel AI SDK": {
+		"category": "AI, LLM & Agent Engineering",
+		"summary": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output.",
+		"resumeContext": "Wyatt used Vercel AI SDK in MDXPad's multi-provider AI integration work.",
+		"evidence": [
+			{
+				"label": "MDXPad",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "Docs",
+				"href": "https://ai-sdk.dev/docs/introduction",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-06"
+		}
+	},
+	"Vite": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications.",
+		"resumeContext": "Vite is listed in Wyatt's visible Frontend, Product & Desktop Engineering skill group; the resume does not name a project-specific Vite implementation.",
+		"evidence": [
+			{
+				"label": "Frontend, Product & Desktop Engineering",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Vite docs",
+				"href": "https://vite.dev/guide/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Vitest": {
+		"category": "Testing, Quality, Security & Architecture",
+		"summary": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing.",
+		"resumeContext": "Vitest is listed in Wyatt's visible Testing, Quality, Security & Architecture skill group; the resume does not name a project-specific Vitest implementation.",
+		"evidence": [
+			{
+				"label": "Testing, Quality, Security & Architecture",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "Vitest docs",
+				"href": "https://vitest.dev/guide/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"Web Workers": {
+		"category": "Frontend, Product & Desktop Engineering",
+		"summary": "Browser background execution primitive for moving heavy processing off the main UI thread.",
+		"resumeContext": "Listentropy explicitly names a Web Worker processing pipeline for client-side Spotify history analytics.",
+		"evidence": [
+			{
+				"label": "Listentropy",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "MDN Web Workers API",
+				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"WebSockets": {
+		"category": "Streaming, Messaging & Capital Markets Systems",
+		"summary": "Browser and server protocol for bidirectional, persistent real-time communication.",
+		"resumeContext": "WebSockets is listed in Wyatt's visible Streaming, Messaging & Capital Markets Systems skill group; the resume does not name a project-specific WebSockets implementation.",
+		"evidence": [
+			{
+				"label": "Streaming, Messaging & Capital Markets Systems",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "MDN WebSockets API",
+				"href": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"XGBoost": {
+		"category": "Machine Learning & Data Science",
+		"summary": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models.",
+		"resumeContext": "XGBoost is listed in Wyatt's visible Machine Learning & Data Science skill group; the resume does not name a project-specific XGBoost implementation.",
+		"evidence": [
+			{
+				"label": "Machine Learning & Data Science",
+				"kind": "first-party"
+			}
+		],
+		"links": [
+			{
+				"label": "XGBoost docs",
+				"href": "https://xgboost.readthedocs.io/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	},
+	"YAML": {
+		"category": "Languages & Authoring",
+		"summary": "Human-readable data serialization format used for configuration, schemas, docs metadata, and pipeline definitions.",
+		"resumeContext": "AI/ML Web Feeds explicitly names YAML feed schemas, and MDXPad validates YAML frontmatter.",
+		"evidence": [
+			{
+				"label": "AI/ML Web Feeds",
+				"kind": "project"
+			}
+		],
+		"links": [
+			{
+				"label": "YAML specification",
+				"href": "https://yaml.org/spec/",
+				"kind": "docs"
+			}
+		],
+		"verification": {
+			"status": "verified",
+			"lastCheckedAt": "2026-05-08"
+		}
+	}
 }
