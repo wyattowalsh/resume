@@ -9,6 +9,7 @@ import type {
 } from "@/lib/schema";
 import { Fragment, type ReactNode } from "react";
 import { formatMonthYear } from "@/lib/date";
+import { getProjectLinks } from "@/lib/project-links";
 import { cn } from "@/lib/utils";
 
 type PrintResumeHeaderProps = {
@@ -100,18 +101,6 @@ function getPrintSectionHeadingId(title: string) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")}-heading`;
-}
-
-function getProjectLinks(project: Project) {
-  const links = [
-    ...(project.links ?? []),
-    ...(project.url ? [{ label: "Live site", url: project.url }] : []),
-    { label: "GitHub", url: project.githubUrl },
-  ];
-
-  return links.filter(
-    (link, index) => links.findIndex((candidate) => candidate.url === link.url) === index,
-  );
 }
 
 function PrintSeparator() {
@@ -432,10 +421,10 @@ export function PrintProjectList({
     ? balancedTightFullList
       ? "space-y-2"
       : spaciousFullList
-      ? "space-y-2"
-      : denseFullList
         ? "space-y-2"
-        : "space-y-2"
+        : denseFullList
+          ? "space-y-2"
+          : "space-y-2"
     : spaciousFullList
       ? "space-y-5"
       : denseFullList
@@ -445,10 +434,10 @@ export function PrintProjectList({
     ? balancedTightFullList
       ? "pt-1.5"
       : spaciousFullList
-      ? "pt-1.5"
-      : denseFullList
         ? "pt-1.5"
-        : "pt-1.5"
+        : denseFullList
+          ? "pt-1.5"
+          : "pt-1.5"
     : spaciousFullList
       ? "pt-4"
       : denseFullList
@@ -524,7 +513,9 @@ export function PrintProjectList({
                       rel="noopener noreferrer"
                       className="text-[9.25px] font-medium text-slate-500 hover:text-slate-900"
                     >
-                      {link.label === "GitHub" ? formatProfileDisplayUrl(link.url) : link.label}
+                      {link.label === "GitHub"
+                        ? formatProfileDisplayUrl(link.url)
+                        : link.label}
                     </a>
                   </Fragment>
                 ))}
@@ -533,7 +524,9 @@ export function PrintProjectList({
                 (shouldShowProjectStacks && project.stack?.length)) && (
                 <p className="mt-px flex flex-wrap items-baseline gap-x-1 text-[9.25px] leading-snug text-slate-500">
                   {shouldShowProjectDates ? (
-                    <span>{renderDateRange(project.startDate, project.endDate)}</span>
+                    <span>
+                      {renderDateRange(project.startDate, project.endDate)}
+                    </span>
                   ) : null}
                   {shouldShowProjectDates &&
                   shouldShowProjectStacks &&
@@ -569,8 +562,8 @@ export function PrintProjectList({
                 summaryOnly
                   ? "mt-0.5 space-y-0.5 text-[9.3px] leading-[1.24]"
                   : compact
-                  ? "space-y-0.5 text-[10px] leading-[1.35]"
-                  : "mt-1.5 space-y-0.5 text-[10.15px] leading-[1.35]",
+                    ? "space-y-0.5 text-[10px] leading-[1.35]"
+                    : "mt-1.5 space-y-0.5 text-[10.15px] leading-[1.35]",
               )}
             >
               {project.highlights
@@ -625,7 +618,9 @@ export function PrintEducationList({
           <p
             className={cn(
               "text-slate-500",
-              compact ? "text-[9.1px] leading-[1.2]" : "text-[9.5px] leading-snug",
+              compact
+                ? "text-[9.1px] leading-[1.2]"
+                : "text-[9.5px] leading-snug",
             )}
           >
             {renderDateRange(entry.startDate, entry.endDate)}

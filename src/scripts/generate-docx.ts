@@ -103,6 +103,38 @@ interface ProjectSelection extends NamedSelection {
   highlights: string[];
 }
 
+function getProjectUrlLabel(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "") === "w4w.dev"
+      ? "Live site"
+      : "Docs";
+  } catch {
+    return "Docs";
+  }
+}
+
+function getProjectLinks(project: ProjectSelection) {
+  const explicitLinks = (project.links ?? []).map((link) => ({
+    ...link,
+    label:
+      project.url && link.url === project.url
+        ? getProjectUrlLabel(project.url)
+        : link.label,
+  }));
+  const links = [
+    ...explicitLinks,
+    ...(project.url
+      ? [{ label: getProjectUrlLabel(project.url), url: project.url }]
+      : []),
+    { label: "GitHub", url: project.githubUrl },
+  ];
+
+  return links.filter(
+    (link, index) =>
+      links.findIndex((candidate) => candidate.url === link.url) === index,
+  );
+}
+
 interface ResumeSelection {
   basics: BasicsSelection;
   work: WorkSelection[];
@@ -353,7 +385,10 @@ function resolveVariant(
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
         };
       })
     : (resume.projects ?? []);
@@ -620,7 +655,9 @@ function addProjects(
   projects: ProjectSelection[],
   policy: Pick<
     DocxArtifactPolicy,
-    "projectSectionStartsOnNewPage" | "showProjectHighlights" | "showProjectStacks"
+    | "projectSectionStartsOnNewPage"
+    | "showProjectHighlights"
+    | "showProjectStacks"
   >,
 ) {
   if (!projects.length) {
@@ -631,20 +668,17 @@ function addProjects(
     sectionHeading("Projects", policy.projectSectionStartsOnNewPage),
   );
   for (const project of projects) {
-    const projectLinks = [
-      ...(project.links ?? []),
-      ...(project.url ? [{ label: "Live site", url: project.url }] : []),
-      { label: "GitHub", url: project.githubUrl },
-    ].filter(
-      (link, index, links) => links.findIndex((candidate) => candidate.url === link.url) === index,
-    );
+    const projectLinks = getProjectLinks(project);
 
     children.push(
       itemTitle(
         project.name,
         projectLinks.map((link) => ({
           href: link.url,
-          label: link.label === "GitHub" ? formatProfileDisplayUrl(link.url) : link.label,
+          label:
+            link.label === "GitHub"
+              ? formatProfileDisplayUrl(link.url)
+              : link.label,
         })),
       ),
     );
@@ -653,7 +687,11 @@ function addProjects(
     if (policy.showProjectStacks && project.stack?.length) {
       children.push(
         paragraph(
-          [textRun(`Stack: ${project.stack.join(", ")}`, { color: MUTED_COLOR })],
+          [
+            textRun(`Stack: ${project.stack.join(", ")}`, {
+              color: MUTED_COLOR,
+            }),
+          ],
           { after: 35 },
         ),
       );
@@ -773,7 +811,8 @@ function buildDocxDocument(
   addCredentials(children, variant.education, variant.certificates);
   addPublications(children, variant.publications);
 
-  const pageLabel = variant.name === "single" ? "1-page resume" : "2-page resume";
+  const pageLabel =
+    variant.name === "single" ? "1-page resume" : "2-page resume";
 
   return new Document({
     creator: "Wyatt Walsh",

@@ -1,9 +1,15 @@
 import { formatMonthYear } from "@/lib/date";
 import { formatThemeLabel } from "@/lib/format-theme-label";
+import { getProjectLinks } from "@/lib/project-links";
 import { Project } from "@/lib/schema";
 import { FaFolderOpen, FaGithub } from "react-icons/fa";
 import { SiKaggle } from "react-icons/si";
-import { LuBookOpen, LuCalendarDays, LuExternalLink, LuGlobe } from "react-icons/lu";
+import {
+  LuBookOpen,
+  LuCalendarDays,
+  LuExternalLink,
+  LuGlobe,
+} from "react-icons/lu";
 import { Section } from "./Section";
 
 type ProjectsProps = {
@@ -40,14 +46,10 @@ type ProjectAction = {
 function ProjectActions({ project }: ProjectActionsProps) {
   const actionClass =
     "interactive-chip inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] font-[family:var(--font-site-label)] font-semibold text-foreground/70 shadow-sm transition-colors duration-200 hover:border-primary/20 hover:text-foreground";
-  const actions = [
-    ...(project.links?.map((link) => ({ ...link, kind: "external" as const })) ?? []),
-    ...(project.url ? [{ label: "Live site", url: project.url, kind: "external" as const }] : []),
-    { label: "GitHub", url: project.githubUrl, kind: "github" as const },
-  ].filter(
-    (action, index, actions) =>
-      actions.findIndex((candidate) => candidate.url === action.url) === index,
-  );
+  const actions = getProjectLinks(project).map((link) => ({
+    ...link,
+    kind: link.label === "GitHub" ? ("github" as const) : ("external" as const),
+  }));
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -71,7 +73,7 @@ function ProjectActions({ project }: ProjectActionsProps) {
 
 function ProjectActionIcon({ action }: { action: ProjectAction }) {
   const hostname = getHostname(action.url);
-  const label    = action.label.toLowerCase();
+  const label = action.label.toLowerCase();
 
   if (action.kind === "github" || hostname === "github.com") {
     return <FaGithub size={12} aria-hidden="true" />;
@@ -170,17 +172,17 @@ export function Projects({ projects }: ProjectsProps) {
                 </p>
                 {Array.isArray(project.highlights) &&
                   project.highlights.length > 0 && (
-                  <ul className="mt-2 list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
-                    {project.highlights.map((highlight) => (
-                      <li
-                        key={highlight}
-                        className="transition-colors duration-200 group-hover/project:text-foreground/75"
-                      >
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                    <ul className="mt-2 list-outside list-disc pl-4 text-sm leading-6 text-muted-foreground marker:text-primary/45">
+                      {project.highlights.map((highlight) => (
+                        <li
+                          key={highlight}
+                          className="transition-colors duration-200 group-hover/project:text-foreground/75"
+                        >
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
               </div>
             </div>
           </article>

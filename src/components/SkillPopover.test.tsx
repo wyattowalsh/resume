@@ -184,6 +184,9 @@ describe("SkillPopover", () => {
 		expect(dialog?.textContent).toContain(
 			"Google Gemini API appears here as Gemini models for multimodal generation",
 		);
+		expect(
+			dialog?.querySelector("h4")?.parentElement?.textContent,
+		).not.toContain("AI, LLM & Agent Engineering");
 		expect(dialog?.textContent).toContain("AI, LLM & Agent Engineering");
 		expect(link).not.toBeNull();
 		expect(link?.textContent).toContain("Gemini API docs");
@@ -213,7 +216,9 @@ describe("SkillPopover", () => {
 
 		expect(dialog).not.toBeNull();
 		expect(dialog?.textContent).toContain("Deliberately Missing Skill");
-		expect(dialog?.textContent).toContain("Other");
+		expect(
+			dialog?.querySelector("h4")?.parentElement?.textContent,
+		).not.toContain("Other");
 		expect(dialog?.textContent).toContain(
 			"toolkit across the roles and projects represented on this page",
 		);

@@ -60,16 +60,13 @@ export function SkillPopover({
 							skillName={skillName}
 							size="card"
 						/>
-						<div className="min-w-0 flex-1 space-y-1">
+						<div className="min-w-0 flex-1">
 							<h4
 								id={titleId}
 								className="text-balance font-[family:var(--font-site-heading)] text-base font-semibold leading-6 text-foreground"
 							>
 								{skillName}
 							</h4>
-							<p className="font-[family:var(--font-site-label)] text-[11px] font-medium leading-4 text-primary">
-								{resolvedCategory}
-							</p>
 						</div>
 						<button
 							type="button"

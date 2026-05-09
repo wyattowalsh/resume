@@ -382,7 +382,10 @@ function assertLowerPageDensity(
   expectedPages: number,
   pageNumber: number,
 ) {
-  const lowerDensityBandYMax = getLowerDensityBandYMax(expectedPages, pageNumber);
+  const lowerDensityBandYMax = getLowerDensityBandYMax(
+    expectedPages,
+    pageNumber,
+  );
   const lowerBandItems = textItems.filter(
     (item) => item.y <= lowerDensityBandYMax,
   );
@@ -453,6 +456,24 @@ function stripUrlForDisplay(url: string) {
   } catch {
     return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   }
+}
+
+function getProjectUrlLabel(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "") === "w4w.dev"
+      ? "Live site"
+      : "Docs";
+  } catch {
+    return "Docs";
+  }
+}
+
+function getGeneratedProjectUrlLabels(
+  variant: ResolvedVariantContentSelection,
+) {
+  return variant.projects.flatMap((project) =>
+    project.url ? [{ project, label: getProjectUrlLabel(project.url) }] : [],
+  );
 }
 
 function escapeRegExp(text: string) {
@@ -671,7 +692,9 @@ function assertArtifactContentConsistency(
     );
   }
 
-  const renderedSkillKeywords = variant.skills.flatMap((skill) => skill.keywords);
+  const renderedSkillKeywords = variant.skills.flatMap(
+    (skill) => skill.keywords,
+  );
   const duplicateSkillKeywords = renderedSkillKeywords.filter(
     (keyword, index) => renderedSkillKeywords.indexOf(keyword) !== index,
   );
@@ -701,7 +724,9 @@ function assertArtifactContentConsistency(
     assertNormalizedTextIncludesAll(text, selectedCredentials, context);
   }
 
-  console.log(`✓ ${label} keeps curated project and credential content consistent`);
+  console.log(
+    `✓ ${label} keeps curated project and credential content consistent`,
+  );
 }
 
 async function readVariantSelection(
@@ -841,7 +866,9 @@ function resolveVariantContent(
             : baseProject.description,
         highlights: pickByIndexes(
           baseProject.highlights,
-          "highlightIndexes" in selection ? selection.highlightIndexes : undefined,
+          "highlightIndexes" in selection
+            ? selection.highlightIndexes
+            : undefined,
         ),
       };
     }),
@@ -1330,7 +1357,9 @@ async function getPdfPageText(
     const yCoordinates = textItems.map((item) => item.y);
 
     if (!yCoordinates.length) {
-      fail(`${path.basename(filePath)} page ${pageNumber} must contain parseable text.`);
+      fail(
+        `${path.basename(filePath)} page ${pageNumber} must contain parseable text.`,
+      );
     }
 
     return {
@@ -1593,7 +1622,9 @@ function assertDocxHyperlinkTargets(
 
   for (const target of requiredTargets) {
     if (!relationshipsXml.includes(target)) {
-      fail(`${label} DOCX relationships must contain hyperlink target "${target}".`);
+      fail(
+        `${label} DOCX relationships must contain hyperlink target "${target}".`,
+      );
     }
   }
 
@@ -1603,7 +1634,9 @@ function assertDocxHyperlinkTargets(
     }
 
     if (relationshipsXml.includes(tooltipOnlyTerm)) {
-      fail(`${label} DOCX relationships must not contain tooltip-only target "${tooltipOnlyTerm}".`);
+      fail(
+        `${label} DOCX relationships must not contain tooltip-only target "${tooltipOnlyTerm}".`,
+      );
     }
   }
 }
@@ -1654,7 +1687,9 @@ function assertDocxPolicy(
     }
   }
 
-  const projectHighlights = variant.projects.flatMap((project) => project.highlights);
+  const projectHighlights = variant.projects.flatMap(
+    (project) => project.highlights,
+  );
   for (const highlight of projectHighlights) {
     if (policy.showProjectHighlights) {
       assertStrictTextIncludes(text, highlight, context);
@@ -1677,7 +1712,9 @@ function assertDocxPolicy(
   }
 
   if (!policy.projectSectionStartsOnNewPage && hasPageBreakBefore) {
-    fail(`${context} must keep the Projects section inline without a page break.`);
+    fail(
+      `${context} must keep the Projects section inline without a page break.`,
+    );
   }
 
   console.log(`✓ ${label} satisfies the explicit DOCX policy`);
@@ -1769,12 +1806,85 @@ function assertParseableCoreFields(
   }
 }
 
+function assertProjectUrlLabelSemantics(
+  text: string,
+  label: string,
+  variant: ResolvedVariantContentSelection,
+  shouldRenderGeneratedLabels: boolean,
+) {
+  const context = `${label} project URL labels`;
+  const generatedProjectLabels = getGeneratedProjectUrlLabels(variant);
+  const expectedLiveSiteCount = generatedProjectLabels.filter(
+    (projectLabel) => projectLabel.label === "Live site",
+  ).length;
+  const expectedDocsCount = generatedProjectLabels.filter(
+    (projectLabel) => projectLabel.label === "Docs",
+  ).length;
+  const liveSiteCount =
+    normalizeForStrictIncludes(text).match(/\bLive site\b/g)?.length ?? 0;
+  const docsCount =
+    normalizeForStrictIncludes(text).match(/\bDocs\b/g)?.length ?? 0;
+
+  if (!shouldRenderGeneratedLabels) {
+    for (const projectLabel of generatedProjectLabels) {
+      const projectBlock = getOrderedTextBlock(
+        text,
+        projectLabel.project.name,
+        getSelectionNames(variant.projects),
+        context,
+      );
+
+      assertTextExcludesPattern(
+        projectBlock,
+        /\|\s*(?:Docs|Live site)\b/i,
+        context,
+        "generated project URL label separators",
+      );
+    }
+
+    return;
+  }
+
+  for (const projectLabel of generatedProjectLabels) {
+    const projectBlock = getOrderedTextBlock(
+      text,
+      projectLabel.project.name,
+      getSelectionNames(variant.projects),
+      context,
+    );
+
+    assertStrictTextIncludes(projectBlock, projectLabel.label, context);
+    assertStrictTextExcludes(
+      projectBlock,
+      projectLabel.label === "Live site" ? "Docs" : "Live site",
+      context,
+    );
+  }
+
+  if (liveSiteCount < expectedLiveSiteCount) {
+    fail(
+      `${context} must render at least ${expectedLiveSiteCount} "Live site" label(s); found ${liveSiteCount}.`,
+    );
+  }
+
+  if (docsCount < expectedDocsCount) {
+    fail(
+      `${context} must render at least ${expectedDocsCount} "Docs" label(s); found ${docsCount}.`,
+    );
+  }
+
+  console.log(
+    `✓ ${label} renders project URL labels as ${expectedLiveSiteCount} Live site and ${expectedDocsCount} Docs label(s)`,
+  );
+}
+
 async function assertAtsParseability(
   filePath: string,
   label: string,
   resume: ResumeSelection,
   variant: ResolvedVariantContentSelection,
   expectedPages: number,
+  shouldRenderGeneratedProjectLabels: boolean,
   tooltipOnlyTerms: string[],
 ) {
   await assertPdfMetadataIsAtsSafe(filePath, label, expectedPages);
@@ -1853,6 +1963,12 @@ async function assertAtsParseability(
     expectedPages > 1,
     expectedPages > 1,
   );
+  assertProjectUrlLabelSemantics(
+    popplerText.text,
+    `${label} pdftotext text`,
+    variant,
+    shouldRenderGeneratedProjectLabels,
+  );
 
   console.log(`✓ ${label} passes ATS parseability checks`);
 }
@@ -1889,9 +2005,14 @@ async function assertDocxParseability(
     true,
     policy.showProjectStacks,
   );
+  assertProjectUrlLabelSemantics(text, `${label} DOCX text`, variant, true);
 
   if (variant.education.length) {
-    assertStrictTextIncludes(text, "Education & Certifications", `${label} DOCX text`);
+    assertStrictTextIncludes(
+      text,
+      "Education & Certifications",
+      `${label} DOCX text`,
+    );
     assertNormalizedTextIncludesAll(
       text,
       variant.education,
@@ -2039,7 +2160,9 @@ async function assertFullResumePdf(
         .map((y, index) => y - projectHeadingYs[index + 1]);
 
       if (deltas.some((delta) => delta <= 0)) {
-        fail(`${label} page 2 project headings must descend from top to bottom.`);
+        fail(
+          `${label} page 2 project headings must descend from top to bottom.`,
+        );
       }
 
       const deltaSpread = Math.max(...deltas) - Math.min(...deltas);
@@ -2241,19 +2364,14 @@ async function assertSingleResumePdf(
 }
 
 async function runArtifactChecks() {
-  const [
-    resume,
-    fullVariant,
-    singleVariant,
-    artifactSpecs,
-    tooltipOnlyTerms,
-  ] = await Promise.all([
-    readResumeSelection(RESUME_PATH),
-    readVariantSelection(FULL_VARIANT_PATH),
-    readVariantSelection(SINGLE_VARIANT_PATH),
-    loadArtifactSpecs(),
-    loadTooltipOnlyTerms(),
-  ]);
+  const [resume, fullVariant, singleVariant, artifactSpecs, tooltipOnlyTerms] =
+    await Promise.all([
+      readResumeSelection(RESUME_PATH),
+      readVariantSelection(FULL_VARIANT_PATH),
+      readVariantSelection(SINGLE_VARIANT_PATH),
+      loadArtifactSpecs(),
+      loadTooltipOnlyTerms(),
+    ]);
   const resolvedFullVariant = resolveVariantContent(resume, fullVariant);
   const resolvedSingleVariant = resolveVariantContent(resume, singleVariant);
 
@@ -2287,6 +2405,7 @@ async function runArtifactChecks() {
     resume,
     resolvedFullVariant,
     2,
+    true,
     tooltipOnlyTerms,
   );
   await assertAtsParseability(
@@ -2295,6 +2414,7 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     1,
+    false,
     tooltipOnlyTerms,
   );
   await assertDocxParseability(
@@ -2354,6 +2474,7 @@ async function runArtifactChecks() {
     resume,
     resolvedFullVariant,
     2,
+    true,
     tooltipOnlyTerms,
   );
   await assertAtsParseability(
@@ -2362,6 +2483,7 @@ async function runArtifactChecks() {
     resume,
     resolvedSingleVariant,
     1,
+    false,
     tooltipOnlyTerms,
   );
   await assertDocxParseability(
