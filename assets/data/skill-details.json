@@ -2,7 +2,7 @@
 	"AI Agent Harnesses": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes.",
-		"resumeContext": "Wyatt maintains the AI Agent Harness Configs project and its public tooling catalog.",
+		"resumeContext": "AI Agent Harness Configs packages reusable agents, skills, and MCP presets so coding assistants can share workflows across runtimes.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -24,7 +24,7 @@
 	"AI Agent Skills": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks.",
-		"resumeContext": "Wyatt packages repeatable agent workflows as skills across cross-runtime harness work.",
+		"resumeContext": "AI Agent Harness Configs packages skills as reusable task instructions with references, scripts, and assets for coding agents.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -46,11 +46,15 @@
 	"AI Guardrails": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds.",
-		"resumeContext": "Wyatt applies policy, validation, and audit patterns in agent engineering workflows.",
+		"resumeContext": "Frame Payments and the agent harness work use guardrails to constrain AI behavior, validate outputs, and keep audit requirements visible.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
 				"kind": "project"
+			},
+			{
+				"label": "Frame Payments",
+				"kind": "work"
 			}
 		],
 		"links": [
@@ -68,7 +72,7 @@
 	"Amazon Bedrock": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "AWS service for building generative-AI applications with managed foundation models and agent tooling.",
-		"resumeContext": "Wyatt used Amazon Bedrock AgentCore in Frame Payments LLM document-intelligence work.",
+		"resumeContext": "Frame Payments uses Bedrock AgentCore in LLM document-intelligence work for merchant review and confidential uploads.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -90,7 +94,7 @@
 	"Amazon Kinesis": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "AWS service family for collecting, processing, and analyzing real-time streaming data.",
-		"resumeContext": "Within the streaming systems set, Amazon Kinesis refers to AWS stream processing alongside Kafka, Pub/Sub, and low-latency delivery work.",
+		"resumeContext": "Amazon Kinesis is AWS managed stream ingestion, comparable to Kafka or Pub/Sub when event records need cloud-native buffering and fan-out.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -112,7 +116,7 @@
 	"AMPS": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "60East's high-performance publish/subscribe platform for low-latency real-time systems.",
-		"resumeContext": "Wyatt used AMPS in JPMorgan market-data and capital-markets systems work.",
+		"resumeContext": "JPMorgan market-data work used AMPS for low-latency pub/sub streams in capital-markets systems.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -134,7 +138,7 @@
 	"Anomaly Detection": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Identifying unusual observations, shifts, or outliers in data streams and analytical datasets.",
-		"resumeContext": "JPMorgan explicitly names ML-driven anomaly detection for credit trading and risk analytics.",
+		"resumeContext": "JPMorgan risk analytics used ML-driven anomaly detection to reduce false positives and manual review time.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -156,7 +160,7 @@
 	"Ant Design": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Enterprise-oriented React design system and component library for complex application interfaces.",
-		"resumeContext": "Here, Ant Design marks an enterprise React component system for the frontend toolkit, useful for dense admin and product interfaces.",
+		"resumeContext": "Ant Design is a React component library for dense enterprise screens such as admin tools, data tables, forms, and dashboards.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -200,7 +204,7 @@
 	"Antigravity": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Agentic coding environment surface for delegating development work across editor and browser-style workflows.",
-		"resumeContext": "For readers, Antigravity names coding-agent surfaces for comparing editor, browser, and delegated development workflows.",
+		"resumeContext": "Antigravity is a Google coding-agent environment; it belongs beside editor and browser agents as another way to delegate repository tasks.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -222,7 +226,7 @@
 	"Apache Airflow": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines.",
-		"resumeContext": "This popup frames Apache Airflow around scheduled DAG orchestration for data jobs, dependencies, retries, and pipeline monitoring.",
+		"resumeContext": "Airflow schedules and monitors data pipelines as DAGs, making dependencies, retries, and batch jobs visible to operators.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -244,7 +248,7 @@
 	"Apache Kafka": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing.",
-		"resumeContext": "The Streaming, Messaging & Capital Markets Systems grouping treats Apache Kafka as durable event logs and high-throughput messaging in the real-time systems cluster.",
+		"resumeContext": "Kafka is a durable event log for high-throughput pub/sub systems, often used when producers and consumers need replayable streams.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -266,7 +270,7 @@
 	"Apache Spark": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Distributed data-processing engine for batch analytics, ETL, and large-scale transformation workloads.",
-		"resumeContext": "Gap Inc. explicitly names Apache Spark pipelines across five-plus years of sales data.",
+		"resumeContext": "Gap forecasting work used Spark pipelines across five-plus years of sales data to speed processing and standardize insights.",
 		"evidence": [
 			{
 				"label": "Gap Inc.",
@@ -288,7 +292,7 @@
 	"Argo CD": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "GitOps continuous delivery tool for syncing Kubernetes application state from version control.",
-		"resumeContext": "Argo CD appears here as GitOps delivery for Kubernetes applications, pairing infrastructure state with version-controlled release workflows.",
+		"resumeContext": "Argo CD syncs Kubernetes apps from Git, making cluster state reviewable through GitOps rather than manual release steps.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -310,7 +314,7 @@
 	"Auditability": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Designing systems so decisions, inputs, outputs, and review actions can be inspected after the fact.",
-		"resumeContext": "Frame Payments explicitly names audit-aware handling and standardized auditability requirements.",
+		"resumeContext": "Frame Payments AI work includes audit-aware handling for confidential documents, PII safeguards, and reviewable compliance workflows.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -354,7 +358,7 @@
 	"AWS Athena": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Serverless AWS query service for running SQL over data in S3 and lake-style storage.",
-		"resumeContext": "In this skill group, AWS Athena describes SQL-over-object-storage analytics in the data platform set, useful for querying lake-style datasets.",
+		"resumeContext": "Athena runs SQL over S3 data without a warehouse cluster, useful for ad hoc analytics on lake-style datasets.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -376,7 +380,7 @@
 	"AWS Glue": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing.",
-		"resumeContext": "For this popover, AWS Glue means managed ETL and cataloging on AWS, connecting raw storage, transformations, and analytics-ready datasets.",
+		"resumeContext": "AWS Glue is managed ETL and catalog tooling for discovering, transforming, and preparing datasets in the AWS ecosystem.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -398,7 +402,7 @@
 	"AWS Lambda": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS serverless compute service for running event-driven functions without managing servers.",
-		"resumeContext": "The cloud operations context uses AWS Lambda to describe event-driven serverless compute for jobs, APIs, and automation without server management.",
+		"resumeContext": "AWS Lambda runs event-triggered functions without server management, fitting jobs, webhooks, lightweight APIs, and automation tasks.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -420,7 +424,7 @@
 	"Azure": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations.",
-		"resumeContext": "Readers can read Azure here as the Microsoft cloud side of the deployment stack, complementing AWS and Google Cloud infrastructure capabilities.",
+		"resumeContext": "Azure is Microsoft cloud platform, useful context beside AWS and GCP for compute, identity, storage, and managed services.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -442,7 +446,7 @@
 	"Bash": {
 		"category": "Languages & Authoring",
 		"summary": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows.",
-		"resumeContext": "Bash serves as shorthand for shell automation for local setup, build glue, deployment helpers, and repeatable command-line workflows.",
+		"resumeContext": "Bash automates shell tasks such as setup, local scripts, build glue, and repeatable command-line operations.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -464,7 +468,7 @@
 	"BigQuery": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets.",
-		"resumeContext": "Inside the data platform set, BigQuery identifies serverless warehouse analytics for large-scale SQL, reporting, and exploration.",
+		"resumeContext": "BigQuery is Google serverless analytics warehouse, built for large SQL queries, reporting, and exploration without managing database nodes.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -486,7 +490,7 @@
 	"C++": {
 		"category": "Languages & Authoring",
 		"summary": "General-purpose systems language for performance-sensitive software, native libraries, and lower-level platform work.",
-		"resumeContext": "Within the language set, C++ refers to performance-sensitive systems code, native libraries, and platform-facing components.",
+		"resumeContext": "C++ matters when software needs compiled binaries, memory control, predictable latency, or close contact with operating-system APIs.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -508,7 +512,7 @@
 	"Canvas": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Browser drawing API for rendering graphics, exported cards, charts, and pixel-level visual outputs.",
-		"resumeContext": "Listentropy lists Canvas in its stack and describes share-card PNG/ZIP export workflows.",
+		"resumeContext": "Listentropy uses Canvas to render share-card images and export listening-history visuals as PNG or ZIP assets.",
 		"evidence": [
 			{
 				"label": "Listentropy",
@@ -530,7 +534,7 @@
 	"Chakra UI": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Composable React component library with accessible primitives and theme-driven styling.",
-		"resumeContext": "Here, Chakra UI marks accessible React primitives and theme-driven components for the frontend design-system toolkit.",
+		"resumeContext": "Chakra UI provides accessible React primitives and theme tokens, useful when a product UI needs composable components without heavy setup.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -552,7 +556,7 @@
 	"ChatGPT": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation.",
-		"resumeContext": "For readers, ChatGPT names the general AI-assistant surface in the coding-harness set, alongside specialized editor and desktop tools.",
+		"resumeContext": "ChatGPT is the general-purpose assistant surface in this set, useful for research, drafting, code help, and workflow automation concepts.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -574,7 +578,7 @@
 	"Cherry Studio": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows.",
-		"resumeContext": "This popup frames Cherry Studio around desktop multi-model orchestration in the assistant stack, complementing CLI, editor, and MCP-connected workflows.",
+		"resumeContext": "Cherry Studio is a desktop client for working across multiple model providers, similar to other local assistant and MCP-connected tools.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -596,7 +600,7 @@
 	"CI/CD": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Automated build, test, validation, and deployment pipelines that reduce release friction and catch regressions.",
-		"resumeContext": "Stealth Web3 Startup explicitly names CI/CD with GitHub Actions, Cypress, and Jest, halving release cycles.",
+		"resumeContext": "The stealth Web3 app used GitHub Actions, Cypress, and Jest in CI/CD to shorten release cycles and raise test coverage.",
 		"evidence": [
 			{
 				"label": "Stealth Web3 Startup",
@@ -618,7 +622,7 @@
 	"CircleCI": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Hosted CI/CD platform for automated builds, tests, and deployment workflows.",
-		"resumeContext": "The Cloud, DevOps & Observability grouping treats CircleCI as hosted automation for build, test, and deploy pipelines across delivery workflow topics.",
+		"resumeContext": "CircleCI is hosted CI/CD for building, testing, and releasing software through configured pipelines.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -640,7 +644,7 @@
 	"Claude Code": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows.",
-		"resumeContext": "Wyatt includes Claude Code in modern AI-assisted engineering workflow evaluations.",
+		"resumeContext": "AI Agent Harness Configs includes Claude Code as a terminal coding assistant for repository edits, review, and workflow automation.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -662,7 +666,7 @@
 	"Claude Desktop": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces.",
-		"resumeContext": "Claude Desktop appears here as the local MCP-connected assistant surface for tool-backed desktop and repository workflows.",
+		"resumeContext": "Claude Desktop is the local Claude client commonly paired with MCP servers, desktop files, and tool-backed assistant workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -684,7 +688,7 @@
 	"CLI Tooling": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks.",
-		"resumeContext": "In this skill group, CLI Tooling describes backend/API work tied to operator-facing commands so data, release, and maintenance tasks can run predictably.",
+		"resumeContext": "CLI tooling packages repeatable tasks behind commands, making data jobs, releases, and maintenance easier to run safely.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -706,7 +710,7 @@
 	"CloudFormation": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS infrastructure-as-code service for defining and managing cloud resources with templates.",
-		"resumeContext": "For this popover, CloudFormation means AWS-native infrastructure definitions for repeatable cloud environments and managed resource changes.",
+		"resumeContext": "CloudFormation is AWS infrastructure-as-code, describing cloud resources in templates that can be reviewed and reapplied.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -728,7 +732,7 @@
 	"CodeMirror": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Browser-based code editor toolkit for rich editing, syntax highlighting, and extension-driven authoring interfaces.",
-		"resumeContext": "MDXPad explicitly names CodeMirror 6 for its synchronized Markdown/MDX editing surface.",
+		"resumeContext": "MDXPad uses CodeMirror 6 for synchronized Markdown and MDX editing with live preview behavior.",
 		"evidence": [
 			{
 				"label": "MDXPad",
@@ -750,7 +754,7 @@
 	"Codex": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows.",
-		"resumeContext": "Wyatt evaluates and configures Codex within cross-runtime agent harness work.",
+		"resumeContext": "AI Agent Harness Configs treats Codex as a coding-agent runtime to configure, compare, and route alongside Claude Code and OpenCode.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -772,7 +776,7 @@
 	"Content-Based Filtering": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules.",
-		"resumeContext": "The streaming systems context uses Content-Based Filtering to describe payload-based routing for selective subscriber delivery.",
+		"resumeContext": "Content-based filtering routes messages by payload fields, so subscribers receive only the market data or events they asked for.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -838,7 +842,7 @@
 	"CSS3": {
 		"category": "Languages & Authoring",
 		"summary": "Styling language for layout, responsive design, typography, animation, and frontend visual systems.",
-		"resumeContext": "Readers can read CSS3 here as layout, responsive styling, animation, and visual system work in browser-based interfaces.",
+		"resumeContext": "CSS3 styles web interfaces, covering layout, responsive behavior, animation, typography, and visual polish.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -860,7 +864,7 @@
 	"Cursor": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "AI-native IDE for repository-aware editing, code navigation, and agent-assisted implementation.",
-		"resumeContext": "AI Agent Harness Configs explicitly names Cursor among standardized reusable agent definitions for modern coding assistants.",
+		"resumeContext": "AI Agent Harness Configs standardizes Cursor agent definitions so editor-native assistants can reuse the same skills and tools.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -882,7 +886,7 @@
 	"Cursor Agent": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context.",
-		"resumeContext": "Cursor Agent serves as shorthand for editor-native delegated coding in the harness set, complementing CLI and browser-style agent workflows.",
+		"resumeContext": "Cursor Agent is Cursor repository-aware coding mode, sitting between editor autocomplete and longer-running delegated code tasks.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -904,7 +908,7 @@
 	"Cypress": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Browser testing framework for application flows, integration coverage, and frontend regression checks.",
-		"resumeContext": "Stealth Web3 Startup explicitly names Cypress in its CI/CD and test automation stack.",
+		"resumeContext": "The stealth Web3 app used Cypress in CI/CD to test wallet and lending flows before releases.",
 		"evidence": [
 			{
 				"label": "Stealth Web3 Startup",
@@ -926,7 +930,7 @@
 	"Dash": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks.",
-		"resumeContext": "Inside Data Engineering, Databases & Analytics, Dash identifies Python analytical apps and dashboards that turn data workflows into interactive stakeholder-facing tools.",
+		"resumeContext": "Dash turns Python analysis into interactive web dashboards, pairing Plotly visuals with callback-driven app behavior.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -948,10 +952,14 @@
 	"Data Validation": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Enforcing data shape, type, completeness, and business-rule expectations before downstream use.",
-		"resumeContext": "NBA Basketball Database names Pandera-validated ETL, and AI/ML Web Feeds names typed schema plus HTTP/RSS validation.",
+		"resumeContext": "NBA Basketball Database uses Pandera-validated ETL, while AI/ML Web Feeds relies on typed schema plus HTTP/RSS validation.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
+				"kind": "project"
+			},
+			{
+				"label": "AI/ML Web Feeds",
 				"kind": "project"
 			}
 		],
@@ -970,7 +978,7 @@
 	"Data Warehousing": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Organizing analytical data into durable, queryable models for reporting, reuse, and self-service access.",
-		"resumeContext": "NBA Basketball Database names daily warehouse updates and generated public star-schema outputs.",
+		"resumeContext": "NBA Basketball Database publishes daily warehouse updates and generated public star-schema outputs for analytics use.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -992,7 +1000,7 @@
 	"DeepAgents": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows.",
-		"resumeContext": "Wyatt coordinates multi-agent coding workflows and reusable skills across harness runtimes.",
+		"resumeContext": "AI Agent Harness Configs covers DeepAgents-style multi-agent workflows where planning, file context, and subagents coordinate coding tasks.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -1014,7 +1022,7 @@
 	"Django": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults.",
-		"resumeContext": "Within the backend systems set, Django refers to full-stack Python web development with ORM-backed services, admin surfaces, and secure defaults.",
+		"resumeContext": "Django is a batteries-included Python web framework with ORM, admin, routing, forms, and security defaults.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1036,7 +1044,7 @@
 	"Docker": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Container platform for packaging applications and dependencies into reproducible runtime images.",
-		"resumeContext": "Wyatt uses Docker in the MCP-Crawl4AI project stack and deployable service workflows.",
+		"resumeContext": "MCP-Crawl4AI and service-oriented projects use Docker-style packaging for repeatable local and deployable runtime environments.",
 		"evidence": [
 			{
 				"label": "MCP-Crawl4AI",
@@ -1058,7 +1066,7 @@
 	"Document AI": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "AI-assisted extraction, classification, and review of document content across structured and unstructured submissions.",
-		"resumeContext": "Frame Payments explicitly names production LLM document intelligence for confidential uploads and merchant review workflows.",
+		"resumeContext": "Frame Payments applies LLM document intelligence to classify uploaded merchant files and reduce resubmissions before analyst review.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -1080,7 +1088,7 @@
 	"Domain-Driven Design": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Architecture approach that models software around domain concepts, boundaries, and shared language.",
-		"resumeContext": "Here, Domain-Driven Design marks domain boundaries, shared language, and model structure for maintainable system architecture.",
+		"resumeContext": "Domain-driven design models software around business concepts, boundaries, and language so complex systems stay understandable.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -1102,7 +1110,7 @@
 	"DuckDB": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Embedded analytical database for fast local OLAP queries over files such as Parquet.",
-		"resumeContext": "Wyatt builds local analytics workflows around NBA-scale structured datasets.",
+		"resumeContext": "NBA Basketball Database publishes DuckDB exports so analysts can query sports data locally with fast SQL.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -1124,7 +1132,7 @@
 	"DynamoDB": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "AWS managed NoSQL database for key-value and document workloads at serverless scale.",
-		"resumeContext": "For readers, DynamoDB names managed NoSQL storage for key-value and document workloads in cloud-backed applications.",
+		"resumeContext": "DynamoDB is AWS managed NoSQL storage for key-value and document access patterns that need low operational overhead.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -1146,7 +1154,7 @@
 	"ECS": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity.",
-		"resumeContext": "This popup frames ECS around AWS container orchestration for services that need managed scheduling without hands-on Kubernetes administration.",
+		"resumeContext": "ECS runs containers on AWS without requiring a full Kubernetes control plane, fitting service workloads and scheduled tasks.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1168,7 +1176,7 @@
 	"EKS": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem.",
-		"resumeContext": "The Cloud, DevOps & Observability grouping treats EKS as managed Kubernetes on AWS, pairing container orchestration with cloud delivery and operations themes.",
+		"resumeContext": "EKS is AWS managed Kubernetes, giving teams Kubernetes APIs while AWS handles much of the cluster control-plane operation.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1190,7 +1198,7 @@
 	"Electron": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Desktop application framework for building cross-platform apps with web technologies.",
-		"resumeContext": "MDXPad explicitly lists Electron 39 in its stack for a native macOS Markdown/MDX editor.",
+		"resumeContext": "MDXPad uses Electron 39 to package a native macOS editor around web-based Markdown and MDX tooling.",
 		"evidence": [
 			{
 				"label": "MDXPad",
@@ -1212,7 +1220,7 @@
 	"End-to-End Testing": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Testing realistic user or system workflows through the full application stack.",
-		"resumeContext": "End-to-End Testing appears here as full user and system workflows, checking behavior across UI, services, data, and external boundaries.",
+		"resumeContext": "End-to-end tests exercise user journeys through the real app surface, catching workflow and UI failures unit tests miss.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -1234,7 +1242,7 @@
 	"ETL": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores.",
-		"resumeContext": "Wyatt builds datasets, validation pipelines, and analytics-ready data products.",
+		"resumeContext": "NBA Basketball Database turns NBA API responses into validated datasets and warehouse-style exports across multiple formats.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -1256,7 +1264,7 @@
 	"Event-Driven Architecture": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls.",
-		"resumeContext": "In this skill group, Event-Driven Architecture describes the asynchronous service style behind pub/sub, streaming, and real-time data topics.",
+		"resumeContext": "Event-driven architecture designs systems around emitted facts, queues, and subscribers instead of tightly coupled request chains.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -1278,7 +1286,7 @@
 	"Express.js": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints.",
-		"resumeContext": "For this popover, Express.js means minimal Node.js HTTP APIs and middleware when a lightweight backend service layer is enough.",
+		"resumeContext": "Express.js is a minimal Node.js web framework for HTTP APIs, middleware, routing, and lightweight backend services.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1300,7 +1308,7 @@
 	"FastAPI": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Python framework for typed, OpenAPI-first HTTP APIs with async support.",
-		"resumeContext": "The Backend, APIs & Distributed Systems context uses FastAPI to describe typed Python API development with async handlers, validation, and OpenAPI-generated contracts.",
+		"resumeContext": "FastAPI builds typed Python APIs with async handlers, validation, dependency injection, and OpenAPI documentation.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1322,7 +1330,7 @@
 	"Feature Engineering": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping.",
-		"resumeContext": "Readers can read Feature Engineering here as the transformation layer that turns raw records into model-ready variables and domain-shaped inputs.",
+		"resumeContext": "Feature engineering turns raw data into model-ready variables, bridging data pipelines with forecasting, anomaly detection, and evaluation.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -1344,7 +1352,7 @@
 	"Flask": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Lightweight Python web framework for small services, APIs, and composable backend applications.",
-		"resumeContext": "Flask serves as shorthand for lightweight Python services and small APIs where composable routes are preferable to a full framework.",
+		"resumeContext": "Flask is a small Python web framework for APIs and apps that need explicit routing and flexible extensions.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1366,7 +1374,7 @@
 	"Formatting": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Automated source formatting to keep codebases consistent, readable, and low-friction to review.",
-		"resumeContext": "Inside Testing, Quality, Security & Architecture, Formatting identifies automated style consistency so reviews focus on behavior rather than whitespace or layout churn.",
+		"resumeContext": "Formatting tools keep code style consistent automatically, reducing review noise and preventing style drift across a codebase.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -1388,7 +1396,7 @@
 	"GCP": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services.",
-		"resumeContext": "Within the cloud operations set, GCP refers to managed compute, data, messaging, and deployment services on Google Cloud.",
+		"resumeContext": "GCP is Google Cloud platform for managed compute, data, messaging, AI, and deployment services alongside AWS and Azure.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1410,7 +1418,7 @@
 	"Gemini CLI": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Command-line Gemini coding assistant for repository-aware development workflows.",
-		"resumeContext": "Here, Gemini CLI marks terminal-native AI coding assistance in the harness set, next to editor, desktop, and MCP-backed tools.",
+		"resumeContext": "Gemini CLI brings Gemini-assisted coding into the terminal, where command output, repository files, and shell workflows are close at hand.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -1432,7 +1440,7 @@
 	"GitHub Actions": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "GitHub-native automation for tests, builds, releases, and deployment workflows.",
-		"resumeContext": "Wyatt uses GitHub-native automation for CI, artifact checks, and public project delivery.",
+		"resumeContext": "AI Agent Harness Configs uses GitHub-native automation for generated docs, install flows, artifact checks, and releases.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -1454,7 +1462,7 @@
 	"GitHub Copilot CLI": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "GitHub Copilot command-line and agent workflows for terminal-based development assistance.",
-		"resumeContext": "Wyatt tracks Copilot CLI as a terminal coding-assistant surface in his harness ecosystem.",
+		"resumeContext": "AI Agent Harness Configs tracks Copilot CLI as the terminal-facing Copilot surface for command-line coding workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -1476,7 +1484,7 @@
 	"GitHub Copilot Web": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows.",
-		"resumeContext": "Wyatt evaluates Copilot Web in web-based and hosted coding-agent workflows.",
+		"resumeContext": "AI Agent Harness Configs covers Copilot Web as a browser-hosted coding assistant for repository and review tasks.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -1498,7 +1506,7 @@
 	"Go": {
 		"category": "Languages & Authoring",
 		"summary": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling.",
-		"resumeContext": "For readers, Go names compiled service and CLI development, especially where simple deployment and network concurrency matter.",
+		"resumeContext": "Go is a compiled language for network services, CLIs, and infrastructure tooling where simple concurrency and static binaries help.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1520,7 +1528,7 @@
 	"Google Cloud Functions": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code.",
-		"resumeContext": "This popup frames Google Cloud Functions around serverless event handlers in the cloud stack, paired with managed messaging and API workflows.",
+		"resumeContext": "Google Cloud Functions runs event-driven code on GCP, fitting HTTP handlers, triggers, and small automation tasks.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1542,7 +1550,7 @@
 	"Google Cloud Pub/Sub": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud.",
-		"resumeContext": "The streaming systems grouping treats Google Cloud Pub/Sub as managed cloud messaging alongside Kafka and Redis Pub/Sub.",
+		"resumeContext": "Google Cloud Pub/Sub is managed messaging for decoupling publishers and subscribers on GCP, similar in role to Kinesis or Kafka.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -1564,7 +1572,7 @@
 	"Google Gemini API": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation.",
-		"resumeContext": "Google Gemini API appears here as Gemini models for multimodal generation, structured output, and tool-aware AI application patterns.",
+		"resumeContext": "Gemini API is Google model endpoint for multimodal prompts, structured output, and tool-aware AI apps alongside OpenAI and Claude APIs.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -1586,7 +1594,7 @@
 	"Grafana": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization.",
-		"resumeContext": "In this skill group, Grafana describes operational dashboards for metrics, logs, and traces across the observability toolchain.",
+		"resumeContext": "Grafana visualizes metrics, logs, and traces so teams can inspect service health, latency, and operational trends.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1608,7 +1616,7 @@
 	"GraphQL (Apollo)": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services.",
-		"resumeContext": "For this popover, GraphQL (Apollo) means schema-first API design and client/server tooling for typed application data access.",
+		"resumeContext": "Apollo GraphQL uses a typed schema to let clients request exactly the data shape they need from backend services.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1630,7 +1638,7 @@
 	"gRPC": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication.",
-		"resumeContext": "The Backend, APIs & Distributed Systems context uses gRPC to describe typed service-to-service RPC with Protocol Buffers for backend systems that need strict contracts.",
+		"resumeContext": "gRPC uses Protocol Buffers for typed service-to-service calls, fitting backend systems that need strict contracts.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -1674,7 +1682,7 @@
 	"Hadoop": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Apache ecosystem for distributed storage and batch processing over large datasets.",
-		"resumeContext": "Readers can read Hadoop here as distributed storage and batch-processing foundations for large datasets and legacy big-data environments.",
+		"resumeContext": "Hadoop is the older big-data ecosystem for distributed storage and batch processing, useful context for Spark-era data platforms.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -1696,7 +1704,7 @@
 	"Helm": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Kubernetes package manager for templating, installing, and upgrading application charts.",
-		"resumeContext": "Helm serves as shorthand for Kubernetes packaging and release templating, useful for repeatable application deployment across clusters.",
+		"resumeContext": "Helm packages Kubernetes applications as charts, making installs, upgrades, and environment-specific values repeatable.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1718,7 +1726,7 @@
 	"HTML5": {
 		"category": "Languages & Authoring",
 		"summary": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces.",
-		"resumeContext": "Inside Languages & Authoring, HTML5 identifies semantic document structure and accessible browser interfaces across the frontend authoring set.",
+		"resumeContext": "HTML5 provides semantic page structure, forms, media, and accessibility hooks for web applications and documents.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1740,7 +1748,7 @@
 	"Hugging Face": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows.",
-		"resumeContext": "Within the AI, LLM & Agent Engineering set, Hugging Face refers to model, dataset, and inference workflows for applied ML and open-model experimentation.",
+		"resumeContext": "Hugging Face is the open-model ecosystem for model cards, datasets, inference tooling, and evaluation resources used across applied ML work.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -1762,7 +1770,7 @@
 	"Hugo": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Static site generator for fast content-heavy sites, documentation, and publishing workflows.",
-		"resumeContext": "Here, Hugo marks static publishing and documentation-site generation within the broader frontend and product publishing stack.",
+		"resumeContext": "Hugo is a fast static-site generator for documentation and content sites, sitting near MDX and portfolio publishing workflows.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -1784,7 +1792,7 @@
 	"Human-in-the-Loop Review": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Workflow pattern that keeps humans in approval, feedback, or exception-handling loops for sensitive AI outputs.",
-		"resumeContext": "Frame Payments explicitly names human-in-the-loop browser feedback for confidential uploads.",
+		"resumeContext": "Frame Payments adds human review to confidential upload flows so AI classification can be checked before analyst handoff.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -1806,7 +1814,7 @@
 	"Integration Testing": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Testing interactions across components, services, tools, or boundaries to catch system-level regressions.",
-		"resumeContext": "FL Studio MCP Server explicitly names integration scenarios among its 650+ tests.",
+		"resumeContext": "FL Studio MCP Server includes integration scenarios among 650+ tests for MCP contracts and tool behavior.",
 		"evidence": [
 			{
 				"label": "FL Studio MCP Server",
@@ -1828,7 +1836,7 @@
 	"Java": {
 		"category": "Languages & Authoring",
 		"summary": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software.",
-		"resumeContext": "For readers, Java names JVM-based service and enterprise application development within the multi-language technical practice set.",
+		"resumeContext": "Java is a JVM language for long-lived backend services, enterprise systems, and strongly typed application platforms.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1850,7 +1858,7 @@
 	"JavaScript": {
 		"category": "Languages & Authoring",
 		"summary": "Core web language for browser behavior, Node-based tooling, and frontend application logic.",
-		"resumeContext": "This popup frames JavaScript around browser behavior, Node tooling, and frontend application logic across the web stack.",
+		"resumeContext": "JavaScript runs in browsers and Node.js, powering interactive frontends, build tools, and full-stack web behavior.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -1872,7 +1880,7 @@
 	"Jenkins": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Automation server for build, test, and deployment pipelines across many languages and platforms.",
-		"resumeContext": "The Cloud, DevOps & Observability grouping treats Jenkins as self-hosted automation for build, test, and release pipelines where jobs need explicit orchestration.",
+		"resumeContext": "Jenkins is a long-running CI automation server, useful for custom build, test, and release pipelines.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -1894,7 +1902,7 @@
 	"Jest": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "JavaScript testing framework for unit tests, assertions, mocks, and frontend validation.",
-		"resumeContext": "Stealth Web3 Startup explicitly names Jest in its CI/CD and test automation workflow.",
+		"resumeContext": "The stealth Web3 app used Jest in CI/CD for automated test coverage across React and lending-app logic.",
 		"evidence": [
 			{
 				"label": "Stealth Web3 Startup",
@@ -1916,7 +1924,7 @@
 	"Jupyter": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Interactive notebook environment for exploratory analysis, model prototyping, and technical explanation.",
-		"resumeContext": "Regularized Linear Regression Deep Dive lists Jupyter in its stack for theory-to-practice modeling work.",
+		"resumeContext": "The regularized regression work uses Jupyter for theory-to-practice notebooks that combine explanation, math, and model experiments.",
 		"evidence": [
 			{
 				"label": "Regularized Linear Regression Deep Dive",
@@ -1938,7 +1946,7 @@
 	"KDB+": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "KX time-series database used heavily for high-volume financial market data.",
-		"resumeContext": "Wyatt used KDB+ in JPMorgan capital-markets and market-data systems work.",
+		"resumeContext": "JPMorgan market-data work used KDB+ for capital-markets data access and q-backed analytics workflows.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -1960,7 +1968,7 @@
 	"Knowledge Graphs": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems.",
-		"resumeContext": "Knowledge Graphs appears here as entity-relationship context for retrieval systems, document intelligence, and semantic data linking.",
+		"resumeContext": "Knowledge graphs model entities and relationships, making them a useful counterpart to retrieval, document AI, and semantic search systems.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -1982,7 +1990,7 @@
 	"Kubernetes": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Container orchestration platform for deploying, scaling, and operating distributed workloads.",
-		"resumeContext": "In this skill group, Kubernetes describes container orchestration in the cloud stack, tying deployment, scaling, service discovery, and operations together.",
+		"resumeContext": "Kubernetes orchestrates containers across clusters, handling scheduling, service discovery, scaling, and rollout mechanics.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2004,11 +2012,15 @@
 	"LangChain": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration.",
-		"resumeContext": "Wyatt builds agent framework workflows and LLM application engineering patterns.",
+		"resumeContext": "Frame Payments and harness work use LangChain-style agent patterns for tools, retrieval, structured outputs, and workflow composition.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
 				"kind": "project"
+			},
+			{
+				"label": "Frame Payments",
+				"kind": "work"
 			}
 		],
 		"links": [
@@ -2026,7 +2038,7 @@
 	"LangGraph": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow.",
-		"resumeContext": "Wyatt designs orchestrated, reviewable, multi-step agent workflows.",
+		"resumeContext": "LangGraph fits the orchestrated-agent side of the harness work, where multi-step flows need explicit state, review points, and routing.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -2048,7 +2060,7 @@
 	"LangSmith": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems.",
-		"resumeContext": "Wyatt emphasizes evaluated, inspectable, regression-tested AI systems.",
+		"resumeContext": "LangSmith represents the evaluation and trace-inspection layer for making AI workflows testable rather than opaque demos.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -2070,7 +2082,7 @@
 	"LaTeX": {
 		"category": "Languages & Authoring",
 		"summary": "Typesetting system for mathematical, academic, and technical documents with precise formatting control.",
-		"resumeContext": "For this popover, LaTeX means precise technical typesetting for academic, mathematical, and document-heavy authoring workflows.",
+		"resumeContext": "LaTeX typesets mathematical and technical documents with precise control over equations, references, and publication formatting.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -2092,7 +2104,7 @@
 	"Linting": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Static checking that catches style, correctness, and maintainability issues before runtime.",
-		"resumeContext": "The quality context uses Linting to describe static checks for risky patterns, dead code, and maintainability issues before runtime.",
+		"resumeContext": "Linters catch risky code patterns, unused paths, and style violations before runtime or review.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -2114,7 +2126,7 @@
 	"LlamaIndex": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools.",
-		"resumeContext": "Readers can read LlamaIndex here as document indexing and retrieval orchestration for LLM applications that need grounded data access.",
+		"resumeContext": "LlamaIndex organizes documents, indexes, and retrieval pipelines for LLM applications that need structured access to external knowledge.",
 		"evidence": [
 			{
 				"label": "AI, LLM & Agent Engineering",
@@ -2136,11 +2148,15 @@
 	"LLM Evaluation": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops.",
-		"resumeContext": "Wyatt focuses on agent reliability rather than unchecked model demos.",
+		"resumeContext": "Frame Payments AI work emphasizes checking document and compliance outputs before automation affects review or onboarding flows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
 				"kind": "project"
+			},
+			{
+				"label": "Frame Payments",
+				"kind": "work"
 			}
 		],
 		"links": [
@@ -2158,7 +2174,7 @@
 	"Low-Latency Messaging": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems.",
-		"resumeContext": "Low-Latency Messaging serves as shorthand for the timing discipline behind market-data, streaming, and pub/sub systems where delivery delay matters.",
+		"resumeContext": "Low-latency messaging focuses on moving data with minimal delay, which matters for trading, market data, and real-time dashboards.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -2180,7 +2196,7 @@
 	"Markdown": {
 		"category": "Languages & Authoring",
 		"summary": "Lightweight authoring format for documentation, technical writing, docs portals, and MDX-paired publishing.",
-		"resumeContext": "MDXPad is a Markdown/MDX desktop editor, and Personal Website uses MDX publishing workflows.",
+		"resumeContext": "MDXPad centers on Markdown and MDX editing, while Personal Website uses MDX publishing for durable web content.",
 		"evidence": [
 			{
 				"label": "MDXPad",
@@ -2202,7 +2218,7 @@
 	"Market Data Systems": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Financial-data infrastructure for distributing prices, trades, reference data, and risk workflows.",
-		"resumeContext": "JPMorgan context names credit trading, quantitative research, risk groups, KDB+/q, and market-data systems work.",
+		"resumeContext": "JPMorgan credit work involved trading, quantitative research, risk groups, KDB+/q, and market-data system delivery.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -2224,7 +2240,7 @@
 	"Material UI": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "React component library implementing Material Design components, theming, and application patterns.",
-		"resumeContext": "Inside Frontend, Product & Desktop Engineering, Material UI identifies a React component system for product UI, dashboards, and design-system-driven application surfaces.",
+		"resumeContext": "Material UI implements Google Material Design for React, giving product teams ready-made components, theming, and layout patterns.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -2246,7 +2262,7 @@
 	"MATLAB": {
 		"category": "Languages & Authoring",
 		"summary": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework.",
-		"resumeContext": "Within the Languages & Authoring set, MATLAB refers to numerical computing for engineering analysis, simulation, and technical coursework.",
+		"resumeContext": "MATLAB fits quick prototyping of formulas, array transforms, plots, and engineering class assignments.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -2268,7 +2284,7 @@
 	"Matplotlib": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures.",
-		"resumeContext": "Here, Matplotlib marks Python plotting for exploratory analysis, diagnostics, and publication-quality static figures.",
+		"resumeContext": "Matplotlib is Python foundational plotting library for static charts, diagnostics, notebooks, and publication-style figures.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2290,10 +2306,26 @@
 	"MDX": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Markdown format that combines JSX components with technical publishing and documentation workflows.",
-		"resumeContext": "Personal Website names custom MDX publishing, and MDXPad is a Markdown/MDX desktop editor.",
+		"resumeContext": "Personal Website uses MDX for custom publishing, while MDXPad turns Markdown and MDX authoring into a desktop editor workflow.",
 		"evidence": [
 			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			},
+			{
+				"label": "SandLabs",
+				"kind": "work"
+			},
+			{
 				"label": "Personal Website: w4w.dev",
+				"kind": "project"
+			},
+			{
+				"label": "FL Studio MCP Server",
+				"kind": "project"
+			},
+			{
+				"label": "MDXPad",
 				"kind": "project"
 			}
 		],
@@ -2312,7 +2344,7 @@
 	"Microservices": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Distributed service architecture that separates capabilities into independently deployable components.",
-		"resumeContext": "For readers, Microservices names decomposed service boundaries, independent deployment units, and distributed ownership patterns.",
+		"resumeContext": "Microservices split a backend into independently owned and deployed services, trading simplicity for clearer boundaries at scale.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2334,7 +2366,7 @@
 	"MobX": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Reactive state-management library for JavaScript applications using observable state and derived reactions.",
-		"resumeContext": "Stealth Web3 Startup explicitly lists MobX in its React/Next.js collateralized lending app stack.",
+		"resumeContext": "The stealth Web3 app used MobX for frontend state in a React/Next.js collateralized lending interface.",
 		"evidence": [
 			{
 				"label": "Stealth Web3 Startup",
@@ -2356,10 +2388,14 @@
 	"Model Context Protocol (MCP)": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers.",
-		"resumeContext": "Wyatt builds MCP servers and agent-tooling portfolio projects.",
+		"resumeContext": "AI Agent Harness Configs and MCP-Crawl4AI expose tools through MCP so assistants can call focused local or remote capabilities.",
 		"evidence": [
 			{
 				"label": "MCP-Crawl4AI",
+				"kind": "project"
+			},
+			{
+				"label": "AI Agent Harness Configs",
 				"kind": "project"
 			}
 		],
@@ -2378,7 +2414,7 @@
 	"Model Evaluation": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions.",
-		"resumeContext": "This popup frames Model Evaluation around the ML quality layer, checking whether outputs are dependable enough for product or analytics use.",
+		"resumeContext": "Model evaluation checks whether predictions or generated outputs behave well enough for analytics, automation, or user-facing decisions.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -2400,7 +2436,7 @@
 	"Monitoring": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Operational practice of collecting health, performance, and reliability telemetry from systems in production.",
-		"resumeContext": "The Cloud, DevOps & Observability grouping treats Monitoring as the operational feedback loop for availability, performance, and reliability across running services.",
+		"resumeContext": "Monitoring collects health and performance telemetry so availability, errors, saturation, and latency can be watched over time.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2422,7 +2458,7 @@
 	"Netlify": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows.",
-		"resumeContext": "Netlify appears here as static-site hosting, preview builds, redirects, and download-friendly web publishing.",
+		"resumeContext": "Netlify hosts static and frontend sites with previews, redirects, forms, and simple deployment for content-heavy web projects.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2444,10 +2480,22 @@
 	"Next.js": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "React framework for routed web applications, publishing systems, docs portals, and production frontend delivery.",
-		"resumeContext": "Stealth Web3 Startup, SandLabs, Personal Website, and FL Studio MCP Server all name Next.js.",
+		"resumeContext": "Stealth Web3 Startup, SandLabs, Personal Website, and FL Studio MCP Server all use Next.js for product or documentation surfaces.",
 		"evidence": [
 			{
 				"label": "Personal Website: w4w.dev",
+				"kind": "project"
+			},
+			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			},
+			{
+				"label": "SandLabs",
+				"kind": "work"
+			},
+			{
+				"label": "FL Studio MCP Server",
 				"kind": "project"
 			}
 		],
@@ -2466,7 +2514,7 @@
 	"Node.js": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines.",
-		"resumeContext": "In this skill group, Node.js describes JavaScript backend and tooling work, spanning APIs, CLIs, build systems, and automation scripts.",
+		"resumeContext": "Node.js runs JavaScript on the server, fitting API handlers, build scripts, CLIs, and automation around web projects.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2488,7 +2536,7 @@
 	"NoSQL": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads.",
-		"resumeContext": "For this popover, NoSQL means non-relational storage patterns for document, key-value, wide-column, and graph-shaped data needs.",
+		"resumeContext": "NoSQL covers non-relational storage designs such as document, key-value, graph, and wide-column databases for flexible data shapes.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2510,7 +2558,7 @@
 	"NotebookLM": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Google's source-grounded research and note assistant for querying curated document collections.",
-		"resumeContext": "Frame Payments explicitly names a NotebookLM-based technical knowledge hub refreshed from vendor, web, and monorepo documentation.",
+		"resumeContext": "Frame Payments uses a NotebookLM knowledge hub refreshed from vendor docs, web sources, and monorepo documentation.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -2554,7 +2602,7 @@
 	"OAuth 2.0": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Authorization framework for delegated API access without sharing a user's original credentials.",
-		"resumeContext": "The backend systems context uses OAuth 2.0 to describe delegated authorization for APIs and external services without primary credentials.",
+		"resumeContext": "OAuth 2.0 delegates authorization so an app can access an API without receiving primary user credentials.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2576,7 +2624,7 @@
 	"OpenAI API": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents.",
-		"resumeContext": "Wyatt builds LLM applications and coding-agent workflow integrations.",
+		"resumeContext": "OpenAI API sits beside Claude and Bedrock in the LLM application toolkit for structured generation, tool use, and agent workflows.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -2598,7 +2646,7 @@
 	"OpenCode": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows.",
-		"resumeContext": "Wyatt includes OpenCode in cross-runtime agent tooling and coding-assistant workflow catalogs.",
+		"resumeContext": "AI Agent Harness Configs includes OpenCode for cross-runtime agent workflows, MCP tool usage, and reusable coding skills.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -2620,7 +2668,7 @@
 	"OpenID Connect": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Identity layer on OAuth 2.0 that standardizes login and user profile claims.",
-		"resumeContext": "Readers can read OpenID Connect here as identity on top of OAuth 2.0, adding standardized login claims and user profile exchange.",
+		"resumeContext": "OpenID Connect adds identity on top of OAuth 2.0, standardizing login, ID tokens, and profile claims.",
 		"evidence": [
 			{
 				"label": "Backend, APIs & Distributed Systems",
@@ -2642,10 +2690,14 @@
 	"Pandas": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Python data-analysis library for tabular data preparation, transformations, and exploratory workflows.",
-		"resumeContext": "NBA Basketball Database lists Pandas in its stack for validated sports-data ETL and warehouse export work.",
+		"resumeContext": "NBA Basketball Database uses Pandas for sports-data ETL, validation steps, and analytics-ready export preparation.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
+				"kind": "project"
+			},
+			{
+				"label": "ProxyWhirl",
 				"kind": "project"
 			}
 		],
@@ -2664,7 +2716,7 @@
 	"Pandera": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "DataFrame validation library for enforcing schema, type, and quality constraints in data pipelines.",
-		"resumeContext": "NBA Basketball Database explicitly names Pandera-validated NBA API ETL and lists Pandera in its stack.",
+		"resumeContext": "NBA Basketball Database uses Pandera to validate API-derived datasets before publishing DuckDB, SQLite, Parquet, and CSV outputs.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -2686,7 +2738,7 @@
 	"Parquet": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Columnar file format for efficient analytical storage, compression, and interoperability across data engines.",
-		"resumeContext": "NBA Basketball Database publishes Parquet exports alongside DuckDB, SQLite, and CSV formats.",
+		"resumeContext": "NBA Basketball Database publishes Parquet files for columnar analytics alongside DuckDB, SQLite, and CSV exports.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -2708,7 +2760,7 @@
 	"Perplexity Desktop": {
 		"category": "AI Agent Harnesses & Coding Assistants",
 		"summary": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows.",
-		"resumeContext": "Perplexity Desktop serves as shorthand for source-aware research, browsing, and synthesis alongside coding and documentation workflows.",
+		"resumeContext": "Perplexity Desktop is a research assistant for source-backed search and synthesis, complementing the coding agents in this group.",
 		"evidence": [
 			{
 				"label": "AI Agent Harnesses & Coding Assistants",
@@ -2730,7 +2782,7 @@
 	"Playwright": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Cross-browser automation framework for testing, scraping, and controlled browser workflows.",
-		"resumeContext": "MCP-Crawl4AI lists Playwright in its stack and mentions automatic Playwright setup for managed headless Chromium.",
+		"resumeContext": "MCP-Crawl4AI uses Playwright for managed headless Chromium crawling and browser automation inside the MCP server.",
 		"evidence": [
 			{
 				"label": "MCP-Crawl4AI",
@@ -2752,7 +2804,7 @@
 	"Plotly": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts.",
-		"resumeContext": "Inside the data platform set, Plotly identifies interactive visualization for dashboards and richer exploration than static charts alone.",
+		"resumeContext": "Plotly creates interactive charts and dashboards, a richer option than static plots when users need hover, filtering, and exploration.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2774,7 +2826,7 @@
 	"Polars": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Fast DataFrame library built around columnar execution for high-performance local analytics.",
-		"resumeContext": "NBA Basketball Database lists Polars in its stack for large sports-data ETL and generated exports.",
+		"resumeContext": "NBA Basketball Database uses Polars for high-volume sports-data transformations and generated warehouse exports.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -2796,7 +2848,7 @@
 	"PostgreSQL": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support.",
-		"resumeContext": "Within the data platform set, PostgreSQL refers to relational modeling and SQL-backed application storage.",
+		"resumeContext": "PostgreSQL is a relational database for SQL-backed application data, analytics, indexing, and extension-heavy workloads.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2818,7 +2870,7 @@
 	"Prefect": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability.",
-		"resumeContext": "Here, Prefect marks pythonic workflow orchestration for data pipelines, scheduled jobs, retries, and operational visibility.",
+		"resumeContext": "Prefect orchestrates Python data workflows with scheduling, retries, task state, and operational visibility for pipelines.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -2840,7 +2892,7 @@
 	"Prometheus": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Open-source monitoring system for metrics collection, time-series storage, and alerting.",
-		"resumeContext": "For readers, Prometheus names metrics collection and alerting in the observability stack, pairing service instrumentation with operational checks.",
+		"resumeContext": "Prometheus stores time-series metrics and powers alerting, pairing instrumentation with dashboards such as Grafana.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -2862,7 +2914,7 @@
 	"Prompt Engineering": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Designing instructions, examples, constraints, and review loops so LLM workflows produce reliable, auditable outputs.",
-		"resumeContext": "Frame Payments explicitly names high-quality prompt patterns, internal AI adoption playbooks, and weekly AI office hours.",
+		"resumeContext": "Frame Payments uses prompt patterns, AI office hours, and playbooks to make internal AI usage more repeatable and auditable.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -2884,7 +2936,7 @@
 	"Publish/Subscribe Architecture": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling.",
-		"resumeContext": "This popup frames Publish/Subscribe Architecture around the decoupled messaging pattern behind streaming and event-delivery skills.",
+		"resumeContext": "Pub/sub decouples message producers from consumers, letting multiple systems react to the same event stream independently.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -2906,7 +2958,7 @@
 	"Puppeteer": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows.",
-		"resumeContext": "The Testing, Quality, Security & Architecture grouping treats Puppeteer as Chromium automation for rendering, PDF generation, browser checks, and regression workflows.",
+		"resumeContext": "Puppeteer automates Chromium for rendering, screenshots, PDF generation, and browser-level regression checks.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -2928,10 +2980,14 @@
 	"Pydantic": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python validation library for typed models, parsing, serialization, and schema-driven application contracts.",
-		"resumeContext": "AI/ML Web Feeds lists Pydantic in its stack for typed schemas and validation workflows.",
+		"resumeContext": "AI/ML Web Feeds uses Pydantic schemas to validate feed metadata and keep submitted YAML data well typed.",
 		"evidence": [
 			{
 				"label": "AI/ML Web Feeds",
+				"kind": "project"
+			},
+			{
+				"label": "MDXPad",
 				"kind": "project"
 			}
 		],
@@ -2950,7 +3006,7 @@
 	"PydanticAI": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations.",
-		"resumeContext": "Wyatt uses PydanticAI patterns in Frame Payments AI and agent-oriented engineering work.",
+		"resumeContext": "Frame Payments uses PydanticAI for typed AI workflows around document intelligence, validation, and agent-oriented application code.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -2972,7 +3028,7 @@
 	"Pytest": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Python testing framework for concise unit, integration, fixture, and parametrized test suites.",
-		"resumeContext": "Pytest appears here as Python test coverage with fixtures, parametrization, service checks, and clear failure output.",
+		"resumeContext": "Pytest is Python flexible test runner for unit, fixture, parameterized, and service-level checks.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -3016,7 +3072,7 @@
 	"Python SDKs": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "Python client libraries that package APIs, data access, and developer workflows into reusable interfaces.",
-		"resumeContext": "JPMorgan explicitly names a Python SDK for trader access plus a Python wrapper for KDB+.",
+		"resumeContext": "JPMorgan delivered a Python SDK so traders could access a centralized asset-fee data sink without manual data maintenance.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -3038,7 +3094,7 @@
 	"PyTorch": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows.",
-		"resumeContext": "In this skill group, PyTorch describes tensor operations, neural-network training loops, and deep-learning modeling practice.",
+		"resumeContext": "PyTorch is a Python deep-learning framework for tensor computation, neural networks, training loops, and research-to-product modeling.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3060,7 +3116,7 @@
 	"q": {
 		"category": "Languages & Authoring",
 		"summary": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics.",
-		"resumeContext": "Wyatt used q in JPMorgan market-data and capital-markets engineering work.",
+		"resumeContext": "JPMorgan market-data work used q with KDB+ for high-performance capital-markets queries and analytics functions.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -3082,7 +3138,7 @@
 	"qPython": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python interface for communicating with KDB+/q processes from Python systems.",
-		"resumeContext": "Wyatt bridges Python data workflows with JPMorgan KDB+/q market-data systems.",
+		"resumeContext": "JPMorgan work bridged Python workflows with KDB+/q systems through Python wrappers and market-data access tooling.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -3104,7 +3160,7 @@
 	"R": {
 		"category": "Languages & Authoring",
 		"summary": "Statistical computing language for analysis, visualization, modeling, and data-science workflows.",
-		"resumeContext": "For this popover, R means statistical analysis, modeling, and visualization workflows in the multi-language data toolkit.",
+		"resumeContext": "R is a statistical programming language for modeling, data analysis, visualization, and research-style workflows.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3131,6 +3187,22 @@
 			{
 				"label": "Personal Website: w4w.dev",
 				"kind": "project"
+			},
+			{
+				"label": "Stealth Web3 Startup",
+				"kind": "work"
+			},
+			{
+				"label": "Listentropy",
+				"kind": "project"
+			},
+			{
+				"label": "MDXPad",
+				"kind": "project"
+			},
+			{
+				"label": "IINA Bookmarks Plugin",
+				"kind": "project"
 			}
 		],
 		"links": [
@@ -3148,7 +3220,7 @@
 	"Real-Time Data Processing": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current.",
-		"resumeContext": "The streaming systems context uses Real-Time Data Processing to describe event streams feeding dashboards, alerts, or downstream services.",
+		"resumeContext": "Real-time processing handles events as they arrive, keeping alerts, dashboards, and downstream services current instead of batch-delayed.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -3170,7 +3242,7 @@
 	"Redis Pub/Sub": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Redis messaging primitive for lightweight topic-based publish/subscribe communication.",
-		"resumeContext": "Readers can read Redis Pub/Sub here as lightweight topic messaging in the real-time systems set, distinct from heavier stream-processing platforms.",
+		"resumeContext": "Redis Pub/Sub is lightweight in-memory message broadcasting, useful for simple fan-out patterns where persistence is not the main need.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -3192,7 +3264,7 @@
 	"Redshift": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries.",
-		"resumeContext": "Redshift serves as shorthand for AWS warehouse analytics for reporting, SQL aggregation, and large-scale structured datasets.",
+		"resumeContext": "Redshift is AWS managed data warehouse for analytical SQL workloads, reporting, and large structured datasets.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -3214,7 +3286,7 @@
 	"Redux": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores.",
-		"resumeContext": "Inside Frontend, Product & Desktop Engineering, Redux identifies centralized state management for complex frontend flows where predictable updates and debugging matter.",
+		"resumeContext": "Redux centralizes client-side state updates, useful for complex React apps where many views depend on shared application state.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -3258,7 +3330,7 @@
 	"RESTful APIs": {
 		"category": "Backend, APIs & Distributed Systems",
 		"summary": "HTTP API style using resources, methods, status codes, and representations for service integration.",
-		"resumeContext": "JPMorgan explicitly names an on-demand REST API for traders as part of the asset-fee data sink.",
+		"resumeContext": "JPMorgan built an on-demand REST API that exposed centralized asset-fee data to traders and analytics workflows.",
 		"evidence": [
 			{
 				"label": "JPMorgan Chase & Co.",
@@ -3280,7 +3352,7 @@
 	"Retrieval Augmented Generation (RAG)": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Pattern where an LLM retrieves trusted external context before generating an answer.",
-		"resumeContext": "Wyatt builds source-grounded AI, document, and semantic retrieval workflows.",
+		"resumeContext": "Frame Payments document intelligence and NotebookLM work use retrieval to ground answers in uploaded files, vendor docs, and internal sources.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -3302,7 +3374,7 @@
 	"Rust": {
 		"category": "Languages & Authoring",
 		"summary": "Systems programming language emphasizing memory safety, performance, and explicit ownership.",
-		"resumeContext": "Within the Languages & Authoring set, Rust refers to memory-safe systems programming coverage for performance-sensitive services, tooling, and infrastructure code.",
+		"resumeContext": "Rust is a systems language focused on memory safety and performance, useful for CLIs, services, and native tooling.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3324,7 +3396,7 @@
 	"scikit-learn": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Python machine-learning library for classical modeling, preprocessing, metrics, and model-selection workflows.",
-		"resumeContext": "Regularized Linear Regression Deep Dive lists scikit-learn in its stack and compares custom model implementations against it.",
+		"resumeContext": "The regularized regression project compares custom Ridge, Lasso, and Elastic Net implementations against scikit-learn behavior.",
 		"evidence": [
 			{
 				"label": "Regularized Linear Regression Deep Dive",
@@ -3346,7 +3418,7 @@
 	"Security-Aware Development": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Building with attention to secrets, identity, privacy, validation, and misuse-resistant workflows.",
-		"resumeContext": "Frame Payments names PII/confidential-document safeguards, auditability, and regulated fintech workflows.",
+		"resumeContext": "Frame Payments work combines PII safeguards, confidential-document handling, auditability, and regulated fintech workflows.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -3368,7 +3440,7 @@
 	"Semantic Retrieval": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords.",
-		"resumeContext": "Wyatt builds RAG, document AI, and knowledge retrieval workflows.",
+		"resumeContext": "Frame Payments uses retrieval patterns that search meaning rather than exact keywords across documents and technical knowledge sources.",
 		"evidence": [
 			{
 				"label": "Frame Payments",
@@ -3412,7 +3484,7 @@
 	"shadcn/ui": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Copyable React component patterns built on Radix UI and Tailwind CSS.",
-		"resumeContext": "Wyatt uses shadcn/ui patterns in polished portfolio and developer-facing UI work.",
+		"resumeContext": "Portfolio and developer-facing UI work uses shadcn/ui patterns for polished accessible components without heavy design-system overhead.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -3434,7 +3506,7 @@
 	"SPARQL": {
 		"category": "Languages & Authoring",
 		"summary": "Query language for RDF knowledge graphs and linked entity relationships.",
-		"resumeContext": "Here, SPARQL marks RDF and knowledge-graph querying where entity relationships need graph-native retrieval.",
+		"resumeContext": "SPARQL queries RDF graphs, making it the SQL-like language for semantic web and knowledge-graph data.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3456,7 +3528,7 @@
 	"SQL": {
 		"category": "Languages & Authoring",
 		"summary": "Query language for relational databases, analytical stores, schema work, and data access layers.",
-		"resumeContext": "For readers, SQL names relational querying, schema work, analytics, and data-access patterns across the database toolkit.",
+		"resumeContext": "SQL is the standard language for querying, modeling, and transforming relational data across warehouses and application databases.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3478,7 +3550,7 @@
 	"SQLAlchemy": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Python SQL toolkit and ORM for database access, query construction, and schema-aware application code.",
-		"resumeContext": "NBA Basketball Database lists SQLAlchemy in its stack for validated dataset and warehouse workflows.",
+		"resumeContext": "NBA Basketball Database uses SQLAlchemy around validated dataset generation and SQL-backed warehouse workflows.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
@@ -3500,10 +3572,14 @@
 	"SQLite": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Embedded relational database used for local state, portable datasets, and lightweight application storage.",
-		"resumeContext": "NBA Basketball Database publishes SQLite exports, and ProxyWhirl lists SQLite-backed state in its stack.",
+		"resumeContext": "NBA Basketball Database publishes SQLite exports, while ProxyWhirl uses SQLite-backed state for proxy rotation workflows.",
 		"evidence": [
 			{
 				"label": "NBA Basketball Database",
+				"kind": "project"
+			},
+			{
+				"label": "ProxyWhirl",
 				"kind": "project"
 			}
 		],
@@ -3522,7 +3598,7 @@
 	"Statistical Modeling": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data.",
-		"resumeContext": "This popup frames Statistical Modeling around explainable quantitative methods, assumptions, diagnostics, and prediction from observed data.",
+		"resumeContext": "Statistical modeling estimates relationships in data, giving forecasting and regression work a way to quantify uncertainty and effects.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3544,7 +3620,7 @@
 	"Structured Logging": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited.",
-		"resumeContext": "The Cloud, DevOps & Observability grouping treats Structured Logging as machine-readable events that make runtime behavior searchable, auditable, and easier to correlate.",
+		"resumeContext": "Structured logging records events as fields rather than prose, making runtime behavior easier to search, filter, and correlate.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -3566,7 +3642,7 @@
 	"Swift": {
 		"category": "Languages & Authoring",
 		"summary": "Apple ecosystem programming language for iOS, macOS, and native application development.",
-		"resumeContext": "Swift appears here as Apple-platform development in the language set, covering native iOS and macOS application work.",
+		"resumeContext": "Swift is Apple language for iOS and macOS apps, combining native UI development with modern type safety.",
 		"evidence": [
 			{
 				"label": "Languages & Authoring",
@@ -3588,7 +3664,7 @@
 	"Tableau": {
 		"category": "Data Engineering, Databases & Analytics",
 		"summary": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting.",
-		"resumeContext": "In this skill group, Tableau describes business-intelligence dashboards and stakeholder-facing analysis in the analytics presentation layer.",
+		"resumeContext": "Tableau is a BI tool for interactive dashboards and stakeholder reporting, downstream from clean warehouse or extract data.",
 		"evidence": [
 			{
 				"label": "Data Engineering, Databases & Analytics",
@@ -3615,6 +3691,10 @@
 			{
 				"label": "Personal Website: w4w.dev",
 				"kind": "project"
+			},
+			{
+				"label": "SandLabs",
+				"kind": "work"
 			}
 		],
 		"links": [
@@ -3632,7 +3712,7 @@
 	"TensorFlow": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Machine-learning platform for training, evaluating, and deploying neural-network models.",
-		"resumeContext": "For this popover, TensorFlow means neural-network tooling for training, evaluation, and model-serving workflows.",
+		"resumeContext": "TensorFlow is a neural-network framework for training and serving models, another route into deep learning beside PyTorch.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3654,7 +3734,7 @@
 	"Terraform": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources.",
-		"resumeContext": "The cloud operations context uses Terraform to describe repeatable infrastructure definitions, reviews, and controlled resource changes.",
+		"resumeContext": "Terraform defines infrastructure in code, so cloud resources can be planned, reviewed, and changed repeatably.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -3676,7 +3756,7 @@
 	"Test-Driven Development": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Development approach that uses tests to define expected behavior before or alongside implementation.",
-		"resumeContext": "Readers can read Test-Driven Development here as using tests to define behavior early and keep technical practice changes verifiable.",
+		"resumeContext": "Test-driven development writes expected behavior before implementation, making requirements executable as the code evolves.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -3698,7 +3778,7 @@
 	"Time-Series Forecasting": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Forecasting ordered observations over time using decomposition, trend, seasonality, and error-correction techniques.",
-		"resumeContext": "Gap Inc. explicitly names demand forecasting, time-series decomposition, and forecast accuracy improvements.",
+		"resumeContext": "Gap forecasting work used decomposition and bias correction to improve demand forecasts for inventory planning.",
 		"evidence": [
 			{
 				"label": "Gap Inc.",
@@ -3720,7 +3800,7 @@
 	"Tracing": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior.",
-		"resumeContext": "Tracing serves as shorthand for request-level visibility across services, helping connect latency, failures, and workflow behavior during operations.",
+		"resumeContext": "Tracing follows a request across service boundaries, helping teams diagnose latency, retries, and failures in distributed systems.",
 		"evidence": [
 			{
 				"label": "Cloud, DevOps & Observability",
@@ -3742,7 +3822,7 @@
 	"TypeScript": {
 		"category": "Languages & Authoring",
 		"summary": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code.",
-		"resumeContext": "Wyatt uses TypeScript across React, Vite, agent tooling, and resume-generation codebases.",
+		"resumeContext": "TypeScript runs through the React, Vite, agent tooling, docs, and resume-generation codebases to keep UI and data contracts typed.",
 		"evidence": [
 			{
 				"label": "AI Agent Harness Configs",
@@ -3764,7 +3844,7 @@
 	"Unit Testing": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Focused tests that validate small functions, classes, modules, or contracts in isolation.",
-		"resumeContext": "FL Studio MCP Server names 650+ tests covering contracts and unit paths.",
+		"resumeContext": "FL Studio MCP Server uses unit tests within a 650+ test suite covering contracts, runtime paths, and tool behavior.",
 		"evidence": [
 			{
 				"label": "FL Studio MCP Server",
@@ -3786,10 +3866,14 @@
 	"Vercel": {
 		"category": "Cloud, DevOps & Observability",
 		"summary": "Frontend cloud platform for deploying web apps, docs portals, and serverless-backed product experiences.",
-		"resumeContext": "Listentropy and AI/ML Web Feeds list Vercel in their project stacks.",
+		"resumeContext": "Listentropy and AI/ML Web Feeds use Vercel for hosted frontend delivery, previews, and public project surfaces.",
 		"evidence": [
 			{
 				"label": "Listentropy",
+				"kind": "project"
+			},
+			{
+				"label": "AI/ML Web Feeds",
 				"kind": "project"
 			}
 		],
@@ -3808,7 +3892,7 @@
 	"Vercel AI SDK": {
 		"category": "AI, LLM & Agent Engineering",
 		"summary": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output.",
-		"resumeContext": "Wyatt used Vercel AI SDK in MDXPad's multi-provider AI integration work.",
+		"resumeContext": "MDXPad uses Vercel AI SDK for multi-provider AI assistance with token tracking and bring-your-own-key support.",
 		"evidence": [
 			{
 				"label": "MDXPad",
@@ -3830,7 +3914,7 @@
 	"Vite": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications.",
-		"resumeContext": "Inside Frontend, Product & Desktop Engineering, Vite identifies the modern frontend build path for fast TypeScript and React development, testing, and local iteration.",
+		"resumeContext": "Vite is a fast frontend build tool and dev server, fitting React and documentation apps that need quick local feedback and modern bundling.",
 		"evidence": [
 			{
 				"label": "Frontend, Product & Desktop Engineering",
@@ -3852,7 +3936,7 @@
 	"Vitest": {
 		"category": "Testing, Quality, Security & Architecture",
 		"summary": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing.",
-		"resumeContext": "Within the Testing, Quality, Security & Architecture set, Vitest refers to TypeScript and React test coverage in the Vite toolchain with fast unit and component runs.",
+		"resumeContext": "Vitest is a fast Vite-native test runner for TypeScript and React code, similar in shape to Jest but optimized for Vite projects.",
 		"evidence": [
 			{
 				"label": "Testing, Quality, Security & Architecture",
@@ -3874,7 +3958,7 @@
 	"Web Workers": {
 		"category": "Frontend, Product & Desktop Engineering",
 		"summary": "Browser background execution primitive for moving heavy processing off the main UI thread.",
-		"resumeContext": "Listentropy explicitly names a Web Worker processing pipeline for client-side Spotify history analytics.",
+		"resumeContext": "Listentropy uses a Web Worker pipeline to process large Spotify history files in-browser while keeping the UI responsive.",
 		"evidence": [
 			{
 				"label": "Listentropy",
@@ -3896,7 +3980,7 @@
 	"WebSockets": {
 		"category": "Streaming, Messaging & Capital Markets Systems",
 		"summary": "Browser and server protocol for bidirectional, persistent real-time communication.",
-		"resumeContext": "Here, WebSockets marks the browser-server channel for bidirectional live updates, pairing with real-time messaging themes.",
+		"resumeContext": "WebSockets keep a browser-server channel open, enabling live UI updates for streams, dashboards, collaboration, and agent sessions.",
 		"evidence": [
 			{
 				"label": "Streaming, Messaging & Capital Markets Systems",
@@ -3918,7 +4002,7 @@
 	"XGBoost": {
 		"category": "Machine Learning & Data Science",
 		"summary": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models.",
-		"resumeContext": "For readers, XGBoost names boosted-tree modeling for tabular classification, regression, ranking, and feature-importance analysis.",
+		"resumeContext": "XGBoost is a boosted-tree library for tabular prediction problems, often strong for structured datasets before deep learning is needed.",
 		"evidence": [
 			{
 				"label": "Machine Learning & Data Science",
@@ -3940,10 +4024,14 @@
 	"YAML": {
 		"category": "Languages & Authoring",
 		"summary": "Human-readable data serialization format used for configuration, schemas, docs metadata, and pipeline definitions.",
-		"resumeContext": "AI/ML Web Feeds explicitly names YAML feed schemas, and MDXPad validates YAML frontmatter.",
+		"resumeContext": "AI/ML Web Feeds uses YAML feed schemas, and MDXPad validates YAML frontmatter for authoring workflows.",
 		"evidence": [
 			{
 				"label": "AI/ML Web Feeds",
+				"kind": "project"
+			},
+			{
+				"label": "MDXPad",
 				"kind": "project"
 			}
 		],

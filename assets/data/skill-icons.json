@@ -635,7 +635,7 @@
   "Pandera": {
     "category": "Data Engineering, Databases & Analytics",
     "iconName": "pandera-banner",
-    "iconPath": "/skill-icons/pandera.png",
+    "iconPath": "/skill-icons/pandera.webp",
     "sha256": "b52cf4ece1d254c40696b33231375579528c13491f7512ec13184a2507b78912",
     "source": "web-sourced",
     "sourceUrl": "https://pandera.readthedocs.io/en/stable/_static/pandera-banner.png",
@@ -910,7 +910,7 @@
   },
   "Python SDKs": {
     "category": "Backend, APIs & Distributed Systems",
-    "iconPath": "/skill-icons/python-sdks.png",
+    "iconPath": "/skill-icons/python-sdks.webp",
     "sha256": "e17b4bee1c1c28fcb7e2a2c288acc57aeb773fc1792384ad4043816fa8f01c44",
     "source": "web-sourced",
     "sourceUrl": "https://packaging.python.org/en/latest/_static/py.png"
@@ -1509,12 +1509,12 @@
   },
   "Python": {
     "category": "Languages & Authoring",
-    "iconName": "python-classic",
-    "iconPath": "/skill-icons/python.png",
-    "sha256": "515d56e5b2bb0ea82350bc42fca54149ca135815a1c7d3fedd8e44615a77d37a",
-    "source": "official",
-    "sourceUrl": "https://www.python.org/static/community_logos/python-logo-master-v3-TM.png",
-    "sourceNote": "Official project or vendor icon resolved from a first-party source."
+    "iconName": "python",
+    "iconPath": "/skill-icons/python.svg",
+    "sha256": "5865be8bcc0af888594903ea0112f6c8d923c5726c4081e8c856110cc7339cef",
+    "source": "web-sourced",
+    "sourceUrl": "https://docs.python.org/3/_static/py.svg",
+    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
   },
   "SQL": {
     "category": "Languages & Authoring",
