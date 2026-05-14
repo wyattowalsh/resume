@@ -88,23 +88,6 @@ const expectSkillLink = (skillName: string, href: string) => {
   );
 };
 
-const getReferenceDomain = (href: string) => {
-  const hostname = new URL(href).hostname.replace(/^www\./, "").toLowerCase();
-  const parts = hostname.split(".");
-
-  if (parts.length <= 2) {
-    return hostname;
-  }
-
-  const suffix = parts.slice(-2).join(".");
-
-  if (suffix === "github.io" || suffix === "readthedocs.io") {
-    return parts.slice(-3).join(".");
-  }
-
-  return suffix;
-};
-
 const maskDescriptionAbbreviations = (text: string) =>
   text
     .replace(/Express\.js/g, "Express<dot>js")
@@ -222,7 +205,11 @@ describe("skill details", () => {
       expect(detail.icon?.path, skillName).toMatch(/^\/skill-icons\//);
       expect(detail.links.length, skillName).toBeGreaterThanOrEqual(1);
       expect(
-        new Set(detail.links.map((link) => getReferenceDomain(link.href))).size,
+        new Set(detail.links.map((link) => link.href)).size,
+        skillName,
+      ).toBe(detail.links.length);
+      expect(
+        new Set(detail.links.map((link) => link.label)).size,
         skillName,
       ).toBe(detail.links.length);
 

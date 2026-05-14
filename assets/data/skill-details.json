@@ -26,6 +26,10 @@
 			{
 				"label": "Skills source",
 				"href": "https://github.com/anthropics/skills"
+			},
+			{
+				"label": "Skills site",
+				"href": "https://agentskills.io/"
 			}
 		]
 	},
@@ -56,6 +60,14 @@
 			{
 				"label": "Bedrock samples",
 				"href": "https://github.com/aws-samples/amazon-bedrock-samples"
+			},
+			{
+				"label": "Service page",
+				"href": "https://aws.amazon.com/bedrock/"
+			},
+			{
+				"label": "Code examples",
+				"href": "https://docs.aws.amazon.com/bedrock/latest/userguide/service_code_examples.html"
 			}
 		]
 	},
@@ -71,6 +83,10 @@
 			{
 				"label": "AWS samples",
 				"href": "https://github.com/aws-samples"
+			},
+			{
+				"label": "Service page",
+				"href": "https://aws.amazon.com/kinesis/"
 			}
 		]
 	},
@@ -86,6 +102,10 @@
 			{
 				"label": "60East GitHub",
 				"href": "https://github.com/60East"
+			},
+			{
+				"label": "AMPS docs",
+				"href": "https://docs.crankuptheamps.com/"
 			}
 		]
 	},
@@ -116,6 +136,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/ant-design/ant-design"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/antd"
 			}
 		]
 	},
@@ -131,6 +155,14 @@
 			{
 				"label": "Python SDK",
 				"href": "https://github.com/anthropics/anthropic-sdk-python"
+			},
+			{
+				"label": "API reference",
+				"href": "https://platform.claude.com/docs/en/api/overview"
+			},
+			{
+				"label": "Prompt guide",
+				"href": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
 			}
 		]
 	},
@@ -161,6 +193,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/apache/airflow"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/apache-airflow/"
 			}
 		]
 	},
@@ -176,6 +212,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/apache/kafka"
+			},
+			{
+				"label": "Quickstart",
+				"href": "https://kafka.apache.org/quickstart"
 			}
 		]
 	},
@@ -191,6 +231,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/apache/spark"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/pyspark/"
 			}
 		]
 	},
@@ -206,6 +250,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/argoproj/argo-cd"
+			},
+			{
+				"label": "Project site",
+				"href": "https://argo-cd.readthedocs.io/en/stable/"
 			}
 		]
 	},
@@ -236,6 +284,10 @@
 			{
 				"label": "AWS docs source",
 				"href": "https://github.com/awsdocs"
+			},
+			{
+				"label": "AWS docs",
+				"href": "https://docs.aws.amazon.com/"
 			}
 		]
 	},
@@ -251,6 +303,10 @@
 			{
 				"label": "Federation SDK",
 				"href": "https://github.com/awslabs/aws-athena-query-federation"
+			},
+			{
+				"label": "Service page",
+				"href": "https://aws.amazon.com/athena/"
 			}
 		]
 	},
@@ -266,6 +322,10 @@
 			{
 				"label": "Glue samples",
 				"href": "https://github.com/aws-samples/aws-glue-samples"
+			},
+			{
+				"label": "Service page",
+				"href": "https://aws.amazon.com/glue/"
 			}
 		]
 	},
@@ -281,6 +341,14 @@
 			{
 				"label": "Lambda samples",
 				"href": "https://github.com/aws-samples/serverless-patterns"
+			},
+			{
+				"label": "Service page",
+				"href": "https://aws.amazon.com/lambda/"
+			},
+			{
+				"label": "SAM",
+				"href": "https://aws.amazon.com/serverless/sam/"
 			}
 		]
 	},
@@ -296,6 +364,10 @@
 			{
 				"label": "Architecture source",
 				"href": "https://github.com/microsoftdocs/architecture-center"
+			},
+			{
+				"label": "Product site",
+				"href": "https://azure.microsoft.com/en-us"
 			}
 		]
 	},
@@ -326,6 +398,10 @@
 			{
 				"label": "BigQuery utils",
 				"href": "https://github.com/GoogleCloudPlatform/bigquery-utils"
+			},
+			{
+				"label": "Product page",
+				"href": "https://cloud.google.com/bigquery"
 			}
 		]
 	},
@@ -371,6 +447,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/chakra-ui/chakra-ui"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/@chakra-ui%2freact"
 			}
 		]
 	},
@@ -431,6 +511,10 @@
 			{
 				"label": "CLI source",
 				"href": "https://github.com/CircleCI-Public/circleci-cli"
+			},
+			{
+				"label": "Product site",
+				"href": "https://circleci.com/"
 			}
 		]
 	},
@@ -446,6 +530,10 @@
 			{
 				"label": "Claude Code docs",
 				"href": "https://docs.anthropic.com/en/docs/claude-code/overview"
+			},
+			{
+				"label": "Product site",
+				"href": "https://www.anthropic.com/claude-code"
 			}
 		]
 	},
@@ -506,6 +594,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/codemirror/dev"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/codemirror"
 			}
 		]
 	},
@@ -596,6 +688,10 @@
 			{
 				"label": "Source org",
 				"href": "https://github.com/getcursor"
+			},
+			{
+				"label": "Community forum",
+				"href": "https://forum.cursor.com/"
 			}
 		]
 	},
@@ -611,6 +707,10 @@
 			{
 				"label": "Cursor overview",
 				"href": "https://en.wikipedia.org/wiki/Cursor_(code_editor)"
+			},
+			{
+				"label": "Community forum",
+				"href": "https://forum.cursor.com/"
 			}
 		]
 	},
@@ -626,6 +726,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/cypress-io/cypress"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/cypress"
 			}
 		]
 	},
@@ -641,6 +745,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/plotly/dash"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/dash/"
 			}
 		]
 	},
@@ -701,6 +809,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/django/django"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/Django/"
 			}
 		]
 	},
@@ -716,6 +828,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/docker/docs"
+			},
+			{
+				"label": "Product site",
+				"href": "https://www.docker.com/"
+			},
+			{
+				"label": "Docker Hub",
+				"href": "https://hub.docker.com/"
 			}
 		]
 	},
@@ -761,6 +881,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/duckdb/duckdb"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/duckdb/"
 			}
 		]
 	},
@@ -821,6 +945,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/electron/electron"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/electron"
 			}
 		]
 	},
@@ -881,6 +1009,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/expressjs/express"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/express"
 			}
 		]
 	},
@@ -896,6 +1028,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/fastapi/fastapi"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/fastapi/"
+			},
+			{
+				"label": "Tutorial",
+				"href": "https://fastapi.tiangolo.com/tutorial/"
 			}
 		]
 	},
@@ -926,6 +1066,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pallets/flask"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/Flask/"
 			}
 		]
 	},
@@ -956,6 +1100,10 @@
 			{
 				"label": "Foundation Fabric",
 				"href": "https://github.com/GoogleCloudPlatform/cloud-foundation-fabric"
+			},
+			{
+				"label": "Product site",
+				"href": "https://cloud.google.com/"
 			}
 		]
 	},
@@ -986,6 +1134,10 @@
 			{
 				"label": "Actions by Example",
 				"href": "https://www.actionsbyexample.com/"
+			},
+			{
+				"label": "Marketplace",
+				"href": "https://github.com/marketplace?type=actions"
 			}
 		]
 	},
@@ -1031,6 +1183,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/golang/go"
+			},
+			{
+				"label": "Package docs",
+				"href": "https://pkg.go.dev/"
 			}
 		]
 	},
@@ -1076,6 +1232,14 @@
 			{
 				"label": "Cookbook",
 				"href": "https://github.com/google-gemini/cookbook"
+			},
+			{
+				"label": "API reference",
+				"href": "https://ai.google.dev/api"
+			},
+			{
+				"label": "SDK libraries",
+				"href": "https://ai.google.dev/gemini-api/docs/libraries"
 			}
 		]
 	},
@@ -1091,6 +1255,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/grafana/grafana"
+			},
+			{
+				"label": "Product site",
+				"href": "https://grafana.com/grafana/"
 			}
 		]
 	},
@@ -1136,6 +1304,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/guardrails-ai/guardrails"
+			},
+			{
+				"label": "Product site",
+				"href": "https://www.guardrailsai.com/"
 			}
 		]
 	},
@@ -1196,6 +1368,10 @@
 			{
 				"label": "Transformers source",
 				"href": "https://github.com/huggingface/transformers"
+			},
+			{
+				"label": "Hub",
+				"href": "https://huggingface.co/"
 			}
 		]
 	},
@@ -1211,6 +1387,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/gohugoio/hugo"
+			},
+			{
+				"label": "Themes",
+				"href": "https://themes.gohugo.io/"
 			}
 		]
 	},
@@ -1286,6 +1466,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/jenkinsci/jenkins"
+			},
+			{
+				"label": "Plugins",
+				"href": "https://plugins.jenkins.io/"
 			}
 		]
 	},
@@ -1301,6 +1485,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/jestjs/jest"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/jest"
 			}
 		]
 	},
@@ -1316,6 +1504,14 @@
 			{
 				"label": "Notebook source",
 				"href": "https://github.com/jupyter/notebook"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/jupyter/"
+			},
+			{
+				"label": "JupyterLab docs",
+				"href": "https://jupyterlab.readthedocs.io/en/latest/"
 			}
 		]
 	},
@@ -1361,6 +1557,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/kubernetes/kubernetes"
+			},
+			{
+				"label": "CNCF project",
+				"href": "https://www.cncf.io/projects/kubernetes/"
+			},
+			{
+				"label": "API reference",
+				"href": "https://kubernetes.io/docs/reference/kubernetes-api/"
 			}
 		]
 	},
@@ -1376,6 +1580,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/langchain-ai/langchain"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/langchain/"
+			},
+			{
+				"label": "Integrations",
+				"href": "https://docs.langchain.com/oss/python/integrations/providers/overview"
 			}
 		]
 	},
@@ -1391,6 +1603,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/langchain-ai/langgraph"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/langgraph/"
 			}
 		]
 	},
@@ -1406,6 +1622,10 @@
 			{
 				"label": "SDK source",
 				"href": "https://github.com/langchain-ai/langsmith-sdk"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/langsmith/"
 			}
 		]
 	},
@@ -1451,6 +1671,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/run-llama/llama_index"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/llama-index/"
 			}
 		]
 	},
@@ -1526,6 +1750,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/mui/material-ui"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/@mui%2fmaterial"
 			}
 		]
 	},
@@ -1556,6 +1784,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/matplotlib/matplotlib"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/matplotlib/"
 			}
 		]
 	},
@@ -1571,6 +1803,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/mdx-js/mdx"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/@mdx-js%2fmdx"
 			}
 		]
 	},
@@ -1601,6 +1837,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/mobxjs/mobx"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/mobx"
 			}
 		]
 	},
@@ -1661,6 +1901,10 @@
 			{
 				"label": "Build source",
 				"href": "https://github.com/netlify/build"
+			},
+			{
+				"label": "Product site",
+				"href": "https://www.netlify.com/"
 			}
 		]
 	},
@@ -1676,6 +1920,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/vercel/next.js"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/next"
+			},
+			{
+				"label": "Learn",
+				"href": "https://nextjs.org/learn"
 			}
 		]
 	},
@@ -1691,6 +1943,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/nodejs/node"
+			},
+			{
+				"label": "Releases",
+				"href": "https://nodejs.org/en/about/previous-releases"
 			}
 		]
 	},
@@ -1736,6 +1992,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/numpy/numpy"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/numpy/"
 			}
 		]
 	},
@@ -1766,6 +2026,14 @@
 			{
 				"label": "Python SDK",
 				"href": "https://github.com/openai/openai-python"
+			},
+			{
+				"label": "API reference",
+				"href": "https://developers.openai.com/api/reference"
+			},
+			{
+				"label": "Cookbook",
+				"href": "https://developers.openai.com/cookbook"
 			}
 		]
 	},
@@ -1781,6 +2049,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/sst/opencode"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/opencode-ai"
 			}
 		]
 	},
@@ -1811,6 +2083,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pandas-dev/pandas"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/pandas/"
 			}
 		]
 	},
@@ -1826,6 +2102,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/unionai-oss/pandera"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/pandera/"
 			}
 		]
 	},
@@ -1871,6 +2151,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/microsoft/playwright"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/playwright"
+			},
+			{
+				"label": "Trace viewer",
+				"href": "https://playwright.dev/docs/trace-viewer"
 			}
 		]
 	},
@@ -1886,6 +2174,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/plotly/plotly.py"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/plotly/"
 			}
 		]
 	},
@@ -1901,6 +2193,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pola-rs/polars"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/polars/"
 			}
 		]
 	},
@@ -1916,6 +2212,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/postgres/postgres"
+			},
+			{
+				"label": "Downloads",
+				"href": "https://www.postgresql.org/download/"
 			}
 		]
 	},
@@ -1931,6 +2231,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/PrefectHQ/prefect"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/prefect/"
 			}
 		]
 	},
@@ -1946,6 +2250,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/prometheus/prometheus"
+			},
+			{
+				"label": "Downloads",
+				"href": "https://prometheus.io/download/"
 			}
 		]
 	},
@@ -1991,6 +2299,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/puppeteer/puppeteer"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/puppeteer"
 			}
 		]
 	},
@@ -2006,6 +2318,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pydantic/pydantic"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/pydantic/"
+			},
+			{
+				"label": "Models guide",
+				"href": "https://pydantic.dev/docs/validation/latest/concepts/models/"
 			}
 		]
 	},
@@ -2021,6 +2341,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pydantic/pydantic-ai"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/pydantic-ai/"
 			}
 		]
 	},
@@ -2036,6 +2360,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pytest-dev/pytest"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/pytest/"
 			}
 		]
 	},
@@ -2081,6 +2409,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/pytorch/pytorch"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/torch/"
+			},
+			{
+				"label": "Tutorials",
+				"href": "https://pytorch.org/tutorials/"
 			}
 		]
 	},
@@ -2141,6 +2477,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/facebook/react"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/react"
+			},
+			{
+				"label": "Learn",
+				"href": "https://react.dev/learn"
 			}
 		]
 	},
@@ -2171,6 +2515,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/redis/redis"
+			},
+			{
+				"label": "Redis downloads",
+				"href": "https://redis.io/downloads/"
 			}
 		]
 	},
@@ -2201,6 +2549,10 @@
 			{
 				"label": "Redux Toolkit source",
 				"href": "https://github.com/reduxjs/redux-toolkit"
+			},
+			{
+				"label": "Toolkit npm registry",
+				"href": "https://registry.npmjs.org/@reduxjs%2ftoolkit"
 			}
 		]
 	},
@@ -2261,6 +2613,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/rust-lang/rust"
+			},
+			{
+				"label": "Cargo publishing",
+				"href": "https://doc.rust-lang.org/cargo/reference/publishing.html"
+			},
+			{
+				"label": "Standard library",
+				"href": "https://doc.rust-lang.org/std/"
 			}
 		]
 	},
@@ -2276,6 +2636,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/scikit-learn/scikit-learn"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/scikit-learn/"
 			}
 		]
 	},
@@ -2336,6 +2700,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/shadcn-ui/ui"
+			},
+			{
+				"label": "Components",
+				"href": "https://ui.shadcn.com/docs/components"
 			}
 		]
 	},
@@ -2381,6 +2749,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/sqlalchemy/sqlalchemy"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/SQLAlchemy/"
 			}
 		]
 	},
@@ -2441,6 +2813,10 @@
 			{
 				"label": "Swift book source",
 				"href": "https://github.com/swiftlang/swift-book"
+			},
+			{
+				"label": "Package Manager",
+				"href": "https://www.swift.org/package-manager/"
 			}
 		]
 	},
@@ -2456,6 +2832,10 @@
 			{
 				"label": "Developer samples",
 				"href": "https://github.com/tableau"
+			},
+			{
+				"label": "Desktop help",
+				"href": "https://help.tableau.com/current/pro/desktop/en-us/default.htm"
 			}
 		]
 	},
@@ -2471,6 +2851,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/tailwindlabs/tailwindcss"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/tailwindcss"
+			},
+			{
+				"label": "Showcase",
+				"href": "https://tailwindcss.com/showcase"
 			}
 		]
 	},
@@ -2486,6 +2874,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/tensorflow/tensorflow"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/tensorflow/"
+			},
+			{
+				"label": "Tutorials",
+				"href": "https://www.tensorflow.org/tutorials"
 			}
 		]
 	},
@@ -2501,6 +2897,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/hashicorp/terraform"
+			},
+			{
+				"label": "Registry",
+				"href": "https://registry.terraform.io/"
 			}
 		]
 	},
@@ -2561,6 +2961,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/microsoft/TypeScript"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/typescript"
+			},
+			{
+				"label": "Playground",
+				"href": "https://www.typescriptlang.org/play/"
 			}
 		]
 	},
@@ -2591,6 +2999,10 @@
 			{
 				"label": "CLI source",
 				"href": "https://github.com/vercel/vercel"
+			},
+			{
+				"label": "Product site",
+				"href": "https://vercel.com/"
 			}
 		]
 	},
@@ -2606,6 +3018,14 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/vercel/ai"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/ai"
+			},
+			{
+				"label": "Recipes",
+				"href": "https://ai-sdk.dev/resources/recipes"
 			}
 		]
 	},
@@ -2621,6 +3041,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/vitejs/vite"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/vite"
 			}
 		]
 	},
@@ -2636,6 +3060,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/vitest-dev/vitest"
+			},
+			{
+				"label": "npm registry",
+				"href": "https://registry.npmjs.org/vitest"
 			}
 		]
 	},
@@ -2681,6 +3109,10 @@
 			{
 				"label": "Source",
 				"href": "https://github.com/dmlc/xgboost"
+			},
+			{
+				"label": "PyPI",
+				"href": "https://pypi.org/project/xgboost/"
 			}
 		]
 	},
