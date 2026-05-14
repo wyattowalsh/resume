@@ -43,6 +43,12 @@ const blockedWordmarkIconSources = [
   "Gnu-bash-logo.svg",
 ] as const;
 
+const expectSkillLink = (skillName: string, href: string) => {
+  expect(getSkillDetail(skillName)?.links, skillName).toEqual(
+    expect.arrayContaining([expect.objectContaining({ href })]),
+  );
+};
+
 const visibleSkillGroups = siteVariant.skills;
 const visibleSkills = visibleSkillGroups.flatMap((group) => group.keywords);
 const sectionIconNames = new Set([
@@ -173,29 +179,25 @@ describe("skill details", () => {
   });
 
   it("preserves curated references for known high-signal skills", () => {
-    expect(getSkillDetail("AMPS")).toMatchObject({
-      links: [{ href: "https://crankuptheamps.com/" }],
-    });
+    expectSkillLink("AMPS", "https://crankuptheamps.com/");
+    expectSkillLink("AMPS", "https://docs.crankuptheamps.com/");
     expect(getSkillDetail("C++")).toMatchObject({
-      links: [{ href: "https://isocpp.org/" }],
       name: "C++",
     });
-    expect(getSkillDetail("Google Gemini API")).toMatchObject({
-      links: [{ href: "https://ai.google.dev/gemini-api/docs" }],
-    });
-    expect(getSkillDetail("OpenAI API")).toMatchObject({
-      links: [{ href: "https://developers.openai.com/api/docs/overview" }],
-    });
-    expect(getSkillDetail("NotebookLM")).toMatchObject({
-      links: [{ href: "https://support.google.com/notebooklm" }],
-    });
-    expect(getSkillDetail("Statistical Modeling")).toMatchObject({
-      links: [
-        {
-          href: "https://www.nist.gov/publications/handbook-151-nistsematech-e-handbook-statistical-methods",
-        },
-      ],
-    });
+    expectSkillLink("C++", "https://isocpp.org/");
+    expectSkillLink(
+      "Google Gemini API",
+      "https://ai.google.dev/gemini-api/docs",
+    );
+    expectSkillLink(
+      "OpenAI API",
+      "https://developers.openai.com/api/docs/overview",
+    );
+    expectSkillLink("NotebookLM", "https://notebooklm.google/");
+    expectSkillLink(
+      "Statistical Modeling",
+      "https://www.nist.gov/publications/handbook-151-nistsematech-e-handbook-statistical-methods",
+    );
     expect(getSkillDetail("Deliberately Missing Skill", "Other")).toMatchObject(
       {
         desc: expect.stringContaining(

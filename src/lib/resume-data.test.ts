@@ -421,12 +421,26 @@ describe("getResumeVariant", () => {
     it("resolves metadata for high-signal web skill popovers", () => {
       expect(getSkillDetail("AMPS")).toMatchObject({
         name: "AMPS",
-        links: [{ href: "https://crankuptheamps.com/" }],
       });
+      expect(getSkillDetail("AMPS")?.links).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({ href: "https://crankuptheamps.com/" }),
+          expect.objectContaining({
+            href: "https://docs.crankuptheamps.com/",
+          }),
+        ]),
+      );
       expect(getSkillDetail("AI Agent Skills")).toMatchObject({
         name: "AI Agent Skills",
-        links: [{ href: "https://agentskills.io/specification" }],
       });
+      expect(getSkillDetail("AI Agent Skills")?.links).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            href: "https://agentskills.io/specification",
+          }),
+          expect.objectContaining({ href: "https://agentskills.io/" }),
+        ]),
+      );
     });
 
     it("generates safe fallback metadata for skills without curated copy", () => {
