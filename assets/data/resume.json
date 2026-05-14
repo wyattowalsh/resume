@@ -467,7 +467,7 @@
       "githubUrl": "https://github.com/wyattowalsh/agents",
       "startDate": "2026-01-01",
       "endDate": null,
-      "description": "Open-source agent tooling catalog and docs portal packaging a broad library of portable skills, reusable agents, MCP tool presets, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
+      "description": "Open-source agent tooling catalog and docs portal packaging 100+ portable skills, reusable agents, dozens of MCP tool presets, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
       "selectionHints": {
         "themes": [
           "developer-tooling",
@@ -484,8 +484,8 @@
       },
       "highlights": [
         "Standardized reusable agent definitions across Claude Code, Codex, GitHub Copilot, Cursor, OpenCode, and related IDE agents.",
-        "Shipped generated docs, install flows, and MCP-ready tool presets spanning code review, security, infrastructure, research, and workflow automation.",
-        "Packaged portable skills and reusable agent definitions into a cross-runtime workflow system for AI-assisted software development."
+        "Shipped generated docs, install flows, and dozens of MCP-ready tool presets spanning code review, security, infrastructure, research, and workflow automation.",
+        "Packaged 100+ portable skills and reusable agent definitions into a cross-runtime workflow system for AI-assisted software development."
       ],
       "stack": ["Python", "TypeScript", "MCP", "FastMCP"]
     },
@@ -499,7 +499,7 @@
       ],
       "startDate": "2021-04-01",
       "endDate": null,
-      "description": "Public NBA Kaggle dataset and repo covering full-season game and play-by-play history with DuckDB, SQLite, Parquet, and CSV exports; drew substantial Kaggle usage while informing the next-generation nbadb rebuild.",
+      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ play-by-play events with DuckDB, SQLite, Parquet, and CSV exports; drew 400K+ views and 60K+ downloads while informing the next-generation nbadb rebuild.",
       "selectionHints": {
         "themes": ["data-engineering", "open-data", "analytics"],
         "aliases": ["ETL pipeline", "sports analytics dataset", "Kaggle dataset"],
@@ -507,8 +507,8 @@
       },
       "highlights": [
         "Implemented Pandera-validated NBA API ETL with daily warehouse updates plus DuckDB, SQLite, Parquet, and CSV exports.",
-        "Building the next-generation nbadb rebuild with broad extractor coverage and generated public star-schema outputs across docs, schema references, and release workflows.",
-        "Published a public sports analytics dataset covering NBA game and play-by-play history across multiple warehouse formats."
+        "Rebuilding nbadb with 150+ extractor wrappers and 200+ generated public star-schema outputs.",
+        "Published a public sports analytics dataset covering 65K+ NBA games and 13M+ play-by-play events across multiple warehouse formats."
       ],
       "stack": ["Python", "Pandas", "Polars", "SQLAlchemy", "DuckDB", "Pandera"]
     },

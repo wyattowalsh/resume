@@ -24,7 +24,8 @@ describe("Projects", () => {
     expect(markup).not.toContain("View 2 proof points + 5 stack items");
     expect(markup).not.toContain("FL Studio MCP Server");
     expect(markup).not.toContain("Listentropy");
-    expect(markup).toContain("substantial Kaggle usage");
+    expect(markup).toContain("400K+ views");
+    expect(markup).toContain("60K+ downloads");
     expect(markup).not.toMatch(/freez|2023-07-06/i);
     expect(markup).toContain("Live site for Personal Website: w4w.dev");
     expect(markup).not.toContain("Live site for AI Agent Harness Configs");

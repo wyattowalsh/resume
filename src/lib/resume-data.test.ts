@@ -296,11 +296,11 @@ describe("getResumeVariant", () => {
       );
 
       expect(nbadb).toBeDefined();
-      expect(nbadb!.description).toContain("full-season game and play-by-play history");
+      expect(nbadb!.description).toContain("400K+ views and 60K+ downloads");
       expect(nbadb!.description).not.toMatch(/freez|2023-07-06/i);
-      expect(nbadb!.highlights.join(" ")).toContain("broad extractor coverage");
+      expect(nbadb!.highlights.join(" ")).toContain("150+ extractor wrappers");
       expect(nbadb!.highlights.join(" ")).toContain(
-        "generated public star-schema outputs",
+        "200+ generated public star-schema outputs",
       );
     });
 

@@ -681,7 +681,12 @@ function assertArtifactContentConsistency(
     );
     assertStrictTextIncludes(
       nbaDatabaseBlock,
-      "play-by-play",
+      "400K+",
+      `${context} NBA Basketball Database entry`,
+    );
+    assertStrictTextIncludes(
+      nbaDatabaseBlock,
+      "60K+",
       `${context} NBA Basketball Database entry`,
     );
     assertNormalizedTextExcludes(
