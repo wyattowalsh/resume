@@ -105,6 +105,13 @@ const getReferenceDomain = (href: string) => {
   return suffix;
 };
 
+const maskDescriptionAbbreviations = (text: string) =>
+  text
+    .replace(/Express\.js/g, "Express<dot>js")
+    .replace(/Next\.js/g, "Next<dot>js")
+    .replace(/Node\.js/g, "Node<dot>js")
+    .replace(/OAuth 2\.0/g, "OAuth 2<dot>0");
+
 const visibleSkillGroups = siteVariant.skills;
 const visibleSkills = visibleSkillGroups.flatMap((group) => group.keywords);
 const sectionIconNames = new Set([
@@ -209,6 +216,9 @@ describe("skill details", () => {
       expect(detail.desc, skillName).not.toMatch(blockedUserFacingPattern);
       expect(detail.desc, skillName).not.toMatch(blockedResumeContextPattern);
       expect(detail.desc, skillName).not.toMatch(repeatedSmallWordPattern);
+      expect(maskDescriptionAbbreviations(detail.desc), skillName).not.toMatch(
+        /\.\s+/,
+      );
       expect(detail.icon?.path, skillName).toMatch(/^\/skill-icons\//);
       expect(detail.links.length, skillName).toBeGreaterThanOrEqual(1);
       expect(

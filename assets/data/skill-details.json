@@ -61,7 +61,7 @@
 	},
 	"Amazon Kinesis": {
 		"name": "Amazon Kinesis",
-		"desc": "AWS service family for collecting, processing, and analyzing real-time streaming data. Amazon Kinesis is AWS managed stream ingestion, comparable to Kafka or Pub/Sub when event records need cloud-native buffering and fan-out.",
+		"desc": "AWS service family for collecting, processing, and analyzing real-time streaming data.",
 		"icon": "/skill-icons/amazon-kinesis.png",
 		"links": [
 			{
@@ -106,7 +106,7 @@
 	},
 	"Ant Design": {
 		"name": "Ant Design",
-		"desc": "Enterprise-oriented React design system and component library for complex application interfaces. Ant Design is a React component library for dense enterprise screens such as admin tools, data tables, forms, and dashboards.",
+		"desc": "Enterprise-oriented React design system and component library for complex application interfaces.",
 		"icon": "/skill-icons/ant-design.svg",
 		"links": [
 			{
@@ -136,7 +136,7 @@
 	},
 	"Antigravity": {
 		"name": "Antigravity",
-		"desc": "Agentic coding environment surface for delegating development work across editor and browser-style workflows. Antigravity is a Google coding-agent environment; it belongs beside editor and browser agents as another way to delegate repository tasks.",
+		"desc": "Agentic coding environment surface for delegating development work across editor and browser-style workflows.",
 		"icon": "/skill-icons/antigravity.ico",
 		"links": [
 			{
@@ -151,7 +151,7 @@
 	},
 	"Apache Airflow": {
 		"name": "Apache Airflow",
-		"desc": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines. Airflow schedules and monitors data pipelines as DAGs, making dependencies, retries, and batch jobs visible to operators.",
+		"desc": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines.",
 		"icon": "/skill-icons/apache-airflow.svg",
 		"links": [
 			{
@@ -166,7 +166,7 @@
 	},
 	"Apache Kafka": {
 		"name": "Apache Kafka",
-		"desc": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing. Kafka is a durable event log for high-throughput pub/sub systems, often used when producers and consumers need replayable streams.",
+		"desc": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing.",
 		"icon": "/skill-icons/apache-kafka.svg",
 		"links": [
 			{
@@ -196,7 +196,7 @@
 	},
 	"Argo CD": {
 		"name": "Argo CD",
-		"desc": "GitOps continuous delivery tool for syncing Kubernetes application state from version control. Argo CD syncs Kubernetes apps from Git, making cluster state reviewable through GitOps rather than manual release steps.",
+		"desc": "GitOps continuous delivery tool for syncing Kubernetes application state from version control.",
 		"icon": "/skill-icons/argo-cd.svg",
 		"links": [
 			{
@@ -241,7 +241,7 @@
 	},
 	"AWS Athena": {
 		"name": "AWS Athena",
-		"desc": "Serverless AWS query service for running SQL over data in S3 and lake-style storage. Athena runs SQL over S3 data without a warehouse cluster, useful for ad hoc analytics on lake-style datasets.",
+		"desc": "Serverless AWS query service for running SQL over data in S3 and lake-style storage.",
 		"icon": "/skill-icons/aws-athena.png",
 		"links": [
 			{
@@ -256,7 +256,7 @@
 	},
 	"AWS Glue": {
 		"name": "AWS Glue",
-		"desc": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing. AWS Glue is managed ETL and catalog tooling for discovering, transforming, and preparing datasets in the AWS ecosystem.",
+		"desc": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing.",
 		"icon": "/skill-icons/aws-glue.png",
 		"links": [
 			{
@@ -271,7 +271,7 @@
 	},
 	"AWS Lambda": {
 		"name": "AWS Lambda",
-		"desc": "AWS serverless compute service for running event-driven functions without managing servers. AWS Lambda runs event-triggered functions without server management, fitting jobs, webhooks, lightweight APIs, and automation tasks.",
+		"desc": "AWS serverless compute service for running event-driven functions without managing servers.",
 		"icon": "/skill-icons/aws-lambda.png",
 		"links": [
 			{
@@ -286,7 +286,7 @@
 	},
 	"Azure": {
 		"name": "Azure",
-		"desc": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations. Azure is Microsoft cloud platform, useful context beside AWS and GCP for compute, identity, storage, and managed services.",
+		"desc": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations.",
 		"icon": "/skill-icons/azure.svg",
 		"links": [
 			{
@@ -301,7 +301,7 @@
 	},
 	"Bash": {
 		"name": "Bash",
-		"desc": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows. Bash automates shell tasks such as setup, local scripts, build glue, and repeatable command-line operations.",
+		"desc": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows.",
 		"icon": "/skill-icons/bash.svg",
 		"links": [
 			{
@@ -316,7 +316,7 @@
 	},
 	"BigQuery": {
 		"name": "BigQuery",
-		"desc": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets. BigQuery is Google serverless analytics warehouse, built for large SQL queries, reporting, and exploration without managing database nodes.",
+		"desc": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets.",
 		"icon": "/skill-icons/bigquery.svg",
 		"links": [
 			{
@@ -331,7 +331,7 @@
 	},
 	"C++": {
 		"name": "C++",
-		"desc": "General-purpose systems language for performance-sensitive software, native libraries, and lower-level platform work. C++ matters when software needs compiled binaries, memory control, predictable latency, or close contact with operating-system APIs.",
+		"desc": "General-purpose systems language for performance-sensitive software, native libraries, and lower-level platform work.",
 		"icon": "/skill-icons/c.png",
 		"links": [
 			{
@@ -361,7 +361,7 @@
 	},
 	"Chakra UI": {
 		"name": "Chakra UI",
-		"desc": "Composable React component library with accessible primitives and theme-driven styling. Chakra UI provides accessible React primitives and theme tokens, useful when a product UI needs composable components without heavy setup.",
+		"desc": "Composable React component library with accessible primitives and theme-driven styling.",
 		"icon": "/skill-icons/chakra-ui.svg",
 		"links": [
 			{
@@ -376,7 +376,7 @@
 	},
 	"ChatGPT": {
 		"name": "ChatGPT",
-		"desc": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation. ChatGPT is the general-purpose assistant surface in this set, useful for research, drafting, code help, and workflow automation concepts.",
+		"desc": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation.",
 		"icon": "/skill-icons/chatgpt.svg",
 		"links": [
 			{
@@ -391,7 +391,7 @@
 	},
 	"Cherry Studio": {
 		"name": "Cherry Studio",
-		"desc": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows. Cherry Studio is a desktop client for working across multiple model providers, similar to other local assistant and MCP-connected tools.",
+		"desc": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows.",
 		"icon": "/skill-icons/cherry-studio.svg",
 		"links": [
 			{
@@ -414,14 +414,14 @@
 				"href": "https://docs.github.com/en/actions/automating-builds-and-tests"
 			},
 			{
-				"label": "Continuous Integration",
-				"href": "https://martinfowler.com/articles/continuousIntegration.html"
+				"label": "GitLab CI/CD guide",
+				"href": "https://about.gitlab.com/topics/ci-cd/"
 			}
 		]
 	},
 	"CircleCI": {
 		"name": "CircleCI",
-		"desc": "Hosted CI/CD platform for automated builds, tests, and deployment workflows. CircleCI is hosted CI/CD for building, testing, and releasing software through configured pipelines.",
+		"desc": "Hosted CI/CD platform for automated builds, tests, and deployment workflows.",
 		"icon": "/skill-icons/circleci.svg",
 		"links": [
 			{
@@ -451,7 +451,7 @@
 	},
 	"Claude Desktop": {
 		"name": "Claude Desktop",
-		"desc": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces. Claude Desktop is the local Claude client commonly paired with MCP servers, desktop files, and tool-backed assistant workflows.",
+		"desc": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces.",
 		"icon": "/skill-icons/claude-desktop.ico",
 		"links": [
 			{
@@ -466,7 +466,7 @@
 	},
 	"CLI Tooling": {
 		"name": "CLI Tooling",
-		"desc": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks. CLI tooling packages repeatable tasks behind commands, making data jobs, releases, and maintenance easier to run safely.",
+		"desc": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks.",
 		"icon": "/skill-icons/cli-tooling.svg",
 		"links": [
 			{
@@ -481,7 +481,7 @@
 	},
 	"CloudFormation": {
 		"name": "CloudFormation",
-		"desc": "AWS infrastructure-as-code service for defining and managing cloud resources with templates. CloudFormation is AWS infrastructure-as-code, describing cloud resources in templates that can be reviewed and reapplied.",
+		"desc": "AWS infrastructure-as-code service for defining and managing cloud resources with templates.",
 		"icon": "/skill-icons/cloudformation.png",
 		"links": [
 			{
@@ -526,7 +526,7 @@
 	},
 	"Content-Based Filtering": {
 		"name": "Content-Based Filtering",
-		"desc": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules. Content-based filtering routes messages by payload fields, so subscribers receive only the market data or events they asked for.",
+		"desc": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules.",
 		"icon": "/skill-icons/content-based-filtering.svg",
 		"links": [
 			{
@@ -571,7 +571,7 @@
 	},
 	"CSS3": {
 		"name": "CSS3",
-		"desc": "Styling language for layout, responsive design, typography, animation, and frontend visual systems. CSS3 styles web interfaces, covering layout, responsive behavior, animation, typography, and visual polish.",
+		"desc": "Styling language for layout, responsive design, typography, animation, and frontend visual systems.",
 		"icon": "/skill-icons/css3.svg",
 		"links": [
 			{
@@ -601,7 +601,7 @@
 	},
 	"Cursor Agent": {
 		"name": "Cursor Agent",
-		"desc": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context. Cursor Agent is Cursor repository-aware coding mode, sitting between editor autocomplete and longer-running delegated code tasks.",
+		"desc": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context.",
 		"icon": "/skill-icons/cursor-agent.ico",
 		"links": [
 			{
@@ -631,7 +631,7 @@
 	},
 	"Dash": {
 		"name": "Dash",
-		"desc": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks. Dash turns Python analysis into interactive web dashboards, pairing Plotly visuals with callback-driven app behavior.",
+		"desc": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks.",
 		"icon": "/skill-icons/dash.svg",
 		"links": [
 			{
@@ -691,7 +691,7 @@
 	},
 	"Django": {
 		"name": "Django",
-		"desc": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults. Django is a batteries-included Python web framework with ORM, admin, routing, forms, and security defaults.",
+		"desc": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults.",
 		"icon": "/skill-icons/django.svg",
 		"links": [
 			{
@@ -736,7 +736,7 @@
 	},
 	"Domain-Driven Design": {
 		"name": "Domain-Driven Design",
-		"desc": "Architecture approach that models software around domain concepts, boundaries, and shared language. Domain-driven design models software around business concepts, boundaries, and language so complex systems stay understandable.",
+		"desc": "Architecture approach that models software around domain concepts, boundaries, and shared language.",
 		"icon": "/skill-icons/domain-driven-design.svg",
 		"links": [
 			{
@@ -766,7 +766,7 @@
 	},
 	"DynamoDB": {
 		"name": "DynamoDB",
-		"desc": "AWS managed NoSQL database for key-value and document workloads at serverless scale. DynamoDB is AWS managed NoSQL storage for key-value and document access patterns that need low operational overhead.",
+		"desc": "AWS managed NoSQL database for key-value and document workloads at serverless scale.",
 		"icon": "/skill-icons/dynamodb.png",
 		"links": [
 			{
@@ -781,7 +781,7 @@
 	},
 	"ECS": {
 		"name": "ECS",
-		"desc": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity. ECS runs containers on AWS without requiring a full Kubernetes control plane, fitting service workloads and scheduled tasks.",
+		"desc": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity.",
 		"icon": "/skill-icons/ecs.png",
 		"links": [
 			{
@@ -796,7 +796,7 @@
 	},
 	"EKS": {
 		"name": "EKS",
-		"desc": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem. EKS is AWS managed Kubernetes, giving teams Kubernetes APIs while AWS handles much of the cluster control-plane operation.",
+		"desc": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem.",
 		"icon": "/skill-icons/eks.png",
 		"links": [
 			{
@@ -826,7 +826,7 @@
 	},
 	"End-to-End Testing": {
 		"name": "End-to-End Testing",
-		"desc": "Testing realistic user or system workflows through the full application stack. End-to-end tests exercise user journeys through the real app surface, catching workflow and UI failures unit tests miss.",
+		"desc": "Testing realistic user or system workflows through the full application stack.",
 		"icon": "/skill-icons/end-to-end-testing.svg",
 		"links": [
 			{
@@ -856,7 +856,7 @@
 	},
 	"Event-Driven Architecture": {
 		"name": "Event-Driven Architecture",
-		"desc": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls. Event-driven architecture designs systems around emitted facts, queues, and subscribers instead of tightly coupled request chains.",
+		"desc": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls.",
 		"icon": "/skill-icons/event-driven-architecture.svg",
 		"links": [
 			{
@@ -871,7 +871,7 @@
 	},
 	"Express.js": {
 		"name": "Express.js",
-		"desc": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints. Express.js is a minimal Node.js web framework for HTTP APIs, middleware, routing, and lightweight backend services.",
+		"desc": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints.",
 		"icon": "/skill-icons/express-js.svg",
 		"links": [
 			{
@@ -886,7 +886,7 @@
 	},
 	"FastAPI": {
 		"name": "FastAPI",
-		"desc": "Python framework for typed, OpenAPI-first HTTP APIs with async support. FastAPI builds typed Python APIs with async handlers, validation, dependency injection, and OpenAPI documentation.",
+		"desc": "Python framework for typed, OpenAPI-first HTTP APIs with async support.",
 		"icon": "/skill-icons/fastapi.svg",
 		"links": [
 			{
@@ -901,7 +901,7 @@
 	},
 	"Feature Engineering": {
 		"name": "Feature Engineering",
-		"desc": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping. Feature engineering turns raw data into model-ready variables, bridging data pipelines with forecasting, anomaly detection, and evaluation.",
+		"desc": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping.",
 		"icon": "/skill-icons/feature-engineering.svg",
 		"links": [
 			{
@@ -916,7 +916,7 @@
 	},
 	"Flask": {
 		"name": "Flask",
-		"desc": "Lightweight Python web framework for small services, APIs, and composable backend applications. Flask is a small Python web framework for APIs and apps that need explicit routing and flexible extensions.",
+		"desc": "Lightweight Python web framework for small services, APIs, and composable backend applications.",
 		"icon": "/skill-icons/flask.svg",
 		"links": [
 			{
@@ -931,7 +931,7 @@
 	},
 	"Formatting": {
 		"name": "Formatting",
-		"desc": "Automated source formatting to keep codebases consistent, readable, and low-friction to review. Formatting tools keep code style consistent automatically, reducing review noise and preventing style drift across a codebase.",
+		"desc": "Automated source formatting to keep codebases consistent, readable, and low-friction to review.",
 		"icon": "/skill-icons/formatting.svg",
 		"links": [
 			{
@@ -946,7 +946,7 @@
 	},
 	"GCP": {
 		"name": "GCP",
-		"desc": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services. GCP is Google Cloud platform for managed compute, data, messaging, AI, and deployment services alongside AWS and Azure.",
+		"desc": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services.",
 		"icon": "/skill-icons/gcp.svg",
 		"links": [
 			{
@@ -961,7 +961,7 @@
 	},
 	"Gemini CLI": {
 		"name": "Gemini CLI",
-		"desc": "Command-line Gemini coding assistant for repository-aware development workflows. Gemini CLI brings Gemini-assisted coding into the terminal, where command output, repository files, and shell workflows are close at hand.",
+		"desc": "Command-line Gemini coding assistant for repository-aware development workflows.",
 		"icon": "/skill-icons/gemini-cli.svg",
 		"links": [
 			{
@@ -1021,7 +1021,7 @@
 	},
 	"Go": {
 		"name": "Go",
-		"desc": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling. Go is a compiled language for network services, CLIs, and infrastructure tooling where simple concurrency and static binaries help.",
+		"desc": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling.",
 		"icon": "/skill-icons/go.svg",
 		"links": [
 			{
@@ -1036,7 +1036,7 @@
 	},
 	"Google Cloud Functions": {
 		"name": "Google Cloud Functions",
-		"desc": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code. Google Cloud Functions runs event-driven code on GCP, fitting HTTP handlers, triggers, and small automation tasks.",
+		"desc": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code.",
 		"icon": "/skill-icons/google-cloud-functions.svg",
 		"links": [
 			{
@@ -1051,7 +1051,7 @@
 	},
 	"Google Cloud Pub/Sub": {
 		"name": "Google Cloud Pub/Sub",
-		"desc": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud. Google Cloud Pub/Sub is managed messaging for decoupling publishers and subscribers on GCP, similar in role to Kinesis or Kafka.",
+		"desc": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud.",
 		"icon": "/skill-icons/google-cloud-pub-sub.svg",
 		"links": [
 			{
@@ -1066,7 +1066,7 @@
 	},
 	"Google Gemini API": {
 		"name": "Google Gemini API",
-		"desc": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation. Gemini API is Google model endpoint for multimodal prompts, structured output, and tool-aware AI apps alongside OpenAI and Claude APIs.",
+		"desc": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation.",
 		"icon": "/skill-icons/google-gemini-api.svg",
 		"links": [
 			{
@@ -1081,7 +1081,7 @@
 	},
 	"Grafana": {
 		"name": "Grafana",
-		"desc": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization. Grafana visualizes metrics, logs, and traces so teams can inspect service health, latency, and operational trends.",
+		"desc": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization.",
 		"icon": "/skill-icons/grafana.svg",
 		"links": [
 			{
@@ -1096,7 +1096,7 @@
 	},
 	"GraphQL (Apollo)": {
 		"name": "GraphQL (Apollo)",
-		"desc": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services. Apollo GraphQL uses a typed schema to let clients request exactly the data shape they need from backend services.",
+		"desc": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services.",
 		"icon": "/skill-icons/graphql-apollo.svg",
 		"links": [
 			{
@@ -1111,7 +1111,7 @@
 	},
 	"gRPC": {
 		"name": "gRPC",
-		"desc": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication. gRPC uses Protocol Buffers for typed service-to-service calls, fitting backend systems that need strict contracts.",
+		"desc": "Typed RPC framework using Protocol Buffers for efficient service-to-service communication with strict contracts.",
 		"icon": "/skill-icons/grpc.svg",
 		"links": [
 			{
@@ -1141,7 +1141,7 @@
 	},
 	"Hadoop": {
 		"name": "Hadoop",
-		"desc": "Apache ecosystem for distributed storage and batch processing over large datasets. Hadoop is the older big-data ecosystem for distributed storage and batch processing, useful context for Spark-era data platforms.",
+		"desc": "Apache ecosystem for distributed storage and batch processing over large datasets.",
 		"icon": "/skill-icons/hadoop.svg",
 		"links": [
 			{
@@ -1156,7 +1156,7 @@
 	},
 	"Helm": {
 		"name": "Helm",
-		"desc": "Kubernetes package manager for templating, installing, and upgrading application charts. Helm packages Kubernetes applications as charts, making installs, upgrades, and environment-specific values repeatable.",
+		"desc": "Kubernetes package manager for templating, installing, and upgrading application charts.",
 		"icon": "/skill-icons/helm.svg",
 		"links": [
 			{
@@ -1171,7 +1171,7 @@
 	},
 	"HTML5": {
 		"name": "HTML5",
-		"desc": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces. HTML5 provides semantic page structure, forms, media, and accessibility hooks for web applications and documents.",
+		"desc": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces.",
 		"icon": "/skill-icons/html5.svg",
 		"links": [
 			{
@@ -1186,7 +1186,7 @@
 	},
 	"Hugging Face": {
 		"name": "Hugging Face",
-		"desc": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows. Hugging Face is the open-model ecosystem for model cards, datasets, inference tooling, and evaluation resources used across applied ML work.",
+		"desc": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows.",
 		"icon": "/skill-icons/hugging-face.svg",
 		"links": [
 			{
@@ -1235,8 +1235,8 @@
 		"icon": "/skill-icons/integration-testing.svg",
 		"links": [
 			{
-				"label": "Integration test reference",
-				"href": "https://martinfowler.com/bliki/IntegrationTest.html"
+				"label": "Pytest practices",
+				"href": "https://docs.pytest.org/en/stable/explanation/goodpractices.html"
 			},
 			{
 				"label": "Vitest browser mode",
@@ -1246,7 +1246,7 @@
 	},
 	"Java": {
 		"name": "Java",
-		"desc": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software. Java is a JVM language for long-lived backend services, enterprise systems, and strongly typed application platforms.",
+		"desc": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software.",
 		"icon": "/skill-icons/java.png",
 		"links": [
 			{
@@ -1261,7 +1261,7 @@
 	},
 	"JavaScript": {
 		"name": "JavaScript",
-		"desc": "Core web language for browser behavior, Node-based tooling, and frontend application logic. JavaScript runs in browsers and Node.js, powering interactive frontends, build tools, and full-stack web behavior.",
+		"desc": "Core web language for browser behavior, Node-based tooling, and frontend application logic.",
 		"icon": "/skill-icons/javascript.svg",
 		"links": [
 			{
@@ -1276,7 +1276,7 @@
 	},
 	"Jenkins": {
 		"name": "Jenkins",
-		"desc": "Automation server for build, test, and deployment pipelines across many languages and platforms. Jenkins is a long-running CI automation server, useful for custom build, test, and release pipelines.",
+		"desc": "Automation server for build, test, and deployment pipelines across many languages and platforms.",
 		"icon": "/skill-icons/jenkins.svg",
 		"links": [
 			{
@@ -1336,7 +1336,7 @@
 	},
 	"Knowledge Graphs": {
 		"name": "Knowledge Graphs",
-		"desc": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems. Knowledge graphs model entities and relationships, making them a useful counterpart to retrieval, document AI, and semantic search systems.",
+		"desc": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems.",
 		"icon": "/skill-icons/knowledge-graphs.svg",
 		"links": [
 			{
@@ -1351,7 +1351,7 @@
 	},
 	"Kubernetes": {
 		"name": "Kubernetes",
-		"desc": "Container orchestration platform for deploying, scaling, and operating distributed workloads. Kubernetes orchestrates containers across clusters, handling scheduling, service discovery, scaling, and rollout mechanics.",
+		"desc": "Container orchestration platform for deploying, scaling, and operating distributed workloads.",
 		"icon": "/skill-icons/kubernetes.svg",
 		"links": [
 			{
@@ -1381,7 +1381,7 @@
 	},
 	"LangGraph": {
 		"name": "LangGraph",
-		"desc": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow. LangGraph fits the orchestrated-agent side of the harness work, where multi-step flows need explicit state, review points, and routing.",
+		"desc": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow.",
 		"icon": "/skill-icons/langgraph.svg",
 		"links": [
 			{
@@ -1396,7 +1396,7 @@
 	},
 	"LangSmith": {
 		"name": "LangSmith",
-		"desc": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems. LangSmith represents the evaluation and trace-inspection layer for making AI workflows testable rather than opaque demos.",
+		"desc": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems.",
 		"icon": "/skill-icons/langsmith.ico",
 		"links": [
 			{
@@ -1411,7 +1411,7 @@
 	},
 	"LaTeX": {
 		"name": "LaTeX",
-		"desc": "Typesetting system for mathematical, academic, and technical documents with precise formatting control. LaTeX typesets mathematical and technical documents with precise control over equations, references, and publication formatting.",
+		"desc": "Typesetting system for mathematical, academic, and technical documents with precise formatting control.",
 		"icon": "/skill-icons/latex.svg",
 		"links": [
 			{
@@ -1426,7 +1426,7 @@
 	},
 	"Linting": {
 		"name": "Linting",
-		"desc": "Static checking that catches style, correctness, and maintainability issues before runtime. Linters catch risky code patterns, unused paths, and style violations before runtime or review.",
+		"desc": "Static checking that catches style, correctness, and maintainability issues before runtime.",
 		"icon": "/skill-icons/linting.svg",
 		"links": [
 			{
@@ -1441,7 +1441,7 @@
 	},
 	"LlamaIndex": {
 		"name": "LlamaIndex",
-		"desc": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools. LlamaIndex organizes documents, indexes, and retrieval pipelines for LLM applications that need structured access to external knowledge.",
+		"desc": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools.",
 		"icon": "/skill-icons/llamaindex.svg",
 		"links": [
 			{
@@ -1471,7 +1471,7 @@
 	},
 	"Low-Latency Messaging": {
 		"name": "Low-Latency Messaging",
-		"desc": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems. Low-latency messaging focuses on moving data with minimal delay, which matters for trading, market data, and real-time dashboards.",
+		"desc": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems.",
 		"icon": "/skill-icons/low-latency-messaging.svg",
 		"links": [
 			{
@@ -1516,7 +1516,7 @@
 	},
 	"Material UI": {
 		"name": "Material UI",
-		"desc": "React component library implementing Material Design components, theming, and application patterns. Material UI implements Google Material Design for React, giving product teams ready-made components, theming, and layout patterns.",
+		"desc": "React component library implementing Material Design components, theming, and application patterns.",
 		"icon": "/skill-icons/material-ui.svg",
 		"links": [
 			{
@@ -1531,7 +1531,7 @@
 	},
 	"MATLAB": {
 		"name": "MATLAB",
-		"desc": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework. MATLAB fits quick prototyping of formulas, array transforms, plots, and engineering class assignments.",
+		"desc": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework.",
 		"icon": "/skill-icons/matlab.png",
 		"links": [
 			{
@@ -1546,7 +1546,7 @@
 	},
 	"Matplotlib": {
 		"name": "Matplotlib",
-		"desc": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures. Matplotlib is Python foundational plotting library for static charts, diagnostics, notebooks, and publication-style figures.",
+		"desc": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures.",
 		"icon": "/skill-icons/matplotlib.svg",
 		"links": [
 			{
@@ -1576,7 +1576,7 @@
 	},
 	"Microservices": {
 		"name": "Microservices",
-		"desc": "Distributed service architecture that separates capabilities into independently deployable components. Microservices split a backend into independently owned and deployed services, trading simplicity for clearer boundaries at scale.",
+		"desc": "Distributed service architecture that separates capabilities into independently deployable components.",
 		"icon": "/skill-icons/microservices.svg",
 		"links": [
 			{
@@ -1621,7 +1621,7 @@
 	},
 	"Model Evaluation": {
 		"name": "Model Evaluation",
-		"desc": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions. Model evaluation checks whether predictions or generated outputs behave well enough for analytics, automation, or user-facing decisions.",
+		"desc": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions.",
 		"icon": "/skill-icons/model-evaluation.svg",
 		"links": [
 			{
@@ -1636,7 +1636,7 @@
 	},
 	"Monitoring": {
 		"name": "Monitoring",
-		"desc": "Operational practice of collecting health, performance, and reliability telemetry from systems in production. Monitoring collects health and performance telemetry so availability, errors, saturation, and latency can be watched over time.",
+		"desc": "Operational practice of collecting health, performance, and reliability telemetry from systems in production.",
 		"icon": "/skill-icons/monitoring.svg",
 		"links": [
 			{
@@ -1651,7 +1651,7 @@
 	},
 	"Netlify": {
 		"name": "Netlify",
-		"desc": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows. Netlify hosts static and frontend sites with previews, redirects, forms, and simple deployment for content-heavy web projects.",
+		"desc": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows.",
 		"icon": "/skill-icons/netlify.svg",
 		"links": [
 			{
@@ -1681,7 +1681,7 @@
 	},
 	"Node.js": {
 		"name": "Node.js",
-		"desc": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines. Node.js runs JavaScript on the server, fitting API handlers, build scripts, CLIs, and automation around web projects.",
+		"desc": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines.",
 		"icon": "/skill-icons/node-js.svg",
 		"links": [
 			{
@@ -1696,7 +1696,7 @@
 	},
 	"NoSQL": {
 		"name": "NoSQL",
-		"desc": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads. NoSQL covers non-relational storage designs such as document, key-value, graph, and wide-column databases for flexible data shapes.",
+		"desc": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads.",
 		"icon": "/skill-icons/nosql.svg",
 		"links": [
 			{
@@ -1726,7 +1726,7 @@
 	},
 	"NumPy": {
 		"name": "NumPy",
-		"desc": "Core Python array-computing library for vectorized numerical methods and model implementations. Regularized Linear Regression Deep Dive lists NumPy and describes vectorized Ridge, Lasso, and Elastic Net implementations.",
+		"desc": "Core Python array-computing library for vectorized numerical methods and model implementations.",
 		"icon": "/skill-icons/numpy.svg",
 		"links": [
 			{
@@ -1756,7 +1756,7 @@
 	},
 	"OpenAI API": {
 		"name": "OpenAI API",
-		"desc": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents. OpenAI API sits beside Claude and Bedrock in the LLM application toolkit for structured generation, tool use, and agent workflows.",
+		"desc": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents.",
 		"icon": "/skill-icons/openai-api.svg",
 		"links": [
 			{
@@ -1786,7 +1786,7 @@
 	},
 	"OpenID Connect": {
 		"name": "OpenID Connect",
-		"desc": "Identity layer on OAuth 2.0 that standardizes login and user profile claims. OpenID Connect adds identity on top of OAuth 2.0, standardizing login, ID tokens, and profile claims.",
+		"desc": "Identity layer on OAuth 2.0 that standardizes login and user profile claims.",
 		"icon": "/skill-icons/openid-connect.svg",
 		"links": [
 			{
@@ -1846,7 +1846,7 @@
 	},
 	"Perplexity Desktop": {
 		"name": "Perplexity Desktop",
-		"desc": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows. Perplexity Desktop is a research assistant for source-backed search and synthesis, complementing the coding agents in this group.",
+		"desc": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows.",
 		"icon": "/skill-icons/perplexity-desktop.svg",
 		"links": [
 			{
@@ -1876,7 +1876,7 @@
 	},
 	"Plotly": {
 		"name": "Plotly",
-		"desc": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts. Plotly creates interactive charts and dashboards, a richer option than static plots when users need hover, filtering, and exploration.",
+		"desc": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts.",
 		"icon": "/skill-icons/plotly.svg",
 		"links": [
 			{
@@ -1906,7 +1906,7 @@
 	},
 	"PostgreSQL": {
 		"name": "PostgreSQL",
-		"desc": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support. PostgreSQL is a relational database for SQL-backed application data, analytics, indexing, and extension-heavy workloads.",
+		"desc": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support.",
 		"icon": "/skill-icons/postgresql.svg",
 		"links": [
 			{
@@ -1921,7 +1921,7 @@
 	},
 	"Prefect": {
 		"name": "Prefect",
-		"desc": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability. Prefect orchestrates Python data workflows with scheduling, retries, task state, and operational visibility for pipelines.",
+		"desc": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability.",
 		"icon": "/skill-icons/prefect.svg",
 		"links": [
 			{
@@ -1936,7 +1936,7 @@
 	},
 	"Prometheus": {
 		"name": "Prometheus",
-		"desc": "Open-source monitoring system for metrics collection, time-series storage, and alerting. Prometheus stores time-series metrics and powers alerting, pairing instrumentation with dashboards such as Grafana.",
+		"desc": "Open-source monitoring system for metrics collection, time-series storage, and alerting.",
 		"icon": "/skill-icons/prometheus.svg",
 		"links": [
 			{
@@ -1966,7 +1966,7 @@
 	},
 	"Publish/Subscribe Architecture": {
 		"name": "Publish/Subscribe Architecture",
-		"desc": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling. Pub/sub decouples message producers from consumers, letting multiple systems react to the same event stream independently.",
+		"desc": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling.",
 		"icon": "/skill-icons/publish-subscribe-architecture.svg",
 		"links": [
 			{
@@ -1981,7 +1981,7 @@
 	},
 	"Puppeteer": {
 		"name": "Puppeteer",
-		"desc": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows. Puppeteer automates Chromium for rendering, screenshots, PDF generation, and browser-level regression checks.",
+		"desc": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows.",
 		"icon": "/skill-icons/puppeteer.svg",
 		"links": [
 			{
@@ -2026,7 +2026,7 @@
 	},
 	"Pytest": {
 		"name": "Pytest",
-		"desc": "Python testing framework for concise unit, integration, fixture, and parametrized test suites. Pytest is Python flexible test runner for unit, fixture, parameterized, and service-level checks.",
+		"desc": "Python testing framework for concise unit, integration, fixture, and parametrized test suites.",
 		"icon": "/skill-icons/pytest.svg",
 		"links": [
 			{
@@ -2071,7 +2071,7 @@
 	},
 	"PyTorch": {
 		"name": "PyTorch",
-		"desc": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows. PyTorch is a Python deep-learning framework for tensor computation, neural networks, training loops, and research-to-product modeling.",
+		"desc": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows.",
 		"icon": "/skill-icons/pytorch.svg",
 		"links": [
 			{
@@ -2116,7 +2116,7 @@
 	},
 	"R": {
 		"name": "R",
-		"desc": "Statistical computing language for analysis, visualization, modeling, and data-science workflows. R is a statistical programming language for modeling, data analysis, visualization, and research-style workflows.",
+		"desc": "Statistical computing language for analysis, visualization, modeling, and data-science workflows.",
 		"icon": "/skill-icons/r.svg",
 		"links": [
 			{
@@ -2146,7 +2146,7 @@
 	},
 	"Real-Time Data Processing": {
 		"name": "Real-Time Data Processing",
-		"desc": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current. Real-time processing handles events as they arrive, keeping alerts, dashboards, and downstream services current instead of batch-delayed.",
+		"desc": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current.",
 		"icon": "/skill-icons/real-time-data-processing.svg",
 		"links": [
 			{
@@ -2161,7 +2161,7 @@
 	},
 	"Redis Pub/Sub": {
 		"name": "Redis Pub/Sub",
-		"desc": "Redis messaging primitive for lightweight topic-based publish/subscribe communication. Redis Pub/Sub is lightweight in-memory message broadcasting, useful for simple fan-out patterns where persistence is not the main need.",
+		"desc": "Redis messaging primitive for lightweight topic-based publish/subscribe communication.",
 		"icon": "/skill-icons/redis-pub-sub.svg",
 		"links": [
 			{
@@ -2176,7 +2176,7 @@
 	},
 	"Redshift": {
 		"name": "Redshift",
-		"desc": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries. Redshift is AWS managed data warehouse for analytical SQL workloads, reporting, and large structured datasets.",
+		"desc": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries.",
 		"icon": "/skill-icons/redshift.png",
 		"links": [
 			{
@@ -2191,7 +2191,7 @@
 	},
 	"Redux": {
 		"name": "Redux",
-		"desc": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores. Redux centralizes client-side state updates, useful for complex React apps where many views depend on shared application state.",
+		"desc": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores.",
 		"icon": "/skill-icons/redux.svg",
 		"links": [
 			{
@@ -2251,7 +2251,7 @@
 	},
 	"Rust": {
 		"name": "Rust",
-		"desc": "Systems programming language emphasizing memory safety, performance, and explicit ownership. Rust is a systems language focused on memory safety and performance, useful for CLIs, services, and native tooling.",
+		"desc": "Systems programming language emphasizing memory safety, performance, and explicit ownership.",
 		"icon": "/skill-icons/rust.svg",
 		"links": [
 			{
@@ -2266,7 +2266,7 @@
 	},
 	"scikit-learn": {
 		"name": "scikit-learn",
-		"desc": "Python machine-learning library for classical modeling, preprocessing, metrics, and model-selection workflows. The regularized regression project compares custom Ridge, Lasso, and Elastic Net implementations against scikit-learn behavior.",
+		"desc": "Python machine-learning library for classical modeling, preprocessing, metrics, and model-selection workflows.",
 		"icon": "/skill-icons/scikit-learn.svg",
 		"links": [
 			{
@@ -2341,7 +2341,7 @@
 	},
 	"SPARQL": {
 		"name": "SPARQL",
-		"desc": "Query language for RDF knowledge graphs and linked entity relationships. SPARQL queries RDF graphs, making it the SQL-like language for semantic web and knowledge-graph data.",
+		"desc": "Query language for RDF knowledge graphs and linked entity relationships.",
 		"icon": "/skill-icons/sparql.svg",
 		"links": [
 			{
@@ -2356,7 +2356,7 @@
 	},
 	"SQL": {
 		"name": "SQL",
-		"desc": "Query language for relational databases, analytical stores, schema work, and data access layers. SQL is the standard language for querying, modeling, and transforming relational data across warehouses and application databases.",
+		"desc": "Query language for relational databases, analytical stores, schema work, and data access layers.",
 		"icon": "/skill-icons/sql.svg",
 		"links": [
 			{
@@ -2401,7 +2401,7 @@
 	},
 	"Statistical Modeling": {
 		"name": "Statistical Modeling",
-		"desc": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data. Statistical modeling estimates relationships in data, giving forecasting and regression work a way to quantify uncertainty and effects.",
+		"desc": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data.",
 		"icon": "/skill-icons/statistical-modeling.svg",
 		"links": [
 			{
@@ -2416,7 +2416,7 @@
 	},
 	"Structured Logging": {
 		"name": "Structured Logging",
-		"desc": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited. Structured logging records events as fields rather than prose, making runtime behavior easier to search, filter, and correlate.",
+		"desc": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited.",
 		"icon": "/skill-icons/structured-logging.svg",
 		"links": [
 			{
@@ -2431,7 +2431,7 @@
 	},
 	"Swift": {
 		"name": "Swift",
-		"desc": "Apple ecosystem programming language for iOS, macOS, and native application development. Swift is Apple language for iOS and macOS apps, combining native UI development with modern type safety.",
+		"desc": "Apple ecosystem programming language for iOS, macOS, and native application development.",
 		"icon": "/skill-icons/swift.svg",
 		"links": [
 			{
@@ -2446,7 +2446,7 @@
 	},
 	"Tableau": {
 		"name": "Tableau",
-		"desc": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting. Tableau is a BI tool for interactive dashboards and stakeholder reporting, downstream from clean warehouse or extract data.",
+		"desc": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting.",
 		"icon": "/skill-icons/tableau.ico",
 		"links": [
 			{
@@ -2476,7 +2476,7 @@
 	},
 	"TensorFlow": {
 		"name": "TensorFlow",
-		"desc": "Machine-learning platform for training, evaluating, and deploying neural-network models. TensorFlow is a neural-network framework for training and serving models, another route into deep learning beside PyTorch.",
+		"desc": "Machine-learning platform for training, evaluating, and deploying neural-network models.",
 		"icon": "/skill-icons/tensorflow.svg",
 		"links": [
 			{
@@ -2491,7 +2491,7 @@
 	},
 	"Terraform": {
 		"name": "Terraform",
-		"desc": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources. Terraform defines infrastructure in code, so cloud resources can be planned, reviewed, and changed repeatably.",
+		"desc": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources.",
 		"icon": "/skill-icons/terraform.svg",
 		"links": [
 			{
@@ -2506,12 +2506,12 @@
 	},
 	"Test-Driven Development": {
 		"name": "Test-Driven Development",
-		"desc": "Development approach that uses tests to define expected behavior before or alongside implementation. Test-driven development writes expected behavior before implementation, making requirements executable as the code evolves.",
+		"desc": "Development approach that uses tests to define expected behavior before or alongside implementation.",
 		"icon": "/skill-icons/test-driven-development.svg",
 		"links": [
 			{
-				"label": "TDD reference",
-				"href": "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
+				"label": "TDD overview",
+				"href": "https://en.wikipedia.org/wiki/Test-driven_development"
 			},
 			{
 				"label": "Vitest guide",
@@ -2536,7 +2536,7 @@
 	},
 	"Tracing": {
 		"name": "Tracing",
-		"desc": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior. Tracing follows a request across service boundaries, helping teams diagnose latency, retries, and failures in distributed systems.",
+		"desc": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior.",
 		"icon": "/skill-icons/tracing.svg",
 		"links": [
 			{
@@ -2611,7 +2611,7 @@
 	},
 	"Vite": {
 		"name": "Vite",
-		"desc": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications. Vite is a fast frontend build tool and dev server, fitting React and documentation apps that need quick local feedback and modern bundling.",
+		"desc": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications.",
 		"icon": "/skill-icons/vite.svg",
 		"links": [
 			{
@@ -2626,7 +2626,7 @@
 	},
 	"Vitest": {
 		"name": "Vitest",
-		"desc": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing. Vitest is a fast Vite-native test runner for TypeScript and React code, similar in shape to Jest but optimized for Vite projects.",
+		"desc": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing.",
 		"icon": "/skill-icons/vitest.svg",
 		"links": [
 			{
@@ -2656,7 +2656,7 @@
 	},
 	"WebSockets": {
 		"name": "WebSockets",
-		"desc": "Browser and server protocol for bidirectional, persistent real-time communication. WebSockets keep a browser-server channel open, enabling live UI updates for streams, dashboards, collaboration, and agent sessions.",
+		"desc": "Browser and server protocol for bidirectional, persistent real-time communication.",
 		"icon": "/skill-icons/websockets.svg",
 		"links": [
 			{
@@ -2671,7 +2671,7 @@
 	},
 	"XGBoost": {
 		"name": "XGBoost",
-		"desc": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models. XGBoost is a boosted-tree library for tabular prediction problems, often strong for structured datasets before deep learning is needed.",
+		"desc": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models.",
 		"icon": "/skill-icons/xgboost.png",
 		"links": [
 			{

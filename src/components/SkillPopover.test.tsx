@@ -169,9 +169,7 @@ describe("SkillPopover", () => {
     expect(dialog?.textContent).toContain(
       "Google API surface for building applications with Gemini models",
     );
-    expect(dialog?.textContent).toContain(
-      "Gemini API is Google model endpoint for multimodal prompts",
-    );
+    expect(dialog?.textContent).not.toContain("Gemini API is Google model");
     expect(
       dialog?.querySelector("h4")?.parentElement?.textContent,
     ).not.toContain("AI, LLM & Agent Engineering");
