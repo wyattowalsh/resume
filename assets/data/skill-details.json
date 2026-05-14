@@ -1,7 +1,7 @@
 {
 	"AI Agent Harnesses": {
 		"name": "AI Agent Harnesses",
-		"desc": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes. AI Agent Harness Configs packages reusable agents, skills, and MCP presets so coding assistants can share workflows across runtimes.",
+		"desc": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes.",
 		"icon": "/skill-icons/ai-agent-harnesses.svg",
 		"links": [
 			{
@@ -16,7 +16,7 @@
 	},
 	"AI Agent Skills": {
 		"name": "AI Agent Skills",
-		"desc": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks. AI Agent Harness Configs packages skills as reusable task instructions with references, scripts, and assets for coding agents.",
+		"desc": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks.",
 		"icon": "/skill-icons/ai-agent-skills.png",
 		"links": [
 			{
@@ -31,7 +31,7 @@
 	},
 	"AI Guardrails": {
 		"name": "AI Guardrails",
-		"desc": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds. Frame Payments and the agent harness work use guardrails to constrain AI behavior, validate outputs, and keep audit requirements visible.",
+		"desc": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds.",
 		"icon": "/skill-icons/ai-guardrails.svg",
 		"links": [
 			{
@@ -46,7 +46,7 @@
 	},
 	"Amazon Bedrock": {
 		"name": "Amazon Bedrock",
-		"desc": "AWS service for building generative-AI applications with managed foundation models and agent tooling. Frame Payments uses Bedrock AgentCore in LLM document-intelligence work for merchant review and confidential uploads.",
+		"desc": "AWS service for building generative-AI applications with managed foundation models and agent tooling.",
 		"icon": "/skill-icons/amazon-bedrock.png",
 		"links": [
 			{
@@ -76,7 +76,7 @@
 	},
 	"AMPS": {
 		"name": "AMPS",
-		"desc": "60East's high-performance publish/subscribe platform for low-latency real-time systems. JPMorgan market-data work used AMPS for low-latency pub/sub streams in capital-markets systems.",
+		"desc": "60East's high-performance publish/subscribe platform for low-latency real-time systems.",
 		"icon": "/skill-icons/amps.ico",
 		"links": [
 			{
@@ -91,7 +91,7 @@
 	},
 	"Anomaly Detection": {
 		"name": "Anomaly Detection",
-		"desc": "Identifying unusual observations, shifts, or outliers in data streams and analytical datasets. JPMorgan risk analytics used ML-driven anomaly detection to reduce false positives and manual review time.",
+		"desc": "Identifying unusual observations, shifts, or outliers in data streams and analytical datasets.",
 		"icon": "/skill-icons/anomaly-detection.svg",
 		"links": [
 			{
@@ -121,7 +121,7 @@
 	},
 	"Anthropic Claude API": {
 		"name": "Anthropic Claude API",
-		"desc": "Anthropic's API for building Claude-powered applications, document workflows, and agent systems. Wyatt used Claude in Frame Payments LLM document-intelligence work and AI-assisted engineering workflows.",
+		"desc": "Anthropic's API for building Claude-powered applications, document workflows, and agent systems.",
 		"icon": "/skill-icons/anthropic-claude-api.svg",
 		"links": [
 			{
@@ -181,7 +181,7 @@
 	},
 	"Apache Spark": {
 		"name": "Apache Spark",
-		"desc": "Distributed data-processing engine for batch analytics, ETL, and large-scale transformation workloads. Gap forecasting work used Spark pipelines across five-plus years of sales data to speed processing and standardize insights.",
+		"desc": "Distributed data-processing engine for batch analytics, ETL, and large-scale transformation workloads.",
 		"icon": "/skill-icons/apache-spark.svg",
 		"links": [
 			{
@@ -211,7 +211,7 @@
 	},
 	"Auditability": {
 		"name": "Auditability",
-		"desc": "Designing systems so decisions, inputs, outputs, and review actions can be inspected after the fact. Frame Payments AI work includes audit-aware handling for confidential documents, PII safeguards, and reviewable compliance workflows.",
+		"desc": "Designing systems so decisions, inputs, outputs, and review actions can be inspected after the fact.",
 		"icon": "/skill-icons/auditability.svg",
 		"links": [
 			{
@@ -226,7 +226,7 @@
 	},
 	"AWS": {
 		"name": "AWS",
-		"desc": "Amazon Web Services cloud platform for compute, data, storage, networking, AI, and operations. Wyatt holds the AWS Certified Cloud Practitioner credential and delivers cloud-oriented systems.",
+		"desc": "Amazon Web Services cloud platform for compute, data, storage, networking, AI, and operations.",
 		"icon": "/skill-icons/aws.svg",
 		"links": [
 			{
@@ -346,7 +346,7 @@
 	},
 	"Canvas": {
 		"name": "Canvas",
-		"desc": "Browser drawing API for rendering graphics, exported cards, charts, and pixel-level visual outputs. Listentropy uses Canvas to render share-card images and export listening-history visuals as PNG or ZIP assets.",
+		"desc": "Browser drawing API for rendering graphics, exported cards, charts, and pixel-level visual outputs.",
 		"icon": "/skill-icons/canvas.svg",
 		"links": [
 			{
@@ -406,7 +406,7 @@
 	},
 	"CI/CD": {
 		"name": "CI/CD",
-		"desc": "Automated build, test, validation, and deployment pipelines that reduce release friction and catch regressions. The stealth Web3 app used GitHub Actions, Cypress, and Jest in CI/CD to shorten release cycles and raise test coverage.",
+		"desc": "Automated build, test, validation, and deployment pipelines that reduce release friction and catch regressions.",
 		"icon": "/skill-icons/ci-cd.svg",
 		"links": [
 			{
@@ -436,7 +436,7 @@
 	},
 	"Claude Code": {
 		"name": "Claude Code",
-		"desc": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows. AI Agent Harness Configs includes Claude Code as a terminal coding assistant for repository edits, review, and workflow automation.",
+		"desc": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows.",
 		"icon": "/skill-icons/claude-code.svg",
 		"links": [
 			{
@@ -496,7 +496,7 @@
 	},
 	"CodeMirror": {
 		"name": "CodeMirror",
-		"desc": "Browser-based code editor toolkit for rich editing, syntax highlighting, and extension-driven authoring interfaces. MDXPad uses CodeMirror 6 for synchronized Markdown and MDX editing with live preview behavior.",
+		"desc": "Browser-based code editor toolkit for rich editing, syntax highlighting, and extension-driven authoring interfaces.",
 		"icon": "/skill-icons/codemirror.svg",
 		"links": [
 			{
@@ -511,7 +511,7 @@
 	},
 	"Codex": {
 		"name": "Codex",
-		"desc": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows. AI Agent Harness Configs treats Codex as a coding-agent runtime to configure, compare, and route alongside Claude Code and OpenCode.",
+		"desc": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows.",
 		"icon": "/skill-icons/codex.png",
 		"links": [
 			{
@@ -541,7 +541,7 @@
 	},
 	"Context Engineering": {
 		"name": "Context Engineering",
-		"desc": "Designing prompts, memory, retrieval, tools, and context windows so AI systems behave reliably. Wyatt designs agent harnesses, skill packages, and long-running AI workflows around context quality.",
+		"desc": "Designing prompts, memory, retrieval, tools, and context windows so AI systems behave reliably.",
 		"icon": "/skill-icons/context-engineering.ico",
 		"links": [
 			{
@@ -556,7 +556,7 @@
 	},
 	"Coordinate Descent": {
 		"name": "Coordinate Descent",
-		"desc": "Optimization method that updates one parameter or coordinate at a time, often used for regularized linear models. Wyatt published a dedicated article on implementing pairwise coordinate descent for Lasso and Elastic Net in Python.",
+		"desc": "Optimization method that updates one parameter or coordinate at a time, often used for regularized linear models.",
 		"icon": "/skill-icons/coordinate-descent.svg",
 		"links": [
 			{
@@ -586,7 +586,7 @@
 	},
 	"Cursor": {
 		"name": "Cursor",
-		"desc": "AI-native IDE for repository-aware editing, code navigation, and agent-assisted implementation. AI Agent Harness Configs standardizes Cursor agent definitions so editor-native assistants can reuse the same skills and tools.",
+		"desc": "AI-native IDE for repository-aware editing, code navigation, and agent-assisted implementation.",
 		"icon": "/skill-icons/cursor.svg",
 		"links": [
 			{
@@ -616,7 +616,7 @@
 	},
 	"Cypress": {
 		"name": "Cypress",
-		"desc": "Browser testing framework for application flows, integration coverage, and frontend regression checks. The stealth Web3 app used Cypress in CI/CD to test wallet and lending flows before releases.",
+		"desc": "Browser testing framework for application flows, integration coverage, and frontend regression checks.",
 		"icon": "/skill-icons/cypress.svg",
 		"links": [
 			{
@@ -646,7 +646,7 @@
 	},
 	"Data Validation": {
 		"name": "Data Validation",
-		"desc": "Enforcing data shape, type, completeness, and business-rule expectations before downstream use. NBA Basketball Database uses Pandera-validated ETL, while AI/ML Web Feeds relies on typed schema plus HTTP/RSS validation.",
+		"desc": "Enforcing data shape, type, completeness, and business-rule expectations before downstream use.",
 		"icon": "/skill-icons/data-validation.svg",
 		"links": [
 			{
@@ -661,7 +661,7 @@
 	},
 	"Data Warehousing": {
 		"name": "Data Warehousing",
-		"desc": "Organizing analytical data into durable, queryable models for reporting, reuse, and self-service access. NBA Basketball Database publishes daily warehouse updates and generated public star-schema outputs for analytics use.",
+		"desc": "Organizing analytical data into durable, queryable models for reporting, reuse, and self-service access.",
 		"icon": "/skill-icons/data-warehousing.svg",
 		"links": [
 			{
@@ -676,7 +676,7 @@
 	},
 	"DeepAgents": {
 		"name": "DeepAgents",
-		"desc": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows. AI Agent Harness Configs covers DeepAgents-style multi-agent workflows where planning, file context, and subagents coordinate coding tasks.",
+		"desc": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows.",
 		"icon": "/skill-icons/deepagents.svg",
 		"links": [
 			{
@@ -706,7 +706,7 @@
 	},
 	"Docker": {
 		"name": "Docker",
-		"desc": "Container platform for packaging applications and dependencies into reproducible runtime images. MCP-Crawl4AI and service-oriented projects use Docker-style packaging for repeatable local and deployable runtime environments.",
+		"desc": "Container platform for packaging applications and dependencies into reproducible runtime images.",
 		"icon": "/skill-icons/docker.svg",
 		"links": [
 			{
@@ -721,7 +721,7 @@
 	},
 	"Document AI": {
 		"name": "Document AI",
-		"desc": "AI-assisted extraction, classification, and review of document content across structured and unstructured submissions. Frame Payments applies LLM document intelligence to classify uploaded merchant files and reduce resubmissions before analyst review.",
+		"desc": "AI-assisted extraction, classification, and review of document content across structured and unstructured submissions.",
 		"icon": "/skill-icons/document-ai.svg",
 		"links": [
 			{
@@ -751,7 +751,7 @@
 	},
 	"DuckDB": {
 		"name": "DuckDB",
-		"desc": "Embedded analytical database for fast local OLAP queries over files such as Parquet. NBA Basketball Database publishes DuckDB exports so analysts can query sports data locally with fast SQL.",
+		"desc": "Embedded analytical database for fast local OLAP queries over files such as Parquet.",
 		"icon": "/skill-icons/duckdb.svg",
 		"links": [
 			{
@@ -811,7 +811,7 @@
 	},
 	"Electron": {
 		"name": "Electron",
-		"desc": "Desktop application framework for building cross-platform apps with web technologies. MDXPad uses Electron 39 to package a native macOS editor around web-based Markdown and MDX tooling.",
+		"desc": "Desktop application framework for building cross-platform apps with web technologies.",
 		"icon": "/skill-icons/electron.svg",
 		"links": [
 			{
@@ -841,7 +841,7 @@
 	},
 	"ETL": {
 		"name": "ETL",
-		"desc": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores. NBA Basketball Database turns NBA API responses into validated datasets and warehouse-style exports across multiple formats.",
+		"desc": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores.",
 		"icon": "/skill-icons/etl.svg",
 		"links": [
 			{
@@ -976,7 +976,7 @@
 	},
 	"GitHub Actions": {
 		"name": "GitHub Actions",
-		"desc": "GitHub-native automation for tests, builds, releases, and deployment workflows. AI Agent Harness Configs uses GitHub-native automation for generated docs, install flows, artifact checks, and releases.",
+		"desc": "GitHub-native automation for tests, builds, releases, and deployment workflows.",
 		"icon": "/skill-icons/github-actions.svg",
 		"links": [
 			{
@@ -991,7 +991,7 @@
 	},
 	"GitHub Copilot CLI": {
 		"name": "GitHub Copilot CLI",
-		"desc": "GitHub Copilot command-line and agent workflows for terminal-based development assistance. AI Agent Harness Configs tracks Copilot CLI as the terminal-facing Copilot surface for command-line coding workflows.",
+		"desc": "GitHub Copilot command-line and agent workflows for terminal-based development assistance.",
 		"icon": "/skill-icons/github-copilot-cli.svg",
 		"links": [
 			{
@@ -1006,7 +1006,7 @@
 	},
 	"GitHub Copilot Web": {
 		"name": "GitHub Copilot Web",
-		"desc": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows. AI Agent Harness Configs covers Copilot Web as a browser-hosted coding assistant for repository and review tasks.",
+		"desc": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows.",
 		"icon": "/skill-icons/github-copilot-web.svg",
 		"links": [
 			{
@@ -1126,7 +1126,7 @@
 	},
 	"Guardrails AI": {
 		"name": "Guardrails AI",
-		"desc": "Guardrails AI platform reference for validation and control patterns in LLM applications. AI Agent Harness Configs covers validation, guardrail, and auditability patterns that overlap with Guardrails AI concepts.",
+		"desc": "Guardrails AI platform reference for validation and control patterns in LLM applications.",
 		"icon": "/skill-icons/guardrails-ai.png",
 		"links": [
 			{
@@ -1201,7 +1201,7 @@
 	},
 	"Hugo": {
 		"name": "Hugo",
-		"desc": "Static site generator for fast content-heavy sites, documentation, and publishing workflows. Hugo is a fast static-site generator for documentation and content sites, sitting near MDX and portfolio publishing workflows.",
+		"desc": "Static site generator for fast content-heavy sites, documentation, and publishing workflows.",
 		"icon": "/skill-icons/hugo.svg",
 		"links": [
 			{
@@ -1216,7 +1216,7 @@
 	},
 	"Human-in-the-Loop Review": {
 		"name": "Human-in-the-Loop Review",
-		"desc": "Workflow pattern that keeps humans in approval, feedback, or exception-handling loops for sensitive AI outputs. Frame Payments adds human review to confidential upload flows so AI classification can be checked before analyst handoff.",
+		"desc": "Workflow pattern that keeps humans in approval, feedback, or exception-handling loops for sensitive AI outputs.",
 		"icon": "/skill-icons/human-in-the-loop-review.svg",
 		"links": [
 			{
@@ -1231,7 +1231,7 @@
 	},
 	"Integration Testing": {
 		"name": "Integration Testing",
-		"desc": "Testing interactions across components, services, tools, or boundaries to catch system-level regressions. FL Studio MCP Server includes integration scenarios among 650+ tests for MCP contracts and tool behavior.",
+		"desc": "Testing interactions across components, services, tools, or boundaries to catch system-level regressions.",
 		"icon": "/skill-icons/integration-testing.svg",
 		"links": [
 			{
@@ -1291,7 +1291,7 @@
 	},
 	"Jest": {
 		"name": "Jest",
-		"desc": "JavaScript testing framework for unit tests, assertions, mocks, and frontend validation. The stealth Web3 app used Jest in CI/CD for automated test coverage across React and lending-app logic.",
+		"desc": "JavaScript testing framework for unit tests, assertions, mocks, and frontend validation.",
 		"icon": "/skill-icons/jest.svg",
 		"links": [
 			{
@@ -1306,7 +1306,7 @@
 	},
 	"Jupyter": {
 		"name": "Jupyter",
-		"desc": "Interactive notebook environment for exploratory analysis, model prototyping, and technical explanation. The regularized regression work uses Jupyter for theory-to-practice notebooks that combine explanation, math, and model experiments.",
+		"desc": "Interactive notebook environment for exploratory analysis, model prototyping, and technical explanation.",
 		"icon": "/skill-icons/jupyter.svg",
 		"links": [
 			{
@@ -1321,7 +1321,7 @@
 	},
 	"KDB+": {
 		"name": "KDB+",
-		"desc": "KX time-series database used heavily for high-volume financial market data. JPMorgan market-data work used KDB+ for capital-markets data access and q-backed analytics workflows.",
+		"desc": "KX time-series database used heavily for high-volume financial market data.",
 		"icon": "/skill-icons/kdb.svg",
 		"links": [
 			{
@@ -1366,7 +1366,7 @@
 	},
 	"LangChain": {
 		"name": "LangChain",
-		"desc": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration. Frame Payments and harness work use LangChain-style agent patterns for tools, retrieval, structured outputs, and workflow composition.",
+		"desc": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration.",
 		"icon": "/skill-icons/langchain.svg",
 		"links": [
 			{
@@ -1456,7 +1456,7 @@
 	},
 	"LLM Evaluation": {
 		"name": "LLM Evaluation",
-		"desc": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops. Frame Payments AI work emphasizes checking document and compliance outputs before automation affects review or onboarding flows.",
+		"desc": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops.",
 		"icon": "/skill-icons/llm-evaluation.svg",
 		"links": [
 			{
@@ -1486,7 +1486,7 @@
 	},
 	"Markdown": {
 		"name": "Markdown",
-		"desc": "Lightweight authoring format for documentation, technical writing, docs portals, and MDX-paired publishing. MDXPad centers on Markdown and MDX editing, while Personal Website uses MDX publishing for durable web content.",
+		"desc": "Lightweight authoring format for documentation, technical writing, docs portals, and MDX-paired publishing.",
 		"icon": "/skill-icons/markdown.svg",
 		"links": [
 			{
@@ -1501,7 +1501,7 @@
 	},
 	"Market Data Systems": {
 		"name": "Market Data Systems",
-		"desc": "Financial-data infrastructure for distributing prices, trades, reference data, and risk workflows. JPMorgan credit work involved trading, quantitative research, risk groups, KDB+/q, and market-data system delivery.",
+		"desc": "Financial-data infrastructure for distributing prices, trades, reference data, and risk workflows.",
 		"icon": "/skill-icons/market-data-systems.png",
 		"links": [
 			{
@@ -1561,7 +1561,7 @@
 	},
 	"MDX": {
 		"name": "MDX",
-		"desc": "Markdown format that combines JSX components with technical publishing and documentation workflows. Personal Website uses MDX for custom publishing, while MDXPad turns Markdown and MDX authoring into a desktop editor workflow.",
+		"desc": "Markdown format that combines JSX components with technical publishing and documentation workflows.",
 		"icon": "/skill-icons/mdx.svg",
 		"links": [
 			{
@@ -1591,7 +1591,7 @@
 	},
 	"MobX": {
 		"name": "MobX",
-		"desc": "Reactive state-management library for JavaScript applications using observable state and derived reactions. The stealth Web3 app used MobX for frontend state in a React/Next.js collateralized lending interface.",
+		"desc": "Reactive state-management library for JavaScript applications using observable state and derived reactions.",
 		"icon": "/skill-icons/mobx.svg",
 		"links": [
 			{
@@ -1606,7 +1606,7 @@
 	},
 	"Model Context Protocol (MCP)": {
 		"name": "Model Context Protocol (MCP)",
-		"desc": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers. AI Agent Harness Configs and MCP-Crawl4AI expose tools through MCP so assistants can call focused local or remote capabilities.",
+		"desc": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers.",
 		"icon": "/skill-icons/model-context-protocol-mcp.svg",
 		"links": [
 			{
@@ -1666,7 +1666,7 @@
 	},
 	"Next.js": {
 		"name": "Next.js",
-		"desc": "React framework for routed web applications, publishing systems, docs portals, and production frontend delivery. Stealth Web3 Startup, SandLabs, Personal Website, and FL Studio MCP Server all use Next.js for product or documentation surfaces.",
+		"desc": "React framework for routed web applications, publishing systems, docs portals, and production frontend delivery.",
 		"icon": "/skill-icons/next-js.svg",
 		"links": [
 			{
@@ -1711,7 +1711,7 @@
 	},
 	"NotebookLM": {
 		"name": "NotebookLM",
-		"desc": "Google's source-grounded research and note assistant for querying curated document collections. Frame Payments uses a NotebookLM knowledge hub refreshed from vendor docs, web sources, and monorepo documentation.",
+		"desc": "Google's source-grounded research and note assistant for querying curated document collections.",
 		"icon": "/skill-icons/notebooklm.svg",
 		"links": [
 			{
@@ -1741,7 +1741,7 @@
 	},
 	"OAuth 2.0": {
 		"name": "OAuth 2.0",
-		"desc": "Authorization framework for delegated API access without sharing a user's original credentials. OAuth 2.0 delegates authorization so an app can access an API without receiving primary user credentials.",
+		"desc": "Authorization framework for delegated API access without sharing a user's original credentials.",
 		"icon": "/skill-icons/oauth-2-0.svg",
 		"links": [
 			{
@@ -1771,7 +1771,7 @@
 	},
 	"OpenCode": {
 		"name": "OpenCode",
-		"desc": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows. AI Agent Harness Configs includes OpenCode for cross-runtime agent workflows, MCP tool usage, and reusable coding skills.",
+		"desc": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows.",
 		"icon": "/skill-icons/opencode.ico",
 		"links": [
 			{
@@ -1801,7 +1801,7 @@
 	},
 	"Pandas": {
 		"name": "Pandas",
-		"desc": "Python data-analysis library for tabular data preparation, transformations, and exploratory workflows. NBA Basketball Database uses Pandas for sports-data ETL, validation steps, and analytics-ready export preparation.",
+		"desc": "Python data-analysis library for tabular data preparation, transformations, and exploratory workflows.",
 		"icon": "/skill-icons/pandas.svg",
 		"links": [
 			{
@@ -1816,7 +1816,7 @@
 	},
 	"Pandera": {
 		"name": "Pandera",
-		"desc": "DataFrame validation library for enforcing schema, type, and quality constraints in data pipelines. NBA Basketball Database uses Pandera to validate API-derived datasets before publishing DuckDB, SQLite, Parquet, and CSV outputs.",
+		"desc": "DataFrame validation library for enforcing schema, type, and quality constraints in data pipelines.",
 		"icon": "/skill-icons/pandera.webp",
 		"links": [
 			{
@@ -1831,7 +1831,7 @@
 	},
 	"Parquet": {
 		"name": "Parquet",
-		"desc": "Columnar file format for efficient analytical storage, compression, and interoperability across data engines. NBA Basketball Database publishes Parquet files for columnar analytics alongside DuckDB, SQLite, and CSV exports.",
+		"desc": "Columnar file format for efficient analytical storage, compression, and interoperability across data engines.",
 		"icon": "/skill-icons/parquet.svg",
 		"links": [
 			{
@@ -1861,7 +1861,7 @@
 	},
 	"Playwright": {
 		"name": "Playwright",
-		"desc": "Cross-browser automation framework for testing, scraping, and controlled browser workflows. MCP-Crawl4AI uses Playwright for managed headless Chromium crawling and browser automation inside the MCP server.",
+		"desc": "Cross-browser automation framework for testing, scraping, and controlled browser workflows.",
 		"icon": "/skill-icons/playwright.svg",
 		"links": [
 			{
@@ -1891,7 +1891,7 @@
 	},
 	"Polars": {
 		"name": "Polars",
-		"desc": "Fast DataFrame library built around columnar execution for high-performance local analytics. NBA Basketball Database uses Polars for high-volume sports-data transformations and generated warehouse exports.",
+		"desc": "Fast DataFrame library built around columnar execution for high-performance local analytics.",
 		"icon": "/skill-icons/polars.svg",
 		"links": [
 			{
@@ -1951,7 +1951,7 @@
 	},
 	"Prompt Engineering": {
 		"name": "Prompt Engineering",
-		"desc": "Designing instructions, examples, constraints, and review loops so LLM workflows produce reliable, auditable outputs. Frame Payments uses prompt patterns, AI office hours, and playbooks to make internal AI usage more repeatable and auditable.",
+		"desc": "Designing instructions, examples, constraints, and review loops so LLM workflows produce reliable, auditable outputs.",
 		"icon": "/skill-icons/prompt-engineering.svg",
 		"links": [
 			{
@@ -1996,7 +1996,7 @@
 	},
 	"Pydantic": {
 		"name": "Pydantic",
-		"desc": "Python validation library for typed models, parsing, serialization, and schema-driven application contracts. AI/ML Web Feeds uses Pydantic schemas to validate feed metadata and keep submitted YAML data well typed.",
+		"desc": "Python validation library for typed models, parsing, serialization, and schema-driven application contracts.",
 		"icon": "/skill-icons/pydantic.svg",
 		"links": [
 			{
@@ -2011,7 +2011,7 @@
 	},
 	"PydanticAI": {
 		"name": "PydanticAI",
-		"desc": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations. Frame Payments uses PydanticAI for typed AI workflows around document intelligence, validation, and agent-oriented application code.",
+		"desc": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations.",
 		"icon": "/skill-icons/pydanticai.svg",
 		"links": [
 			{
@@ -2041,7 +2041,7 @@
 	},
 	"Python": {
 		"name": "Python",
-		"desc": "General-purpose language used across Wyatt's AI, data engineering, MCP, SDK, and analytics projects. Python is the common implementation thread behind the basketball database, AI utilities, MCP work, SDK tooling, and analytics.",
+		"desc": "General-purpose language for automation, data engineering, AI applications, SDKs, APIs, and analytical computing.",
 		"icon": "/skill-icons/python.svg",
 		"links": [
 			{
@@ -2056,7 +2056,7 @@
 	},
 	"Python SDKs": {
 		"name": "Python SDKs",
-		"desc": "Python client libraries that package APIs, data access, and developer workflows into reusable interfaces. JPMorgan delivered a Python SDK so traders could access a centralized asset-fee data sink without manual data maintenance.",
+		"desc": "Python client libraries that package APIs, data access, and developer workflows into reusable interfaces.",
 		"icon": "/skill-icons/python-sdks.webp",
 		"links": [
 			{
@@ -2086,7 +2086,7 @@
 	},
 	"q": {
 		"name": "q",
-		"desc": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics. JPMorgan market-data work used q with KDB+ for high-performance capital-markets queries and analytics functions.",
+		"desc": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics.",
 		"icon": "/skill-icons/q.png",
 		"links": [
 			{
@@ -2101,7 +2101,7 @@
 	},
 	"qPython": {
 		"name": "qPython",
-		"desc": "Python interface for communicating with KDB+/q processes from Python systems. JPMorgan work bridged Python workflows with KDB+/q systems through Python wrappers and market-data access tooling.",
+		"desc": "Python interface for communicating with KDB+/q processes from Python systems.",
 		"icon": "/skill-icons/qpython.svg",
 		"links": [
 			{
@@ -2131,7 +2131,7 @@
 	},
 	"React": {
 		"name": "React",
-		"desc": "Component-based JavaScript library for building interactive interfaces across web, desktop, and plugin surfaces. React appears across Stealth Web3 Startup, Listentropy, Personal Website, MDXPad, and IINA Bookmarks Plugin work.",
+		"desc": "Component-based JavaScript library for building interactive interfaces across web, desktop, and plugin surfaces.",
 		"icon": "/skill-icons/react.svg",
 		"links": [
 			{
@@ -2206,7 +2206,7 @@
 	},
 	"Regularized Regression": {
 		"name": "Regularized Regression",
-		"desc": "Linear modeling with penalty terms such as Ridge, Lasso, and Elastic Net to improve stability and generalization. Wyatt published and open-sourced a regularized linear regression deep dive covering Ridge, Lasso, and Elastic Net.",
+		"desc": "Linear modeling with penalty terms such as Ridge, Lasso, and Elastic Net to improve stability and generalization.",
 		"icon": "/skill-icons/regularized-regression.svg",
 		"links": [
 			{
@@ -2221,7 +2221,7 @@
 	},
 	"RESTful APIs": {
 		"name": "RESTful APIs",
-		"desc": "HTTP API style using resources, methods, status codes, and representations for service integration. JPMorgan built an on-demand REST API that exposed centralized asset-fee data to traders and analytics workflows.",
+		"desc": "HTTP API style using resources, methods, status codes, and representations for service integration.",
 		"icon": "/skill-icons/restful-apis.svg",
 		"links": [
 			{
@@ -2236,7 +2236,7 @@
 	},
 	"Retrieval Augmented Generation (RAG)": {
 		"name": "Retrieval Augmented Generation (RAG)",
-		"desc": "Pattern where an LLM retrieves trusted external context before generating an answer. Frame Payments document intelligence and NotebookLM work use retrieval to ground answers in uploaded files, vendor docs, and internal sources.",
+		"desc": "Pattern where an LLM retrieves trusted external context before generating an answer.",
 		"icon": "/skill-icons/retrieval-augmented-generation-rag.svg",
 		"links": [
 			{
@@ -2281,7 +2281,7 @@
 	},
 	"Security-Aware Development": {
 		"name": "Security-Aware Development",
-		"desc": "Building with attention to secrets, identity, privacy, validation, and misuse-resistant workflows. Frame Payments work combines PII safeguards, confidential-document handling, auditability, and regulated fintech workflows.",
+		"desc": "Building with attention to secrets, identity, privacy, validation, and misuse-resistant workflows.",
 		"icon": "/skill-icons/security-aware-development.svg",
 		"links": [
 			{
@@ -2296,7 +2296,7 @@
 	},
 	"Semantic Retrieval": {
 		"name": "Semantic Retrieval",
-		"desc": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords. Frame Payments uses retrieval patterns that search meaning rather than exact keywords across documents and technical knowledge sources.",
+		"desc": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords.",
 		"icon": "/skill-icons/semantic-retrieval.svg",
 		"links": [
 			{
@@ -2311,7 +2311,7 @@
 	},
 	"Serverless Architecture": {
 		"name": "Serverless Architecture",
-		"desc": "Cloud design model using managed functions and services to reduce server management and scale on demand. JPMorgan describes a cloud-function-driven asset-fee data sink, without naming a vendor-specific serverless runtime.",
+		"desc": "Cloud design model using managed functions and services to reduce server management and scale on demand.",
 		"icon": "/skill-icons/serverless-architecture.svg",
 		"links": [
 			{
@@ -2326,7 +2326,7 @@
 	},
 	"shadcn/ui": {
 		"name": "shadcn/ui",
-		"desc": "Copyable React component patterns built on Radix UI and Tailwind CSS. Portfolio and developer-facing UI work uses shadcn/ui patterns for polished accessible components without heavy design-system overhead.",
+		"desc": "Copyable React component patterns built on Radix UI and Tailwind CSS.",
 		"icon": "/skill-icons/shadcn-ui.svg",
 		"links": [
 			{
@@ -2371,7 +2371,7 @@
 	},
 	"SQLAlchemy": {
 		"name": "SQLAlchemy",
-		"desc": "Python SQL toolkit and ORM for database access, query construction, and schema-aware application code. NBA Basketball Database uses SQLAlchemy around validated dataset generation and SQL-backed warehouse workflows.",
+		"desc": "Python SQL toolkit and ORM for database access, query construction, and schema-aware application code.",
 		"icon": "/skill-icons/sqlalchemy.svg",
 		"links": [
 			{
@@ -2386,7 +2386,7 @@
 	},
 	"SQLite": {
 		"name": "SQLite",
-		"desc": "Embedded relational database used for local state, portable datasets, and lightweight application storage. NBA Basketball Database publishes SQLite exports, while ProxyWhirl uses SQLite-backed state for proxy rotation workflows.",
+		"desc": "Embedded relational database used for local state, portable datasets, and lightweight application storage.",
 		"icon": "/skill-icons/sqlite.svg",
 		"links": [
 			{
@@ -2461,7 +2461,7 @@
 	},
 	"Tailwind CSS": {
 		"name": "Tailwind CSS",
-		"desc": "Utility-first CSS framework for composing responsive, token-driven interface styles. Wyatt used Tailwind CSS in public web and portfolio projects, including SandLabs and personal-site work.",
+		"desc": "Utility-first CSS framework for composing responsive, token-driven interface styles.",
 		"icon": "/skill-icons/tailwind-css.svg",
 		"links": [
 			{
@@ -2521,7 +2521,7 @@
 	},
 	"Time-Series Forecasting": {
 		"name": "Time-Series Forecasting",
-		"desc": "Forecasting ordered observations over time using decomposition, trend, seasonality, and error-correction techniques. Gap forecasting work used decomposition and bias correction to improve demand forecasts for inventory planning.",
+		"desc": "Forecasting ordered observations over time using decomposition, trend, seasonality, and error-correction techniques.",
 		"icon": "/skill-icons/time-series-forecasting.svg",
 		"links": [
 			{
@@ -2551,7 +2551,7 @@
 	},
 	"TypeScript": {
 		"name": "TypeScript",
-		"desc": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code. TypeScript runs through the React, Vite, agent tooling, docs, and resume-generation codebases to keep UI and data contracts typed.",
+		"desc": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code.",
 		"icon": "/skill-icons/typescript.svg",
 		"links": [
 			{
@@ -2566,7 +2566,7 @@
 	},
 	"Unit Testing": {
 		"name": "Unit Testing",
-		"desc": "Focused tests that validate small functions, classes, modules, or contracts in isolation. FL Studio MCP Server uses unit tests within a 650+ test suite covering contracts, runtime paths, and tool behavior.",
+		"desc": "Focused tests that validate small functions, classes, modules, or contracts in isolation.",
 		"icon": "/skill-icons/unit-testing.svg",
 		"links": [
 			{
@@ -2581,7 +2581,7 @@
 	},
 	"Vercel": {
 		"name": "Vercel",
-		"desc": "Frontend cloud platform for deploying web apps, docs portals, and serverless-backed product experiences. Listentropy and AI/ML Web Feeds use Vercel for hosted frontend delivery, previews, and public project surfaces.",
+		"desc": "Frontend cloud platform for deploying web apps, docs portals, and serverless-backed product experiences.",
 		"icon": "/skill-icons/vercel.svg",
 		"links": [
 			{
@@ -2596,7 +2596,7 @@
 	},
 	"Vercel AI SDK": {
 		"name": "Vercel AI SDK",
-		"desc": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output. MDXPad uses Vercel AI SDK for multi-provider AI assistance with token tracking and bring-your-own-key support.",
+		"desc": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output.",
 		"icon": "/skill-icons/vercel-ai-sdk.svg",
 		"links": [
 			{
@@ -2641,7 +2641,7 @@
 	},
 	"Web Workers": {
 		"name": "Web Workers",
-		"desc": "Browser background execution primitive for moving heavy processing off the main UI thread. Listentropy uses a Web Worker pipeline to process large Spotify history files in-browser while keeping the UI responsive.",
+		"desc": "Browser background execution primitive for moving heavy processing off the main UI thread.",
 		"icon": "/skill-icons/web-workers.svg",
 		"links": [
 			{
@@ -2686,7 +2686,7 @@
 	},
 	"YAML": {
 		"name": "YAML",
-		"desc": "Human-readable data serialization format used for configuration, schemas, docs metadata, and pipeline definitions. AI/ML Web Feeds uses YAML feed schemas, and MDXPad validates YAML frontmatter for authoring workflows.",
+		"desc": "Human-readable data serialization format used for configuration, schemas, docs metadata, and pipeline definitions.",
 		"icon": "/skill-icons/yaml.svg",
 		"links": [
 			{

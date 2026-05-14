@@ -31,6 +31,45 @@ const blockedUserFacingPattern = new RegExp(
   "i",
 );
 
+const blockedResumeContextFragments = [
+  "\\bWyatt\\b",
+  "\\bJPMorgan\\b",
+  "\\bFrame Payments\\b",
+  "\\bGap forecasting\\b",
+  "\\bListentropy\\b",
+  "\\bSandLabs\\b",
+  "\\bMCP-Crawl4AI\\b",
+  "\\bAI Agent Harness Configs\\b",
+  "\\bNBA Basketball Database\\b",
+  "\\bbasketball database\\b",
+  "\\bPersonal Website\\b",
+  "\\bpersonal-site\\b",
+  "\\bportfolio\\b",
+  "\\bresume\\b",
+  "\\bon this page\\b",
+  "\\broles and projects\\b",
+  "\\bmerchant\\b",
+  "\\banalyst\\b",
+  "\\btrader\\b",
+  "\\bpublished\\b",
+  "\\bopen-sourced\\b",
+  "\\bAWS Certified\\b",
+  "\\bdocument-intelligence\\b",
+  "\\bconfidential\\b",
+  "\\bPII\\b",
+  "\\bStealth Web3\\b",
+  "\\bMDXPad\\b",
+  "\\bProxyWhirl\\b",
+  "\\bIINA\\b",
+  "\\bFL Studio\\b",
+  "\\bAI/ML Web Feeds\\b",
+] as const;
+
+const blockedResumeContextPattern = new RegExp(
+  blockedResumeContextFragments.join("|"),
+  "i",
+);
+
 const repeatedSmallWordPattern = /\b(a|an|and|for|in|of|the|to|with) \1\b/i;
 
 const blockedWordmarkIconSources = [
@@ -165,9 +204,10 @@ describe("skill details", () => {
         "links",
         "name",
       ]);
-      expect(detail.desc.length, skillName).toBeGreaterThanOrEqual(90);
+      expect(detail.desc.length, skillName).toBeGreaterThanOrEqual(60);
       expect(detail.desc.length, skillName).toBeLessThanOrEqual(320);
       expect(detail.desc, skillName).not.toMatch(blockedUserFacingPattern);
+      expect(detail.desc, skillName).not.toMatch(blockedResumeContextPattern);
       expect(detail.desc, skillName).not.toMatch(repeatedSmallWordPattern);
       expect(detail.icon?.path, skillName).toMatch(/^\/skill-icons\//);
       expect(detail.links.length, skillName).toBeGreaterThanOrEqual(1);
@@ -191,7 +231,7 @@ describe("skill details", () => {
 
       expect(detail, skillName).toBeDefined();
       expect(detail?.name, skillName).toBe(skillName);
-      expect(detail?.desc.length, skillName).toBeGreaterThanOrEqual(90);
+      expect(detail?.desc.length, skillName).toBeGreaterThanOrEqual(60);
       expect(detail?.links.length, skillName).toBeGreaterThanOrEqual(1);
       expect(detail?.icon?.path, skillName).toBe(
         skillIcons[skillName as keyof typeof skillIcons].iconPath,

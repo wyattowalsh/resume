@@ -32,7 +32,7 @@ const siteVariantSchema = z.object({
 });
 
 const skillDetailSchema = z.object({
-  desc: z.string().trim().min(90).max(320),
+  desc: z.string().trim().min(60).max(320),
   icon: z.string().startsWith("/skill-icons/"),
   links: z.array(
     z.object({

@@ -23,7 +23,7 @@ Only `/` is canonical and indexable. The production SSR layer blocks `/full` and
 3. `src/lib/resume-data.ts` resolves and validates each variant before rendering.
 4. Dedicated layouts (`SiteResumeLayout`, `FullResumeLayout`, `SingleResumeLayout`) own artifact-specific composition.
 5. `src/lib/artifact-specs.ts` also defines the explicit DOCX policy contract under each artifact spec's `docx` field.
-6. `assets/data/skill-details.json` adds web-only skill popover display data in the `{ name, desc, icon, links }` shape. Descriptions should stay compact, links should be canonical HTTPS references, icon paths should mirror `assets/data/skill-icons.json`, and the whole surface is guarded from leaking into generated PDF/DOCX artifacts.
+6. `assets/data/skill-details.json` adds web-only skill popover display data in the `{ name, desc, icon, links }` shape. Descriptions should stay compact and describe the skill itself, links should be canonical HTTPS references, icon paths should mirror `assets/data/skill-icons.json`, and the whole surface is guarded from leaking into generated PDF/DOCX artifacts.
 7. `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, and `public/skill-icons/` provide the web-only local icon layer for skill chips and section headings. Skill-chip icons should be compact original symbols or source-traced product icons, not wide wordmarks or banner logos.
 8. `src/lib/resume-downloads.ts` centralizes the public footer download labels, paths, and accessibility labels.
 

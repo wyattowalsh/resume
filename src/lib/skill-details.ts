@@ -8,7 +8,7 @@ const skillLinkSchema = z.object({
 
 const skillDetailDataSchema = z.object({
   name: z.string().trim().min(1).max(80),
-  desc: z.string().trim().min(90).max(320),
+  desc: z.string().trim().min(60).max(320),
   icon: z.string().startsWith("/skill-icons/"),
   links: z.array(skillLinkSchema).min(1),
 });

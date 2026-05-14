@@ -129,10 +129,9 @@ describe("SkillPopover", () => {
 
     expect(dialog).not.toBeNull();
     expect(dialog?.textContent).toContain("60East's high-performance");
-    expect(dialog?.textContent).toContain(
-      "JPMorgan market-data work used AMPS",
-    );
     expect(dialog?.textContent).toContain("Product site");
+    expect(dialog?.textContent).not.toContain("JPMorgan");
+    expect(dialog?.textContent).not.toContain("market-data work");
     expect(dialog?.textContent).not.toContain("Professional use");
     expect(dialog?.textContent).not.toContain("Resume context");
     expect(dialog?.textContent).not.toContain("Evidence");
