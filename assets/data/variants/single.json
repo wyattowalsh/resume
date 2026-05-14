@@ -80,12 +80,12 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Python and TypeScript agent tooling catalog with 112 portable skills, 8 reusable agents, and 30 MCP tools.",
+      "description": "Python/TypeScript agent tooling catalog with portable skills, reusable agents, and MCP presets.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Kaggle dataset/repo froze 2023-07-06 after 425K+ views and 60K+ downloads; rebuilding nbadb with 152 extractors/204 outputs.",
+      "description": "NBA Kaggle dataset/repo with multi-format game/play-by-play exports; rebuilding nbadb around broader extractors and schemas.",
       "highlightIndexes": [0, 1]
     },
     {

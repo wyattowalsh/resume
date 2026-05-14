@@ -116,12 +116,12 @@
   "projects": [
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog and docs portal packaging 112 portable skills, 8 reusable agents, 30 MCP tools, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
+      "description": "Open-source agent tooling catalog and docs portal packaging portable skills, reusable agents, MCP tool presets, and cross-runtime workflows for Claude Code, Codex, Copilot, Cursor, and related coding assistants.",
       "highlightIndexes": [0, 1, 2]
     },
     {
       "name": "NBA Basketball Database",
-      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ plays; reached 425K+ views and 60K+ downloads before freezing at the 2023-07-06 update for reproducible sports analytics workflows.",
+      "description": "Public NBA Kaggle dataset and repo covering full-season game and play-by-play history across DuckDB, SQLite, Parquet, and CSV exports for reproducible sports analytics workflows.",
       "highlightIndexes": [0, 1, 2]
     },
     {

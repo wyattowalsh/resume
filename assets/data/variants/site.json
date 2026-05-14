@@ -260,12 +260,12 @@
   "projects": [
     {
       "name": "NBA Basketball Database",
-      "description": "Public NBA Kaggle dataset and repo covering 65K+ games and 13M+ play-by-play events, frozen at the 2023-07-06 update after reaching 425K+ views and 60K+ downloads; next-generation nbadb rebuild is in development.",
+      "description": "Public NBA Kaggle dataset and repo for multi-format game and play-by-play history, with substantial Kaggle usage and a next-generation nbadb rebuild in development.",
       "highlightIndexes": [0, 1]
     },
     {
       "name": "AI Agent Harness Configs",
-      "description": "Open-source agent tooling catalog packaging 112 portable skills, 8 reusable agents, 30 MCP tools, and cross-runtime workflows for modern coding assistants.",
+      "description": "Open-source agent tooling catalog packaging portable skills, reusable agents, MCP tool presets, and cross-runtime workflows for modern coding assistants.",
       "highlightIndexes": [0, 1]
     },
     {
