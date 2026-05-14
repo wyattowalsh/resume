@@ -1,6 +1,6 @@
 import skillSectionIcons from "@assets/data/skill-section-icons.json";
 import { Skill } from "@/lib/schema";
-import { getSkillDetail, getSkillIcon } from "@/lib/skill-details";
+import { getSkillDetail } from "@/lib/skill-details";
 import { Section } from "./Section";
 import { SkillPopover } from "./SkillPopover";
 import type { IconType } from "react-icons";
@@ -23,16 +23,16 @@ type SkillsProps = {
 };
 
 const sectionIconRegistry = {
-  "bot": LuBot,
+  bot: LuBot,
   "brain-circuit": LuBrainCircuit,
   "chart-line": LuChartLine,
-  "cloud": LuCloud,
+  cloud: LuCloud,
   "code-xml": LuCodeXml,
-  "database": LuDatabase,
-  "languages": LuLanguages,
-  "monitor": LuMonitor,
+  database: LuDatabase,
+  languages: LuLanguages,
+  monitor: LuMonitor,
   "radio-tower": LuRadioTower,
-  "server": LuServer,
+  server: LuServer,
   "shield-check": LuShieldCheck,
 } satisfies Record<string, IconType>;
 
@@ -64,7 +64,7 @@ export function Skills({ skills }: SkillsProps) {
                         key={keyword}
                         category={skill.name}
                         detail={detail}
-                        iconPath={getSkillIcon(keyword)?.path}
+                        iconPath={detail?.icon?.path}
                         skillName={keyword}
                       >
                         {keyword}
@@ -82,8 +82,17 @@ export function Skills({ skills }: SkillsProps) {
 }
 
 function SkillSectionIcon({ sectionName }: { sectionName: string }) {
-  const iconName = skillSectionIcons[sectionName as keyof typeof skillSectionIcons] as SectionIconName | undefined;
+  const iconName = skillSectionIcons[
+    sectionName as keyof typeof skillSectionIcons
+  ] as SectionIconName | undefined;
   const Icon = sectionIconRegistry[iconName ?? "code-xml"];
 
-  return <Icon className="text-primary" size={15} strokeWidth={2} aria-hidden="true" />;
+  return (
+    <Icon
+      className="text-primary"
+      size={15}
+      strokeWidth={2}
+      aria-hidden="true"
+    />
+  );
 }

@@ -8,10 +8,10 @@ icon: fa/FaRocket
 
 This repo intentionally ships three different resume artifacts from one canonical data source:
 
-| Artifact               | Route     | Job                                                                                           |
-| ---------------------- | --------- | --------------------------------------------------------------------------------------------- |
-| Online resume          | `/`       | Broadest public surface with richer project depth, subtle scroll progress, skill-only popovers, and footer downloads. |
-| Editorial print resume | `/full`   | Local-only 2-page PDF/PNG visual artifact plus semantic DOCX export with calmer pacing and more supporting detail. |
+| Artifact               | Route     | Job                                                                                                                           |
+| ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Online resume          | `/`       | Broadest public surface with richer project depth, subtle scroll progress, skill-only popovers, and footer downloads.         |
+| Editorial print resume | `/full`   | Local-only 2-page PDF/PNG visual artifact plus semantic DOCX export with calmer pacing and more supporting detail.            |
 | Distilled print resume | `/single` | Local-only 1-page PDF/PNG visual artifact plus semantic DOCX export with a stricter linear reading path for safer extraction. |
 
 Only `/` is canonical and indexable. The production SSR layer blocks `/full` and `/single`, `robots.txt` disallows those paths plus `/downloads/`, and `sitemap.xml` lists only `https://resume.w4w.dev/`. Static PDF/DOCX downloads are intentional user downloads, not search landing pages; keep them omitted from the sitemap and mirror the noindex policy with static-file headers if hosting support is added later.
@@ -23,7 +23,7 @@ Only `/` is canonical and indexable. The production SSR layer blocks `/full` and
 3. `src/lib/resume-data.ts` resolves and validates each variant before rendering.
 4. Dedicated layouts (`SiteResumeLayout`, `FullResumeLayout`, `SingleResumeLayout`) own artifact-specific composition.
 5. `src/lib/artifact-specs.ts` also defines the explicit DOCX policy contract under each artifact spec's `docx` field.
-6. `assets/data/skill-details.json` adds web-only skill popover evidence that is guarded from leaking into generated PDF/DOCX artifacts.
+6. `assets/data/skill-details.json` adds web-only skill popover display data in the `{ name, desc, icon, links }` shape, guarded from leaking into generated PDF/DOCX artifacts.
 7. `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, and `public/skill-icons/` provide the web-only local icon layer for skill chips and section headings. Skill-chip icons should be compact original symbols or source-traced product icons, not wide wordmarks or banner logos.
 8. `src/lib/resume-downloads.ts` centralizes the public footer download labels, paths, and accessibility labels.
 
@@ -34,7 +34,7 @@ The DOCX intent is deliberate: both exports retain the basics summary, selected 
 - The top progress indicator is noninteractive and uses a Radix Progress primitive wrapped in `src/components/ui/progress.tsx`.
 - The progress indicator appears only after the header sentinel leaves the viewport and updates via `IntersectionObserver`; it does not poll `scrollY` or attach scroll handlers.
 - Skills are the only popover surface. Work and project proof should remain directly visible in the page content, not hidden behind role/project dialogs.
-- All visible skill chips are keyboard-accessible popover triggers. Curated skills use `assets/data/skill-details.json` and `assets/data/skill-icons.json`; uncatalogued skills still open lightweight category-context cards so the UI has no static skill pills.
+- All visible skill chips are keyboard-accessible popover triggers. Curated skills use the simplified `name`, `desc`, `icon`, `links` shape in `assets/data/skill-details.json`; uncatalogued skills still open lightweight category-context cards so the UI has no static skill pills.
 - Skill icons must stay readable at trigger size. Prefer oldschool, classic, or original icon-only marks where they fit; replace wide wordmarks and banners with compact favicons, devicons, or explicit concept icons.
 - Project action pills use contextual leading icons for GitHub, Kaggle, docs, and live/external links while preserving the trailing external-link indicator.
 - Public resume downloads live in the bottom footer only.
@@ -80,6 +80,6 @@ The release workflow mirrors practical root quality gates before upload: build s
 
 Use CI artifacts or local generated PNG/PDF outputs for visual QA whenever layout, typography, section budgets, icons, or public resume facts change. Confirm the web route remains a professional person/entity page for Wyatt Walsh as a Senior AI/ML Engineer in New York City, with the same context reflected in metadata, JSON-LD, visible copy, and the print artifacts.
 
-Skill icons and popover evidence are web-only. Keep icon provenance in the icon data pipeline, keep generated PDFs image-free, preserve all visible skill chips as interactive triggers, and preserve the artifact checker rule that tooltip-only skill descriptions and reference URLs stay out of PDF/DOCX exports.
+Skill icons and popover descriptions are web-only. Keep icon provenance in the icon data pipeline, keep generated PDFs image-free, preserve all visible skill chips as interactive triggers, and preserve the artifact checker rule that tooltip-only skill descriptions and reference URLs stay out of PDF/DOCX exports.
 
 The skill-icon regression tests also protect chip readability. `src/lib/skill-details.test.ts` rejects known wide wordmark sources and pins compact replacements for wordmark-prone skills such as AMPS, `q`, Tableau, XGBoost, Pandera, Go, Bash, and Market Data Systems. After icon-pipeline edits, run `pnpm sync:skill-icons`, visually check the affected popovers on `/`, run `pnpm test -- src/lib/skill-details.test.ts`, and use `pnpm check:artifacts` when generated/public downloads are touched.

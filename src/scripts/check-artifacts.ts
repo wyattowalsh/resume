@@ -171,8 +171,7 @@ interface ProjectSelection extends NamedSelection {
 }
 
 interface SkillDetailsSelection {
-  summary?: string;
-  resumeContext?: string;
+  desc?: string;
   links?: Array<{ href: string }>;
 }
 
@@ -748,8 +747,7 @@ async function loadTooltipOnlyTerms() {
 
   for (const detail of Object.values(skillDetails)) {
     for (const term of [
-      detail.summary,
-      detail.resumeContext,
+      detail.desc,
       ...(detail.links?.map((link) => link.href) ?? []),
     ]) {
       if (term) {

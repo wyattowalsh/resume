@@ -32,12 +32,15 @@ const siteVariantSchema = z.object({
 });
 
 const skillDetailSchema = z.object({
+  desc: z.string(),
+  icon: z.string().startsWith("/skill-icons/"),
   links: z.array(
     z.object({
+      label: z.string(),
       href: z.string().url(),
-      kind: z.enum(["official", "docs", "source", "reference", "first-party"]),
     }),
   ),
+  name: z.string(),
 });
 
 const skillDetailsSchema = z.record(z.string(), skillDetailSchema);
@@ -786,11 +789,13 @@ async function* resolveLinkedIcons(
   preferredSource: "official" | "web-sourced",
 ): AsyncGenerator<DownloadedIcon> {
   for (const link of links ?? []) {
-    if (preferredSource === "official" && link.kind !== "official") {
+    const isOfficialLink = /\b(official|product|site)\b/i.test(link.label);
+
+    if (preferredSource === "official" && !isOfficialLink) {
       continue;
     }
 
-    if (preferredSource === "web-sourced" && link.kind === "official") {
+    if (preferredSource === "web-sourced" && isOfficialLink) {
       continue;
     }
 

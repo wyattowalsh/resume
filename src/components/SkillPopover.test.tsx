@@ -49,10 +49,7 @@ describe("SkillPopover", () => {
   });
 
   it("opens on activation, not focus", () => {
-    const detail = getSkillDetail(
-      "AMPS",
-      "Streaming, Messaging & Capital Markets Systems",
-    );
+    const detail = getSkillDetail("AMPS");
 
     expect(detail).toBeDefined();
 
@@ -81,10 +78,7 @@ describe("SkillPopover", () => {
   });
 
   it("provides an explicit close control", () => {
-    const detail = getSkillDetail(
-      "AMPS",
-      "Streaming, Messaging & Capital Markets Systems",
-    );
+    const detail = getSkillDetail("AMPS");
 
     act(() => {
       root.render(
@@ -113,10 +107,7 @@ describe("SkillPopover", () => {
   });
 
   it("renders a distilled context card without quality or ranking language", () => {
-    const detail = getSkillDetail(
-      "AMPS",
-      "Streaming, Messaging & Capital Markets Systems",
-    );
+    const detail = getSkillDetail("AMPS");
 
     act(() => {
       root.render(
@@ -141,7 +132,6 @@ describe("SkillPopover", () => {
     expect(dialog?.textContent).toContain(
       "JPMorgan market-data work used AMPS",
     );
-    expect(dialog?.textContent).toContain("JPMorgan Chase & Co.");
     expect(dialog?.textContent).toContain("Product site");
     expect(dialog?.textContent).not.toContain("Professional use");
     expect(dialog?.textContent).not.toContain("Resume context");
@@ -151,10 +141,7 @@ describe("SkillPopover", () => {
   });
 
   it("renders curated first-party details with safe external links", () => {
-    const detail = getSkillDetail(
-      "Google Gemini API",
-      "AI, LLM & Agent Engineering",
-    );
+    const detail = getSkillDetail("Google Gemini API");
 
     act(() => {
       root.render(
@@ -189,7 +176,6 @@ describe("SkillPopover", () => {
     expect(
       dialog?.querySelector("h4")?.parentElement?.textContent,
     ).not.toContain("AI, LLM & Agent Engineering");
-    expect(dialog?.textContent).toContain("AI, LLM & Agent Engineering");
     expect(link).not.toBeNull();
     expect(link?.textContent).toContain("Gemini API docs");
     expect(link?.getAttribute("target")).toBe("_blank");
@@ -198,11 +184,13 @@ describe("SkillPopover", () => {
   });
 
   it("renders a safe fallback card when no detail resolves", () => {
+    const detail = getSkillDetail("Deliberately Missing Skill", "Other");
+
     act(() => {
       root.render(
         <SkillPopover
           category="Other"
-          detail={undefined}
+          detail={detail}
           skillName="Deliberately Missing Skill"
         >
           Deliberately Missing Skill
@@ -222,16 +210,13 @@ describe("SkillPopover", () => {
       dialog?.querySelector("h4")?.parentElement?.textContent,
     ).not.toContain("Other");
     expect(dialog?.textContent).toContain(
-      "toolkit across the roles and projects represented on this page",
+      "Deliberately Missing Skill is part of Wyatt's other toolkit",
     );
     expect(document.body.querySelector("a")).toBeNull();
   });
 
   it("falls back to text when an icon image fails", () => {
-    const detail = getSkillDetail(
-      "Google Gemini API",
-      "AI, LLM & Agent Engineering",
-    );
+    const detail = getSkillDetail("Google Gemini API");
 
     act(() => {
       root.render(

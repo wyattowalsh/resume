@@ -1,4050 +1,1982 @@
 {
 	"AI Agent Harnesses": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes.",
-		"resumeContext": "AI Agent Harness Configs packages reusable agents, skills, and MCP presets so coding assistants can share workflows across runtimes.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "AI Agent Harnesses",
+		"desc": "Portable agent configs, skills, MCP tools, and workflows for coordinating coding assistants across runtimes. AI Agent Harness Configs packages reusable agents, skills, and MCP presets so coding assistants can share workflows across runtimes.",
+		"icon": "/skill-icons/ai-agent-harnesses.svg",
 		"links": [
 			{
 				"label": "Project site",
-				"href": "https://agents.w4w.dev",
-				"kind": "first-party"
+				"href": "https://agents.w4w.dev"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"AI Agent Skills": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks.",
-		"resumeContext": "AI Agent Harness Configs packages skills as reusable task instructions with references, scripts, and assets for coding agents.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "AI Agent Skills",
+		"desc": "Skill packages that give agents focused instructions, scripts, references, and assets for repeatable tasks. AI Agent Harness Configs packages skills as reusable task instructions with references, scripts, and assets for coding agents.",
+		"icon": "/skill-icons/ai-agent-skills.png",
 		"links": [
 			{
 				"label": "Specification",
-				"href": "https://agentskills.io/specification",
-				"kind": "docs"
+				"href": "https://agentskills.io/specification"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"AI Guardrails": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds.",
-		"resumeContext": "Frame Payments and the agent harness work use guardrails to constrain AI behavior, validate outputs, and keep audit requirements visible.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			},
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "AI Guardrails",
+		"desc": "Policy, validation, and control patterns that keep LLM systems within expected behavior and output bounds. Frame Payments and the agent harness work use guardrails to constrain AI behavior, validate outputs, and keep audit requirements visible.",
+		"icon": "/skill-icons/ai-guardrails.svg",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://www.anthropic.com/engineering/building-effective-agents",
-				"kind": "reference"
+				"href": "https://www.anthropic.com/engineering/building-effective-agents"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Amazon Bedrock": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "AWS service for building generative-AI applications with managed foundation models and agent tooling.",
-		"resumeContext": "Frame Payments uses Bedrock AgentCore in LLM document-intelligence work for merchant review and confidential uploads.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Amazon Bedrock",
+		"desc": "AWS service for building generative-AI applications with managed foundation models and agent tooling. Frame Payments uses Bedrock AgentCore in LLM document-intelligence work for merchant review and confidential uploads.",
+		"icon": "/skill-icons/amazon-bedrock.png",
 		"links": [
 			{
 				"label": "AWS docs",
-				"href": "https://docs.aws.amazon.com/bedrock/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/bedrock/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Amazon Kinesis": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "AWS service family for collecting, processing, and analyzing real-time streaming data.",
-		"resumeContext": "Amazon Kinesis is AWS managed stream ingestion, comparable to Kafka or Pub/Sub when event records need cloud-native buffering and fan-out.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Amazon Kinesis",
+		"desc": "AWS service family for collecting, processing, and analyzing real-time streaming data. Amazon Kinesis is AWS managed stream ingestion, comparable to Kafka or Pub/Sub when event records need cloud-native buffering and fan-out.",
+		"icon": "/skill-icons/amazon-kinesis.png",
 		"links": [
 			{
 				"label": "Kinesis docs",
-				"href": "https://docs.aws.amazon.com/kinesis/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/kinesis/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"AMPS": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "60East's high-performance publish/subscribe platform for low-latency real-time systems.",
-		"resumeContext": "JPMorgan market-data work used AMPS for low-latency pub/sub streams in capital-markets systems.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "AMPS",
+		"desc": "60East's high-performance publish/subscribe platform for low-latency real-time systems. JPMorgan market-data work used AMPS for low-latency pub/sub streams in capital-markets systems.",
+		"icon": "/skill-icons/amps.ico",
 		"links": [
 			{
 				"label": "Product site",
-				"href": "https://crankuptheamps.com/",
-				"kind": "official"
+				"href": "https://crankuptheamps.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Anomaly Detection": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Identifying unusual observations, shifts, or outliers in data streams and analytical datasets.",
-		"resumeContext": "JPMorgan risk analytics used ML-driven anomaly detection to reduce false positives and manual review time.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "Anomaly Detection",
+		"desc": "Identifying unusual observations, shifts, or outliers in data streams and analytical datasets. JPMorgan risk analytics used ML-driven anomaly detection to reduce false positives and manual review time.",
+		"icon": "/skill-icons/anomaly-detection.svg",
 		"links": [
 			{
 				"label": "Outlier detection docs",
-				"href": "https://scikit-learn.org/stable/modules/outlier_detection.html",
-				"kind": "docs"
+				"href": "https://scikit-learn.org/stable/modules/outlier_detection.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Ant Design": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Enterprise-oriented React design system and component library for complex application interfaces.",
-		"resumeContext": "Ant Design is a React component library for dense enterprise screens such as admin tools, data tables, forms, and dashboards.",
-		"evidence": [
-			{
-				"label": "Frontend, Product & Desktop Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Ant Design",
+		"desc": "Enterprise-oriented React design system and component library for complex application interfaces. Ant Design is a React component library for dense enterprise screens such as admin tools, data tables, forms, and dashboards.",
+		"icon": "/skill-icons/ant-design.svg",
 		"links": [
 			{
 				"label": "Ant Design docs",
-				"href": "https://ant.design/docs/react/introduce",
-				"kind": "docs"
+				"href": "https://ant.design/docs/react/introduce"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Anthropic Claude API": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Anthropic's API for building Claude-powered applications, document workflows, and agent systems.",
-		"resumeContext": "Wyatt used Claude in Frame Payments LLM document-intelligence work and AI-assisted engineering workflows.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Anthropic Claude API",
+		"desc": "Anthropic's API for building Claude-powered applications, document workflows, and agent systems. Wyatt used Claude in Frame Payments LLM document-intelligence work and AI-assisted engineering workflows.",
+		"icon": "/skill-icons/anthropic-claude-api.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://platform.claude.com/docs/en/home",
-				"kind": "docs"
+				"href": "https://platform.claude.com/docs/en/home"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Antigravity": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Agentic coding environment surface for delegating development work across editor and browser-style workflows.",
-		"resumeContext": "Antigravity is a Google coding-agent environment; it belongs beside editor and browser agents as another way to delegate repository tasks.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "Antigravity",
+		"desc": "Agentic coding environment surface for delegating development work across editor and browser-style workflows. Antigravity is a Google coding-agent environment; it belongs beside editor and browser agents as another way to delegate repository tasks.",
+		"icon": "/skill-icons/antigravity.ico",
 		"links": [
 			{
 				"label": "Product site",
-				"href": "https://antigravity.google/",
-				"kind": "official"
+				"href": "https://antigravity.google/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Apache Airflow": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines.",
-		"resumeContext": "Airflow schedules and monitors data pipelines as DAGs, making dependencies, retries, and batch jobs visible to operators.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Apache Airflow",
+		"desc": "Workflow orchestration platform for scheduling and monitoring directed acyclic data pipelines. Airflow schedules and monitors data pipelines as DAGs, making dependencies, retries, and batch jobs visible to operators.",
+		"icon": "/skill-icons/apache-airflow.svg",
 		"links": [
 			{
 				"label": "Airflow docs",
-				"href": "https://airflow.apache.org/docs/",
-				"kind": "docs"
+				"href": "https://airflow.apache.org/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Apache Kafka": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing.",
-		"resumeContext": "Kafka is a durable event log for high-throughput pub/sub systems, often used when producers and consumers need replayable streams.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Apache Kafka",
+		"desc": "Distributed event-streaming platform for durable logs, high-throughput pub/sub, and stream processing. Kafka is a durable event log for high-throughput pub/sub systems, often used when producers and consumers need replayable streams.",
+		"icon": "/skill-icons/apache-kafka.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://kafka.apache.org/documentation/",
-				"kind": "docs"
+				"href": "https://kafka.apache.org/documentation/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Apache Spark": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Distributed data-processing engine for batch analytics, ETL, and large-scale transformation workloads.",
-		"resumeContext": "Gap forecasting work used Spark pipelines across five-plus years of sales data to speed processing and standardize insights.",
-		"evidence": [
-			{
-				"label": "Gap Inc.",
-				"kind": "work"
-			}
-		],
+		"name": "Apache Spark",
+		"desc": "Distributed data-processing engine for batch analytics, ETL, and large-scale transformation workloads. Gap forecasting work used Spark pipelines across five-plus years of sales data to speed processing and standardize insights.",
+		"icon": "/skill-icons/apache-spark.svg",
 		"links": [
 			{
 				"label": "Spark docs",
-				"href": "https://spark.apache.org/docs/latest/",
-				"kind": "docs"
+				"href": "https://spark.apache.org/docs/latest/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Argo CD": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "GitOps continuous delivery tool for syncing Kubernetes application state from version control.",
-		"resumeContext": "Argo CD syncs Kubernetes apps from Git, making cluster state reviewable through GitOps rather than manual release steps.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Argo CD",
+		"desc": "GitOps continuous delivery tool for syncing Kubernetes application state from version control. Argo CD syncs Kubernetes apps from Git, making cluster state reviewable through GitOps rather than manual release steps.",
+		"icon": "/skill-icons/argo-cd.svg",
 		"links": [
 			{
 				"label": "Argo CD docs",
-				"href": "https://argo-cd.readthedocs.io/",
-				"kind": "docs"
+				"href": "https://argo-cd.readthedocs.io/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Auditability": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Designing systems so decisions, inputs, outputs, and review actions can be inspected after the fact.",
-		"resumeContext": "Frame Payments AI work includes audit-aware handling for confidential documents, PII safeguards, and reviewable compliance workflows.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Auditability",
+		"desc": "Designing systems so decisions, inputs, outputs, and review actions can be inspected after the fact. Frame Payments AI work includes audit-aware handling for confidential documents, PII safeguards, and reviewable compliance workflows.",
+		"icon": "/skill-icons/auditability.svg",
 		"links": [
 			{
 				"label": "NIST SP 800-53",
-				"href": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
-				"kind": "reference"
+				"href": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"AWS": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Amazon Web Services cloud platform for compute, data, storage, networking, AI, and operations.",
-		"resumeContext": "Wyatt holds the AWS Certified Cloud Practitioner credential and delivers cloud-oriented systems.",
-		"evidence": [
-			{
-				"label": "AWS Certified Cloud Practitioner",
-				"kind": "credential"
-			}
-		],
+		"name": "AWS",
+		"desc": "Amazon Web Services cloud platform for compute, data, storage, networking, AI, and operations. Wyatt holds the AWS Certified Cloud Practitioner credential and delivers cloud-oriented systems.",
+		"icon": "/skill-icons/aws.svg",
 		"links": [
 			{
 				"label": "Product site",
-				"href": "https://aws.amazon.com/",
-				"kind": "official"
+				"href": "https://aws.amazon.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"AWS Athena": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Serverless AWS query service for running SQL over data in S3 and lake-style storage.",
-		"resumeContext": "Athena runs SQL over S3 data without a warehouse cluster, useful for ad hoc analytics on lake-style datasets.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "AWS Athena",
+		"desc": "Serverless AWS query service for running SQL over data in S3 and lake-style storage. Athena runs SQL over S3 data without a warehouse cluster, useful for ad hoc analytics on lake-style datasets.",
+		"icon": "/skill-icons/aws-athena.png",
 		"links": [
 			{
 				"label": "Athena docs",
-				"href": "https://docs.aws.amazon.com/athena/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/athena/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"AWS Glue": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing.",
-		"resumeContext": "AWS Glue is managed ETL and catalog tooling for discovering, transforming, and preparing datasets in the AWS ecosystem.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "AWS Glue",
+		"desc": "AWS managed ETL and data-catalog service for preparing data for analytics and warehousing. AWS Glue is managed ETL and catalog tooling for discovering, transforming, and preparing datasets in the AWS ecosystem.",
+		"icon": "/skill-icons/aws-glue.png",
 		"links": [
 			{
 				"label": "Glue docs",
-				"href": "https://docs.aws.amazon.com/glue/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/glue/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"AWS Lambda": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "AWS serverless compute service for running event-driven functions without managing servers.",
-		"resumeContext": "AWS Lambda runs event-triggered functions without server management, fitting jobs, webhooks, lightweight APIs, and automation tasks.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "AWS Lambda",
+		"desc": "AWS serverless compute service for running event-driven functions without managing servers. AWS Lambda runs event-triggered functions without server management, fitting jobs, webhooks, lightweight APIs, and automation tasks.",
+		"icon": "/skill-icons/aws-lambda.png",
 		"links": [
 			{
 				"label": "Lambda docs",
-				"href": "https://docs.aws.amazon.com/lambda/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/lambda/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Azure": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations.",
-		"resumeContext": "Azure is Microsoft cloud platform, useful context beside AWS and GCP for compute, identity, storage, and managed services.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Azure",
+		"desc": "Microsoft cloud platform for compute, data, identity, AI, networking, and enterprise operations. Azure is Microsoft cloud platform, useful context beside AWS and GCP for compute, identity, storage, and managed services.",
+		"icon": "/skill-icons/azure.svg",
 		"links": [
 			{
 				"label": "Azure docs",
-				"href": "https://learn.microsoft.com/en-us/azure/",
-				"kind": "docs"
+				"href": "https://learn.microsoft.com/en-us/azure/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Bash": {
-		"category": "Languages & Authoring",
-		"summary": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows.",
-		"resumeContext": "Bash automates shell tasks such as setup, local scripts, build glue, and repeatable command-line operations.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "Bash",
+		"desc": "Shell language for local automation, scripts, environment setup, and repeatable developer workflows. Bash automates shell tasks such as setup, local scripts, build glue, and repeatable command-line operations.",
+		"icon": "/skill-icons/bash.svg",
 		"links": [
 			{
 				"label": "Bash manual",
-				"href": "https://www.gnu.org/software/bash/manual/",
-				"kind": "docs"
+				"href": "https://www.gnu.org/software/bash/manual/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"BigQuery": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets.",
-		"resumeContext": "BigQuery is Google serverless analytics warehouse, built for large SQL queries, reporting, and exploration without managing database nodes.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "BigQuery",
+		"desc": "Google Cloud serverless analytics warehouse for SQL-based analysis over large datasets. BigQuery is Google serverless analytics warehouse, built for large SQL queries, reporting, and exploration without managing database nodes.",
+		"icon": "/skill-icons/bigquery.svg",
 		"links": [
 			{
 				"label": "BigQuery docs",
-				"href": "https://cloud.google.com/bigquery/docs",
-				"kind": "docs"
+				"href": "https://cloud.google.com/bigquery/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"C++": {
-		"category": "Languages & Authoring",
-		"summary": "General-purpose systems language for performance-sensitive software, native libraries, and lower-level platform work.",
-		"resumeContext": "C++ matters when software needs compiled binaries, memory control, predictable latency, or close contact with operating-system APIs.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "C++",
+		"desc": "General-purpose systems language for performance-sensitive software, native libraries, and lower-level platform work. C++ matters when software needs compiled binaries, memory control, predictable latency, or close contact with operating-system APIs.",
+		"icon": "/skill-icons/c.png",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://isocpp.org/",
-				"kind": "reference"
+				"href": "https://isocpp.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Canvas": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Browser drawing API for rendering graphics, exported cards, charts, and pixel-level visual outputs.",
-		"resumeContext": "Listentropy uses Canvas to render share-card images and export listening-history visuals as PNG or ZIP assets.",
-		"evidence": [
-			{
-				"label": "Listentropy",
-				"kind": "project"
-			}
-		],
+		"name": "Canvas",
+		"desc": "Browser drawing API for rendering graphics, exported cards, charts, and pixel-level visual outputs. Listentropy uses Canvas to render share-card images and export listening-history visuals as PNG or ZIP assets.",
+		"icon": "/skill-icons/canvas.svg",
 		"links": [
 			{
 				"label": "MDN Canvas API",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
-				"kind": "docs"
+				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Chakra UI": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Composable React component library with accessible primitives and theme-driven styling.",
-		"resumeContext": "Chakra UI provides accessible React primitives and theme tokens, useful when a product UI needs composable components without heavy setup.",
-		"evidence": [
-			{
-				"label": "Frontend, Product & Desktop Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Chakra UI",
+		"desc": "Composable React component library with accessible primitives and theme-driven styling. Chakra UI provides accessible React primitives and theme tokens, useful when a product UI needs composable components without heavy setup.",
+		"icon": "/skill-icons/chakra-ui.svg",
 		"links": [
 			{
 				"label": "Chakra UI docs",
-				"href": "https://chakra-ui.com/docs",
-				"kind": "docs"
+				"href": "https://chakra-ui.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"ChatGPT": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation.",
-		"resumeContext": "ChatGPT is the general-purpose assistant surface in this set, useful for research, drafting, code help, and workflow automation concepts.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "ChatGPT",
+		"desc": "OpenAI's chat and agent product surface for assisted research, coding, writing, and workflow automation. ChatGPT is the general-purpose assistant surface in this set, useful for research, drafting, code help, and workflow automation concepts.",
+		"icon": "/skill-icons/chatgpt.svg",
 		"links": [
 			{
 				"label": "ChatGPT help",
-				"href": "https://help.openai.com/en/collections/3742473-chatgpt",
-				"kind": "docs"
+				"href": "https://help.openai.com/en/collections/3742473-chatgpt"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Cherry Studio": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows.",
-		"resumeContext": "Cherry Studio is a desktop client for working across multiple model providers, similar to other local assistant and MCP-connected tools.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "Cherry Studio",
+		"desc": "Desktop multi-model AI client used for local orchestration of provider-backed chat and assistant workflows. Cherry Studio is a desktop client for working across multiple model providers, similar to other local assistant and MCP-connected tools.",
+		"icon": "/skill-icons/cherry-studio.svg",
 		"links": [
 			{
 				"label": "Source",
-				"href": "https://github.com/CherryHQ/cherry-studio",
-				"kind": "source"
+				"href": "https://github.com/CherryHQ/cherry-studio"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"CI/CD": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Automated build, test, validation, and deployment pipelines that reduce release friction and catch regressions.",
-		"resumeContext": "The stealth Web3 app used GitHub Actions, Cypress, and Jest in CI/CD to shorten release cycles and raise test coverage.",
-		"evidence": [
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			}
-		],
+		"name": "CI/CD",
+		"desc": "Automated build, test, validation, and deployment pipelines that reduce release friction and catch regressions. The stealth Web3 app used GitHub Actions, Cypress, and Jest in CI/CD to shorten release cycles and raise test coverage.",
+		"icon": "/skill-icons/ci-cd.svg",
 		"links": [
 			{
 				"label": "GitHub Actions CI docs",
-				"href": "https://docs.github.com/en/actions/automating-builds-and-tests",
-				"kind": "docs"
+				"href": "https://docs.github.com/en/actions/automating-builds-and-tests"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"CircleCI": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Hosted CI/CD platform for automated builds, tests, and deployment workflows.",
-		"resumeContext": "CircleCI is hosted CI/CD for building, testing, and releasing software through configured pipelines.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "CircleCI",
+		"desc": "Hosted CI/CD platform for automated builds, tests, and deployment workflows. CircleCI is hosted CI/CD for building, testing, and releasing software through configured pipelines.",
+		"icon": "/skill-icons/circleci.svg",
 		"links": [
 			{
 				"label": "CircleCI docs",
-				"href": "https://circleci.com/docs/",
-				"kind": "docs"
+				"href": "https://circleci.com/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Claude Code": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows.",
-		"resumeContext": "AI Agent Harness Configs includes Claude Code as a terminal coding assistant for repository edits, review, and workflow automation.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "Claude Code",
+		"desc": "Anthropic's terminal coding agent for navigating projects, editing files, and running development workflows. AI Agent Harness Configs includes Claude Code as a terminal coding assistant for repository edits, review, and workflow automation.",
+		"icon": "/skill-icons/claude-code.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://code.claude.com/docs",
-				"kind": "docs"
+				"href": "https://code.claude.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Claude Desktop": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces.",
-		"resumeContext": "Claude Desktop is the local Claude client commonly paired with MCP servers, desktop files, and tool-backed assistant workflows.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "Claude Desktop",
+		"desc": "Desktop Claude client used for interactive AI workflows and MCP-connected local tool surfaces. Claude Desktop is the local Claude client commonly paired with MCP servers, desktop files, and tool-backed assistant workflows.",
+		"icon": "/skill-icons/claude-desktop.ico",
 		"links": [
 			{
 				"label": "Claude Desktop help",
-				"href": "https://support.anthropic.com/en/articles/10065433-installing-claude-for-desktop",
-				"kind": "docs"
+				"href": "https://support.anthropic.com/en/articles/10065433-installing-claude-for-desktop"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"CLI Tooling": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks.",
-		"resumeContext": "CLI tooling packages repeatable tasks behind commands, making data jobs, releases, and maintenance easier to run safely.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "CLI Tooling",
+		"desc": "Command-line interfaces for repeatable developer workflows, data operations, automation, and release tasks. CLI tooling packages repeatable tasks behind commands, making data jobs, releases, and maintenance easier to run safely.",
+		"icon": "/skill-icons/cli-tooling.svg",
 		"links": [
 			{
 				"label": "Click docs",
-				"href": "https://click.palletsprojects.com/",
-				"kind": "docs"
+				"href": "https://click.palletsprojects.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"CloudFormation": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "AWS infrastructure-as-code service for defining and managing cloud resources with templates.",
-		"resumeContext": "CloudFormation is AWS infrastructure-as-code, describing cloud resources in templates that can be reviewed and reapplied.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "CloudFormation",
+		"desc": "AWS infrastructure-as-code service for defining and managing cloud resources with templates. CloudFormation is AWS infrastructure-as-code, describing cloud resources in templates that can be reviewed and reapplied.",
+		"icon": "/skill-icons/cloudformation.png",
 		"links": [
 			{
 				"label": "CloudFormation docs",
-				"href": "https://docs.aws.amazon.com/cloudformation/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/cloudformation/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"CodeMirror": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Browser-based code editor toolkit for rich editing, syntax highlighting, and extension-driven authoring interfaces.",
-		"resumeContext": "MDXPad uses CodeMirror 6 for synchronized Markdown and MDX editing with live preview behavior.",
-		"evidence": [
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "CodeMirror",
+		"desc": "Browser-based code editor toolkit for rich editing, syntax highlighting, and extension-driven authoring interfaces. MDXPad uses CodeMirror 6 for synchronized Markdown and MDX editing with live preview behavior.",
+		"icon": "/skill-icons/codemirror.svg",
 		"links": [
 			{
 				"label": "CodeMirror docs",
-				"href": "https://codemirror.net/docs/",
-				"kind": "docs"
+				"href": "https://codemirror.net/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Codex": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows.",
-		"resumeContext": "AI Agent Harness Configs treats Codex as a coding-agent runtime to configure, compare, and route alongside Claude Code and OpenCode.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "Codex",
+		"desc": "OpenAI's coding-agent product family for delegating software tasks across chat, CLI, and cloud workflows. AI Agent Harness Configs treats Codex as a coding-agent runtime to configure, compare, and route alongside Claude Code and OpenCode.",
+		"icon": "/skill-icons/codex.png",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://developers.openai.com/codex/",
-				"kind": "docs"
+				"href": "https://developers.openai.com/codex/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Content-Based Filtering": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules.",
-		"resumeContext": "Content-based filtering routes messages by payload fields, so subscribers receive only the market data or events they asked for.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Content-Based Filtering",
+		"desc": "Message-delivery pattern where subscribers receive only events matching field-level predicates or content rules. Content-based filtering routes messages by payload fields, so subscribers receive only the market data or events they asked for.",
+		"icon": "/skill-icons/content-based-filtering.svg",
 		"links": [
 			{
 				"label": "DDS specification",
-				"href": "https://www.omg.org/spec/DDS/",
-				"kind": "reference"
+				"href": "https://www.omg.org/spec/DDS/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Context Engineering": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Designing prompts, memory, retrieval, tools, and context windows so AI systems behave reliably.",
-		"resumeContext": "Wyatt designs agent harnesses, skill packages, and long-running AI workflows around context quality.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "Context Engineering",
+		"desc": "Designing prompts, memory, retrieval, tools, and context windows so AI systems behave reliably. Wyatt designs agent harnesses, skill packages, and long-running AI workflows around context quality.",
+		"icon": "/skill-icons/context-engineering.ico",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://www.anthropic.com/engineering/building-effective-agents",
-				"kind": "reference"
+				"href": "https://www.anthropic.com/engineering/building-effective-agents"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Coordinate Descent": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Optimization method that updates one parameter or coordinate at a time, often used for regularized linear models.",
-		"resumeContext": "Wyatt published a dedicated article on implementing pairwise coordinate descent for Lasso and Elastic Net in Python.",
-		"evidence": [
-			{
-				"label": "Implementing Pairwise Coordinate Descent For The Lasso and The Elastic Net In Python",
-				"kind": "publication"
-			}
-		],
+		"name": "Coordinate Descent",
+		"desc": "Optimization method that updates one parameter or coordinate at a time, often used for regularized linear models. Wyatt published a dedicated article on implementing pairwise coordinate descent for Lasso and Elastic Net in Python.",
+		"icon": "/skill-icons/coordinate-descent.svg",
 		"links": [
 			{
 				"label": "Lasso reference",
-				"href": "https://scikit-learn.org/stable/modules/linear_model.html#lasso",
-				"kind": "docs"
+				"href": "https://scikit-learn.org/stable/modules/linear_model.html#lasso"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"CSS3": {
-		"category": "Languages & Authoring",
-		"summary": "Styling language for layout, responsive design, typography, animation, and frontend visual systems.",
-		"resumeContext": "CSS3 styles web interfaces, covering layout, responsive behavior, animation, typography, and visual polish.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "CSS3",
+		"desc": "Styling language for layout, responsive design, typography, animation, and frontend visual systems. CSS3 styles web interfaces, covering layout, responsive behavior, animation, typography, and visual polish.",
+		"icon": "/skill-icons/css3.svg",
 		"links": [
 			{
 				"label": "MDN CSS",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-				"kind": "docs"
+				"href": "https://developer.mozilla.org/en-US/docs/Web/CSS"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Cursor": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "AI-native IDE for repository-aware editing, code navigation, and agent-assisted implementation.",
-		"resumeContext": "AI Agent Harness Configs standardizes Cursor agent definitions so editor-native assistants can reuse the same skills and tools.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "Cursor",
+		"desc": "AI-native IDE for repository-aware editing, code navigation, and agent-assisted implementation. AI Agent Harness Configs standardizes Cursor agent definitions so editor-native assistants can reuse the same skills and tools.",
+		"icon": "/skill-icons/cursor.svg",
 		"links": [
 			{
 				"label": "Cursor docs",
-				"href": "https://cursor.com/docs",
-				"kind": "docs"
+				"href": "https://cursor.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Cursor Agent": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context.",
-		"resumeContext": "Cursor Agent is Cursor repository-aware coding mode, sitting between editor autocomplete and longer-running delegated code tasks.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "Cursor Agent",
+		"desc": "Cursor's agent mode for delegating multi-step coding tasks inside an editor-backed repository context. Cursor Agent is Cursor repository-aware coding mode, sitting between editor autocomplete and longer-running delegated code tasks.",
+		"icon": "/skill-icons/cursor-agent.ico",
 		"links": [
 			{
 				"label": "Cursor agent docs",
-				"href": "https://cursor.com/docs/agent/overview",
-				"kind": "docs"
+				"href": "https://cursor.com/docs/agent/overview"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Cypress": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Browser testing framework for application flows, integration coverage, and frontend regression checks.",
-		"resumeContext": "The stealth Web3 app used Cypress in CI/CD to test wallet and lending flows before releases.",
-		"evidence": [
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			}
-		],
+		"name": "Cypress",
+		"desc": "Browser testing framework for application flows, integration coverage, and frontend regression checks. The stealth Web3 app used Cypress in CI/CD to test wallet and lending flows before releases.",
+		"icon": "/skill-icons/cypress.svg",
 		"links": [
 			{
 				"label": "Cypress docs",
-				"href": "https://docs.cypress.io/",
-				"kind": "docs"
+				"href": "https://docs.cypress.io/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Dash": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks.",
-		"resumeContext": "Dash turns Python analysis into interactive web dashboards, pairing Plotly visuals with callback-driven app behavior.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Dash",
+		"desc": "Python framework for building interactive analytical web apps on top of Plotly and Flask-style callbacks. Dash turns Python analysis into interactive web dashboards, pairing Plotly visuals with callback-driven app behavior.",
+		"icon": "/skill-icons/dash.svg",
 		"links": [
 			{
 				"label": "Dash docs",
-				"href": "https://dash.plotly.com/",
-				"kind": "docs"
+				"href": "https://dash.plotly.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Data Validation": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Enforcing data shape, type, completeness, and business-rule expectations before downstream use.",
-		"resumeContext": "NBA Basketball Database uses Pandera-validated ETL, while AI/ML Web Feeds relies on typed schema plus HTTP/RSS validation.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			},
-			{
-				"label": "AI/ML Web Feeds",
-				"kind": "project"
-			}
-		],
+		"name": "Data Validation",
+		"desc": "Enforcing data shape, type, completeness, and business-rule expectations before downstream use. NBA Basketball Database uses Pandera-validated ETL, while AI/ML Web Feeds relies on typed schema plus HTTP/RSS validation.",
+		"icon": "/skill-icons/data-validation.svg",
 		"links": [
 			{
 				"label": "Pandera docs",
-				"href": "https://pandera.readthedocs.io/",
-				"kind": "docs"
+				"href": "https://pandera.readthedocs.io/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Data Warehousing": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Organizing analytical data into durable, queryable models for reporting, reuse, and self-service access.",
-		"resumeContext": "NBA Basketball Database publishes daily warehouse updates and generated public star-schema outputs for analytics use.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "Data Warehousing",
+		"desc": "Organizing analytical data into durable, queryable models for reporting, reuse, and self-service access. NBA Basketball Database publishes daily warehouse updates and generated public star-schema outputs for analytics use.",
+		"icon": "/skill-icons/data-warehousing.svg",
 		"links": [
 			{
 				"label": "Data warehouse overview",
-				"href": "https://cloud.google.com/learn/what-is-a-data-warehouse",
-				"kind": "reference"
+				"href": "https://cloud.google.com/learn/what-is-a-data-warehouse"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"DeepAgents": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows.",
-		"resumeContext": "AI Agent Harness Configs covers DeepAgents-style multi-agent workflows where planning, file context, and subagents coordinate coding tasks.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "DeepAgents",
+		"desc": "LangChain's agent harness for planning, subagents, filesystem context, and longer-running workflows. AI Agent Harness Configs covers DeepAgents-style multi-agent workflows where planning, file context, and subagents coordinate coding tasks.",
+		"icon": "/skill-icons/deepagents.svg",
 		"links": [
 			{
 				"label": "Source",
-				"href": "https://github.com/langchain-ai/deepagents",
-				"kind": "source"
+				"href": "https://github.com/langchain-ai/deepagents"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Django": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults.",
-		"resumeContext": "Django is a batteries-included Python web framework with ORM, admin, routing, forms, and security defaults.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Django",
+		"desc": "Python web framework for full-stack applications, ORM-backed services, admin interfaces, and secure defaults. Django is a batteries-included Python web framework with ORM, admin, routing, forms, and security defaults.",
+		"icon": "/skill-icons/django.svg",
 		"links": [
 			{
 				"label": "Django docs",
-				"href": "https://docs.djangoproject.com/",
-				"kind": "docs"
+				"href": "https://docs.djangoproject.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Docker": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Container platform for packaging applications and dependencies into reproducible runtime images.",
-		"resumeContext": "MCP-Crawl4AI and service-oriented projects use Docker-style packaging for repeatable local and deployable runtime environments.",
-		"evidence": [
-			{
-				"label": "MCP-Crawl4AI",
-				"kind": "project"
-			}
-		],
+		"name": "Docker",
+		"desc": "Container platform for packaging applications and dependencies into reproducible runtime images. MCP-Crawl4AI and service-oriented projects use Docker-style packaging for repeatable local and deployable runtime environments.",
+		"icon": "/skill-icons/docker.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.docker.com/",
-				"kind": "docs"
+				"href": "https://docs.docker.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Document AI": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "AI-assisted extraction, classification, and review of document content across structured and unstructured submissions.",
-		"resumeContext": "Frame Payments applies LLM document intelligence to classify uploaded merchant files and reduce resubmissions before analyst review.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Document AI",
+		"desc": "AI-assisted extraction, classification, and review of document content across structured and unstructured submissions. Frame Payments applies LLM document intelligence to classify uploaded merchant files and reduce resubmissions before analyst review.",
+		"icon": "/skill-icons/document-ai.svg",
 		"links": [
 			{
 				"label": "Google Document AI docs",
-				"href": "https://cloud.google.com/document-ai/docs",
-				"kind": "docs"
+				"href": "https://cloud.google.com/document-ai/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Domain-Driven Design": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Architecture approach that models software around domain concepts, boundaries, and shared language.",
-		"resumeContext": "Domain-driven design models software around business concepts, boundaries, and language so complex systems stay understandable.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Domain-Driven Design",
+		"desc": "Architecture approach that models software around domain concepts, boundaries, and shared language. Domain-driven design models software around business concepts, boundaries, and language so complex systems stay understandable.",
+		"icon": "/skill-icons/domain-driven-design.svg",
 		"links": [
 			{
 				"label": "DDD reference",
-				"href": "https://domainlanguage.com/ddd/",
-				"kind": "reference"
+				"href": "https://domainlanguage.com/ddd/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"DuckDB": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Embedded analytical database for fast local OLAP queries over files such as Parquet.",
-		"resumeContext": "NBA Basketball Database publishes DuckDB exports so analysts can query sports data locally with fast SQL.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "DuckDB",
+		"desc": "Embedded analytical database for fast local OLAP queries over files such as Parquet. NBA Basketball Database publishes DuckDB exports so analysts can query sports data locally with fast SQL.",
+		"icon": "/skill-icons/duckdb.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://duckdb.org/docs/",
-				"kind": "docs"
+				"href": "https://duckdb.org/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"DynamoDB": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "AWS managed NoSQL database for key-value and document workloads at serverless scale.",
-		"resumeContext": "DynamoDB is AWS managed NoSQL storage for key-value and document access patterns that need low operational overhead.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "DynamoDB",
+		"desc": "AWS managed NoSQL database for key-value and document workloads at serverless scale. DynamoDB is AWS managed NoSQL storage for key-value and document access patterns that need low operational overhead.",
+		"icon": "/skill-icons/dynamodb.png",
 		"links": [
 			{
 				"label": "DynamoDB docs",
-				"href": "https://docs.aws.amazon.com/dynamodb/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/dynamodb/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"ECS": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity.",
-		"resumeContext": "ECS runs containers on AWS without requiring a full Kubernetes control plane, fitting service workloads and scheduled tasks.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "ECS",
+		"desc": "AWS container orchestration service for running containerized workloads on managed clusters or serverless capacity. ECS runs containers on AWS without requiring a full Kubernetes control plane, fitting service workloads and scheduled tasks.",
+		"icon": "/skill-icons/ecs.png",
 		"links": [
 			{
 				"label": "Amazon ECS docs",
-				"href": "https://docs.aws.amazon.com/ecs/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/ecs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"EKS": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem.",
-		"resumeContext": "EKS is AWS managed Kubernetes, giving teams Kubernetes APIs while AWS handles much of the cluster control-plane operation.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "EKS",
+		"desc": "AWS managed Kubernetes service for operating Kubernetes clusters in the AWS ecosystem. EKS is AWS managed Kubernetes, giving teams Kubernetes APIs while AWS handles much of the cluster control-plane operation.",
+		"icon": "/skill-icons/eks.png",
 		"links": [
 			{
 				"label": "Amazon EKS docs",
-				"href": "https://docs.aws.amazon.com/eks/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/eks/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Electron": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Desktop application framework for building cross-platform apps with web technologies.",
-		"resumeContext": "MDXPad uses Electron 39 to package a native macOS editor around web-based Markdown and MDX tooling.",
-		"evidence": [
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "Electron",
+		"desc": "Desktop application framework for building cross-platform apps with web technologies. MDXPad uses Electron 39 to package a native macOS editor around web-based Markdown and MDX tooling.",
+		"icon": "/skill-icons/electron.svg",
 		"links": [
 			{
 				"label": "Electron docs",
-				"href": "https://www.electronjs.org/docs/latest/",
-				"kind": "docs"
+				"href": "https://www.electronjs.org/docs/latest/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"End-to-End Testing": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Testing realistic user or system workflows through the full application stack.",
-		"resumeContext": "End-to-end tests exercise user journeys through the real app surface, catching workflow and UI failures unit tests miss.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "End-to-End Testing",
+		"desc": "Testing realistic user or system workflows through the full application stack. End-to-end tests exercise user journeys through the real app surface, catching workflow and UI failures unit tests miss.",
+		"icon": "/skill-icons/end-to-end-testing.svg",
 		"links": [
 			{
 				"label": "Playwright tests docs",
-				"href": "https://playwright.dev/docs/writing-tests",
-				"kind": "docs"
+				"href": "https://playwright.dev/docs/writing-tests"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"ETL": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores.",
-		"resumeContext": "NBA Basketball Database turns NBA API responses into validated datasets and warehouse-style exports across multiple formats.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "ETL",
+		"desc": "Extract, transform, load: moving raw data through cleaning and shaping steps into useful stores. NBA Basketball Database turns NBA API responses into validated datasets and warehouse-style exports across multiple formats.",
+		"icon": "/skill-icons/etl.svg",
 		"links": [
 			{
 				"label": "Overview",
-				"href": "https://en.wikipedia.org/wiki/Extract,_transform,_load",
-				"kind": "reference"
+				"href": "https://en.wikipedia.org/wiki/Extract,_transform,_load"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Event-Driven Architecture": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls.",
-		"resumeContext": "Event-driven architecture designs systems around emitted facts, queues, and subscribers instead of tightly coupled request chains.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Event-Driven Architecture",
+		"desc": "System design style where services react to events, streams, and asynchronous messages instead of only request/response calls. Event-driven architecture designs systems around emitted facts, queues, and subscribers instead of tightly coupled request chains.",
+		"icon": "/skill-icons/event-driven-architecture.svg",
 		"links": [
 			{
 				"label": "Event-driven architecture",
-				"href": "https://aws.amazon.com/event-driven-architecture/",
-				"kind": "reference"
+				"href": "https://aws.amazon.com/event-driven-architecture/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Express.js": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints.",
-		"resumeContext": "Express.js is a minimal Node.js web framework for HTTP APIs, middleware, routing, and lightweight backend services.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Express.js",
+		"desc": "Minimal Node.js web framework for HTTP APIs, middleware, and service endpoints. Express.js is a minimal Node.js web framework for HTTP APIs, middleware, routing, and lightweight backend services.",
+		"icon": "/skill-icons/express-js.svg",
 		"links": [
 			{
 				"label": "Express docs",
-				"href": "https://expressjs.com/",
-				"kind": "docs"
+				"href": "https://expressjs.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"FastAPI": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Python framework for typed, OpenAPI-first HTTP APIs with async support.",
-		"resumeContext": "FastAPI builds typed Python APIs with async handlers, validation, dependency injection, and OpenAPI documentation.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "FastAPI",
+		"desc": "Python framework for typed, OpenAPI-first HTTP APIs with async support. FastAPI builds typed Python APIs with async handlers, validation, dependency injection, and OpenAPI documentation.",
+		"icon": "/skill-icons/fastapi.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://fastapi.tiangolo.com/",
-				"kind": "docs"
+				"href": "https://fastapi.tiangolo.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Feature Engineering": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping.",
-		"resumeContext": "Feature engineering turns raw data into model-ready variables, bridging data pipelines with forecasting, anomaly detection, and evaluation.",
-		"evidence": [
-			{
-				"label": "Machine Learning & Data Science",
-				"kind": "first-party"
-			}
-		],
+		"name": "Feature Engineering",
+		"desc": "Transforming raw fields into model-ready features through encoding, scaling, aggregation, and domain-specific shaping. Feature engineering turns raw data into model-ready variables, bridging data pipelines with forecasting, anomaly detection, and evaluation.",
+		"icon": "/skill-icons/feature-engineering.svg",
 		"links": [
 			{
 				"label": "Preprocessing docs",
-				"href": "https://scikit-learn.org/stable/modules/preprocessing.html",
-				"kind": "docs"
+				"href": "https://scikit-learn.org/stable/modules/preprocessing.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Flask": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Lightweight Python web framework for small services, APIs, and composable backend applications.",
-		"resumeContext": "Flask is a small Python web framework for APIs and apps that need explicit routing and flexible extensions.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Flask",
+		"desc": "Lightweight Python web framework for small services, APIs, and composable backend applications. Flask is a small Python web framework for APIs and apps that need explicit routing and flexible extensions.",
+		"icon": "/skill-icons/flask.svg",
 		"links": [
 			{
 				"label": "Flask docs",
-				"href": "https://flask.palletsprojects.com/",
-				"kind": "docs"
+				"href": "https://flask.palletsprojects.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Formatting": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Automated source formatting to keep codebases consistent, readable, and low-friction to review.",
-		"resumeContext": "Formatting tools keep code style consistent automatically, reducing review noise and preventing style drift across a codebase.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Formatting",
+		"desc": "Automated source formatting to keep codebases consistent, readable, and low-friction to review. Formatting tools keep code style consistent automatically, reducing review noise and preventing style drift across a codebase.",
+		"icon": "/skill-icons/formatting.svg",
 		"links": [
 			{
 				"label": "Prettier docs",
-				"href": "https://prettier.io/docs/",
-				"kind": "docs"
+				"href": "https://prettier.io/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"GCP": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services.",
-		"resumeContext": "GCP is Google Cloud platform for managed compute, data, messaging, AI, and deployment services alongside AWS and Azure.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "GCP",
+		"desc": "Google Cloud Platform for compute, storage, data, AI, networking, and managed infrastructure services. GCP is Google Cloud platform for managed compute, data, messaging, AI, and deployment services alongside AWS and Azure.",
+		"icon": "/skill-icons/gcp.svg",
 		"links": [
 			{
 				"label": "Google Cloud docs",
-				"href": "https://cloud.google.com/docs",
-				"kind": "docs"
+				"href": "https://cloud.google.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Gemini CLI": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Command-line Gemini coding assistant for repository-aware development workflows.",
-		"resumeContext": "Gemini CLI brings Gemini-assisted coding into the terminal, where command output, repository files, and shell workflows are close at hand.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "Gemini CLI",
+		"desc": "Command-line Gemini coding assistant for repository-aware development workflows. Gemini CLI brings Gemini-assisted coding into the terminal, where command output, repository files, and shell workflows are close at hand.",
+		"icon": "/skill-icons/gemini-cli.svg",
 		"links": [
 			{
 				"label": "Source",
-				"href": "https://github.com/google-gemini/gemini-cli",
-				"kind": "source"
+				"href": "https://github.com/google-gemini/gemini-cli"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"GitHub Actions": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "GitHub-native automation for tests, builds, releases, and deployment workflows.",
-		"resumeContext": "AI Agent Harness Configs uses GitHub-native automation for generated docs, install flows, artifact checks, and releases.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "GitHub Actions",
+		"desc": "GitHub-native automation for tests, builds, releases, and deployment workflows. AI Agent Harness Configs uses GitHub-native automation for generated docs, install flows, artifact checks, and releases.",
+		"icon": "/skill-icons/github-actions.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.github.com/en/actions",
-				"kind": "docs"
+				"href": "https://docs.github.com/en/actions"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"GitHub Copilot CLI": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "GitHub Copilot command-line and agent workflows for terminal-based development assistance.",
-		"resumeContext": "AI Agent Harness Configs tracks Copilot CLI as the terminal-facing Copilot surface for command-line coding workflows.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "GitHub Copilot CLI",
+		"desc": "GitHub Copilot command-line and agent workflows for terminal-based development assistance. AI Agent Harness Configs tracks Copilot CLI as the terminal-facing Copilot surface for command-line coding workflows.",
+		"icon": "/skill-icons/github-copilot-cli.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.github.com/en/copilot",
-				"kind": "docs"
+				"href": "https://docs.github.com/en/copilot"
 			}
-		],
-		"verification": {
-			"status": "needs-review",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"GitHub Copilot Web": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows.",
-		"resumeContext": "AI Agent Harness Configs covers Copilot Web as a browser-hosted coding assistant for repository and review tasks.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "GitHub Copilot Web",
+		"desc": "GitHub-integrated Copilot surfaces for code, repository, pull request, and cloud-agent workflows. AI Agent Harness Configs covers Copilot Web as a browser-hosted coding assistant for repository and review tasks.",
+		"icon": "/skill-icons/github-copilot-web.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.github.com/en/copilot",
-				"kind": "docs"
+				"href": "https://docs.github.com/en/copilot"
 			}
-		],
-		"verification": {
-			"status": "needs-review",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Go": {
-		"category": "Languages & Authoring",
-		"summary": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling.",
-		"resumeContext": "Go is a compiled language for network services, CLIs, and infrastructure tooling where simple concurrency and static binaries help.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "Go",
+		"desc": "Compiled systems language commonly used for network services, CLIs, and infrastructure tooling. Go is a compiled language for network services, CLIs, and infrastructure tooling where simple concurrency and static binaries help.",
+		"icon": "/skill-icons/go.svg",
 		"links": [
 			{
 				"label": "Go docs",
-				"href": "https://go.dev/doc/",
-				"kind": "docs"
+				"href": "https://go.dev/doc/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Google Cloud Functions": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code.",
-		"resumeContext": "Google Cloud Functions runs event-driven code on GCP, fitting HTTP handlers, triggers, and small automation tasks.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Google Cloud Functions",
+		"desc": "Google Cloud serverless functions platform for event-driven and HTTP-triggered code. Google Cloud Functions runs event-driven code on GCP, fitting HTTP handlers, triggers, and small automation tasks.",
+		"icon": "/skill-icons/google-cloud-functions.svg",
 		"links": [
 			{
 				"label": "Cloud Functions docs",
-				"href": "https://cloud.google.com/functions/docs",
-				"kind": "docs"
+				"href": "https://cloud.google.com/functions/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Google Cloud Pub/Sub": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud.",
-		"resumeContext": "Google Cloud Pub/Sub is managed messaging for decoupling publishers and subscribers on GCP, similar in role to Kinesis or Kafka.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Google Cloud Pub/Sub",
+		"desc": "Managed messaging service for asynchronous event ingestion and publish/subscribe delivery on Google Cloud. Google Cloud Pub/Sub is managed messaging for decoupling publishers and subscribers on GCP, similar in role to Kinesis or Kafka.",
+		"icon": "/skill-icons/google-cloud-pub-sub.svg",
 		"links": [
 			{
 				"label": "Pub/Sub docs",
-				"href": "https://cloud.google.com/pubsub/docs",
-				"kind": "docs"
+				"href": "https://cloud.google.com/pubsub/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Google Gemini API": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation.",
-		"resumeContext": "Gemini API is Google model endpoint for multimodal prompts, structured output, and tool-aware AI apps alongside OpenAI and Claude APIs.",
-		"evidence": [
-			{
-				"label": "AI, LLM & Agent Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Google Gemini API",
+		"desc": "Google API surface for building applications with Gemini models, multimodal inputs, tool use, and structured generation. Gemini API is Google model endpoint for multimodal prompts, structured output, and tool-aware AI apps alongside OpenAI and Claude APIs.",
+		"icon": "/skill-icons/google-gemini-api.svg",
 		"links": [
 			{
 				"label": "Gemini API docs",
-				"href": "https://ai.google.dev/gemini-api/docs",
-				"kind": "docs"
+				"href": "https://ai.google.dev/gemini-api/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Grafana": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization.",
-		"resumeContext": "Grafana visualizes metrics, logs, and traces so teams can inspect service health, latency, and operational trends.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Grafana",
+		"desc": "Observability dashboard platform for metrics, logs, traces, alerting, and operational visualization. Grafana visualizes metrics, logs, and traces so teams can inspect service health, latency, and operational trends.",
+		"icon": "/skill-icons/grafana.svg",
 		"links": [
 			{
 				"label": "Grafana docs",
-				"href": "https://grafana.com/docs/",
-				"kind": "docs"
+				"href": "https://grafana.com/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"GraphQL (Apollo)": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services.",
-		"resumeContext": "Apollo GraphQL uses a typed schema to let clients request exactly the data shape they need from backend services.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "GraphQL (Apollo)",
+		"desc": "GraphQL API tooling and runtime ecosystem for typed schemas, operations, clients, and federated services. Apollo GraphQL uses a typed schema to let clients request exactly the data shape they need from backend services.",
+		"icon": "/skill-icons/graphql-apollo.svg",
 		"links": [
 			{
 				"label": "Apollo docs",
-				"href": "https://www.apollographql.com/docs/",
-				"kind": "docs"
+				"href": "https://www.apollographql.com/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"gRPC": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication.",
-		"resumeContext": "gRPC uses Protocol Buffers for typed service-to-service calls, fitting backend systems that need strict contracts.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "gRPC",
+		"desc": "Typed RPC framework that uses Protocol Buffers for fast service-to-service communication. gRPC uses Protocol Buffers for typed service-to-service calls, fitting backend systems that need strict contracts.",
+		"icon": "/skill-icons/grpc.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://grpc.io/docs/",
-				"kind": "docs"
+				"href": "https://grpc.io/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Guardrails AI": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Guardrails AI platform reference for validation and control patterns in LLM applications.",
-		"resumeContext": "AI Agent Harness Configs covers validation, guardrail, and auditability patterns that overlap with Guardrails AI concepts.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "Guardrails AI",
+		"desc": "Guardrails AI platform reference for validation and control patterns in LLM applications. AI Agent Harness Configs covers validation, guardrail, and auditability patterns that overlap with Guardrails AI concepts.",
+		"icon": "/skill-icons/guardrails-ai.png",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://guardrailsai.com/guardrails/docs",
-				"kind": "docs"
+				"href": "https://guardrailsai.com/guardrails/docs"
 			}
-		],
-		"verification": {
-			"status": "needs-review",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Hadoop": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Apache ecosystem for distributed storage and batch processing over large datasets.",
-		"resumeContext": "Hadoop is the older big-data ecosystem for distributed storage and batch processing, useful context for Spark-era data platforms.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Hadoop",
+		"desc": "Apache ecosystem for distributed storage and batch processing over large datasets. Hadoop is the older big-data ecosystem for distributed storage and batch processing, useful context for Spark-era data platforms.",
+		"icon": "/skill-icons/hadoop.svg",
 		"links": [
 			{
 				"label": "Hadoop docs",
-				"href": "https://hadoop.apache.org/docs/current/",
-				"kind": "docs"
+				"href": "https://hadoop.apache.org/docs/current/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Helm": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Kubernetes package manager for templating, installing, and upgrading application charts.",
-		"resumeContext": "Helm packages Kubernetes applications as charts, making installs, upgrades, and environment-specific values repeatable.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Helm",
+		"desc": "Kubernetes package manager for templating, installing, and upgrading application charts. Helm packages Kubernetes applications as charts, making installs, upgrades, and environment-specific values repeatable.",
+		"icon": "/skill-icons/helm.svg",
 		"links": [
 			{
 				"label": "Helm docs",
-				"href": "https://helm.sh/docs/",
-				"kind": "docs"
+				"href": "https://helm.sh/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"HTML5": {
-		"category": "Languages & Authoring",
-		"summary": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces.",
-		"resumeContext": "HTML5 provides semantic page structure, forms, media, and accessibility hooks for web applications and documents.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "HTML5",
+		"desc": "Markup standard for structuring web documents, app shells, semantic content, and accessible interfaces. HTML5 provides semantic page structure, forms, media, and accessibility hooks for web applications and documents.",
+		"icon": "/skill-icons/html5.svg",
 		"links": [
 			{
 				"label": "MDN HTML",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-				"kind": "docs"
+				"href": "https://developer.mozilla.org/en-US/docs/Web/HTML"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Hugging Face": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows.",
-		"resumeContext": "Hugging Face is the open-model ecosystem for model cards, datasets, inference tooling, and evaluation resources used across applied ML work.",
-		"evidence": [
-			{
-				"label": "AI, LLM & Agent Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Hugging Face",
+		"desc": "Model, dataset, and tooling ecosystem for applied machine learning, inference, evaluation, and open model workflows. Hugging Face is the open-model ecosystem for model cards, datasets, inference tooling, and evaluation resources used across applied ML work.",
+		"icon": "/skill-icons/hugging-face.svg",
 		"links": [
 			{
 				"label": "Hugging Face docs",
-				"href": "https://huggingface.co/docs",
-				"kind": "docs"
+				"href": "https://huggingface.co/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Hugo": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Static site generator for fast content-heavy sites, documentation, and publishing workflows.",
-		"resumeContext": "Hugo is a fast static-site generator for documentation and content sites, sitting near MDX and portfolio publishing workflows.",
-		"evidence": [
-			{
-				"label": "Frontend, Product & Desktop Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Hugo",
+		"desc": "Static site generator for fast content-heavy sites, documentation, and publishing workflows. Hugo is a fast static-site generator for documentation and content sites, sitting near MDX and portfolio publishing workflows.",
+		"icon": "/skill-icons/hugo.svg",
 		"links": [
 			{
 				"label": "Hugo docs",
-				"href": "https://gohugo.io/documentation/",
-				"kind": "docs"
+				"href": "https://gohugo.io/documentation/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Human-in-the-Loop Review": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Workflow pattern that keeps humans in approval, feedback, or exception-handling loops for sensitive AI outputs.",
-		"resumeContext": "Frame Payments adds human review to confidential upload flows so AI classification can be checked before analyst handoff.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Human-in-the-Loop Review",
+		"desc": "Workflow pattern that keeps humans in approval, feedback, or exception-handling loops for sensitive AI outputs. Frame Payments adds human review to confidential upload flows so AI classification can be checked before analyst handoff.",
+		"icon": "/skill-icons/human-in-the-loop-review.svg",
 		"links": [
 			{
 				"label": "Agents reference",
-				"href": "https://www.anthropic.com/engineering/building-effective-agents",
-				"kind": "reference"
+				"href": "https://www.anthropic.com/engineering/building-effective-agents"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Integration Testing": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Testing interactions across components, services, tools, or boundaries to catch system-level regressions.",
-		"resumeContext": "FL Studio MCP Server includes integration scenarios among 650+ tests for MCP contracts and tool behavior.",
-		"evidence": [
-			{
-				"label": "FL Studio MCP Server",
-				"kind": "project"
-			}
-		],
+		"name": "Integration Testing",
+		"desc": "Testing interactions across components, services, tools, or boundaries to catch system-level regressions. FL Studio MCP Server includes integration scenarios among 650+ tests for MCP contracts and tool behavior.",
+		"icon": "/skill-icons/integration-testing.svg",
 		"links": [
 			{
 				"label": "Integration test reference",
-				"href": "https://martinfowler.com/bliki/IntegrationTest.html",
-				"kind": "reference"
+				"href": "https://martinfowler.com/bliki/IntegrationTest.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Java": {
-		"category": "Languages & Authoring",
-		"summary": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software.",
-		"resumeContext": "Java is a JVM language for long-lived backend services, enterprise systems, and strongly typed application platforms.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "Java",
+		"desc": "Object-oriented language and runtime ecosystem for enterprise services, data systems, and platform software. Java is a JVM language for long-lived backend services, enterprise systems, and strongly typed application platforms.",
+		"icon": "/skill-icons/java.png",
 		"links": [
 			{
 				"label": "Java docs",
-				"href": "https://docs.oracle.com/en/java/",
-				"kind": "docs"
+				"href": "https://docs.oracle.com/en/java/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"JavaScript": {
-		"category": "Languages & Authoring",
-		"summary": "Core web language for browser behavior, Node-based tooling, and frontend application logic.",
-		"resumeContext": "JavaScript runs in browsers and Node.js, powering interactive frontends, build tools, and full-stack web behavior.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "JavaScript",
+		"desc": "Core web language for browser behavior, Node-based tooling, and frontend application logic. JavaScript runs in browsers and Node.js, powering interactive frontends, build tools, and full-stack web behavior.",
+		"icon": "/skill-icons/javascript.svg",
 		"links": [
 			{
 				"label": "MDN JavaScript guide",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-				"kind": "docs"
+				"href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Jenkins": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Automation server for build, test, and deployment pipelines across many languages and platforms.",
-		"resumeContext": "Jenkins is a long-running CI automation server, useful for custom build, test, and release pipelines.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Jenkins",
+		"desc": "Automation server for build, test, and deployment pipelines across many languages and platforms. Jenkins is a long-running CI automation server, useful for custom build, test, and release pipelines.",
+		"icon": "/skill-icons/jenkins.svg",
 		"links": [
 			{
 				"label": "Jenkins docs",
-				"href": "https://www.jenkins.io/doc/",
-				"kind": "docs"
+				"href": "https://www.jenkins.io/doc/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Jest": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "JavaScript testing framework for unit tests, assertions, mocks, and frontend validation.",
-		"resumeContext": "The stealth Web3 app used Jest in CI/CD for automated test coverage across React and lending-app logic.",
-		"evidence": [
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			}
-		],
+		"name": "Jest",
+		"desc": "JavaScript testing framework for unit tests, assertions, mocks, and frontend validation. The stealth Web3 app used Jest in CI/CD for automated test coverage across React and lending-app logic.",
+		"icon": "/skill-icons/jest.svg",
 		"links": [
 			{
 				"label": "Jest docs",
-				"href": "https://jestjs.io/docs/getting-started",
-				"kind": "docs"
+				"href": "https://jestjs.io/docs/getting-started"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Jupyter": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Interactive notebook environment for exploratory analysis, model prototyping, and technical explanation.",
-		"resumeContext": "The regularized regression work uses Jupyter for theory-to-practice notebooks that combine explanation, math, and model experiments.",
-		"evidence": [
-			{
-				"label": "Regularized Linear Regression Deep Dive",
-				"kind": "project"
-			}
-		],
+		"name": "Jupyter",
+		"desc": "Interactive notebook environment for exploratory analysis, model prototyping, and technical explanation. The regularized regression work uses Jupyter for theory-to-practice notebooks that combine explanation, math, and model experiments.",
+		"icon": "/skill-icons/jupyter.svg",
 		"links": [
 			{
 				"label": "Jupyter docs",
-				"href": "https://docs.jupyter.org/",
-				"kind": "docs"
+				"href": "https://docs.jupyter.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"KDB+": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "KX time-series database used heavily for high-volume financial market data.",
-		"resumeContext": "JPMorgan market-data work used KDB+ for capital-markets data access and q-backed analytics workflows.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "KDB+",
+		"desc": "KX time-series database used heavily for high-volume financial market data. JPMorgan market-data work used KDB+ for capital-markets data access and q-backed analytics workflows.",
+		"icon": "/skill-icons/kdb.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://code.kx.com/q/",
-				"kind": "docs"
+				"href": "https://code.kx.com/q/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Knowledge Graphs": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems.",
-		"resumeContext": "Knowledge graphs model entities and relationships, making them a useful counterpart to retrieval, document AI, and semantic search systems.",
-		"evidence": [
-			{
-				"label": "AI, LLM & Agent Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Knowledge Graphs",
+		"desc": "Entity and relationship modeling for connecting facts, documents, and semantic context across retrieval systems. Knowledge graphs model entities and relationships, making them a useful counterpart to retrieval, document AI, and semantic search systems.",
+		"icon": "/skill-icons/knowledge-graphs.svg",
 		"links": [
 			{
 				"label": "W3C RDF concepts",
-				"href": "https://www.w3.org/TR/rdf11-concepts/",
-				"kind": "reference"
+				"href": "https://www.w3.org/TR/rdf11-concepts/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Kubernetes": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Container orchestration platform for deploying, scaling, and operating distributed workloads.",
-		"resumeContext": "Kubernetes orchestrates containers across clusters, handling scheduling, service discovery, scaling, and rollout mechanics.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Kubernetes",
+		"desc": "Container orchestration platform for deploying, scaling, and operating distributed workloads. Kubernetes orchestrates containers across clusters, handling scheduling, service discovery, scaling, and rollout mechanics.",
+		"icon": "/skill-icons/kubernetes.svg",
 		"links": [
 			{
 				"label": "Kubernetes docs",
-				"href": "https://kubernetes.io/docs/",
-				"kind": "docs"
+				"href": "https://kubernetes.io/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"LangChain": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration.",
-		"resumeContext": "Frame Payments and harness work use LangChain-style agent patterns for tools, retrieval, structured outputs, and workflow composition.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			},
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "LangChain",
+		"desc": "Framework for building LLM apps with model calls, tools, retrieval, agents, and orchestration. Frame Payments and harness work use LangChain-style agent patterns for tools, retrieval, structured outputs, and workflow composition.",
+		"icon": "/skill-icons/langchain.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.langchain.com/",
-				"kind": "docs"
+				"href": "https://docs.langchain.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"LangGraph": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow.",
-		"resumeContext": "LangGraph fits the orchestrated-agent side of the harness work, where multi-step flows need explicit state, review points, and routing.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "LangGraph",
+		"desc": "Graph-based framework for stateful agents with persistence, interrupts, streaming, and control flow. LangGraph fits the orchestrated-agent side of the harness work, where multi-step flows need explicit state, review points, and routing.",
+		"icon": "/skill-icons/langgraph.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.langchain.com/oss/python/langgraph/overview",
-				"kind": "docs"
+				"href": "https://docs.langchain.com/oss/python/langgraph/overview"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"LangSmith": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems.",
-		"resumeContext": "LangSmith represents the evaluation and trace-inspection layer for making AI workflows testable rather than opaque demos.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "LangSmith",
+		"desc": "LangChain observability and evaluation platform for tracing, debugging, and monitoring LLM systems. LangSmith represents the evaluation and trace-inspection layer for making AI workflows testable rather than opaque demos.",
+		"icon": "/skill-icons/langsmith.ico",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://docs.langchain.com/langsmith/home",
-				"kind": "docs"
+				"href": "https://docs.langchain.com/langsmith/home"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"LaTeX": {
-		"category": "Languages & Authoring",
-		"summary": "Typesetting system for mathematical, academic, and technical documents with precise formatting control.",
-		"resumeContext": "LaTeX typesets mathematical and technical documents with precise control over equations, references, and publication formatting.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "LaTeX",
+		"desc": "Typesetting system for mathematical, academic, and technical documents with precise formatting control. LaTeX typesets mathematical and technical documents with precise control over equations, references, and publication formatting.",
+		"icon": "/skill-icons/latex.svg",
 		"links": [
 			{
 				"label": "LaTeX docs",
-				"href": "https://www.latex-project.org/help/documentation/",
-				"kind": "docs"
+				"href": "https://www.latex-project.org/help/documentation/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Linting": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Static checking that catches style, correctness, and maintainability issues before runtime.",
-		"resumeContext": "Linters catch risky code patterns, unused paths, and style violations before runtime or review.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Linting",
+		"desc": "Static checking that catches style, correctness, and maintainability issues before runtime. Linters catch risky code patterns, unused paths, and style violations before runtime or review.",
+		"icon": "/skill-icons/linting.svg",
 		"links": [
 			{
 				"label": "ESLint docs",
-				"href": "https://eslint.org/docs/latest/",
-				"kind": "docs"
+				"href": "https://eslint.org/docs/latest/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"LlamaIndex": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools.",
-		"resumeContext": "LlamaIndex organizes documents, indexes, and retrieval pipelines for LLM applications that need structured access to external knowledge.",
-		"evidence": [
-			{
-				"label": "AI, LLM & Agent Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "LlamaIndex",
+		"desc": "Framework for connecting LLM applications to indexed documents, data sources, retrieval workflows, and agent tools. LlamaIndex organizes documents, indexes, and retrieval pipelines for LLM applications that need structured access to external knowledge.",
+		"icon": "/skill-icons/llamaindex.svg",
 		"links": [
 			{
 				"label": "LlamaIndex docs",
-				"href": "https://docs.llamaindex.ai/",
-				"kind": "docs"
+				"href": "https://docs.llamaindex.ai/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"LLM Evaluation": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops.",
-		"resumeContext": "Frame Payments AI work emphasizes checking document and compliance outputs before automation affects review or onboarding flows.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			},
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "LLM Evaluation",
+		"desc": "Testing model outputs with datasets, rubrics, traces, judges, and human review loops. Frame Payments AI work emphasizes checking document and compliance outputs before automation affects review or onboarding flows.",
+		"icon": "/skill-icons/llm-evaluation.svg",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://docs.langchain.com/langsmith/evaluation-concepts",
-				"kind": "reference"
+				"href": "https://docs.langchain.com/langsmith/evaluation-concepts"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Low-Latency Messaging": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems.",
-		"resumeContext": "Low-latency messaging focuses on moving data with minimal delay, which matters for trading, market data, and real-time dashboards.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Low-Latency Messaging",
+		"desc": "Messaging design focused on minimizing delivery delay for high-throughput, time-sensitive systems. Low-latency messaging focuses on moving data with minimal delay, which matters for trading, market data, and real-time dashboards.",
+		"icon": "/skill-icons/low-latency-messaging.svg",
 		"links": [
 			{
 				"label": "AMPS docs",
-				"href": "https://docs.crankuptheamps.com/",
-				"kind": "docs"
+				"href": "https://docs.crankuptheamps.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Markdown": {
-		"category": "Languages & Authoring",
-		"summary": "Lightweight authoring format for documentation, technical writing, docs portals, and MDX-paired publishing.",
-		"resumeContext": "MDXPad centers on Markdown and MDX editing, while Personal Website uses MDX publishing for durable web content.",
-		"evidence": [
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "Markdown",
+		"desc": "Lightweight authoring format for documentation, technical writing, docs portals, and MDX-paired publishing. MDXPad centers on Markdown and MDX editing, while Personal Website uses MDX publishing for durable web content.",
+		"icon": "/skill-icons/markdown.svg",
 		"links": [
 			{
 				"label": "CommonMark spec",
-				"href": "https://spec.commonmark.org/",
-				"kind": "docs"
+				"href": "https://spec.commonmark.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Market Data Systems": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Financial-data infrastructure for distributing prices, trades, reference data, and risk workflows.",
-		"resumeContext": "JPMorgan credit work involved trading, quantitative research, risk groups, KDB+/q, and market-data system delivery.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "Market Data Systems",
+		"desc": "Financial-data infrastructure for distributing prices, trades, reference data, and risk workflows. JPMorgan credit work involved trading, quantitative research, risk groups, KDB+/q, and market-data system delivery.",
+		"icon": "/skill-icons/market-data-systems.png",
 		"links": [
 			{
 				"label": "FIX Trading standards",
-				"href": "https://www.fixtrading.org/standards/",
-				"kind": "reference"
+				"href": "https://www.fixtrading.org/standards/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Material UI": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "React component library implementing Material Design components, theming, and application patterns.",
-		"resumeContext": "Material UI implements Google Material Design for React, giving product teams ready-made components, theming, and layout patterns.",
-		"evidence": [
-			{
-				"label": "Frontend, Product & Desktop Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Material UI",
+		"desc": "React component library implementing Material Design components, theming, and application patterns. Material UI implements Google Material Design for React, giving product teams ready-made components, theming, and layout patterns.",
+		"icon": "/skill-icons/material-ui.svg",
 		"links": [
 			{
 				"label": "Material UI docs",
-				"href": "https://mui.com/material-ui/",
-				"kind": "docs"
+				"href": "https://mui.com/material-ui/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"MATLAB": {
-		"category": "Languages & Authoring",
-		"summary": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework.",
-		"resumeContext": "MATLAB fits quick prototyping of formulas, array transforms, plots, and engineering class assignments.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "MATLAB",
+		"desc": "Numerical computing environment for matrix-oriented analysis, modeling, simulation, and engineering coursework. MATLAB fits quick prototyping of formulas, array transforms, plots, and engineering class assignments.",
+		"icon": "/skill-icons/matlab.png",
 		"links": [
 			{
 				"label": "MATLAB documentation",
-				"href": "https://www.mathworks.com/help/matlab/",
-				"kind": "docs"
+				"href": "https://www.mathworks.com/help/matlab/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Matplotlib": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures.",
-		"resumeContext": "Matplotlib is Python foundational plotting library for static charts, diagnostics, notebooks, and publication-style figures.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Matplotlib",
+		"desc": "Foundational Python plotting library for static charts, exploratory analysis, and publication-ready figures. Matplotlib is Python foundational plotting library for static charts, diagnostics, notebooks, and publication-style figures.",
+		"icon": "/skill-icons/matplotlib.svg",
 		"links": [
 			{
 				"label": "Matplotlib docs",
-				"href": "https://matplotlib.org/stable/",
-				"kind": "docs"
+				"href": "https://matplotlib.org/stable/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"MDX": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Markdown format that combines JSX components with technical publishing and documentation workflows.",
-		"resumeContext": "Personal Website uses MDX for custom publishing, while MDXPad turns Markdown and MDX authoring into a desktop editor workflow.",
-		"evidence": [
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			},
-			{
-				"label": "SandLabs",
-				"kind": "work"
-			},
-			{
-				"label": "Personal Website: w4w.dev",
-				"kind": "project"
-			},
-			{
-				"label": "FL Studio MCP Server",
-				"kind": "project"
-			},
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "MDX",
+		"desc": "Markdown format that combines JSX components with technical publishing and documentation workflows. Personal Website uses MDX for custom publishing, while MDXPad turns Markdown and MDX authoring into a desktop editor workflow.",
+		"icon": "/skill-icons/mdx.svg",
 		"links": [
 			{
 				"label": "MDX docs",
-				"href": "https://mdxjs.com/docs/",
-				"kind": "docs"
+				"href": "https://mdxjs.com/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Microservices": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Distributed service architecture that separates capabilities into independently deployable components.",
-		"resumeContext": "Microservices split a backend into independently owned and deployed services, trading simplicity for clearer boundaries at scale.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Microservices",
+		"desc": "Distributed service architecture that separates capabilities into independently deployable components. Microservices split a backend into independently owned and deployed services, trading simplicity for clearer boundaries at scale.",
+		"icon": "/skill-icons/microservices.svg",
 		"links": [
 			{
 				"label": "Microservices architecture",
-				"href": "https://learn.microsoft.com/en-us/azure/architecture/microservices/",
-				"kind": "reference"
+				"href": "https://learn.microsoft.com/en-us/azure/architecture/microservices/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"MobX": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Reactive state-management library for JavaScript applications using observable state and derived reactions.",
-		"resumeContext": "The stealth Web3 app used MobX for frontend state in a React/Next.js collateralized lending interface.",
-		"evidence": [
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			}
-		],
+		"name": "MobX",
+		"desc": "Reactive state-management library for JavaScript applications using observable state and derived reactions. The stealth Web3 app used MobX for frontend state in a React/Next.js collateralized lending interface.",
+		"icon": "/skill-icons/mobx.svg",
 		"links": [
 			{
 				"label": "MobX docs",
-				"href": "https://mobx.js.org/",
-				"kind": "docs"
+				"href": "https://mobx.js.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Model Context Protocol (MCP)": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers.",
-		"resumeContext": "AI Agent Harness Configs and MCP-Crawl4AI expose tools through MCP so assistants can call focused local or remote capabilities.",
-		"evidence": [
-			{
-				"label": "MCP-Crawl4AI",
-				"kind": "project"
-			},
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "Model Context Protocol (MCP)",
+		"desc": "Open protocol for connecting AI apps to external tools, prompts, resources, and context providers. AI Agent Harness Configs and MCP-Crawl4AI expose tools through MCP so assistants can call focused local or remote capabilities.",
+		"icon": "/skill-icons/model-context-protocol-mcp.svg",
 		"links": [
 			{
 				"label": "Specification",
-				"href": "https://modelcontextprotocol.io/specification/2025-11-25",
-				"kind": "docs"
+				"href": "https://modelcontextprotocol.io/specification/2025-11-25"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Model Evaluation": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions.",
-		"resumeContext": "Model evaluation checks whether predictions or generated outputs behave well enough for analytics, automation, or user-facing decisions.",
-		"evidence": [
-			{
-				"label": "Machine Learning & Data Science",
-				"kind": "first-party"
-			}
-		],
+		"name": "Model Evaluation",
+		"desc": "Assessing model behavior with metrics, validation splits, diagnostics, and error analysis before relying on predictions. Model evaluation checks whether predictions or generated outputs behave well enough for analytics, automation, or user-facing decisions.",
+		"icon": "/skill-icons/model-evaluation.svg",
 		"links": [
 			{
 				"label": "Model evaluation docs",
-				"href": "https://scikit-learn.org/stable/modules/model_evaluation.html",
-				"kind": "docs"
+				"href": "https://scikit-learn.org/stable/modules/model_evaluation.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Monitoring": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Operational practice of collecting health, performance, and reliability telemetry from systems in production.",
-		"resumeContext": "Monitoring collects health and performance telemetry so availability, errors, saturation, and latency can be watched over time.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Monitoring",
+		"desc": "Operational practice of collecting health, performance, and reliability telemetry from systems in production. Monitoring collects health and performance telemetry so availability, errors, saturation, and latency can be watched over time.",
+		"icon": "/skill-icons/monitoring.svg",
 		"links": [
 			{
 				"label": "Cloud Monitoring docs",
-				"href": "https://cloud.google.com/monitoring/docs",
-				"kind": "docs"
+				"href": "https://cloud.google.com/monitoring/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Netlify": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows.",
-		"resumeContext": "Netlify hosts static and frontend sites with previews, redirects, forms, and simple deployment for content-heavy web projects.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Netlify",
+		"desc": "Web deployment platform for static sites, frontend apps, functions, and continuous deployment workflows. Netlify hosts static and frontend sites with previews, redirects, forms, and simple deployment for content-heavy web projects.",
+		"icon": "/skill-icons/netlify.svg",
 		"links": [
 			{
 				"label": "Netlify docs",
-				"href": "https://docs.netlify.com/",
-				"kind": "docs"
+				"href": "https://docs.netlify.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Next.js": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "React framework for routed web applications, publishing systems, docs portals, and production frontend delivery.",
-		"resumeContext": "Stealth Web3 Startup, SandLabs, Personal Website, and FL Studio MCP Server all use Next.js for product or documentation surfaces.",
-		"evidence": [
-			{
-				"label": "Personal Website: w4w.dev",
-				"kind": "project"
-			},
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			},
-			{
-				"label": "SandLabs",
-				"kind": "work"
-			},
-			{
-				"label": "FL Studio MCP Server",
-				"kind": "project"
-			}
-		],
+		"name": "Next.js",
+		"desc": "React framework for routed web applications, publishing systems, docs portals, and production frontend delivery. Stealth Web3 Startup, SandLabs, Personal Website, and FL Studio MCP Server all use Next.js for product or documentation surfaces.",
+		"icon": "/skill-icons/next-js.svg",
 		"links": [
 			{
 				"label": "Next.js docs",
-				"href": "https://nextjs.org/docs",
-				"kind": "docs"
+				"href": "https://nextjs.org/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Node.js": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines.",
-		"resumeContext": "Node.js runs JavaScript on the server, fitting API handlers, build scripts, CLIs, and automation around web projects.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Node.js",
+		"desc": "JavaScript runtime for server-side services, API tooling, CLIs, and build pipelines. Node.js runs JavaScript on the server, fitting API handlers, build scripts, CLIs, and automation around web projects.",
+		"icon": "/skill-icons/node-js.svg",
 		"links": [
 			{
 				"label": "Node.js docs",
-				"href": "https://nodejs.org/api/",
-				"kind": "docs"
+				"href": "https://nodejs.org/api/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"NoSQL": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads.",
-		"resumeContext": "NoSQL covers non-relational storage designs such as document, key-value, graph, and wide-column databases for flexible data shapes.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "NoSQL",
+		"desc": "Non-relational database patterns for key-value, document, wide-column, and graph-style workloads. NoSQL covers non-relational storage designs such as document, key-value, graph, and wide-column databases for flexible data shapes.",
+		"icon": "/skill-icons/nosql.svg",
 		"links": [
 			{
 				"label": "AWS NoSQL overview",
-				"href": "https://aws.amazon.com/nosql/",
-				"kind": "reference"
+				"href": "https://aws.amazon.com/nosql/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"NotebookLM": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Google's source-grounded research and note assistant for querying curated document collections.",
-		"resumeContext": "Frame Payments uses a NotebookLM knowledge hub refreshed from vendor docs, web sources, and monorepo documentation.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "NotebookLM",
+		"desc": "Google's source-grounded research and note assistant for querying curated document collections. Frame Payments uses a NotebookLM knowledge hub refreshed from vendor docs, web sources, and monorepo documentation.",
+		"icon": "/skill-icons/notebooklm.svg",
 		"links": [
 			{
 				"label": "NotebookLM help",
-				"href": "https://support.google.com/notebooklm/",
-				"kind": "docs"
+				"href": "https://support.google.com/notebooklm/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"NumPy": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Core Python array-computing library for vectorized numerical methods and model implementations.",
-		"resumeContext": "Regularized Linear Regression Deep Dive lists NumPy and describes vectorized Ridge, Lasso, and Elastic Net implementations.",
-		"evidence": [
-			{
-				"label": "Regularized Linear Regression Deep Dive",
-				"kind": "project"
-			}
-		],
+		"name": "NumPy",
+		"desc": "Core Python array-computing library for vectorized numerical methods and model implementations. Regularized Linear Regression Deep Dive lists NumPy and describes vectorized Ridge, Lasso, and Elastic Net implementations.",
+		"icon": "/skill-icons/numpy.svg",
 		"links": [
 			{
 				"label": "NumPy docs",
-				"href": "https://numpy.org/doc/stable/",
-				"kind": "docs"
+				"href": "https://numpy.org/doc/stable/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"OAuth 2.0": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Authorization framework for delegated API access without sharing a user's original credentials.",
-		"resumeContext": "OAuth 2.0 delegates authorization so an app can access an API without receiving primary user credentials.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "OAuth 2.0",
+		"desc": "Authorization framework for delegated API access without sharing a user's original credentials. OAuth 2.0 delegates authorization so an app can access an API without receiving primary user credentials.",
+		"icon": "/skill-icons/oauth-2-0.svg",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://oauth.net/2/",
-				"kind": "reference"
+				"href": "https://oauth.net/2/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"OpenAI API": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents.",
-		"resumeContext": "OpenAI API sits beside Claude and Bedrock in the LLM application toolkit for structured generation, tool use, and agent workflows.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "OpenAI API",
+		"desc": "OpenAI platform API for building apps with models, embeddings, tools, structured outputs, and agents. OpenAI API sits beside Claude and Bedrock in the LLM application toolkit for structured generation, tool use, and agent workflows.",
+		"icon": "/skill-icons/openai-api.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://platform.openai.com/docs",
-				"kind": "docs"
+				"href": "https://platform.openai.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"OpenCode": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows.",
-		"resumeContext": "AI Agent Harness Configs includes OpenCode for cross-runtime agent workflows, MCP tool usage, and reusable coding skills.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "OpenCode",
+		"desc": "Terminal-native AI coding assistant and agent harness for codebase work, tools, and multi-agent workflows. AI Agent Harness Configs includes OpenCode for cross-runtime agent workflows, MCP tool usage, and reusable coding skills.",
+		"icon": "/skill-icons/opencode.ico",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://opencode.ai/docs/",
-				"kind": "docs"
+				"href": "https://opencode.ai/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"OpenID Connect": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Identity layer on OAuth 2.0 that standardizes login and user profile claims.",
-		"resumeContext": "OpenID Connect adds identity on top of OAuth 2.0, standardizing login, ID tokens, and profile claims.",
-		"evidence": [
-			{
-				"label": "Backend, APIs & Distributed Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "OpenID Connect",
+		"desc": "Identity layer on OAuth 2.0 that standardizes login and user profile claims. OpenID Connect adds identity on top of OAuth 2.0, standardizing login, ID tokens, and profile claims.",
+		"icon": "/skill-icons/openid-connect.svg",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://openid.net/developers/how-connect-works/",
-				"kind": "reference"
+				"href": "https://openid.net/developers/how-connect-works/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Pandas": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Python data-analysis library for tabular data preparation, transformations, and exploratory workflows.",
-		"resumeContext": "NBA Basketball Database uses Pandas for sports-data ETL, validation steps, and analytics-ready export preparation.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			},
-			{
-				"label": "ProxyWhirl",
-				"kind": "project"
-			}
-		],
+		"name": "Pandas",
+		"desc": "Python data-analysis library for tabular data preparation, transformations, and exploratory workflows. NBA Basketball Database uses Pandas for sports-data ETL, validation steps, and analytics-ready export preparation.",
+		"icon": "/skill-icons/pandas.svg",
 		"links": [
 			{
 				"label": "Pandas docs",
-				"href": "https://pandas.pydata.org/docs/",
-				"kind": "docs"
+				"href": "https://pandas.pydata.org/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Pandera": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "DataFrame validation library for enforcing schema, type, and quality constraints in data pipelines.",
-		"resumeContext": "NBA Basketball Database uses Pandera to validate API-derived datasets before publishing DuckDB, SQLite, Parquet, and CSV outputs.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "Pandera",
+		"desc": "DataFrame validation library for enforcing schema, type, and quality constraints in data pipelines. NBA Basketball Database uses Pandera to validate API-derived datasets before publishing DuckDB, SQLite, Parquet, and CSV outputs.",
+		"icon": "/skill-icons/pandera.webp",
 		"links": [
 			{
 				"label": "Pandera docs",
-				"href": "https://pandera.readthedocs.io/",
-				"kind": "docs"
+				"href": "https://pandera.readthedocs.io/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Parquet": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Columnar file format for efficient analytical storage, compression, and interoperability across data engines.",
-		"resumeContext": "NBA Basketball Database publishes Parquet files for columnar analytics alongside DuckDB, SQLite, and CSV exports.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "Parquet",
+		"desc": "Columnar file format for efficient analytical storage, compression, and interoperability across data engines. NBA Basketball Database publishes Parquet files for columnar analytics alongside DuckDB, SQLite, and CSV exports.",
+		"icon": "/skill-icons/parquet.svg",
 		"links": [
 			{
 				"label": "Apache Parquet docs",
-				"href": "https://parquet.apache.org/docs/",
-				"kind": "docs"
+				"href": "https://parquet.apache.org/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Perplexity Desktop": {
-		"category": "AI Agent Harnesses & Coding Assistants",
-		"summary": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows.",
-		"resumeContext": "Perplexity Desktop is a research assistant for source-backed search and synthesis, complementing the coding agents in this group.",
-		"evidence": [
-			{
-				"label": "AI Agent Harnesses & Coding Assistants",
-				"kind": "first-party"
-			}
-		],
+		"name": "Perplexity Desktop",
+		"desc": "Desktop research assistant surface for source-aware search, synthesis, and browsing workflows. Perplexity Desktop is a research assistant for source-backed search and synthesis, complementing the coding agents in this group.",
+		"icon": "/skill-icons/perplexity-desktop.svg",
 		"links": [
 			{
 				"label": "Product site",
-				"href": "https://www.perplexity.ai/",
-				"kind": "official"
+				"href": "https://www.perplexity.ai/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Playwright": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Cross-browser automation framework for testing, scraping, and controlled browser workflows.",
-		"resumeContext": "MCP-Crawl4AI uses Playwright for managed headless Chromium crawling and browser automation inside the MCP server.",
-		"evidence": [
-			{
-				"label": "MCP-Crawl4AI",
-				"kind": "project"
-			}
-		],
+		"name": "Playwright",
+		"desc": "Cross-browser automation framework for testing, scraping, and controlled browser workflows. MCP-Crawl4AI uses Playwright for managed headless Chromium crawling and browser automation inside the MCP server.",
+		"icon": "/skill-icons/playwright.svg",
 		"links": [
 			{
 				"label": "Playwright docs",
-				"href": "https://playwright.dev/docs/intro",
-				"kind": "docs"
+				"href": "https://playwright.dev/docs/intro"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Plotly": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts.",
-		"resumeContext": "Plotly creates interactive charts and dashboards, a richer option than static plots when users need hover, filtering, and exploration.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Plotly",
+		"desc": "Graphing library for interactive analytical visualizations in Python, JavaScript, and dashboard contexts. Plotly creates interactive charts and dashboards, a richer option than static plots when users need hover, filtering, and exploration.",
+		"icon": "/skill-icons/plotly.svg",
 		"links": [
 			{
 				"label": "Plotly Python docs",
-				"href": "https://plotly.com/python/",
-				"kind": "docs"
+				"href": "https://plotly.com/python/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Polars": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Fast DataFrame library built around columnar execution for high-performance local analytics.",
-		"resumeContext": "NBA Basketball Database uses Polars for high-volume sports-data transformations and generated warehouse exports.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "Polars",
+		"desc": "Fast DataFrame library built around columnar execution for high-performance local analytics. NBA Basketball Database uses Polars for high-volume sports-data transformations and generated warehouse exports.",
+		"icon": "/skill-icons/polars.svg",
 		"links": [
 			{
 				"label": "Polars docs",
-				"href": "https://docs.pola.rs/",
-				"kind": "docs"
+				"href": "https://docs.pola.rs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"PostgreSQL": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support.",
-		"resumeContext": "PostgreSQL is a relational database for SQL-backed application data, analytics, indexing, and extension-heavy workloads.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "PostgreSQL",
+		"desc": "Relational database for transactional and analytical workloads with strong SQL, indexing, and extension support. PostgreSQL is a relational database for SQL-backed application data, analytics, indexing, and extension-heavy workloads.",
+		"icon": "/skill-icons/postgresql.svg",
 		"links": [
 			{
 				"label": "PostgreSQL docs",
-				"href": "https://www.postgresql.org/docs/",
-				"kind": "docs"
+				"href": "https://www.postgresql.org/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Prefect": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability.",
-		"resumeContext": "Prefect orchestrates Python data workflows with scheduling, retries, task state, and operational visibility for pipelines.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Prefect",
+		"desc": "Python workflow orchestration platform for data pipelines, task retries, scheduling, and observability. Prefect orchestrates Python data workflows with scheduling, retries, task state, and operational visibility for pipelines.",
+		"icon": "/skill-icons/prefect.svg",
 		"links": [
 			{
 				"label": "Prefect docs",
-				"href": "https://docs.prefect.io/",
-				"kind": "docs"
+				"href": "https://docs.prefect.io/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Prometheus": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Open-source monitoring system for metrics collection, time-series storage, and alerting.",
-		"resumeContext": "Prometheus stores time-series metrics and powers alerting, pairing instrumentation with dashboards such as Grafana.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Prometheus",
+		"desc": "Open-source monitoring system for metrics collection, time-series storage, and alerting. Prometheus stores time-series metrics and powers alerting, pairing instrumentation with dashboards such as Grafana.",
+		"icon": "/skill-icons/prometheus.svg",
 		"links": [
 			{
 				"label": "Prometheus docs",
-				"href": "https://prometheus.io/docs/",
-				"kind": "docs"
+				"href": "https://prometheus.io/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Prompt Engineering": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Designing instructions, examples, constraints, and review loops so LLM workflows produce reliable, auditable outputs.",
-		"resumeContext": "Frame Payments uses prompt patterns, AI office hours, and playbooks to make internal AI usage more repeatable and auditable.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Prompt Engineering",
+		"desc": "Designing instructions, examples, constraints, and review loops so LLM workflows produce reliable, auditable outputs. Frame Payments uses prompt patterns, AI office hours, and playbooks to make internal AI usage more repeatable and auditable.",
+		"icon": "/skill-icons/prompt-engineering.svg",
 		"links": [
 			{
 				"label": "Claude prompt engineering docs",
-				"href": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
-				"kind": "docs"
+				"href": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Publish/Subscribe Architecture": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling.",
-		"resumeContext": "Pub/sub decouples message producers from consumers, letting multiple systems react to the same event stream independently.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Publish/Subscribe Architecture",
+		"desc": "Messaging pattern where producers publish topics or events and subscribers consume without tight coupling. Pub/sub decouples message producers from consumers, letting multiple systems react to the same event stream independently.",
+		"icon": "/skill-icons/publish-subscribe-architecture.svg",
 		"links": [
 			{
 				"label": "Pub/Sub overview",
-				"href": "https://cloud.google.com/pubsub/docs/overview",
-				"kind": "docs"
+				"href": "https://cloud.google.com/pubsub/docs/overview"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Puppeteer": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows.",
-		"resumeContext": "Puppeteer automates Chromium for rendering, screenshots, PDF generation, and browser-level regression checks.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Puppeteer",
+		"desc": "Node.js library for controlling Chromium in automated browser, scraping, and rendering workflows. Puppeteer automates Chromium for rendering, screenshots, PDF generation, and browser-level regression checks.",
+		"icon": "/skill-icons/puppeteer.svg",
 		"links": [
 			{
 				"label": "Puppeteer docs",
-				"href": "https://pptr.dev/",
-				"kind": "docs"
+				"href": "https://pptr.dev/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Pydantic": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Python validation library for typed models, parsing, serialization, and schema-driven application contracts.",
-		"resumeContext": "AI/ML Web Feeds uses Pydantic schemas to validate feed metadata and keep submitted YAML data well typed.",
-		"evidence": [
-			{
-				"label": "AI/ML Web Feeds",
-				"kind": "project"
-			},
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "Pydantic",
+		"desc": "Python validation library for typed models, parsing, serialization, and schema-driven application contracts. AI/ML Web Feeds uses Pydantic schemas to validate feed metadata and keep submitted YAML data well typed.",
+		"icon": "/skill-icons/pydantic.svg",
 		"links": [
 			{
 				"label": "Pydantic docs",
-				"href": "https://docs.pydantic.dev/latest/",
-				"kind": "docs"
+				"href": "https://docs.pydantic.dev/latest/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"PydanticAI": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations.",
-		"resumeContext": "Frame Payments uses PydanticAI for typed AI workflows around document intelligence, validation, and agent-oriented application code.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "PydanticAI",
+		"desc": "Pydantic's Python agent framework for typed tools, structured output, providers, and evaluations. Frame Payments uses PydanticAI for typed AI workflows around document intelligence, validation, and agent-oriented application code.",
+		"icon": "/skill-icons/pydanticai.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://pydantic.dev/docs/ai/overview/",
-				"kind": "docs"
+				"href": "https://pydantic.dev/docs/ai/overview/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Pytest": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Python testing framework for concise unit, integration, fixture, and parametrized test suites.",
-		"resumeContext": "Pytest is Python flexible test runner for unit, fixture, parameterized, and service-level checks.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Pytest",
+		"desc": "Python testing framework for concise unit, integration, fixture, and parametrized test suites. Pytest is Python flexible test runner for unit, fixture, parameterized, and service-level checks.",
+		"icon": "/skill-icons/pytest.svg",
 		"links": [
 			{
 				"label": "Pytest docs",
-				"href": "https://docs.pytest.org/",
-				"kind": "docs"
+				"href": "https://docs.pytest.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Python": {
-		"category": "Languages & Authoring",
-		"summary": "General-purpose language used across Wyatt's AI, data engineering, MCP, SDK, and analytics projects.",
-		"resumeContext": "Python is the common implementation thread behind the basketball database, AI utilities, MCP work, SDK tooling, and analytics.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "Python",
+		"desc": "General-purpose language used across Wyatt's AI, data engineering, MCP, SDK, and analytics projects. Python is the common implementation thread behind the basketball database, AI utilities, MCP work, SDK tooling, and analytics.",
+		"icon": "/skill-icons/python.svg",
 		"links": [
 			{
 				"label": "Python docs",
-				"href": "https://docs.python.org/3/",
-				"kind": "docs"
+				"href": "https://docs.python.org/3/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Python SDKs": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Python client libraries that package APIs, data access, and developer workflows into reusable interfaces.",
-		"resumeContext": "JPMorgan delivered a Python SDK so traders could access a centralized asset-fee data sink without manual data maintenance.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "Python SDKs",
+		"desc": "Python client libraries that package APIs, data access, and developer workflows into reusable interfaces. JPMorgan delivered a Python SDK so traders could access a centralized asset-fee data sink without manual data maintenance.",
+		"icon": "/skill-icons/python-sdks.webp",
 		"links": [
 			{
 				"label": "Packaging guide",
-				"href": "https://packaging.python.org/en/latest/",
-				"kind": "docs"
+				"href": "https://packaging.python.org/en/latest/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"PyTorch": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows.",
-		"resumeContext": "PyTorch is a Python deep-learning framework for tensor computation, neural networks, training loops, and research-to-product modeling.",
-		"evidence": [
-			{
-				"label": "Machine Learning & Data Science",
-				"kind": "first-party"
-			}
-		],
+		"name": "PyTorch",
+		"desc": "Deep-learning framework for tensor computation, autograd, neural networks, and model deployment workflows. PyTorch is a Python deep-learning framework for tensor computation, neural networks, training loops, and research-to-product modeling.",
+		"icon": "/skill-icons/pytorch.svg",
 		"links": [
 			{
 				"label": "PyTorch docs",
-				"href": "https://pytorch.org/docs/stable/index.html",
-				"kind": "docs"
+				"href": "https://pytorch.org/docs/stable/index.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"q": {
-		"category": "Languages & Authoring",
-		"summary": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics.",
-		"resumeContext": "JPMorgan market-data work used q with KDB+ for high-performance capital-markets queries and analytics functions.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "q",
+		"desc": "Vector-oriented language used with KDB+ for concise, high-speed time-series analytics. JPMorgan market-data work used q with KDB+ for high-performance capital-markets queries and analytics functions.",
+		"icon": "/skill-icons/q.png",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://code.kx.com/q/",
-				"kind": "docs"
+				"href": "https://code.kx.com/q/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"qPython": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Python interface for communicating with KDB+/q processes from Python systems.",
-		"resumeContext": "JPMorgan work bridged Python workflows with KDB+/q systems through Python wrappers and market-data access tooling.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "qPython",
+		"desc": "Python interface for communicating with KDB+/q processes from Python systems. JPMorgan work bridged Python workflows with KDB+/q systems through Python wrappers and market-data access tooling.",
+		"icon": "/skill-icons/qpython.svg",
 		"links": [
 			{
 				"label": "Source",
-				"href": "https://github.com/exxeleron/qPython",
-				"kind": "source"
+				"href": "https://github.com/exxeleron/qPython"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"R": {
-		"category": "Languages & Authoring",
-		"summary": "Statistical computing language for analysis, visualization, modeling, and data-science workflows.",
-		"resumeContext": "R is a statistical programming language for modeling, data analysis, visualization, and research-style workflows.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "R",
+		"desc": "Statistical computing language for analysis, visualization, modeling, and data-science workflows. R is a statistical programming language for modeling, data analysis, visualization, and research-style workflows.",
+		"icon": "/skill-icons/r.svg",
 		"links": [
 			{
 				"label": "R manuals",
-				"href": "https://cran.r-project.org/manuals.html",
-				"kind": "docs"
+				"href": "https://cran.r-project.org/manuals.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"React": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Component-based JavaScript library for building interactive interfaces across web, desktop, and plugin surfaces.",
-		"resumeContext": "React appears across Stealth Web3 Startup, Listentropy, Personal Website, MDXPad, and IINA Bookmarks Plugin work.",
-		"evidence": [
-			{
-				"label": "Personal Website: w4w.dev",
-				"kind": "project"
-			},
-			{
-				"label": "Stealth Web3 Startup",
-				"kind": "work"
-			},
-			{
-				"label": "Listentropy",
-				"kind": "project"
-			},
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			},
-			{
-				"label": "IINA Bookmarks Plugin",
-				"kind": "project"
-			}
-		],
+		"name": "React",
+		"desc": "Component-based JavaScript library for building interactive interfaces across web, desktop, and plugin surfaces. React appears across Stealth Web3 Startup, Listentropy, Personal Website, MDXPad, and IINA Bookmarks Plugin work.",
+		"icon": "/skill-icons/react.svg",
 		"links": [
 			{
 				"label": "React docs",
-				"href": "https://react.dev/",
-				"kind": "docs"
+				"href": "https://react.dev/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Real-Time Data Processing": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current.",
-		"resumeContext": "Real-time processing handles events as they arrive, keeping alerts, dashboards, and downstream services current instead of batch-delayed.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Real-Time Data Processing",
+		"desc": "Processing records as they arrive so operational decisions, dashboards, or downstream systems stay current. Real-time processing handles events as they arrive, keeping alerts, dashboards, and downstream services current instead of batch-delayed.",
+		"icon": "/skill-icons/real-time-data-processing.svg",
 		"links": [
 			{
 				"label": "Kafka Streams docs",
-				"href": "https://kafka.apache.org/documentation/streams/",
-				"kind": "docs"
+				"href": "https://kafka.apache.org/documentation/streams/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Redis Pub/Sub": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Redis messaging primitive for lightweight topic-based publish/subscribe communication.",
-		"resumeContext": "Redis Pub/Sub is lightweight in-memory message broadcasting, useful for simple fan-out patterns where persistence is not the main need.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "Redis Pub/Sub",
+		"desc": "Redis messaging primitive for lightweight topic-based publish/subscribe communication. Redis Pub/Sub is lightweight in-memory message broadcasting, useful for simple fan-out patterns where persistence is not the main need.",
+		"icon": "/skill-icons/redis-pub-sub.svg",
 		"links": [
 			{
 				"label": "Redis Pub/Sub docs",
-				"href": "https://redis.io/docs/latest/develop/interact/pubsub/",
-				"kind": "docs"
+				"href": "https://redis.io/docs/latest/develop/interact/pubsub/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Redshift": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries.",
-		"resumeContext": "Redshift is AWS managed data warehouse for analytical SQL workloads, reporting, and large structured datasets.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Redshift",
+		"desc": "AWS cloud data warehouse for SQL analytics, reporting, and large-scale analytical queries. Redshift is AWS managed data warehouse for analytical SQL workloads, reporting, and large structured datasets.",
+		"icon": "/skill-icons/redshift.png",
 		"links": [
 			{
 				"label": "Redshift docs",
-				"href": "https://docs.aws.amazon.com/redshift/",
-				"kind": "docs"
+				"href": "https://docs.aws.amazon.com/redshift/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Redux": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores.",
-		"resumeContext": "Redux centralizes client-side state updates, useful for complex React apps where many views depend on shared application state.",
-		"evidence": [
-			{
-				"label": "Frontend, Product & Desktop Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Redux",
+		"desc": "Predictable state-management library for JavaScript applications with explicit actions and centralized stores. Redux centralizes client-side state updates, useful for complex React apps where many views depend on shared application state.",
+		"icon": "/skill-icons/redux.svg",
 		"links": [
 			{
 				"label": "Redux docs",
-				"href": "https://redux.js.org/",
-				"kind": "docs"
+				"href": "https://redux.js.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Regularized Regression": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Linear modeling with penalty terms such as Ridge, Lasso, and Elastic Net to improve stability and generalization.",
-		"resumeContext": "Wyatt published and open-sourced a regularized linear regression deep dive covering Ridge, Lasso, and Elastic Net.",
-		"evidence": [
-			{
-				"label": "Regularized Linear Regression Deep Dive",
-				"kind": "project"
-			}
-		],
+		"name": "Regularized Regression",
+		"desc": "Linear modeling with penalty terms such as Ridge, Lasso, and Elastic Net to improve stability and generalization. Wyatt published and open-sourced a regularized linear regression deep dive covering Ridge, Lasso, and Elastic Net.",
+		"icon": "/skill-icons/regularized-regression.svg",
 		"links": [
 			{
 				"label": "Linear models docs",
-				"href": "https://scikit-learn.org/stable/modules/linear_model.html",
-				"kind": "docs"
+				"href": "https://scikit-learn.org/stable/modules/linear_model.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"RESTful APIs": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "HTTP API style using resources, methods, status codes, and representations for service integration.",
-		"resumeContext": "JPMorgan built an on-demand REST API that exposed centralized asset-fee data to traders and analytics workflows.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "RESTful APIs",
+		"desc": "HTTP API style using resources, methods, status codes, and representations for service integration. JPMorgan built an on-demand REST API that exposed centralized asset-fee data to traders and analytics workflows.",
+		"icon": "/skill-icons/restful-apis.svg",
 		"links": [
 			{
 				"label": "API guidelines",
-				"href": "https://github.com/microsoft/api-guidelines",
-				"kind": "reference"
+				"href": "https://github.com/microsoft/api-guidelines"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Retrieval Augmented Generation (RAG)": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Pattern where an LLM retrieves trusted external context before generating an answer.",
-		"resumeContext": "Frame Payments document intelligence and NotebookLM work use retrieval to ground answers in uploaded files, vendor docs, and internal sources.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Retrieval Augmented Generation (RAG)",
+		"desc": "Pattern where an LLM retrieves trusted external context before generating an answer. Frame Payments document intelligence and NotebookLM work use retrieval to ground answers in uploaded files, vendor docs, and internal sources.",
+		"icon": "/skill-icons/retrieval-augmented-generation-rag.svg",
 		"links": [
 			{
 				"label": "Paper",
-				"href": "https://arxiv.org/abs/2005.11401",
-				"kind": "reference"
+				"href": "https://arxiv.org/abs/2005.11401"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Rust": {
-		"category": "Languages & Authoring",
-		"summary": "Systems programming language emphasizing memory safety, performance, and explicit ownership.",
-		"resumeContext": "Rust is a systems language focused on memory safety and performance, useful for CLIs, services, and native tooling.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "Rust",
+		"desc": "Systems programming language emphasizing memory safety, performance, and explicit ownership. Rust is a systems language focused on memory safety and performance, useful for CLIs, services, and native tooling.",
+		"icon": "/skill-icons/rust.svg",
 		"links": [
 			{
 				"label": "Rust book",
-				"href": "https://doc.rust-lang.org/book/",
-				"kind": "docs"
+				"href": "https://doc.rust-lang.org/book/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"scikit-learn": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Python machine-learning library for classical modeling, preprocessing, metrics, and model-selection workflows.",
-		"resumeContext": "The regularized regression project compares custom Ridge, Lasso, and Elastic Net implementations against scikit-learn behavior.",
-		"evidence": [
-			{
-				"label": "Regularized Linear Regression Deep Dive",
-				"kind": "project"
-			}
-		],
+		"name": "scikit-learn",
+		"desc": "Python machine-learning library for classical modeling, preprocessing, metrics, and model-selection workflows. The regularized regression project compares custom Ridge, Lasso, and Elastic Net implementations against scikit-learn behavior.",
+		"icon": "/skill-icons/scikit-learn.svg",
 		"links": [
 			{
 				"label": "User guide",
-				"href": "https://scikit-learn.org/stable/user_guide.html",
-				"kind": "docs"
+				"href": "https://scikit-learn.org/stable/user_guide.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Security-Aware Development": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Building with attention to secrets, identity, privacy, validation, and misuse-resistant workflows.",
-		"resumeContext": "Frame Payments work combines PII safeguards, confidential-document handling, auditability, and regulated fintech workflows.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Security-Aware Development",
+		"desc": "Building with attention to secrets, identity, privacy, validation, and misuse-resistant workflows. Frame Payments work combines PII safeguards, confidential-document handling, auditability, and regulated fintech workflows.",
+		"icon": "/skill-icons/security-aware-development.svg",
 		"links": [
 			{
 				"label": "OWASP SAMM",
-				"href": "https://owaspsamm.org/",
-				"kind": "reference"
+				"href": "https://owaspsamm.org/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Semantic Retrieval": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords.",
-		"resumeContext": "Frame Payments uses retrieval patterns that search meaning rather than exact keywords across documents and technical knowledge sources.",
-		"evidence": [
-			{
-				"label": "Frame Payments",
-				"kind": "work"
-			}
-		],
+		"name": "Semantic Retrieval",
+		"desc": "Meaning-based search that uses embeddings or semantic matching instead of only exact keywords. Frame Payments uses retrieval patterns that search meaning rather than exact keywords across documents and technical knowledge sources.",
+		"icon": "/skill-icons/semantic-retrieval.svg",
 		"links": [
 			{
 				"label": "Reference",
-				"href": "https://www.pinecone.io/learn/semantic-search/",
-				"kind": "reference"
+				"href": "https://www.pinecone.io/learn/semantic-search/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Serverless Architecture": {
-		"category": "Backend, APIs & Distributed Systems",
-		"summary": "Cloud design model using managed functions and services to reduce server management and scale on demand.",
-		"resumeContext": "JPMorgan describes a cloud-function-driven asset-fee data sink, without naming a vendor-specific serverless runtime.",
-		"evidence": [
-			{
-				"label": "JPMorgan Chase & Co.",
-				"kind": "work"
-			}
-		],
+		"name": "Serverless Architecture",
+		"desc": "Cloud design model using managed functions and services to reduce server management and scale on demand. JPMorgan describes a cloud-function-driven asset-fee data sink, without naming a vendor-specific serverless runtime.",
+		"icon": "/skill-icons/serverless-architecture.svg",
 		"links": [
 			{
 				"label": "Serverless overview",
-				"href": "https://aws.amazon.com/serverless/",
-				"kind": "reference"
+				"href": "https://aws.amazon.com/serverless/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"shadcn/ui": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Copyable React component patterns built on Radix UI and Tailwind CSS.",
-		"resumeContext": "Portfolio and developer-facing UI work uses shadcn/ui patterns for polished accessible components without heavy design-system overhead.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "shadcn/ui",
+		"desc": "Copyable React component patterns built on Radix UI and Tailwind CSS. Portfolio and developer-facing UI work uses shadcn/ui patterns for polished accessible components without heavy design-system overhead.",
+		"icon": "/skill-icons/shadcn-ui.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://ui.shadcn.com/docs",
-				"kind": "docs"
+				"href": "https://ui.shadcn.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"SPARQL": {
-		"category": "Languages & Authoring",
-		"summary": "Query language for RDF knowledge graphs and linked entity relationships.",
-		"resumeContext": "SPARQL queries RDF graphs, making it the SQL-like language for semantic web and knowledge-graph data.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "SPARQL",
+		"desc": "Query language for RDF knowledge graphs and linked entity relationships. SPARQL queries RDF graphs, making it the SQL-like language for semantic web and knowledge-graph data.",
+		"icon": "/skill-icons/sparql.svg",
 		"links": [
 			{
 				"label": "Specification",
-				"href": "https://www.w3.org/TR/sparql11-query/",
-				"kind": "docs"
+				"href": "https://www.w3.org/TR/sparql11-query/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"SQL": {
-		"category": "Languages & Authoring",
-		"summary": "Query language for relational databases, analytical stores, schema work, and data access layers.",
-		"resumeContext": "SQL is the standard language for querying, modeling, and transforming relational data across warehouses and application databases.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "SQL",
+		"desc": "Query language for relational databases, analytical stores, schema work, and data access layers. SQL is the standard language for querying, modeling, and transforming relational data across warehouses and application databases.",
+		"icon": "/skill-icons/sql.svg",
 		"links": [
 			{
 				"label": "PostgreSQL SQL docs",
-				"href": "https://www.postgresql.org/docs/current/sql.html",
-				"kind": "docs"
+				"href": "https://www.postgresql.org/docs/current/sql.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"SQLAlchemy": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Python SQL toolkit and ORM for database access, query construction, and schema-aware application code.",
-		"resumeContext": "NBA Basketball Database uses SQLAlchemy around validated dataset generation and SQL-backed warehouse workflows.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			}
-		],
+		"name": "SQLAlchemy",
+		"desc": "Python SQL toolkit and ORM for database access, query construction, and schema-aware application code. NBA Basketball Database uses SQLAlchemy around validated dataset generation and SQL-backed warehouse workflows.",
+		"icon": "/skill-icons/sqlalchemy.svg",
 		"links": [
 			{
 				"label": "SQLAlchemy docs",
-				"href": "https://docs.sqlalchemy.org/en/20/",
-				"kind": "docs"
+				"href": "https://docs.sqlalchemy.org/en/20/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"SQLite": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Embedded relational database used for local state, portable datasets, and lightweight application storage.",
-		"resumeContext": "NBA Basketball Database publishes SQLite exports, while ProxyWhirl uses SQLite-backed state for proxy rotation workflows.",
-		"evidence": [
-			{
-				"label": "NBA Basketball Database",
-				"kind": "project"
-			},
-			{
-				"label": "ProxyWhirl",
-				"kind": "project"
-			}
-		],
+		"name": "SQLite",
+		"desc": "Embedded relational database used for local state, portable datasets, and lightweight application storage. NBA Basketball Database publishes SQLite exports, while ProxyWhirl uses SQLite-backed state for proxy rotation workflows.",
+		"icon": "/skill-icons/sqlite.svg",
 		"links": [
 			{
 				"label": "SQLite docs",
-				"href": "https://www.sqlite.org/docs.html",
-				"kind": "docs"
+				"href": "https://www.sqlite.org/docs.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Statistical Modeling": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data.",
-		"resumeContext": "Statistical modeling estimates relationships in data, giving forecasting and regression work a way to quantify uncertainty and effects.",
-		"evidence": [
-			{
-				"label": "Machine Learning & Data Science",
-				"kind": "first-party"
-			}
-		],
+		"name": "Statistical Modeling",
+		"desc": "Using statistical assumptions, model structure, and diagnostics to explain or predict observed data. Statistical modeling estimates relationships in data, giving forecasting and regression work a way to quantify uncertainty and effects.",
+		"icon": "/skill-icons/statistical-modeling.svg",
 		"links": [
 			{
 				"label": "NIST modeling handbook",
-				"href": "https://www.itl.nist.gov/div898/handbook/pmd/pmd.htm",
-				"kind": "reference"
+				"href": "https://www.itl.nist.gov/div898/handbook/pmd/pmd.htm"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Structured Logging": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited.",
-		"resumeContext": "Structured logging records events as fields rather than prose, making runtime behavior easier to search, filter, and correlate.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Structured Logging",
+		"desc": "Logging with consistent fields and machine-readable context so events can be searched, correlated, and audited. Structured logging records events as fields rather than prose, making runtime behavior easier to search, filter, and correlate.",
+		"icon": "/skill-icons/structured-logging.svg",
 		"links": [
 			{
 				"label": "OpenTelemetry logs docs",
-				"href": "https://opentelemetry.io/docs/specs/otel/logs/",
-				"kind": "docs"
+				"href": "https://opentelemetry.io/docs/specs/otel/logs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Swift": {
-		"category": "Languages & Authoring",
-		"summary": "Apple ecosystem programming language for iOS, macOS, and native application development.",
-		"resumeContext": "Swift is Apple language for iOS and macOS apps, combining native UI development with modern type safety.",
-		"evidence": [
-			{
-				"label": "Languages & Authoring",
-				"kind": "first-party"
-			}
-		],
+		"name": "Swift",
+		"desc": "Apple ecosystem programming language for iOS, macOS, and native application development. Swift is Apple language for iOS and macOS apps, combining native UI development with modern type safety.",
+		"icon": "/skill-icons/swift.svg",
 		"links": [
 			{
 				"label": "Swift docs",
-				"href": "https://www.swift.org/documentation/",
-				"kind": "docs"
+				"href": "https://www.swift.org/documentation/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Tableau": {
-		"category": "Data Engineering, Databases & Analytics",
-		"summary": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting.",
-		"resumeContext": "Tableau is a BI tool for interactive dashboards and stakeholder reporting, downstream from clean warehouse or extract data.",
-		"evidence": [
-			{
-				"label": "Data Engineering, Databases & Analytics",
-				"kind": "first-party"
-			}
-		],
+		"name": "Tableau",
+		"desc": "Business-intelligence platform for interactive dashboards, visual analytics, and stakeholder-facing reporting. Tableau is a BI tool for interactive dashboards and stakeholder reporting, downstream from clean warehouse or extract data.",
+		"icon": "/skill-icons/tableau.ico",
 		"links": [
 			{
 				"label": "Tableau help",
-				"href": "https://help.tableau.com/",
-				"kind": "docs"
+				"href": "https://help.tableau.com/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Tailwind CSS": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Utility-first CSS framework for composing responsive, token-driven interface styles.",
-		"resumeContext": "Wyatt used Tailwind CSS in public web and portfolio projects, including SandLabs and personal-site work.",
-		"evidence": [
-			{
-				"label": "Personal Website: w4w.dev",
-				"kind": "project"
-			},
-			{
-				"label": "SandLabs",
-				"kind": "work"
-			}
-		],
+		"name": "Tailwind CSS",
+		"desc": "Utility-first CSS framework for composing responsive, token-driven interface styles. Wyatt used Tailwind CSS in public web and portfolio projects, including SandLabs and personal-site work.",
+		"icon": "/skill-icons/tailwind-css.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://tailwindcss.com/docs/installation/using-vite",
-				"kind": "docs"
+				"href": "https://tailwindcss.com/docs/installation/using-vite"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"TensorFlow": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Machine-learning platform for training, evaluating, and deploying neural-network models.",
-		"resumeContext": "TensorFlow is a neural-network framework for training and serving models, another route into deep learning beside PyTorch.",
-		"evidence": [
-			{
-				"label": "Machine Learning & Data Science",
-				"kind": "first-party"
-			}
-		],
+		"name": "TensorFlow",
+		"desc": "Machine-learning platform for training, evaluating, and deploying neural-network models. TensorFlow is a neural-network framework for training and serving models, another route into deep learning beside PyTorch.",
+		"icon": "/skill-icons/tensorflow.svg",
 		"links": [
 			{
 				"label": "TensorFlow docs",
-				"href": "https://www.tensorflow.org/learn",
-				"kind": "docs"
+				"href": "https://www.tensorflow.org/learn"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Terraform": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources.",
-		"resumeContext": "Terraform defines infrastructure in code, so cloud resources can be planned, reviewed, and changed repeatably.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Terraform",
+		"desc": "Infrastructure-as-code tool for declaratively provisioning cloud and platform resources. Terraform defines infrastructure in code, so cloud resources can be planned, reviewed, and changed repeatably.",
+		"icon": "/skill-icons/terraform.svg",
 		"links": [
 			{
 				"label": "Terraform docs",
-				"href": "https://developer.hashicorp.com/terraform/docs",
-				"kind": "docs"
+				"href": "https://developer.hashicorp.com/terraform/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Test-Driven Development": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Development approach that uses tests to define expected behavior before or alongside implementation.",
-		"resumeContext": "Test-driven development writes expected behavior before implementation, making requirements executable as the code evolves.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Test-Driven Development",
+		"desc": "Development approach that uses tests to define expected behavior before or alongside implementation. Test-driven development writes expected behavior before implementation, making requirements executable as the code evolves.",
+		"icon": "/skill-icons/test-driven-development.svg",
 		"links": [
 			{
 				"label": "TDD reference",
-				"href": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
-				"kind": "reference"
+				"href": "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Time-Series Forecasting": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Forecasting ordered observations over time using decomposition, trend, seasonality, and error-correction techniques.",
-		"resumeContext": "Gap forecasting work used decomposition and bias correction to improve demand forecasts for inventory planning.",
-		"evidence": [
-			{
-				"label": "Gap Inc.",
-				"kind": "work"
-			}
-		],
+		"name": "Time-Series Forecasting",
+		"desc": "Forecasting ordered observations over time using decomposition, trend, seasonality, and error-correction techniques. Gap forecasting work used decomposition and bias correction to improve demand forecasts for inventory planning.",
+		"icon": "/skill-icons/time-series-forecasting.svg",
 		"links": [
 			{
 				"label": "statsmodels time series docs",
-				"href": "https://www.statsmodels.org/stable/tsa.html",
-				"kind": "docs"
+				"href": "https://www.statsmodels.org/stable/tsa.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Tracing": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior.",
-		"resumeContext": "Tracing follows a request across service boundaries, helping teams diagnose latency, retries, and failures in distributed systems.",
-		"evidence": [
-			{
-				"label": "Cloud, DevOps & Observability",
-				"kind": "first-party"
-			}
-		],
+		"name": "Tracing",
+		"desc": "Following requests and operations across service boundaries to debug latency, failures, and workflow behavior. Tracing follows a request across service boundaries, helping teams diagnose latency, retries, and failures in distributed systems.",
+		"icon": "/skill-icons/tracing.svg",
 		"links": [
 			{
 				"label": "Tracing docs",
-				"href": "https://opentelemetry.io/docs/concepts/observability-primer/#distributed-traces",
-				"kind": "docs"
+				"href": "https://opentelemetry.io/docs/concepts/observability-primer/#distributed-traces"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"TypeScript": {
-		"category": "Languages & Authoring",
-		"summary": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code.",
-		"resumeContext": "TypeScript runs through the React, Vite, agent tooling, docs, and resume-generation codebases to keep UI and data contracts typed.",
-		"evidence": [
-			{
-				"label": "AI Agent Harness Configs",
-				"kind": "project"
-			}
-		],
+		"name": "TypeScript",
+		"desc": "Typed JavaScript used for safer frontend, backend, tooling, and configuration code. TypeScript runs through the React, Vite, agent tooling, docs, and resume-generation codebases to keep UI and data contracts typed.",
+		"icon": "/skill-icons/typescript.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://www.typescriptlang.org/docs/",
-				"kind": "docs"
+				"href": "https://www.typescriptlang.org/docs/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Unit Testing": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Focused tests that validate small functions, classes, modules, or contracts in isolation.",
-		"resumeContext": "FL Studio MCP Server uses unit tests within a 650+ test suite covering contracts, runtime paths, and tool behavior.",
-		"evidence": [
-			{
-				"label": "FL Studio MCP Server",
-				"kind": "project"
-			}
-		],
+		"name": "Unit Testing",
+		"desc": "Focused tests that validate small functions, classes, modules, or contracts in isolation. FL Studio MCP Server uses unit tests within a 650+ test suite covering contracts, runtime paths, and tool behavior.",
+		"icon": "/skill-icons/unit-testing.svg",
 		"links": [
 			{
 				"label": "unittest docs",
-				"href": "https://docs.python.org/3/library/unittest.html",
-				"kind": "docs"
+				"href": "https://docs.python.org/3/library/unittest.html"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Vercel": {
-		"category": "Cloud, DevOps & Observability",
-		"summary": "Frontend cloud platform for deploying web apps, docs portals, and serverless-backed product experiences.",
-		"resumeContext": "Listentropy and AI/ML Web Feeds use Vercel for hosted frontend delivery, previews, and public project surfaces.",
-		"evidence": [
-			{
-				"label": "Listentropy",
-				"kind": "project"
-			},
-			{
-				"label": "AI/ML Web Feeds",
-				"kind": "project"
-			}
-		],
+		"name": "Vercel",
+		"desc": "Frontend cloud platform for deploying web apps, docs portals, and serverless-backed product experiences. Listentropy and AI/ML Web Feeds use Vercel for hosted frontend delivery, previews, and public project surfaces.",
+		"icon": "/skill-icons/vercel.svg",
 		"links": [
 			{
 				"label": "Vercel docs",
-				"href": "https://vercel.com/docs",
-				"kind": "docs"
+				"href": "https://vercel.com/docs"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Vercel AI SDK": {
-		"category": "AI, LLM & Agent Engineering",
-		"summary": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output.",
-		"resumeContext": "MDXPad uses Vercel AI SDK for multi-provider AI assistance with token tracking and bring-your-own-key support.",
-		"evidence": [
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "Vercel AI SDK",
+		"desc": "TypeScript toolkit for AI apps with model providers, streaming, tools, and structured output. MDXPad uses Vercel AI SDK for multi-provider AI assistance with token tracking and bring-your-own-key support.",
+		"icon": "/skill-icons/vercel-ai-sdk.svg",
 		"links": [
 			{
 				"label": "Docs",
-				"href": "https://ai-sdk.dev/docs/introduction",
-				"kind": "docs"
+				"href": "https://ai-sdk.dev/docs/introduction"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-06"
-		}
+		]
 	},
 	"Vite": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications.",
-		"resumeContext": "Vite is a fast frontend build tool and dev server, fitting React and documentation apps that need quick local feedback and modern bundling.",
-		"evidence": [
-			{
-				"label": "Frontend, Product & Desktop Engineering",
-				"kind": "first-party"
-			}
-		],
+		"name": "Vite",
+		"desc": "Fast frontend build tool and dev server for modern JavaScript and TypeScript applications. Vite is a fast frontend build tool and dev server, fitting React and documentation apps that need quick local feedback and modern bundling.",
+		"icon": "/skill-icons/vite.svg",
 		"links": [
 			{
 				"label": "Vite docs",
-				"href": "https://vite.dev/guide/",
-				"kind": "docs"
+				"href": "https://vite.dev/guide/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Vitest": {
-		"category": "Testing, Quality, Security & Architecture",
-		"summary": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing.",
-		"resumeContext": "Vitest is a fast Vite-native test runner for TypeScript and React code, similar in shape to Jest but optimized for Vite projects.",
-		"evidence": [
-			{
-				"label": "Testing, Quality, Security & Architecture",
-				"kind": "first-party"
-			}
-		],
+		"name": "Vitest",
+		"desc": "Vite-native JavaScript and TypeScript test runner for fast unit and component testing. Vitest is a fast Vite-native test runner for TypeScript and React code, similar in shape to Jest but optimized for Vite projects.",
+		"icon": "/skill-icons/vitest.svg",
 		"links": [
 			{
 				"label": "Vitest docs",
-				"href": "https://vitest.dev/guide/",
-				"kind": "docs"
+				"href": "https://vitest.dev/guide/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"Web Workers": {
-		"category": "Frontend, Product & Desktop Engineering",
-		"summary": "Browser background execution primitive for moving heavy processing off the main UI thread.",
-		"resumeContext": "Listentropy uses a Web Worker pipeline to process large Spotify history files in-browser while keeping the UI responsive.",
-		"evidence": [
-			{
-				"label": "Listentropy",
-				"kind": "project"
-			}
-		],
+		"name": "Web Workers",
+		"desc": "Browser background execution primitive for moving heavy processing off the main UI thread. Listentropy uses a Web Worker pipeline to process large Spotify history files in-browser while keeping the UI responsive.",
+		"icon": "/skill-icons/web-workers.svg",
 		"links": [
 			{
 				"label": "MDN Web Workers API",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API",
-				"kind": "docs"
+				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"WebSockets": {
-		"category": "Streaming, Messaging & Capital Markets Systems",
-		"summary": "Browser and server protocol for bidirectional, persistent real-time communication.",
-		"resumeContext": "WebSockets keep a browser-server channel open, enabling live UI updates for streams, dashboards, collaboration, and agent sessions.",
-		"evidence": [
-			{
-				"label": "Streaming, Messaging & Capital Markets Systems",
-				"kind": "first-party"
-			}
-		],
+		"name": "WebSockets",
+		"desc": "Browser and server protocol for bidirectional, persistent real-time communication. WebSockets keep a browser-server channel open, enabling live UI updates for streams, dashboards, collaboration, and agent sessions.",
+		"icon": "/skill-icons/websockets.svg",
 		"links": [
 			{
 				"label": "MDN WebSockets API",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
-				"kind": "docs"
+				"href": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"XGBoost": {
-		"category": "Machine Learning & Data Science",
-		"summary": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models.",
-		"resumeContext": "XGBoost is a boosted-tree library for tabular prediction problems, often strong for structured datasets before deep learning is needed.",
-		"evidence": [
-			{
-				"label": "Machine Learning & Data Science",
-				"kind": "first-party"
-			}
-		],
+		"name": "XGBoost",
+		"desc": "Gradient-boosted tree library for high-performing tabular classification, regression, and ranking models. XGBoost is a boosted-tree library for tabular prediction problems, often strong for structured datasets before deep learning is needed.",
+		"icon": "/skill-icons/xgboost.png",
 		"links": [
 			{
 				"label": "XGBoost docs",
-				"href": "https://xgboost.readthedocs.io/",
-				"kind": "docs"
+				"href": "https://xgboost.readthedocs.io/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	},
 	"YAML": {
-		"category": "Languages & Authoring",
-		"summary": "Human-readable data serialization format used for configuration, schemas, docs metadata, and pipeline definitions.",
-		"resumeContext": "AI/ML Web Feeds uses YAML feed schemas, and MDXPad validates YAML frontmatter for authoring workflows.",
-		"evidence": [
-			{
-				"label": "AI/ML Web Feeds",
-				"kind": "project"
-			},
-			{
-				"label": "MDXPad",
-				"kind": "project"
-			}
-		],
+		"name": "YAML",
+		"desc": "Human-readable data serialization format used for configuration, schemas, docs metadata, and pipeline definitions. AI/ML Web Feeds uses YAML feed schemas, and MDXPad validates YAML frontmatter for authoring workflows.",
+		"icon": "/skill-icons/yaml.svg",
 		"links": [
 			{
 				"label": "YAML specification",
-				"href": "https://yaml.org/spec/",
-				"kind": "docs"
+				"href": "https://yaml.org/spec/"
 			}
-		],
-		"verification": {
-			"status": "verified",
-			"lastCheckedAt": "2026-05-08"
-		}
+		]
 	}
 }

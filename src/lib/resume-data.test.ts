@@ -33,12 +33,18 @@ function pickByIndexes<T>(values: T[], indexes?: number[]) {
   return indexes ? indexes.map((index) => values[index]) : values;
 }
 
-function pickByValues<T extends string>(values: T[], selectedValues?: string[]) {
+function pickByValues<T extends string>(
+  values: T[],
+  selectedValues?: string[],
+) {
   return selectedValues ? selectedValues.map((value) => value as T) : values;
 }
 
 function getVariantSkillKeywords(variantName: ResumeVariantName) {
-  return getResumeVariant(variantName).skills?.flatMap((skill) => skill.keywords) ?? [];
+  return (
+    getResumeVariant(variantName).skills?.flatMap((skill) => skill.keywords) ??
+    []
+  );
 }
 
 function getBaseWork(name: string) {
@@ -121,7 +127,10 @@ describe("getResumeVariant", () => {
         site: siteVariantData.basics as BasicsSelection | undefined,
         full: fullVariantData.basics as BasicsSelection | undefined,
         single: singleVariantData.basics as BasicsSelection | undefined,
-      } as const satisfies Record<ResumeVariantName, BasicsSelection | undefined>;
+      } as const satisfies Record<
+        ResumeVariantName,
+        BasicsSelection | undefined
+      >;
 
       for (const name of allVariantNames) {
         const resolved = getResumeVariant(name).basics;
@@ -130,17 +139,17 @@ describe("getResumeVariant", () => {
         expect(resolved.summary).toBe(
           overrides?.summary === undefined
             ? baseBasics.summary
-            : overrides.summary ?? undefined,
+            : (overrides.summary ?? undefined),
         );
         expect(resolved.label).toBe(
           overrides?.label === undefined
             ? baseBasics.label
-            : overrides.label ?? undefined,
+            : (overrides.label ?? undefined),
         );
         expect(resolved.image).toBe(
           overrides?.image === undefined
             ? baseBasics.image
-            : overrides.image ?? undefined,
+            : (overrides.image ?? undefined),
         );
       }
     });
@@ -250,7 +259,10 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
         };
       });
 
@@ -267,31 +279,30 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
         };
       });
 
       expect(full.projects).toEqual(expectedProjects);
     });
 
-  it("separates NBA Basketball Database public Kaggle stats from rebuild highlights", () => {
-    const full = getResumeVariant("full");
-    const nbadb = full.projects?.find(
-      (project) => project.name === "NBA Basketball Database",
-    );
+    it("separates NBA Basketball Database public Kaggle stats from rebuild highlights", () => {
+      const full = getResumeVariant("full");
+      const nbadb = full.projects?.find(
+        (project) => project.name === "NBA Basketball Database",
+      );
 
-    expect(nbadb).toBeDefined();
-    expect(nbadb!.description).toContain(
-      "425K+ views and 60K+ downloads",
-    );
-    expect(nbadb!.description).toContain("2023-07-06");
-    expect(nbadb!.highlights.join(" ")).toContain(
-      "152 extractor wrappers",
-    );
-    expect(nbadb!.highlights.join(" ")).toContain(
-      "204 generated public star-schema outputs",
-    );
-  });
+      expect(nbadb).toBeDefined();
+      expect(nbadb!.description).toContain("425K+ views and 60K+ downloads");
+      expect(nbadb!.description).toContain("2023-07-06");
+      expect(nbadb!.highlights.join(" ")).toContain("152 extractor wrappers");
+      expect(nbadb!.highlights.join(" ")).toContain(
+        "204 generated public star-schema outputs",
+      );
+    });
 
     it("resolves site-artifact projects with curated highlights", () => {
       const site = getResumeVariant("site");
@@ -303,21 +314,24 @@ describe("getResumeVariant", () => {
         return {
           ...baseProject,
           description: selection.description ?? baseProject.description,
-          highlights: pickByIndexes(baseProject.highlights, selection.highlightIndexes),
+          highlights: pickByIndexes(
+            baseProject.highlights,
+            selection.highlightIndexes,
+          ),
         };
       });
 
       expect(site.projects).toEqual(expectedProjects);
     });
 
-  it("resolves empty highlight indexes to no highlights", () => {
-    const baseProject = getBaseProject("NBA Basketball Database");
+    it("resolves empty highlight indexes to no highlights", () => {
+      const baseProject = getBaseProject("NBA Basketball Database");
 
-    expect(pickByIndexes(baseProject.highlights, [])).toEqual([]);
-    expect(pickByIndexes(baseProject.highlights, undefined)).toEqual(
-      baseProject.highlights,
-    );
-  });
+      expect(pickByIndexes(baseProject.highlights, [])).toEqual([]);
+      expect(pickByIndexes(baseProject.highlights, undefined)).toEqual(
+        baseProject.highlights,
+      );
+    });
   });
 
   describe("skill selections", () => {
@@ -405,17 +419,26 @@ describe("getResumeVariant", () => {
 
   describe("skill metadata", () => {
     it("resolves metadata for high-signal web skill popovers", () => {
-      expect(getSkillDetail("AMPS", "Streaming")).toMatchObject({
-        category: "Streaming, Messaging & Capital Markets Systems",
+      expect(getSkillDetail("AMPS")).toMatchObject({
+        name: "AMPS",
         links: [{ href: "https://crankuptheamps.com/" }],
       });
-      expect(getSkillDetail("AI Agent Skills", "AI")).toMatchObject({
+      expect(getSkillDetail("AI Agent Skills")).toMatchObject({
+        name: "AI Agent Skills",
         links: [{ href: "https://agentskills.io/specification" }],
       });
     });
 
-    it("safely returns undefined for skills without metadata", () => {
-      expect(getSkillDetail("Deliberately Missing Skill", "Other")).toBeUndefined();
+    it("generates safe fallback metadata for skills without curated copy", () => {
+      expect(
+        getSkillDetail("Deliberately Missing Skill", "Other"),
+      ).toMatchObject({
+        desc: expect.stringContaining(
+          "Deliberately Missing Skill is part of Wyatt's other toolkit across",
+        ),
+        links: [],
+        name: "Deliberately Missing Skill",
+      });
     });
 
     it("keeps metadata scoped to skills in the master taxonomy", () => {
@@ -516,7 +539,8 @@ describe("getResumeVariant", () => {
     it("preserves certificate ordering from the full variant config", () => {
       const full = getResumeVariant("full");
       const baseCertCount = resumeData.certificates?.length ?? 0;
-      const fullCertificateNames = (fullVariantData.certificates ?? []) as string[];
+      const fullCertificateNames = (fullVariantData.certificates ??
+        []) as string[];
 
       expect(full.certificates!.length).toBeLessThanOrEqual(baseCertCount);
       expect(full.certificates!.map((certificate) => certificate.name)).toEqual(
@@ -597,7 +621,11 @@ describe("getResumeVariant", () => {
         resumeData.projects?.map((p) => p.name) ?? [],
       );
 
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const selection of ((variant as Record<string, unknown>)
           .projects ?? []) as ProjectSelection[]) {
           expect(baseProjectNames).toContain(selection.name);
@@ -610,7 +638,11 @@ describe("getResumeVariant", () => {
         resumeData.skills?.map((s) => s.name) ?? [],
       );
 
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const selection of ((variant as Record<string, unknown>).skills ??
           []) as SkillSelection[]) {
           expect(baseSkillNames).toContain(selection.name);
@@ -686,7 +718,11 @@ describe("getResumeVariant", () => {
     });
 
     it("every highlightIndex in project selections is within bounds", () => {
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const selection of ((variant as Record<string, unknown>)
           .projects ?? []) as ProjectSelection[]) {
           if (selection.highlightIndexes) {
@@ -703,15 +739,22 @@ describe("getResumeVariant", () => {
 
     it("keeps project highlight prose in canonical resume data", () => {
       for (const [variantName, variant] of Object.entries(variantDataByName)) {
-        for (const selection of ((variant as Record<string, unknown>).projects ??
-          []) as Array<Record<string, unknown>>) {
-          expect(selection.highlights, `${variantName}:${selection.name}`).toBeUndefined();
+        for (const selection of ((variant as Record<string, unknown>)
+          .projects ?? []) as Array<Record<string, unknown>>) {
+          expect(
+            selection.highlights,
+            `${variantName}:${selection.name}`,
+          ).toBeUndefined();
         }
       }
     });
 
     it("every selected skill keyword exists in its base skill category", () => {
-      for (const variant of [fullVariantData, siteVariantData, singleVariantData]) {
+      for (const variant of [
+        fullVariantData,
+        siteVariantData,
+        singleVariantData,
+      ]) {
         for (const selection of ((variant as Record<string, unknown>).skills ??
           []) as SkillSelection[]) {
           if (selection.keywords) {

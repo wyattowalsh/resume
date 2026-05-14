@@ -48,7 +48,7 @@ When resume facts change, update `assets/data/resume.json` or `assets/data/varia
 
 `src/lib/resume-data.ts` resolves those variant files into validated render payloads for each route.
 
-`assets/data/skill-details.json` adds web-only skill evidence for the interactive `/` route. Those descriptions and reference URLs are intentionally excluded from generated PDF/DOCX artifacts; `src/scripts/check-artifacts.ts` derives its tooltip-only leakage guard from this file so web popover copy does not drift into print exports.
+`assets/data/skill-details.json` adds web-only skill popover display data for the interactive `/` route. Each entry stays to the display shape `{ name, desc, icon, links }`; those descriptions and reference URLs are intentionally excluded from generated PDF/DOCX artifacts, and `src/scripts/check-artifacts.ts` derives its tooltip-only leakage guard from this file so web popover copy does not drift into print exports.
 
 `assets/data/skill-icons.json` and `assets/data/skill-section-icons.json` drive the interactive route's local skill-icon system. Every visible skill chip on `/` should resolve to a compact local `/skill-icons/...` asset when available, and every skill section should resolve to a typed React icon through `src/components/Skills.tsx`. Prefer original, classic, or source-traced product symbols over generic art, but avoid wide wordmarks and banner logos inside skill chips because they collapse into unreadable slivers at trigger size.
 
@@ -70,7 +70,7 @@ The interactive `/` route keeps motion and disclosure intentionally restrained:
 
 - `src/components/SectionProgressNav.tsx` renders a noninteractive Radix Progress hairline that appears only after the header scrolls away. It uses `IntersectionObserver` for visibility and active-section updates instead of scroll-event polling.
 - `src/components/SkillPopover.tsx` is the only popover disclosure surface. Work and project evidence is rendered directly in the page content rather than hidden behind role/project popups.
-- Every visible skill chip is a keyboard-accessible popover trigger. Curated skills show detailed context, evidence, references, and icons from `src/lib/skill-details.ts`; skills without curated detail still open a lightweight category-context card.
+- Every visible skill chip is a keyboard-accessible popover trigger. Curated skills show a compact description, references, and icons from `src/lib/skill-details.ts`; skills without curated detail still open a lightweight category-context card.
 - Project action pills use contextual leading icons for GitHub, Kaggle, docs, and live/external links while preserving the trailing external-link indicator.
 - Downloads are exposed only in the bottom footer from `resumeDownloadGroups`; the header stays focused on identity and contact links.
 
@@ -184,7 +184,7 @@ Use the uploaded CI artifacts or a local `pnpm check:artifacts` run to inspect t
 
 ## Icon provenance
 
-Skill icons are source-controlled UI assets for the interactive route only. Keep their provenance in the icon data pipeline, do not allow icon metadata or tooltip-only skill evidence to leak into generated PDF/DOCX content, and rerun the artifact checker after icon or popover changes because it verifies public downloads remain text-first and image-free. Use `pnpm sync:skill-icons` only when intentionally refreshing local skill icon assets or their manifest.
+Skill icons are source-controlled UI assets for the interactive route only. Keep their provenance in the icon data pipeline, do not allow icon metadata or tooltip-only skill detail copy to leak into generated PDF/DOCX content, and rerun the artifact checker after icon or popover changes because it verifies public downloads remain text-first and image-free. Use `pnpm sync:skill-icons` only when intentionally refreshing local skill icon assets or their manifest.
 
 When refreshing icons, prefer compact favicon/devicon/original-symbol assets for chip readability. The regression tests in `src/lib/skill-details.test.ts` block known wide wordmark sources such as Python's old text logo, Tableau's banner logo, FIX's white wordmark, Pandera's banner, XGBoost's trimmed banner, Go's horizontal wordmark, and the GNU Bash wordmark. After changing the pipeline, inspect the affected icons visually on `/`, rerun `pnpm sync:skill-icons`, run `pnpm test -- src/lib/skill-details.test.ts`, and run `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" pnpm check:artifacts` if public downloads or generated artifacts were refreshed.
 

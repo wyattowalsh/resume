@@ -10,9 +10,9 @@
 ## Data And Rendering Contracts
 
 - Keep committed resume facts in `assets/data/resume.json`; use `site.json`, `full.json`, and `single.json` for artifact curation.
-- Keep web-only skill popover evidence in `assets/data/skill-details.json`; it must not appear in generated PDF/DOCX artifacts.
+- Keep web-only skill popover display data in `assets/data/skill-details.json` using the `{ name, desc, icon, links }` shape; it must not appear in generated PDF/DOCX artifacts.
 - Keep skill icon assets and metadata in the skill-icon pipeline: `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, and `public/skill-icons/`.
-- Preserve all visible skill chips on `/` as interactive popover triggers. Curated skills may show detailed evidence and references; uncatalogued skills should still show lightweight category context.
+- Preserve all visible skill chips on `/` as interactive popover triggers. Curated skills should show compact descriptions, icons, and references; uncatalogued skills should still show lightweight category context.
 - Keep `src/lib/artifact-specs.ts` aligned with print layouts, DOCX generation, and `src/scripts/check-artifacts.ts` whenever artifact budgets or ATS policies change.
 
 ## Commands
