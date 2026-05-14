@@ -172,6 +172,15 @@ const sectionIconNames = new Set([
   "server",
   "shield-check",
 ]);
+const blockedWordmarkIconSources = [
+  "python-logo-master-v3-TM.png",
+  "Tableau_Logo.png",
+  "Logo-white.png",
+  "pandera-banner.png",
+  "xgboost-logo-trimmed.png",
+  "go-logo-blue.svg",
+  "Gnu-bash-logo.svg",
+] as const;
 
 const mentionedResumeEvidenceLabels = (copy: string) =>
   resumeClaimLabels.filter((label) => copy.includes(label));
@@ -435,6 +444,10 @@ describe("skill details", () => {
     for (const entry of Object.values(skillIcons)) {
       expect(entry.source).not.toBe("font-awesome");
       expect(entry.source).not.toBe("simple-icons");
+
+      for (const blockedSource of blockedWordmarkIconSources) {
+        expect(entry.sourceUrl).not.toContain(blockedSource);
+      }
     }
 
     expect(skillIcons.Python.iconPath).toBe("/skill-icons/python.svg");
@@ -452,6 +465,32 @@ describe("skill details", () => {
     ).toMatch(/<svg[^>]+viewBox="0 0 16 16"/);
     expect(skillIcons.React.sourceUrl).toContain("react-original.svg");
     expect(skillIcons.AWS.sourceUrl).toMatch(/^https:\/\//);
+  });
+
+  it("keeps wordmark-prone icons compact and readable", () => {
+    expect(skillIcons.AMPS).toMatchObject({
+      iconPath: "/skill-icons/amps.ico",
+      sourceUrl: "https://crankuptheamps.com/img/favicon.ico",
+    });
+    expect(skillIcons.Bash.sourceUrl).toContain("cdn.simpleicons.org/gnubash");
+    expect(skillIcons.Go.sourceUrl).toContain("/icons/go/go-original.svg");
+    expect(skillIcons["Market Data Systems"].sourceUrl).toContain(
+      "fixtrading.org",
+    );
+    expect(skillIcons.Pandera.sourceUrl).toContain("pandera-favicon.png");
+    expect(skillIcons.q).toMatchObject({
+      iconPath: "/skill-icons/q.png",
+      sourceUrl: "https://code.kx.com/q/local/favicon.ico",
+    });
+    expect(skillIcons.Tableau).toMatchObject({
+      iconPath: "/skill-icons/tableau.ico",
+      sourceUrl:
+        "https://www.tableau.com/themes/custom/tableau_www/favicon.ico",
+    });
+    expect(skillIcons.XGBoost).toMatchObject({
+      iconPath: "/skill-icons/xgboost.png",
+      sourceUrl: "https://xgboost.ai/images/logo/dmlc-logo-square.png",
+    });
   });
 
   it("keeps every visible site skill covered by the icon manifest", () => {

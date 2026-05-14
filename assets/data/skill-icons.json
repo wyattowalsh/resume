@@ -379,12 +379,12 @@
   },
   "XGBoost": {
     "category": "Machine Learning & Data Science",
-    "iconName": "xgboost-logo",
+    "iconName": "xgboost-dmlc-logo",
     "iconPath": "/skill-icons/xgboost.png",
-    "sha256": "6637e38dea1db7a54d6c16fd5b149c2c443d7a4c54a45829ce4b25cef6edbb15",
-    "source": "web-sourced",
-    "sourceUrl": "https://xgboost.ai/images/logo/xgboost-logo-trimmed.png",
-    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
+    "sha256": "06ecd12af0719593333f963001513ee12b459935c86cd8ed87aaef1d5d2fe64f",
+    "source": "favicon",
+    "sourceUrl": "https://xgboost.ai/images/logo/dmlc-logo-square.png",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "NumPy": {
     "category": "Machine Learning & Data Science",
@@ -634,12 +634,12 @@
   },
   "Pandera": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "pandera-banner",
+    "iconName": "pandera-favicon",
     "iconPath": "/skill-icons/pandera.webp",
-    "sha256": "b52cf4ece1d254c40696b33231375579528c13491f7512ec13184a2507b78912",
-    "source": "web-sourced",
-    "sourceUrl": "https://pandera.readthedocs.io/en/stable/_static/pandera-banner.png",
-    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
+    "sha256": "02b26c826065d9eb2a0a08e2328408145f4dbdd764331d54548ea654afc84c3e",
+    "source": "favicon",
+    "sourceUrl": "https://pandera.readthedocs.io/en/stable/_static/pandera-favicon.png",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "Parquet": {
     "category": "Data Engineering, Databases & Analytics",
@@ -703,12 +703,12 @@
   },
   "Tableau": {
     "category": "Data Engineering, Databases & Analytics",
-    "iconName": "tableau-logo",
-    "iconPath": "/skill-icons/tableau.png",
-    "sha256": "38046835450ff4ed52b8b90d80d6155534b9ef69e1648e95af8751d6d3d27cdc",
-    "source": "web-sourced",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png",
-    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
+    "iconName": "tableau",
+    "iconPath": "/skill-icons/tableau.ico",
+    "sha256": "26e7546a015a3299fb76d46030ee9202f6f428ba3505d25734858a279c3b2c54",
+    "source": "favicon",
+    "sourceUrl": "https://www.tableau.com/themes/custom/tableau_www/favicon.ico",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "Plotly": {
     "category": "Data Engineering, Databases & Analytics",
@@ -750,12 +750,12 @@
   },
   "AMPS": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "amps-logo",
-    "iconPath": "/skill-icons/amps.svg",
-    "sha256": "c989f517b90be8e822b417b5014472f5e5d6a2148dbdece1095640e8da67ae9e",
-    "source": "official",
-    "sourceUrl": "https://crankuptheamps.com/img/logo.svg",
-    "sourceNote": "Official project or vendor icon resolved from a first-party source."
+    "iconName": "amps-favicon",
+    "iconPath": "/skill-icons/amps.ico",
+    "sha256": "bc112acec3a6a179d728a5ff6af135e679e0b784bc9c1ed29bafebdc4ded04f2",
+    "source": "favicon",
+    "sourceUrl": "https://crankuptheamps.com/img/favicon.ico",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "Apache Kafka": {
     "category": "Streaming, Messaging & Capital Markets Systems",
@@ -806,12 +806,10 @@
   },
   "Market Data Systems": {
     "category": "Streaming, Messaging & Capital Markets Systems",
-    "iconName": "fix-trading-community-logo",
     "iconPath": "/skill-icons/market-data-systems.png",
-    "sha256": "776cfb4029ab8942c662fb2aa1566b4b5a891b929f79cd5ecbfc8679c6379c2a",
-    "source": "web-sourced",
-    "sourceUrl": "https://cdnws.fixtrading.org/wp-content/uploads/2023/06/Logo-white.png",
-    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
+    "sha256": "b23bdc8ea9ead19e5d833f9236e7d3c1e84cf0e73eb6e6b1cc67c4bf0de972e5",
+    "source": "favicon",
+    "sourceUrl": "https://cdnws.fixtrading.org/wp-content/uploads/2017/03/favicon.png"
   },
   "Low-Latency Messaging": {
     "category": "Streaming, Messaging & Capital Markets Systems",
@@ -1546,12 +1544,12 @@
   },
   "Go": {
     "category": "Languages & Authoring",
-    "iconName": "go-logo",
+    "iconName": "go",
     "iconPath": "/skill-icons/go.svg",
-    "sha256": "c89d8c4a31dd4f6487e69bc3bdb6585a52466a393f6e8d863bfc1a0189bc213c",
-    "source": "official",
-    "sourceUrl": "https://go.dev/images/go-logo-blue.svg",
-    "sourceNote": "Official project or vendor icon resolved from a first-party source."
+    "sha256": "2d4558b96d3ec71d0d922a62668cb2ea5a5d83ed7d4caf6b0479b3266f795a2f",
+    "source": "devicon",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg",
+    "sourceNote": "Devicon ecosystem icon; source-traced but not treated as first-party brand provenance."
   },
   "Rust": {
     "category": "Languages & Authoring",
@@ -1583,11 +1581,11 @@
   "q": {
     "category": "Languages & Authoring",
     "iconName": "q",
-    "iconPath": "/skill-icons/q.svg",
-    "sha256": "0bf20bf815376295abc76025d43896bec1cc8151bb03dde5bc54015ef639f33a",
-    "source": "web-sourced",
-    "sourceUrl": "https://code.kx.com/q/local/img/kx.svg",
-    "sourceNote": "Source-traced public icon asset; validated by the sync script before use."
+    "iconPath": "/skill-icons/q.png",
+    "sha256": "ff635abfbf5feb3376887c9ca2beba1434cbe63e789622c927de9eef1cf64b8f",
+    "source": "favicon",
+    "sourceUrl": "https://code.kx.com/q/local/favicon.ico",
+    "sourceNote": "Source-traced favicon or product icon resolved from a first-party product surface."
   },
   "R": {
     "category": "Languages & Authoring",
@@ -1628,12 +1626,13 @@
   },
   "Bash": {
     "category": "Languages & Authoring",
-    "iconName": "gnu-bash",
+    "iconName": "gnubash",
     "iconPath": "/skill-icons/bash.svg",
-    "sha256": "1eb203ffdfa02fe663c769d8fec93af810e72cd07605cee86a5060d288e5fa26",
-    "source": "legacy",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg",
-    "sourceNote": "Historical or classic logo asset selected for stronger product recognition."
+    "sha256": "d5bdfe3c67a2baf479b60e2e9a588b7882bad378d707545c0b8f2321f01faaff",
+    "source": "web-sourced",
+    "sourceUrl": "https://cdn.simpleicons.org/gnubash",
+    "sourceNote": "Simple Icons CDN SVG; validated by the sync script before use.",
+    "licenseNote": "Simple Icons SVG under CC0; trademarks remain with their owners."
   },
   "HTML5": {
     "category": "Languages & Authoring",

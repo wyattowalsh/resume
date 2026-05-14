@@ -91,7 +91,9 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
   "Apache Airflow": [deviconIcon("apacheairflow")],
   "Apache Kafka": [deviconIcon("apachekafka")],
   "Apache Spark": [deviconIcon("apachespark")],
-  AMPS: [officialIcon("amps-logo", "https://crankuptheamps.com/img/logo.svg")],
+  AMPS: [
+    faviconIcon("amps-favicon", "https://crankuptheamps.com/img/favicon.ico"),
+  ],
   "Amazon Bedrock": [
     awsIcon("amazon-bedrock", "ArtificialIntelligence/Bedrock.png"),
   ],
@@ -101,12 +103,7 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
   "AWS Glue": [awsIcon("aws-glue", "Analytics/Glue.png")],
   "AWS Lambda": [awsIcon("aws-lambda", "Compute/Lambda.png")],
   Azure: [deviconIcon("azure")],
-  Bash: [
-    legacyIcon(
-      "gnu-bash",
-      "https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg",
-    ),
-  ],
+  Bash: [deviconIcon("bash")],
   CloudFormation: [
     awsIcon("cloudformation", "ManagementGovernance/CloudFormation.png"),
   ],
@@ -120,7 +117,7 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
   FastAPI: [deviconIcon("fastapi")],
   GCP: [deviconIcon("googlecloud")],
   "GitHub Actions": [simpleIcon("githubactions")],
-  Go: [officialIcon("go-logo", "https://go.dev/images/go-logo-blue.svg")],
+  Go: [deviconIcon("go")],
   "Google Cloud Pub/Sub": [simpleIcon("googlepubsub")],
   Grafana: [deviconIcon("grafana")],
   "GraphQL (Apollo)": [
@@ -151,12 +148,6 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
       "https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png",
     ),
   ],
-  "Market Data Systems": [
-    webSourcedIcon(
-      "fix-trading-community-logo",
-      "https://cdnws.fixtrading.org/wp-content/uploads/2023/06/Logo-white.png",
-    ),
-  ],
   "Model Context Protocol (MCP)": [simpleIcon("modelcontextprotocol")],
   MobX: [deviconIcon("mobx")],
   "Next.js": [deviconIcon("nextjs")],
@@ -170,9 +161,9 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
     webSourcedIcon("python", "https://docs.python.org/3/_static/py.svg"),
   ],
   Pandera: [
-    webSourcedIcon(
-      "pandera-banner",
-      "https://pandera.readthedocs.io/en/stable/_static/pandera-banner.png",
+    faviconIcon(
+      "pandera-favicon",
+      "https://pandera.readthedocs.io/en/stable/_static/pandera-favicon.png",
     ),
   ],
   React: [deviconIcon("react")],
@@ -189,12 +180,6 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
   SQLAlchemy: [deviconIcon("sqlalchemy")],
   SPARQL: [simpleIcon("semanticweb")],
   "Tailwind CSS": [deviconIcon("tailwindcss")],
-  Tableau: [
-    webSourcedIcon(
-      "tableau-logo",
-      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png",
-    ),
-  ],
   Terraform: [deviconIcon("terraform")],
   Tracing: [simpleIcon("opentelemetry")],
   TypeScript: [deviconIcon("typescript")],
@@ -203,9 +188,9 @@ const originalLogoCandidates: Record<string, CuratedIconCandidate[]> = {
   Vitest: [deviconIcon("vitest")],
   WebSockets: [simpleIcon("socketdotio")],
   XGBoost: [
-    webSourcedIcon(
-      "xgboost-logo",
-      "https://xgboost.ai/images/logo/xgboost-logo-trimmed.png",
+    faviconIcon(
+      "xgboost-dmlc-logo",
+      "https://xgboost.ai/images/logo/dmlc-logo-square.png",
     ),
   ],
   CodeMirror: [simpleIcon("codemirror")],
@@ -415,7 +400,7 @@ const curatedIconCandidates: Record<string, CuratedIconCandidate[]> = {
   Rust: [deviconIcon("rust", "original")],
   Java: [deviconIcon("java")],
   "C++": [deviconIcon("cplusplus")],
-  q: [webSourcedIcon("q", "https://code.kx.com/q/local/img/kx.svg")],
+  q: [faviconIcon("q", "https://code.kx.com/q/local/favicon.ico")],
   R: [deviconIcon("r"), openMojiIcon("bar-chart", "1F4CA")],
   SPARQL: [openMojiIcon("linked-paperclips", "1F587")],
   MATLAB: [deviconIcon("matlab"), openMojiIcon("abacus", "1F9EE")],
