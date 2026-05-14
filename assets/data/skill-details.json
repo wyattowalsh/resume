@@ -24,8 +24,8 @@
 				"href": "https://agentskills.io/specification"
 			},
 			{
-				"label": "Skills site",
-				"href": "https://agentskills.io/"
+				"label": "Skills source",
+				"href": "https://github.com/anthropics/skills"
 			}
 		]
 	},
@@ -54,8 +54,8 @@
 				"href": "https://docs.aws.amazon.com/bedrock/"
 			},
 			{
-				"label": "Bedrock user guide",
-				"href": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+				"label": "Bedrock samples",
+				"href": "https://github.com/aws-samples/amazon-bedrock-samples"
 			}
 		]
 	},
@@ -69,8 +69,8 @@
 				"href": "https://docs.aws.amazon.com/kinesis/"
 			},
 			{
-				"label": "Streams guide",
-				"href": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+				"label": "AWS samples",
+				"href": "https://github.com/aws-samples"
 			}
 		]
 	},
@@ -84,8 +84,8 @@
 				"href": "https://crankuptheamps.com/"
 			},
 			{
-				"label": "AMPS docs",
-				"href": "https://docs.crankuptheamps.com/"
+				"label": "60East GitHub",
+				"href": "https://github.com/60East"
 			}
 		]
 	},
@@ -114,8 +114,8 @@
 				"href": "https://ant.design/docs/react/introduce"
 			},
 			{
-				"label": "Components",
-				"href": "https://ant.design/components/overview/"
+				"label": "Source",
+				"href": "https://github.com/ant-design/ant-design"
 			}
 		]
 	},
@@ -129,8 +129,8 @@
 				"href": "https://platform.claude.com/docs/en/home"
 			},
 			{
-				"label": "Messages API",
-				"href": "https://platform.claude.com/docs/en/api/messages"
+				"label": "Python SDK",
+				"href": "https://github.com/anthropics/anthropic-sdk-python"
 			}
 		]
 	},
@@ -159,8 +159,8 @@
 				"href": "https://airflow.apache.org/docs/"
 			},
 			{
-				"label": "Tutorial",
-				"href": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/"
+				"label": "Source",
+				"href": "https://github.com/apache/airflow"
 			}
 		]
 	},
@@ -174,8 +174,8 @@
 				"href": "https://kafka.apache.org/documentation/"
 			},
 			{
-				"label": "Quickstart",
-				"href": "https://kafka.apache.org/quickstart"
+				"label": "Source",
+				"href": "https://github.com/apache/kafka"
 			}
 		]
 	},
@@ -189,8 +189,8 @@
 				"href": "https://spark.apache.org/docs/latest/"
 			},
 			{
-				"label": "Programming guide",
-				"href": "https://spark.apache.org/docs/latest/rdd-programming-guide.html"
+				"label": "Source",
+				"href": "https://github.com/apache/spark"
 			}
 		]
 	},
@@ -204,8 +204,8 @@
 				"href": "https://argo-cd.readthedocs.io/"
 			},
 			{
-				"label": "User guide",
-				"href": "https://argo-cd.readthedocs.io/en/stable/user-guide/"
+				"label": "Source",
+				"href": "https://github.com/argoproj/argo-cd"
 			}
 		]
 	},
@@ -234,8 +234,8 @@
 				"href": "https://aws.amazon.com/"
 			},
 			{
-				"label": "AWS docs",
-				"href": "https://docs.aws.amazon.com/"
+				"label": "AWS docs source",
+				"href": "https://github.com/awsdocs"
 			}
 		]
 	},
@@ -249,8 +249,8 @@
 				"href": "https://docs.aws.amazon.com/athena/"
 			},
 			{
-				"label": "User guide",
-				"href": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+				"label": "Federation SDK",
+				"href": "https://github.com/awslabs/aws-athena-query-federation"
 			}
 		]
 	},
@@ -264,8 +264,8 @@
 				"href": "https://docs.aws.amazon.com/glue/"
 			},
 			{
-				"label": "Developer guide",
-				"href": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+				"label": "Glue samples",
+				"href": "https://github.com/aws-samples/aws-glue-samples"
 			}
 		]
 	},
@@ -279,8 +279,8 @@
 				"href": "https://docs.aws.amazon.com/lambda/"
 			},
 			{
-				"label": "Developer guide",
-				"href": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+				"label": "Lambda samples",
+				"href": "https://github.com/aws-samples/serverless-patterns"
 			}
 		]
 	},
@@ -294,8 +294,8 @@
 				"href": "https://learn.microsoft.com/en-us/azure/"
 			},
 			{
-				"label": "Architecture Center",
-				"href": "https://learn.microsoft.com/en-us/azure/architecture/"
+				"label": "Architecture source",
+				"href": "https://github.com/microsoftdocs/architecture-center"
 			}
 		]
 	},
@@ -324,8 +324,8 @@
 				"href": "https://docs.cloud.google.com/bigquery/docs"
 			},
 			{
-				"label": "Query syntax",
-				"href": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+				"label": "BigQuery utils",
+				"href": "https://github.com/GoogleCloudPlatform/bigquery-utils"
 			}
 		]
 	},
@@ -354,8 +354,8 @@
 				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
 			},
 			{
-				"label": "Canvas tutorial",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial"
+				"label": "HTML spec",
+				"href": "https://html.spec.whatwg.org/multipage/canvas.html"
 			}
 		]
 	},
@@ -369,8 +369,8 @@
 				"href": "https://chakra-ui.com/docs"
 			},
 			{
-				"label": "Components",
-				"href": "https://chakra-ui.com/docs/components/concepts/overview"
+				"label": "Source",
+				"href": "https://github.com/chakra-ui/chakra-ui"
 			}
 		]
 	},
@@ -414,8 +414,8 @@
 				"href": "https://docs.github.com/en/actions/automating-builds-and-tests"
 			},
 			{
-				"label": "Workflow syntax",
-				"href": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+				"label": "Continuous Integration",
+				"href": "https://martinfowler.com/articles/continuousIntegration.html"
 			}
 		]
 	},
@@ -429,8 +429,8 @@
 				"href": "https://circleci.com/docs/"
 			},
 			{
-				"label": "Config reference",
-				"href": "https://circleci.com/docs/configuration-reference/"
+				"label": "CLI source",
+				"href": "https://github.com/CircleCI-Public/circleci-cli"
 			}
 		]
 	},
@@ -489,8 +489,8 @@
 				"href": "https://docs.aws.amazon.com/cloudformation/"
 			},
 			{
-				"label": "Template reference",
-				"href": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/"
+				"label": "Templates source",
+				"href": "https://github.com/aws-cloudformation/aws-cloudformation-templates"
 			}
 		]
 	},
@@ -504,8 +504,8 @@
 				"href": "https://codemirror.net/docs/"
 			},
 			{
-				"label": "Examples",
-				"href": "https://codemirror.net/examples/"
+				"label": "Source",
+				"href": "https://github.com/codemirror/dev"
 			}
 		]
 	},
@@ -549,8 +549,8 @@
 				"href": "https://www.anthropic.com/engineering/building-effective-agents"
 			},
 			{
-				"label": "Long context tips",
-				"href": "https://www.anthropic.com/news/claude-3-7-sonnet"
+				"label": "OpenAI prompt guide",
+				"href": "https://developers.openai.com/api/docs/guides/prompt-engineering"
 			}
 		]
 	},
@@ -564,8 +564,8 @@
 				"href": "https://scikit-learn.org/stable/modules/linear_model.html#lasso"
 			},
 			{
-				"label": "Linear model guide",
-				"href": "https://scikit-learn.org/stable/modules/linear_model.html"
+				"label": "Concept overview",
+				"href": "https://en.wikipedia.org/wiki/Coordinate_descent"
 			}
 		]
 	},
@@ -579,8 +579,8 @@
 				"href": "https://developer.mozilla.org/en-US/docs/Web/CSS"
 			},
 			{
-				"label": "CSS reference",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
+				"label": "W3C CSS snapshot",
+				"href": "https://www.w3.org/TR/css-2024/"
 			}
 		]
 	},
@@ -594,8 +594,8 @@
 				"href": "https://cursor.com/docs"
 			},
 			{
-				"label": "Rules docs",
-				"href": "https://cursor.com/docs/context/rules"
+				"label": "Source org",
+				"href": "https://github.com/getcursor"
 			}
 		]
 	},
@@ -609,8 +609,8 @@
 				"href": "https://cursor.com/docs/agent/overview"
 			},
 			{
-				"label": "Background agents",
-				"href": "https://cursor.com/docs/background-agent"
+				"label": "Cursor overview",
+				"href": "https://en.wikipedia.org/wiki/Cursor_(code_editor)"
 			}
 		]
 	},
@@ -624,8 +624,8 @@
 				"href": "https://docs.cypress.io/"
 			},
 			{
-				"label": "API docs",
-				"href": "https://docs.cypress.io/api/table-of-contents"
+				"label": "Source",
+				"href": "https://github.com/cypress-io/cypress"
 			}
 		]
 	},
@@ -639,8 +639,8 @@
 				"href": "https://dash.plotly.com/"
 			},
 			{
-				"label": "Dash callbacks",
-				"href": "https://dash.plotly.com/basic-callbacks"
+				"label": "Source",
+				"href": "https://github.com/plotly/dash"
 			}
 		]
 	},
@@ -699,8 +699,8 @@
 				"href": "https://docs.djangoproject.com/"
 			},
 			{
-				"label": "Tutorial",
-				"href": "https://docs.djangoproject.com/en/stable/intro/tutorial01/"
+				"label": "Source",
+				"href": "https://github.com/django/django"
 			}
 		]
 	},
@@ -714,8 +714,8 @@
 				"href": "https://docs.docker.com/"
 			},
 			{
-				"label": "Build guide",
-				"href": "https://docs.docker.com/build/"
+				"label": "Source",
+				"href": "https://github.com/docker/docs"
 			}
 		]
 	},
@@ -729,8 +729,8 @@
 				"href": "https://docs.cloud.google.com/document-ai/docs"
 			},
 			{
-				"label": "Processor docs",
-				"href": "https://docs.cloud.google.com/document-ai/docs/processors-list"
+				"label": "Samples",
+				"href": "https://github.com/GoogleCloudPlatform/document-ai-samples"
 			}
 		]
 	},
@@ -759,8 +759,8 @@
 				"href": "https://duckdb.org/docs/"
 			},
 			{
-				"label": "SQL reference",
-				"href": "https://duckdb.org/docs/stable/sql/introduction"
+				"label": "Source",
+				"href": "https://github.com/duckdb/duckdb"
 			}
 		]
 	},
@@ -774,8 +774,8 @@
 				"href": "https://docs.aws.amazon.com/dynamodb/"
 			},
 			{
-				"label": "Developer guide",
-				"href": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+				"label": "DynamoDB examples",
+				"href": "https://github.com/aws-samples/aws-dynamodb-examples"
 			}
 		]
 	},
@@ -789,8 +789,8 @@
 				"href": "https://docs.aws.amazon.com/ecs/"
 			},
 			{
-				"label": "Developer guide",
-				"href": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+				"label": "ECS samples",
+				"href": "https://github.com/aws-samples/amazon-ecs-java-microservices"
 			}
 		]
 	},
@@ -804,8 +804,8 @@
 				"href": "https://docs.aws.amazon.com/eks/"
 			},
 			{
-				"label": "User guide",
-				"href": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
+				"label": "EKS workshop",
+				"href": "https://github.com/aws-samples/eks-workshop-v2"
 			}
 		]
 	},
@@ -819,8 +819,8 @@
 				"href": "https://www.electronjs.org/docs/latest/"
 			},
 			{
-				"label": "Tutorial",
-				"href": "https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app"
+				"label": "Source",
+				"href": "https://github.com/electron/electron"
 			}
 		]
 	},
@@ -879,8 +879,8 @@
 				"href": "https://expressjs.com/"
 			},
 			{
-				"label": "Routing guide",
-				"href": "https://expressjs.com/en/guide/routing.html"
+				"label": "Source",
+				"href": "https://github.com/expressjs/express"
 			}
 		]
 	},
@@ -894,8 +894,8 @@
 				"href": "https://fastapi.tiangolo.com/"
 			},
 			{
-				"label": "Tutorial",
-				"href": "https://fastapi.tiangolo.com/tutorial/"
+				"label": "Source",
+				"href": "https://github.com/fastapi/fastapi"
 			}
 		]
 	},
@@ -909,8 +909,8 @@
 				"href": "https://scikit-learn.org/stable/modules/preprocessing.html"
 			},
 			{
-				"label": "ColumnTransformer",
-				"href": "https://scikit-learn.org/stable/modules/compose.html#column-transformer"
+				"label": "Feature-engine docs",
+				"href": "https://feature-engine.trainindata.com/"
 			}
 		]
 	},
@@ -924,8 +924,8 @@
 				"href": "https://flask.palletsprojects.com/"
 			},
 			{
-				"label": "Quickstart",
-				"href": "https://flask.palletsprojects.com/en/stable/quickstart/"
+				"label": "Source",
+				"href": "https://github.com/pallets/flask"
 			}
 		]
 	},
@@ -954,8 +954,8 @@
 				"href": "https://docs.cloud.google.com/docs"
 			},
 			{
-				"label": "Architecture Center",
-				"href": "https://docs.cloud.google.com/architecture"
+				"label": "Foundation Fabric",
+				"href": "https://github.com/GoogleCloudPlatform/cloud-foundation-fabric"
 			}
 		]
 	},
@@ -984,8 +984,8 @@
 				"href": "https://docs.github.com/en/actions"
 			},
 			{
-				"label": "Workflow syntax",
-				"href": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+				"label": "Actions by Example",
+				"href": "https://www.actionsbyexample.com/"
 			}
 		]
 	},
@@ -999,8 +999,8 @@
 				"href": "https://docs.github.com/en/copilot"
 			},
 			{
-				"label": "CLI docs",
-				"href": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line"
+				"label": "VS Code Copilot",
+				"href": "https://code.visualstudio.com/docs/copilot/overview"
 			}
 		]
 	},
@@ -1014,8 +1014,8 @@
 				"href": "https://docs.github.com/en/copilot"
 			},
 			{
-				"label": "Copilot coding agent",
-				"href": "https://docs.github.com/en/copilot/using-github-copilot/coding-agent"
+				"label": "VS Code Copilot",
+				"href": "https://code.visualstudio.com/docs/copilot/overview"
 			}
 		]
 	},
@@ -1029,8 +1029,8 @@
 				"href": "https://go.dev/doc/"
 			},
 			{
-				"label": "Effective Go",
-				"href": "https://go.dev/doc/effective_go"
+				"label": "Source",
+				"href": "https://github.com/golang/go"
 			}
 		]
 	},
@@ -1044,8 +1044,8 @@
 				"href": "https://docs.cloud.google.com/functions/docs"
 			},
 			{
-				"label": "Functions concepts",
-				"href": "https://docs.cloud.google.com/functions/docs/concepts/overview"
+				"label": "Functions framework",
+				"href": "https://github.com/GoogleCloudPlatform/functions-framework-nodejs"
 			}
 		]
 	},
@@ -1059,8 +1059,8 @@
 				"href": "https://docs.cloud.google.com/pubsub/docs"
 			},
 			{
-				"label": "Pub/Sub overview",
-				"href": "https://docs.cloud.google.com/pubsub/docs/overview"
+				"label": "Node.js client",
+				"href": "https://github.com/googleapis/nodejs-pubsub"
 			}
 		]
 	},
@@ -1074,8 +1074,8 @@
 				"href": "https://ai.google.dev/gemini-api/docs"
 			},
 			{
-				"label": "API reference",
-				"href": "https://ai.google.dev/api"
+				"label": "Cookbook",
+				"href": "https://github.com/google-gemini/cookbook"
 			}
 		]
 	},
@@ -1089,8 +1089,8 @@
 				"href": "https://grafana.com/docs/"
 			},
 			{
-				"label": "Dashboards",
-				"href": "https://grafana.com/docs/grafana/latest/dashboards/"
+				"label": "Source",
+				"href": "https://github.com/grafana/grafana"
 			}
 		]
 	},
@@ -1119,8 +1119,8 @@
 				"href": "https://grpc.io/docs/"
 			},
 			{
-				"label": "Core concepts",
-				"href": "https://grpc.io/docs/what-is-grpc/core-concepts/"
+				"label": "Source",
+				"href": "https://github.com/grpc/grpc"
 			}
 		]
 	},
@@ -1149,8 +1149,8 @@
 				"href": "https://hadoop.apache.org/docs/current/"
 			},
 			{
-				"label": "HDFS guide",
-				"href": "https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html"
+				"label": "Source",
+				"href": "https://github.com/apache/hadoop"
 			}
 		]
 	},
@@ -1164,8 +1164,8 @@
 				"href": "https://helm.sh/docs/"
 			},
 			{
-				"label": "Chart template guide",
-				"href": "https://helm.sh/docs/chart_template_guide/"
+				"label": "Source",
+				"href": "https://github.com/helm/helm"
 			}
 		]
 	},
@@ -1179,8 +1179,8 @@
 				"href": "https://developer.mozilla.org/en-US/docs/Web/HTML"
 			},
 			{
-				"label": "HTML elements",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+				"label": "HTML spec",
+				"href": "https://html.spec.whatwg.org/multipage/"
 			}
 		]
 	},
@@ -1194,8 +1194,8 @@
 				"href": "https://huggingface.co/docs"
 			},
 			{
-				"label": "Hub docs",
-				"href": "https://huggingface.co/docs/hub/index"
+				"label": "Transformers source",
+				"href": "https://github.com/huggingface/transformers"
 			}
 		]
 	},
@@ -1209,8 +1209,8 @@
 				"href": "https://gohugo.io/documentation/"
 			},
 			{
-				"label": "Templates",
-				"href": "https://gohugo.io/templates/"
+				"label": "Source",
+				"href": "https://github.com/gohugoio/hugo"
 			}
 		]
 	},
@@ -1224,8 +1224,8 @@
 				"href": "https://www.anthropic.com/engineering/building-effective-agents"
 			},
 			{
-				"label": "OpenAI safety",
-				"href": "https://openai.com/safety/"
+				"label": "NIST AI RMF",
+				"href": "https://www.nist.gov/itl/ai-risk-management-framework"
 			}
 		]
 	},
@@ -1254,8 +1254,8 @@
 				"href": "https://docs.oracle.com/en/java/"
 			},
 			{
-				"label": "Java tutorials",
-				"href": "https://docs.oracle.com/javase/tutorial/"
+				"label": "OpenJDK",
+				"href": "https://openjdk.org/"
 			}
 		]
 	},
@@ -1269,8 +1269,8 @@
 				"href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
 			},
 			{
-				"label": "Language reference",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
+				"label": "ECMAScript spec",
+				"href": "https://tc39.es/ecma262/"
 			}
 		]
 	},
@@ -1284,8 +1284,8 @@
 				"href": "https://www.jenkins.io/doc/"
 			},
 			{
-				"label": "Pipeline docs",
-				"href": "https://www.jenkins.io/doc/book/pipeline/"
+				"label": "Source",
+				"href": "https://github.com/jenkinsci/jenkins"
 			}
 		]
 	},
@@ -1299,8 +1299,8 @@
 				"href": "https://jestjs.io/docs/getting-started"
 			},
 			{
-				"label": "API reference",
-				"href": "https://jestjs.io/docs/api"
+				"label": "Source",
+				"href": "https://github.com/jestjs/jest"
 			}
 		]
 	},
@@ -1314,8 +1314,8 @@
 				"href": "https://docs.jupyter.org/"
 			},
 			{
-				"label": "Notebook docs",
-				"href": "https://docs.jupyter.org/en/latest/running.html"
+				"label": "Notebook source",
+				"href": "https://github.com/jupyter/notebook"
 			}
 		]
 	},
@@ -1329,8 +1329,8 @@
 				"href": "https://code.kx.com/q/"
 			},
 			{
-				"label": "Q by examples",
-				"href": "https://code.kx.com/q4m3/"
+				"label": "KX source org",
+				"href": "https://github.com/KxSystems"
 			}
 		]
 	},
@@ -1344,8 +1344,8 @@
 				"href": "https://www.w3.org/TR/rdf11-concepts/"
 			},
 			{
-				"label": "W3C RDF schema",
-				"href": "https://www.w3.org/TR/rdf-schema/"
+				"label": "Schema.org",
+				"href": "https://schema.org/"
 			}
 		]
 	},
@@ -1359,8 +1359,8 @@
 				"href": "https://kubernetes.io/docs/"
 			},
 			{
-				"label": "Concepts",
-				"href": "https://kubernetes.io/docs/concepts/"
+				"label": "Source",
+				"href": "https://github.com/kubernetes/kubernetes"
 			}
 		]
 	},
@@ -1374,8 +1374,8 @@
 				"href": "https://docs.langchain.com/"
 			},
 			{
-				"label": "LangChain overview",
-				"href": "https://docs.langchain.com/oss/python/langchain/overview"
+				"label": "Source",
+				"href": "https://github.com/langchain-ai/langchain"
 			}
 		]
 	},
@@ -1389,8 +1389,8 @@
 				"href": "https://docs.langchain.com/oss/python/langgraph/overview"
 			},
 			{
-				"label": "Quickstart",
-				"href": "https://docs.langchain.com/oss/python/langgraph/quickstart"
+				"label": "Source",
+				"href": "https://github.com/langchain-ai/langgraph"
 			}
 		]
 	},
@@ -1404,8 +1404,8 @@
 				"href": "https://docs.langchain.com/langsmith/home"
 			},
 			{
-				"label": "Evaluation docs",
-				"href": "https://docs.langchain.com/langsmith/evaluation"
+				"label": "SDK source",
+				"href": "https://github.com/langchain-ai/langsmith-sdk"
 			}
 		]
 	},
@@ -1449,8 +1449,8 @@
 				"href": "https://docs.llamaindex.ai/"
 			},
 			{
-				"label": "Examples",
-				"href": "https://docs.llamaindex.ai/en/stable/examples/"
+				"label": "Source",
+				"href": "https://github.com/run-llama/llama_index"
 			}
 		]
 	},
@@ -1509,8 +1509,8 @@
 				"href": "https://www.fixtrading.org/standards/"
 			},
 			{
-				"label": "FIX protocol",
-				"href": "https://www.fixtrading.org/what-is-fix/"
+				"label": "FIX community",
+				"href": "https://github.com/FIXTradingCommunity"
 			}
 		]
 	},
@@ -1524,8 +1524,8 @@
 				"href": "https://mui.com/material-ui/"
 			},
 			{
-				"label": "Components",
-				"href": "https://mui.com/material-ui/all-components/"
+				"label": "Source",
+				"href": "https://github.com/mui/material-ui"
 			}
 		]
 	},
@@ -1539,8 +1539,8 @@
 				"href": "https://github.com/mathworks"
 			},
 			{
-				"label": "Language server",
-				"href": "https://github.com/mathworks/MATLAB-language-server"
+				"label": "MATLAB overview",
+				"href": "https://en.wikipedia.org/wiki/MATLAB"
 			}
 		]
 	},
@@ -1554,8 +1554,8 @@
 				"href": "https://matplotlib.org/stable/"
 			},
 			{
-				"label": "Examples",
-				"href": "https://matplotlib.org/stable/gallery/index.html"
+				"label": "Source",
+				"href": "https://github.com/matplotlib/matplotlib"
 			}
 		]
 	},
@@ -1569,8 +1569,8 @@
 				"href": "https://mdxjs.com/docs/"
 			},
 			{
-				"label": "Using MDX",
-				"href": "https://mdxjs.com/docs/using-mdx/"
+				"label": "Source",
+				"href": "https://github.com/mdx-js/mdx"
 			}
 		]
 	},
@@ -1599,8 +1599,8 @@
 				"href": "https://mobx.js.org/"
 			},
 			{
-				"label": "React integration",
-				"href": "https://mobx.js.org/react-integration.html"
+				"label": "Source",
+				"href": "https://github.com/mobxjs/mobx"
 			}
 		]
 	},
@@ -1614,8 +1614,8 @@
 				"href": "https://modelcontextprotocol.io/specification/2025-11-25"
 			},
 			{
-				"label": "Quickstart",
-				"href": "https://modelcontextprotocol.io/quickstart"
+				"label": "Spec source",
+				"href": "https://github.com/modelcontextprotocol/specification"
 			}
 		]
 	},
@@ -1629,8 +1629,8 @@
 				"href": "https://scikit-learn.org/stable/modules/model_evaluation.html"
 			},
 			{
-				"label": "Cross-validation",
-				"href": "https://scikit-learn.org/stable/modules/cross_validation.html"
+				"label": "Cross-validation concept",
+				"href": "https://en.wikipedia.org/wiki/Cross-validation_(statistics)"
 			}
 		]
 	},
@@ -1659,8 +1659,8 @@
 				"href": "https://docs.netlify.com/"
 			},
 			{
-				"label": "Build overview",
-				"href": "https://docs.netlify.com/build/configure-builds/overview/"
+				"label": "Build source",
+				"href": "https://github.com/netlify/build"
 			}
 		]
 	},
@@ -1674,8 +1674,8 @@
 				"href": "https://nextjs.org/docs"
 			},
 			{
-				"label": "App Router",
-				"href": "https://nextjs.org/docs/app"
+				"label": "Source",
+				"href": "https://github.com/vercel/next.js"
 			}
 		]
 	},
@@ -1689,8 +1689,8 @@
 				"href": "https://nodejs.org/api/"
 			},
 			{
-				"label": "Learn Node.js",
-				"href": "https://nodejs.org/en/learn"
+				"label": "Source",
+				"href": "https://github.com/nodejs/node"
 			}
 		]
 	},
@@ -1734,8 +1734,8 @@
 				"href": "https://numpy.org/doc/stable/"
 			},
 			{
-				"label": "User guide",
-				"href": "https://numpy.org/doc/stable/user/"
+				"label": "Source",
+				"href": "https://github.com/numpy/numpy"
 			}
 		]
 	},
@@ -1764,8 +1764,8 @@
 				"href": "https://developers.openai.com/api/docs/overview"
 			},
 			{
-				"label": "API reference",
-				"href": "https://developers.openai.com/api/reference"
+				"label": "Python SDK",
+				"href": "https://github.com/openai/openai-python"
 			}
 		]
 	},
@@ -1794,8 +1794,8 @@
 				"href": "https://openid.net/developers/how-connect-works/"
 			},
 			{
-				"label": "Core spec",
-				"href": "https://openid.net/specs/openid-connect-core-1_0.html"
+				"label": "Auth0 guide",
+				"href": "https://auth0.com/docs/authenticate/protocols/openid-connect-protocol"
 			}
 		]
 	},
@@ -1809,8 +1809,8 @@
 				"href": "https://pandas.pydata.org/docs/"
 			},
 			{
-				"label": "User guide",
-				"href": "https://pandas.pydata.org/docs/user_guide/index.html"
+				"label": "Source",
+				"href": "https://github.com/pandas-dev/pandas"
 			}
 		]
 	},
@@ -1824,8 +1824,8 @@
 				"href": "https://pandera.readthedocs.io/"
 			},
 			{
-				"label": "DataFrame schemas",
-				"href": "https://pandera.readthedocs.io/en/stable/dataframe_schemas.html"
+				"label": "Source",
+				"href": "https://github.com/unionai-oss/pandera"
 			}
 		]
 	},
@@ -1869,8 +1869,8 @@
 				"href": "https://playwright.dev/docs/intro"
 			},
 			{
-				"label": "Locators",
-				"href": "https://playwright.dev/docs/locators"
+				"label": "Source",
+				"href": "https://github.com/microsoft/playwright"
 			}
 		]
 	},
@@ -1884,8 +1884,8 @@
 				"href": "https://plotly.com/python/"
 			},
 			{
-				"label": "Graph objects",
-				"href": "https://plotly.com/python/graph-objects/"
+				"label": "Source",
+				"href": "https://github.com/plotly/plotly.py"
 			}
 		]
 	},
@@ -1899,8 +1899,8 @@
 				"href": "https://docs.pola.rs/"
 			},
 			{
-				"label": "User guide",
-				"href": "https://docs.pola.rs/user-guide/"
+				"label": "Source",
+				"href": "https://github.com/pola-rs/polars"
 			}
 		]
 	},
@@ -1914,8 +1914,8 @@
 				"href": "https://www.postgresql.org/docs/"
 			},
 			{
-				"label": "SQL reference",
-				"href": "https://www.postgresql.org/docs/current/sql.html"
+				"label": "Source",
+				"href": "https://github.com/postgres/postgres"
 			}
 		]
 	},
@@ -1929,8 +1929,8 @@
 				"href": "https://docs.prefect.io/"
 			},
 			{
-				"label": "Flows",
-				"href": "https://docs.prefect.io/v3/concepts/flows"
+				"label": "Source",
+				"href": "https://github.com/PrefectHQ/prefect"
 			}
 		]
 	},
@@ -1944,8 +1944,8 @@
 				"href": "https://prometheus.io/docs/"
 			},
 			{
-				"label": "Querying basics",
-				"href": "https://prometheus.io/docs/prometheus/latest/querying/basics/"
+				"label": "Source",
+				"href": "https://github.com/prometheus/prometheus"
 			}
 		]
 	},
@@ -1989,8 +1989,8 @@
 				"href": "https://pptr.dev/"
 			},
 			{
-				"label": "API reference",
-				"href": "https://pptr.dev/api"
+				"label": "Source",
+				"href": "https://github.com/puppeteer/puppeteer"
 			}
 		]
 	},
@@ -2004,8 +2004,8 @@
 				"href": "https://docs.pydantic.dev/latest/"
 			},
 			{
-				"label": "Models",
-				"href": "https://docs.pydantic.dev/latest/concepts/models/"
+				"label": "Source",
+				"href": "https://github.com/pydantic/pydantic"
 			}
 		]
 	},
@@ -2019,8 +2019,8 @@
 				"href": "https://pydantic.dev/docs/ai/overview/"
 			},
 			{
-				"label": "Agents",
-				"href": "https://ai.pydantic.dev/agents/"
+				"label": "Source",
+				"href": "https://github.com/pydantic/pydantic-ai"
 			}
 		]
 	},
@@ -2034,8 +2034,8 @@
 				"href": "https://docs.pytest.org/"
 			},
 			{
-				"label": "How-to guides",
-				"href": "https://docs.pytest.org/en/stable/how-to/index.html"
+				"label": "Source",
+				"href": "https://github.com/pytest-dev/pytest"
 			}
 		]
 	},
@@ -2049,8 +2049,8 @@
 				"href": "https://docs.python.org/3/"
 			},
 			{
-				"label": "Library reference",
-				"href": "https://docs.python.org/3/library/index.html"
+				"label": "CPython source",
+				"href": "https://github.com/python/cpython"
 			}
 		]
 	},
@@ -2064,8 +2064,8 @@
 				"href": "https://packaging.python.org/en/latest/"
 			},
 			{
-				"label": "PyPA guides",
-				"href": "https://packaging.python.org/en/latest/guides/"
+				"label": "PyPI",
+				"href": "https://pypi.org/"
 			}
 		]
 	},
@@ -2079,8 +2079,8 @@
 				"href": "https://pytorch.org/docs/stable/index.html"
 			},
 			{
-				"label": "Tutorials",
-				"href": "https://pytorch.org/tutorials/"
+				"label": "Source",
+				"href": "https://github.com/pytorch/pytorch"
 			}
 		]
 	},
@@ -2094,8 +2094,8 @@
 				"href": "https://code.kx.com/q/"
 			},
 			{
-				"label": "Q for Mortals",
-				"href": "https://code.kx.com/q4m3/"
+				"label": "Language overview",
+				"href": "https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems)"
 			}
 		]
 	},
@@ -2124,8 +2124,8 @@
 				"href": "https://cran.r-project.org/manuals.html"
 			},
 			{
-				"label": "R packages",
-				"href": "https://cran.r-project.org/web/packages/"
+				"label": "R source",
+				"href": "https://github.com/wch/r-source"
 			}
 		]
 	},
@@ -2139,8 +2139,8 @@
 				"href": "https://react.dev/"
 			},
 			{
-				"label": "Learn React",
-				"href": "https://react.dev/learn"
+				"label": "Source",
+				"href": "https://github.com/facebook/react"
 			}
 		]
 	},
@@ -2154,8 +2154,8 @@
 				"href": "https://kafka.apache.org/documentation/streams/"
 			},
 			{
-				"label": "Apache Flink docs",
-				"href": "https://nightlies.apache.org/flink/flink-docs-stable/"
+				"label": "Confluent guide",
+				"href": "https://www.confluent.io/learn/stream-processing/"
 			}
 		]
 	},
@@ -2169,8 +2169,8 @@
 				"href": "https://redis.io/docs/latest/develop/interact/pubsub/"
 			},
 			{
-				"label": "Redis commands",
-				"href": "https://redis.io/docs/latest/commands/?group=pubsub"
+				"label": "Source",
+				"href": "https://github.com/redis/redis"
 			}
 		]
 	},
@@ -2184,8 +2184,8 @@
 				"href": "https://docs.aws.amazon.com/redshift/"
 			},
 			{
-				"label": "Developer guide",
-				"href": "https://docs.aws.amazon.com/redshift/latest/dg/welcome.html"
+				"label": "Redshift utils",
+				"href": "https://github.com/awslabs/amazon-redshift-utils"
 			}
 		]
 	},
@@ -2199,8 +2199,8 @@
 				"href": "https://redux.js.org/"
 			},
 			{
-				"label": "Redux Toolkit",
-				"href": "https://redux-toolkit.js.org/"
+				"label": "Redux Toolkit source",
+				"href": "https://github.com/reduxjs/redux-toolkit"
 			}
 		]
 	},
@@ -2214,8 +2214,8 @@
 				"href": "https://scikit-learn.org/stable/modules/linear_model.html"
 			},
 			{
-				"label": "Elastic Net",
-				"href": "https://scikit-learn.org/stable/modules/linear_model.html#elastic-net"
+				"label": "Elastic net concept",
+				"href": "https://en.wikipedia.org/wiki/Elastic_net_regularization"
 			}
 		]
 	},
@@ -2259,8 +2259,8 @@
 				"href": "https://doc.rust-lang.org/book/"
 			},
 			{
-				"label": "Rust reference",
-				"href": "https://doc.rust-lang.org/reference/"
+				"label": "Source",
+				"href": "https://github.com/rust-lang/rust"
 			}
 		]
 	},
@@ -2274,8 +2274,8 @@
 				"href": "https://scikit-learn.org/stable/user_guide.html"
 			},
 			{
-				"label": "API reference",
-				"href": "https://scikit-learn.org/stable/api/index.html"
+				"label": "Source",
+				"href": "https://github.com/scikit-learn/scikit-learn"
 			}
 		]
 	},
@@ -2334,8 +2334,8 @@
 				"href": "https://ui.shadcn.com/docs"
 			},
 			{
-				"label": "Components",
-				"href": "https://ui.shadcn.com/docs/components"
+				"label": "Source",
+				"href": "https://github.com/shadcn-ui/ui"
 			}
 		]
 	},
@@ -2349,8 +2349,8 @@
 				"href": "https://www.w3.org/TR/sparql11-query/"
 			},
 			{
-				"label": "W3C RDF concepts",
-				"href": "https://www.w3.org/TR/rdf11-concepts/"
+				"label": "Wikidata query service",
+				"href": "https://query.wikidata.org/"
 			}
 		]
 	},
@@ -2379,8 +2379,8 @@
 				"href": "https://docs.sqlalchemy.org/en/20/"
 			},
 			{
-				"label": "ORM docs",
-				"href": "https://docs.sqlalchemy.org/en/20/orm/"
+				"label": "Source",
+				"href": "https://github.com/sqlalchemy/sqlalchemy"
 			}
 		]
 	},
@@ -2394,8 +2394,8 @@
 				"href": "https://www.sqlite.org/docs.html"
 			},
 			{
-				"label": "SQL language",
-				"href": "https://www.sqlite.org/lang.html"
+				"label": "Source mirror",
+				"href": "https://github.com/sqlite/sqlite"
 			}
 		]
 	},
@@ -2439,8 +2439,8 @@
 				"href": "https://www.swift.org/documentation/"
 			},
 			{
-				"label": "Swift book",
-				"href": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"
+				"label": "Swift book source",
+				"href": "https://github.com/swiftlang/swift-book"
 			}
 		]
 	},
@@ -2454,8 +2454,8 @@
 				"href": "https://help.tableau.com/"
 			},
 			{
-				"label": "Developer docs",
-				"href": "https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm"
+				"label": "Developer samples",
+				"href": "https://github.com/tableau"
 			}
 		]
 	},
@@ -2469,8 +2469,8 @@
 				"href": "https://tailwindcss.com/docs/installation/using-vite"
 			},
 			{
-				"label": "Core concepts",
-				"href": "https://tailwindcss.com/docs/styling-with-utility-classes"
+				"label": "Source",
+				"href": "https://github.com/tailwindlabs/tailwindcss"
 			}
 		]
 	},
@@ -2484,8 +2484,8 @@
 				"href": "https://www.tensorflow.org/learn"
 			},
 			{
-				"label": "Tutorials",
-				"href": "https://www.tensorflow.org/tutorials"
+				"label": "Source",
+				"href": "https://github.com/tensorflow/tensorflow"
 			}
 		]
 	},
@@ -2499,8 +2499,8 @@
 				"href": "https://developer.hashicorp.com/terraform/docs"
 			},
 			{
-				"label": "Language docs",
-				"href": "https://developer.hashicorp.com/terraform/language"
+				"label": "Source",
+				"href": "https://github.com/hashicorp/terraform"
 			}
 		]
 	},
@@ -2559,8 +2559,8 @@
 				"href": "https://www.typescriptlang.org/docs/"
 			},
 			{
-				"label": "Handbook",
-				"href": "https://www.typescriptlang.org/docs/handbook/intro.html"
+				"label": "Source",
+				"href": "https://github.com/microsoft/TypeScript"
 			}
 		]
 	},
@@ -2589,8 +2589,8 @@
 				"href": "https://vercel.com/docs"
 			},
 			{
-				"label": "Frameworks",
-				"href": "https://vercel.com/docs/frameworks"
+				"label": "CLI source",
+				"href": "https://github.com/vercel/vercel"
 			}
 		]
 	},
@@ -2604,8 +2604,8 @@
 				"href": "https://ai-sdk.dev/docs/introduction"
 			},
 			{
-				"label": "AI SDK UI",
-				"href": "https://ai-sdk.dev/docs/ai-sdk-ui/overview"
+				"label": "Source",
+				"href": "https://github.com/vercel/ai"
 			}
 		]
 	},
@@ -2619,8 +2619,8 @@
 				"href": "https://vite.dev/guide/"
 			},
 			{
-				"label": "Config reference",
-				"href": "https://vite.dev/config/"
+				"label": "Source",
+				"href": "https://github.com/vitejs/vite"
 			}
 		]
 	},
@@ -2634,8 +2634,8 @@
 				"href": "https://vitest.dev/guide/"
 			},
 			{
-				"label": "API reference",
-				"href": "https://vitest.dev/api/"
+				"label": "Source",
+				"href": "https://github.com/vitest-dev/vitest"
 			}
 		]
 	},
@@ -2649,8 +2649,8 @@
 				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
 			},
 			{
-				"label": "Using workers",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"
+				"label": "HTML workers spec",
+				"href": "https://html.spec.whatwg.org/multipage/workers.html"
 			}
 		]
 	},
@@ -2664,8 +2664,8 @@
 				"href": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
 			},
 			{
-				"label": "WebSocketStream",
-				"href": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Using_WebSocketStream"
+				"label": "RFC 6455",
+				"href": "https://www.rfc-editor.org/rfc/rfc6455"
 			}
 		]
 	},
@@ -2679,8 +2679,8 @@
 				"href": "https://xgboost.readthedocs.io/"
 			},
 			{
-				"label": "Python API",
-				"href": "https://xgboost.readthedocs.io/en/stable/python/python_api.html"
+				"label": "Source",
+				"href": "https://github.com/dmlc/xgboost"
 			}
 		]
 	},
@@ -2694,8 +2694,8 @@
 				"href": "https://yaml.org/spec/"
 			},
 			{
-				"label": "YAML 1.2.2",
-				"href": "https://yaml.org/spec/1.2.2/"
+				"label": "Spec source",
+				"href": "https://github.com/yaml/yaml-spec"
 			}
 		]
 	}

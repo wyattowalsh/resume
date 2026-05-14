@@ -49,6 +49,23 @@ const expectSkillLink = (skillName: string, href: string) => {
   );
 };
 
+const getReferenceDomain = (href: string) => {
+  const hostname = new URL(href).hostname.replace(/^www\./, "").toLowerCase();
+  const parts = hostname.split(".");
+
+  if (parts.length <= 2) {
+    return hostname;
+  }
+
+  const suffix = parts.slice(-2).join(".");
+
+  if (suffix === "github.io" || suffix === "readthedocs.io") {
+    return parts.slice(-3).join(".");
+  }
+
+  return suffix;
+};
+
 const visibleSkillGroups = siteVariant.skills;
 const visibleSkills = visibleSkillGroups.flatMap((group) => group.keywords);
 const sectionIconNames = new Set([
@@ -154,6 +171,10 @@ describe("skill details", () => {
       expect(detail.desc, skillName).not.toMatch(repeatedSmallWordPattern);
       expect(detail.icon?.path, skillName).toMatch(/^\/skill-icons\//);
       expect(detail.links.length, skillName).toBeGreaterThanOrEqual(1);
+      expect(
+        new Set(detail.links.map((link) => getReferenceDomain(link.href))).size,
+        skillName,
+      ).toBe(detail.links.length);
 
       for (const link of detail.links) {
         expect(Object.keys(link).sort(), skillName).toEqual(["href", "label"]);
@@ -180,7 +201,7 @@ describe("skill details", () => {
 
   it("preserves curated references for known high-signal skills", () => {
     expectSkillLink("AMPS", "https://crankuptheamps.com/");
-    expectSkillLink("AMPS", "https://docs.crankuptheamps.com/");
+    expectSkillLink("AMPS", "https://github.com/60East");
     expect(getSkillDetail("C++")).toMatchObject({
       name: "C++",
     });

@@ -425,9 +425,7 @@ describe("getResumeVariant", () => {
       expect(getSkillDetail("AMPS")?.links).toEqual(
         expect.arrayContaining([
           expect.objectContaining({ href: "https://crankuptheamps.com/" }),
-          expect.objectContaining({
-            href: "https://docs.crankuptheamps.com/",
-          }),
+          expect.objectContaining({ href: "https://github.com/60East" }),
         ]),
       );
       expect(getSkillDetail("AI Agent Skills")).toMatchObject({
@@ -438,7 +436,9 @@ describe("getResumeVariant", () => {
           expect.objectContaining({
             href: "https://agentskills.io/specification",
           }),
-          expect.objectContaining({ href: "https://agentskills.io/" }),
+          expect.objectContaining({
+            href: "https://github.com/anthropics/skills",
+          }),
         ]),
       );
     });
