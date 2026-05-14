@@ -24,7 +24,7 @@ Only `/` is canonical and indexable. The production SSR layer blocks `/full` and
 4. Dedicated layouts (`SiteResumeLayout`, `FullResumeLayout`, `SingleResumeLayout`) own artifact-specific composition.
 5. `src/lib/artifact-specs.ts` also defines the explicit DOCX policy contract under each artifact spec's `docx` field.
 6. `assets/data/skill-details.json` adds web-only skill popover evidence that is guarded from leaking into generated PDF/DOCX artifacts.
-7. `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, and `public/skill-icons/` provide the web-only local icon layer for skill chips and section headings.
+7. `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, and `public/skill-icons/` provide the web-only local icon layer for skill chips and section headings. Skill-chip icons should be compact original symbols or source-traced product icons, not wide wordmarks or banner logos.
 8. `src/lib/resume-downloads.ts` centralizes the public footer download labels, paths, and accessibility labels.
 
 The DOCX intent is deliberate: both exports retain the basics summary, selected work summaries, and project highlights for ATS richness, while the 1-page PDF can still suppress visible role summaries for layout density. The same DOCX policy also defines whether Projects start on a fresh DOCX page (`full`) or continue inline (`single`) and whether project stacks are emitted into DOCX text (`full` includes stack keywords, `single` stays compact).
@@ -35,6 +35,7 @@ The DOCX intent is deliberate: both exports retain the basics summary, selected 
 - The progress indicator appears only after the header sentinel leaves the viewport and updates via `IntersectionObserver`; it does not poll `scrollY` or attach scroll handlers.
 - Skills are the only popover surface. Work and project proof should remain directly visible in the page content, not hidden behind role/project dialogs.
 - All visible skill chips are keyboard-accessible popover triggers. Curated skills use `assets/data/skill-details.json` and `assets/data/skill-icons.json`; uncatalogued skills still open lightweight category-context cards so the UI has no static skill pills.
+- Skill icons must stay readable at trigger size. Prefer oldschool, classic, or original icon-only marks where they fit; replace wide wordmarks and banners with compact favicons, devicons, or explicit concept icons.
 - Project action pills use contextual leading icons for GitHub, Kaggle, docs, and live/external links while preserving the trailing external-link indicator.
 - Public resume downloads live in the bottom footer only.
 
@@ -80,3 +81,5 @@ The release workflow mirrors practical root quality gates before upload: build s
 Use CI artifacts or local generated PNG/PDF outputs for visual QA whenever layout, typography, section budgets, icons, or public resume facts change. Confirm the web route remains a professional person/entity page for Wyatt Walsh as a Senior AI/ML Engineer in New York City, with the same context reflected in metadata, JSON-LD, visible copy, and the print artifacts.
 
 Skill icons and popover evidence are web-only. Keep icon provenance in the icon data pipeline, keep generated PDFs image-free, preserve all visible skill chips as interactive triggers, and preserve the artifact checker rule that tooltip-only skill descriptions and reference URLs stay out of PDF/DOCX exports.
+
+The skill-icon regression tests also protect chip readability. `src/lib/skill-details.test.ts` rejects known wide wordmark sources and pins compact replacements for wordmark-prone skills such as AMPS, `q`, Tableau, XGBoost, Pandera, Go, Bash, and Market Data Systems. After icon-pipeline edits, run `pnpm sync:skill-icons`, visually check the affected popovers on `/`, run `pnpm test -- src/lib/skill-details.test.ts`, and use `pnpm check:artifacts` when generated/public downloads are touched.

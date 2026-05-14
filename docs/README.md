@@ -36,6 +36,8 @@ CI installs this app with `pnpm -C docs install --frozen-lockfile` so the docs l
 
 Keep developer docs aligned with root project behavior when routes, build commands, generated artifacts, resume data workflows, or interactive web disclosures change. In particular, document changes to `assets/data/skill-details.json`, `assets/data/skill-icons.json`, `assets/data/skill-section-icons.json`, `src/lib/artifact-specs.ts`, and the public-download workflow because those files define what appears on the web route versus what is allowed into generated PDF/DOCX artifacts.
 
+For skill-icon changes, keep the docs explicit that chip icons must be compact and source-traced. Original or retro product symbols are preferred when they stay readable, but wide wordmarks and banner logos should be replaced with compact favicons, devicons, or deliberate concept icons. Keep the root README and `docs/content/docs/index.mdx` aligned with the icon-pipeline regression tests.
+
 Validate docs changes with `pnpm -C docs build`; validate the public resume app from the repository root with `pnpm test`, `pnpm lint`, `pnpm build`, and `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" pnpm check:artifacts` when artifacts or downloads change.
 
 SEO maintenance lives with the public app, not the docs app. Keep `/` as the only canonical/indexable route, keep `/full`, `/single`, and `/downloads/` out of crawler paths and the sitemap, and update `src/lib/site.test.ts` whenever metadata or JSON-LD expectations change.

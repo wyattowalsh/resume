@@ -50,7 +50,7 @@ When resume facts change, update `assets/data/resume.json` or `assets/data/varia
 
 `assets/data/skill-details.json` adds web-only skill evidence for the interactive `/` route. Those descriptions and reference URLs are intentionally excluded from generated PDF/DOCX artifacts; `src/scripts/check-artifacts.ts` derives its tooltip-only leakage guard from this file so web popover copy does not drift into print exports.
 
-`assets/data/skill-icons.json` and `assets/data/skill-section-icons.json` drive the interactive route's local skill-icon system. Every visible skill chip on `/` should resolve to a local `/skill-icons/...` asset when available, and every skill section should resolve to a typed React icon through `src/components/Skills.tsx`.
+`assets/data/skill-icons.json` and `assets/data/skill-section-icons.json` drive the interactive route's local skill-icon system. Every visible skill chip on `/` should resolve to a compact local `/skill-icons/...` asset when available, and every skill section should resolve to a typed React icon through `src/components/Skills.tsx`. Prefer original, classic, or source-traced product symbols over generic art, but avoid wide wordmarks and banner logos inside skill chips because they collapse into unreadable slivers at trigger size.
 
 The next planned curation hooks are role-targeted variants for Senior AI/ML Engineer, fintech/data platform, and agent tooling applications. Keep those as variant-file curation passes until there is a concrete need for additional public routes or generated PDFs.
 
@@ -185,6 +185,8 @@ Use the uploaded CI artifacts or a local `pnpm check:artifacts` run to inspect t
 ## Icon provenance
 
 Skill icons are source-controlled UI assets for the interactive route only. Keep their provenance in the icon data pipeline, do not allow icon metadata or tooltip-only skill evidence to leak into generated PDF/DOCX content, and rerun the artifact checker after icon or popover changes because it verifies public downloads remain text-first and image-free. Use `pnpm sync:skill-icons` only when intentionally refreshing local skill icon assets or their manifest.
+
+When refreshing icons, prefer compact favicon/devicon/original-symbol assets for chip readability. The regression tests in `src/lib/skill-details.test.ts` block known wide wordmark sources such as Python's old text logo, Tableau's banner logo, FIX's white wordmark, Pandera's banner, XGBoost's trimmed banner, Go's horizontal wordmark, and the GNU Bash wordmark. After changing the pipeline, inspect the affected icons visually on `/`, rerun `pnpm sync:skill-icons`, run `pnpm test -- src/lib/skill-details.test.ts`, and run `PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" pnpm check:artifacts` if public downloads or generated artifacts were refreshed.
 
 ## Release gate
 
