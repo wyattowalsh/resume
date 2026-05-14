@@ -237,7 +237,7 @@
 		"links": [
 			{
 				"label": "BigQuery docs",
-				"href": "https://cloud.google.com/bigquery/docs"
+				"href": "https://docs.cloud.google.com/bigquery/docs"
 			}
 		]
 	},
@@ -534,7 +534,7 @@
 		"links": [
 			{
 				"label": "Google Document AI docs",
-				"href": "https://cloud.google.com/document-ai/docs"
+				"href": "https://docs.cloud.google.com/document-ai/docs"
 			}
 		]
 	},
@@ -699,7 +699,7 @@
 		"links": [
 			{
 				"label": "Google Cloud docs",
-				"href": "https://cloud.google.com/docs"
+				"href": "https://docs.cloud.google.com/docs"
 			}
 		]
 	},
@@ -765,7 +765,7 @@
 		"links": [
 			{
 				"label": "Cloud Functions docs",
-				"href": "https://cloud.google.com/functions/docs"
+				"href": "https://docs.cloud.google.com/functions/docs"
 			}
 		]
 	},
@@ -776,7 +776,7 @@
 		"links": [
 			{
 				"label": "Pub/Sub docs",
-				"href": "https://cloud.google.com/pubsub/docs"
+				"href": "https://docs.cloud.google.com/pubsub/docs"
 			}
 		]
 	},
@@ -1205,7 +1205,7 @@
 		"links": [
 			{
 				"label": "Cloud Monitoring docs",
-				"href": "https://cloud.google.com/monitoring/docs"
+				"href": "https://docs.cloud.google.com/monitoring/docs"
 			}
 		]
 	},
@@ -1260,7 +1260,7 @@
 		"links": [
 			{
 				"label": "NotebookLM help",
-				"href": "https://support.google.com/notebooklm/"
+				"href": "https://support.google.com/notebooklm"
 			}
 		]
 	},
@@ -1292,8 +1292,8 @@
 		"icon": "/skill-icons/openai-api.svg",
 		"links": [
 			{
-				"label": "Docs",
-				"href": "https://platform.openai.com/docs"
+				"label": "API docs",
+				"href": "https://developers.openai.com/api/docs/overview"
 			}
 		]
 	},
@@ -1358,8 +1358,8 @@
 		"icon": "/skill-icons/perplexity-desktop.svg",
 		"links": [
 			{
-				"label": "Product site",
-				"href": "https://www.perplexity.ai/"
+				"label": "App Store",
+				"href": "https://apps.apple.com/us/app/perplexity-ask-anything/id1668000334"
 			}
 		]
 	},
@@ -1447,7 +1447,7 @@
 		"links": [
 			{
 				"label": "Pub/Sub overview",
-				"href": "https://cloud.google.com/pubsub/docs/overview"
+				"href": "https://docs.cloud.google.com/pubsub/docs/overview"
 			}
 		]
 	},
@@ -1765,8 +1765,8 @@
 		"icon": "/skill-icons/statistical-modeling.svg",
 		"links": [
 			{
-				"label": "NIST modeling handbook",
-				"href": "https://www.itl.nist.gov/div898/handbook/pmd/pmd.htm"
+				"label": "NIST handbook",
+				"href": "https://www.nist.gov/publications/handbook-151-nistsematech-e-handbook-statistical-methods"
 			}
 		]
 	},

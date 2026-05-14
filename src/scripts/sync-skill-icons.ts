@@ -32,15 +32,15 @@ const siteVariantSchema = z.object({
 });
 
 const skillDetailSchema = z.object({
-  desc: z.string(),
+  desc: z.string().trim().min(90).max(320),
   icon: z.string().startsWith("/skill-icons/"),
   links: z.array(
     z.object({
-      label: z.string(),
-      href: z.string().url(),
+      label: z.string().trim().min(1).max(40),
+      href: z.string().url().startsWith("https://"),
     }),
-  ),
-  name: z.string(),
+  ).min(1),
+  name: z.string().trim().min(1).max(80),
 });
 
 const skillDetailsSchema = z.record(z.string(), skillDetailSchema);

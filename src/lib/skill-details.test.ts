@@ -121,6 +121,20 @@ describe("skill details", () => {
       /"summary"|"resumeContext"|"evidence"|"verification"|"kind"/,
     );
 
+    for (const [skillName, detail] of Object.entries(skillDetailsData)) {
+      expect(Object.keys(detail).sort(), skillName).toEqual([
+        "desc",
+        "icon",
+        "links",
+        "name",
+      ]);
+      expect(detail.name, skillName).toBe(skillName);
+      expect(detail.icon, skillName).toBe(
+        skillIcons[skillName as keyof typeof skillIcons].iconPath,
+      );
+      expect(detail.links.length, skillName).toBeGreaterThanOrEqual(1);
+    }
+
     for (const [skillName, detail] of Object.entries(getSkillDetails())) {
       expect(Object.keys(detail).sort(), skillName).toEqual([
         "desc",
@@ -139,6 +153,7 @@ describe("skill details", () => {
         expect(Object.keys(link).sort(), skillName).toEqual(["href", "label"]);
         expect(link.href, skillName).toMatch(/^https:\/\//);
         expect(link.label, skillName).not.toBe("");
+        expect(link.label.length, skillName).toBeLessThanOrEqual(40);
       }
     }
   });
@@ -167,6 +182,19 @@ describe("skill details", () => {
     });
     expect(getSkillDetail("Google Gemini API")).toMatchObject({
       links: [{ href: "https://ai.google.dev/gemini-api/docs" }],
+    });
+    expect(getSkillDetail("OpenAI API")).toMatchObject({
+      links: [{ href: "https://developers.openai.com/api/docs/overview" }],
+    });
+    expect(getSkillDetail("NotebookLM")).toMatchObject({
+      links: [{ href: "https://support.google.com/notebooklm" }],
+    });
+    expect(getSkillDetail("Statistical Modeling")).toMatchObject({
+      links: [
+        {
+          href: "https://www.nist.gov/publications/handbook-151-nistsematech-e-handbook-statistical-methods",
+        },
+      ],
     });
     expect(getSkillDetail("Deliberately Missing Skill", "Other")).toMatchObject(
       {

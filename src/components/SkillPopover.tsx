@@ -7,7 +7,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 type SkillPopoverProps = {
   category: string;
   detail?: SkillDetail;
-  iconPath?: string;
   skillName: string;
   children: ReactNode;
 };
@@ -15,14 +14,13 @@ type SkillPopoverProps = {
 export function SkillPopover({
   category,
   detail,
-  iconPath,
   skillName,
   children,
 }: SkillPopoverProps) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
   const descriptionId = useId();
-  const resolvedIconPath = detail?.icon?.path ?? iconPath;
+  const resolvedIconPath = detail?.icon.path;
   const resolvedSkillName = detail?.name ?? skillName;
   const contextText = detail
     ? detail.desc

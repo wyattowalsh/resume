@@ -64,7 +64,6 @@ export function Skills({ skills }: SkillsProps) {
                         key={keyword}
                         category={skill.name}
                         detail={detail}
-                        iconPath={detail?.icon?.path}
                         skillName={keyword}
                       >
                         {keyword}

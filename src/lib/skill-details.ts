@@ -2,78 +2,83 @@ import skillDetailsData from "@assets/data/skill-details.json";
 import { z } from "zod";
 
 const skillLinkSchema = z.object({
-  label: z.string(),
-  href: z.string().url(),
+  label: z.string().trim().min(1).max(40),
+  href: z.string().url().startsWith("https://"),
 });
 
-const skillDetailSchema = z.object({
-  name: z.string(),
-  desc: z.string(),
+const skillDetailDataSchema = z.object({
+  name: z.string().trim().min(1).max(80),
+  desc: z.string().trim().min(90).max(320),
   icon: z.string().startsWith("/skill-icons/"),
-  links: z.array(skillLinkSchema),
+  links: z.array(skillLinkSchema).min(1),
 });
 
-const skillDetailsSchema = z.record(z.string(), skillDetailSchema);
+const skillDetailsDataSchema = z.record(z.string(), skillDetailDataSchema);
 
 export type SkillLink = z.infer<typeof skillLinkSchema>;
-export type SkillIconDetail = {
-  path: string;
-};
-export type SkillDetail = Omit<z.infer<typeof skillDetailSchema>, "icon"> & {
-  icon: SkillIconDetail;
+type SkillDetailData = z.infer<typeof skillDetailDataSchema>;
+
+export type SkillDetail = {
+  name: string;
+  desc: string;
+  icon: {
+    path: string;
+  };
+  links: SkillLink[];
 };
 
-const skillDetails = skillDetailsSchema.parse(skillDetailsData);
+const parsedSkillDetails = skillDetailsDataSchema.parse(skillDetailsData);
+const skillDetails = resolveSkillDetails(parsedSkillDetails);
 
 export function getSkillDetail(
   skillName: string,
   fallbackCategory?: string,
 ): SkillDetail | undefined {
-  const detail = skillDetails[skillName];
-
-  if (!detail) {
-    if (!fallbackCategory) {
-      return undefined;
-    }
-
-    return {
-      desc: `${skillName} is part of Wyatt's ${fallbackCategory.toLowerCase()} toolkit across the roles and projects represented on this page.`,
-      icon: { path: "" },
-      links: [],
-      name: skillName,
-    };
-  }
-
-  return {
-    desc: detail.desc,
-    icon: { path: detail.icon },
-    links: detail.links,
-    name: detail.name,
-  };
+  return (
+    skillDetails[skillName] ?? getFallbackSkillDetail(skillName, fallbackCategory)
+  );
 }
 
-export function getSkillIcon(skillName: string): SkillIconDetail | undefined {
-  const detail = skillDetails[skillName];
+export function getSkillDetails(): Record<string, SkillDetail> {
+  return skillDetails;
+}
 
-  if (!detail) {
+function resolveSkillDetails(
+  details: Record<string, SkillDetailData>,
+): Record<string, SkillDetail> {
+  return Object.fromEntries(
+    Object.entries(details).map(([skillName, detail]) => {
+      if (detail.name !== skillName) {
+        throw new Error(
+          `Skill detail key "${skillName}" must match its name "${detail.name}".`,
+        );
+      }
+
+      return [
+        skillName,
+        {
+          desc: detail.desc,
+          icon: { path: detail.icon },
+          links: detail.links,
+          name: detail.name,
+        },
+      ];
+    }),
+  );
+}
+
+function getFallbackSkillDetail(
+  skillName: string,
+  fallbackCategory?: string,
+): SkillDetail | undefined {
+  if (!fallbackCategory) {
     return undefined;
   }
 
   return {
-    path: detail.icon,
+    desc: `${skillName} is part of Wyatt's ${fallbackCategory.toLowerCase()} toolkit across the roles and projects represented on this page.`,
+    icon: { path: "" },
+    links: [],
+    name: skillName,
   };
-}
-
-export function getSkillDetails(): Record<string, SkillDetail> {
-  return Object.fromEntries(
-    Object.entries(skillDetails).map(([skillName, detail]) => [
-      skillName,
-      {
-        desc: detail.desc,
-        icon: { path: detail.icon },
-        links: detail.links,
-        name: detail.name,
-      },
-    ]),
-  );
 }
